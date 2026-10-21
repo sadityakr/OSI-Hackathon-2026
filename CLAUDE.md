@@ -56,7 +56,7 @@ Cut lines in order: digitizer (show the panel without overlay), retriever, third
 
 ## External pieces and where they come from
 
-- **Valency MCP Bond**: literature discovery and citation graph. Configure in Claude Code on the PC with Aditya's token. Rules in `docs/bond-evaluation.md`: concept queries only, never frequencies; merge arXiv and PubMed duplicates on DOI; prefer arXiv ids for PDF access.
+- **Valency MCP Bond**: literature discovery and citation graph. Configured project-wide in `.mcp.json` (streamable HTTP, `https://mcp.valency.io/`, OAuth 2.0, no secret in the repo). First use on a machine: start Claude Code in the repo folder, approve the project server, then run `/mcp` and authenticate `valency` in the browser with the Valency account (not the Claude account). Check with a `list_sources` call. Rules in `docs/bond-evaluation.md`: concept queries only, never frequencies; merge arXiv and PubMed duplicates on DOI; prefer arXiv ids for PDF access.
 - **PDF parsing and figure extraction**: ported from Aditya's private Lit-RAG project (GitLab). Copy the parsing, section graph and figure-extraction code into `src/ramanlens/literature/pdf/` and adapt it. Lit-RAG is not a dependency and is not named in the deliverable; its MCP server is not needed. TODO: Aditya copies the modules in.
 - **LangSmith**: `src/ramanlens/tracing.py` gives `@traced("span")`, `trace_run()` (root span, trace URL into the report) and `anthropic_client()` wrapped with `wrap_anthropic`. No-op without `LANGSMITH_API_KEY`. Span names are listed in the module docstring; keep them stable, the evaluation notebook filters on them. Claude Code's own model calls are not visible to LangSmith: develop in Claude Code, run evaluation and demo through the Python runner in `src/ramanlens/agent/` (Anthropic SDK plus the same tools) so the full tree is captured. Pending agreement with the collaborator.
 - **Third-party Raman models**: none chosen. Scout for public weights with 2D-materials training data for at most one hour; likely none exist, record that as a finding. The identification comparison (CRD matcher vs CRD-trained retriever vs Claude vision on the plotted spectrum) is an evaluation item in stage 4.
@@ -67,7 +67,7 @@ Cut lines in order: digitizer (show the panel without overlay), retriever, third
 - Compute and model access: Claude Max subscription API credits; RTX 3060 with 12 GB VRAM on the PC.
 - The agent under test runs on the PC; the cloud session is used for planning, docs, and code that does not need arXiv, Zenodo or Materials Cloud access (all three are blocked from the sandbox).
 - Project path on the PC: `C:\Users\sadit\Desktop\P_Projects\Hackathons\OSI Hackathon`. Secrets go in `.env` (template `.env.example`), never in the repo.
-- Public repo: not created yet; create before the end of stage 1 (MIT licence proposed).
+- Public repo: https://github.com/sadityakr/osi-hackathon-2026 (MIT). The CRD zip must be pushed from the PC via Git LFS (`.gitattributes` tracks `*.zip`); the sandbox cannot reach LFS storage.
 
 ## Working conventions
 
