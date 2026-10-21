@@ -76,6 +76,15 @@ foreach ($q in "Raman WS2", "Raman MoS2", "Raman graphene spectra", "CrSBr Raman
     catch { Write-Warning "search '$q' failed" }
 }
 
+# 8. Broader material coverage (optional, larger): pass -All to run the three extra catalog scripts
+if ($args -contains "-All") {
+    foreach ($s in "get_series_quantum_magnetic.ps1", "get_semiconductors_carbon_oxides.ps1", "get_energy_polymers_minerals.ps1") {
+        Write-Host "`n=== $s ==="
+        & (Join-Path $PSScriptRoot "scripts\$s")
+        Set-Location $root
+    }
+} else { Write-Host "`nTip: run with -All to also fetch series, semiconductor/carbon/oxide and energy/polymer/mineral sets (data\scripts\)." }
+
 Write-Host "`nDone. Not automated (manual): Southampton ePrints xlsx (WS2 D0371, MoS2 416765), Dryad 5qfttdzm9, VAMAS Zenodo 10008276 (609 MB), TUdatalib 4928/4929 (bot check)."
 Get-ChildItem data\raw -Recurse -File | Measure-Object -Property Length -Sum |
     ForEach-Object { "{0} files, {1:N1} MB in data\raw" -f $_.Count, ($_.Sum / 1MB) }
