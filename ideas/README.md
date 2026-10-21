@@ -1,15 +1,7 @@
 # Ideas
 
-One file per candidate idea, named `NN-short-title.md`. Each should answer:
+- `ranking.md`: the decision (RamanLens) and how the candidates compared.
+- `01-join-spectral-identifier.md`: Miro team pitch, declined.
+- `02-polarized-raman-symmetry-model-research.md`: research report on the optional symmetry classifier (data sources, physics of synthesis, model options, validation cases, two-day plan).
 
-1. Problem (one paragraph, who has it)
-2. Proposed approach and what the LLM/agent actually does
-3. Why it scores on impact, innovativeness, relevance, novelty
-4. Data and tools needed, and whether they are open
-5. Two-day plan with a minimum viable demo by end of Oct 21
-6. Risks and what to cut
-
-Candidates so far:
-
-- `01-join-spectral-identifier.md` (join the Miro team; see `resources/miro-pitch-spectral-identifier.md`)
-- further ideas to be added during brainstorming
+Template for any new idea: problem, approach and what the agent does, scoring against the four judging criteria, data and tools, two-day plan with MVP by end of day 1, risks and cut lines.
