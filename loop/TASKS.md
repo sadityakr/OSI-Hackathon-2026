@@ -22,7 +22,7 @@ Test commands (from the repo root):
   position_err, shape, is_substrate=False), `fit_peaks(x, y, ...)` (prominence-based detection on the
   baseline-corrected signal, grouped multi-Lorentzian fit with lmfit or scipy, uncertainties from the covariance).
   Accept: `::test_fit_recovers_exact_lorentzians`, `::test_fit_resolves_close_doublet`.
-- [ ] **T4 Pipeline.** `ramanlens/perception/pipeline.py`: `analyze_spectrum(spectrum) -> result` with `.peaks`,
+- [blocked: contract test_cosmic_rays_not_reported_as_peaks_on_dev crashes on json.loads of the free-text notes of exp dev cases (see Discovered); pipeline done, recall and Si acceptance tests green, same cosmic check green in tests/unit/test_pipeline.py] **T4 Pipeline.** `ramanlens/perception/pipeline.py`: `analyze_spectrum(spectrum) -> result` with `.peaks`,
   `.spikes`, `.baseline`; flags the Si line (520.7 +- 2 cm-1, narrow) as `is_substrate`. Accept:
   `::test_fit_recall_on_dev_single_cases`, `::test_cosmic_rays_not_reported_as_peaks_on_dev`,
   `test_library.py::test_si_substrate_line_is_flagged`.
@@ -73,3 +73,7 @@ Test commands (from the repo root):
 - Fix contract `test_perception.py::test_spike_removal_finds_injected_spike` (human only): `x = arange(100, 800, 1)` gives `x[300] = 400`, so the spike lands on the top of the 1000-count band at 400 cm-1; `y_clean[300] < 300` would require deleting that band, which the next assert forbids. Suggested fix: inject at `y[150]` (x = 250, flat) and keep the asserts. `remove_spikes` already finds the spike at 400 and restores the band (y_clean[300] = 1007).
 - For T4: `fit_peaks` on exp-graphene-01 reports bands at -32, 0.8 and 37.7 cm-1 (laser line and edge-filter region); the pipeline should ignore shifts below a cutoff (about 50 cm-1 or the first rise of the filter edge). syn-MoS2-01/02 give 412.9 plus 415.4 near A1g; check against the CRD modes whether that is a real pair or a split.
 - Human cleanup: `tests/unit/test_tmp_dev_fit_probe.py` has a misleading name (it is a kept slow regression test, fitter recall on dev); the loop cannot rename or delete files from the shell. Rename to `test_fit_dev.py`.
+- Fix contract `test_perception.py::test_cosmic_rays_not_reported_as_peaks_on_dev` (human only): it calls `json.loads(c["truth"]["notes"] or "{}")` on every dev single case, but exp-MoS2-01 and exp-graphene-01 have free-text notes, so it raises JSONDecodeError before calling the pipeline. Suggested fix: wrap the json.loads in try/except and skip those cases, as `tests/unit/test_pipeline.py::test_dev_cosmic_rays_found_and_not_fitted` does (green: all 3 dev cosmic rays found, none fitted).
+- T2 note: the spike contract test now passes (contract moved the spike to y[150]); T2's blocked mark is stale, both T2 acceptance tests are green.
+- Weak spot for T11: syn-WS2-01 A1g (weak, SNR about 4) is fitted at 414.3 cm-1 with FWHM 1.4 (at the new 1.5-pixel floor) instead of about 6; position is within tolerance, width is not trustworthy. exp-MoS2-01 fits 379.8 and 404.5 (about 3 cm-1 below the dataset means, as its README says).
+- Concurrent edit during T4: another session added a baseline offset correction to `perception/pipeline.py` (median of band-free ALS residual added to the baseline). Kept as found; it is covered by the T4 tests.
