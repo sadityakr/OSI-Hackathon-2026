@@ -46,7 +46,7 @@ Each stage ends with a commit and one LangSmith trace. Cut lines in order: T10 f
 
 - `src/ramanlens/` the toolkit: `tracing.py`, `perception/` (io, preprocess, fit, pipeline, library, polarization), `literature/` (reference tables, panels), `relations/`, `agent/toolset.py`. Built by the loop.
 - `iopic-bond/` literature MCP server package (`pip install -e "iopic-bond[parse]"`, then `iopic-bond doctor`).
-- `eval/` comparison harness; `eval/runs/` holds run outputs (gitignored on the PC).
+- `eval/` comparison harness; `eval/runs/` holds run outputs (gitignored).
 - `tests/` `contract/` and `eval/` are fixed specifications; the loop adds its own tests under `tests/unit/`. Run with `.venv/Scripts/python.exe -m pytest tests -q -m "not slow"`.
 - `loop/` `PROMPT.md`, `TASKS.md`, `settings.json`, `run_loop.ps1`.
 - `data/` `README.md` (provenance and catalog index), five catalogs, `get_data.ps1` (+ `-All`), `scripts/`, `test_set/`, `build_set/`, `raw/`.
@@ -68,8 +68,8 @@ Each stage ends with a commit and one LangSmith trace. Cut lines in order: T10 f
 ## Git
 
 - Public repo: https://github.com/sadityakr/osi-hackathon-2026 (MIT).
-- The PC working copy is on branch `master` with local commits (test set, eval, loop) not yet pushed; `origin/main` holds the cloud session's commits. Reconcile from the PC: `git fetch origin`, `git merge origin/main` (or rebase), then `git push origin master:main`.
-- The PC `.gitignore` excludes `data/raw/`, `scratch/`, `resources/src/`, `eval/runs/`, `loop/logs/`. Large files (the CRD zip, 2.4 GB of graphene data) cannot go to GitHub without LFS.
+- Histories reconciled on Oct 22 (merge commit `902177d`): the PC `master` and `origin/main` are one history again; push with `git push origin master:main`. Pull before editing shared files; the cloud session and the PC both write here.
+- `.gitignore` is tracked and excludes `.env`, `.venv/`, `data/raw/`, `scratch/`, `resources/src/`, `eval/runs/`, `loop/logs/`. Raw data (about 3.5 GB) is fetched by `data/get_data.ps1`, never committed. Stage files by name, never `git add -A`.
 
 ## Logistics
 
