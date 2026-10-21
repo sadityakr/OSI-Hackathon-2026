@@ -18,7 +18,7 @@ Test commands (from the repo root):
 - [blocked: contract test_spike_removal_finds_injected_spike is self-contradictory (see Discovered); module done, baseline test green] **T2 Preprocessing.** `ramanlens/perception/preprocess.py`: `remove_spikes(x, y) -> (y_clean, spike_positions)`
   (narrow outliers vs a median filter, never real peaks), `baseline_als(y, lam=1e5, p=0.01)` (asymmetric least
   squares, Eilers and Boelens 2005). Accept: `::test_spike_removal_finds_injected_spike`, `::test_baseline_als_removes_slope_keeps_peak`.
-- [ ] **T3 Peak fitting.** `ramanlens/perception/fit.py`: `Peak` dataclass (position, fwhm, height, area,
+- [x] **T3 Peak fitting.** `ramanlens/perception/fit.py`: `Peak` dataclass (position, fwhm, height, area,
   position_err, shape, is_substrate=False), `fit_peaks(x, y, ...)` (prominence-based detection on the
   baseline-corrected signal, grouped multi-Lorentzian fit with lmfit or scipy, uncertainties from the covariance).
   Accept: `::test_fit_recovers_exact_lorentzians`, `::test_fit_resolves_close_doublet`.
@@ -71,3 +71,5 @@ Test commands (from the repo root):
 (append tasks found while working; one line each, with the reason)
 
 - Fix contract `test_perception.py::test_spike_removal_finds_injected_spike` (human only): `x = arange(100, 800, 1)` gives `x[300] = 400`, so the spike lands on the top of the 1000-count band at 400 cm-1; `y_clean[300] < 300` would require deleting that band, which the next assert forbids. Suggested fix: inject at `y[150]` (x = 250, flat) and keep the asserts. `remove_spikes` already finds the spike at 400 and restores the band (y_clean[300] = 1007).
+- For T4: `fit_peaks` on exp-graphene-01 reports bands at -32, 0.8 and 37.7 cm-1 (laser line and edge-filter region); the pipeline should ignore shifts below a cutoff (about 50 cm-1 or the first rise of the filter edge). syn-MoS2-01/02 give 412.9 plus 415.4 near A1g; check against the CRD modes whether that is a real pair or a split.
+- Human cleanup: `tests/unit/test_tmp_dev_fit_probe.py` has a misleading name (it is a kept slow regression test, fitter recall on dev); the loop cannot rename or delete files from the shell. Rename to `test_fit_dev.py`.
