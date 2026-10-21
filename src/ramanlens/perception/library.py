@@ -3,8 +3,9 @@
 Identification is the first question the agent asks of an unknown spectrum. The general-purpose reference is the
 Computational Raman Database (CRD; Bagheri and Komsa 2023, Sci. Data 10, 80, CC BY 4.0): DFT frequencies, irreps
 and Raman tensors for 5,099 bulk crystals, of which the 385 layered ("2D") ones are loaded here. Curated literature
-mode tables (ramanlens.literature.reference_tables) take precedence for any material they cover, because measured
-positions beat DFT ones and some key materials (graphene, 2H-MoS2, CrSBr) are absent from the CRD.
+mode tables (ramanlens.literature.reference_tables) are scored alongside the CRD and win ties for any material they
+cover, because measured positions beat DFT ones and some key materials (graphene, 2H-MoS2, CrSBr) are absent from
+the CRD.
 
 Input: the CRD as `crd_2d.pkl` (pickle of the layered rows) or `crd.json` (full ASE JSON dump) in `data/raw/crd/`
 of the repository, or in the directory named by the environment variable RAMANLENS_CRD_DIR. For `match`, measured
@@ -331,7 +332,7 @@ def match(positions, intensities=None, top_k: int = 5, x_range: tuple[float, flo
     equal weights if None. x_range: the measured shift window (lo, hi), if known: every strong predicted mode
     inside it is expected, none outside. Otherwise predicted modes are fully expected within WINDOW_MARGIN_CM1 of
     the outermost peaks and weakly (OUTSIDE_WEIGHT) elsewhere. Returns at most top_k candidates, best first, one
-    per material (the best-scoring polytype); literature tables replace CRD entries of the same material.
+    per material (the best-scoring polytype or reference; a literature table wins a tie with a CRD entry).
     """
     pos = np.asarray(positions, dtype=float)
     if pos.size == 0:
@@ -343,16 +344,18 @@ def match(positions, intensities=None, top_k: int = 5, x_range: tuple[float, flo
     else:
         window, outside = (pos.min() - WINDOW_MARGIN_CM1, pos.max() + WINDOW_MARGIN_CM1), OUTSIDE_WEIGHT
     if library is None:
-        lit = literature_library()
-        covered = {_formula_key(e.material) for e in lit}
-        library = lit + [e for e in crd_library() if _formula_key(e.material) not in covered]
+        # Both references stay in the race for a material the literature covers: the measured table can sit a few
+        # cm-1 away from a strained or doped sample, or from a spectrum simulated from DFT, where the CRD entry with
+        # its fitted scale still matches. The better score per material wins; literature wins ties.
+        library = literature_library() + list(crd_library())
     best: dict[tuple, Candidate] = {}
     for e in library:
         c = score_entry(e, pos, w, window, outside)
         if c is None:
             continue
         k = _formula_key(e.material)
-        if k not in best or c.score > best[k].score:
+        if k not in best or c.score > best[k].score + 1e-9 or (
+                c.kind == "literature" and best[k].kind != "literature" and c.score >= best[k].score - 1e-9):
             best[k] = c
     ranked = sorted(best.values(), key=lambda c: c.score, reverse=True)
     return ranked[:top_k]
