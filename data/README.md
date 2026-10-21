@@ -41,6 +41,30 @@ Pitfall: irrep labels are per band, not per mode. Map through `IRbands`. The loa
 
 Consequence for the project: the CRD is a general-purpose matcher and the training set for the optional symmetry model, but the three demo materials (graphene, MoS2 2H, CrSBr) are covered by literature mode tables, not by the CRD. The curated literature tables in the relation registry are therefore not optional.
 
+## Layout and how to populate it
+
+Nothing in `data/raw/` is downloaded by the cloud session: arXiv, Zenodo, Mendeley, Dryad, RRUFF and Materials Cloud are all blocked from the sandbox. Everything is fetched on the PC by one script:
+
+```
+powershell -ExecutionPolicy Bypass -File data\get_data.ps1
+```
+
+It is idempotent and produces:
+
+```
+data/raw/crd/            CRD zip (moved here from data/) and crd.json
+data/raw/spectra/WS2/    Mendeley jsmbyfmck2, bjkct6pwx5 (CC BY 4.0)
+data/raw/spectra/graphene/  Zenodo 14883846 WITec txt exports (licence printed by the script)
+data/raw/spectra/CrSBr/  Zenodo 15048152 CrSBrPaper1.zip (CC BY 4.0), unzipped
+data/raw/spectra/rruff/  RRUFF excellent_oriented (minerals, general library)
+data/raw/pdfs/           11 key arXiv papers (CrSBr, MoS2, graphene) for figure grounding
+data/raw/parsed/         Docling output cache (filled by ramanlens.literature)
+data/raw/zenodo_search/  JSON hit lists for queries the sandbox could not run
+data/test_set/, data/build_set/  empty, filled during stages 2 and 4
+```
+
+Manual downloads (no stable API): Southampton ePrints xlsx (WS2 D0371, MoS2 416765), Dryad 5qfttdzm9 (strained graphene), VAMAS Zenodo 10008276 (609 MB), TUdatalib 4928/4929 (bot check). Put them under the matching `data/raw/spectra/<material>/` folder and add a line below.
+
 ## Public experimental spectra
 
-To be added as downloaded (source URL, licence, material, laser, substrate, what the paper says about the sample).
+Record each source as downloaded (source URL, licence, material, laser, substrate, what the paper says about the sample).
