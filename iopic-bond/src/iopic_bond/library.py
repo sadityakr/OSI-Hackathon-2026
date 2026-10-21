@@ -37,7 +37,10 @@ def figure_dicts(tree_path: Path) -> list[dict]:
     for f in figures_from_tree(root, doc_dir):
         rel = f.image_path.relative_to(doc_dir).as_posix() if f.image_path else None
         out.append({
-            "label": f.label or (f"Figure {_stem_number(rel)}" if rel else None),
+            # no invented label: crop file numbers are extraction order, not printed figure numbers
+            # (Lee 2010 has Figs. 1-4 plus an uncaptioned TOC graphic, cropped as fig5.png)
+            "label": f.label,
+            "image_ref": f"image {_stem_number(rel)}" if rel else None,
             "caption": f.caption,
             "page": f.page,
             "image_rel": rel,
@@ -60,10 +63,13 @@ def _figure_number(text: Optional[str]) -> Optional[str]:
 
 
 def find_figure(figures: list[dict], which: str) -> Optional[dict]:
-    """Match a figure by its printed number ("2", "Fig. 2", "Figure 2") or node id."""
+    """Match a figure by its printed number ("2", "Fig. 2", "Figure 2"), its ``image_ref``
+    ("image 5", for images without a caption) or its node id."""
     for f in figures:
-        if which == f.get("node_id"):
+        if which.strip().lower() in (f.get("node_id"), (f.get("image_ref") or "").lower()):
             return f
+    if which.strip().lower().startswith("image"):
+        return None
     want = _figure_number(which)
     if want is None:
         return None
