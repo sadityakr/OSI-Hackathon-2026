@@ -59,7 +59,7 @@ Test commands (from the repo root):
   lookup_reference_modes, list_relations, apply_relation. Every tool decorated with `@traced` from
   `ramanlens.tracing` using the span names in its docstring; every output carries provenance (source for
   literature values, method for measured ones). Accept: all of `test_toolset.py`; the full suite green.
-- [ ] **T10 Literature figure tools (optional).** If `iopic_bond` is importable (it lives in `iopic-bond/`, owned
+- [x] **T10 Literature figure tools (optional).** If `iopic_bond` is importable (it lives in `iopic-bond/`, owned
   by the collaborator; do not edit it), add thin wrappers find_papers and view_figure to the toolset. Otherwise
   mark `[blocked: iopic_bond not installed]`. Accept: a unit test in `tests/unit/` that skips when iopic_bond is absent.
 - [ ] **T11 Hardening on dev.** Run `.venv/Scripts/python.exe -m pytest tests -q`; for each remaining dev failure
@@ -84,3 +84,4 @@ Test commands (from the repo root):
 - Data gap from T8 (human check): Pawbake 2023 (arXiv 2211.12939) prints Ag2 at 257 cm-1 at room temperature in the text (p. 3), but its Fig. S1 shows the mode near 246 cm-1 at 300 K (read by a research agent, unresolved); the CrSBr table and the CrSBr relation window (236 to 262) cover both. DOIs of Lee 2012, Ferrari 2006 and Mondal 2025 were not verified, so those relation sources carry only the arXiv id.
 - For T9: `apply_relation` should call `registry.get(name).apply(**inputs)` and return `RelationResult.to_dict()`; `list_relations` can return `Relation.describe()` (JSON-safe, checked in tests/unit/test_relations_unit.py). Graphene strain/doping gives no carrier density in cm-2 (Lee 2012 prints no linear rate); a doping relation for n needs another source.
 - Weak spot for T11 (from T9): `match_library` takes positions only; the agent must drop the Si line itself (fit_peaks marks it `is_substrate`). The tool attaches `literature_table` to every candidate whose formula has a curated table, which addresses the CRD-outscores-Berkdemir note above at the agent level, not in the score.
+- From T10 (human check): `ramanlens/literature/figure_tools.py` withholds the papers excluded from tool building (arXiv 2503.15298, 2103.09004, 2006.05912 and DOI 10.1021/acs.nanolett.7b05184) from find_papers and view_figure; if the test-set exclusion list changes, update `EXCLUDED_ARXIV` / `EXCLUDED_DOI` there. The arXiv id of McDonnell 2018 is unknown, so a Bond record of it without DOI would pass. find_papers was not run against live Bond (only stubbed); view_figure was checked on the parsed Lee 2010 in `data/raw/iopic-bond`.
