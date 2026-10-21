@@ -22,3 +22,7 @@
 - Valency Bond MCP configured project-wide in `.mcp.json` (HTTP, OAuth); auth once per machine via `/mcp` in Claude Code.
 - No spectra or PDFs downloaded yet: every data host is blocked from the sandbox and the PC shell bridge is down. Added `data/get_data.ps1` (one-shot, idempotent): moves the CRD zip into `data/raw/crd/`, downloads CrSBr Zenodo 15048152, graphene Zenodo 14883846, WS2 Mendeley sets, RRUFF oriented, 11 key arXiv PDFs, and runs the Zenodo searches.
 - Three more Sonnet agents cataloged open Raman data across material classes: `data/catalog-series-quantum-magnetic.md`, `catalog-semiconductors-carbon-oxides.md`, `catalog-energy-polymers-minerals.md`; download blocks extracted to `data/scripts/` and wired into `get_data.ps1 -All`. Key find: CrSBr polarization and excitation series are open on the Heyrovsky datarepo (Sahu et al.). DataCite API is the discovery route that works from the sandbox.
+
+## 2026-10-22
+
+- 2026-10-22 loop T1: added `ramanlens/perception/io.py` (Spectrum, AngleSeries, read_spectrum, read_series) and `tests/unit/test_io.py`; fast suite 6 passed / 19 failed -> 12 passed / 17 failed (both T1 acceptance tests green, 4 new unit tests; all 13 dev cases read). Assumptions: files with more than two numeric columns use the first two; duplicate shift values are averaged; angle-series curves on different axes are linearly interpolated onto the first curve's axis over the common range; config labels are lower-cased.

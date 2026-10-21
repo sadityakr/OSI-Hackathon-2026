@@ -11,7 +11,7 @@ Test commands (from the repo root):
 
 ## Backlog
 
-- [ ] **T1 Readers.** `ramanlens/perception/io.py`: `Spectrum` (x, y, meta; x ascending), `AngleSeries`
+- [x] **T1 Readers.** `ramanlens/perception/io.py`: `Spectrum` (x, y, meta; x ascending), `AngleSeries`
   (x, spectra: dict[(config, angle_deg)] -> y on a common axis, meta), `read_spectrum(path)`, `read_series(path)`.
   Two-column csv/txt with or without header; long-format angle csv as in `data/test_set/README.md`.
   Accept: `test_perception.py::test_read_single_spectrum`, `::test_read_angle_series`.
