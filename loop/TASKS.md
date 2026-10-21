@@ -54,7 +54,7 @@ Test commands (from the repo root):
   graphene monolayer test from the 2D band shape (Ferrari et al. 2006, PRL 97, 187401), WS2 layer number
   (Berkdemir et al. 2013, Sci. Rep. 3, 1755), CrSBr Ag mode assignment with polarization axis (verify a source
   first; not Wdowik et al. 2025, which is held-out). Self-test inputs and outputs are numbers stated in the paper. Accept: all of `test_relations.py`.
-- [ ] **T9 Agent toolset.** `ramanlens/agent/toolset.py`: `TOOLS` (Anthropic tool definitions) and
+- [x] **T9 Agent toolset.** `ramanlens/agent/toolset.py`: `TOOLS` (Anthropic tool definitions) and
   `call(name, input, workdir) -> str` (JSON) for load_spectrum, fit_peaks, match_library, classify_polarization,
   lookup_reference_modes, list_relations, apply_relation. Every tool decorated with `@traced` from
   `ramanlens.tracing` using the span names in its docstring; every output carries provenance (source for
@@ -83,3 +83,4 @@ Test commands (from the repo root):
 - Data gap for T7 follow-up (human or agent with web access): graphene D and D' positions, monolayer MoSe2 and WSe2 positions, and the excitation wavelength behind the MoSe2 (Nam 2015) and WSe2 (Sahin 2013) bulk numbers were not in `docs/verified-reference-numbers.md`; tables leave them out (`omitted` field) or set laser_nm to null.
 - Data gap from T8 (human check): Pawbake 2023 (arXiv 2211.12939) prints Ag2 at 257 cm-1 at room temperature in the text (p. 3), but its Fig. S1 shows the mode near 246 cm-1 at 300 K (read by a research agent, unresolved); the CrSBr table and the CrSBr relation window (236 to 262) cover both. DOIs of Lee 2012, Ferrari 2006 and Mondal 2025 were not verified, so those relation sources carry only the arXiv id.
 - For T9: `apply_relation` should call `registry.get(name).apply(**inputs)` and return `RelationResult.to_dict()`; `list_relations` can return `Relation.describe()` (JSON-safe, checked in tests/unit/test_relations_unit.py). Graphene strain/doping gives no carrier density in cm-2 (Lee 2012 prints no linear rate); a doping relation for n needs another source.
+- Weak spot for T11 (from T9): `match_library` takes positions only; the agent must drop the Si line itself (fit_peaks marks it `is_substrate`). The tool attaches `literature_table` to every candidate whose formula has a curated table, which addresses the CRD-outscores-Berkdemir note above at the agent level, not in the score.

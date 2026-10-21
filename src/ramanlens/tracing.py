@@ -28,6 +28,9 @@ Span naming convention (keep stable, the evaluation notebook filters on these):
     preprocess.*                 baseline, cosmic, normalize
     fit_peaks                    peak detection and fitting
     match_library                CRD matcher
+    polarization.classify        angle-series pattern classification
+    literature.lookup            curated literature mode table
+    relation.list                relation registry query
     relation.<name>              one span per relation applied
     bond.<tool>                  each Valency MCP call
     figure.fetch / figure.extract / figure.select / figure.digitize
