@@ -14,20 +14,24 @@ classifier, literature tables, relation registry); every handler is wrapped in a
 Output: a JSON string. Measured values carry `provenance: "measured"` and the `method` that produced them;
 literature values carry `provenance: "literature"` and a `source` (citation, DOI or arXiv id, locator); relation
 results carry the relation's source paper. Bad input that the model can fix (unknown material, unknown relation,
-missing file) gives a JSON object with an `error` key and the valid options, not an exception.
+missing file) gives a JSON object with an `error` key and the valid options, not an exception. The one exception
+to the JSON string: view_figure with a figure returns a list of two content blocks (the JSON text and the PNG
+image), which the Anthropic API accepts as tool_result content, so the model sees the figure.
 
 Span names: io.read (load_spectrum), fit_peaks, match_library, polarization.classify, literature.lookup,
-relation.list, relation.<relation name> (apply_relation).
+relation.list, relation.<relation name> (apply_relation), literature.find_papers and figure.view (the optional
+literature figure tools, present only when the iopic_bond package is installed).
 """
 
 from __future__ import annotations
 
+import base64
 import json
 from pathlib import Path
 
 import numpy as np
 
-from ramanlens.literature import reference_tables
+from ramanlens.literature import figure_tools, reference_tables
 from ramanlens.perception.io import AngleSeries, Spectrum, read_series, read_spectrum
 from ramanlens.perception.library import match
 from ramanlens.perception.pipeline import analyze_spectrum
@@ -137,6 +141,40 @@ TOOLS = [
                                         "description": "Input name -> value, names and units as listed."}}},
     },
 ]
+
+# Optional literature figure tools, offered only when the iopic_bond package is installed.
+FIGURE_TOOLS = [
+    {
+        "name": "find_papers",
+        "description": "Find papers on a concept through Valency Bond (embedding search over arXiv, PubMed and "
+                       "more). Query by material and property, e.g. 'Raman mode assignment and polarization in "
+                       "CrSBr', never by peak positions or numbers (the search does not encode numbers). Returns id, "
+                       "title, year, DOI, whether figures can be extracted (`parseable`, arXiv only) and whether the "
+                       "paper is already parsed (`in_library`). Form a hypothesis from the spectrum first.",
+        "input_schema": {"type": "object", "additionalProperties": False, "required": ["query"],
+                         "properties": {
+                             "query": {"type": "string", "description": "Concept query: material plus property."},
+                             "limit": {"type": "integer", "description": "Number of papers (default 10, max 50)."},
+                             "start_date": {"type": "string",
+                                            "description": "Optional lower date bound, YYYY or YYYY-MM-DD."}}},
+    },
+    {
+        "name": "view_figure",
+        "description": "Look at a figure of an arXiv paper, e.g. its published Raman spectrum, to compare it with "
+                       "the measurement. Without `figure` it lists the paper's figures with captions; with a printed "
+                       "figure number ('2', 'Fig. 2') it returns the image plus caption, page and a citation string "
+                       "('Fig 2 of arXiv:<id>'). The first call on a paper downloads and parses it, which can take "
+                       "minutes; later calls are instant.",
+        "input_schema": {"type": "object", "additionalProperties": False, "required": ["arxiv_id"],
+                         "properties": {
+                             "arxiv_id": {"type": "string", "description": "arXiv id, e.g. '1005.2509'."},
+                             "figure": {"type": "string", "description": "Printed figure number; omit to list."},
+                             "max_px": {"type": "integer",
+                                        "description": "Longer image side in pixels (default 1200)."}}},
+    },
+]
+if figure_tools.AVAILABLE:
+    TOOLS += FIGURE_TOOLS
 
 
 # --------------------------------------------------------------------------------------------- helpers
@@ -336,6 +374,14 @@ def apply_relation(name: str, inputs: dict | None = None, workdir=None) -> dict:
     return out
 
 
+def find_papers(query: str, workdir=None, limit: int = 10, start_date: str | None = None) -> dict:
+    return figure_tools.find_papers(query, limit=limit, start_date=start_date)
+
+
+def view_figure(arxiv_id: str, workdir=None, figure: str | None = None, max_px: int = 1200) -> dict:
+    return figure_tools.view_figure(arxiv_id, figure=figure, max_px=max_px)
+
+
 _HANDLERS = {
     "load_spectrum": load_spectrum,
     "fit_peaks": fit_peaks,
@@ -345,15 +391,24 @@ _HANDLERS = {
     "list_relations": list_relations,
     "apply_relation": apply_relation,
 }
+if figure_tools.AVAILABLE:
+    _HANDLERS.update(find_papers=find_papers, view_figure=view_figure)
 
 
-def call(name: str, input: dict, workdir) -> str:
+def call(name: str, input: dict, workdir) -> str | list:
     """Run tool `name` with the model's input dict in `workdir` and return its JSON output as a string.
 
     Unknown tools raise KeyError; library errors propagate, and the runner reports them to the model as tool
     errors. Inputs the model can correct (unknown material or relation) come back as JSON with an `error` key.
+    A view_figure result that contains an image is returned as [text block, image block] instead of a string.
     """
     if name not in _HANDLERS:
         raise KeyError(f"unknown tool {name!r}; available: {', '.join(_HANDLERS)}")
     result = _HANDLERS[name](workdir=workdir, **(input or {}))
-    return json.dumps(result, default=str)
+    png = result.pop("png", None) if isinstance(result, dict) else None
+    text = json.dumps(result, default=str)
+    if png is None:
+        return text
+    return [{"type": "text", "text": text},
+            {"type": "image", "source": {"type": "base64", "media_type": "image/png",
+                                         "data": base64.b64encode(png).decode("ascii")}}]

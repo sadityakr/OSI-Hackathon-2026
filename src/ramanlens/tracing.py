@@ -33,6 +33,8 @@ Span naming convention (keep stable, the evaluation notebook filters on these):
     relation.list                relation registry query
     relation.<name>              one span per relation applied
     bond.<tool>                  each Valency MCP call
+    literature.find_papers       Bond paper search through iopic-Bond
+    figure.view                  one figure of a parsed paper (iopic-Bond library)
     figure.fetch / figure.extract / figure.select / figure.digitize
     llm                          every Anthropic call (via wrap_anthropic)
     report.write                 report assembly
