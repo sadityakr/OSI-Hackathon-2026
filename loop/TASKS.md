@@ -34,7 +34,7 @@ Test commands (from the repo root):
   frequency scale per candidate (DFT runs 0 to 3 % low) and a penalty for strong predicted modes that are missing.
   Curated literature tables (T7) take precedence over the CRD when they exist. Accept:
   `test_library.py::test_ws2_ranks_top3_from_textbook_peaks`, `::test_identify_top3_on_dev_single_cases`.
-- [ ] **T6 Polarization.** `ramanlens/perception/polarization.py`: `classify_curves(theta_deg, par, crossed)`
+- [x] **T6 Polarization.** `ramanlens/perception/polarization.py`: `classify_curves(theta_deg, par, crossed)`
   -> {"pattern", "max_parallel_angle_deg"} with the classes in `data/test_set/README.md` (fit a Fourier series in
   2 theta and 4 theta; robust to noise and to unknown sample rotation); `analyze_series(series)` fits peaks on the
   summed spectrum, extracts each peak's intensity per angle and config, classifies it. Accept: all of `test_polarization.py`.
