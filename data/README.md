@@ -63,6 +63,20 @@ data/raw/zenodo_search/  JSON hit lists for queries the sandbox could not run
 data/test_set/, data/build_set/  empty, filled during stages 2 and 4
 ```
 
+Broader coverage: `powershell -ExecutionPolicy Bypass -File data\get_data.ps1 -All` also runs the three scripts in `data/scripts/`, one per extra catalog. Each writes to `data/raw/spectra/<material>/` and lists landing-page-only records in `data/raw/spectra/MANUAL_DOWNLOADS.txt`. The strained-Ge set needs 7-Zip.
+
+## Catalog index
+
+| Catalog | Scope | Best picks |
+|---|---|---|
+| `catalog-graphene-tmd.md` | graphene, WS2, MoS2, other TMDs, h-BN | Mendeley WS2 sets, Zenodo 14883846 graphene txt, Southampton WS2 4 to 295 K |
+| `catalog-magnets-general.md` | CrSBr and 2D magnets, RRUFF, ROD, ML sets | Zenodo 15048152 CrSBr, RRUFF oriented |
+| `catalog-series-quantum-magnetic.md` | temperature, pressure, angle, field, strain and gating series | NiPS3/CoPS3 10 to 300 K (Zenodo 23300631, 20449397), CrSBr polarization and excitation series (Heyrovsky datarepo, DOIs 10.48700/datst.e94rx-q2q41, 10.48700/c819g-kjx76), 2M-WS2 Dataverse 10.7910/DVN/I9UNL7, MnSi2Te4 SciDB, Dryad WSe2/WS2 moire |
+| `catalog-semiconductors-carbon-oxides.md` | Si, Ge, GaN, SiC, carbons, oxides, perovskites | RRUFF zips, ROD rutile and hematite, Zenodo 15082447 strained Ge, flame soot series (Mendeley yyxsgk3nm3), Bi4Ge3O12 angle series (Zenodo 15316591) |
+| `catalog-energy-polymers-minerals.md` | batteries, catalysts, polymers, pharma, minerals, planetary, ML benchmarks | Cambridge operando Li-ion bundle, Dryad interphase library, Figshare 27931131, microplastic library Zenodo 17710809, DTU matching splits |
+
+Licence caution: several series sets are CC BY-NC or CC BY-NC-ND (SciDB, DRUM, Unicamp, Rice). They may be used for evaluation but should not be redistributed in derived form in the MIT repo. Mendeley records also reserve text-and-data-mining rights in their footer; follow each record's licence.
+
 Manual downloads (no stable API): Southampton ePrints xlsx (WS2 D0371, MoS2 416765), Dryad 5qfttdzm9 (strained graphene), VAMAS Zenodo 10008276 (609 MB), TUdatalib 4928/4929 (bot check). Put them under the matching `data/raw/spectra/<material>/` folder and add a line below.
 
 ## Public experimental spectra
