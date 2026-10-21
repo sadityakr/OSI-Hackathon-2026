@@ -38,7 +38,7 @@ Test commands (from the repo root):
   -> {"pattern", "max_parallel_angle_deg"} with the classes in `data/test_set/README.md` (fit a Fourier series in
   2 theta and 4 theta; robust to noise and to unknown sample rotation); `analyze_series(series)` fits peaks on the
   summed spectrum, extracts each peak's intensity per angle and config, classifies it. Accept: all of `test_polarization.py`.
-- [ ] **T7 Literature reference tables.** `ramanlens/literature/reference_tables.py`: `get_table(name)` for
+- [x] **T7 Literature reference tables.** `ramanlens/literature/reference_tables.py`: `get_table(name)` for
   graphene, 2H-MoS2, CrSBr, 2H-WS2 (add more if cheap: 2H-WSe2, 2H-MoSe2, hBN, black phosphorus). Each mode:
   position_cm1, label, irrep, conditions (laser, layers, temperature), source (doi or arxiv, locator = figure or
   table). Never use the papers listed as excluded in `data/test_set/README.md` (they hold held-out answers).
@@ -79,3 +79,5 @@ Test commands (from the repo root):
 - Concurrent edit during T4: another session added a baseline offset correction to `perception/pipeline.py` (median of band-free ALS residual added to the baseline). Kept as found; it is covered by the T4 tests.
 - For T7: `perception/library.literature_library()` imports `all_tables()` from `ramanlens.literature.reference_tables` (tables with `.name`, optional `.formula`, `.modes` with position_cm1, label, irrep, source, optional rel_intensity). Provide `all_tables()` so the matcher picks the tables up; exp-graphene-01 (the one dev identify miss, 7/8) needs the graphene table with D, G, 2D.
 - For T9: pass the spectrum's shift range as `match(..., x_range=(lo, hi))`; without it the matcher assumes strong modes far from the measured peaks are only weakly expected.
+- Weak spot for T11 (from T7): for a two-peak WS2 list (E2g, A1g) the CRD entry with its fitted scale outscores the Berkdemir table, because the table's 2LA(M) at 351 cm-1 sits unresolved under E2g and counts as partly missing; the candidate then cites the CRD, not the measured table. Options: treat modes within one match width of a matched mode as found, or let the agent tool attach the literature table whenever the formula has one.
+- Data gap for T7 follow-up (human or agent with web access): graphene D and D' positions, monolayer MoSe2 and WSe2 positions, and the excitation wavelength behind the MoSe2 (Nam 2015) and WSe2 (Sahin 2013) bulk numbers were not in `docs/verified-reference-numbers.md`; tables leave them out (`omitted` field) or set laser_nm to null.

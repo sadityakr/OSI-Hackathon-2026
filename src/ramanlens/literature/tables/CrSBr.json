@@ -1,0 +1,43 @@
+{
+  "name": "CrSBr",
+  "formula": "CrSBr",
+  "aliases": ["CrSBr", "chromium sulfide bromide"],
+  "conditions": {"laser_nm": [532, 633], "laser_eV": [2.33, 1.96], "layers": "4L", "substrate": "85 nm SiO2/Si",
+                 "temperature_K": 300},
+  "modes": [
+    {"position_cm1": 114.0, "label": "Ag1", "irrep": "Ag",
+     "source": {"citation": "Mondal et al. 2025, npj 2D Mater.", "doi": null, "arxiv": "2410.22164", "locator": "p.2 (text)"}},
+    {"position_cm1": 244.0, "label": "Ag2", "irrep": "Ag",
+     "source": {"citation": "Mondal et al. 2025, npj 2D Mater.", "doi": null, "arxiv": "2410.22164", "locator": "p.2 (text)"}},
+    {"position_cm1": 344.0, "label": "Ag3", "irrep": "Ag",
+     "source": {"citation": "Mondal et al. 2025, npj 2D Mater.", "doi": null, "arxiv": "2410.22164", "locator": "p.2 (text)"}}
+  ],
+  "layer_dependence": [
+    {"position_cm1": 117.0, "label": "Ag1", "irrep": "Ag", "conditions": {"layers": "bulk", "laser_nm": 633, "temperature_K": 300},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}},
+    {"position_cm1": 257.0, "label": "Ag2", "irrep": "Ag", "conditions": {"layers": "bulk", "laser_nm": 633, "temperature_K": 300},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}},
+    {"position_cm1": 345.0, "label": "Ag3", "irrep": "Ag", "conditions": {"layers": "bulk", "laser_nm": 633, "temperature_K": 300},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}},
+    {"position_cm1": 121.0, "label": "Ag1", "irrep": "Ag", "conditions": {"layers": "bulk", "laser_nm": 633, "temperature_K": 5},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}},
+    {"position_cm1": 254.0, "label": "Ag2", "irrep": "Ag", "conditions": {"layers": "bulk", "laser_nm": 633, "temperature_K": 5},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}},
+    {"position_cm1": 346.0, "label": "Ag3", "irrep": "Ag", "conditions": {"layers": "bulk", "laser_nm": 633, "temperature_K": 5},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}}
+  ],
+  "conditional_modes": [
+    {"position_cm1": 92.0, "label": "B2g", "irrep": "B2g", "conditions": {"layers": "bulk", "laser_nm": 633, "geometry": "sample tilted by 60 deg"},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}},
+    {"position_cm1": 194.0, "label": "B2g", "irrep": "B2g", "conditions": {"layers": "bulk", "laser_nm": 633, "geometry": "sample tilted by 60 deg"},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}},
+    {"position_cm1": 301.0, "label": "B2g", "irrep": "B2g", "conditions": {"layers": "bulk", "laser_nm": 633, "geometry": "sample tilted by 60 deg"},
+     "source": {"citation": "Pawbake et al. 2023, Phys. Rev. B 107, 075421", "doi": null, "arxiv": "2211.12939", "locator": "p.3 (text)"}}
+  ],
+  "notes": [
+    "Ag2 differs by about 13 cm-1 between the 4L flake of Mondal et al. (244) and the bulk crystal of Pawbake et al. (257): check thickness and source before using Ag2 for identification.",
+    "B2g modes appear only with the sample tilted by 60 deg (Pawbake et al. 2023), so they are not expected in normal-incidence backscattering on the layer.",
+    "Wdowik et al. 2025 is not used: it holds held-out evaluation answers."
+  ],
+  "omitted": []
+}
