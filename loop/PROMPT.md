@@ -19,7 +19,9 @@ assumptions into LOG.md.
    no previously passing test fails.
 5. Mark the task `[x]` (or `[blocked: <reason>]` after a genuine attempt), append one dated line to `LOG.md`
    (`- <ISO time> loop T<n>: <what was done, test counts before -> after, assumptions>`), and commit:
-   `git add -A` then `git commit -m "loop T<n>: <summary>"`. Never add a Co-Authored-By line.
+   `git add src tests/unit loop/TASKS.md LOG.md` (plus `docs/tool-status.md` in T11), then
+   `git commit -m "loop T<n>: <summary>"`. Never `git add -A` or `git add .`: the repo may have no .gitignore,
+   and `.env`, `.venv/`, `data/raw/`, `eval/runs/`, `loop/logs/` must never be committed. Never add a Co-Authored-By line.
 6. Stop. Do not start the next task.
 
 ## Rules that are enforced (permission deny rules) and must not be worked around
