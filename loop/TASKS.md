@@ -26,7 +26,7 @@ Test commands (from the repo root):
   `.spikes`, `.baseline`; flags the Si line (520.7 +- 2 cm-1, narrow) as `is_substrate`. Accept:
   `::test_fit_recall_on_dev_single_cases`, `::test_cosmic_rays_not_reported_as_peaks_on_dev`,
   `test_library.py::test_si_substrate_line_is_flagged`.
-- [ ] **T5 Reference library and matcher.** `ramanlens/perception/library.py`: load the CRD
+- [x] **T5 Reference library and matcher.** `ramanlens/perception/library.py`: load the CRD
   (`data/raw/crd/crd.json`, or cache a 2D subset; note `raman_tensors` can be a list or a dict keyed by mode index,
   and irrep labels are per band through `IRbands`; `scratch/crd/crd_loader.py` is a buggy starting point). Compute
   which modes are visible in backscattering along the layer normal (in-plane tensor components). `match(positions,
@@ -77,3 +77,5 @@ Test commands (from the repo root):
 - T2 note: the spike contract test now passes (contract moved the spike to y[150]); T2's blocked mark is stale, both T2 acceptance tests are green.
 - Weak spot for T11: syn-WS2-01 A1g (weak, SNR about 4) is fitted at 414.3 cm-1 with FWHM 1.4 (at the new 1.5-pixel floor) instead of about 6; position is within tolerance, width is not trustworthy. exp-MoS2-01 fits 379.8 and 404.5 (about 3 cm-1 below the dataset means, as its README says).
 - Concurrent edit during T4: another session added a baseline offset correction to `perception/pipeline.py` (median of band-free ALS residual added to the baseline). Kept as found; it is covered by the T4 tests.
+- For T7: `perception/library.literature_library()` imports `all_tables()` from `ramanlens.literature.reference_tables` (tables with `.name`, optional `.formula`, `.modes` with position_cm1, label, irrep, source, optional rel_intensity). Provide `all_tables()` so the matcher picks the tables up; exp-graphene-01 (the one dev identify miss, 7/8) needs the graphene table with D, G, 2D.
+- For T9: pass the spectrum's shift range as `match(..., x_range=(lo, hi))`; without it the matcher assumes strong modes far from the measured peaks are only weakly expected.
