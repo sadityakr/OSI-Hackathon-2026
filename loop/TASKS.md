@@ -15,7 +15,7 @@ Test commands (from the repo root):
   (x, spectra: dict[(config, angle_deg)] -> y on a common axis, meta), `read_spectrum(path)`, `read_series(path)`.
   Two-column csv/txt with or without header; long-format angle csv as in `data/test_set/README.md`.
   Accept: `test_perception.py::test_read_single_spectrum`, `::test_read_angle_series`.
-- [ ] **T2 Preprocessing.** `ramanlens/perception/preprocess.py`: `remove_spikes(x, y) -> (y_clean, spike_positions)`
+- [blocked: contract test_spike_removal_finds_injected_spike is self-contradictory (see Discovered); module done, baseline test green] **T2 Preprocessing.** `ramanlens/perception/preprocess.py`: `remove_spikes(x, y) -> (y_clean, spike_positions)`
   (narrow outliers vs a median filter, never real peaks), `baseline_als(y, lam=1e5, p=0.01)` (asymmetric least
   squares, Eilers and Boelens 2005). Accept: `::test_spike_removal_finds_injected_spike`, `::test_baseline_als_removes_slope_keeps_peak`.
 - [ ] **T3 Peak fitting.** `ramanlens/perception/fit.py`: `Peak` dataclass (position, fwhm, height, area,
@@ -69,3 +69,5 @@ Test commands (from the repo root):
 ## Discovered
 
 (append tasks found while working; one line each, with the reason)
+
+- Fix contract `test_perception.py::test_spike_removal_finds_injected_spike` (human only): `x = arange(100, 800, 1)` gives `x[300] = 400`, so the spike lands on the top of the 1000-count band at 400 cm-1; `y_clean[300] < 300` would require deleting that band, which the next assert forbids. Suggested fix: inject at `y[150]` (x = 250, flat) and keep the asserts. `remove_spikes` already finds the spike at 400 and restores the band (y_clean[300] = 1007).
