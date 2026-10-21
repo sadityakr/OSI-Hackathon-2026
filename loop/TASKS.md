@@ -45,7 +45,7 @@ Test commands (from the repo root):
   **Every number must be read from the source** (Valency Bond search, arXiv abstract or full text); never
   from memory. If a number cannot be verified, leave the mode out and note it. Store tables as JSON in
   `ramanlens/literature/tables/`. Accept: `test_library.py::test_reference_tables_for_demo_materials`.
-- [ ] **T8 Relation registry.** `ramanlens/relations/`: `Relation` (name, material, inputs, outputs, equation with
+- [x] **T8 Relation registry.** `ramanlens/relations/`: `Relation` (name, material, inputs, outputs, equation with
   all variables defined, validity, source with locator, self_tests, out_of_range_example, `apply(**inputs)` ->
   result with `.applicable`, `.reason`, values), `registry.all_relations()`, `find(material=..., input_quantity=...)`,
   `run_self_tests()`. Seed six, each from its paper: MoS2 layer number from the E2g-A1g separation (Lee et al.
@@ -81,3 +81,5 @@ Test commands (from the repo root):
 - For T9: pass the spectrum's shift range as `match(..., x_range=(lo, hi))`; without it the matcher assumes strong modes far from the measured peaks are only weakly expected.
 - Weak spot for T11 (from T7): for a two-peak WS2 list (E2g, A1g) the CRD entry with its fitted scale outscores the Berkdemir table, because the table's 2LA(M) at 351 cm-1 sits unresolved under E2g and counts as partly missing; the candidate then cites the CRD, not the measured table. Options: treat modes within one match width of a matched mode as found, or let the agent tool attach the literature table whenever the formula has one.
 - Data gap for T7 follow-up (human or agent with web access): graphene D and D' positions, monolayer MoSe2 and WSe2 positions, and the excitation wavelength behind the MoSe2 (Nam 2015) and WSe2 (Sahin 2013) bulk numbers were not in `docs/verified-reference-numbers.md`; tables leave them out (`omitted` field) or set laser_nm to null.
+- Data gap from T8 (human check): Pawbake 2023 (arXiv 2211.12939) prints Ag2 at 257 cm-1 at room temperature in the text (p. 3), but its Fig. S1 shows the mode near 246 cm-1 at 300 K (read by a research agent, unresolved); the CrSBr table and the CrSBr relation window (236 to 262) cover both. DOIs of Lee 2012, Ferrari 2006 and Mondal 2025 were not verified, so those relation sources carry only the arXiv id.
+- For T9: `apply_relation` should call `registry.get(name).apply(**inputs)` and return `RelationResult.to_dict()`; `list_relations` can return `Relation.describe()` (JSON-safe, checked in tests/unit/test_relations_unit.py). Graphene strain/doping gives no carrier density in cm-2 (Lee 2012 prints no linear rate); a doping relation for n needs another source.
