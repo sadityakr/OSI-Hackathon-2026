@@ -88,30 +88,39 @@ def _groups(candidates, merge_factor: float = 3.0):
     return groups
 
 
-def _fit_group(x, signal, group, dx: float, window_factor: float = 6.0):
-    """Fit one group of candidates; returns a list of Peak (initial estimates without errors if the fit fails)."""
-    lo = min(p - window_factor * w for p, w, _ in group)
-    hi = max(p + window_factor * w for p, w, _ in group)
+def _fit_group(x, signal, group, dx: float, window_factor: float = 6.0, window=None, maxfev: int = 20000):
+    """Fit one group of candidates; returns (peaks, rss, n_points, window).
+
+    peaks are initial estimates without errors (and rss is inf) if the fit fails. window = (lo, hi) fixes the fit
+    range, so two models of the same group can be compared on the same points.
+    """
+    if window is None:
+        window = (min(p - window_factor * w for p, w, _ in group), max(p + window_factor * w for p, w, _ in group))
+    lo, hi = window
     m = (x >= lo) & (x <= hi)
     xs, ys = x[m], signal[m]
     x_ref = 0.5 * (lo + hi)
     p0 = [float(np.min(ys)) if ys.size else 0.0, 0.0, x_ref]
     lower = [-np.inf, -np.inf, x_ref - 1e-9]
     upper = [np.inf, np.inf, x_ref + 1e-9]
+    # A band narrower than about 1.5 pixels FWHM is not resolved by the detector (spikes are already removed), and
+    # letting the width go below that lets the fit park a tall, sub-pixel "peak" between two noisy samples.
+    min_fwhm = 1.5 * dx
     for p, w, h in group:
         shift = max(w, 3 * dx)
-        p0 += [p, w, max(h, 1e-12)]
-        lower += [p - shift, 0.5 * dx, 0.0]
+        p0 += [p, max(w, min_fwhm), max(h, 1e-12)]
+        lower += [p - shift, min_fwhm, 0.0]
         upper += [p + shift, 10 * w, np.inf]
 
     n_free = len(p0) - 1  # x_ref is pinned
+    unfitted = [Peak(p, w, h, np.pi / 2 * h * w) for p, w, h in group]
     if xs.size <= n_free:
-        return [Peak(p, w, h, np.pi / 2 * h * w) for p, w, h in group]
+        return unfitted, np.inf, xs.size, window
     try:
-        popt, pcov = curve_fit(_group_model, xs, ys, p0=p0, bounds=(lower, upper), maxfev=20000)
+        popt, pcov = curve_fit(_group_model, xs, ys, p0=p0, bounds=(lower, upper), maxfev=maxfev)
         perr = np.sqrt(np.clip(np.diag(pcov), 0, None))
     except (RuntimeError, ValueError):
-        return [Peak(p, w, h, np.pi / 2 * h * w) for p, w, h in group]
+        return unfitted, np.inf, xs.size, window
 
     peaks = []
     for k in range(3, len(popt), 3):
@@ -119,13 +128,51 @@ def _fit_group(x, signal, group, dx: float, window_factor: float = 6.0):
         ep, ew, eh = (float(v) if np.isfinite(v) else None for v in perr[k:k + 3])
         peaks.append(Peak(position=pos, fwhm=w, height=h, area=np.pi / 2 * h * w,
                           position_err=ep, fwhm_err=ew, height_err=eh))
+    rss = float(np.sum((ys - _group_model(xs, *popt)) ** 2))
+    return peaks, rss, xs.size, window
+
+
+def _bic(rss: float, n: int, n_params: int) -> float:
+    """Bayesian information criterion for a least-squares fit with Gaussian noise (Schwarz 1978, Ann. Stat. 6, 461)."""
+    return n * np.log(max(rss, 1e-300) / n) + n_params * np.log(n)
+
+
+def _merge_unresolved(x, signal, peaks, rss, n, window, dx):
+    """Replace pairs of overlapping components by one band when the data do not support two.
+
+    Noise on a single broad band can make the fit split it into two components closer than their linewidths
+    (for example 412.9 and 415.4 cm-1 on one flat-topped band). For each adjacent pair closer than their mean
+    FWHM, the group is refitted with the pair merged; the merged model is kept when its BIC is not worse.
+    A genuinely resolved doublet (separation above the linewidth) is never a candidate.
+    """
+    while len(peaks) > 1 and np.isfinite(rss):
+        peaks = sorted(peaks, key=lambda p: p.position)
+        best = None
+        for i in range(len(peaks) - 1):
+            a, b = peaks[i], peaks[i + 1]
+            if b.position - a.position >= 0.5 * (a.fwhm + b.fwhm):
+                continue
+            hsum = max(a.height + b.height, 1e-12)
+            merged = ((a.position * a.height + b.position * b.height) / hsum,
+                      max(a.fwhm, b.fwhm) + (b.position - a.position), max(a.height, b.height))
+            group = [(p.position, p.fwhm, p.height) for j, p in enumerate(peaks) if j not in (i, i + 1)]
+            # A trial merge that does not converge quickly is not a better description of the data: cap the
+            # evaluations so it fails (rss = inf, merge rejected) instead of iterating for a minute.
+            new_peaks, new_rss, _, _ = _fit_group(x, signal, group + [merged], dx, window=window, maxfev=2000)
+            k = 2 + 3 * len(peaks)  # linear background plus three per peak
+            if _bic(new_rss, n, k - 3) <= _bic(rss, n, k) and (best is None or new_rss < best[1]):
+                best = (new_peaks, new_rss)
+        if best is None:
+            break
+        peaks, rss = best
     return peaks
 
 
 def _fit_all(x, signal, candidates, dx):
     peaks = []
     for g in _groups(candidates):
-        peaks.extend(_fit_group(x, signal, g, dx))
+        group_peaks, rss, n, window = _fit_group(x, signal, g, dx)
+        peaks.extend(_merge_unresolved(x, signal, group_peaks, rss, n, window, dx))
     return peaks
 
 
