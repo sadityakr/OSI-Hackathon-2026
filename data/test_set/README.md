@@ -98,3 +98,20 @@ Classes are computed numerically from the generated curves in synthetic cases (s
 
 - Synthetic cases come from the same database the tooled agent's matcher uses. They test the pipeline and the polarization logic with exact truth, but they flatter the matcher. To reduce this, the generator applies a random frequency scale of 1.000 to 1.025 (CRD frequencies run 0 to 3 % below experiment for WS2, WSe2, MoS2, HfS2), position jitter, dropped weak modes, noise, a baseline and cosmic spikes. The experimental cases are the fair test of identification.
 - Experimental truth is the interpretation published by the dataset's authors, not an independent measurement.
+
+## Experimental cases and their source papers (curated 2026-10-21)
+
+| Split | Cases | Dataset | Paper that interprets it |
+|---|---|---|---|
+| dev | exp-graphene-01 | Zenodo 14883846 (CC BY 4.0), file `S1/FigS1D Au exported_Raman.txt` | Bukvisova et al. 2025, arXiv:2503.04327, Fig. S1D. Peak positions read from the data by the curator, not stated by the authors; no laser wavelength or layer number given. |
+| dev | exp-MoS2-01 | Southampton eprints 488525 (D2829, CC BY 4.0) | Zeimpekis et al., ACS Appl. Energy Mater., doi:10.1021/acsaem.3c03055 (paper not read; truth = dataset's fitted means over spots, this spot is about 3 cm-1 lower). Normalized, 350 to 451 cm-1 only. |
+| heldout | exp-WS2-01, -02 | Southampton D0371 = eprints 416765 (CC BY 4.0), `RRS_Spectra.xlsx` | McDonnell et al. 2018, Nano Lett., doi:10.1021/acs.nanolett.7b05184, Fig. 1a. Resonance excitation (599 and 614 nm), monolayer. |
+| heldout | exp-MoSe2-01 | Southampton eprints 449632 (D1747, CC BY 4.0) | Viner et al. 2021, 2D Mater. 8, 035047, arXiv:2103.09004. Processed (parallel minus crossed), resonance, 4 K, hBN-encapsulated. |
+| heldout | exp-WSe2-01 | Southampton eprints 449632 (D1747) | Peak position from McDonnell et al. 2020, arXiv:2006.05912 (companion paper; cross-paper transfer). |
+| heldout | exp-CrSBr-01 to -05 | Zenodo 15048152 (CC BY 4.0) | Wdowik et al. 2025, arXiv:2503.15298, Fig. 3, Fig. 5, Table A3. 03/04 are one 6L flake above and below T_N; 05 is the bulk negative control. Circular, not linear, polarization. |
+
+Rejected: `rejected/exp-graphene-02` (D, G, 2D barely above background; truth positions not trustworthy).
+
+**Papers excluded from building tools.** Reference tables and relations (`src/ramanlens/literature/`, `src/ramanlens/relations/`) must not take numbers from the papers behind held-out cases: McDonnell et al. 2018 (WS2), Viner et al. 2021 (MoSe2), McDonnell et al. 2020 (WSe2), Wdowik et al. 2025 (CrSBr). Otherwise the tools arm would be checked against its own source.
+
+**Precision on experimental cases.** Truth lists only peaks the paper assigns. Real but unassigned peaks (CrSBr 1L near 302 cm-1, MoSe2 resonance features at 280 to 320 cm-1) count against `peak_precision`, so report precision for synthetic cases only.

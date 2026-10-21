@@ -113,6 +113,7 @@ class Store:
         """Store a finished parse: ``meta.json`` in the folder, then the index rows."""
         meta = {**meta, "base_id": base_id, "content_hash": content_hash,
                 "parser_version": parser_version, "status": "parsed", "n_figures": len(figures)}
+        self.paper_dir(base_id).mkdir(parents=True, exist_ok=True)
         (self.paper_dir(base_id) / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
         self._upsert(base_id, meta)
         self._index_figures(base_id, meta.get("title") or "", figures)

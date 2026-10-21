@@ -144,7 +144,7 @@ async def ingest_paper(arxiv_id: str, force: bool = False) -> dict:
         "status": result["status"],
         "paper": _paper_brief(result["paper"]),
         "outline": library.outline(Path(result["tree_path"])),
-        "figures": [{"label": f["label"], "caption": _clip(f["caption"], 200)} for f in figs],
+        "figures": [{"label": _name(f), "caption": _clip(f["caption"], 200)} for f in figs],
     }
 
 
@@ -163,7 +163,7 @@ def list_figures(arxiv_id: str) -> dict:
         "status": "ok",
         "paper": _paper_brief(row),
         "figures": [{
-            "label": f["label"],
+            "label": _name(f),
             "page": f["page"],
             "caption": f["caption"],
             "mentions": [_clip(m, 300) for m in f["mentions"][:3]],
@@ -187,14 +187,14 @@ def view_figure(arxiv_id: str, figure: str, max_px: int = 1200) -> list:
     figs = library.figure_dicts(tree)
     f = library.find_figure(figs, figure)
     if f is None:
-        return [{"status": "not_found", "available": [x["label"] for x in figs]}]
+        return [{"status": "not_found", "available": [_name(x) for x in figs]}]
     if not f["image_path"]:
-        return [{"status": "image_missing", "label": f["label"], "caption": f["caption"]}]
+        return [{"status": "image_missing", "label": _name(f), "caption": f["caption"]}]
     info = {
         "status": "ok",
-        "cite_as": f"{f['label']} of arXiv:{row['base_id']}",
+        "cite_as": f"{f['label'] or 'uncaptioned ' + f['image_ref'] + ', p. ' + str(f['page'])} of arXiv:{row['base_id']}",
         "paper": _paper_brief(row),
-        "label": f["label"],
+        "label": _name(f),
         "page": f["page"],
         "caption": f["caption"],
         "image_path": f["image_path"],
@@ -255,3 +255,8 @@ def _png_bytes(path: str, max_px: int) -> bytes:
         buf = io.BytesIO()
         im.save(buf, format="PNG", optimize=True)
         return buf.getvalue()
+
+
+def _name(f: dict) -> str:
+    """The printed label ("Fig 2"), or "image N (no caption)" for an uncaptioned image."""
+    return f["label"] or f"{f['image_ref']} (no caption)"

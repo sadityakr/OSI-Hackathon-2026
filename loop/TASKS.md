@@ -41,7 +41,8 @@ Test commands (from the repo root):
 - [ ] **T7 Literature reference tables.** `ramanlens/literature/reference_tables.py`: `get_table(name)` for
   graphene, 2H-MoS2, CrSBr, 2H-WS2 (add more if cheap: 2H-WSe2, 2H-MoSe2, hBN, black phosphorus). Each mode:
   position_cm1, label, irrep, conditions (laser, layers, temperature), source (doi or arxiv, locator = figure or
-  table). **Every number must be read from the source** (Valency Bond search, arXiv abstract or full text); never
+  table). Never use the papers listed as excluded in `data/test_set/README.md` (they hold held-out answers).
+  **Every number must be read from the source** (Valency Bond search, arXiv abstract or full text); never
   from memory. If a number cannot be verified, leave the mode out and note it. Store tables as JSON in
   `ramanlens/literature/tables/`. Accept: `test_library.py::test_reference_tables_for_demo_materials`.
 - [ ] **T8 Relation registry.** `ramanlens/relations/`: `Relation` (name, material, inputs, outputs, equation with
@@ -52,7 +53,7 @@ Test commands (from the repo root):
   11, 3190), graphene strain and doping from the G and 2D positions (Lee et al. 2012, Nat. Commun. 3, 1024),
   graphene monolayer test from the 2D band shape (Ferrari et al. 2006, PRL 97, 187401), WS2 layer number
   (Berkdemir et al. 2013, Sci. Rep. 3, 1755), CrSBr Ag mode assignment with polarization axis (verify a source
-  first). Self-test inputs and outputs are numbers stated in the paper. Accept: all of `test_relations.py`.
+  first; not Wdowik et al. 2025, which is held-out). Self-test inputs and outputs are numbers stated in the paper. Accept: all of `test_relations.py`.
 - [ ] **T9 Agent toolset.** `ramanlens/agent/toolset.py`: `TOOLS` (Anthropic tool definitions) and
   `call(name, input, workdir) -> str` (JSON) for load_spectrum, fit_peaks, match_library, classify_polarization,
   lookup_reference_modes, list_relations, apply_relation. Every tool decorated with `@traced` from
