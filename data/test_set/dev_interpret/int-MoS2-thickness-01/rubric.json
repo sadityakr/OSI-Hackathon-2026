@@ -1,0 +1,77 @@
+{
+  "case_id": "int-MoS2-thickness-01",
+  "source": {
+    "paper": "Lee, Yan, Brus, Heinz, Hone, Ryu 2010, Anomalous lattice vibrations of single- and few-layer MoS2, ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509",
+    "dataset": "synthetic (eval/synth/make_interpret_dev.py)",
+    "locator": "Fig. 2a,b (positions vs N), p.3-4 text (trends, intensity, widths), Methods p.5"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 2,
+      "text": "E2g1 softens (moves down) and A1g stiffens (moves up) with increasing thickness, so the mode separation grows with layer number",
+      "locator": "Lee 2010 p.3, Fig. 2a,b"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 2,
+      "text": "Flake B is a monolayer (separation about 19.1 cm-1) and flake A a bilayer (about 21.4 cm-1); the 1L to 2L step of 2 to 3 cm-1 is the most robust distinction",
+      "locator": "Lee 2010 Fig. 2b; p.3 (Delta(1L) about 3 cm-1 smaller than 2L)"
+    },
+    {
+      "id": "n2",
+      "kind": "quantitative",
+      "weight": 2,
+      "text": "Flakes D (about 24.3 cm-1) and C (about 25.2 cm-1) are 4 layers or thicker, C the thicker or bulk-like one; the separation converges to bulk from about 4 layers, so these two can only be bounded, not counted, from positions alone",
+      "locator": "Lee 2010 p.3 ('for films of four or more layers, the frequencies of both modes converge to the bulk values'), Fig. 2b"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Absolute Raman intensity is not a layer-number measure on SiO2/Si: optical interference makes the intensity rise up to about 4 layers and then fall, and a monolayer can be stronger than bulk",
+      "locator": "Lee 2010 p.4, Fig. 3a"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Strain and doping also shift the modes and therefore the separation (uniaxial strain softens E' by about 4.5 cm-1/% with A' nearly unchanged; electron doping softens and broadens A1g), so a separation shift of 1 cm-1 is not a unique thickness signal",
+      "locator": "Conley et al. 2013, Nano Lett. 13, 3626, arXiv:1305.3880, text; Chakraborty et al. 2012, Phys. Rev. B 85, 161403, arXiv:1206.1758, text"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 1,
+      "text": "A1g is broader for the few-layer flakes (largest near the bilayer) than for the thick flake, while E2g1 width stays about 2 cm-1",
+      "locator": "Lee 2010 p.4, Fig. 3b"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Checks or asks about the frequency calibration, using the Si line near 520 cm-1 as an internal reference (sub-cm-1 differences matter here)",
+      "locator": "Lee 2010 Methods p.5 (Si band at 520 cm-1 used as internal frequency reference)"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 1,
+      "text": "Assigns layer numbers from absolute or relative peak intensity alone"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "States that E2g1 stiffens with thickness, or that the separation shrinks with thickness"
+    },
+    {
+      "id": "w3",
+      "penalty": 1,
+      "text": "Treats the one- or two-pixel spike near 265.1 cm-1 in flake C as a Raman band"
+    }
+  ],
+  "notes": "Synthetic. Truth: flake A = 2, flake B = 1, flake C = bulk, flake D = 4 (bulk means Lee's bulk values). Positions from Lee 2010 Fig. 2b at 514.5 nm (verified reading +-0.3 cm-1), jittered 0.1 cm-1. Widths: E2g1 2.1 cm-1 (p.4); A1g {1: 5.0, 2: 6.0, 4: 4.5, 'bulk': 3.0} (2L and bulk end points from p.4, 1L and 4L curator interpolations). A1g areas 1:2:4 for 1L:2L:4L and 0.7 for bulk follow Lee's statement (rise to 4L, 1L stronger than bulk), values curator. E2g/A1g area ratio 1.0 for all (curator, not scored). Si at 520.0 cm-1 (Lee's reference), attenuated under the thick flake (curator). Cosmic spike placed by the generator. The case brief asked for 532 nm; Lee's thickness values (Fig. 2b) are at 514.5 nm, so the case uses 514.5 nm."
+}

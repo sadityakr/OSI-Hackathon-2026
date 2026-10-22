@@ -1,0 +1,58 @@
+{
+  "case_id": "int-MoS2-calibration-01",
+  "source": {
+    "paper": "Lee, Yan, Brus, Heinz, Hone, Ryu 2010, Anomalous lattice vibrations of single- and few-layer MoS2, ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509; Chakraborty et al. 2012, Phys. Rev. B 85, 161403, arXiv:1206.1758; Conley et al. 2013, Nano Lett. 13, 3626, arXiv:1305.3880",
+    "dataset": "synthetic (eval/synth/make_interpret_dev.py)",
+    "locator": "Lee 2010 Fig. 2b and Methods p.5; Chakraborty text; Conley text"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 2,
+      "text": "Both E2g1 and A1g sit about 2.5 cm-1 higher on day 2, by the same amount, so the mode separation is unchanged (about 21.4 cm-1)",
+      "locator": "measured; Lee 2010 Fig. 2b"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 3,
+      "text": "The Si substrate line moved by the same +2.5 cm-1 (from about 520 to 522.5 cm-1); Si is a fixed reference, so the rigid shift is a spectrometer calibration offset, not a change of the flake",
+      "locator": "Lee 2010 Methods p.5 (Si 520 cm-1 used as internal frequency reference)"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 2,
+      "text": "After referencing each spectrum to Si, the MoS2 positions agree within the fit uncertainty, and the separation (about 21.4 cm-1) points to a bilayer on both days",
+      "locator": "Lee 2010 Fig. 2b"
+    },
+    {
+      "id": "f3",
+      "kind": "finding",
+      "weight": 1,
+      "text": "No sign of doping or strain after correction: electron doping would soften and broaden A1g, and strain would shift E2g1 much more than A1g; neither is seen and the widths are unchanged",
+      "locator": "Chakraborty et al. 2012, Phys. Rev. B 85, 161403, arXiv:1206.1758; Conley et al. 2013, Nano Lett. 13, 3626, arXiv:1305.3880"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks whether the spectrometer, grating position or calibration changed between the days, or recommends recording a reference line (Si or a lamp) with every session",
+      "locator": "Lee 2010 Methods p.5"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 2,
+      "text": "Interprets the day-2 shift as strain (for example compressive) or doping by adsorbates"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Reports a change of layer number or of crystal quality between the days"
+    }
+  ],
+  "notes": "Synthetic. Both spectra: bilayer MoS2 from Lee 2010 Fig. 2b (E2g1 383.4, A1g 404.8 cm-1) with independent 0.1 cm-1 jitter, Si at 520.0 cm-1. Day 2: every line including Si shifted by +2.5 cm-1 (curator), widths and intensities unchanged apart from noise and baseline."
+}

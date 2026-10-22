@@ -1,0 +1,79 @@
+{
+  "case_id": "int-MoSe2-resonance-01",
+  "source": {
+    "paper": "McDonnell, Viner, Rivera, Xu, Smith 2020, 'Direct Observation of Intravalley Phonon Scattering of 2s Excitons in MoSe2 and WSe2 Monolayers', arXiv:2006.05912 (published 2D Mater. 2020); Viner, McDonnell, Ruiz-Tijerina, Rivera, Xu, Fal'ko, Smith 2021, 'Excited Rydberg States in TMD Heterostructures', 2D Mater. 8, 035047, arXiv:2103.09004",
+    "dataset": "https://doi.org/10.5258/SOTON/D1747 (MoSe2_Data.xlsx, sheets 'Processed B2s Data', 'Processed A1s Data')",
+    "locator": "McDonnell 2020: Figs. 1 to 3, Table 1, p. 9 to 10; Viner 2021: p. 3, Table 1, SI S4"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 1,
+      "text": "Identifies the A1'(Gamma) single-phonon peak near 241 cm-1 as the main first-order peak",
+      "locator": "McDonnell 2020 p. 5: 'the 241.0 cm-1 peak in MoSe2 is also due to single A1'(Gamma) phonon scattering'"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 2,
+      "text": "Three peaks near 480, 531 and 583 cm-1 are the strongest features after the one-phonon peak in the 2.0 to 2.1 eV spectra but are not observed at the A1s resonance (near 1.65 eV, where other multiphonon features at different positions occur); they are specific to the 2s (Rydberg) resonances",
+      "locator": "McDonnell 2020 p. 9: 'three Raman peaks at 480, 531 and 583 cm-1 ... observed at the A2s/B1s and B2s resonances but not the A1s resonance'; Viner 2021 p. 3"
+    },
+    {
+      "id": "f3",
+      "kind": "finding",
+      "weight": 2,
+      "text": "The higher-energy spectra are resonant with the B2s exciton (about 2.016 eV); the 2s-specific peaks show incoming and outgoing resonances with it",
+      "locator": "McDonnell 2020 Table 1 (B2s 2016 meV); Viner 2021 Table 1, SI S4 and Table S2"
+    },
+    {
+      "id": "f4",
+      "kind": "finding",
+      "weight": 1,
+      "text": "The 480/531/583 cm-1 peaks match combinations of Gamma-point phonons (2E', A1'+E', 2A1') and are interpreted as intravalley scattering between Rydberg exciton states",
+      "locator": "McDonnell 2020 p. 9 to 10"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 1,
+      "text": "Places the low-energy spectra at the A1s exciton (about 1.648 eV) and notes the large drop in absolute scattering at the 2s resonance relative to 1s (roughly two orders of magnitude)",
+      "locator": "McDonnell 2020 Table 1 (A1s 1648 meV); Viner 2021 p. 3: scattering at 1s resonances 'approximately two orders of magnitude stronger than at the A2s and B2s'"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "The spectra are parallel minus crossed: depolarized features are removed and residual background or negative values can remain where luminescence is strong",
+      "locator": "Viner 2021 SI S2 (subtraction, residual background when luminescence is strong); McDonnell 2020 Methods"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Many weaker peaks are multi-phonon or defect-allowed with several possible assignments; only the A1' peak has a firm single-phonon assignment",
+      "locator": "McDonnell 2020 p. 4 to 5 ('multiple possible assignments for most of these peaks')"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks for (or recommends) finer excitation steps through the resonance, or reflectivity on the same spot, to fit the resonance profile and pin the exciton energy",
+      "locator": "McDonnell 2020: resonance-profile fits and reflectivity at the same location (p. 3, Table 1)"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 1,
+      "text": "Assigns the 480/531/583 cm-1 peaks to the substrate (Si or hBN)"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Claims the 480/531/583 cm-1 peaks are equally present at the A1s resonance"
+    }
+  ],
+  "notes": "Nine spectra from the B2s sheet (about 1.97 to 2.12 eV) and two from the A1s sheet (about 1.648 and 1.679 eV). Peak values: 480, 531, 583 cm-1 (McDonnell 2020) quoted as 480, 530, 580 cm-1 in Viner 2021. Both papers come from the same group and dataset family; both must be excluded from tool building."
+}

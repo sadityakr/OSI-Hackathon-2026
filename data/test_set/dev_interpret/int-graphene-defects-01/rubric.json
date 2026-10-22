@@ -1,0 +1,77 @@
+{
+  "case_id": "int-graphene-defects-01",
+  "source": {
+    "paper": "Cancado, Jorio, Martins Ferreira, Stavale, Achete, Capaz, Moutinho, Lombardo, Kulmala, Ferrari 2011, Quantifying defects in graphene via Raman spectroscopy at different excitation energies, Nano Lett. 11, 3190, doi:10.1021/nl201432g, arXiv:1105.0175; Eckmann et al. 2012, Nano Lett. 12, 3925, arXiv:1207.2058",
+    "dataset": "synthetic (eval/synth/make_interpret_dev.py)",
+    "locator": "Cancado Eq. 4, p.2-3 (stages 1 and 2), p.5-6 and Fig. 5c (G width); Eckmann abstract"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 2,
+      "text": "Doses 1 to 3: D (and D') grow relative to G while G stays narrow (about 14 cm-1) and 2D stays sharp, so these are in stage 1 and the point-defect density rises with dose",
+      "locator": "Cancado p.2 (stage 1: D appears and I_D/I_G increases, D' appears) and p.5-6 (Gamma_G about 14 cm-1 until the onset of stage 2)"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 3,
+      "text": "L_D from I_D/I_G (peak heights) with Cancado Eq. 4 at 532 nm: dose 1: I_D/I_G about 0.25, L_D about 24 nm (range 20 to 27 nm); dose 2: I_D/I_G about 0.56, L_D about 16 nm (range 14 to 18 nm); dose 3: I_D/I_G about 1.19, L_D about 11 nm (range 9 to 12 nm)",
+      "locator": "Cancado Eq. 4 (L_D^2 = (1.8 +- 0.5)e-9 lambda^4 (I_D/I_G)^-1, valid for L_D >= 10 nm)"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Uses the excitation-wavelength dependence (lambda^4 at 532 nm) rather than constants for 514.5 nm; the same I_D/I_G means a different L_D at another laser line",
+      "locator": "Cancado abstract, Eq. 3-4"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 3,
+      "text": "Dose 4 has a lower I_D/I_G than dose 3 but a much broader G (merged with D') and no well-defined 2D: it is past the I_D/I_G maximum (stage 2, L_D below about 3 nm), so the defect density is higher, not lower, and Eq. 4 does not apply",
+      "locator": "Cancado abstract and p.3 (maximum at L_D about 3 nm; stage 1 and 2 can share I_D/I_G but not Gamma_G), Fig. 5c"
+    },
+    {
+      "id": "f3",
+      "kind": "finding",
+      "weight": 1,
+      "text": "I_D/I_D' is about 7 in the stage-1 spectra, which Eckmann associates with vacancy-like defects (sp3 about 13, boundaries about 3.5), valid only in the low-density regime",
+      "locator": "Eckmann 2012 abstract"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "States whether peak heights or areas are used; Cancado's relation is calibrated on heights (I_D/I_G), and area ratios differ when D and G widths differ",
+      "locator": "Cancado p.1 (I_D/I_G heights vs A_D/A_G areas)"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks what the treatment is (ion bombardment, plasma, chemistry), since the point-defect relation assumes point-like defects and the D/D' ratio depends on defect type",
+      "locator": "Cancado p.1 (point-like defects); Eckmann 2012 abstract"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 2,
+      "text": "Concludes that dose 4 has fewer defects than dose 3, or gives it an L_D above 10 nm from Eq. 4"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Computes L_D with the 514.5 nm calibration (or ignores the laser wavelength)"
+    },
+    {
+      "id": "w3",
+      "penalty": 1,
+      "text": "Treats the narrow spike near 2154.1 cm-1 in dose 2 as a Raman band"
+    }
+  ],
+  "notes": "Synthetic, 532 nm. Stage-1 spectra (doses 1-3): I_D/I_G set from Cancado Eq. 4 for L_D [24.0, 16.0, 11.0] nm (curator choice), D at 1350 + 52 (E_L - 2.41 eV), 2D at 2700 + 104 (E_L - 2.41 eV) (Cancado p.5 dispersion, Ferrari 2006 2D about 2700), G 1580, D' 1620 (Cancado p.2). FWHM D 15.0, G 14.0, 2D 32.0 (Cancado Fig. 5), D' 14.0 (curator); 2D/G height 3.0 (curator reading of Cancado Fig. 1); I_D/I_D' 7.0 (Eckmann, vacancy-like). Dose 4 (stage 2): I_D/I_G = 0.56 (same as dose 2), D FWHM 60, G at 1592 with FWHM 45 (merged G + D'), weak broad bumps at 2700 and 2930 (all curator values chosen to follow Cancado's qualitative stage-2 description). The L_D ranges propagate the +-0.5 prefactor uncertainty only. Defect type deliberately omitted from the context."
+}

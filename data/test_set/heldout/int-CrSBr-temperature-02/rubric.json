@@ -1,0 +1,72 @@
+{
+  "case_id": "int-CrSBr-temperature-02",
+  "source": {
+    "paper": "Wdowik, Varade, Vejpravova, Legut 2025, 'Magneto-Raman effect in van der Waals layered two-dimensional CrSBr antiferromagnet', arXiv:2503.15298 (v1)",
+    "dataset": "https://doi.org/10.5281/zenodo.15048152 (Figure5-6L.txt, Figure5-70L.txt)",
+    "locator": "Fig. 5 and p. 5 discussion; Fig. 9 discussion (p. 6); Summary"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 2,
+      "text": "At 4 K flake B shows additional features absent at 300 K (an Ag2 low-frequency shoulder near 220 cm-1 and a peak near 355 cm-1 next to Ag3), while flake A shows no such extra peaks at 4 K",
+      "locator": "p. 5, Fig. 5: extra modes 'appear only in the 1L to 6L layers of CrSBr, and they are absent in the bulk system'"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 2,
+      "text": "Concludes flake B is few-layer (paper: 1 to 6 layers) and flake A is thick / bulk-like, because the magnetic-order-related extra modes below TN are reported only for few-layer CrSBr",
+      "locator": "p. 5; Summary: 'additional phonon peaks emerging below the Neel temperature ... only for 1-6 layers of CrSBr, but they are absent in its bulk form'"
+    },
+    {
+      "id": "f3",
+      "kind": "finding",
+      "weight": 1,
+      "text": "Links the extra low-temperature features to magnetic ordering below TN (about 116 to 132 K) and spin-phonon coupling",
+      "locator": "p. 5; abstract"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 1,
+      "text": "Notes that Ag2 (and Ag3) sit at slightly lower frequency in flake B than in flake A at 4 K, consistent with the redshift with decreasing layer number",
+      "locator": "p. 6, Fig. 9 discussion: 'redshift of the Ag2 and Ag3 phonon frequencies with a decreasing number of layers'; p. 4, Fig. 3"
+    },
+    {
+      "id": "f4",
+      "kind": "finding",
+      "weight": 1,
+      "text": "In both flakes Ag2 and Ag3 shift to higher frequency on cooling from 300 K to 4 K",
+      "locator": "p. 5 and Summary: above TN the Raman shifts decrease with increasing temperature; Fig. 5"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Absolute intensities and baselines are not comparable between the two flakes (different thickness, optical interference, different export processing), so thickness should not be judged from intensity",
+      "locator": "textbook: thin-film interference changes Raman intensity with thickness and substrate (Yoon et al. 2009, Phys. Rev. B 80, 125422); dataset: 6L traces background subtracted, 70L traces raw counts"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks for an AFM thickness of both flakes, or for intermediate temperatures around TN, to confirm",
+      "locator": "Fig. A1 (AFM thickness); Fig. 5 (temperature series)"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 1,
+      "text": "Claims flake A (the thick flake) shows the low-temperature extra modes"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Concludes flake A is the thinner flake"
+    }
+  ],
+  "notes": "Label map (answer key): flake A = bulk (>70L, Figure5-70L.txt), flake B = 6L (Figure5-6L.txt), both from the paper's Fig. 5 (crossed +/- circular). The 6L traces are background subtracted in the dataset, the 70L traces are raw counts on a baseline near 2000; the context says only that processing differs. The 80 K and 150 K columns are left out to keep the case a two-temperature contrast."
+}

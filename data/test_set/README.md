@@ -116,3 +116,17 @@ Rejected: `rejected/exp-graphene-02` (D, G, 2D barely above background; truth po
 **Papers excluded from building tools.** Reference tables and relations (`src/ramanlens/literature/`, `src/ramanlens/relations/`) must not take numbers from the papers behind held-out cases: McDonnell et al. 2018 (WS2), Viner et al. 2021 (MoSe2), McDonnell et al. 2020 (WSe2), Wdowik et al. 2025 (CrSBr). Otherwise the tools arm would be checked against its own source.
 
 **Precision on experimental cases.** Truth lists only peaks the paper assigns. Real but unassigned peaks (CrSBr 1L near 302 cm-1, MoSe2 resonance features at 280 to 320 cm-1) count against `peak_precision`, so report precision for synthetic cases only.
+
+**Build-set papers that block future held-out cases.** The skill's literature notes (`skill/ramanlens/skills/raman-analysis/reference/materials/`) cite Markina et al. 2026 (npj Quantum Materials, CrSBr temperature and polarization). Its data (TUdatalib 4928/4929) must therefore never become a held-out case; dev only.
+
+## Interpretation cases (added 2026-10-22)
+
+Format and scoring: `INTERPRET.md` (rubric graded by the blind judge `eval/judge.py`). Dev cases in `dev_interpret/` (generator `eval/synth/make_interpret_dev.py`). Held-out cases `heldout/int-*`, built by a sub-agent blind to the tool builders (builder `eval/synth/build_int_heldout.py`; it reads paper data from `data/raw/`):
+
+| Cases | Topic | Source paper |
+|---|---|---|
+| int-CrSBr-thickness-01, int-CrSBr-temperature-01, -02 | thickness; temperature and magnetic order | Wdowik et al. 2025, arXiv:2503.15298 |
+| int-WS2-resonance-01, int-WS2-temperature-01 | excitation energy; temperature with resonance | McDonnell et al. 2018, Nano Lett. 18, 1428 |
+| int-MoSe2-resonance-01, int-WSe2-resonance-01 | excited exciton resonance | McDonnell et al. 2020, arXiv:2006.05912; Viner et al. 2021, arXiv:2103.09004 |
+
+Run identification and interpretation separately: `eval/run_claude_code.py --split heldout --kind identify` (scored by `score.py`, which skips cases without `truth.json`) and `--kind interpret` (scored by `judge.py`). McDonnell et al. 2020 (arXiv:2006.05912) now backs a MoSe2 case as well as the WSe2 one: excluded from building tools for both materials.

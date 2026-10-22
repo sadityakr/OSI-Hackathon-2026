@@ -204,8 +204,9 @@ def main():
     for arm_dir in sorted(p for p in run.iterdir() if p.is_dir()):
         rows = []
         for case_dir in sorted(p for p in arm_dir.iterdir() if p.is_dir()):
+            # Only identification cases have truth.json; interpretation cases (int-*, rubric.json) go to judge.py.
             case = next((ts / s / case_dir.name for s in ("dev", "dev_hard", "heldout")
-                         if (ts / s / case_dir.name).exists()), None)
+                         if (ts / s / case_dir.name / "truth.json").exists()), None)
             if case is None:
                 continue
             truth = json.loads((case / "truth.json").read_text())

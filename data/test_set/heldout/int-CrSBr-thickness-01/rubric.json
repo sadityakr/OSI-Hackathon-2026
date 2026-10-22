@@ -1,0 +1,72 @@
+{
+  "case_id": "int-CrSBr-thickness-01",
+  "source": {
+    "paper": "Wdowik, Varade, Vejpravova, Legut 2025, 'Magneto-Raman effect in van der Waals layered two-dimensional CrSBr antiferromagnet', arXiv:2503.15298 (v1)",
+    "dataset": "https://doi.org/10.5281/zenodo.15048152 (Figure3.txt)",
+    "locator": "Fig. 3 and its discussion (p. 4); Table A3 'Present exp.' column; Fig. A1"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 1,
+      "text": "Identifies the three strong Ag modes (Ag1 near 104 to 114 cm-1, Ag2 near 238 to 245 cm-1, Ag3 near 341 to 343 cm-1) in the spectra, and notes Ag1 and Ag2 are much weaker than Ag3",
+      "locator": "p. 3 to 4 ('three strong Ag modes'; 'Ag1 and Ag2 phonons have much lower intensities than the mode of Ag3', cf. Fig. 3); Table A3"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 2,
+      "text": "Ag1 and Ag2 blueshift (move to higher frequency) with increasing number of layers, so the flakes with higher Ag1/Ag2 frequencies are thicker",
+      "locator": "p. 4: 'clearly show a blueshift of the peaks arising from the Ag1 and Ag2 phonons with an increasing number of layers'; Fig. 9 discussion: redshift with decreasing layer number"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Ag3 barely shifts with thickness, so it is not a useful layer-number indicator",
+      "locator": "p. 4: 'such a shift is hardly observed for the peak related to the Ag3 mode'"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 2,
+      "text": "Ranks the flakes from thinnest to thickest as flake C < flake E < flake A < flake F < flake D < flake B (layer numbers 1L, 2L, 3L, 5L, 6L, bulk >70L); adjacent thick flakes (5L vs 6L) may be ranked as indistinguishable without penalty",
+      "locator": "Fig. 3 trace labels; layer numbers from AFM (Fig. A1)"
+    },
+    {
+      "id": "n2",
+      "kind": "quantitative",
+      "weight": 2,
+      "text": "Identifies flake C as a monolayer (Ag1 near 104, Ag2 near 238 cm-1) and flake B as bulk-like (near 114, 244, 343 cm-1)",
+      "locator": "Table A3, 'Present exp.' ML and bulk columns"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "CrSBr Raman intensities depend strongly on the crystal axis orientation relative to a linear laser polarization, so absolute or relative peak intensities are not a reliable thickness measure unless orientation is controlled",
+      "locator": "p. 4: 'A strong axial dependence of the intensities of Raman peaks measured in the linear polarization mode [13]' (ref. 13 = Telford et al., Adv. Mater. 32, 2003240, 2020)"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks for an independent thickness measurement (AFM step height; about 0.8 nm per layer) or the laser polarization and flake orientation, to confirm the Raman-based ranking",
+      "locator": "Fig. A1 caption: layer number estimated from AFM with 1L about 0.8 nm"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 1,
+      "text": "Uses the Ag3 position as the main thickness indicator"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "States that Ag1/Ag2 soften (move to lower frequency) as the flakes get thicker"
+    }
+  ],
+  "notes": "Label map (answer key): flake A = 3L, flake B = Bulk, flake C = 1L, flake D = 6L, flake E = 2L, flake F = 5L. The paper states the trend qualitatively and gives positions only for ML and bulk (Table A3: Ag 104/238/341 cm-1 ML, 114/244/343 cm-1 bulk). Sampling is about 1.2 cm-1 per point. Linear polarization state and substrate of Fig. 3 are not stated in the paper. A feature near 302 cm-1 in thin flakes is not assigned by the paper and is not in the rubric."
+}

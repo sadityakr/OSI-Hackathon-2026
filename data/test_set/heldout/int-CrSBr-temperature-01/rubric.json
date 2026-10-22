@@ -1,0 +1,72 @@
+{
+  "case_id": "int-CrSBr-temperature-01",
+  "source": {
+    "paper": "Wdowik, Varade, Vejpravova, Legut 2025, 'Magneto-Raman effect in van der Waals layered two-dimensional CrSBr antiferromagnet', arXiv:2503.15298 (v1)",
+    "dataset": "https://doi.org/10.5281/zenodo.15048152 (Figure5-1L.txt)",
+    "locator": "Fig. 5 and p. 5 discussion; Fig. 4(e)-(f)"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 2,
+      "text": "At low temperature additional features appear: a shoulder on the low-frequency side of Ag2 near 220 cm-1 (making Ag2 asymmetric) and a peak near 355 cm-1 on the high-frequency side of Ag3",
+      "locator": "p. 5: 'The shoulder of the Ag2 peak ... is located at about 220 cm-1. The second additional peak at about 355 cm-1 which is adjacent to the Ag3 peak'; Fig. 5"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 2,
+      "text": "The extra features are present only below the Neel temperature (paper: TN about 116 K for these samples, about 132 K in the literature): clear at 4 K, weak at 80 K, absent at 150 K and 300 K; they are linked to the onset of magnetic order (spin-phonon coupling)",
+      "locator": "p. 5: 'these phonon modes emerge in the spectra only below the Neel temperature of CrSBr (TN about 116 K)'; abstract; intro (TN about 132 K, ref. 13)"
+    },
+    {
+      "id": "f3",
+      "kind": "finding",
+      "weight": 1,
+      "text": "Assigns the extra peak near 355 cm-1 to a B3g-symmetry mode (not seen at room temperature)",
+      "locator": "p. 5: 'can be assigned to the mode of the B3g symmetry'"
+    },
+    {
+      "id": "f4",
+      "kind": "finding",
+      "weight": 1,
+      "text": "From 300 K down to TN, Ag2 and Ag3 shift to higher frequency and narrow (equivalently: above TN the Raman shifts decrease and the peaks broaden with increasing temperature, Ag2 broadening more than Ag3)",
+      "locator": "p. 5: 'Above TN, a decrease in the Raman shifts of both modes is assisted by their significant broadening ... FWHM of the Ag2 phonon exceeding that for the Ag3 one'; Fig. 4(e)-(f)"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Temperature-driven shifts and broadening alone can come from anharmonicity and multiphonon processes, so they are not by themselves evidence of magnetic order; the appearance of new modes below TN is the magnetic signature",
+      "locator": "p. 5: broadening 'likely to be due to enhancement in multiphonon processes and phonon anharmonicity'; 'shifts ... upon temperature due to other reasons, e.g., anharmonicity [50, 51]'"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Peak intensities depend on the circular polarization configuration (parallel vs crossed, sigma+ vs sigma-), so comparisons should be made in one fixed configuration",
+      "locator": "p. 4 to 5, Fig. 4: intensities 'remain sensitive to the right (+) and/or left (-) circular polarizations'"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks for finer temperature steps (around TN and below about 25 K) to locate the transition and a possible low-temperature phase, or for a thicker/bulk reference measured the same way",
+      "locator": "p. 5: distinct regimes above TN, from about 25 K to TN, and a low-temperature phase near 25 K; extra modes absent in bulk"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 1,
+      "text": "Claims the extra peaks near 220 and 355 cm-1 are present at 150 K or 300 K"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Claims Ag2/Ag3 soften (shift to lower frequency) on cooling from 300 K"
+    }
+  ],
+  "notes": "Spectra from Fig. 5 (1L, crossed +/- circular). The 1L traces in the dataset appear background subtracted (near-zero baseline) and are noisy; points stored as '--' in the source file were dropped. The paper gives the Ag2 shoulder and B3g positions as approximate values; TN is stated as about 116 K in the Fig. 5 discussion and about 132 K in the introduction (literature). The 25 K low-temperature phase cannot be resolved from four temperatures and is only a question item."
+}

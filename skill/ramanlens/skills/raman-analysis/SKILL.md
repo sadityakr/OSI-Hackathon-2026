@@ -1,7 +1,13 @@
 ---
 name: raman-analysis
-description: Analyse a Raman spectrum (single spectrum or polarization angle series) of a 2D or layered material like an experienced researcher - artifact and calibration checks, peak fitting with uncertainties, material identification against computed and literature references, mode and irrep assignment, polarization classification, and cited relations for layer number, strain, doping and defect density. Use whenever a task involves Raman data, peak assignment, or "what material is this / is this really X".
+description: Analyse a Raman spectrum (single spectrum or polarization angle series) of a 2D or layered material like an experienced researcher - artifact and calibration checks, peak fitting with uncertainties, material identification against computed and literature references, mode and irrep assignment, polarization classification, and cited relations for layer number, strain, doping and defect density. Provides validated analysis scripts and literature notes per material; invoke it BEFORE writing any analysis code and use its scripts instead of your own. Use whenever a task involves Raman data, peak assignment, comparing spectra, or "what material is this / is this really X".
 ---
+
+**Required first actions, in this order (do not write your own fitting code before these):**
+1. `python "${CLAUDE_SKILL_DIR}/scripts/rl_qc.py" <each data file>`
+2. One spectrum: `python "${CLAUDE_SKILL_DIR}/scripts/rl_fit.py" <file> --substrate "<substrate>"`.
+   Several spectra: `python "${CLAUDE_SKILL_DIR}/scripts/rl_series.py" <files> --labels <labels> --substrate "<substrate>" --si-correct`.
+3. Read `${CLAUDE_SKILL_DIR}/reference/materials/<material>.md` for the known or most likely material.
 
 # Raman analysis of 2D and layered materials
 
@@ -9,18 +15,47 @@ You read the spectrum; the tools measure. Every number you report comes from a t
 relation applied inside its validity range (inferred, with the relation's source), or a reference entry
 (literature, with its source and locator). If none applies, say so under limits.
 
-Scripts live in `scripts/` and notes in `reference/`, both next to this SKILL.md (its base directory is shown when
-the skill loads; use absolute paths). Run the scripts from the folder that holds the data, with `python`.
+## Start here: run these commands first (from the folder that holds the data)
+
+Use the validated scripts below; do not write your own baseline, peak-finding or fitting code unless a script
+fails or you need a check it does not provide. The scripts and notes are in `${CLAUDE_SKILL_DIR}`.
+
+```
+python "${CLAUDE_SKILL_DIR}/scripts/rl_qc.py" <file>                  # artifacts, Si calibration, resolution
+python "${CLAUDE_SKILL_DIR}/scripts/rl_fit.py" <file> --substrate "<substrate>"   # peaks with errors + fit.png
+python "${CLAUDE_SKILL_DIR}/scripts/rl_series.py" <f1> <f2> ... --labels <l1> <l2> ... --substrate "<substrate>" --si-correct   # several spectra
+python "${CLAUDE_SKILL_DIR}/scripts/rl.py" match_library --positions_cm1 <p1> <p2> ... --intensities <h1> <h2> ... --x_range_cm1 <lo> <hi>
+python "${CLAUDE_SKILL_DIR}/scripts/rl.py" lookup_reference_modes --material <name>
+python "${CLAUDE_SKILL_DIR}/scripts/rl.py" classify_polarization --path <angle-series file>
+python "${CLAUDE_SKILL_DIR}/scripts/rl.py" list_relations --material <name>
+python "${CLAUDE_SKILL_DIR}/scripts/rl.py" apply_relation --name <relation> --inputs '{"<input>": <value>}'
+```
+Then read `${CLAUDE_SKILL_DIR}/reference/materials/<material>.md` (when the material is known or once you have a
+candidate) and `${CLAUDE_SKILL_DIR}/reference/artifacts.md`. Always return ranked candidates for an identify task,
+even when uncertain: put the uncertainty in the confidence values and the limits, never return an empty list.
+
+## What each script does
 
 - `scripts/rl_qc.py <file>`: quality and condition flags (spikes, saturation, background, Si calibration offset,
   low-wavenumber cutoff, sampling, signal to noise).
 - `scripts/rl_fit.py <file> [--substrate SiO2/Si] [--window LO HI] [--min-snr N]`: fitted peak table with
   uncertainties, `peaks.json`, and `fit.png` (data, baseline, components, residual). Look at the plot.
+- `scripts/rl_series.py <file1> <file2> ... --labels ... [--substrate SiO2/Si] [--si-correct]`: fits every
+  spectrum the same way, tracks each band across spectra (position, width, relative height, shift vs the first
+  spectrum with error), separations of the two strongest bands, Si offsets, and `series.png`. Use it whenever
+  there is more than one spectrum. Its errors are fit statistics only; add the calibration uncertainty (Si offset
+  scatter, typically a few tenths of a cm-1) before calling a shift significant.
 - `scripts/rl.py <tool> --help`: `fit_peaks`, `match_library`, `classify_polarization`,
   `lookup_reference_modes`, `list_relations`, `apply_relation`, `load_spectrum`. Outputs carry provenance.
 
 ## Workflow
 
+0. **Read the material's literature note first** when the material is known: `${CLAUDE_SKILL_DIR}/reference/materials/<name>.md`
+   (MoS2, WS2, MoSe2, WSe2, graphene, hBN, black-phosphorus, CrSBr, CrI3-CrBr3, MPS3) plus
+   `reference/materials/general-measurement.md` and, for magnets, `magnetic-raman-general.md`. They hold how the
+   spectrum changes with thickness, strain, doping, defects, temperature, laser and substrate, the quality
+   indicators, the known pitfalls and the questions to ask, each with its source. Interpretation without them is
+   guesswork from memory.
 1. **Conditions first.** Note laser wavelength, temperature, substrate, polarization geometry, resolution. Many
    conclusions depend on them (`reference/measurement-questions.md`). With a user present, ask for what is missing
    and say why it matters; otherwise state the assumption under limits.
@@ -48,7 +83,13 @@ the skill loads; use absolute paths). Run the scripts from the folder that holds
    `doping_type`, `phase` where they apply.
 8. **Literature** (when the Valency and iopic-bond tools are available). Form the hypothesis first; never search by
    peak positions. See `reference/literature.md`: find the paper, view its reference spectrum figure, compare.
-9. **Report.** Ranked candidates with evidence, peaks with provenance and source, properties with relation and
+9. **Interpret changes** (several spectra, or a known material). Run `rl_series.py`; then for each change ask
+   which mechanisms in the material note produce it (thickness, strain, doping, defects, heating, calibration,
+   resonance) and which observable separates them (e.g. a rigid shift of all lines including Si is calibration;
+   A1g-only shift in MoS2 points to doping, E2g shift with splitting to strain; graphene G broadening separates
+   stage 1 from stage 2 defects). State the most likely reading, the alternatives, and the measurement that would
+   decide between them.
+10. **Report.** Ranked candidates with evidence, peaks with provenance and source, properties with relation and
    source, artifacts, citations (only sources you used), and limits: what the data cannot tell, rejected
    hypotheses, relations that did not apply and why.
 

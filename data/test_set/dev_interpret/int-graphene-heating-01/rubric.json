@@ -1,0 +1,65 @@
+{
+  "case_id": "int-graphene-heating-01",
+  "source": {
+    "paper": "Calizo, Balandin, Bao, Miao, Lau 2007, Nano Lett. 7, 2645, arXiv:0708.1223; Cancado, Jorio, Martins Ferreira, Stavale, Achete, Capaz, Moutinho, Lombardo, Kulmala, Ferrari 2011, Quantifying defects in graphene via Raman spectroscopy at different excitation energies, Nano Lett. 11, 3190, doi:10.1021/nl201432g, arXiv:1105.0175; Lee, Ahn, Shim, Lee, Ryu 2012, Nat. Commun. 3, 1024, arXiv:1209.0234",
+    "dataset": "synthetic (eval/synth/make_interpret_dev.py)",
+    "locator": "Calizo abstract and Table I (temperature coefficients); Cancado p.2 (power kept about 1 mW to avoid heating); Lee 2012 (strain and doping from G and 2D)"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 3,
+      "text": "G and 2D both move down and broaden monotonically with laser power on the same spot, while the Si line stays put: the trend tracks power, which points to laser heating of the flake rather than a property of the graphene",
+      "locator": "Calizo 2007 p.3 (G and 2D shift down with increasing temperature) and p.4-5 (temperature change from increased excitation power); Cancado p.2"
+    },
+    {
+      "id": "n2",
+      "kind": "quantitative",
+      "weight": 2,
+      "text": "Estimates the temperature rise from the G shift with chi_G about -0.016 cm-1/K: about 50 K at 2 mW and 125 K at 5 mW above the 0.5 mW spectrum (the 2D with about -0.034 cm-1/K gives a consistent estimate)",
+      "locator": "Calizo 2007 abstract and Table I (single layer, 83 to 373 K)"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 1,
+      "text": "In a G vs 2D position plot the power series moves along a line of slope about 2 to 3 (Calizo's coefficients give 0.034/0.016, about 2.1), close to the strain line (about 2.2) of the Lee 2012 vector analysis, so that analysis applied naively would misread the heating as strain",
+      "locator": "measured; Lee 2012 (strain slope 2.2 +- 0.2, hole-doping slope 0.70 +- 0.05)"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 2,
+      "text": "Positions measured at different powers cannot be compared or fed into a strain/doping (G vs 2D) analysis without correcting for heating; use the lowest power, or a power series extrapolated to zero",
+      "locator": "Lee 2012 (G-2D correlation method); Cancado p.2"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Recommends checking that the lowest-power spectrum is in the linear (heating-free) regime, e.g. by measuring at one more lower power, and asks about the spot size or power density",
+      "locator": "Cancado p.2 (about 1 mW with a 100x objective to avoid heating)"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 1,
+      "text": "Uses the 0.5 mW spectrum (G about 1582, 2D about 2668 cm-1 at 532 nm) as the reference and finds it close to unstrained, undoped graphene within the uncertainty of the laser-wavelength correction of 2D",
+      "locator": "Lee 2012 origin (1581.6, 2676.9) at 514.5 nm; Cancado p.5 (2D dispersion about 104 cm-1/eV)"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 2,
+      "text": "Attributes the power-dependent shifts to strain or doping of the sample"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Recommends the highest-power spectrum for analysis because it has the best signal"
+    }
+  ],
+  "notes": "Synthetic, 532 nm. Low-power spectrum: G 1581.6 (Lee 2012 origin; G is not dispersive in stage 1, Cancado Fig. 5b) and 2D 2668.6 cm-1 (Lee 2012 origin 2676.9 at 514.5 nm moved to 532 nm with 2 x 52 cm-1/eV, Cancado p.5). FWHM G 14.0 (Cancado p.5-6), 2D 32.0 (Fig. 5a reading). Temperature rises {0.5: 0.0, 2.0: 50.0, 5.0: 125.0} K (curator); shifts and broadening per power {0.5: (-0.0, -0.0, 0.0), 2.0: (-0.8, -1.7000000000000002, 1.5), 5.0: (-2.0, -4.25, 3.75)} (dG, d2D, extra G FWHM in cm-1) are curator values from Calizo's coefficients and curator temperature rises; the extra width is curator. Calizo measured at 488 nm on graphene on SiO2/Si; applying the coefficients at 532 nm is an assumption. The Si line is not shifted. Items f2 and n1 depend on Lee 2012, whose numbers come from the verified-numbers file, not a re-reading."
+}
