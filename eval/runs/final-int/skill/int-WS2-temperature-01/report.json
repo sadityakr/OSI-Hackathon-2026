@@ -1,0 +1,109 @@
+{
+  "summary": "The peak-level temperature analysis is still incomplete. The 12-spectrum series fit (rl_series.py with Si correction) was stopped by the background time limit and wrote no output. The wait loop for series.png was also stopped, and the folder contains no series.png or fit output. Quality-control and calibration checks did finish. They show the Si reference is too unstable to read shifts of 1 to 3 cm-1, and the four excitation energies differ between temperatures and sit near the WS2 A exciton, so a trend at fixed nominal wavelength mixes temperature and resonance. The next step is to re-run the series fit as a background job with the 2-hour maximum timeout, or fit each spectrum in a restricted window.",
+  "observations": [
+    {
+      "finding": "The silicon reference line is not stable enough across the 12 spectra to read shifts of 1 to 3 cm-1, and it does not follow temperature monotonically.",
+      "evidence": "Si line position from rl_qc.py: 4K 622.7 nm 521.71 cm-1 (+1.01 offset); 150K 587.2 nm 519.64 (-1.06); 150K 623.5 nm 522.70 (+2.00); 295K 587.2 nm 517.87 (-2.83); 295K 598.8 nm 518.47 (-2.23); 295K 610.3 nm 519.68 (-1.02); 295K 624.0 nm 518.51 (-2.19). The four 295 K spectra span 1.8 cm-1; all spectra span 4.8 cm-1. Position errors are 0.025 to 0.241 cm-1 (fit statistics only). Six spectra have no Si line in the window.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The Si line width changes with session, so the instrumental line shape is not constant across temperatures.",
+      "evidence": "Si FWHM from rl_qc.py: 4K 3.09 cm-1; 150K 3.56 and 2.74 cm-1; 295K 4.52, 4.38, 4.71 and 5.11 cm-1. The 295 K spectra are consistently broader than the 4 K and 150 K ones.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Signal-to-noise differs by roughly an order of magnitude between temperatures, so weak bands are reliable only in some spectra.",
+      "evidence": "snr_strongest from rl_qc.py: 4K 587.7 nm 1106.9; 4K 599.1 nm 313.1; 4K 611.3 nm 428.3; 4K 622.7 nm 102.3; 150K 587.2 nm 225.6; 150K 599.3 nm 311.0; 150K 611.4 nm 362.5; 150K 623.5 nm 231.6; 295K 587.2 nm 54.6; 295K 598.8 nm 90.8; 295K 610.3 nm 126.8; 295K 624.0 nm 203.6.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Cosmic-ray spike clusters recur at the same wavenumbers in different spectra, which suggests a detector or systematic cause rather than random events.",
+      "evidence": "4K 611.3 nm spikes at 143.3 to 145.5 cm-1 (5 points) and 150K 611.4 nm at 143.9 to 145.1 cm-1; 150K 623.5 nm at 132.7 to 133.8 cm-1 and 295K 624.0 nm at 133.2 to 135.4 cm-1. All were removed by rl_qc.py and reported as artifacts, not peaks, but the repeated 133 to 145 cm-1 clusters should be checked against a hot-pixel map or dark spectrum.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The four excitation energies are not matched between temperatures, and all sit near the WS2 A-exciton region.",
+      "evidence": "Laser energies from file metadata: 4K 2.0696 to 2.1097 eV; 150K 1.9886 to 2.1115 eV; 295K 1.9870 to 2.1115 eV. Nominal wavelengths differ by up to 1.3 nm between temperatures (e.g. 610.3 vs 611.4 nm, about 0.003 eV or about 27 cm-1 equivalent). The skill's WS2 note lists resonances at 1.96 eV (A exciton) and 2.33 and 2.41 eV (B and C); 1.99 to 2.11 eV is close to A-exciton resonance, where 2LA(M)/E2g1 and A1g intensities change strongly with laser energy.",
+      "provenance": "measured",
+      "source": "Resonance values from the skill's WS2 note (Yang et al. 2017, arXiv:1706.01677, p.5; Mitioglu et al. 2014, arXiv:1406.3511, abstract)."
+    },
+    {
+      "finding": "Literature gives an A1g minus E2g1 separation that can be used for layer number at 514.5 nm, but only after both modes are fitted; this has not been measured on these spectra.",
+      "evidence": "Berkdemir et al. 2013 Table 1 at 514.5 nm: A1g 417.2 (1L), 418.4 (2L), 419.0 (3L), 420.1 (bulk); E2g1 355.2, 355.0, 354.4, 355.3; separations 62.0, 63.4, 64.6, 64.8 cm-1. The relation ws2_layer_number_from_separation is valid for 61 to 66 cm-1 and 488 to 647 nm. 3L and bulk are not separable by it.",
+      "provenance": "literature",
+      "source": "Berkdemir A. et al. 2013, Sci. Rep. 3, 1755, doi:10.1038/srep01755, Table 1; relation from rl.py list_relations --material WS2."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No fitted A1g and E2g1 positions; the separation relation needs them (Berkdemir 2013, Table 1)."
+    },
+    {
+      "name": "phase",
+      "value": "2H (assumed)",
+      "provenance": "inferred",
+      "source": "CVD WS2 assumed 2H, not checked; 1T or 1T' would change the spectrum (Kumar et al. 2019, J. Phys.: Condens. Matter, doi:10.1088/1361-648X/ab3fec, abstract)."
+    },
+    {
+      "name": "temperature_dependence_of_peaks",
+      "value": "not measured",
+      "provenance": "inferred",
+      "source": "Requires a completed rl_series.py run with Si correction; the expected qualitative behaviour (anomalous, resonance-driven) is from Kumar et al. 2019 abstract."
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessed",
+      "provenance": "inferred",
+      "source": "No verified WS2 defect calibration in the skill note (WS2.md, Defects and quality)."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Temperature-induced substrate strain is possible via thermal-expansion mismatch (Kumar 2019 abstract), but no shift was measured."
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No verified WS2 doping rate in the skill note."
+    }
+  ],
+  "caveats": [
+    "The series fit (rl_series.py with --si-correct) was stopped by the background time limit and wrote no output. The wait loop for series.png was also stopped; no series.png exists in the folder. Every peak-level statement about temperature (shifts, widths, intensity ratios) is missing and must not be taken from this report.",
+    "Silicon offsets of up to 2.8 cm-1 occur within one temperature. A temperature shift below about 2 to 3 cm-1 cannot be separated from calibration drift on the present data. The Si correction fixes only a rigid offset, not a change in line shape.",
+    "Laser energy differs between temperatures (up to about 0.003 eV at nominal 610 nm), and the energies sit near the A exciton, where 2LA(M)/E2g1 and A1g intensities change strongly. Intensity trends at fixed nominal wavelength mix temperature and resonance.",
+    "Spike clusters at 133 to 145 cm-1 recur in different spectra. They were removed as artifacts, but a systematic cause has not been ruled out.",
+    "The 4 K spectra have uneven SNR (102 to 1107), so weak bands are reliable only in the strongest spectra."
+  ],
+  "questions_for_user": [
+    "Was the 4 K, 150 K and 295 K data taken on the same spot, with the same grating and calibration lamp? The Si line position and width vary by several cm-1 and about 2 cm-1, which points to sessions with different calibration.",
+    "Can the four excitation wavelengths be matched in energy across temperatures (within about 0.001 eV), or was the laser set from a different reference each time?",
+    "Was the cryostat temperature stabilized during acquisition, and how was the sample temperature measured? Laser heating at 0.7 mW on a supported flake can shift the local temperature by an unknown amount.",
+    "Was the analyser fixed (parallel polarization as stated), and was the same geometry used at all temperatures?",
+    "Is the flake confirmed as 2H WS2, and is its thickness known independently (AFM or optical contrast)? Layer number was not determined here.",
+    "Is the 133 to 145 cm-1 spike cluster reproducible on the detector? A hot-pixel map or dark spectrum would tell.",
+    "Is a Si reference spectrum taken in the same session at each temperature? This is needed for a Si-referenced shift."
+  ],
+  "citations": [
+    "Berkdemir A. et al. 2013, Sci. Rep. 3, 1755, doi:10.1038/srep01755, Table 1 (WS2 layer-dependent 2LA(M), E2g1, A1g at 488, 514.5 and 647 nm).",
+    "Yang J. et al. 2017, arXiv:1706.01677, p.5 (A and B exciton resonances; 2LA(M) enhancement at 1.96, 2.33 and 2.41 eV).",
+    "Mitioglu A. A. et al. 2014, PRB 89, 245442, arXiv:1406.3511, abstract and pp.2 to 4 (A1g-E2g1 separation, 2LA/E2g1 fitting and polarization).",
+    "Kumar D. et al. 2019, J. Phys.: Condens. Matter, doi:10.1088/1361-648X/ab3fec, arXiv:1906.10661, abstract (anomalous temperature evolution of supported monolayer WS2; resonance detuning and substrate thermal-expansion strain).",
+    "Taube A. et al. 2014, ACS AMI, doi:10.1021/am502359k, p.5 (nonlinear shifts in supported WS2)."
+  ],
+  "limits": [
+    "Not determined: peak positions, widths and intensities versus temperature (the series fit was stopped before it produced output).",
+    "Not determined: layer number, strain, doping and defect density (no fitted A1g/E2g1 pair; no verified WS2 relation for strain, doping or defects).",
+    "Not verified: the WS2 temperature coefficient for shifts on SiO2/Si, the Si-line temperature dependence, and the A-exciton energy at 4, 150 and 295 K. These were not in the skill's notes and not searched.",
+    "The polarization-resolved behaviour of the 2LA(M)/E2g1 doublet was not analysed for these spectra.",
+    "The skill's literature values are at 514.5 and 488 nm; the present lasers are at 587 to 624 nm, near the A exciton, so those values are indicative only."
+  ]
+}

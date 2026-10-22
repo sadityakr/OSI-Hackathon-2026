@@ -19,7 +19,8 @@ import anyio.to_thread
 from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.utilities.types import Image
 
-from . import __version__, bond, library
+from . import __version__, bond, config, library
+from .exclude import WITHHELD, is_excluded, record_excluded
 from .arxiv import bare_id, looks_like_arxiv_id
 from .store import Store
 from .tracing import traced
@@ -37,7 +38,20 @@ never by peak positions or numbers: the search is embedding based and does not e
 Only arXiv papers can be parsed; for others, cite the paper without figures and say so.
 When you describe a figure to the user, cite it as "Fig. N of arXiv:<id>"."""
 
-mcp = MCPServer("iopic-bond", version=__version__, instructions=INSTRUCTIONS)
+PARSE_ONLY_INSTRUCTIONS = """\
+This server parses arXiv PDFs into sections, paragraphs and figures, keeps every parse in a local
+library, and shows the figures. It does not search for papers: find them with a literature search
+tool such as Valency Bond, then pass the arXiv id here.
+
+Typical flow: ingest_paper (arXiv id) -> list_figures -> view_figure to look at a figure yourself.
+search_library searches captions of everything already parsed, without any network call.
+Only arXiv papers can be parsed; for others, cite the paper without figures and say so.
+When you describe a figure to the user, cite it as "Fig. N of arXiv:<id>"."""
+
+SEARCH = config.search_enabled()
+
+mcp = MCPServer("iopic-bond", version=__version__,
+                instructions=INSTRUCTIONS if SEARCH else PARSE_ONLY_INSTRUCTIONS)
 
 _store: Optional[Store] = None
 
@@ -69,7 +83,6 @@ def _brief(p: dict, in_library: set[str]) -> dict:
     }
 
 
-@mcp.tool()
 @traced("iopic.find_papers")
 async def find_papers(query: str, limit: int = 10, start_date: Optional[str] = None) -> dict:
     """Find papers on a concept through Valency Bond (embedding search over arXiv, PubMed and more).
@@ -86,7 +99,7 @@ async def find_papers(query: str, limit: int = 10, start_date: Optional[str] = N
         res = await bond.call("semantic_search_papers", args)
     except bond.BondError as exc:
         return {"status": "bond_error", "detail": str(exc)}
-    papers = bond.merge_papers(res.get("papers") or [])
+    papers = [p for p in bond.merge_papers(res.get("papers") or []) if not record_excluded(p)]
     known = store().known_ids(papers)
     return {
         "status": "ok",
@@ -95,7 +108,6 @@ async def find_papers(query: str, limit: int = 10, start_date: Optional[str] = N
     }
 
 
-@mcp.tool()
 @traced("iopic.expand")
 async def expand(paper_id: str, mode: Literal["citing", "similar"] = "citing", limit: int = 10) -> dict:
     """Grow a reading list from one anchor paper: papers that cite it, or papers similar to it.
@@ -103,6 +115,8 @@ async def expand(paper_id: str, mode: Literal["citing", "similar"] = "citing", l
     paper_id: an arXiv id from find_papers. Bond has forward citations only; for a paper's own
     reference list, ingest it and read the parse.
     """
+    if is_excluded(paper_id):
+        return dict(WITHHELD)
     tool = "get_citing_papers" if mode == "citing" else "find_similar_papers"
     try:
         res = await bond.call(tool, {"paper_id": paper_id, "limit": min(max(limit, 1), 50)})
@@ -110,11 +124,17 @@ async def expand(paper_id: str, mode: Literal["citing", "similar"] = "citing", l
         return {"status": "bond_error", "detail": str(exc)}
     # the two Bond tools name their result list differently; take the first list of records
     items = next((v for v in res.values() if isinstance(v, list) and v and isinstance(v[0], dict)), [])
+    items = [p for p in items if not record_excluded(p)]
     if mode == "similar":
         items = bond.merge_papers(items)
         known = store().known_ids(items)
         items = [_brief(p, known) for p in items]
     return {"status": "ok", "mode": mode, "anchor": paper_id, "papers": items}
+
+
+if SEARCH:
+    mcp.tool()(find_papers)
+    mcp.tool()(expand)
 
 
 @mcp.tool()
@@ -129,14 +149,18 @@ async def ingest_paper(arxiv_id: str, force: bool = False) -> dict:
     if not looks_like_arxiv_id(arxiv_id):
         return {"status": "bad_request", "detail": f"{arxiv_id!r} is not an arXiv id (e.g. 1005.2509)"}
     base_id = bare_id(arxiv_id)
+    if is_excluded(base_id):
+        return dict(WITHHELD)
     meta: dict = {}
-    if store().lookup(base_id=base_id) is None:
+    if SEARCH and store().lookup(base_id=base_id) is None:
         try:  # the Bond record gives title, DOI and licence for meta.json; parsing works without it
             res = await bond.call("get_paper_by_id", {"paper_id": base_id, "include_abstract": False})
             if res.get("found"):
                 meta = library.meta_from_bond(res["paper"])
         except bond.BondError:
             pass
+        if is_excluded(base_id, meta.get("doi"), meta.get("title")):
+            return dict(WITHHELD)
     result = await anyio.to_thread.run_sync(lambda: library.ingest(store(), base_id, meta=meta, force=force))
     if result["status"] not in ("ok", "cached"):
         return result
@@ -157,6 +181,8 @@ def list_figures(arxiv_id: str) -> dict:
     The paper must have been ingested (ingest_paper). Use view_figure to look at one.
     """
     row, tree = _parsed(arxiv_id)
+    if is_excluded(arxiv_id) or (row and record_excluded(row)):
+        return dict(WITHHELD)
     if tree is None:
         return {"status": "not_ingested", "detail": f"call ingest_paper('{arxiv_id}') first"}
     figs = library.figure_dicts(tree)
@@ -183,6 +209,8 @@ def view_figure(arxiv_id: str, figure: str, max_px: int = 1200) -> list:
     (peak positions, axes, labels) or compare it with other data. max_px caps the longer side.
     """
     row, tree = _parsed(arxiv_id)
+    if is_excluded(arxiv_id) or (row and record_excluded(row)):
+        return [dict(WITHHELD)]
     if tree is None:
         return [{"status": "not_ingested", "detail": f"call ingest_paper('{arxiv_id}') first"}]
     figs = library.figure_dicts(tree)
@@ -210,7 +238,8 @@ def search_library(query: str, limit: int = 10) -> dict:
 
     Local and instant (no network). Words must all match; if none match together, any word may.
     """
-    hits = store().search(query, limit=min(max(limit, 1), 50))
+    hits = [h for h in store().search(query, limit=min(max(limit, 1), 50))
+            if not is_excluded(h["base_id"], h.get("doi"), h.get("title"))]
     return {"status": "ok" if hits else "no_match", "hits": [{
         "arxiv_id": h["base_id"],
         "label": h["label"],
@@ -224,7 +253,7 @@ def search_library(query: str, limit: int = 10) -> dict:
 def library_status() -> dict:
     """What is in the local library: parsed papers with figure counts, and where it is stored."""
     s = store()
-    return {"status": "ok", "root": str(s.root), "papers": s.list_papers()}
+    return {"status": "ok", "root": str(s.root), "papers": [p for p in s.list_papers() if not record_excluded(p)]}
 
 
 # -- helpers -----------------------------------------------------------------------------------

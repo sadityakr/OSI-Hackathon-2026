@@ -45,11 +45,23 @@ _RE_FLOAT_ACCENT = re.compile(r"([´`¨ˆ˜¸])\s+([A-Za-z])")
 # branding, icons) and dropped — they are not real figures.
 _MIN_FIGURE_AREA_FRACTION = 0.03
 
-# A caption's leading label ("Figure 2.5:", "Table 3") — the real, chapter-prefixed number, used to
-# label the figure/table it belongs to instead of a fabricated sequential counter.
+# A caption's leading label ("Figure 2.5:", "Table 3", "SI Fig. 1") — the real, chapter-prefixed number,
+# used to label the figure/table it belongs to instead of a fabricated sequential counter. Docling sometimes
+# puts a "|" between "FIG." and the number ("FIG.| 1."), so separators other than whitespace are allowed.
 _RE_FIG_LABEL = re.compile(
-    r"^\s*(Figure|Fig\.?|Table|Tab\.?)\s+(\d+(?:\.\d+)*[a-z]?)", re.IGNORECASE
+    r"^\s*((?:SI|Supplementary|Suppl\.?|Extended\s+Data)\s+)?(Figure|Fig\.?|Table|Tab\.?)[\s|:]*(\d+(?:\.\d+)*[a-z]?)",
+    re.IGNORECASE,
 )
+
+
+def caption_label(text: Optional[str]) -> Optional[str]:
+    """The printed label at the start of a caption ("FIG.| 2. ..." -> "Fig 2", "SI Fig. 1" -> "SI Fig 1")."""
+    m = _RE_FIG_LABEL.match(text or "")
+    if not m:
+        return None
+    prefix = (m.group(1) or "").strip()
+    prefix = "SI " if prefix else ""  # one spelling for every supplementary prefix
+    return f"{prefix}{m.group(2).rstrip('.').title()} {m.group(3)}"
 
 
 def _compose_accent(m: "re.Match") -> str:
@@ -290,7 +302,7 @@ def _link_captions(reading_order: list[BlockNode]) -> None:
             last_figural.attrs["caption"] = node.text or ""
             if node.prov:
                 last_figural.attrs["caption_page"] = node.prov[0].page_no
-            m = _RE_FIG_LABEL.match(node.text or "")
-            if m:
-                last_figural.attrs["label"] = f"{m.group(1).rstrip('.').title()} {m.group(2)}"
+            label = caption_label(node.text)
+            if label:
+                last_figural.attrs["label"] = label
             last_figural = None  # one caption per figure; don't reattach the next caption

@@ -73,8 +73,11 @@ def find_figure(figures: list[dict], which: str) -> Optional[dict]:
     want = _figure_number(which)
     if want is None:
         return None
+    # "SI Fig. 1" and "Fig. 1" are different figures: match the supplementary prefix as well as the number
+    want_si = bool(re.match(r"\s*(SI|supp|extended)", which, re.I))
     for f in figures:
-        if _figure_number(f.get("label")) == want:
+        label = f.get("label") or ""
+        if _figure_number(label) == want and label.startswith("SI ") == want_si:
             return f
     return None
 

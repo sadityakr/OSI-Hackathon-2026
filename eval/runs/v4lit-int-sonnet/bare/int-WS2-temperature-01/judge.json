@@ -1,0 +1,64 @@
+{
+ "key": "d9188125b69c0861",
+ "score": 0.6,
+ "by_kind": {
+  "finding": 0.5,
+  "caveat": 0.8333333333333334,
+  "question": 0.5
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 1,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 0.5,
+    "why": "The report says the intensity rises strongly on cooling, but it gives \"about 100-300x stronger at 4 K than at 295 K for the same nominal laser line (587 nm)\". That is a fixed-wavelength ratio well above the rubric's order of magnitude, and the report never compares the resonance maxima (127247 vs 8985 counts, about 14x)."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "The report says \"The excitation wavelength that gives the strongest A1g moves to longer wavelength as T rises: \u2264587.7 nm at 4 K ... ~610-624 nm at 295 K\" and attributes this to the A exciton red-shifting on warming. That puts the resonance at higher energy on cooling, with the room-temperature maximum near 2.0 eV."
+   },
+   {
+    "id": "f3",
+    "met": 0,
+    "why": "The report never describes structure in the low-temperature resonance profile (exciton and trion channels, separate incoming and outgoing peaks) as opposed to one broad peak at room temperature; it only notes that the 4 K maximum is not bracketed."
+   },
+   {
+    "id": "f4",
+    "met": 0,
+    "why": "Trions are not discussed anywhere in the report, so it says nothing about the trion contribution fading faster than the exciton contribution."
+   },
+   {
+    "id": "c1",
+    "met": 1,
+    "why": "The report flags this as \"the main trap when comparing temperatures\" because \"the same laser wavelength sits at a different detuning from the exciton at each T\". It also stresses that four lines per temperature do not bracket the resonance."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "The report mentions \"SiO2 interference (290 nm oxide, strongly wavelength dependent over 587-624 nm)\", but only as something that affects the Si line used for normalisation. It does not say that the WS2 intensities need an interference correction, or that the interference itself changes with temperature."
+   },
+   {
+    "id": "q1",
+    "met": 0.5,
+    "why": "The report warns that 0.7 mW \"may heat the spot well above the nominal temperature\" and asks about vacuum or exchange gas, but it does not ask how the actual temperature was verified or suggest a Stokes/anti-Stokes check."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "The report never attributes the intensity increase to the Bose-Einstein (n+1) factor; it puts it down to resonance detuning, PL yield and similar effects."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "The report states the opposite: the resonance maximum moves to shorter wavelength, i.e. higher excitation energy, on cooling."
+   }
+  ],
+  "citation_specificity": 1
+ },
+ "judge_model": "claude-opus-5-5"
+}
