@@ -5,20 +5,23 @@ reference spectrum next to theirs. Literature tools may be absent in some sessio
 `materials.md` and `relations.md` and say so under limits.
 
 ## Steps
-Use only the iopic-bond tools. Paper search runs inside that server. Do not call Valency tools yourself.
+Use the iopic-bond skill in this plugin. Its script is `scripts/ib.py` in the sibling skill folder
+`iopic-bond` (the `skills` directory that also holds this skill). Do not call Valency tools yourself.
 
-1. **Known paper: open it.** When this note already gives an arXiv id, call `ingest_paper` with that id. Skip
+1. **Known paper: open it.** When this note already gives an arXiv id, run `ib.py ingest <arxiv_id>`. Skip
    search. A paper already in the library returns at once.
-2. **Library before search.** If you do not yet have an id, call `search_library`. On a hit, use `list_figures`
-   and `view_figure` for that arXiv id.
-3. **Concept search, never peak positions.** If the library has nothing, call `find_papers`. The query is a
-   concept, such as "Raman spectroscopy of monolayer WS2 layer dependence" or "polarized Raman CrSBr phonon
-   modes". Numbers and peak positions do not help. Prefer a result whose id is an arXiv id, then `ingest_paper`.
-4. **List and choose.** `list_figures` gives captions and the paragraphs that discuss each figure. Pick the
+2. **Library before search.** If you do not yet have an id, run `ib.py library "<concept>"`. On a hit, run
+   `ib.py figures <arxiv_id>` and `ib.py view <arxiv_id> "Fig. N"`.
+3. **Concept search, never peak positions.** If the library has nothing, run `ib.py find "<concept>"`. The
+   query is a concept, such as "Raman spectroscopy of monolayer WS2 layer dependence" or "polarized Raman
+   CrSBr phonon modes". Numbers and peak positions do not help. Prefer a result whose id is an arXiv id,
+   then `ib.py ingest` that id.
+4. **List and choose.** `ib.py figures` gives captions and the paragraphs that discuss each figure. Pick the
    figure whose caption shows spectra of the material under comparable conditions (laser, layer count,
    temperature).
-5. **Look at it.** `view_figure` returns the image. Read the peak positions and relative intensities off it,
-   state that they are read from a figure (about +-1 cm-1), and compare with the fitted peaks.
+5. **Look at it.** `ib.py view` writes a PNG (`saved_png`) and prints `image_path`. Read that image. Read the
+   peak positions and relative intensities off it, state that they are read from a figure (about +-1 cm-1),
+   and compare with the fitted peaks.
 6. **Cite precisely.** Author, year, journal or arXiv id, and the figure or table number for every literature
    number. Never cite a paper you have not retrieved in this session as the source of a specific number;
    numbers in `materials.md` already carry verified sources.
