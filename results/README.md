@@ -8,6 +8,15 @@ Layout: `<run>/<arm>/<case>/report.json` (what the arm answered), `judge.json` (
 Arms: `bare` = Claude Code with Python only; `skill` = plus the RamanLens skill and literature MCP servers;
 `libsearch` = classical library search; `pipeline` = RamanLens tools without an LLM. Model per run below.
 
+## For evaluating bare vs skill by reading the answers
+
+`<run>/COMPARISON_bare_vs_skill.md` puts both arms' reports for every case side by side with the automatic grades
+(interpretation: judge score, per-item grades, summary, observations, caveats, questions, citations; identification:
+candidates, peaks with irreps and patterns, properties). Start with `v3-int-sonnet` and `v3-int-haiku` (dev
+interpretation) and `v3-id-devhard-haiku` (dev identification); the `final-*` comparisons are added when the
+held-out run finishes. Regenerate with `python eval/compare_arms.py <run>`. Case inputs and answer keys:
+`data/test_set/<split>/<case>/` (`truth.json` or `rubric.json`).
+
 ## Which runs count
 
 | Run | Split | Arms | Model | Status |
