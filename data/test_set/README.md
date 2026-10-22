@@ -109,6 +109,7 @@ Classes are computed numerically from the generated curves in synthetic cases (s
 | heldout | exp-MoSe2-01 | Southampton eprints 449632 (D1747, CC BY 4.0) | Viner et al. 2021, 2D Mater. 8, 035047, arXiv:2103.09004. Processed (parallel minus crossed), resonance, 4 K, hBN-encapsulated. |
 | heldout | exp-WSe2-01 | Southampton eprints 449632 (D1747) | Peak position from McDonnell et al. 2020, arXiv:2006.05912 (companion paper; cross-paper transfer). |
 | heldout | exp-CrSBr-01 to -05 | Zenodo 15048152 (CC BY 4.0) | Wdowik et al. 2025, arXiv:2503.15298, Fig. 3, Fig. 5, Table A3. 03/04 are one 6L flake above and below T_N; 05 is the bulk negative control. Circular, not linear, polarization. |
+| heldout | exp-CrSBr-06 to -09, exp-WS2-03 | Zenodo 15048152 (`Figure3.txt`, remaining layer columns); Southampton D0371 (`RRS_Spectra.xlsx`, sheet set 150K, one excitation column) | Wdowik et al. 2025, Fig. 3 and Table A3 (layer-number cases; per-layer positions bracketed by the paper's ML and bulk values); McDonnell et al. 2018, Fig. 1a (monolayer, 150 K). |
 
 Rejected: `rejected/exp-graphene-02` (D, G, 2D barely above background; truth positions not trustworthy).
 

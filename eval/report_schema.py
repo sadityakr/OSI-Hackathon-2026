@@ -56,7 +56,10 @@ REPORT_SCHEMA = {
         },
         "properties": {
             "type": "array",
-            "description": "Material properties inferred from the spectrum (layer number, strain, doping, ...).",
+            "description": "Material properties inferred from the spectrum. Use these names where they apply: "
+                           "'layers' (integer, or 'bulk'), 'defect_level' (none/low/medium/high), 'L_D_nm' "
+                           "(graphene inter-defect distance), 'strain_sign' (tensile/compressive/none), "
+                           "'doping_type' (n/p/none), 'phase' (e.g. 2H, 1T'); other names are allowed.",
             "items": {
                 "type": "object", "additionalProperties": False,
                 "required": ["name", "value", "provenance", "source"],
@@ -74,6 +77,37 @@ REPORT_SCHEMA = {
         "citations": {"type": "array", "items": {"type": "string"}},
         "limits": {"type": "array", "items": {"type": "string"},
                    "description": "what the data cannot tell, rejected hypotheses, out-of-range relations"},
+    },
+}
+
+_obs = {
+    "type": "object", "additionalProperties": False,
+    "required": ["finding", "evidence", "provenance", "source"],
+    "properties": {
+        "finding": {"type": "string", "description": "one conclusion about the sample or the measurement"},
+        "evidence": {"type": "string", "description": "the measured numbers it rests on (positions, widths, "
+                                                     "ratios with uncertainties) and which spectra"},
+        "provenance": {"type": "string", "enum": PROVENANCE},
+        "source": {**_str_or_null, "description": "paper and figure/table for literature or relation claims"},
+    },
+}
+
+# Report for interpretation cases (data/test_set/INTERPRET.md): the material is known; the agent explains what the
+# spectra show, what to be careful about, and what to ask.
+INTERPRET_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["summary", "observations", "properties", "caveats", "questions_for_user", "citations", "limits"],
+    "properties": {
+        "summary": {"type": "string", "description": "the answer to the researcher's question in a few sentences"},
+        "observations": {"type": "array", "items": _obs},
+        "properties": REPORT_SCHEMA["properties"]["properties"],
+        "caveats": {"type": "array", "items": {"type": "string"},
+                    "description": "artifacts, measurement pitfalls, alternative explanations, limits of relations"},
+        "questions_for_user": {"type": "array", "items": {"type": "string"},
+                               "description": "what you would ask about the measurement or sample, and why"},
+        "citations": {"type": "array", "items": {"type": "string"}},
+        "limits": {"type": "array", "items": {"type": "string"}},
     },
 }
 

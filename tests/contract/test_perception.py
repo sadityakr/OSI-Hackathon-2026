@@ -38,10 +38,10 @@ def test_spike_removal_finds_injected_spike():
     rng = np.random.default_rng(0)
     x = np.arange(100, 800, 1.0)
     y = lorentz(x, 400, 6, 1000) + 100 + rng.normal(0, 10, x.size)
-    y[300] += 3000
+    y[150] += 3000  # x = 250 cm-1, on the flat background (index 300 would be the top of the real band)
     y_clean, spikes = remove_spikes(x, y)
-    assert any(abs(s - x[300]) < 2 for s in spikes)
-    assert y_clean[300] < 300
+    assert any(abs(s - x[150]) < 2 for s in spikes)
+    assert y_clean[150] < 300
     assert abs(y_clean[x == 400][0] - y[x == 400][0]) < 50, "a real peak must not be removed"
 
 
