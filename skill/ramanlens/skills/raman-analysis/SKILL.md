@@ -81,8 +81,9 @@ even when uncertain: put the uncertainty in the confidence values and the limits
    layer number, strain, doping or defect density only from a relation (with its source and validity) or a
    stated rule from the notes. Name properties `layers`, `defect_level`, `L_D_nm`, `strain_sign`,
    `doping_type`, `phase` where they apply.
-8. **Literature** (when the Valency and iopic-bond tools are available). Form the hypothesis first; never search by
-   peak positions. See `reference/literature.md`: find the paper, view its reference spectrum figure, compare.
+8. **Literature** (when the iopic-bond tools are available). Form the hypothesis first. See
+   `reference/literature.md`: open a known arXiv id, or search through iopic-bond, then view the reference
+   spectrum figure and compare. Do not call a Valency server yourself.
 9. **Interpret changes** (several spectra, or a known material). Run `rl_series.py`; then for each change ask
    which mechanisms in the material note produce it (thickness, strain, doping, defects, heating, calibration,
    resonance) and which observable separates them (e.g. a rigid shift of all lines including Si is calibration;
