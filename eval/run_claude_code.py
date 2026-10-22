@@ -12,7 +12,8 @@ Input:
 Process:
     Each case runs in a fresh folder outside the repo (so no project CLAUDE.md is loaded and relative paths cannot
     reach the test set). User-level settings, CLAUDE.md and skills are excluded with --setting-sources project; MCP
-    servers come only from --mcp-config. In the bare arm a stub package on PYTHONPATH makes `import ramanlens` fail.
+    servers come only from --mcp-config. The skill arm gets iopic-Bond only; that server calls Valency
+    itself. In the bare arm a stub package on PYTHONPATH makes `import ramanlens` fail.
     Web tools and sub-agents are disallowed in both arms. Cases run in parallel threads.
 Output:
     eval/runs/<run_name>/<arm>/<case_id>/{report.json, transcript.json, transcript.jsonl}, the layout eval/score.py
@@ -73,19 +74,49 @@ def interpret_prompt(inp):
 
 
 BASE_TOOLS = ["Bash", "Read", "Write", "Edit", "Glob", "Grep"]
-SKILL_TOOLS = ["Skill", "mcp__valency__*", "mcp__iopic-bond__*"]
+SKILL_TOOLS = ["Skill", "mcp__iopic-bond__*"]
 NEVER_TOOLS = ["WebSearch", "WebFetch", "Agent", "Task"]
 
 
+def _iopic_bond_exe():
+    for exe in (ROOT / ".venv" / "Scripts" / "iopic-bond.exe", ROOT / ".venv" / "bin" / "iopic-bond"):
+        if exe.exists():
+            return exe
+    return None
+
+
+def _bond_token():
+    """Token for iopic-Bond's own Valency calls. The agent never sees the Valency server."""
+    if os.environ.get("VALENCY_BOND_TOKEN"):
+        return os.environ["VALENCY_BOND_TOKEN"]
+    env_file = ROOT / ".env"
+    if not env_file.exists():
+        return None
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        if key.strip() == "VALENCY_BOND_TOKEN":
+            return value.strip().strip('"').strip("'") or None
+    return None
+
+
 def mcp_config(arm, work):
-    """MCP servers for the arm, written as a JSON file. The bare arm gets none."""
+    """MCP servers for the arm, written as a JSON file. The bare arm gets none.
+
+    The skill arm gets iopic-Bond only. Paper search goes through that server, which calls Valency
+    with the bearer token. A saved paper opens without a second search.
+    """
     servers = {}
     if arm == "skill":
-        servers["valency"] = {"type": "http", "url": "https://mcp.valency.io/"}
-        exe = ROOT / ".venv" / "Scripts" / "iopic-bond.exe"
-        if exe.exists():
-            servers["iopic-bond"] = {"command": str(exe), "args": ["serve"],
-                                     "env": {"IOPIC_BOND_HOME": str(ROOT / "data" / "raw" / "iopic-bond")}}
+        exe = _iopic_bond_exe()
+        if exe is not None:
+            bond_env = {"IOPIC_BOND_HOME": str(ROOT / "data" / "raw" / "iopic-bond")}
+            token = _bond_token()
+            if token:
+                bond_env["VALENCY_BOND_TOKEN"] = token
+            servers["iopic-bond"] = {"command": str(exe), "args": ["serve"], "env": bond_env}
     path = work.parent / f"_mcp_{work.name}.json"
     path.write_text(json.dumps({"mcpServers": servers}))
     return path
