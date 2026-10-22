@@ -47,8 +47,24 @@ def element_counts(name):
     return {k: int(v) // g for k, v in counts.items()}
 
 
+PHASE_PREFIX = re.compile(r"^([a-z]|[α-ω]|\d[hrt]\d?|1t'|td)-", re.IGNORECASE)
+
+
+def material_counts(name):
+    """element_counts of a candidate name, tolerating descriptive words ('monolayer graphene', 'm-GaTe (thin)',
+    'β-TiNCl'): try the whole string, then each word with a phase prefix stripped."""
+    c = element_counts(name)
+    if c is not None:
+        return c
+    for word in re.sub(r"\(.*?\)", " ", str(name)).replace("/", " ").split():
+        c = element_counts(PHASE_PREFIX.sub("", word))
+        if c is not None:
+            return c
+    return None
+
+
 def same_material(a, b):
-    ca, cb = element_counts(a), element_counts(b)
+    ca, cb = material_counts(a), material_counts(b)
     return ca is not None and ca == cb
 
 
@@ -66,7 +82,48 @@ def irrep_matches(truth, reported):
     t = norm_irrep(truth)
     if not t:
         return None
-    return any(norm_irrep(part) == t for part in re.split(r"[+,/]| and ", str(reported or "")))
+    # Alternatives in parentheses count too: "E2g (E' in the monolayer)" contains "E2g" and "E'".
+    parts = re.split(r"[+,/()]| and | in | or ", str(reported or ""))
+    return any(norm_irrep(part.split()[0]) == t for part in parts if part.strip())
+
+
+PROPERTY_SYNONYMS = {
+    "layers": ["layers", "layer", "layernumber", "numberoflayers", "nlayers", "thickness"],
+    "defect_level": ["defectlevel", "defects", "defect", "disorder", "defectdensity"],
+    "L_D_nm": ["ldnm", "ld", "interdefectdistance", "defectdistance"],
+    "strain_sign": ["strainsign", "strain"],
+    "doping_type": ["dopingtype", "doping"],
+    "phase": ["phase", "polytype"],
+}
+
+
+def _norm_name(s):
+    return re.sub(r"[^a-z0-9]", "", str(s).lower())
+
+
+def property_matches(key, want, reported):
+    """Compare one truth property with the report's properties list.
+
+    Truth value forms: an int (exact, e.g. layers), [lo, hi] (the first number in the reported value must lie in the
+    range), or a string (the reported value must contain it, case-insensitive, e.g. 'tensile', 'high').
+    Returns None if the report has no property with a matching name, which scores as wrong.
+    """
+    names = PROPERTY_SYNONYMS.get(key, [_norm_name(key)])
+    hits = [p for p in reported if _norm_name(p.get("name", "")) in names
+            or any(n in _norm_name(p.get("name", "")) for n in names if len(n) > 4)]
+    if not hits:
+        return None
+    value = str(hits[0].get("value", ""))
+    for word, n in (("monolayer", "1"), ("single layer", "1"), ("bilayer", "2"), ("trilayer", "3")):
+        value = re.sub(word, n, value, flags=re.IGNORECASE)
+    nums = [float(x) for x in re.findall(r"-?\d+\.?\d*", value)]
+    if isinstance(want, bool) or isinstance(want, str):
+        return str(want).lower() in value.lower()
+    if isinstance(want, (int, float)):
+        return bool(nums) and nums[0] == want
+    if isinstance(want, list) and len(want) == 2:
+        return bool(nums) and want[0] <= nums[0] <= want[1]
+    return None
 
 
 def score_case(report, truth, inp, transcript_text=""):
@@ -103,6 +160,12 @@ def score_case(report, truth, inp, transcript_text=""):
         pat = [(t["pattern"] == p.get("pattern")) for t, p in matched if t.get("pattern")]
         res["pattern_acc"] = sum(pat) / len(pat) if pat else None
 
+    # Only standard keys are scored; free-text properties in older truth files (e.g. 'D_cause_stated') stay notes.
+    want_props = {k: v for k, v in (truth.get("properties") or {}).items() if k in PROPERTY_SYNONYMS}
+    if want_props:
+        got = [bool(property_matches(k, v, report.get("properties", []))) for k, v in want_props.items()]
+        res["property_acc"] = sum(got) / len(got)
+
     notes = truth.get("notes")
     try:
         extra = json.loads(notes) if notes else {}
@@ -119,7 +182,7 @@ def score_case(report, truth, inp, transcript_text=""):
 
 def aggregate(rows):
     keys = ["id_top1", "id_top3", "hint_correct", "peak_recall", "peak_precision", "irrep_acc", "pattern_acc",
-            "cosmic_ray_rejected", "position_mae_cm1"]
+            "property_acc", "cosmic_ray_rejected", "position_mae_cm1"]
     out = {"n_cases": len(rows)}
     for k in keys:
         vals = [float(r[k]) for r in rows if r.get(k) is not None]
@@ -141,7 +204,8 @@ def main():
     for arm_dir in sorted(p for p in run.iterdir() if p.is_dir()):
         rows = []
         for case_dir in sorted(p for p in arm_dir.iterdir() if p.is_dir()):
-            case = next((d for d in (ts / "dev" / case_dir.name, ts / "heldout" / case_dir.name) if d.exists()), None)
+            case = next((ts / s / case_dir.name for s in ("dev", "dev_hard", "heldout")
+                         if (ts / s / case_dir.name).exists()), None)
             if case is None:
                 continue
             truth = json.loads((case / "truth.json").read_text())
@@ -155,7 +219,7 @@ def main():
         result[arm_dir.name] = {"aggregate": aggregate(rows), "cases": rows}
     (run / "scores.json").write_text(json.dumps(result, indent=2))
     keys = ["n_cases", "id_top1", "id_top3", "hint_correct", "peak_recall", "peak_precision", "irrep_acc",
-            "pattern_acc", "cosmic_ray_rejected", "position_mae_cm1"]
+            "pattern_acc", "property_acc", "cosmic_ray_rejected", "position_mae_cm1"]
     print("metric".ljust(22) + "".join(a.ljust(14) for a in result))
     for k in keys:
         print(k.ljust(22) + "".join(str(result[a]["aggregate"].get(k)).ljust(14) for a in result))
