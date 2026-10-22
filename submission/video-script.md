@@ -22,7 +22,7 @@ rl_series, reads the MoS2 note, applies the Lee 2010 relation, opens the publish
 writes the report with caveats and questions.
 Say: point at one caveat (Si calibration, interference on SiO2/Si) and one citation with a figure locator.
 
-## 2:30 to 3:30, does it help? the evaluation
+## 2:30 to 3:10, does it help? the evaluation
 Show: `submission/figure.png`.
 Say: "We compared six arms on held-out cases from papers we never used to build the skill: classical library
 search, our pipeline without an LLM, and Claude Haiku and Sonnet, each with and without the skill. An independent
@@ -30,7 +30,12 @@ agent wrote the interpretation rubrics from each paper's conclusions; a blind ju
 Then the three headline numbers: identification vs library search [TBD], Haiku with vs without the skill [TBD],
 caveats and citations [TBD].
 
-## 3:30 to 4:00, what it means
+## 3:10 to 3:35, one case
+Show: `submission/case-study.md` (the table of rubric items, bare vs skill).
+Say: "This is the held-out case where the skill helped most, with the paper's own conclusions as the key. Bare
+misses the caveats and cites from memory; the skill flags the artifact and cites the paper with a figure locator."
+
+## 3:35 to 4:00, what it means
 Say: "A frontier model already knows the textbook. What the skill adds is what a senior researcher adds: symmetry
 and polarization done right, artifacts caught, and every claim traceable to a measurement or a figure in a paper.
 Code and data are open at github.com/sadityakr/osi-hackathon-2026."
