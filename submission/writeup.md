@@ -45,6 +45,12 @@ paper's own conclusions by an agent the skill builders never saw, and graded by 
 [TBD from submission/figure.md]
 - Identification: library search [x], pipeline [x], Haiku bare [x] vs with skill [x].
 - Interpretation rubric score: Haiku [x] to [x], Sonnet [x] to [x]; caveats and citation specificity [x].
+- Citation check (`eval/verify_citations.py`, arXiv and Crossref lookup of every cited paper): share of citations that
+  do not resolve to the stated author and year [x] bare vs [x] skill; share the agent itself marks "from recall, not
+  checked" [x] vs [x]. On the Haiku development cases 10 of 35 bare citations were marked from recall against 1 of
+  55 for the skill, which also cited about 8 papers per report against 5.
+- Case study (`submission/case-study.md`, written by `eval/case_study.py`): the held-out case with the largest skill
+  gain, with both reports and the judge's reasons side by side.
 - Development finding: a frontier model alone already names common 2D materials and applies textbook relations; the
   skill's value lies in symmetry labels, polarization, artifacts and caveats, and claims a reader can trace to a
   figure in a paper.
