@@ -1,0 +1,85 @@
+{
+  "candidates": [
+    {
+      "material": "hBN",
+      "confidence": 0.2,
+      "evidence": "hBN is the only layered material that gives a single dominant sharp in-plane mode in this window, and its E2g mode sits near 1367 cm-1 (Nemanich et al. 1981). The measured line is at 1396.48 cm-1, about 29 cm-1 higher. The Si reference line is at 520.66 cm-1 against the standard 520.7, so calibration cannot explain that offset. A shift of this size is not a reported hBN E2g value in the literature I know. The match is weak and the candidate is kept only because it is the closest known layered material."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null) and the task is identify, not verify, so there is no stated material to test against. The spectrum has a single dominant sharp line at 1396.48 cm-1 (FWHM about 4.4 cm-1) with the Si substrate line at 520.66 cm-1. There is no G band near 1580 cm-1, and nothing at the positions of the common MoS2/WS2-type in-plane and out-of-plane modes near 380-420 cm-1. No known vdW material was confirmed from these peak positions. The closest candidate, hBN, is a poor fit because its E2g mode is about 29 cm-1 lower than the measured line.",
+  "peaks": [
+    {
+      "position_cm1": 520.66,
+      "fwhm_cm1": 3.4,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "First-order optical phonon of crystalline Si at about 520.7 cm-1 at room temperature (Temple & Hathaway, Phys. Rev. B 7, 3685, 1973). Position and width are measured from a Lorentzian fit over 505-540 cm-1 (FWHM 3.38 +/- 0.12 cm-1; direct half-maximum 3.67 cm-1)."
+    },
+    {
+      "position_cm1": 1396.48,
+      "fwhm_cm1": 4.4,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit over 1380-1415 cm-1 (centre 1396.48 +/- 0.02 cm-1, FWHM 4.38 +/- 0.06 cm-1; direct half-maximum 4.42 cm-1). The hBN E2g mode is at about 1367 cm-1 (Nemanich et al., Phys. Rev. B 23, 6348, 1981), so this line is not assigned to it. No other assignment is supported by the data."
+    },
+    {
+      "position_cm1": 245,
+      "fwhm_cm1": 546,
+      "assignment": "broad background, unassigned (possibly fluorescence)",
+      "irrep": null,
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Gaussian plus linear fit over 60-470 cm-1 gives centre 245 +/- 29 cm-1 and FWHM 546 +/- 246 cm-1. The width is poorly constrained and the feature is very broad with no sharp structure, so it is treated as background rather than a Raman mode."
+    }
+  ],
+  "properties": [
+    {
+      "name": "material_identity",
+      "value": "not confidently identified; closest candidate hBN (low confidence)",
+      "provenance": "inferred",
+      "source": "Peak-position comparison with Nemanich et al. 1981 (hBN E2g about 1367 cm-1). The 1396 cm-1 mismatch is too large for the Si calibration offset."
+    },
+    {
+      "name": "substrate",
+      "value": "SiO2/Si (only Si substrate line identified; no SiO2-specific bands resolved)",
+      "provenance": "measured",
+      "source": "Si line at 520.66 cm-1 from the fit. The 1100-1200 cm-1 region shows only noise."
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "No interlayer (shear/breathing) modes in range, since the spectrum starts at 60 cm-1, and no reference thickness-dependent spectrum was available."
+    },
+    {
+      "name": "strain_sign",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Only one line of the candidate material is present, and no reference position for the unstrained mode was available to compare against."
+    },
+    {
+      "name": "defect_level",
+      "value": "none detected",
+      "provenance": "inferred",
+      "source": "No D band (about 1350 cm-1) or G band (about 1580 cm-1) structure beyond background. The 1396 cm-1 line is narrow and symmetric at about 4.4 cm-1 FWHM."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Temple, P.A. & Hathaway, C.E. (1973). Multiphonon Raman spectrum of silicon. Phys. Rev. B 7, 3685 (Si first-order line about 520.7 cm-1 at room temperature).",
+    "Nemanich, R.J., Solin, S.A., & Martin, R.M. (1981). Light scattering study of boron nitride microcrystals. Phys. Rev. B 23, 6348 (hBN E2g mode about 1367 cm-1)."
+  ],
+  "limits": [
+    "Only one spectrum was given, with no polarization series, no reference spectra and no material hint, so identification rests on peak positions alone. I did not use the directory name as evidence.",
+    "The main line at 1396.48 cm-1 does not match the hBN E2g value of about 1367 cm-1 (about 29 cm-1 off). Calibration does not explain this, since the Si line is at 520.66 cm-1 against 520.7 standard. A large strain or doping shift cannot be ruled out from a single spectrum, but I know of no report placing hBN E2g near 1396 cm-1 at room temperature. hBN is therefore only a low-confidence candidate.",
+    "The spectrum covers only 60-1596 cm-1. The 2D band (about 2700 cm-1) and any high-frequency modes lie outside the range and cannot be checked. The data start 60 cm-1 from the Rayleigh line, so interlayer shear and breathing modes (usually below about 100 cm-1) are only partly captured and cannot be used to determine layer number.",
+    "The broad hump at 60-470 cm-1 is very wide (FWHM about 550 cm-1 with large uncertainty). It could be fluorescence, background or an unresolved broad mode, and the data cannot distinguish these, so it is reported as unassigned.",
+    "A single point at 1157.03 cm-1 (about 3 sigma above its neighbours) was reviewed and is not a resolved peak, so it is not reported. No cosmic-ray spikes were found: the largest local residuals all sit on the smooth Si and 1396 cm-1 profiles.",
+    "Output file: spectrum_overview.png (plot of full spectrum and low-shift zoom) was written to the working folder."
+  ]
+}

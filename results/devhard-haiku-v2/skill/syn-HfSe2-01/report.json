@@ -1,0 +1,90 @@
+{
+  "candidates": [
+    {
+      "material": "1T-HfSe2",
+      "confidence": 0.25,
+      "evidence": "Two sample bands at about 150 and 197 cm-1 with a stronger higher band, the pattern expected for a 1T diselenide. Not verified against reference frequencies: no HfSe2 Raman paper was in the local library and the Valency search failed (token not set), and the skill's reference tables sit outside the folder."
+    },
+    {
+      "material": "1T-ZrSe2",
+      "confidence": 0.15,
+      "evidence": "Same 1T diselenide structure class, so a similar two-band pattern is possible. Reference frequencies were not checked; this rests on general structural similarity only."
+    },
+    {
+      "material": "PdSe2",
+      "confidence": 0.1,
+      "evidence": "Has Raman modes in the 130-220 cm-1 region. From memory (unverified) it also has strong bands near 130 and 220 cm-1 that are absent here, which weakens this candidate."
+    },
+    {
+      "material": "SnSe2",
+      "confidence": 0.05,
+      "evidence": "Its main bands are, from memory and unverified, near 110 and 184 cm-1. Both are more than 10 cm-1 from the measured 150 and 197 cm-1, so this is unlikely."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "The task is an identify task with material_hint null, so there was no stated material to verify. The working folder name contains \"HfSe2\", but I did not use it as evidence. The ranking rests only on the spectrum.",
+  "peaks": [
+    {
+      "position_cm1": 197.12,
+      "fwhm_cm1": 3.83,
+      "assignment": "Unassigned sample band; tentatively A1g-type (inferred)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Strongest sample band. Its A1g-type label rests on D3d selection rules for 1T-type structures (A1g is Raman-active in z(xx)z backscattering along the layer normal). This is general group theory, not a checked reference table. Measured position is 196.7 after the Si offset correction."
+    },
+    {
+      "position_cm1": 150.03,
+      "fwhm_cm1": 6.04,
+      "assignment": "Unassigned sample band; tentatively Eg-type (inferred)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Weaker band, area about 0.12 of the 197 cm-1 band (fit areas, measured). The Eg label is an inference from D3d selection rules and is not confirmed. Measured position is 149.6 after the Si offset correction; fit error 0.41 cm-1 before calibration."
+    },
+    {
+      "position_cm1": 521.12,
+      "fwhm_cm1": 3.4,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Si first-order optical phonon, standard room-temperature value 520.7 cm-1 (general literature value, cited from memory, no locator). Measured offset is +0.42 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "si_calibration_offset_cm1",
+      "value": "+0.42",
+      "provenance": "measured",
+      "source": "Fitted Si position 521.12 cm-1 minus standard 520.7 cm-1"
+    },
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Two bands in 150-200 cm-1 only; no reference match could be checked"
+    },
+    {
+      "name": "layers",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No relation applied; the spectrum has no layer-dependent observable I could verify against a reference"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Si first-order Raman line at 520.7 cm-1 (room temperature): general literature value, cited from memory, no locator, not checked in a tool"
+  ],
+  "limits": [
+    "Only two sample bands were found above the noise (matched-filter SNR above 3 over 60-1100 cm-1). Weak modes below roughly 1000 counts of integrated amplitude could be hidden by the noise (about 280 counts per point).",
+    "No reference frequencies were checked. The skill's Computational Raman Database and material notes sit outside the folder, which the task forbids reading. The literature search failed (VALENCY_BOND_TOKEN not set) and the local library has no HfSe2 or ZrSe2 Raman paper. Candidate ranking therefore rests on the band pattern and general structure, not on verified frequencies.",
+    "The candidate ranking is not a unique identification. Several layered materials could give two bands near 150 and 197 cm-1.",
+    "The spectrum covers only 60-1100 cm-1. Higher-frequency first-order modes and second-order bands were not measured, so they cannot be used to exclude candidates.",
+    "Single unpolarized spectrum with no angle series: symmetry labels (A1g, Eg) are inferred from geometry only and cannot be confirmed. The backscattering geometry along the layer normal is stated in metadata but not verified.",
+    "Corrected positions after the Si offset (+0.42 cm-1): about 149.6 and 196.7 cm-1, each with about 0.4 cm-1 calibration uncertainty.",
+    "Laser at 532 nm, 295 K, and substrate were taken from metadata. No resonance or substrate-interference check was possible.",
+    "No layer number, strain, doping, or defect estimate: no applicable relation was available to me, so none was applied.",
+    "No cosmic-ray spikes found. The sharp 197 cm-1 feature was checked: it spans about 4 cm-1 with the same width as the Si line, so it is a real band, not a single-point spike."
+  ]
+}

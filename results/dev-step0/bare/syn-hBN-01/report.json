@@ -1,0 +1,85 @@
+{
+  "candidates": [
+    {
+      "material": "h-10BN (isotopically enriched, 10B-rich hexagonal boron nitride)",
+      "confidence": 0.6,
+      "evidence": "A single strong narrow line at 1396.5 cm-1 (FWHM about 4.3 cm-1) is the only sample peak. This is the hBN E2g in-plane mode, but it sits about 30 cm-1 above natural hBN (~1366). Literature gives ~1393-1394 for h-10BN and ~1356 for h-11BN."
+    },
+    {
+      "material": "hBN (natural isotope abundance), strained or miscalibrated",
+      "confidence": 0.15,
+      "evidence": "The E2g mode of natural hBN is at 1365-1370 cm-1, so the observed 1396.5 is ~30 cm-1 too high. Si at 520.65 shows the axis is calibrated, so a calibration error is unlikely. Strain or doping shifts are normally only a few cm-1."
+    },
+    {
+      "material": "Other sp2 B-N / carbon-like layered phase",
+      "confidence": 0.1,
+      "evidence": "Only one band is seen, with no D/G or 2D pattern. There is no positive evidence for any alternative."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was provided, and this is an identify task.",
+  "peaks": [
+    {
+      "position_cm1": 1396.5,
+      "fwhm_cm1": 4.3,
+      "assignment": "hBN E2g (in-plane B-N stretch, high-frequency mode)",
+      "irrep": "E2g",
+      "pattern": "isotropic_both",
+      "provenance": "measured",
+      "source": "Lorentzian fit (centre 1396.49 +/- 0.02, FWHM 4.31 +/- 0.07). Assignment follows the hBN E2g literature: Geick 1966; Reich 2005; Vuong et al., Nature Mater. 2018 for isotope-dependent E2g. The polarization pattern is inferred from E2g symmetry in backscattering and not measured, since this is a single spectrum."
+    },
+    {
+      "position_cm1": 520.65,
+      "fwhm_cm1": 3.4,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; first-order Si zone-centre phonon at 520.7 cm-1 (SiO2/Si substrate). The fitted centre agrees with the reference to better than 0.1 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "Layer number / thickness",
+      "value": "Not determined. The strong E2g signal relative to Si suggests a multilayer or bulk-like flake, but there is no low-frequency shear mode (~52 cm-1 in bulk hBN) in the 60-1596 cm-1 window to confirm the layer count.",
+      "provenance": "inferred",
+      "source": "Intensity ratio of E2g to Si"
+    },
+    {
+      "name": "Isotopic composition",
+      "value": "E2g at 1396.5 cm-1 is consistent with strong 10B enrichment (h-10BN). The enrichment fraction is not quantified.",
+      "provenance": "inferred",
+      "source": "Vuong et al., Nature Mater. 17, 2018: E2g about 1393 cm-1 for h-10BN versus about 1356 for h-11BN and about 1366 for natural hBN"
+    },
+    {
+      "name": "E2g linewidth",
+      "value": "4.3 cm-1 FWHM, a narrow line indicating good crystallinity. Isotopically pure hBN is expected to be narrower than natural hBN (~7-9 cm-1) because there is no isotopic disorder.",
+      "provenance": "measured",
+      "source": "Lorentzian fit"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "Broad smooth background / fluorescence, strongest below ~300 cm-1 and decaying toward higher shift (about 2400 counts at 60-300 cm-1 versus about 650 at 1500 cm-1)",
+      "position_cm1": null
+    },
+    {
+      "type": "No cosmic-ray spikes identified; all prominent features are either the two fitted peaks or noise (~66 counts rms).",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Geick, Perry, Rupprecht, Phys. Rev. 146, 543 (1966): hBN E2g mode",
+    "Reich et al., Phys. Rev. B 71, 205201 (2005): Raman of hBN, E2g at about 1366 cm-1",
+    "Vuong et al., Nature Mater. 17, 152 (2018): isotopically enriched h-10BN and h-11BN, E2g isotope shift",
+    "Temple & Hathaway, Phys. Rev. B 7, 3685 (1973): Si first-order line at 520.7 cm-1"
+  ],
+  "limits": [
+    "The assignment rests on one band, so identification is not unique. The ~1396 cm-1 position is ~30 cm-1 above natural hBN and matches isotope-enriched h-10BN only by comparison with literature values. An independent check by isotope-sensitive methods or by composition would be needed.",
+    "The E2g mode of h-10BN is reported at about 1393-1394 cm-1, so the observed 1396.5 cm-1 is slightly higher, possibly because of strain or partial enrichment. This is not resolved by these data.",
+    "Layer number cannot be determined. There is no resolvable low-frequency shear mode in the 60-1596 cm-1 range, and the E2g position and width are not a reliable thickness gauge here.",
+    "Polarization dependence cannot be measured from a single unpolarized-analysis spectrum. The 'isotropic_both' label comes from E2g symmetry in backscattering, not from data.",
+    "The spectrum stops at 1596 cm-1, so any bands above that are not covered.",
+    "The broad background below ~300 cm-1 could not be attributed (substrate, fluorescence, or Rayleigh tail) and no weak sample bands were resolved above the noise."
+  ]
+}

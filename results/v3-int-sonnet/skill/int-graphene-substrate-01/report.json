@@ -1,0 +1,114 @@
+{
+  "summary": "Both spectra show graphene G (about 1580 cm-1) and 2D (2681 cm-1 on Au, 2696 cm-1 on Cu), so graphene is present on both metals. The two are not equivalent. On Au the layer is clearly defective: the D band is as tall as G (I(D)/I(G) about 0.97) and the 2D line is single and fairly broad (FWHM about 36 cm-1). On Cu the whole graphene signal is about 7x weaker, D is only marginally above the noise, and the 2D band sits about 15 cm-1 higher than on Au. The apparent difference is therefore partly real and partly a signal-strength effect. The real parts are a likely higher defect density on Au and a different strain or doping state on Cu. The signal-strength part is that Cu gives a weak graphene signal that is hard to compare. The data cannot fix layer number, the strain/doping split, or a defect density, because the laser line is not recorded and there is no Si reference.",
+  "observations": [
+    {
+      "finding": "Graphene is identified on both metals: G near 1580 cm-1 and 2D near 2700 cm-1 are present in both spectra.",
+      "evidence": "Au: G 1580.3 \u00b1 0.9 cm-1 (FWHM 25 \u00b1 3), 2D 2681.1 \u00b1 0.5 (FWHM 36.5 \u00b1 1.5). Cu: G 1580.4 \u00b1 2.7 (FWHM 22 \u00b1 9), 2D 2695.7 \u00b1 1.2 (FWHM 38 \u00b1 4). The Au 2D height is 329 counts at noise sd 16; the Cu 2D height is 48 at noise sd 7, so the Cu 2D is about 7\u03c3.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "On Au the layer is strongly defective (D comparable to G). On Cu a D band is at most marginal, so the Cu layer is better ordered or its D is below detection.",
+      "evidence": "Au: D at 1344.2 \u00b1 1.1 cm-1, FWHM 37 \u00b1 4, height 111 \u00b1 6.5; I(D)/I(G) (heights) = 0.97 \u00b1 0.09. Cu: D height 13.8 \u00b1 3.6 at 1349 cm-1 (about 3.8\u03c3, position poorly constrained); I(D)/I(G) = 0.6 \u00b1 0.2, with a low G height of 23 \u00b1 5. The automatic Cu fit did not pick up a D peak. Cu D is therefore only a weak, low-confidence feature.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Au: D position and 2D position follow the double-resonance relation (2D is about 2 x D), and 2D is a single band.",
+      "evidence": "2681.1/1344.2 = 1.995. D is dispersive with the laser, so the near-2x relation is the expected pattern for a one-excitation set, not proof of the laser line.",
+      "provenance": "inferred",
+      "source": "Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856), Fig. 1g, pp.3-6"
+    },
+    {
+      "finding": "2D is a single Lorentzian-like band on both metals, but its width is large. That alone does not prove monolayer.",
+      "evidence": "FWHM(2D) 36.5 \u00b1 1.5 on Au and 38 \u00b1 4 on Cu, compared with about 25-30 cm-1 typical of clean supported 1L graphene (my recollection; not taken from a tool output). I(2D)/I(G) (heights) = 2.9 \u00b1 0.2 on Au and 2.0 \u00b1 0.5 on Cu. A ratio above 2 favours 1L or a decoupled/turbostratic stack but is reduced by doping and defects. Sampling is coarse (2.29 cm-1 per point).",
+      "provenance": "measured",
+      "source": "Ferrari and Basko 2013, p.9 (turbostratic caveat); Ferrari 2006, PRL 97, 187401 (arXiv cond-mat/0606284)"
+    },
+    {
+      "finding": "2D is 14.6 \u00b1 1.3 cm-1 higher on Cu than on Au, with G unchanged within error. This is the main spectroscopic difference between the two substrates.",
+      "evidence": "Delta 2D = +14.6 \u00b1 1.3 cm-1 (fit error only); Delta G = +0.14 \u00b1 2.8 cm-1. If the shift were pure biaxial strain, the strain slope of about 2.2 for Pos(2D) vs Pos(G) (Lee 2012) would predict Delta G of about 6-7 cm-1. That is about 2\u03c3 from the measured Delta G. Hole doping would raise G and 2D together. Both argue for a mixed strain/doping/coupling difference rather than a single cause. No Si or other calibration line is in the data.",
+      "provenance": "inferred",
+      "source": "Lee et al. 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234), Fig. 2, p.3; Mohiuddin 2009 via Ferrari and Basko 2013, p.20"
+    },
+    {
+      "finding": "The Cu spectrum has a much weaker graphene signal on a different background. Au has a large, broad rising background (about 1000 to 1500 counts) with graphene on top; Cu is lower (600-800 counts) and flatter.",
+      "evidence": "2D height 329 (Au) vs 48 (Cu); 2D area 18990 vs 2845, a ratio of about 6.7. The QC flagged strong background on Cu (low SNR 9) and the Au baseline is also large. Plausible reasons for the weaker Cu signal are different graphene coverage or quality under the spot, different optical coupling and absorption of the metal surface, and stronger graphene-Cu electronic hybridisation (a general expectation; not shown by these data).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A narrow feature at 2326 cm-1 and a broad one at 2436 cm-1 appear only on Cu. I treat them as non-graphene artifacts.",
+      "evidence": "2326.2 \u00b1 0.6 cm-1, FWHM 5.4 \u00b1 1.8 (about 2 points wide, unresolved at 2.29 cm-1 sampling). This is close to the N2 vibration of air (about 2331 cm-1; my recollection) but 5 cm-1 low, so it could be a cosmic spike or other artifact; it is not on Au. 2436 cm-1, FWHM 48 \u00b1 26, is close to the noise. Neither belongs to the graphene assignment.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "Not determined. Consistent with 1L on both, but single 2D with FWHM about 37 cm-1 does not exclude few-layer or turbostratic graphene.",
+      "provenance": "inferred",
+      "source": "Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235, p.9"
+    },
+    {
+      "name": "defect_level",
+      "value": "Au: medium to high (I(D)/I(G) about 0.97, D FWHM about 37 cm-1, G FWHM about 25 cm-1). Cu: low to medium (D only marginal, I(D)/I(G) about 0.6 \u00b1 0.2).",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175), Fig. 5; Ferrari and Basko 2013, p.10"
+    },
+    {
+      "name": "L_D_nm",
+      "value": "Not computed. The relation needs the laser wavelength, which is not recorded, and a known stage 1 or 2. Au D/G near 1 and G FWHM about 25 cm-1 (under the heavy-damage limit) are consistent with stage 1 (L_D above about 3 nm).",
+      "provenance": "inferred",
+      "source": "Cancado 2011, p.5"
+    },
+    {
+      "name": "strain_sign",
+      "value": "Not decided. Cu 2D is upshifted by +14.6 cm-1 relative to Au, which points to compressive (or hole-doped) character on Cu relative to Au, but the data do not separate strain from doping.",
+      "provenance": "inferred",
+      "source": "Lee et al. 2012, Nat. Commun. 3, 1024, Fig. 2"
+    },
+    {
+      "name": "doping_type",
+      "value": "Not decided. G is unchanged between Au and Cu (within \u00b1 2.8 cm-1) and the G widths are not constrained on Cu (22 \u00b1 9 cm-1), so no doping sign can be given.",
+      "provenance": "inferred",
+      "source": "Das et al. 2008, Nat. Nanotechnol. 3, 210 (arXiv 0709.1174)"
+    }
+  ],
+  "caveats": [
+    "Laser wavelength is not recorded. D and 2D positions disperse with excitation energy (about 52 and 100 cm-1/eV), and I(D)/I(G) scales with lambda^4, so defect density and absolute positions cannot be compared with literature without it. Both spectra are assumed to be taken with the same laser; that is not stated.",
+    "No Si or other calibration line is present, so a rigid calibration offset between the two acquisitions cannot be excluded. The narrow 2326 cm-1 line on Cu (close to, but 5 cm-1 below, air N2 at 2331) hints at a possible offset but is unproven. If the offset were real, the true 2D difference would be larger than 14.6 cm-1.",
+    "The Cu spectrum is low signal-to-noise (strongest band 9x noise) with a sloping background. G, D and their ratios on Cu have errors of 20-35 %, and the G width is essentially unconstrained (22 \u00b1 9 cm-1). Height ratios are sensitive to the baseline; areas would be preferred but are equally noisy on Cu.",
+    "Au has a large broad background (about 1000-1500 counts), probably metal luminescence, and the Au spectrum may be affected by plasmonic or surface-enhancement effects from the droplet surface (not shown by these data). Enhancement could inflate the apparent Au graphene signal relative to Cu and change the apparent intensity ratios.",
+    "Intensity ratios depend on the optical stack (metal reflectivity, droplet geometry, focus on a curved liquid-derived surface). Absolute intensity and I(2D)/I(G) are not a layer number on a metal.",
+    "The Au 2D is a single band of width about 36 cm-1. A wider-than-pristine 2D can come from defects, inhomogeneous strain and doping under the spot, a mix of layer numbers, or turbostratic stacking. These cannot be separated from one spectrum.",
+    "Alternative explanations for the Au/Cu difference include: different graphene quality because the growth conditions differ (Au at high ethylene flux in a MicroReactor vs Cu in UHV, a different carbon source and pressure); different thermal-contraction strain on cooling (the two metals have similar but not identical thermal expansion, and liquid-to-solid change on solidification adds strain and wrinkles); different graphene-metal hybridisation or charge transfer; and spot-to-spot variation. No mechanism is proven by these data.",
+    "Measured at room temperature on the metal after rapid cooling (about 50 K/s). Strain frozen in by fast cooling is a plausible contributor, but the data do not show its size. At 0.2 mW local heating is probably small but was not checked (no Stokes/anti-Stokes or power series)."
+  ],
+  "questions_for_user": [
+    "What was the laser wavelength? It is needed to interpret D and 2D positions, convert I(D)/I(G) to a defect distance (L_D), and check resonance effects.",
+    "Were the two spectra taken with the same laser, objective and calibration, and is there a Si or other reference measurement for each session? That would decide whether the 14.6 cm-1 2D difference is real.",
+    "How many spots or maps support each spectrum, and are these typical? A single spot cannot tell whether Au is really more defective than Cu or whether the spot is atypical.",
+    "Does the 2326 cm-1 line on Cu repeat across spots and acquisitions? A real band repeats; a cosmic spike or air N2 line behaves differently.",
+    "Is the graphene on each metal expected to be monolayer from growth, and was it ever transferred to SiO2/Si for a clean 1L/2L check? A transferred reference would separate the metal's influence from the layer's intrinsic quality.",
+    "Is the solidified metal surface smooth under the beam, and was the focus identical? Surface curvature and focus change signal strength and background."
+  ],
+  "citations": [
+    "Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856): Fig. 1g, pp.3-6 (D, 2D, D'), p.9 (turbostratic 2D), p.10 (stage 1 and 2 defects), p.20 (strain shifts)",
+    "Ferrari et al. 2006, PRL 97, 187401 (arXiv cond-mat/0606284): 2D shape vs layer number",
+    "Cancado et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175): Fig. 5, I(D)/I(G) and FWHM(G) vs L_D, laser dependence",
+    "Lee et al. 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234): Fig. 2, Pos(G)-Pos(2D) strain/doping vector, slope 2.2",
+    "Das et al. 2008, Nat. Nanotechnol. 3, 210 (arXiv 0709.1174): doping dependence of G and 2D",
+    "Skill reference note reference/materials/graphene.md (read in this session) and the rl_qc.py, rl_series.py, rl_fit.py tool outputs"
+  ],
+  "limits": [
+    "Cannot determine the layer number, the stacking, or whether either layer is a true monolayer from these spectra alone.",
+    "Cannot separate strain from doping, because the laser is unknown, G on Cu has a large uncertainty and there is no Si or other calibration reference.",
+    "Cannot give a defect distance L_D. The relation needs the laser wavelength, and the Cu D band is marginal.",
+    "Cannot say whether the Au/Cu difference is intrinsic to the graphene or comes from the metal (enhancement, background, absorption) or a spot-specific effect; this needs mapping, a second laser, and a transferred reference.",
+    "The window starts at 102 cm-1, so shear or breathing modes are not observable and their absence is not evidence. Sampling of 2.29 cm-1 per point cannot resolve splittings or shifts below about 4.6 cm-1, so the 2D substructure (1L vs 2L) cannot be examined.",
+    "Errors quoted are fit statistics only; the calibration uncertainty is not included and is unmeasured here.",
+    "No literature figures were retrieved with the paper tools in this session; the literature statements come from the skill's note, with the sources named above."
+  ]
+}

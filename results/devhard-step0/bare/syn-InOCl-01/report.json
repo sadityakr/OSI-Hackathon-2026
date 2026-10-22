@@ -1,0 +1,98 @@
+{
+  "candidates": [
+    {
+      "material": "InOCl",
+      "confidence": 0.45,
+      "evidence": "Three sharp lines at 155.7, 299.3 and 354.1 cm-1 with nothing above ~400 cm-1 match a heavy-metal oxychloride of the FeOCl type (Pmmn). I did not check this against a reference spectrum. The set does not match BiOCl, SnS2 or the In2Se3 phases, so the identification is tentative."
+    },
+    {
+      "material": "BiOCl",
+      "confidence": 0.1,
+      "evidence": "The 156 cm-1 line is near the A1g mode at about 145 cm-1. But BiOCl also shows Eg at about 200 cm-1 and B1g/Eg at about 397 cm-1, and neither is seen here."
+    },
+    {
+      "material": "Other FeOCl-type MOCl (e.g. FeOCl, TiOCl, CrOCl)",
+      "confidence": 0.1,
+      "evidence": "The structure type fits the pattern of a few low-frequency lines. The mode energies reported for these compounds differ from those seen here."
+    },
+    {
+      "material": "Layered In-chalcogenide (e.g. alpha-In2Se3, InSe)",
+      "confidence": 0.05,
+      "evidence": "Their main lines are near 90-110 and 180-230 cm-1, which does not fit 156 and 354 cm-1."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was supplied, so the identification rests on the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 155.7,
+      "fwhm_cm1": 5.1,
+      "assignment": "Lowest-frequency, strongest mode; probably a heavy-atom (In-Cl) vibration, totally symmetric (Ag)",
+      "irrep": "Ag (tentative)",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured from a Lorentzian fit. The mode symmetry is inferred by analogy with FeOCl-type (Pmmn) oxychlorides. I did not check it against a reference."
+    },
+    {
+      "position_cm1": 299.3,
+      "fwhm_cm1": 7.8,
+      "assignment": "Weak mid-frequency mode; probably an In-O stretching/bending vibration",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; weak, about 1000 counts above background and about 3 times the noise. The assignment is not verified."
+    },
+    {
+      "position_cm1": 354.1,
+      "fwhm_cm1": 8.9,
+      "assignment": "Higher-frequency mode; probably an In-O stretching vibration",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. The mode type is inferred from the frequency. The material was not confirmed."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "bulk",
+      "provenance": "inferred",
+      "source": "Mode intensities and widths suggest a thick flake or crystal. The layer number cannot be determined."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "The lines are narrow, with FWHM of 5-9 cm-1, and no broad disorder band appears."
+    },
+    {
+      "name": "phase",
+      "value": "orthorhombic FeOCl-type (Pmmn), tentative",
+      "provenance": "inferred",
+      "source": "Inferred from the proposed InOCl identification. Not confirmed by the data."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single point, ~9200 counts against a ~1500 background)",
+      "position_cm1": 897.5
+    },
+    {
+      "type": "sloping photoluminescence-like background (decreasing from ~2900 to ~1000 counts across the range)",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "FeOCl-type MOCl structure (Pmmn) \u2013 general knowledge; no reference spectrum was checked against the data",
+    "BiOCl Raman: A1g about 145 cm-1, Eg about 200 cm-1, B1g/Eg about 397 cm-1 (recalled from memory, not re-checked)"
+  ],
+  "limits": [
+    "The identification is tentative. I did not check the spectrum against a reference InOCl Raman spectrum, and I am not sure of the published mode positions.",
+    "The data are single-polarization with no angle resolution and no substrate, so the mode symmetries and polarization patterns cannot be assigned.",
+    "The 299 cm-1 peak is weak, only about 3 times the noise, and should be treated as probable rather than certain.",
+    "I did not detect a Si substrate line at 520.7 cm-1, and the spectral range is only about 60-1100 cm-1. Nothing above 1100 cm-1 was examined.",
+    "The single-point spike at 897.5 cm-1 was rejected as a cosmic ray. Neighbouring points are at background, and a real Raman line would span several points.",
+    "The isostructural oxychlorides (FeOCl, TiOCl, CrOCl) and BiOCl were considered and mostly ruled out by the peak positions. The data cannot exclude an unlisted compound with a similar low-frequency spectrum.",
+    "The layer number, strain and doping cannot be determined from this spectrum."
+  ]
+}

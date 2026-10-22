@@ -1,0 +1,138 @@
+{
+  "candidates": [
+    {
+      "material": "Monolayer graphene",
+      "confidence": 0.95,
+      "evidence": "Only the graphene pattern is present: G at 1580.7 cm-1 (FWHM 14.1), a single symmetric 2D at 2698.2 cm-1 (FWHM 32.0; a second component or a doublet adds nothing, rms equals noise), a D band at 1350.7 cm-1 and a weak D' at 1619.6 cm-1. I_2D/I_G is 3.0 by amplitude and 6.8 by area, and the 2D is a single Lorentzian, which points to one layer. hBN is excluded because it has no 1366 cm-1 E2g and no G/2D pair. Window covers 1100-3000 cm-1 only, so low-frequency modes and Si 520 are not checked."
+    },
+    {
+      "material": "Bilayer graphene",
+      "confidence": 0.03,
+      "evidence": "Rejected: bilayer 2D is broader and composed of several components (about 50+ cm-1 FWHM); the measured 2D is a single component with FWHM 32 cm-1 and fits at the noise level."
+    },
+    {
+      "material": "hexagonal BN",
+      "confidence": 0.01,
+      "evidence": "Rejected: hBN has a sharp E2g at about 1366 cm-1 (about 15 cm-1 from the 1350.7 band, far outside the fit uncertainty of 0.03 cm-1), and no G at 1580 or 2D near 2700 cm-1 would appear in hBN."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "placeholder",
+  "peaks": [
+    {
+      "position_cm1": 1350.66,
+      "fwhm_cm1": 15.1,
+      "assignment": "D (defect-activated zone-edge A1' breathing mode at K)",
+      "irrep": "A1' (D3h)",
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Position and FWHM from joint Lorentzian fit (1200-1750 cm-1 window, quadratic baseline). Assignment: Tuinstra & Koenig, J. Chem. Phys. 53, 1126 (1970); Ferrari & Robertson, PRB 61, 14095 (2000). Assignment and irrep cited from memory, not verified in this session."
+    },
+    {
+      "position_cm1": 1580.69,
+      "fwhm_cm1": 14.1,
+      "assignment": "G (E2g in-plane optical phonon at Gamma; E2' in D3h)",
+      "irrep": "E2' (D3h)",
+      "pattern": "isotropic_both",
+      "provenance": "measured",
+      "source": "Position and FWHM from joint fit. Assignment: Ferrari et al., PRL 97, 187401 (2006). Assignment and irrep cited from memory, not verified in this session."
+    },
+    {
+      "position_cm1": 1619.57,
+      "fwhm_cm1": 13.1,
+      "assignment": "D' (defect-activated intravalley mode, iTO at Gamma)",
+      "irrep": "E' (D3h)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from joint fit (amp 326 +- 10, about 0.09 of G). Assignment: Ferrari & Robertson, PRB 61, 14095 (2000). Irrep inferred from the mode's origin and not verified."
+    },
+    {
+      "position_cm1": 2698.16,
+      "fwhm_cm1": 32,
+      "assignment": "2D (second-order overtone of the D mode, two zone-edge TO phonons)",
+      "irrep": "A1' (D3h)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from joint fit, single Lorentzian; doublet test shows no second component (amp 39 +- 23 at 2687, not significant). Assignment: Ferrari et al., PRL 97, 187401 (2006). Assignment cited from memory, not verified in this session."
+    },
+    {
+      "position_cm1": 1838.3,
+      "fwhm_cm1": 19.6,
+      "assignment": "none (noise)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Tested feature; amplitude 21 counts, rms change 0.3 counts. Not a peak."
+    },
+    {
+      "position_cm1": 2950.5,
+      "fwhm_cm1": 4.6,
+      "assignment": "none (D+D' combination not significant)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Tested in 2800-3000 cm-1; amplitude 44 counts, rms 25.0 to 24.4. Not significant, not reported as a peak."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "Single-component 2D with FWHM 32 cm-1 and I_2D/I_G about 3 (amplitude) / 6.8 (area). Monolayer 2D-shape criterion from Ferrari et al., PRL 97, 187401 (2006), cited from memory."
+    },
+    {
+      "name": "defect_level",
+      "value": "low to moderate",
+      "provenance": "inferred",
+      "source": "I_D/I_G about 0.60 (amplitude) / 0.65 (area), L_D about 14 nm. Level from the point-defect regime of Lucchese et al., Carbon 48, 1592 (2010), cited from memory."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "14 (range about 12-16)",
+      "provenance": "inferred",
+      "source": "Lucchese et al., Carbon 48, 1592 (2010), point-defect relation L_D^2 = (1.8 +- 0.5) x 10^-9 lambda^4 / (I_D/I_G), lambda = 514.5 nm. Applied to I_D/I_G = 0.60 (amplitude, gives 14.5 nm) and 0.65 (area, gives 14.0 nm). Range comes from the coefficient uncertainty. Valid in the point-defect (low-defect) regime, which holds here. Relation cited from memory, not verified in this session."
+    },
+    {
+      "name": "defect_type",
+      "value": "point defects, vacancy-like (most likely); edge/boundary contribution not excluded",
+      "provenance": "inferred",
+      "source": "I_D/I_D' = 6.7 (amplitude) / 7.7 (area). Eckmann et al., Nano Lett. 12, 3925 (2012) give about 7 for vacancies, about 13 for sp3 (covalent) defects and about 3.5 for boundary/edge defects. Values cited from memory, not verified in this session."
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "G at 1580.7 is close to neutral graphene, but 2D at 2698.2 is about 15 cm-1 above typical 514 nm neutral values (about 2680-2690, from memory). A single spectrum cannot separate doping, strain and calibration offset (no Si 520 reference in the window)."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No G-2D correlation that separates strain from doping with one spectrum; the 2D upshift could be doping, strain or calibration."
+    },
+    {
+      "name": "phase",
+      "value": "not applicable (monolayer graphene, sp2)",
+      "provenance": "inferred",
+      "source": "Graphene pattern (G, 2D, D, D') with no sp3 (D+D', 2930-2950) signal above noise."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari, A. C. et al., Phys. Rev. Lett. 97, 187401 (2006) \u2014 G and 2D assignments, monolayer 2D shape (cited from memory; not verified in this session)",
+    "Ferrari, A. C. & Robertson, J., Phys. Rev. B 61, 14095 (2000) \u2014 D and D' assignments (cited from memory; not verified in this session)",
+    "Tuinstra, F. & Koenig, J. L., J. Chem. Phys. 53, 1126 (1970) \u2014 D band origin (cited from memory; not verified in this session)",
+    "Lucchese, M. M. et al., Carbon 48, 1592 (2010) \u2014 L_D relation L_D^2 = (1.8 +- 0.5) x 10^-9 lambda^4 / (I_D/I_G) (cited from memory; not verified in this session)",
+    "Eckmann, A. et al., Nano Lett. 12, 3925 (2012) \u2014 D/D' ratios for vacancy (~7), sp3 (~13) and boundary (~3.5) defects (cited from memory; not verified in this session)"
+  ],
+  "limits": [
+    "Material: the identification rests on the G/2D/D/D' pattern in the 1100-3000 cm-1 window only. Low-frequency modes (including Si at 520.7 cm-1 for calibration and any TMD/hBN low-frequency modes) are outside the data, so calibration offset is unchecked. The skill's scripts and matcher library live outside this folder and were not used; the analysis was done directly in Python in this folder with a joint baseline and Lorentzian fit. Literature citations above are from memory and were not checked against the sources in this session.",
+    "Layers: monolayer is inferred from the single-component 2D with FWHM 32 cm-1 and the I_2D/I_G ratio. No bilayer-specific features were tested beyond that. Stacking and substrate interference cannot be checked with one spectrum.",
+    "Defect density: L_D (about 14 nm, range 12-16) is an inter-defect distance from the point-defect relation of Lucchese et al. (2010), whose coefficient has about +-28 % uncertainty. Amplitude and area ratios give 14.5 and 14.0 nm respectively. Systematic error from the baseline and lineshape choice is estimated at about 5 % in I_D/I_G. The relation assumes a uniform point-defect distribution. The D band's narrow FWHM (15 cm-1) and the low D'/G ratio are consistent with that picture, but do not prove it.",
+    "Defect type: the D/D' ratio (6.7 amplitude, 7.7 area) favours vacancy-like point defects. This uses values from Eckmann et al. (2012), cited from memory, and the discrimination is sensitive to the D' fit (D' amplitude 326 counts, about 0.09 of G, with a fitted position error of 0.2 cm-1). Grain boundaries and edges (boundary-like, D/D' near 3.5) cannot be excluded from one spot. Mapping and angle-independent edge checks would be needed to separate them.",
+    "Doping and strain: G at 1580.7 is near neutral. The 2D at 2698.2 is about 15 cm-1 above typical 514 nm neutral values (from memory). One spectrum cannot separate doping, strain and calibration. No values are reported for these properties.",
+    "Rejected hypotheses: bilayer (2D is single-component with FWHM 32 cm-1; bilayer 2D is broader and multi-component); hBN (E2g at about 1366 cm-1 is absent, the 1351 band sits 15 cm-1 away, and hBN has no G or 2D); a sp3-dominated sample (no D+D' signal at 2950 cm-1; tested amplitude 44 counts, not significant). Artifacts: none; no single-point spikes above 8 sigma (MAD-based test). Bands at 1838 cm-1 and 2950 cm-1 were tested and are at noise level, not peaks.",
+    "Conditions: 514.5 nm excitation is near the graphene 2D resonance region, so relative intensities and the D' ratio depend on the laser energy. The 295 K temperature is not corrected. Substrate SiO2/Si interference can change I_D/I_G and I_2D/I_G at the level of tens of percent; the L_D value assumes the same interference for both bands, which is not verified. Polarization was not measured (single spectrum), so no polarization class is reported."
+  ]
+}

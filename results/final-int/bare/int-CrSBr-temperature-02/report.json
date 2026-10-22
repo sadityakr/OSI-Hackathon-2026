@@ -1,0 +1,135 @@
+{
+  "summary": "Both flakes show the same two Raman modes, near 241\u2013250 cm-1 and near 340 cm-1, at both temperatures. Their positions are close (300 K: A 241.8/340.3, B 241.3/339.0 cm-1), so the flakes are of the same phase. They differ in four ways that the data support. (1) At 4 K, flake A's low-energy mode is a single line at 250.0 cm-1. Flake B's is a doublet at about 246.1 and 250.3 cm-1 (BIC favours two components by about 120), and B also has a mode at 361.1 cm-1 that is absent from A at 4 K and from both 300 K spectra. (2) The low/high intensity ratio moves in opposite directions with temperature: A goes from 0.66 (4 K) to 2.97 (300 K), B from 2.73 to 1.18. (3) B's 300 K lines are broader (5.9 and 5.7 cm-1 FWHM) than A's (5.2 and 4.5 cm-1). (4) The files are not on the same intensity scale. A carries a ~2000-count offset, while B is background-subtracted with negative values, so absolute intensities cannot be compared across flakes. Both flakes shift up on cooling by about +3.5 cm-1 (high mode) and +5 to +8 cm-1 (low mode), so the shift looks crystal-wide rather than flake-specific. The window does not contain the low-frequency interlayer modes that normally give thickness, so neither flake's thickness can be determined from these spectra. B looks more structured and possibly more inhomogeneous, but which flake is thicker is undetermined.",
+  "observations": [
+    {
+      "finding": "Both flakes show the same two dominant modes, near 241\u2013250 cm-1 and near 340 cm-1. At 300 K the centres are A 241.78\u00b10.04 and 340.26\u00b10.09 cm-1, and B 241.30\u00b10.07 and 339.04\u00b10.07 cm-1. The 300 K centres differ by 0.5 and 1.2 cm-1.",
+      "evidence": "Lorentzian fits on a linear baseline over 150\u2013401 cm-1 (spectrum_A_300K.csv, spectrum_B_300K.csv). Statistical errors only; the wavenumber axis calibration is not verified (no reference peak in window). Grid step 1.34 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "At 4 K, flake A has one low-energy mode at 250.01\u00b10.07 cm-1 (FWHM 4.1 Lorentzian; a Gaussian fits better, BIC 817 vs 1074). Flake B's low-energy band needs two components, at about 246.1 cm-1 (FWHM ~5.9) and 250.3 cm-1 (FWHM ~3.2). The two-component model lowers BIC from 1322 to 1200 relative to a single Lorentzian.",
+      "evidence": "spectrum_A_4K.csv and spectrum_B_4K.csv, least-squares fits. Component centres shift by about \u00b10.2 cm-1 with starting values. B's residual RSS/\u03c3\u00b2 is still ~597 for N=191, so the doublet is preferred but the fit is not perfect.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Flake B at 4 K has an additional mode at 361.1\u00b10.4 cm-1, FWHM ~4.4 cm-1, height ~139 counts (SNR ~13 with \u03c3\u224811). It is absent from A at 4 K (fitted height 1.8 counts, SNR 0.4), so the 3\u03c3 upper limit for A is about 15 counts, under 11% of B's height. It is also absent at 300 K (SNR 0.7 for A, 1.1 for B).",
+      "evidence": "Points 358\u2013365 cm-1 in B_4K are 57, 77, 138, 104, 85, 35 counts above a near-zero baseline, a 4\u20135-point-wide bump, not a single-point spike. Fit with centre and width fixed in A_4K, A_300K and B_300K.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The low/high intensity ratio (integrated area of the ~245 band over the ~340 band) changes in opposite directions between the flakes. A: 0.66 at 4 K, 2.97 at 300 K (heights 0.61 and 2.58). B: 2.73 at 4 K, 1.18 at 300 K (heights 1.52 and 1.14).",
+      "evidence": "Lorentzian areas: A 4K 2770/4201; A 300K 7786/2618; B 4K (246+250 components) 9160/3360; B 300K 8644/7306. Both modes lie within ~100 cm-1 at 532 nm, so optical interference should affect them almost equally and the ratio is less sensitive to it than absolute intensities. Area uncertainties are about \u00b110\u201315%, and the 300 K A high-mode uncertainty is ~40%.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The change in low/high ratio on cooling is far larger than a Bose-Einstein occupancy effect would give. For a Stokes intensity proportional to (n+1)/\u03c9, the expected 4 K\u2192300 K change of the low/high ratio is only ~1.18\u00d7, against ~4.5\u00d7 observed for A and ~0.43\u00d7 for B.",
+      "evidence": "n(240 cm-1, 300 K)=0.46, n(340 cm-1, 300 K)=0.24, n=0 at 4 K. Ratio of (n+1)/\u03c9 factors: 1.67 at 300 K, 1.42 at 4 K.",
+      "provenance": "inferred",
+      "source": "Standard Stokes-intensity relation for Raman scattering (Loudon, Adv. Phys. 13, 423 (1964)), cited from memory; not checked against the paper."
+    },
+    {
+      "finding": "Both flakes shift to higher wavenumber on cooling: the high mode by +3.6 (A) and +3.5 (B) cm-1, the low mode by +8.2 (A, 241.8\u2192250.0) and +4.9 (B, 241.3\u2192246.1 component). The high-mode shifts agree closely, which suggests a common cause.",
+      "evidence": "300 K\u21924 K centre differences from the fits above; errors ~\u00b10.1\u20130.4 cm-1 statistically. The B low-mode value depends on how the 4 K doublet is assigned to the 300 K mode.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "An ~8 cm-1 low-mode shift over 300\u21924 K is larger than typical anharmonic shifts for ~250 cm-1 phonons in layered materials. It could partly reflect spin-phonon coupling below the magnetic transitions (T_N ~132 K, T_C ~146 K), thermometry or calibration offsets, or laser heating at 4 K.",
+      "evidence": "No calibration reference in the 150\u2013401 cm-1 window; the spectra give no independent temperature or power check.",
+      "provenance": "inferred",
+      "source": "Anharmonic temperature dependence: Balkanski, Wallis & Haro, PRB 28, 1928 (1983), cited from memory. N\u00e9el and Curie temperatures of CrSBr: G\u00f6ser et al., J. Magn. Magn. Mater. (1990) and Telford et al., Adv. Mater. (2020), cited from memory; not verified here."
+    },
+    {
+      "finding": "Flake B's linewidths are broader at 300 K than A's (low 5.9 vs 5.2 cm-1, high 5.7 vs 4.5 cm-1). At 4 K the high-mode widths are similar (A 3.8, B 3.9 cm-1). The 4 K A line shape is Gaussian-like, which suggests the widths are close to the instrument resolution.",
+      "evidence": "Lorentzian FWHM from the fits above. BIC favours Gaussian for A 4K (817 vs 1074).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The absolute intensities and backgrounds of the two files are not comparable. A has a ~2008 (4 K) / ~2125 (300 K) count offset and noise \u03c3 of 5.1 / 14.8 counts. B is background-subtracted with negative values (62 points below zero at 4 K, 60 at 300 K) and noise \u03c3 of 11.0 / 21.8 counts.",
+      "evidence": "Raw min/max/median and quiet-region (280\u2013320 cm-1) standard deviations; ALS baseline residuals.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "not determinable from this window (low-frequency interlayer shear/breathing modes lie below 150 cm-1 and are not measured)",
+      "provenance": "inferred",
+      "source": "Interlayer shear-mode thickness probe: Tan et al., Nat. Mater. 11, 294 (2012), cited from memory; not verified here."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable; B shows broader 300 K lines and a 4 K doublet plus an extra 361 cm-1 mode, which suggests more inhomogeneity than A (low confidence)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "L_D_nm",
+      "value": "not applicable (CrSBr, not graphene)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none determined; the 4 K doublet in B and the 300 K high-mode offset of 1.2 cm-1 are not enough to assign strain",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none determined; not in scope of these Raman data",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "orthorhombic CrSBr (Pmmn), assumed, not measured",
+      "provenance": "literature",
+      "source": "CrSBr crystal structure and magnetic transitions (T_N ~132 K, T_C ~146 K): G\u00f6ser et al., J. Magn. Magn. Mater. (1990); Telford et al., Adv. Mater. (2020); cited from memory, not verified here."
+    }
+  ],
+  "caveats": [
+    "Processing mismatch: A is raw with a ~2000-count offset; B is background-subtracted with negative values. Absolute intensities, and intensity ratios between flakes, are therefore not meaningful. Only within-spectrum low/high ratios, positions and widths are comparable, and even those assume the same spectrometer response across 240\u2013340 cm-1.",
+    "Noise: if A's units are counts, its quiet-region scatter (5 counts at 4 K on a ~2000-count background) is far below Poisson shot noise (~45). That implies the file was rescaled, smoothed, or had an offset added after acquisition. Check the export chain before using A's noise or SNR.",
+    "Calibration: no reference peak (Si 520.7 cm-1, Ne lamp) is inside 150\u2013401 cm-1. Absolute frequencies and the 4 K/300 K shifts carry an unknown systematic offset, and the ~8 cm-1 low-mode shift is large enough to need checking.",
+    "Spectral sampling is 1.34 cm-1 with ~4\u20136 cm-1 linewidths, so centres are good to ~0.1\u20130.3 cm-1 statistically. Lineshape is near Gaussian, so widths may be instrument-limited; B's 300 K width difference of ~1 cm-1 may not be intrinsic.",
+    "Laser heating: 532 nm at 4 K in vacuum can heat the flake by a large amount, and absorbed power depends on thickness. A thicker or more absorbing flake would be hotter, which could produce flake-specific 4 K differences. Laser power, spot size and a power series are not given.",
+    "The ratio change between 4 K and 300 K may come from resonance with excitonic transitions near 2.33 eV (532 nm), which shift with temperature and thickness, or from magnetic or structural changes. The data cannot separate these.",
+    "Circular polarisation: intensities of a mode in crossed-circular backscattering depend on rotation-invariant tensor combinations, so in-plane orientation should not change the ratio. This is a symmetry argument, not verified here. But a remanent field in the PPMS magnet at 4 K could still give helicity-dependent asymmetries, so check the field history.",
+    "The 361 cm-1 feature rests on one spectrum at SNR ~13. Its reproducibility, a blank-substrate spectrum, and laser-line or plasma-line contributions have not been checked. The B 4 K fit still leaves residuals ~2.4\u00d7 the noise.",
+    "Thickness: the 300 K frequencies and ratios are not a validated thickness calibration for CrSBr. Interference enhancement on SiO2/Si also changes absolute intensities strongly with thickness. AFM has not been analysed, so no thickness is assigned to either flake."
+  ],
+  "questions_for_user": [
+    "What are the units of the exported intensities (counts, counts/s, normalised)? Does A's ~2000 offset come from the detector, from a dark or background subtraction that was not applied to B, or from a rescaling? Was any smoothing applied? This decides whether the two flakes' absolute intensities can be compared at all.",
+    "What background was subtracted from B, and was it measured or fitted? Was the same procedure used on A's raw file?",
+    "What were the laser power at the sample, objective NA, spot size, integration time and number of accumulations for each spectrum? Were A and B measured on the same day, in the same run and with the same grating and slit?",
+    "What are the AFM thicknesses (pending) and substrate (SiO2 thickness, Si)? Thickness-dependent interference at 532 nm changes absolute intensity by large factors, so the substrate matters even for a two-flake comparison.",
+    "Can you measure below 100 cm-1 (notch or edge filter) to get the interlayer shear and breathing modes? These are the usual thickness probes and are missing from the 150\u2013401 cm-1 window.",
+    "Was there a calibration reference in the same run (Si 520.7 cm-1 or a Ne lamp), and where is the temperature sensor relative to the flake? The ~8 cm-1 low-mode shift needs this check.",
+    "Is the 361 cm-1 feature reproducible at other spots on flake B, and does it appear on re-cooling? Is it present in a blank-substrate spectrum or a spectrum at a different spot?",
+    "What was the PPMS field state at 4 K (zero field after a ramp, or remanent flux)? Circular-polarised measurements can pick up helicity-dependent effects from a residual field.",
+    "Is an anti-Stokes spectrum available? It would give a local temperature and test whether 4 K spectra are heated by the laser.",
+    "A temperature series between 4 K and 150 K (across T_N ~132 K) and a laser-power series at 4 K would separate spin-phonon, heating and calibration effects, and show whether the B-only doublet and 361 cm-1 mode turn on at T_N."
+  ],
+  "citations": [
+    "Loudon, R., Adv. Phys. 13, 423 (1964), The Raman effect in crystals \u2014 Stokes intensity relation and polarisation selection rules; cited from memory, not verified here.",
+    "Balkanski, M., Wallis, R. F., Haro, E., PRB 28, 1928 (1983), Anharmonic effects in light scattering due to optical phonons in silicon \u2014 temperature dependence of phonon frequency; cited from memory, not verified here.",
+    "G\u00f6ser, W. et al., J. Magn. Magn. Mater. (1990) \u2014 CrSBr magnetic transition temperatures; cited from memory, not verified here.",
+    "Telford, E. J. et al., Adv. Mater. (2020), Layered antiferromagnetism induces large negative magnetoresistance in the van der Waals semiconductor CrSBr \u2014 T_N and T_C of CrSBr; cited from memory, not verified here.",
+    "Tan, P.-H. et al., Nat. Mater. 11, 294 (2012), The shear mode of multilayer graphene \u2014 low-frequency interlayer modes as thickness probes; cited from memory, not verified here. The concept extends to other vdW materials.",
+    "Ni, Z. H. et al., Nano Lett. 7, 2758 (2007), Graphene thickness determination using reflection and contrast spectroscopy \u2014 interference-based thickness dependence of optical contrast on SiO2/Si; cited from memory, not verified here."
+  ],
+  "limits": [
+    "Only four spectra were given, each measured once. No repeat spots, no error bars on intensities, no AFM, no power or time information, and no anti-Stokes data.",
+    "No CrSBr Raman-mode reference table was available offline. The 241, 246/250, 340 and 361 cm-1 bands are unassigned here, and no symmetry assignment was made.",
+    "The literature citations above are from memory and were not checked against the papers in this environment.",
+    "Lorentzian and Gaussian fits are imperfect (reduced \u03c7\u00b2 ~6 for B 4 K), so centre and width values carry model-dependent systematic errors beyond the quoted statistical ones.",
+    "The analysis scripts are in C:\\WINDOWS\\TEMP\\crsbr_analysis (fit.py, fit2.py, fit3.py, plot.py, raw_baseline.png). The data folder was only read, not modified."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "candidates": [
+    {
+      "material": "unidentified layered material",
+      "confidence": 0.05,
+      "evidence": "Three real Raman lines at 155.3, 299.0 and 352.8 cm-1 (532 nm, 295 K, suspended, backscattering). No literature reference was available in this session to match against. From memory, the common layered materials are excluded by peak positions: MoS2 (E2g ~383 and A1g ~408 absent), WS2 (A1g ~420 absent), MoSe2, MoTe2 (A1g ~171, no line at 155), GaSe, InSe, Bi2Se3 and NbSe2. No candidate reaches a confidence I would defend."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material_hint was given, so there is nothing to test the spectrum against. The working-directory name contains an 'InOCl' string. I did not use it as evidence, because I could not confirm that any of the three peaks matches InOCl phonons from my own knowledge, and I have no reference table here to check against.",
+  "peaks": [
+    {
+      "position_cm1": 155.32,
+      "fwhm_cm1": 3.24,
+      "assignment": "unassigned; inferred fully-symmetric (A-type-like) mode from its polarization pattern",
+      "irrep": null,
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Parallel mean Lorentzian fit (center 155.32 +- 0.02 cm-1). Parallel intensity is constant over 0-170 deg (cos2 amplitude 206 vs a 7770 mean, not significant; F-test p=0.80). Crossed intensity is zero within noise (mean 10, +-~40). Assignment is inferred from this pattern only; no reference table was consulted."
+    },
+    {
+      "position_cm1": 298.96,
+      "fwhm_cm1": 4.64,
+      "assignment": "unassigned; inferred non-totally-symmetric mode (polarization shows off-diagonal-type tensor elements)",
+      "irrep": null,
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Parallel: 180-degree-period component amplitude 1296 (significant) plus a significant 90-degree component of 553 (F-test p=4e-7), maximum near 30 deg, near zero at 90-150 deg. Crossed: mean 528 with a 90-degree-period pattern (amplitude 403, p=2e-4) and no 180-degree term. Neither configuration matches a single clean class, so I report 'other'. Assignment is inferred from the pattern only."
+    },
+    {
+      "position_cm1": 352.78,
+      "fwhm_cm1": 4.5,
+      "assignment": "unassigned; inferred non-totally-symmetric mode",
+      "irrep": null,
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Parallel: clean 180-degree-period pattern (cos2 amplitude 2072 on mean 2597, R2 0.98), maximum near 120 deg, minimum near 40 deg. Crossed: weak, about 200 counts (roughly 8% of parallel), with no significant angular dependence (180-degree amplitude 25, p=0.10). Crossed-config center 354.4 +- 0.7 cm-1, about 1.6 cm-1 from parallel; this is only about 2 sigma and is not treated as a separate mode. Assignment is inferred from the pattern only."
+    },
+    {
+      "position_cm1": 382,
+      "fwhm_cm1": null,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Not a substrate line. The spectrum is suspended, and no Si line at 520.7 cm-1 is present in the data."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Layer number cannot be determined from these three peaks without a layer-dependence reference, which was not available."
+    },
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "The three peaks do not match a phase I can identify with confidence from memory."
+    },
+    {
+      "name": "defect_level",
+      "value": "none_detected",
+      "provenance": "measured",
+      "source": "No extra peaks above the noise floor in 60-722 cm-1 (4-sigma search on the averaged spectra). Defect-activated features would also be unlikely to be seen in this window."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray (single-point spike, crossed config, 70 deg, 382 cm-1, 9517 counts, residual about 9211); removed by interpolation before fitting",
+      "position_cm1": 382
+    }
+  ],
+  "citations": [
+    "No literature reference consulted. Every assignment in this report is inferred from the measured polarization pattern, not from a reference table."
+  ],
+  "limits": [
+    "The material is not identified. Three Raman lines at 155.3, 299.0 and 352.8 cm-1 are not enough on their own, and I had no reference library or internet access in this session to compare against. The candidate listed is a placeholder.",
+    "Mode assignments (irreps) are not given. Polarization patterns alone do not fix a symmetry label without the crystal's point group and the angle convention.",
+    "The angle origin (0 deg) and the sign convention for the analyser are unknown. The phase of each 180- or 90-degree pattern is therefore relative, not absolute.",
+    "Peak 299.0 is classed 'other' because its parallel and crossed patterns have different harmonic content. This follows the stated templates strictly; a looser reading could call it twofold.",
+    "Crossed-configuration signal at 353 cm-1 is weak (about 200 counts, about 8% of parallel). Its existence is supported by the mean (about 4 sigma), but its angular dependence is not significant.",
+    "Positional calibration is not checked, since no Si reference line is present. Absolute positions are uncertain by roughly +-1 cm-1, and the 1.6 cm-1 parallel-crossed offset at 353 is only about 2 sigma.",
+    "Per-angle noise is high (amplitude scatter about 200 counts). Angular fits used peak positions and widths fixed from the averaged parallel spectrum, so weak-line patterns are less reliable than the 155 and 353 parallel patterns.",
+    "Layer number, thickness, strain and doping are not determinable from this data. The suspended geometry and room temperature do not change that conclusion."
+  ]
+}

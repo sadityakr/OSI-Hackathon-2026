@@ -1,0 +1,95 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.93,
+      "evidence": "Two dominant lines at 388.3 cm-1 (E2g^1, FWHM ~6.2) and 413.5 cm-1 (A1g, FWHM ~6.6) with a separation of ~25.3 cm-1, matching the MoS2 doublet. The separation is bulk-like (\u22654 layers). No other strong lines."
+    },
+    {
+      "material": "3R-MoS2",
+      "confidence": 0.04,
+      "evidence": "Same E/A doublet positions, so the polytype can't be excluded from this spectrum. The 2H polytype is the common default."
+    },
+    {
+      "material": "2H-MoSe2",
+      "confidence": 0.01,
+      "evidence": "Its A1g is at ~241 cm-1 and E2g at ~287 cm-1. Nothing is seen there, so it is rejected."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given, so the identification rests on the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 388.26,
+      "fwhm_cm1": 6.2,
+      "assignment": "MoS2 in-plane E2g^1 (E') mode",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of this spectrum. The mode assignment is from Lee et al., ACS Nano 4, 2695 (2010) and Zhang et al., Chem. Soc. Rev. 44, 2757 (2015)."
+    },
+    {
+      "position_cm1": 413.52,
+      "fwhm_cm1": 6.6,
+      "assignment": "MoS2 out-of-plane A1g mode",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of this spectrum. The mode assignment is from Lee et al., ACS Nano 4, 2695 (2010). Polarization pattern is not assessed because this is a single unpolarized spectrum."
+    },
+    {
+      "position_cm1": 363,
+      "fwhm_cm1": 14,
+      "assignment": "Possible weak shoulder, tentatively a defect or disorder-related feature or a background wiggle",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Three-Lorentzian fit. Amplitude uncertainty is >100%, so this is not a reliable peak."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layer number",
+      "value": "Bulk-like, roughly \u22654 layers. The A1g\u2212E2g separation is ~25.3 cm-1 (monolayer ~18-19, bilayer ~21-22, bulk ~25).",
+      "provenance": "inferred",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010)"
+    },
+    {
+      "name": "mode splitting",
+      "value": "\u0394 = 413.52 \u2212 388.26 = 25.3 cm-1",
+      "provenance": "measured",
+      "source": "Lorentzian fit"
+    },
+    {
+      "name": "A1g/E2g peak-height ratio",
+      "value": "~0.32 (E2g stronger). This depends on the focus and orientation conditions.",
+      "provenance": "measured",
+      "source": "Lorentzian fit"
+    },
+    {
+      "name": "strain/doping",
+      "value": "Not quantified. The E2g position is close to the unstrained bulk value (~383-386 in some reports, up to ~388 here), and no reference was measured.",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single-point, intensity ~12449 against ~1.2k baseline)",
+      "position_cm1": 1063.28
+    }
+  ],
+  "citations": [
+    "Lee, C. et al. Anomalous lattice vibrations of single- and few-layer MoS2. ACS Nano 4, 2695 (2010)",
+    "Zhang, X. et al. Phonon and Raman scattering of two-dimensional transition metal dichalcogenides from monolayer, multilayer to bulk material. Chem. Soc. Rev. 44, 2757 (2015)"
+  ],
+  "limits": [
+    "This is a single unpolarized spectrum, so polarization patterns and symmetry classification can't be tested.",
+    "The layer count is estimated only from the E2g-A1g separation (25.3 cm-1), which saturates at about 4 layers or more. The data can't separate a thick flake from bulk.",
+    "The 2H and 3R polytypes can't be told apart from this E2g/A1g pair alone. Low-frequency shear and breathing modes below 60 cm-1 are outside the measured range (60-1099 cm-1).",
+    "The weak features (LA(M) ~227, 2LA(M) ~450, and a possible shoulder near 363) are not significant against the noise (\u03c3 \u2248 200 counts), so they are not reported as peaks.",
+    "No Si substrate line near 520.7 cm-1 is visible, so the substrate is unidentified and no wavenumber calibration check against Si was possible.",
+    "The single-point spike at 1063.3 cm-1 was rejected as a cosmic ray, not a Raman peak.",
+    "Strain and doping can't be determined without a reference."
+  ]
+}

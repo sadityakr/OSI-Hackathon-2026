@@ -1,0 +1,96 @@
+{
+  "candidates": [
+    {
+      "material": "GeS (layered, orthorhombic, D2h)",
+      "confidence": 0.55,
+      "evidence": "Four measured lines at 104.6, 205.4, 243.9 and 520.6 cm-1 on a sloped broad background. The GeS room-temperature Raman set in Zawadzka et al. (arXiv:2110.14977, Fig. 4c; Nanomaterials 2021) has its strongest line B2g near 213-215 cm-1 and A3g near 238-243 cm-1, with A2g near 115 cm-1 (values read from a low-resolution plot, about +/-5 cm-1). The 205 and 244 cm-1 lines and their relative heights (205 stronger than 244) match that pattern. Two mismatches: 205.4 is about 8 cm-1 below the expected B2g, and 104.6 is about 10 cm-1 below the expected A2g. The predicted A4g near 280 cm-1 is not detected. Other group-IV monochalcogenides were not checked against literature, so GeS is the only candidate tested."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is no stated material to verify. The identification is from the peak pattern alone, checked against the GeS Raman mode assignment in arXiv:2110.14977 Fig. 4c. The analysis used only the folder data and the literature paper; the ramanlens reference notes and CRD matcher sit outside this folder and were not read, per the instruction to stay in the current folder.",
+  "peaks": [
+    {
+      "position_cm1": 104.6,
+      "fwhm_cm1": 8.5,
+      "assignment": "A_g^2 (tentative)",
+      "irrep": "A_g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position from pseudo-Voigt fit (cubic baseline, 104.60 +/- 0.08 cm-1). Assignment by comparison with Fig. 4c of arXiv:2110.14977 (A_g^2 near 115 cm-1 in the plot). The offset of about 10 cm-1 is unexplained, so this is tentative."
+    },
+    {
+      "position_cm1": 205.4,
+      "fwhm_cm1": 6.3,
+      "assignment": "B_2g^2",
+      "irrep": "B_2g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position from fit (205.42 +/- 0.02 cm-1). Assignment by comparison with Fig. 4c of arXiv:2110.14977 (B_2g^2 near 213-215 cm-1). Strongest measured line, consistent with the strongest GeS mode, but about 8 cm-1 below the expected position."
+    },
+    {
+      "position_cm1": 243.9,
+      "fwhm_cm1": 5.2,
+      "assignment": "A_g^3",
+      "irrep": "A_g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position from fit (243.92 +/- 0.02 cm-1). Assignment by comparison with Fig. 4c of arXiv:2110.14977 (A_g^3 near 238-243 cm-1)."
+    },
+    {
+      "position_cm1": 520.6,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position from fit (520.62 +/- 0.02 cm-1). Matches the Si first-order line at about 520.7 cm-1 (standard calibration, the Si line used by the substrate convention), so the calibration offset is about -0.1 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "GeS, orthorhombic (D2h), candidate only",
+      "provenance": "inferred",
+      "source": "Mode pattern compared with arXiv:2110.14977 Fig. 4c (Zawadzka et al., Nanomaterials 2021, doi:10.3390/nano11113109). Not confirmed: several expected modes are missing or offset."
+    },
+    {
+      "name": "layers",
+      "value": "cannot be determined from this spectrum",
+      "provenance": "inferred",
+      "source": "No thickness-dependent relation was applied. Only one spectrum with no thickness reference was available."
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessed",
+      "provenance": "inferred",
+      "source": "No defect-activated band is seen in the 60 to 1100 cm-1 window, but the window does not cover the disorder bands of this material."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Measured shifts are about -8 to -10 cm-1 from the literature values, but the offsets are not calibrated against a reference of the same sample, so strain is not claimed."
+    },
+    {
+      "name": "doping_type",
+      "value": "not assessed",
+      "provenance": "inferred",
+      "source": "No Raman marker for doping is used in this analysis."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "arXiv:2110.14977 (Zawadzka et al., Anisotropic Optical and Vibrational Properties of GeS), Fig. 4c and Fig. 4a, https://arxiv.org/abs/2110.14977; journal doi:10.3390/nano11113109"
+  ],
+  "limits": [
+    "Quality: 942 points from 60.48 to 1099.82 cm-1 (step 1.1 cm-1). The peaks reach about 14,000 counts over a background of about 4,000 to 5,000, with noise about 75 counts. No saturation, no NaN, no single-point cosmic-ray spikes. The flagged 'spikes' at 205 and 521 are the peaks themselves (FWHM 4 to 9 cm-1, several points wide).",
+    "Low-wavenumber cutoff: the spectrum starts at 60.5 cm-1, so the A_g^1 (about 50 cm-1) and B_1g^1 (about 60 cm-1) modes of GeS cannot be checked. This is the main gap in the identification.",
+    "The broad hump of about 300 to 500 counts above a sloped baseline (rising to about 5,000 at 300 to 500 cm-1, falling to about 3,600 at 1100 cm-1) is treated as background (possibly photoluminescence or the SiO2/Si substrate background). It is not reported as a peak. The 490 and 565 cm-1 residual features are single-point, FWHM about 1 cm-1, and not significant, so they are not reported.",
+    "Fit: four pseudo-Voigt lines on a cubic baseline. Residual sigma is 81 counts, close to the noise of about 75. Wider or additional lines were not needed. Fit tools ran in this folder with Python and scipy/lmfit; the ramanlens rl.py matcher and reference notes were not used because they sit outside this folder.",
+    "Identification is tentative (confidence about 0.55). Two of the three non-Si lines are offset from the literature positions by about 8 to 10 cm-1: 205.4 against about 213 to 215 (B_2g^2), and 104.6 against about 115 (A_g^2). Calibration (Si at 520.62 vs 520.7) and temperature (295 K vs 300 K) do not explain this offset. The predicted A_g^4 near 280 cm-1 is not detected. These may reflect a sample or strain effect, a different polymorph or stacking, or a different material. Positions read from the 300 K trace of a low-resolution figure carry about +/-5 cm-1.",
+    "Literature values are read from one paper (arXiv:2110.14977) at 1.96 eV excitation (about 632 nm); this measurement used 532 nm. The mode frequencies should not depend on laser energy, but a resonant enhancement could change which bands are visible.",
+    "Not tested: other layered group-IV monochalcogenides (SnS, SnSe, GeSe), other orthorhombic or ternary chalcogenides, and non-GeS materials with similar strong lines near 205 and 244 cm-1. Only GeS was compared, so the identification is not discriminating against alternatives.",
+    "No polarization series, so irreps are from the literature mode table, not measured; pattern fields are null. No thickness information, so layer number is not determined. No temperature series and no reference spectrum from the same sample.",
+    "To settle the identification: measure down to about 20 cm-1 (to see A_g^1 and B_1g^1), check for the A_g^4 line near 280 cm-1, measure an angle-resolved series to test the irreps, and compare against a reference GeS spectrum taken under the same conditions."
+  ]
+}

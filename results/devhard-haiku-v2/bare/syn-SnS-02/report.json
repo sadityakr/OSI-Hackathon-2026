@@ -1,0 +1,107 @@
+{
+  "candidates": [
+    {
+      "material": "SnS",
+      "confidence": 0.8,
+      "evidence": "Four measured bands at 93.8, 161.3, 192.9 and ~221 cm-1 (FWHM 4-16 cm-1) match the SnS bulk Raman set (A_g ~96, B_3g ~163, A_g ~192, A_g ~218-220 cm-1, 532 nm, RT) within about 2-3 cm-1. Same Pnma layered structure, so the same mode set is expected. No local maximum at the SnSe positions."
+    },
+    {
+      "material": "SnS_xSe_(1-x) alloy (Sn-S/Se mixed)",
+      "confidence": 0.1,
+      "evidence": "Cannot be excluded from one spectrum. Band positions are close to SnS, not intermediate, and no SnSe-type bands are present, so a Se-rich alloy is disfavoured. The data cannot fix x."
+    },
+    {
+      "material": "SnSe",
+      "confidence": 0.05,
+      "evidence": "Expected SnSe modes (B_3g ~109, A_g ~150, A_g ~186, ~215 cm-1; recalled from literature, not verified in this session) are absent: no local maxima at 109 or 150 cm-1 and no separate peak at 186 cm-1 (only flanks of the 161 and 193 bands). The 94 cm-1 band has no SnSe counterpart in the references I recall. The strongest band here is at 161 cm-1, about 11 cm-1 above the SnSe A_g ~150 mode, which room-temperature effects cannot account for."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The stated material SnSe is not supported. The spectrum has four well-defined bands at 93.8, 161.3, 192.9 and ~221 cm-1, which match bulk SnS (Pnma; A_g ~96, B_3g ~163, A_g ~192, A_g ~218-220 cm-1 at 532 nm, RT) within about 2-3 cm-1. The SnSe signature bands, B_3g ~109, A_g ~150 and A_g ~186 cm-1 (recalled from literature, not checked against a database in this session), are absent: there are no local maxima at 109 or 150 cm-1 and no separate peak at 186 cm-1. The strongest band sits at 161 cm-1, about 11 cm-1 above the SnSe A_g ~150 mode. At 295 K, temperature effects are a few cm-1 and cannot account for that offset. The data therefore point to SnS, not SnSe. The 'syn-SnS' folder name is consistent with this but was not used as evidence.",
+  "peaks": [
+    {
+      "position_cm1": 93.8,
+      "fwhm_cm1": 4.5,
+      "assignment": "A_g^1 (SnS-type)",
+      "irrep": "A_g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+/-0.16 cm-1 stat., quadratic baseline, 60-260 cm-1). Assignment: SnS bulk Raman, A_g ~96 cm-1 at 532 nm, RT (recalled from literature, e.g. Vidal et al., unverified here). Not an SnSe band in the references I recall."
+    },
+    {
+      "position_cm1": 161.3,
+      "fwhm_cm1": 4.3,
+      "assignment": "B_3g (SnS-type); strongest band",
+      "irrep": "B_3g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+/-0.06 cm-1 stat.). Assignment: SnS bulk Raman B_3g ~163 cm-1 (recalled from literature, unverified here). The SnSe A_g ~150 cm-1 would sit about 11 cm-1 lower; no band is seen there."
+    },
+    {
+      "position_cm1": 192.9,
+      "fwhm_cm1": 4.1,
+      "assignment": "A_g^2 (SnS-type)",
+      "irrep": "A_g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+/-0.09 cm-1 stat.). Assignment: SnS bulk A_g ~192 cm-1 (recalled from literature, unverified here). The SnSe A_g^2 at ~186 cm-1 is not resolved as a separate band."
+    },
+    {
+      "position_cm1": 221.3,
+      "fwhm_cm1": 15.9,
+      "assignment": "A_g^3 / B_2g region (SnS-type, possibly unresolved doublet)",
+      "irrep": "A_g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Broad band; one-Lorentzian fit gives centre 221.3 cm-1 (+/-0.7), FWHM 15.9 cm-1, which may be two unresolved components. Assignment: SnS bulk ~218-220 cm-1 (recalled from literature, unverified here)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "Orthorhombic Pnma (SnS-type), inferred from band pattern",
+      "provenance": "inferred",
+      "source": "Band set compared with SnS bulk Raman literature (recalled, unverified here). Not a measured crystal structure."
+    },
+    {
+      "name": "material_identity",
+      "value": "SnS-like; not consistent with SnSe",
+      "provenance": "inferred",
+      "source": "Peak-position comparison against SnS and SnSe reference band sets (recalled from literature, unverified here)."
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "No thickness-dependent (layer-breathing or low-frequency shear) information usable from a single spectrum."
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessed",
+      "provenance": "inferred",
+      "source": "Noise (~300 counts) is large relative to the ~2400-count background; no defect-activated bands are analysed."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray (single-point spike, 8572 counts vs ~2400 neighbours; replaced by neighbour mean before fitting)",
+      "position_cm1": 1082.04
+    }
+  ],
+  "citations": [
+    "SnS bulk Raman mode set (A_g ~96, B_3g ~163, A_g ~192, A_g ~218-220 cm-1 at 532 nm): Vidal et al. (1981), recalled from memory and not verified in this session.",
+    "SnSe bulk Raman mode set (B_3g ~109, A_g ~150, A_g ~186, ~215 cm-1, RT): Chandrasekhar & Pollak (1977) and later SnSe Raman papers (e.g. Zhao et al., 2014), recalled from memory and not verified in this session. Check exact values against the original papers before relying on +/-2 cm-1.",
+    "Layered-material Raman background: Pnma orthorhombic SnX (X = S, Se) structures share the same mode symmetries; mode frequencies differ with chalcogen."
+  ],
+  "limits": [
+    "No reference spectrum for SnS or SnSe is in the folder, and I had no database access. The SnS/SnSe mode positions and the cited literature values are from memory and need checking before the verdict is final.",
+    "Single unpolarised spectrum, so B_3g vs A_g symmetry labels cannot be confirmed. No angle-resolved data.",
+    "Low-frequency cutoff at 60 cm-1, so any mode below 60 cm-1 is not seen. Rayleigh-edge rejection is not characterised.",
+    "No calibration standard (Si or Ne line) in the file. Absolute positions carry a systematic offset of unknown size, although the relative separations (about 11 cm-1 between the 161 band and the expected SnSe 150 band) are larger than typical calibration errors.",
+    "Noise (~300 counts) is large relative to the ~2400-count background. Weak features (133, 697, 790, 1049 cm-1) have smoothed prominences of only ~540-1100 counts and are not treated as robust peaks.",
+    "The 221 cm-1 band is broad (FWHM ~16 cm-1 in a single-Lorentzian fit) and may be an unresolved doublet near 218/224 cm-1. The data cannot resolve it.",
+    "Cannot exclude a mixed SnS_xSe_(1-x) alloy. The band set is SnS-like, so a Se-poor alloy is favoured, but x cannot be determined from one spectrum.",
+    "Temperature (295 K) and any laser heating or strain shift bands by a few cm-1 and cannot explain an offset of about 10 cm-1 from SnSe reference bands.",
+    "The 1082.04 cm-1 spike is a single-point cosmic ray. Its removal does not affect the 60-260 cm-1 band analysis."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (Pnma, GeS-type, orthorhombic)",
+      "confidence": 0.85,
+      "evidence": "match_library top hit crd:4496 (mp-2231, Pnma 62), score 0.977, frequency scale 1.018. All four measured bands matched within 1 to 6 cm-1 (92.5 vs 92.9 Ag; 162.4 vs 162.3 B3g; 189.4 vs 190.1 Ag; 226.6 vs 224.4 Ag), no unmatched band, no strong reference mode missing in the 60 to 382 cm-1 window. Polarization classes are consistent with an orthorhombic Pnma crystal with Ag and B3g modes (162 cm-1 fourfold, complementary parallel/crossed 4theta pattern)."
+    },
+    {
+      "material": "BrInSb2Se4 (C2/m)",
+      "confidence": 0.03,
+      "evidence": "Score 0.616. Four Ag matches, but four strong reference modes (203.1 cm-1 rel 0.86, 208.9, 122.3, 154.7) are absent from the spectrum. Rejected."
+    },
+    {
+      "material": "AsSi (C2/m)",
+      "confidence": 0.03,
+      "evidence": "Score 0.509. The 226.6 cm-1 band is unmatched and the strong Bg mode at 367.0 cm-1 is absent. Rejected."
+    },
+    {
+      "material": "P2Pd3S8 (P-3m1)",
+      "confidence": 0.02,
+      "evidence": "Score 0.481. The 162.4 and 226.6 cm-1 bands are unmatched. Rejected."
+    },
+    {
+      "material": "CuITe2 (P2_1/c)",
+      "confidence": 0.02,
+      "evidence": "Score 0.430. The 189.4 and 226.6 cm-1 bands are unmatched and the strong Ag mode at 152.9 cm-1 is absent. Rejected."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identify task and there is no stated material to verify. The ranked candidates come from the Computational Raman Database match only. No curated SnS note exists in the skill's reference set, and no Valency or iopic-bond literature search was run.",
+  "peaks": [
+    {
+      "position_cm1": 92.51,
+      "fwhm_cm1": 3.38,
+      "assignment": "Ag (SnS, Pnma)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Position, FWHM and pattern measured by rl_fit.py and classify_polarization on ./spectrum.csv (summed series, Lorentzian). Assignment from CRD crd:4496 (Bagheri and Komsa 2023, Sci. Data 10, 80), reference 92.9 cm-1 after 1.018 scale. Parallel curve has a 2theta term (A2/P0 = 0.93), max parallel at 62 deg. Crossed channel is weak and noisy (about 10 to 15 percent of parallel max), so the twofold call rests on the parallel curve."
+    },
+    {
+      "position_cm1": 162.41,
+      "fwhm_cm1": 3.63,
+      "assignment": "B3g (SnS, Pnma)",
+      "irrep": "B3g",
+      "pattern": "fourfold",
+      "provenance": "measured",
+      "source": "Measured by rl_fit.py and classify_polarization. Assignment from CRD crd:4496, reference 162.3 cm-1. Parallel and crossed curves are complementary 4theta patterns (parallel minima at 60 and 150 deg, crossed maxima there; sum about constant). This is the strongest band (summed height about 70000 counts)."
+    },
+    {
+      "position_cm1": 189.42,
+      "fwhm_cm1": 3.98,
+      "assignment": "Ag (SnS, Pnma)",
+      "irrep": "Ag",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Measured by rl_fit.py and classify_polarization. Assignment from CRD crd:4496, reference 190.1 cm-1. Parallel flat (about 2800 counts over all angles), crossed about 0 (C0/P0 = 0.02)."
+    },
+    {
+      "position_cm1": 226.62,
+      "fwhm_cm1": 8.07,
+      "assignment": "Ag (SnS, Pnma)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Measured by rl_fit.py and classify_polarization. Assignment from CRD crd:4496, reference 224.4 cm-1 (scaled). Band is about twice as broad as the other three (FWHM 8.1 vs 3.4 to 4.0 cm-1), which could be an unresolved second mode. Parallel has a 2theta term (A2/P0 = 0.26, max parallel at 56.5 deg), but the scatter is large and the crossed channel is near zero."
+    },
+    {
+      "position_cm1": 92.5,
+      "fwhm_cm1": null,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Not present. Sample is suspended, and the window (60 to 382 cm-1) does not reach the Si line at 520.7 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "Pnma orthorhombic (GeS-type, SnS-like)",
+      "provenance": "inferred",
+      "source": "Best CRD match crd:4496 (mp-2231, Pnma 62), score 0.977; all four bands matched with the Pnma Ag and B3g labels."
+    },
+    {
+      "name": "substrate_signal",
+      "value": "none detected",
+      "provenance": "measured",
+      "source": "rl_qc.py: si_line null; sample suspended."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No defect relation for this material is in the skill set; the 226.6 cm-1 band width is the only sign of possible disorder and is not interpreted."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, CC BY 4.0), entry crd:4496, mp-2231, Pnma (62)",
+    "Ramanlens raman-analysis skill, scripts rl_qc.py, rl_fit.py, rl.py match_library and classify_polarization, run on ./spectrum.csv"
+  ],
+  "limits": [
+    "Identification rests on a computational database (DFT, Bagheri and Komsa 2023) with a fitted per-candidate frequency scale of 1.018. No experimental SnS reference spectrum was compared, and no literature search (Valency or iopic-bond) was run, so the assignments are not cross-checked against measured SnS spectra.",
+    "Only four bands rise above noise in 60 to 382 cm-1. Pnma SnS has further Raman-active modes outside this window (below 60 cm-1, and above 382 cm-1) that were not measured, so the data cannot confirm the full mode set. No strong reference mode inside the window is missing.",
+    "The 226.6 cm-1 band is about twice as broad as the others. It may be an unresolved doublet or a second mode; the single-Lorentzian fit cannot separate these, and its polarization class (twofold) is the least certain.",
+    "Polarization classes come from classify_polarization. The crossed channel is weak and noisy for the 92.5 and 226.6 cm-1 bands, so their twofold calls rest on the parallel curve. The 162.4 cm-1 fourfold and 189.4 cm-1 isotropic_par_only calls are clearer.",
+    "The Ag and B3g labels assume the Pnma setting with the beam along the layer normal, as stated in the metadata. The crystal axis orientation in the sample is not given, so the mapping of angle to crystal axes is not established.",
+    "Other tin-sulfide phases were not tested against the data. SnS2 (1T, P-3m1) would be expected to show a strong A1g band near 314 cm-1, which is absent in this window; that expectation is from general literature knowledge and was not checked with the tools here.",
+    "No layer-number, strain, doping or defect relation exists for SnS in the skill set, so no such property is reported. Temperature 295 K and the 532 nm laser are taken from the metadata; resonance effects were not evaluated.",
+    "Low-wavenumber cutoff: the spectrum starts at 60 cm-1 (first point zero intensity), so modes below about 65 cm-1 cannot be assessed."
+  ]
+}

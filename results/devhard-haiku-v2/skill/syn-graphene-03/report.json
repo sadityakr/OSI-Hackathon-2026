@@ -1,0 +1,142 @@
+{
+  "candidates": [
+    {
+      "material": "C",
+      "confidence": 0.88,
+      "evidence": "Monolayer graphene, defective, stage 1. G at 1580.6 cm-1 (FWHM 13.7) and D at 1350.7 cm-1 with D' at 1619.8 cm-1. One sharp, single-Lorentzian 2D at 2698.1 cm-1 (FWHM 27.6 from rl_fit; about 32 from a local linear-background refit). A 2-Lorentzian 2D model is not preferred (BIC worse). Matcher: literature graphene table score 0.76 (G and 2D matched); CRD inorganic hits (score <= 0.53) each match one mode and are physically implausible, so rejected."
+    },
+    {
+      "material": "C (turbostratic or few-layer graphite)",
+      "confidence": 0.07,
+      "evidence": "Single 2D component, so not excluded on shape alone. Width (about 28 to 32 cm-1) is well below the ~50 cm-1 expected for turbostratic stacking (Ferrari 2006 p.3), and no second 2D component is resolved. Stacked bilayer excluded by the single component (Bernal 2L needs four)."
+    },
+    {
+      "material": "C (amorphous or disordered carbon)",
+      "confidence": 0.03,
+      "evidence": "Rejected: G (FWHM 13.7) and 2D are sharp, as for crystalline sp2 carbon. Broad G and D would be expected for amorphous carbon."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identify task. Candidates are ranked from the G/2D/D line set, the library match and the single-2D line-shape test. Positions and line shapes are consistent with graphene at 514.5 nm; the 2D position of 2698 cm-1 is within the ~2700 cm-1 range that Ferrari et al. (2006) report at 514 nm.",
+  "peaks": [
+    {
+      "position_cm1": 1350.7,
+      "fwhm_cm1": 14.9,
+      "assignment": "D (defect-activated double-resonance band)",
+      "irrep": "A1' (D3h; inferred)",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856), graphene.md Signature/Defects: D near 1350 cm-1 at visible excitation needs a defect or edge. Irrep from K-point origin by group theory (inferred), not from a table."
+    },
+    {
+      "position_cm1": 1580.6,
+      "fwhm_cm1": 13.7,
+      "assignment": "G (zone-centre in-plane optical phonon)",
+      "irrep": "E2' (D3h monolayer; E2g in D6h; inferred)",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "rl.py lookup_reference_modes graphene: G origin 1581.6 cm-1 at 514.5 nm from Lee et al. 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234); Ferrari et al. 2006, PRL 97, 187401, p.2 (G about 1580 at 514 nm). Irrep inferred."
+    },
+    {
+      "position_cm1": 1619.8,
+      "fwhm_cm1": 9.2,
+      "assignment": "D' (intravalley double-resonance band)",
+      "irrep": "E' (D3h; inferred)",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856), graphene.md Signature: D' near 1620 cm-1. Weak band (height about 280 to 330 counts, SNR about 12); FWHM 9.2 (script) vs 12.8 (local fit). Irrep inferred."
+    },
+    {
+      "position_cm1": 2698.1,
+      "fwhm_cm1": 27.6,
+      "assignment": "2D (second-order, overtone of zone-boundary TO phonon; present without defects)",
+      "irrep": "A1' (D3h; inferred)",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Ferrari et al. 2006, PRL 97, 187401, p.2 and Fig. 2 (2D about 2700 cm-1 at 514 nm; single sharp peak in monolayer); Ferrari and Basko 2013 (arXiv 1306.5856, graphene.md Signature). Width 27.6 (script, ALS baseline) vs about 32 (local linear baseline)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer), moderate-high confidence",
+      "provenance": "inferred",
+      "source": "Ferrari et al. 2006, PRL 97, 187401, p.2 (single sharp 2D, 4 components in bilayer); rl.py graphene_layers_from_2D_shape returned monolayer (confidence high). Downgraded because I(2D)/I(G) (height about 2.8 to 3.0) is below the ~4 criterion and depends on the SiO2 thickness (Yoon et al. 2009, arXiv 0908.4322). Width and single component are the main support."
+    },
+    {
+      "name": "defect_level",
+      "value": "low (stage 1: point defects, L_D about 14 nm)",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175), Eqs. 4 and 6; stage 1 identified by FWHM(G) about 14 cm-1 (Cancado et al. 2011 arXiv 1105.0175 p.5 Fig. 5c, cited in graphene.md); Ferrari and Basko 2013, p.10 for stage definitions. I_D/I_G about 0.6 is not negligible; 'low' is a judgement."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "14.4 +- 2.0 (mean point-defect distance)",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175), Eq. 4 with heights I_D/I_G = 0.605 at 514.5 nm. Validity L_D >= 10 nm is met, but only just. Computed by rl.py apply_relation graphene_defect_distance_from_ID_IG."
+    },
+    {
+      "name": "n_D_cm2",
+      "value": "1.6e11 (about 30 % uncertainty; about 1 defect per 25,000 atoms)",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175), Eq. 6; the tool result is 1.55e11 cm-2 with the +-0.5 constant uncertainty."
+    },
+    {
+      "name": "defect_type",
+      "value": "point defects, vacancy-like (I_D/I_D' about 7 by height)",
+      "provenance": "inferred",
+      "source": "Eckmann et al. 2012, Nano Lett. 12, 3925 (arXiv 1207.2058), abstract and p.6: I_D/I_D' about 13 for sp3, 7 for vacancies, 3.5 for boundaries, valid in stage 1 only (single-group result, often reproduced; graphene.md). Heights give 6.7 to 7.8 across the two fits; the area ratio (12.5) would point to sp3."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected (low confidence)",
+      "provenance": "inferred",
+      "source": "G within about 1 cm-1 of the literature origin (Lee et al. 2012, arXiv 1209.0234). The G-2D strain-doping relation returned not applicable (outside its validity range), so no strain value is reported."
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined (G not stiffened, so probably low doping)",
+      "provenance": "inferred",
+      "source": "graphene.md (Das et al. 2008, arXiv 0709.1174): G stiffens for both electron and hole doping, so G position alone does not give the type. The 2D position of 2698 is not decisive at 514.5 nm, given Ferrari et al. (2006) quotes about 2700 cm-1. Bruna et al. 2014 (arXiv 1405.4264): doping lowers D at fixed defect count."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spikes: none detected (rl_qc.py); no saturation flagged",
+      "position_cm1": null
+    },
+    {
+      "type": "broad structure, script FWHM about 89; not significant (BIC worse when included in a local 1250 to 1700 fit); not reported as a band",
+      "position_cm1": 1467.3
+    },
+    {
+      "type": "broad background features (FWHM 180 to 660 cm-1), not bands; origin not identified",
+      "position_cm1": 1726
+    }
+  ],
+  "citations": [
+    "Ferrari, A. C. et al. 2006, Phys. Rev. Lett. 97, 187401 (arXiv cond-mat/0606284), p.2-3 and Fig. 2: layer-dependent 2D shape; G about 1580 and 2D about 2700 cm-1 at 514 nm; turbostratic 2D width.",
+    "Ferrari, A. C. and Basko, D. M. 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856): D, D', 2D origins; stage definitions (p.10); edge polarization (p.8).",
+    "Cancado, L. G. et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175): L_D and n_D relations (Eqs. 4 and 6), validity L_D >= 10 nm, FWHM(G) about 14 cm-1 in stage 1 (p.5, Fig. 5c).",
+    "Eckmann, A. et al. 2012, Nano Lett. 12, 3925 (arXiv 1207.2058): I_D/I_D' defect-type ratios (abstract, p.6), stage 1 only.",
+    "Lee, J.-U. et al. 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234): G and 2D origin (1581.6, 2676.9 cm-1) at 514.5 nm; calibration check (graphite G 1581.5 +- 0.3 cm-1).",
+    "Yoon, D. et al. 2009, PRB 80, 125422 (arXiv 0908.4322): I(2D)/I(G) depends strongly on SiO2 thickness.",
+    "Das, A. et al. 2008, Nat. Nanotechnol. 3, 210 (arXiv 0709.1174): G stiffens for electron and hole doping; 2D rises for holes.",
+    "Bruna, M. et al. 2014, ACS Nano (arXiv 1405.4264): doping lowers the D band at fixed defect count."
+  ],
+  "limits": [
+    "Material identity rests on positions and line shape only. No reference spectrum from a paper was compared (Valency and iopic-bond tools were not run). The library's curated graphene table has G and 2D only, so D and D' assignments are literature-based, not matched to a DFT table.",
+    "Calibration: the window starts at 1100 cm-1, so the Si line (520.7 cm-1) is not in the file and no in-spectrum calibration check is possible. G at 1580.6 is 1.0 cm-1 below the Lee et al. origin (1581.6), inside typical calibration scatter (about 0.3 to 1 cm-1). Absolute 2D offsets of a few cm-1 cannot be excluded.",
+    "2D position: 2698.1 is 21 cm-1 above Lee et al.'s strain-free origin (2676.9). Ferrari et al. (2006) quotes about 2700 cm-1 for graphene at 514 nm, so this is within literature spread and not read as a strain or doping signal. The G-2D strain-doping relation returned not applicable (electron-doping side, outside validity); its naive decomposition (about -0.6 % strain, electron-side doping) is not reported.",
+    "Layer count: a single 2D is necessary but not sufficient (Ferrari and Basko 2013, p.9 for turbostratic graphite). Width (about 28 to 32 cm-1) and the single component favour monolayer. I(2D)/I(G) (about 2.8 to 3.0 by height) is below the ~4 criterion and depends on SiO2 thickness, which is not given. No optical contrast or AFM was available to confirm the layer number.",
+    "L_D validity: Cancado 2011 relation holds for L_D >= 10 nm; the result (14.4 nm) is near that limit. Heights were used, as the relation requires. Using areas (ratio 0.66) gives about 13.8 nm. If boundaries or edges contribute to D, the point-defect L_D is overestimated; the D/D' ratio (about 7) points to point defects rather than boundaries (about 3.5), but a single spectrum cannot separate edge from bulk D (needs an angle series, Ferrari and Basko 2013 p.8).",
+    "D' is weak (height about 280 to 330 counts, SNR about 12). Its FWHM is 9.2 (script, ALS baseline) vs 12.8 (local fit), so the D/D' ratio (6.7 to 7.8 by height) is uncertain by about 15 to 20 %. If areas were the right measure (ratio 12.5), the ratio would fall near the sp3 value (about 13). The sp3 (hydrogenated) alternative is therefore not excluded. The Eckmann classification is single-group and valid in stage 1 only.",
+    "Baseline dependence: the script's 2D fit (global ALS baseline plus a broad component) shows residuals up to about -800 counts on the 2D flanks; a local linear-background refit over 2600 to 2800 cm-1 has residuals up to 68 counts (rms 24). The 2D width and height therefore depend on the baseline model. The table uses script values; the local fit is quoted for comparison.",
+    "Broad feature near 1467 cm-1: the script reports it (FWHM 89, position error 3.6) but adding a broad component to a local 1250 to 1700 cm-1 fit made BIC worse, so it is not reported as a band. The broad features at 1726, 2317, 2529 and 2981 cm-1 are not assigned. Possible polymer residue (for example PMMA, which has bands near 1450, 1727 and 2950 cm-1) is a hypothesis only; no reference spectrum was checked.",
+    "Defect level: the stage-1 reading rests on FWHM(G) about 14 cm-1 and L_D above 10 nm. I(D)/I(G) of about 0.6 is well above pristine exfoliated flakes, so 'low' is a judgement on the L_D scale, not a measured threshold. n_D is quoted to about 30 % (constant uncertainty only).",
+    "Doping: the G position is near the undoped reference, which suggests low doping. G stiffens for both carrier types, so the doping type cannot be read from G alone. Doping lowers D at fixed defect count (Bruna et al. 2014), so the defect density may be underestimated if the sample is doped; no gate or electrolyte data were given.",
+    "Substrate and conditions: SiO2/Si with unknown oxide thickness; intensity ratios (I(2D)/I(G), I_D/I_G) are substrate-dependent in absolute value. Transfer method, encapsulation, and whether the flake is exfoliated or CVD are unknown. Laser power at the sample is not given, so heating is not assessed (G and 2D shift only about -0.016 and -0.034 cm-1/K (Calizo 2007); negligible in the 1 cm-1 range at 295 K).",
+    "Irreps for D, G, D', 2D are inferred from monolayer D3h group theory, not read from a table in this session. Only the G position and the D/D'/2D positions were matched to literature values.",
+    "Not tested: angle-resolved polarization (single spectrum, so edge versus point-defect D cannot be separated), spatial mapping (defect uniformity unknown), and a second laser (D and 2D dispersion would separate defect and 2D effects)."
+  ]
+}

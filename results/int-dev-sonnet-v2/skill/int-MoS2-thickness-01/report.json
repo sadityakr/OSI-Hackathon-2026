@@ -1,0 +1,140 @@
+{
+  "summary": "Using the E2g1\u2013A1g separation (Lee 2010 calibration, same laser and substrate), B is a monolayer (19.23 cm-1), A is a bilayer (21.43), D is about 4L (24.27) and C is bulk-like (25.07). The flakes are thickness-ordered B < A < D < C. The Si-normalised MoS2 intensity supports that order, and the A1g width also falls from A to C. D versus 3L or bulk, and C versus roughly 5L or more, are only weakly resolved, because 3L, 4L and bulk differ by about 1 cm-1 and the instrument resolution is 2.7 cm-1. The spectra show no evidence of defects, and no strain or doping can be identified at the roughly \u00b10.5 cm-1 level. The thickness assignments need AFM, or low-frequency shear and breathing modes, to confirm.",
+  "observations": [
+    {
+      "finding": "Flake B is a monolayer (1L).",
+      "evidence": "Raw fits: E2g1/E' 383.91\u00b10.03, A1g/A1' 403.14\u00b10.10, so Delta = 19.23\u00b10.10 cm-1 (Lee 1L: 19.1). apply_relation gives 1L, confidence high. A1g FWHM 4.75. Weakest MoS2 signal relative to Si: E2g area / Si area = 0.24.",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b"
+    },
+    {
+      "finding": "Flake A is a bilayer (2L).",
+      "evidence": "Raw: E2g1 383.37\u00b10.02, A1g 404.80\u00b10.07, Delta = 21.43\u00b10.08 cm-1 (Lee 2L: 21.4); relation gives 2L, confidence high. A1g is the broadest line of the set (FWHM 6.16\u00b10.29), consistent with the reported A1g broadening toward 2L. Si-normalised MoS2 area ratio 0.59, between B and D.",
+      "provenance": "inferred",
+      "source": "Lee 2010, Fig. 2b and p.4 (A1g width 3\u20136 cm-1 from 6L to 2L)"
+    },
+    {
+      "finding": "Flake D is about 4L. The separation overlaps 3L and bulk within about 1 cm-1, so a thicker flake cannot be excluded.",
+      "evidence": "Raw: E2g1 382.37\u00b10.01, A1g 406.64\u00b10.03, Delta = 24.27\u00b10.03 cm-1 (Lee 4L: 24.3, 3L: 23.1, bulk: 25.2). Relation gives 4L, confidence moderate. Statistical error is tiny, but calibration and resolution give a systematic uncertainty of about 0.3\u20130.5 cm-1. A1g FWHM 4.45; Si-normalised area ratio 1.57.",
+      "provenance": "inferred",
+      "source": "Lee 2010, Fig. 2b"
+    },
+    {
+      "finding": "Flake C is bulk-like (more than about 5L), the thickest of the four.",
+      "evidence": "Raw: E2g1 382.24\u00b10.04, A1g 407.31\u00b10.06, Delta = 25.07\u00b10.08 cm-1 (bulk 25.2); relation gives bulk, confidence moderate. A1g is narrow (FWHM 2.86\u00b10.21 vs 4.5\u20136.2 in the thinner flakes). Highest Si-normalised MoS2/Si area ratio (about 2.1, with roughly 15% uncertainty from the weak Si line), and the Si line is strongly attenuated (height 74 vs 940\u20131650 in the others).",
+      "provenance": "inferred",
+      "source": "Lee 2010, Fig. 2b; Si-normalised intensity: Li S.-L. et al., arXiv:1308.3835"
+    },
+    {
+      "finding": "Thickness trend: E2g1 softens and A1g stiffens with N, with Delta of 19.2, 21.4, 24.3 and 25.1 cm-1 for B, A, D and C. E2g1 FWHM is constant at 2.04\u20132.12 cm-1, probably resolution-limited, and the E2g1 position barely distinguishes the flakes.",
+      "evidence": "Raw E2g1 positions 383.91 (B), 383.37 (A), 382.37 (D), 382.24 (C). Raw A1g positions 403.14, 404.80, 406.64, 407.31. E2g1 FWHM 2.04\u20132.12 in all four. Nominal resolution is 2.7 cm-1, so widths and small shifts are close to the instrument limit.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Calibration: every spectrum with a measurable Si line shows the same Si offset, and it cancels in the separations.",
+      "evidence": "Si line 520.02, 520.00 and 519.99 cm-1 in A, B and D (offset -0.68 to -0.71 from 520.7). C's Si line is weak, 519.94\u00b10.29, giving -0.76 only from the series fit. A rigid offset like this is calibration or convention, not sample physics. Raw positions match Lee's table to within about 0.1 cm-1 for all four flakes, so I quote raw values. Si-corrected positions are 0.7 higher.",
+      "provenance": "measured",
+      "source": "Lee 2010 (Si at 520\u2013520.9 in practice); artifacts.md"
+    },
+    {
+      "finding": "No defect, strain or doping signature can be claimed.",
+      "evidence": "No distinct LA(M) near 227 cm-1 above the noise (local noise about 20\u201324 counts) in any spectrum, and no 2LA, 286 or 471 bands. Fitted broad features at 222 cm-1 (flake B) and 321/330 cm-1 (flake D) have errors larger than their values (FWHM 33\u201365 cm-1) and are baseline curvature, not phonons. E2g1 widths are equal and resolution-limited in all four flakes. Any shift in the separations is accounted for by the layer-number trend, not by strain or doping.",
+      "provenance": "measured",
+      "source": "Mignuzzi et al. 2015, PRB 91, 195411 (LA(M) as defect band); Scheuschner et al. 2015, PRB 91, 235409 (286/471 bands, mainly UV-excited)"
+    },
+    {
+      "finding": "Flake C's spectrum has a cosmic-ray spike at 265.1 cm-1 (removed, not a peak) and is noisy (SNR 19). The E1g mode is forbidden in this backscattering geometry, so its absence is expected.",
+      "evidence": "rl_qc: 1 spike at 265.1 cm-1 in C. Strongest-band SNR is 56, 70, 19 and 111 for A, B, C and D. E1g is forbidden in basal-plane backscattering.",
+      "provenance": "measured",
+      "source": "Zhang X. et al. 2015, Chem. Soc. Rev. 44, 2757, arXiv:1502.00701, p.3 and p.6"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers (flake A)",
+      "value": "2",
+      "provenance": "inferred",
+      "source": "Lee 2010, ACS Nano 4, 2695, Fig. 2b (Delta 21.43 cm-1)"
+    },
+    {
+      "name": "layers (flake B)",
+      "value": "1",
+      "provenance": "inferred",
+      "source": "Lee 2010, Fig. 2b (Delta 19.23 cm-1)"
+    },
+    {
+      "name": "layers (flake C)",
+      "value": "bulk",
+      "provenance": "inferred",
+      "source": "Lee 2010, Fig. 2b (Delta 25.07 cm-1)"
+    },
+    {
+      "name": "layers (flake D)",
+      "value": "4 (3L to bulk not excluded)",
+      "provenance": "inferred",
+      "source": "Lee 2010, Fig. 2b (Delta 24.27 cm-1)"
+    },
+    {
+      "name": "phase",
+      "value": "2H (all four; consistent with the exfoliated natural molybdenite source; low-frequency modes were not measured, so 3R is not excluded)",
+      "provenance": "inferred",
+      "source": "Ranjuna et al. 2023, Sci. Rep. 13, 16418, Fig. 1d\u2013f (2H vs 3R distinguished only in the low-frequency modes)"
+    },
+    {
+      "name": "defect_level",
+      "value": "none detected / low (no LA(M) at 227 cm-1 above the noise; E2g1 widths resolution-limited)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected",
+      "provenance": "inferred",
+      "source": "Conley et al. 2013, Nano Lett. 13, 3626 (strain would shift and split E2g1)"
+    },
+    {
+      "name": "doping_type",
+      "value": "none detected",
+      "provenance": "inferred",
+      "source": "Chakraborty et al. 2012, PRB 85, 161403 (doping would shift and broaden A1g)"
+    }
+  ],
+  "caveats": [
+    "Separation to layer number is only unambiguous up to about 2L to 3L. 3L, 4L and bulk differ by about 1 cm-1, close to the 2.7 cm-1 resolution and to the roughly 0.3 cm-1 calibration scatter. D = 4L and C = bulk are therefore weaker assignments than A = 2L and B = 1L.",
+    "The reference table comes from one study (Lee 2010). Positions in that table were read from a figure to about \u00b10.3 cm-1 (the reference-mode lookup in the analysis tools states this).",
+    "Strain, doping and substrate each shift E2g1 and A1g and so change Delta. A flake with doped or strained A1g could be misassigned by one layer. These spectra cannot separate such effects from thickness without a second observable.",
+    "Absolute intensity is not a thickness measure on 285 nm SiO2/Si, because interference modulates it. Only the Si-normalised ratio is monotonic with N. Here it is computed from fitted areas with a very weak Si line in C, so that value is an order-of-magnitude indicator only.",
+    "Raw positions agree with Lee's table, but Si-corrected positions are 0.7 cm-1 higher. Which convention Lee's absolute values used is not known, so absolute shifts of about 0.5 cm-1 are not interpretable. Only the separation is robust.",
+    "The E2g1 width of 2.0\u20132.1 cm-1 is below the stated 2.7 cm-1 resolution. It is probably Lorentzian-fit idealisation, or the real resolution is better than quoted, so linewidths are close to resolution-limited and should not be over-read.",
+    "Repeated laser exposure in air can shift A1g by about +1.4 cm-1 and E2g1 by about -1 cm-1 (Bera et al. 2017, arXiv:1707.09386), and heating redshifts both modes. Power was not stated, so a small part of the A1g and E2g1 differences could be exposure history rather than thickness.",
+    "The layer-number reading is not affected by laser heating at 40x for single scans on supported flakes, but this was not tested here because no power series is available."
+  ],
+  "questions_for_user": [
+    "What laser power at the sample and what exposure time per spectrum? Heating or exposure-induced healing shifts A1g and E2g1 by about 1 cm-1, the same size as a layer step.",
+    "Is the low-frequency region below 150 cm-1 accessible with a notch or edge filter change? Shear and breathing modes would decide 3L, 4L and bulk, and 2H against 3R, for flakes C and D.",
+    "Do you have AFM, optical contrast or Si-intensity maps for the same flakes? Thickness from AFM would anchor the D = 4L versus bulk call.",
+    "Were the spectra taken on single spots, and is the 285 nm SiO2 thickness measured? The oxide thickness changes the interference-driven intensity ratios.",
+    "Why is flake C noisy and low in intensity (SNR 19)? Was the acquisition shorter, or was the flake out of focus? This affects the weak Si line used for its normalisation.",
+    "Polarization configuration? A1g should vanish in crossed geometry and E2g1 stays, which would separate overlapping modes if a shoulder appears."
+  ],
+  "citations": [
+    "Lee C., Yan H., Brus L.E., Heinz T.F., Hone J., Ryu S., ACS Nano 4, 2695 (2010), arXiv:1005.2509, Fig. 2a,b and p.4: E2g1/A1g positions, separation and widths vs layer number at 514.5 nm.",
+    "Zhang X. et al., Chem. Soc. Rev. 44, 2757 (2015), arXiv:1502.00701, p.3 and p.6: bulk D6h irreps and E1g forbidden in backscattering.",
+    "Li S.-L. et al., arXiv:1308.3835: Si-normalised MoS2 intensity as a monotonic thickness indicator.",
+    "Mignuzzi S. et al., Phys. Rev. B 91, 195411 (2015): LA(M) near 227 cm-1 as the defect band.",
+    "Scheuschner N. et al., Phys. Rev. B 91, 235409 (2015), arXiv:1503.08980, pp.8-9: 286 and 471 cm-1 bands in few-layer MoS2.",
+    "Conley H.J. et al., Nano Lett. 13, 3626 (2013), arXiv:1305.3880: strain splits and softens E2g1.",
+    "Chakraborty B. et al., Phys. Rev. B 85, 161403 (2012), arXiv:1206.1758: doping shifts and broadens A1g.",
+    "Bera A. et al., arXiv:1707.09386, abstract: laser exposure in air changes A1g and E2g1.",
+    "Ranjuna M.K. et al., Sci. Rep. 13, 16418 (2023), Fig. 1d-f: 2H vs 3R in the low-frequency modes."
+  ],
+  "limits": [
+    "Layer numbers for D (about 4L) and C (bulk) rest on a 1 cm-1 step between 3L, 4L and bulk. The data cannot exclude D = 3L or bulk, or C being anywhere above about 5L, without low-frequency modes or AFM.",
+    "The data start at 150 cm-1, so shear and breathing modes are not observable. Their absence says nothing about stacking, and 2H versus 3R cannot be checked from these spectra.",
+    "One calibration source (Lee 2010) gives the reference table. I did not retrieve its Fig. 2b myself, and values were read from the tool's reference entry, not checked against the paper.",
+    "Strain, doping and heating cannot be excluded at the \u00b10.5 cm-1 level, because Delta and absolute positions change together with N.",
+    "A power series, polarization series or a second excitation line was not available, so those hypotheses could not be tested.",
+    "Optical appearance (flake colours) was not connected to thickness, since no images were provided. Only the Raman results are reported."
+  ]
+}

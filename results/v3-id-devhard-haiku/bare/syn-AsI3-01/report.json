@@ -1,0 +1,123 @@
+{
+  "candidates": [
+    {
+      "material": "Sb2Te3",
+      "confidence": 0.2,
+      "evidence": "Matches the 120 and 166 cm-1 peaks (Eg- and A1g-type modes of Sb2Te3 recalled at about 113-120 and 165 cm-1). Misses the 80 and 104 cm-1 peaks, which are 10 and 15 cm-1 from the expected low-frequency modes. Literature values are from memory, not checked against a reference in this session."
+    },
+    {
+      "material": "WTe2",
+      "confidence": 0.15,
+      "evidence": "Recalled Td-WTe2 modes near 84, 113-117, 134 and 163 cm-1 cover 80, 120 and 166 cm-1 within about 4 cm-1. The 104.5 cm-1 peak has no close match and the expected 134 cm-1 mode is absent. Literature values from memory, unverified."
+    },
+    {
+      "material": "CrI3",
+      "confidence": 0.1,
+      "evidence": "Recalled CrI3 modes near 72, 107, 130 and 166 cm-1 match the 104.5 and 166 cm-1 peaks. The 80 and 120 cm-1 peaks are about 8-10 cm-1 off. Literature values from memory, unverified."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so identification rests on peak positions alone. Four measured Lorentzian-like peaks at 79.6, 104.5, 120.3 and 165.8 cm-1 and no significant features from 170 to 1100 cm-1. No single candidate matches all four peaks within a few cm-1, so the identification is low confidence and not unique.",
+  "peaks": [
+    {
+      "position_cm1": 79.64,
+      "fwhm_cm1": 7.05,
+      "assignment": "unassigned low-frequency mode",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 104.45,
+      "fwhm_cm1": 8.93,
+      "assignment": "unassigned mode; no close match among the candidates",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 120.34,
+      "fwhm_cm1": 7.43,
+      "assignment": "tentative Eg-type in-plane mode (strongest peak; Sb2Te3 Eg2-like region)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Literature values recalled from memory for Sb2Te3 (Eg2 about 113-120 cm-1); not verified against a reference in this session"
+    },
+    {
+      "position_cm1": 165.8,
+      "fwhm_cm1": 8.56,
+      "assignment": "tentative A1g-type out-of-plane mode (Sb2Te3 A1g2-like region)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Literature values recalled from memory for Sb2Te3 (A1g2 about 165 cm-1); not verified against a reference in this session"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "A single spectrum without thickness or layer-breathing data cannot give a layer count"
+    },
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "No firm mode match to any single phase; see candidates"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No defect-activated (D-type) bands are resolvable in this range"
+    },
+    {
+      "name": "spectral_quality",
+      "value": "strongest peak about 16000 counts above a 4000-count background, noise sigma about 1000 counts; S/N about 15 at 120 cm-1",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single point, removed before fitting)",
+      "position_cm1": 935.79
+    },
+    {
+      "type": "cosmic-ray spike (single point, removed before fitting)",
+      "position_cm1": 785.92
+    },
+    {
+      "type": "cosmic-ray spike (single point, removed before fitting)",
+      "position_cm1": 138.59
+    },
+    {
+      "type": "cosmic-ray spike (single point, removed before fitting)",
+      "position_cm1": 497.02
+    },
+    {
+      "type": "cosmic-ray spike (single point, removed before fitting)",
+      "position_cm1": 684.81
+    },
+    {
+      "type": "cosmic-ray spike (single point, removed before fitting)",
+      "position_cm1": 1055.87
+    }
+  ],
+  "citations": [
+    "Literature Raman mode values for Sb2Te3, WTe2 and CrI3 are quoted from memory and were not checked against a reference in this session; treat them as approximate.",
+    "Fit: pseudo-Voigt (Lorentzian-dominated) peaks on a quadratic baseline over 60-260 cm-1 with scipy least_squares, after single-point spike removal (6 points, median replacement)."
+  ],
+  "limits": [
+    "Low confidence and non-unique identification. No candidate matches all four peaks within a few cm-1, and literature values were recalled from memory, not checked against a database or reference.",
+    "The spectrum starts at 60 cm-1, so modes below 60 cm-1 and the Rayleigh edge cannot be assessed. A slight rise at the low-frequency end may be filter-edge tail; the residual near 65-72 cm-1 is noise-sized and not reported as a peak.",
+    "Above about 170 cm-1 the noise (sigma about 1000 counts) is comparable to the residual features. No peaks above 170 cm-1 pass significance (adding candidate peaks at 188, 294 and 364 cm-1 gave amplitudes at or below 2.2 sigma and raised BIC). Weak modes at 170-1100 cm-1 cannot be excluded, so a material with weak high-frequency bands is not ruled out.",
+    "No Si substrate line at 520.7 cm-1 is detectable above the noise (the intensity at 515-525 cm-1 is about 1000-1900 counts, which is noise), so no substrate peak is reported.",
+    "The data is a single unpolarized spectrum, so no polarization classification (isotropic, twofold, fourfold) is possible and all pattern fields are null.",
+    "Temperature 295 K and 532 nm excitation are used as given; no temperature-dependent or thickness-dependent check was possible."
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.85,
+      "evidence": "Two modes at 360.30 and 420.31 cm-1 (FWHM 3.4 and 5.8 cm-1). Literature WS2 E^1_2g is about 356-357 cm-1 and A1g about 420-421 cm-1 (bulk), with monolayer near 355-356 and 418-419 (Berkdemir et al. 2013, values recalled, not re-checked). A1g matches well. E' is about 3-5 cm-1 high and the splitting is 60.0 cm-1 versus about 62-64 cm-1 typical, so the match is good but not exact."
+    },
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.03,
+      "evidence": "MoS2 literature E^1_2g is about 383 cm-1 and A1g about 408 cm-1 (Lee et al., ACS Nano 2010, recalled). Observed modes are off by more than 20 cm-1 each, and the splitting would be about 25 cm-1 versus 60 observed."
+    },
+    {
+      "material": "2H-WSe2",
+      "confidence": 0.02,
+      "evidence": "WSe2 Raman-active modes lie near 250 cm-1 (recalled). No intense feature there; the strongest peaks are at 360 and 420 cm-1."
+    },
+    {
+      "material": "2H-MoSe2",
+      "confidence": 0.02,
+      "evidence": "MoSe2 first-order modes lie near 240 and 287 cm-1 (recalled). Neither is present; the strongest peaks are at 360 and 420 cm-1."
+    }
+  ],
+  "hint_verdict": "consistent",
+  "hint_reasoning": "Placeholder: see the hint_reasoning field above.",
+  "peaks": [
+    {
+      "position_cm1": 360.3,
+      "fwhm_cm1": 3.43,
+      "assignment": "E^1_2g (in-plane E' mode) of 2H-WS2",
+      "irrep": "E^1_2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit 320-460 cm-1, centre 360.296 +/- 0.014 cm-1 (statistical only). Assignment from literature: Berkdemir et al., Sci. Rep. 3, 1755 (2013), WS2 E^1_2g near 356-357 cm-1 (recalled, not re-checked)."
+    },
+    {
+      "position_cm1": 420.31,
+      "fwhm_cm1": 5.84,
+      "assignment": "A1g (out-of-plane) mode of 2H-WS2",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit 320-460 cm-1, centre 420.312 +/- 0.10 cm-1. Assignment from literature: Berkdemir et al., Sci. Rep. 3, 1755 (2013), WS2 A1g near 420 cm-1 bulk and 418-419 cm-1 monolayer (recalled, not re-checked)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "The E^1_2g + A1g pair at 360/420 cm-1 is the 2H-WS2 signature; 2H is the common WS2 polytype (Berkdemir et al. 2013, recalled)."
+    },
+    {
+      "name": "layers",
+      "value": "few-layer or bulk-like (not determined)",
+      "provenance": "inferred",
+      "source": "A1g at 420.3 cm-1 is closer to bulk (420-421) than monolayer (418-419) literature values; the splitting of 60.0 cm-1 is slightly below typical values, so the thickness call is not reliable from this spectrum alone."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "E^1_2g FWHM is 3.4 cm-1, which suggests good crystallinity. This is a rough inference from one linewidth; no defect-activated modes were looked for."
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "The E' mode sits about 3-5 cm-1 above typical WS2 values, which could indicate compressive strain or calibration error, but the data cannot separate these."
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No doping-sensitive feature was analysed (e.g. A1g/E' intensity or width changes); the data do not constrain it."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 162.56
+    }
+  ],
+  "citations": [
+    "Berkdemir, A. et al. Identification of individual and few layers of WS2 using Raman spectroscopy. Sci. Rep. 3, 1755 (2013). (WS2 E^1_2g and A1g positions and layer dependence; values recalled from memory, not re-checked in this session)",
+    "Lee, C. et al. Anomalous lattice vibrations of single- and few-layer MoS2. ACS Nano 4, 2695 (2010). (MoS2 E^1_2g about 383 and A1g about 408 cm-1 used as the alternative-material comparison; recalled, not re-checked)"
+  ],
+  "limits": [
+    "Verdict is consistency, not identification. No reference spectrum was available and the literature numbers were recalled from memory, not checked against the papers.",
+    "Wavenumber calibration cannot be verified: the window 60-1100 cm-1 contains no Si line at 520.7 cm-1 and substrate is null. The E' mode sits about 3-5 cm-1 above typical WS2 values while A1g matches; a uniform calibration offset would move both, so a simple offset does not explain it. Strain, doping, thickness or my recalled reference values could account for it, and the data cannot distinguish these.",
+    "Splitting E'-A1g = 60.0 cm-1 is slightly below the usual 62-64 cm-1 for WS2. This is a mismatch I cannot resolve without a reference spectrum.",
+    "Polarization and collection geometry are not given, so the E'/A1g intensity ratio (height ratio about 0.18, area ratio about 0.30) cannot be interpreted. No angle-resolved analysis was possible.",
+    "Layer number cannot be determined reliably from peak positions alone.",
+    "Second-order and low-frequency bands (2LA(M) near 351 cm-1, LA(M) near 178 cm-1) were not detected above noise. Their absence does not contradict WS2 but gives no positive support.",
+    "Weak features at about 193.5, 231.6 and 844.9 cm-1 reach only about 4-5 sigma in the smoothed residual (noise sigma about 165 counts, residual white, lag-1 autocorrelation -0.01). They are not reported as peaks and are unassigned.",
+    "The broad background rising from about 2000 counts at 60 cm-1 to about 9000 near 800 cm-1 and falling to about 7600 at 1100 cm-1 has no identified origin (fluorescence or substrate background are possibilities). It was removed by asymmetric least-squares baseline before fitting.",
+    "A single-pixel spike at 162.56 cm-1 (20744 counts against about 2800 neighbours) was replaced by its neighbour median before baseline and peak fitting. No other spikes were found.",
+    "Data span is 60-1100 cm-1 only; WS2 signatures above 1100 cm-1 were not checked."
+  ]
+}

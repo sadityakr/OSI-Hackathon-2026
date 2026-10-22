@@ -10,8 +10,8 @@ Input: a Spectrum (shift in cm-1, intensity, metadata). Optional metadata keys: 
 Process: if the axis reaches the laser line (shifts below 10 cm-1), everything below `min_shift_cm1` (default 50)
 is excluded, because the Rayleigh line and the notch or edge filter produce bands there. On the rest, cosmic-ray
 spikes are removed (preprocess.remove_spikes), an asymmetric least squares baseline is estimated
-(preprocess.baseline_als) and peaks are fitted (fit.fit_peaks); fitted features wider than 100 cm-1 are
-treated as leftover background. A narrow band at 520.7 +- 2 cm-1 is flagged as
+(preprocess.baseline_als) and peaks are fitted (fit.fit_peaks); fitted features wider than 100 cm-1, or wider than
+50 cm-1 and below 5 % of the strongest band, are treated as leftover background. A narrow band at 520.7 +- 2 cm-1 is flagged as
 the Si substrate line unless the metadata name a substrate without silicon.
 Output: a SpectrumAnalysis with the peak table (.peaks, each a fit.Peak with .is_substrate), spike positions
 (.spikes), the baseline on the input axis (.baseline, NaN in the excluded region), the cleaned intensity and
@@ -46,6 +46,13 @@ SI_MAX_FWHM_CM1 = 8.0
 # ripple an ALS baseline leaves around a strong band on noise-free data), not as Raman bands. Design assumption:
 # the bands this toolkit targets (crystalline layered materials, graphene D, G, 2D) are well below 100 cm-1 wide.
 MAX_BAND_FWHM_CM1 = 100.0
+# A feature that is both broad and weak is also treated as baseline residue: wider than WEAK_BROAD_FWHM_CM1 and
+# below WEAK_BROAD_REL_HEIGHT of the strongest band. An ALS baseline sagging between two strong bands leaves such a
+# hump (a 1467 cm-1 bump of FWHM 89 at 2 % of the G height between graphene D and G on a synthetic dev case).
+# Design assumption, not a literature value: first- and second-order bands of the target materials are narrower
+# than 50 cm-1 or, when broader (amorphous carbon), not this weak. Both kinds are listed in the notes.
+WEAK_BROAD_FWHM_CM1 = 50.0
+WEAK_BROAD_REL_HEIGHT = 0.05
 
 # Matches "Si" as a word (SiO2/Si, Si wafer) or "silicon" (black silicon), but not "SiO2" alone or "SiC".
 _SILICON = re.compile(r"(?<![A-Za-z])si(?![A-Za-z0-9])|silicon", re.IGNORECASE)
@@ -137,9 +144,11 @@ def analyze_spectrum(spectrum: Spectrum, min_shift_cm1: float | None = None, min
         y_clean[keep] = ys_clean
         baseline[keep] = base
         peaks = fit_peaks(xs, ys_clean, baseline=base, min_snr=min_snr)
-        broad = [p for p in peaks if p.fwhm > MAX_BAND_FWHM_CM1]
+        strongest = max((p.height for p in peaks), default=0.0)
+        broad = [p for p in peaks if p.fwhm > MAX_BAND_FWHM_CM1
+                 or (p.fwhm > WEAK_BROAD_FWHM_CM1 and p.height < WEAK_BROAD_REL_HEIGHT * strongest)]
         if broad:
-            peaks = [p for p in peaks if p.fwhm <= MAX_BAND_FWHM_CM1]
+            peaks = [p for p in peaks if p not in broad]
             notes.append("broad background feature(s) not reported as bands: " + ", ".join(
                 f"{p.position:.0f} cm-1 (FWHM {p.fwhm:.0f})" for p in broad))
     else:

@@ -1,0 +1,74 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.8,
+      "evidence": "Two modes at 353.0 and 415.7 cm-1 (separation 62.6 cm-1) match the WS2 E2g^1 / A1g pair at 532 nm (literature ~356 and ~420 cm-1, separation ~64 cm-1). The A1g-E2g separation rules out MoS2 (E2g ~383, A1g ~408, separation ~25 cm-1), and no WSe2, MoSe2 or MoTe2 pair fits. Both modes sit ~3-4 cm-1 below the literature values, which is larger than the 0.2 cm-1 Si calibration offset, so the match is good but not exact."
+    },
+    {
+      "material": "MoS2 (2H)",
+      "confidence": 0.05,
+      "evidence": "Standard MoS2 pair is E2g ~383 and A1g ~408 cm-1 (separation ~25 cm-1). The measured 353 cm-1 mode is about 30 cm-1 too low for E2g and the separation is about 2.5x too large, so MoS2 is rejected."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to check against. The identification rests on the peak positions and the A1g-E2g separation.",
+  "peaks": [
+    {
+      "position_cm1": 353,
+      "fwhm_cm1": 8.7,
+      "assignment": "WS2 E2g^1 (in-plane), may include an overlapping 2LA(M) component",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a Voigt fit on 335-372 cm-1 with linear background (centre 353.03 +/- 0.12). Assignment is inferred from the WS2 pair and cited literature: Berkdemir et al., Sci. Rep. 3, 1755 (2013), who give E2g^1 near 356 cm-1 at 532 nm and 2LA(M) near 351-352 cm-1."
+    },
+    {
+      "position_cm1": 415.7,
+      "fwhm_cm1": 9.5,
+      "assignment": "WS2 A1g (out-of-plane)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a Voigt fit on 405-428 cm-1 (centre 415.6-415.8 +/- 0.6, FWHM 8.9-9.6 depending on fit window). Assignment inferred from the WS2 pair and cited literature: Berkdemir et al., Sci. Rep. 3, 1755 (2013), who give A1g near 420 cm-1 at 532 nm."
+    },
+    {
+      "position_cm1": 520.9,
+      "fwhm_cm1": 4.1,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "First-order Si phonon, reference 520.7 cm-1 (Temple & Hathaway, PRB 7, 3685 (1973)). Measured centre 520.91 +/- 0.05 cm-1, so the instrument offset is about +0.2 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "The WS2 mode pair (E2g ~353, A1g ~416) matches the 2H-WS2 pattern in Berkdemir et al., Sci. Rep. 3, 1755 (2013). No 1T' signatures were checked, and none are clearly absent in this noisy spectrum."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "The A1g-E2g separation of 62.6 cm-1 sits between the usual monolayer and bulk values, and the mode positions are 3-4 cm-1 below literature. Thickness cannot be fixed from this spectrum alone."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Berkdemir, A. et al. Identification of individual and few layers of WS2 using Raman Spectroscopy. Sci. Rep. 3, 1755 (2013). (WS2 E2g^1 ~356, A1g ~420, 2LA(M) ~351-352 cm-1 at 532 nm; cited from memory, not checked against the paper in this session.)",
+    "Temple, P. A. & Hathaway, C. E. Multiphonon Raman spectrum of silicon. Phys. Rev. B 7, 3685 (1973). (Si first-order phonon at 520.7 cm-1; cited from memory.)"
+  ],
+  "limits": [
+    "Identification: the spectrum is most consistent with 2H-WS2 (A1g-E2g separation and both mode positions). The material is not confirmed by a second, independent signature. The position discrepancy of 3-4 cm-1 from the literature values is not explained by the Si calibration offset (+0.2 cm-1). Calibration, strain, doping or layer number could account for it, and this spectrum cannot tell them apart.",
+    "Noise: the per-point noise is about 215-250 counts on a background of about 1900. Features with amplitude below roughly 500 counts are not reliable. Weak peaks at 74, 92, 126 and 200 cm-1 and the 472-1024 cm-1 bumps are indistinguishable from noise and are not reported.",
+    "LA(M) near 176-178 cm-1 (expected for WS2 at 532 nm): the fit gives amplitude 835 +/- 1042, which is not significant. Its absence cannot be confirmed or excluded here.",
+    "2LA(M) and E2g^1 overlap near 351-356 cm-1. The one-component fit gives FWHM 8.7; the two-component fit does not converge to a stable split, so no separate 2LA(M) peak is reported.",
+    "Layer number, defect density, strain and doping cannot be determined. Only peak positions and widths were used. The A1g-E2g separation of 62.6 cm-1 is intermediate between monolayer and bulk values.",
+    "No angle-resolved data was supplied (single measurement), so polarization classification is not applicable and pattern is left null.",
+    "No cosmic-ray spikes were found. The largest single-point excursion (520.95 cm-1) is the symmetric Si line, which has the same width as its neighbours.",
+    "Scratch file: spectrum_check.png was written to the working folder for visual inspection and can be deleted."
+  ]
+}

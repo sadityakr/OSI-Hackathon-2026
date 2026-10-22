@@ -1,0 +1,146 @@
+{
+  "summary": "The G and 2D shifts are a power-driven, monotonic softening (G 1581.28 -> 1579.50 cm-1, 2D 2669.51 -> 2664.39 cm-1 from 0.5 to 5 mW) with broadening of both bands. Laser heating is the most consistent explanation. Doping is not supported (G would blue-shift and narrow), and a strain component cannot be separated from heating with these data. Any strain implied is small, at most about 0.03-0.1% if the whole G shift were strain. Trust the 0.5 mW spectrum for position analysis: it is the least heated and its fits are stable and adequate. The 5 mW spectrum is the least trustworthy. The 2D shift is non-linear in power, which points to an acquisition-order or drift effect that should be checked with a repeat 0.5 mW measurement.",
+  "observations": [
+    {
+      "finding": "Single-layer-like, nearly undoped spectra with no detectable D band. I2D/IG is constant across powers, and the 2D band is a single Lorentzian at the noise level.",
+      "evidence": "I2D/IG (peak heights, Lorentzian fits) = 2.96 (0.5 mW), 3.02 (2 mW), 2.99 (5 mW). 2D FWHM = 32.1, 34.9, 39.4 cm-1. G FWHM = 13.8, 15.7, 17.8 cm-1. D-band height at 0.5 mW = 3.7 +/- 7.2 counts against G height 761, giving 95% upper limit ID/IG about 0.02. Residual rms matches the shot-noise estimate (about 98 vs 95 counts at 5 mW).",
+      "provenance": "measured",
+      "source": "analysis/robust_fit.py, analysis/d_band_limit.py, analysis/checks.py"
+    },
+    {
+      "finding": "G and 2D both red-shift monotonically with laser power, but the two bands do not respond linearly in the same way. G is linear in power. 2D is strongly front-loaded: most of its shift occurs between 0.5 and 2 mW.",
+      "evidence": "G centres (mean over 3 windows x 3 baseline orders, spread <=0.008 cm-1): 1581.276 (0.5 mW), 1580.625 (2 mW), 1579.497 (5 mW). Per-mW slope -0.43 (0.5-2) and -0.38 (2-5); linear fit -0.39 cm-1/mW, P=0 intercept 1581.45. 2D centres: 2669.510, 2666.424, 2664.389 (spread <=0.006 cm-1). Per-mW slope -2.06 (0.5-2) and -0.68 (2-5). Total 2D shift -5.12 cm-1.",
+      "provenance": "measured",
+      "source": "analysis/robust_fit.py (robustness_grid.csv), analysis/power_trends.py"
+    },
+    {
+      "finding": "The 2D/G shift ratio is about 2.9 over the full power range, which lies between the doping and strain reference slopes. The step-wise ratio is not stable (4.7 at 0.5-2 mW, 1.8 at 2-5 mW), so the discrimination is weak.",
+      "evidence": "d(omega_2D)/d(omega_G) = -5.12/-1.78 = 2.88 over 0.5-5 mW; 4.74 (0.5-2 mW) and 1.80 (2-5 mW). The G shift is only 1.8 cm-1, so this ratio is sensitive to small errors.",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012), Fig. 4: slope about 2.2 for strain and about 0.7 for charge doping (recalled from memory, not checked against the paper)"
+    },
+    {
+      "finding": "Both bands soften and broaden with power, and the G band does not blue-shift. This pattern is the signature of heating (anharmonic softening and broadening), not of increasing doping. Doping would blue-shift and narrow G.",
+      "evidence": "G: -1.78 cm-1 and FWHM +30% (0.5 to 5 mW). 2D: -5.12 cm-1 and FWHM +23%. Doping would give an upward G shift.",
+      "provenance": "inferred",
+      "source": "Das et al., Nat. Nanotechnol. 3, 210 (2008) (G stiffens with either sign of doping); Pisana et al., Nat. Mater. 6, 198 (2007) (G FWHM narrows with doping); Calizo et al., Nano Lett. 7, 2645 (2007) and Bonini et al., PRL 99, 176802 (2007) (temperature softening and broadening) (all recalled, not checked)"
+    },
+    {
+      "finding": "Bulk Si substrate shows no measurable power-dependent shift, so the substrate under the spot is not heated by more than a few K. This does not rule out a much larger temperature rise in the graphene itself.",
+      "evidence": "Si centres: 520.864, 520.903, 520.909 cm-1 (total +0.045 cm-1, sign opposite to softening). Si intensity is linear in power (height ratios 3.86 and 2.50 vs expected 4 and 2.5). Si centre sits +0.2 cm-1 above the nominal 520.7 cm-1, a calibration offset that is common to all spectra.",
+      "provenance": "measured",
+      "source": "analysis/robust_fit.py; Temple & Hathaway, PRB 7, 3685 (1973) for the 520.7 cm-1 reference (recalled); Balkanski et al., PRB 28, 1348 (1983) for the Si coefficient of about -0.02 cm-1/K (recalled)"
+    },
+    {
+      "finding": "If the entire G softening were thermal, the implied graphene temperature rise between 0.5 and 5 mW is about 100 K. This is a crude upper-bound estimate that depends on the thermal coefficient, and an independent thermal-resistance estimate gives a similar order of magnitude.",
+      "evidence": "1.78 cm-1 / 0.016 cm-1/K = 111 K (range about 90-180 K for coefficients -0.02 to -0.01 cm-1/K). Order-of-magnitude check: absorbed about 2.3% of 5 mW = 0.1 mW over a 0.2 um2 spot, through a 300 nm SiO2 film with R about 2e-7 m2K/W gives about 100 K.",
+      "provenance": "inferred",
+      "source": "Calizo et al., Nano Lett. 7, 2645 (2007) for G coefficient of about -0.016 cm-1/K (recalled); Bonini et al., PRL 99, 176802 (2007)"
+    },
+    {
+      "finding": "Strain cannot be separated from heating with these data. If all of the G softening were strain, the magnitude would be small.",
+      "evidence": "With biaxial coefficient about -60 cm-1/% (recalled), 1.78 cm-1 corresponds to about 0.03% strain. With uniaxial coefficient about -23 cm-1/% (recalled), about 0.08%.",
+      "provenance": "inferred",
+      "source": "Mohiuddin et al., PRB 79, 205433 (2009) (strain coefficients, recalled, not checked)"
+    },
+    {
+      "finding": "Absolute doping and strain cannot be extracted from positions alone because there is no unstrained, undoped reference on the same setup. The 0.5 mW G value of about 1581.3 cm-1 with FWHM 13.8 cm-1 is consistent with near-neutral graphene, but this is qualitative.",
+      "evidence": "G at 0.5 mW = 1581.28 cm-1 (P=0 intercept 1581.45). I2D/IG about 3 and G FWHM about 14 cm-1 are both near the usual undoped range.",
+      "provenance": "inferred",
+      "source": "Ferrari et al., PRL 97, 187401 (2006) (single-layer 2D FWHM and I2D/IG, recalled)"
+    },
+    {
+      "finding": "The 0.5 mW spectrum is the best single spectrum for position analysis. It is the least heated, its fits are stable across window and baseline choices, and it has adequate signal.",
+      "evidence": "2D height 2251 counts vs noise about 20 counts. Centre spread across window x baseline choices <=0.006 cm-1; statistical error 0.045 cm-1 (G 0.096). 0.5 mW has the smallest linewidth broadening and the smallest heating. The 5 mW 2D fit is more sensitive to fit start: a first-pass single fit converged to 2665.00 cm-1 (rms 198, about 2x noise), while the multi-start fit gives 2664.39 cm-1 (rms 98, close to noise).",
+      "provenance": "measured",
+      "source": "analysis/fit_peaks.py (superseded 5 mW 2D value in fit_results_single_lorentzian.csv); analysis/robust_fit.py"
+    },
+    {
+      "finding": "The 2D shift is non-linear while G is linear. The likely causes are acquisition order or drift, or a non-thermal process that saturates at higher power. The data cannot distinguish these.",
+      "evidence": "2D per-mW slope -2.06 (0.5-2 mW) vs -0.68 (2-5 mW); G per-mW slope -0.43 vs -0.38. Spectra were taken sequentially at one spot, so power is confounded with cumulative exposure time.",
+      "provenance": "measured",
+      "source": "analysis/power_trends.py"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (single layer)",
+      "provenance": "inferred",
+      "source": "I2D/IG about 3.0 and 2D FWHM 32-39 cm-1; Ferrari et al., PRL 97, 187401 (2006) (recalled)"
+    },
+    {
+      "name": "defect_level",
+      "value": "low (no D band; ID/IG < ~0.02 at 95%)",
+      "provenance": "measured",
+      "source": "analysis/d_band_limit.py"
+    },
+    {
+      "name": "L_D_nm",
+      "value": ">~30 nm (lower bound)",
+      "provenance": "inferred",
+      "source": "Canado et al., Nano Lett. 11, 3190 (2011): L_D^2 (nm^2) = 2.4e-10 * lambda^4 / (ID/IG), 532 nm, ID/IG < 0.02 gives L_D > about 30 nm (recalled)"
+    },
+    {
+      "name": "strain_sign",
+      "value": "tensile or none; cannot be separated from thermal softening; magnitude at most about 0.03-0.1% if all of the G shift were strain",
+      "provenance": "inferred",
+      "source": "Mohiuddin et al., PRB 79, 205433 (2009) (recalled)"
+    },
+    {
+      "name": "doping_type",
+      "value": "none / near-neutral (no doping signature; G does not blue-shift)",
+      "provenance": "inferred",
+      "source": "Das et al., Nat. Nanotechnol. 3, 210 (2008); Pisana et al., Nat. Mater. 6, 198 (2007) (recalled)"
+    },
+    {
+      "name": "temperature_rise_graphene",
+      "value": "about 100 K between 0.5 and 5 mW if all G softening is thermal (upper-bound estimate, order of magnitude)",
+      "provenance": "inferred",
+      "source": "Calizo et al., Nano Lett. 7, 2645 (2007) (recalled)"
+    },
+    {
+      "name": "phase",
+      "value": "not applicable (single-layer graphene)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Sequential acquisition at one spot confounds power with cumulative laser exposure. The 2D nonlinearity may be drift or photochemistry rather than heating. Repeat a 0.5 mW measurement at the end of the series to test reversibility.",
+    "The three spectra have different wavenumber sampling steps (1.05, 1.01, 0.97 cm-1), which may indicate different axis calibrations or interpolation. The Si reference (spread 0.045 cm-1) suggests the offset is stable, but this should be confirmed with a neon or Si reference on each spectrum.",
+    "The Si peak probes the bulk substrate. Its lack of shift says the substrate is not heated by more than a few K, but the graphene on the oxide can be much hotter, so the Si null test does not rule out a graphene temperature rise of order 100 K.",
+    "The heating estimate depends on literature thermal coefficients that I recalled from memory and did not check against the papers; the ~100 K value is an upper bound and an order-of-magnitude estimate. Absorbed power on 300 nm SiO2 also depends on oxide interference and is not measured here.",
+    "The strain-doping slope values (2.2 and 0.7) and the strain coefficients are recalled from memory. Verify them against Lee et al. 2012 Fig. 4 and Mohiuddin et al. 2009 before quoting numbers.",
+    "Position-based discrimination is weak here: the G shift is only 1.8 cm-1, and the step-wise 2D/G slope varies from 4.7 to 1.8.",
+    "Absolute values depend on the laser energy (532 nm), the calibration, and any unstrained, undoped reference on the same setup. None of these was provided, so the absolute G and 2D positions are not interpreted quantitatively.",
+    "Fits use single Lorentzians plus polynomial backgrounds. The G residual at 0.5 mW is about 1.2x the noise estimate, so a weak shoulder (e.g., D') cannot be fully excluded. The 950-985 cm-1 feature was not analysed and is most likely Si second order or SiO2 background.",
+    "Results in analysis/fit_results_single_lorentzian.csv come from a first pass with a linear baseline. Its 5 mW 2D centre (2665.00) is a local-minimum artefact and is superseded by analysis/robustness_grid.csv (2664.39)."
+  ],
+  "questions_for_user": [
+    "In what order were the three spectra taken, and how much time elapsed between them? Was the 0.5 mW spectrum first? A repeat at 0.5 mW at the end would test whether the 2D shift is reversible (drift or photochemistry) or thermal.",
+    "Was the spectrometer calibrated (Si or neon reference) for each spectrum? The three spectra have different sampling steps (1.05, 1.01, 0.97 cm-1), which suggests a changed axis or interpolation.",
+    "Is the power measured at the sample (after the objective)? What is the spot size and the SiO2 oxide thickness? Both control absorbed power and heating.",
+    "Do you have an unstrained, undoped reference on the same setup (for example suspended or annealed graphene, or the same flake before processing)? Without one, the absolute G and 2D positions cannot be assigned to strain or doping.",
+    "Do you have Stokes/anti-Stokes data or a power series in the other direction (high to low power)? Either would give an independent temperature estimate and a test of reversibility.",
+    "Is the flake confirmed as single layer by another method (contrast, AFM, or a second Raman feature such as the shape of the 2D band at a second laser energy)?"
+  ],
+  "citations": [
+    "Lee, J. E. et al., Nat. Commun. 3, 1024 (2012), Fig. 4: strain vs doping 2D/G shift ratio (recalled; verify)",
+    "Das, A. et al., Nat. Nanotechnol. 3, 210 (2008): G blue-shift and narrowing with doping (recalled; verify)",
+    "Pisana, S. et al., Nat. Mater. 6, 198 (2007): G FWHM dependence on doping (recalled; verify)",
+    "Calizo, I. et al., Nano Lett. 7, 2645 (2007): G temperature coefficient about -0.016 cm-1/K and broadening with temperature (recalled; verify)",
+    "Bonini, N. et al., PRL 99, 176802 (2007): phonon anharmonicity in graphene (recalled; verify)",
+    "Mohiuddin, T. M. G. et al., PRB 79, 205433 (2009): uniaxial and biaxial strain coefficients (recalled; verify)",
+    "Ferrari, A. C. et al., PRL 97, 187401 (2006): single-layer 2D FWHM and I2D/IG (recalled; verify)",
+    "Canado, L. G. et al., Nano Lett. 11, 3190 (2011): L_D relation (recalled; verify)",
+    "Balkanski, M. et al., PRB 28, 1348 (1983): Si phonon temperature coefficient about -0.02 cm-1/K (recalled; verify)",
+    "Temple, P. A. & Hathaway, C. E., PRB 7, 3685 (1973): Si first-order Raman position 520.7 cm-1 (recalled; verify)"
+  ],
+  "limits": [
+    "No internet or literature access in this session. All literature coefficients and figure references are recalled from memory and are marked as such; they should be checked against the papers before quoting.",
+    "The analysis uses only the three CSVs in this folder. There is no reference spectrum, no Stokes/anti-Stokes data, and no metadata on spot size, oxide thickness, absorbed power, or acquisition timing.",
+    "Position-based discrimination of strain vs heating vs doping is not conclusive with these data. The G shift is small and the 2D/G slope varies between steps.",
+    "The thermal and strain estimates are order-of-magnitude bounds only and depend on coefficients that were not verified here."
+  ]
+}

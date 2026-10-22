@@ -1,0 +1,91 @@
+{
+  "candidates": [
+    {
+      "material": "GaSe",
+      "confidence": 0.4,
+      "evidence": "Three real features: 127.8 cm-1 (strongest), 305.9 cm-1 (second), and a weak broad band at 204.9 cm-1. The 305.9 band is within ~2 cm-1 of the ~308 cm-1 GaSe mode. The 127.8 and 204.9 bands are ~7-8 cm-1 below the ~134.5 and ~213 cm-1 GaSe modes (literature values from memory, not verified in this session), and the intensity pattern is inverted relative to what GaSe usually shows (its ~213 mode is normally among the strongest). Ranked first only because it is the closest layered Ga-chalcogenide match for three peaks in the right region."
+    },
+    {
+      "material": "GaS",
+      "confidence": 0.15,
+      "evidence": "Sibling Ga-chalcogenide with a similar mode pattern in the ~130, ~210 and ~305 cm-1 region, so it cannot be ruled out from three peaks. I did not check GaS reference positions in this session, so this is a placeholder for the family, not a verified match."
+    },
+    {
+      "material": "SnS2",
+      "confidence": 0.05,
+      "evidence": "Its ~205 cm-1 (Eg) and ~314 cm-1 (A1g) modes loosely resemble the weak 204.9 and 305.9 cm-1 bands, but it has no expected band near 128 cm-1 and the 306 band is 8 cm-1 low. Included only as a low-probability alternative; literature values are from memory."
+    }
+  ],
+  "hint_verdict": "consistent",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identify task. The spectrum shows three real Raman features, not a clean match for GaSe. The 305.9 band agrees with GaSe's ~308 cm-1 mode, but the 127.8 and 204.9 bands sit ~7-8 cm-1 below the expected ~134.5 and ~213 cm-1 modes, which is more than typical calibration error at 295 K. The intensity pattern is also inverted relative to GaSe. The best supported answer is a GaSe-family layered Ga-chalcogenide with moderate-to-low confidence. Literature positions are from memory and not verified in this session (no database or internet access), so the call rests mainly on the peak pattern.",
+  "peaks": [
+    {
+      "position_cm1": 127.85,
+      "fwhm_cm1": 3.56,
+      "assignment": "Strongest band; tentatively GaSe E'(E^1_2g) mode near ~134.5 cm-1 (about 6.7 cm-1 off)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Literature GaSe Raman (E' ~134.5 cm-1 at room temperature, 532 nm) from memory of standard GaSe Raman references; not verified in this session"
+    },
+    {
+      "position_cm1": 204.9,
+      "fwhm_cm1": 10.6,
+      "assignment": "Weak, broad band (~3.5 sigma in amplitude); tentatively GaSe A1'(A^1_1g) mode near ~213 cm-1 (about 8 cm-1 off); might also be noise-related",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Literature GaSe Raman (A1' ~213 cm-1) from memory of standard GaSe Raman references; not verified in this session"
+    },
+    {
+      "position_cm1": 305.9,
+      "fwhm_cm1": 6.81,
+      "assignment": "Second band; tentatively GaSe ~308 cm-1 mode (about 2 cm-1 off)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Literature GaSe Raman (~308 cm-1, room temperature) from memory of standard GaSe Raman references; not verified in this session"
+    }
+  ],
+  "properties": [
+    {
+      "name": "background",
+      "value": "Broad, rising continuum from ~1200 counts at 60 cm-1 to a ~3600 plateau near 900 cm-1; luminescence-like, not a Raman band",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "substrate_line",
+      "value": "No Si 520.7 cm-1 line detected (range 60-1100 cm-1 covers it)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "Unknown; GaSe-type layered structure is the tentative family only",
+      "provenance": "inferred",
+      "source": "Peak pattern vs. literature GaSe modes (memory, not verified in this session)"
+    }
+  ],
+  "citations": [
+    "Literature GaSe room-temperature Raman positions (~134.5, ~213, ~308 cm-1) quoted from memory of standard GaSe Raman references; I could not access a database or internet in this session to verify exact values or cite a specific paper.",
+    "Lorentzian peak fits, 127.85 and 305.93 cm-1 centres from lmfit on a local linear baseline (measured in this session).",
+    "Asymmetric least-squares baseline and robust-sigma (85 counts) noise estimate used for the significance scan (measured in this session)."
+  ],
+  "limits": [
+    "The material is not uniquely identified. Only three features are significant, two of them sit ~7-8 cm-1 from the GaSe modes, and the intensity pattern does not match GaSe. Confidence in GaSe is moderate-to-low.",
+    "No polarization or angle series was measured (single spectrum, backscattering along the layer normal), so no symmetry labels (irreps or polarization patterns) can be assigned from this data.",
+    "Literature reference positions are from memory and were not checked against a database; the GaS and SnS2 comparisons are based on approximate recall, not verified values.",
+    "The spectrum covers only 60-1100 cm-1, so low-frequency shear and breathing modes (typically below 60 cm-1 in layered chalcogenides) and any higher-frequency modes cannot be checked.",
+    "No Si 520.7 cm-1 reference line is present, so there is no internal calibration. The ~7-8 cm-1 offsets cannot be separated from calibration error or a different material, and a 295 K temperature effect is unlikely to account for them.",
+    "The broad continuum rising above 400 cm-1 is luminescence-like or noise, not a Raman band; no features above ~350 cm-1 pass the significance test.",
+    "The single-channel spike at 327.06 cm-1 (~10900 counts on a ~2000 background) is a cosmic ray and was removed before fitting. The 288 cm-1 point is the left wing of the 306 band, not a separate peak.",
+    "Process note: I briefly wrote a diagnostic plot and created a folder outside the data folder while inspecting the directory; both were deleted and the data folder was restored to contain only spectrum.csv. I did not read any files outside the data folder."
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 327.06
+    }
+  ]
+}

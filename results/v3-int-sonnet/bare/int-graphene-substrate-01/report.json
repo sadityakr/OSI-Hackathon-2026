@@ -1,0 +1,114 @@
+{
+  "summary": "Yes, both spectra show graphene, and I read it as monolayer or turbostratic graphene because each has a single-Lorentzian 2D band at about 37\u201340 cm\u207b\u00b9 FWHM. The 2D band is more intense than G by about 2.0 (Cu) to 2.8 (Au). The two layers differ in two ways: (1) graphene on Au is clearly more defective, with I_D/I_G of about 1 against about 0.55 on Cu, and (2) the 2D band sits about 16 cm\u207b\u00b9 higher on Cu (about 2697 cm\u207b\u00b9) than on Au (2681 cm\u207b\u00b9) while G does not move. Shifted 2D with unshifted G points to compressive strain, or to coupling with the Cu surface, rather than simple doping. The laser wavelength is not in the file, so I assumed about 532 nm. The D position (1344 cm\u207b\u00b9 on Au) and the 2D position are consistent with that assumption, but they do not prove it.",
+  "observations": [
+    {
+      "finding": "Both spectra contain the graphene D, G and 2D bands, so a graphene-type sp\u00b2 layer is present on both metals. Neither spectrum shows Au or Cu Raman bands, which is expected because the metals have no first-order Raman signal.",
+      "evidence": "Au: D 1344.3\u00b11.1 (FWHM 35\u00b14), G 1580.4\u00b10.8 (FWHM 26\u00b13), 2D 2681.3\u00b10.4 (FWHM 39.7\u00b11.2). Cu: D 1348\u00b15 (FWHM ~27), G 1581\u00b13 (FWHM ~27), 2D 2696\u20132698\u00b11.4 (FWHM 32\u201337\u00b14). Fits are Lorentzian plus a local polynomial background; fit residuals match the noise (rms ~17 counts on Au, ~9 on Cu).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The layer is most likely a single layer, or electronically decoupled (turbostratic) layers, on both metals. The 2D band is one symmetric Lorentzian with no multi-component structure, and it is stronger than G.",
+      "evidence": "I_2D/I_G (peak height above baseline) is 2.8 on Au (323\u2013340 / 116) and 2.0\u20132.1 on Cu (48\u201349 / 23\u201324). Area ratio A_2D/A_G is 4.5 on Au and 2.9\u20133.2 on Cu. A single Lorentzian describes 2D on both within noise, and a second component at 2684 on Au or 2677 on Cu has no weight (FWHM pinned at the 4 cm\u207b\u00b9 bound). On Cu the ratio is uncertain because G is small and noisy.",
+      "provenance": "measured",
+      "source": "Ferrari et al., PRL 97, 187401 (2006), Fig. 1 and discussion of the single-Lorentzian 2D band. Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013), Fig. 2."
+    },
+    {
+      "finding": "Graphene on Au is considerably more defective than on Cu. The D band is about as strong as G on Au and only about half of G on Cu.",
+      "evidence": "I_D/I_G is 111/116 = 0.96 on Au, with area ratio 1.3, and 13/24 = 0.55 on Cu, with area ratio ~0.6. The Cu value is uncertain because the D band is only about 1.5\u00d7 the per-point noise. A 1.7-fold or greater difference in I_D/I_G is far outside the fit errors. D' (~1620) is not resolved on either metal. D+G (~2940) is not significant on either. A weak 2D' (~3248) appears only on Au, and only marginally.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Both layers are in the low-defect-density regime (stage 1), where I_D/I_G increases with defect density. This is supported by the strong 2D band, the narrow G band (26 cm\u207b\u00b9) and the absence of a resolved D'. Taking the measured I_D/I_G as is, the mean inter-defect distance is about 12 nm on Au and about 16 nm on Cu, assuming 532 nm. These values are only indicative.",
+      "evidence": "L_D\u00b2 = 1.8\u00d710\u207b\u2079 \u00b7 \u03bb\u2074 / (I_D/I_G). With \u03bb = 532 nm and I_D/I_G = 0.96 this gives L_D \u2248 12 nm. With I_D/I_G = 0.55 it gives L_D \u2248 16 nm. The formula was calibrated on ion-bombarded graphene on SiO\u2082 at 514 nm and rescaled by \u03bb\u2074. Metal substrate enhancement and the unknown wavelength are not corrected for.",
+      "provenance": "inferred",
+      "source": "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011), Eq. 4 and Fig. 3. Lucchese et al., Carbon 48, 1592 (2010), Fig. 1 for the stage-1 and stage-2 behaviour."
+    },
+    {
+      "finding": "The 2D band is about 16 cm\u207b\u00b9 higher on Cu than on Au, while G is the same within error. G is also slightly below the usual ~1582 cm\u207b\u00b9 on both metals. On Au, 2D and G are close to values for relaxed, lightly doped graphene at ~532 nm. Graphene on Cu therefore carries something that shifts 2D but not G. The likely cause is biaxial compressive strain from differential thermal contraction of the substrate on quenching, plus interaction with the Cu surface. The data do not separate the two.",
+      "evidence": "\u0394\u03c9_2D = 2697 \u2212 2681 \u2248 +16 cm\u207b\u00b9 (error ~1.5). \u0394\u03c9_G = 1581\u00b12.6 \u2212 1580.4\u00b10.8 \u2248 +0.6\u00b13 cm\u207b\u00b9. For biaxial strain the 2D shift is roughly 2.2\u00d7 the G shift (Mohiuddin et al. report \u2202\u03c9_2D/\u2202\u03b5 about 2.2 times \u2202\u03c9_G/\u2202\u03b5 in magnitude). A 16 cm\u207b\u00b9 shift from strain alone would then give a G shift of roughly +6 to +7 cm\u207b\u00b9, which the data disfavour at about 2\u03c3. A cancelling doping contribution, or Cu coupling that affects 2D differently from G, would reconcile this. Pure hole doping is unlikely because I_2D/I_G stays above 2.",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012), Fig. 3 (strain and doping vector analysis). Mohiuddin et al., PRB 79, 205433 (2009), Table I (Gr\u00fcneisen parameters). Das et al., Nat. Nanotechnol. 3, 210 (2008), Figs. 2\u20133 (doping dependence of G, 2D and their ratio)."
+    },
+    {
+      "finding": "The absolute signal and background differ strongly between the two metals, so the absolute intensities cannot be compared. Au shows a 2D peak height of about 330 counts on a 1000\u20131500 count rising background. Cu shows about 49 counts on a 620\u2013800 count background.",
+      "evidence": "The Au background rises from ~1000 to ~1500 counts across the range. The Cu background rises from ~620 to ~820 and falls again. The 2D peak height is about 7\u00d7 larger on Au. The causes cannot be separated from these data: possible plasmonic enhancement on Au, differences in focus or coupling, layer coverage, or laser alignment on a small droplet.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (or turbostratic multilayer behaving as monolayer) on both Au and Cu",
+      "provenance": "inferred",
+      "source": "Ferrari et al., PRL 97, 187401 (2006), Fig. 1"
+    },
+    {
+      "name": "defect_level",
+      "value": "Au: high (I_D/I_G \u2248 0.96). Cu: medium (I_D/I_G \u2248 0.55, uncertain).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "L_D_nm",
+      "value": "Au \u2248 12 nm; Cu \u2248 16 nm (assuming 532 nm; indicative only)",
+      "provenance": "inferred",
+      "source": "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011), Eq. 4"
+    },
+    {
+      "name": "strain_sign",
+      "value": "Cu: compressive (likely, relative to Au); Au: approximately none relative to a ~2680 cm\u207b\u00b9 reference",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012); Mohiuddin et al., PRB 79, 205433 (2009)"
+    },
+    {
+      "name": "doping_type",
+      "value": "Low doping on both (I_2D/I_G > 2, G near 1580); sign not determined",
+      "provenance": "inferred",
+      "source": "Das et al., Nat. Nanotechnol. 3, 210 (2008)"
+    },
+    {
+      "name": "phase",
+      "value": "sp\u00b2 graphene with no evidence of amorphous carbon (G FWHM ~26 cm\u207b\u00b9, no broad D+G background)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "The laser wavelength is unknown. D and 2D are dispersive (D shifts ~50 cm\u207b\u00b9/eV and 2D ~100 cm\u207b\u00b9/eV), and I_D/I_G scales as \u03bb\u207b\u2074. Absolute positions, the L_D numbers and the strain reasoning all depend on the 532 nm assumption. The comparison of the two spectra holds if they were taken at the same wavelength, which I assumed.",
+    "The Cu spectrum is noisy (D peak ~13 counts above baseline, ~1.5\u00d7 the per-point noise), so the Cu D/G ratio, D width and any D' are poorly determined. The conclusion that Au is more defective is robust. The exact Cu defect density is not.",
+    "Measuring on the metal means no SiO\u2082 reference, with possible chemical or electronic coupling to the metal and possible electromagnetic enhancement. I_D/I_G and I_2D/I_G from graphene on metals are not directly comparable with the SiO\u2082-calibrated literature relations.",
+    "The strain interpretation is not unique. A 16 cm\u207b\u00b9 2D shift with no G shift is not what pure biaxial strain predicts. Doping, Cu-graphene coupling, local Cu-induced rippling, or a different local graphene orientation relative to the Cu lattice could contribute. The G error on Cu (\u00b12.6 cm\u207b\u00b9) is large enough that mild strain is not excluded.",
+    "Strain does not necessarily arise from quenching alone. Graphene grown on liquid or solid metal can also be strained by wrinkles, by contraction of the metal during solidification and by lattice coupling. Au and Cu differ in thermal expansion, solidification behaviour, grain structure and carbon solubility, but these data cannot say which of them matters.",
+    "The higher defect level on Au is consistent with, but not proven to come from, the high ethylene flux and fast growth, which would give many nuclei and many grain boundaries. Edges, grain boundaries, sp\u00b3 sites and vacancies all give D intensity and cannot be told apart from one spectrum. The unresolved D' only weakly disfavours vacancy-dominated damage.",
+    "Single spot per sample. It is unknown whether the spectra are representative of the whole droplet. Droplet curvature, partial coverage and focus on a curved surface can change both intensity and apparent ratios.",
+    "Au interband emission and Cu background luminescence were handled with a local polynomial baseline. The baseline model affects peak heights by several percent and has little effect on positions."
+  ],
+  "questions_for_user": [
+    "What was the laser wavelength? It fixes the absolute positions of D and 2D, which allow a proper strain and doping assignment, and it fixes the L_D conversion.",
+    "Were the Au and Cu spectra acquired with the same laser and objective? A different wavelength would explain part of a 2D shift of this size, so the comparison depends on it.",
+    "Is the Cu droplet solid or liquid at measurement? Is the Au droplet solid? The solidified metal's grain orientation and thermal contraction decide the strain transferred to the graphene.",
+    "Was the graphene coverage continuous or in islands on each droplet? What are the typical grain sizes from SEM or LEED? That separates a high defect density from a high grain-boundary density.",
+    "Do you have maps or several points per droplet? That would show whether the 2D position (strain) and I_D/I_G vary spatially, for example near the droplet edge.",
+    "Do you have a transferred-to-SiO\u2082 reference of the same graphene? It would separate substrate effects (strain from the metal, coupling) from intrinsic quality."
+  ],
+  "citations": [
+    "Ferrari A.C. et al., Phys. Rev. Lett. 97, 187401 (2006) \u2014 Raman spectrum of graphene and graphene layers, Fig. 1.",
+    "Ferrari A.C., Basko D.M., Nat. Nanotechnol. 8, 235 (2013) \u2014 Raman spectroscopy as a versatile tool for studying graphene, Fig. 2.",
+    "Can\u00e7ado L.G. et al., Nano Lett. 11, 3190 (2011) \u2014 Quantifying defects in graphene via Raman spectroscopy at different excitation energies, Eq. 4 and Fig. 3.",
+    "Lucchese M.M. et al., Carbon 48, 1592 (2010) \u2014 Quantifying ion-induced defects and Raman relaxation length in graphene, Fig. 1.",
+    "Lee J.E. et al., Nat. Commun. 3, 1024 (2012) \u2014 Optical separation of mechanical strain from charge doping in graphene, Fig. 3.",
+    "Mohiuddin T.M.G. et al., Phys. Rev. B 79, 205433 (2009) \u2014 Uniaxial strain in graphene by Raman spectroscopy, Table I.",
+    "Das A. et al., Nat. Nanotechnol. 3, 210 (2008) \u2014 Monitoring dopants by Raman scattering in an electrochemically top-gated graphene transistor, Figs. 2\u20133."
+  ],
+  "limits": [
+    "Cannot determine layer number beyond 'monolayer-like' (single-Lorentzian 2D), because turbostratic multilayers look similar.",
+    "Cannot separate strain from doping or from Cu-graphene coupling with only one wavelength and the G and 2D positions.",
+    "Cannot identify the type of defect (vacancies, sp\u00b3, edges, grain boundaries) or the grain size from this Raman data alone.",
+    "Cannot say how representative one spot is, or compare absolute intensities between Au and Cu.",
+    "Cannot confirm the laser wavelength; the 532 nm assumption is consistent with the data but not proven.",
+    "Cannot determine the crystallographic orientation of the graphene relative to the metal, or whether it was grown on liquid or on solid metal."
+  ]
+}

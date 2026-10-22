@@ -1,0 +1,106 @@
+{
+  "candidates": [
+    {
+      "material": "ClInO (InOCl-type, Pmmn)",
+      "confidence": 0.4,
+      "evidence": "CRD row 2296 (mp-27702, Pmmn 59), frequency scale 1.02. All three measured bands match a computed Ag mode within about 1 cm-1 (155.3 vs 154.6, 298.96 vs 299.2, 352.91 vs 353.6). No strong reference mode is missing in 60-722 cm-1. Score 0.987. Only three bands constrain the fit, and no experimental reference was checked, so this is a computed-spectrum match, not a confirmed identity."
+    },
+    {
+      "material": "Br7Nb3S (P3m1)",
+      "confidence": 0.1,
+      "evidence": "Score 0.72. Matches 155.3 (E), 298.96 (A1), 352.91 (E), but strong reference modes at 281.3 cm-1 (E, rel. 0.20) and 448.1 cm-1 (A1, rel. 0.11) are absent from the spectrum."
+    },
+    {
+      "material": "Bi2SeTe2 (R-3m)",
+      "confidence": 0.05,
+      "evidence": "Score 0.65. Only 155.3 cm-1 matched; 298.96 and 352.91 cm-1 unexplained."
+    },
+    {
+      "material": "F2O2U (R-3m)",
+      "confidence": 0.05,
+      "evidence": "Score 0.65. Only 155.3 cm-1 matched (Eg); 298.96 and 352.91 cm-1 unexplained."
+    },
+    {
+      "material": "OPb (P4/nmm)",
+      "confidence": 0.05,
+      "evidence": "Score 0.64. 155.3 (A1g) and 352.91 (B1g) matched; 298.96 cm-1 unexplained."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given, so there is no stated material to verify. The identification is a library-match ranking. The top candidate (ClInO, Pmmn) matches all three measured bands but is supported only by three peaks and a DFT reference.",
+  "peaks": [
+    {
+      "position_cm1": 155.3,
+      "fwhm_cm1": 3.27,
+      "assignment": "Ag (CRD candidate ClInO Pmmn, 154.6 cm-1 reference)",
+      "irrep": "Ag",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit (err 0.034 and 0.085 cm-1). Assignment from rl.py match_library, CRD row 2296 (Bagheri and Komsa 2023, Sci. Data 10, 80). Polarization from rl.py classify_polarization: parallel flat over 0-170 deg, crossed near zero (C0/P0 = 0.01). The crossed values are noisy and not all zero."
+    },
+    {
+      "position_cm1": 298.96,
+      "fwhm_cm1": 4.81,
+      "assignment": "Ag (CRD candidate ClInO Pmmn, 299.2 cm-1 reference)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit (err 0.15 and 0.50 cm-1). Assignment from rl.py match_library, CRD row 2296 (Bagheri and Komsa 2023, Sci. Data 10, 80). Polarization: parallel varies with a 2theta term (A2/P0 = 1.41), maximum near 30-40 deg, minimum near 90 deg. Crossed is nonzero and noisy."
+    },
+    {
+      "position_cm1": 352.91,
+      "fwhm_cm1": 4.58,
+      "assignment": "Ag (CRD candidate ClInO Pmmn, 353.6 cm-1 reference)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit (err 0.076 and 0.25 cm-1). Assignment from rl.py match_library, CRD row 2296 (Bagheri and Komsa 2023, Sci. Data 10, 80). Polarization: parallel maximum near 110 deg, minimum near 50 deg (A2/P0 = 0.80). Crossed nonzero and noisy."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "Pmmn (orthorhombic), candidate only",
+      "provenance": "inferred",
+      "source": "Top library match, CRD row 2296 (mp-27702). Not confirmed against an experimental reference."
+    },
+    {
+      "name": "layers",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "No layer-number relation applied. Single spectrum, suspended sample, no thickness series."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No reference position for an unstrained bulk sample was available to compare against. Strain not assessed."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Not assessed. No doping relation was applied."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "Not assessed. No defect-band evidence (for example near 1350 cm-1 in carbon materials) and no reference for this material."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, CC BY 4.0), rows 2296 (ClInO, Pmmn), 3211 (Br7Nb3S), 3466 (Bi2SeTe2), 1514 (F2O2U), 427 (OPb)"
+  ],
+  "limits": [
+    "Quality: rl_qc reported no flags. No cosmic-ray spikes, no saturation, no Si line in the window. The analysis window was 60-722 cm-1 at 1 cm-1 spacing, so modes below 60 or above 722 cm-1 are not covered. Signal to noise is about 68 on the strongest band.",
+    "Band count: the fit found three bands. I checked the summed spectrum for weaker bands. After subtracting the three Lorentzians, the residual features at about 163, 383 and 592 cm-1 are comparable to noise elsewhere (for example the empty 400-722 cm-1 region). A band weaker than roughly 3-5% of the 353 cm-1 peak cannot be excluded. A lowered-threshold rl_fit run did not finish, and I stopped it. Its output is not used.",
+    "Identification strength: three peaks with a fitted frequency scale (1.02) leave substantial room for chance matches. The top candidate has no experimental reference spectrum behind it, and I did not run a literature search (Valency or iopic-bond). The candidate is therefore weakly supported. The data alone cannot confirm the material.",
+    "Working-directory name: the folder path contains 'InOCl', which matches the top candidate's formula. I did not use this for the identification. The identification rests on the spectral match only.",
+    "Polarization: the 155.3 cm-1 band is isotropic (parallel flat, crossed near zero). An Ag mode of an orthorhombic crystal normally has an anisotropic in-plane tensor and would show a twofold pattern. The 155.3 cm-1 band's isotropic behaviour does not fit a generic Pmmn Ag assignment, so it is an unresolved conflict with the CRD label. It could mean an accidental a\u2248b tensor, a different in-plane geometry, or a wrong assignment. The crossed-configuration values are noisy and not all zero, so the isotropic_par_only class is a tool classification and not a precise measurement. The twofold classes for 298.96 and 352.91 cm-1 are consistent with an anisotropic Ag tensor in a plane.",
+    "Irreps are the CRD labels (Ag for all three). The labels were not checked against a full mode table for the candidate; only the matched modes were compared. Sample orientation relative to the crystal axes is unknown, so the polarization classes are not tied to a crystal direction.",
+    "Relations: none applied. No layer, strain, doping or defect relation exists for this candidate material in the skill's reference notes, and no material note exists for ClInO / InOCl. Properties above are inferred or left undetermined.",
+    "Conditions taken from the metadata: 532 nm, 295 K, suspended, backscattering along the layer normal. These were not checked against the data. The 532 nm excitation is not checked against any resonance of the candidate."
+  ]
+}

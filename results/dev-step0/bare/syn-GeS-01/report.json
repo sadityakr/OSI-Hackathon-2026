@@ -1,0 +1,101 @@
+{
+  "candidates": [
+    {
+      "material": "GeS (Pnma, orthorhombic)",
+      "confidence": 0.45,
+      "evidence": "Three sample lines at about 105, 205 and 244 cm-1 and nothing above 250 cm-1 except Si. The 105, 205 and 244 lines roughly match the reported GeS Ag modes near 112 and 214 and a mode near 238. Literature also gives modes near 150, 273 and 295 that are not resolved here, and the 105 and 205 positions sit about 7-9 cm-1 low."
+    },
+    {
+      "material": "\u03b1/\u03b2-In2Se3",
+      "confidence": 0.15,
+      "evidence": "Lines near 104 and 205 cm-1 are reported for In2Se3, but its strong ~180 cm-1 line is absent and 244 cm-1 is unexplained."
+    },
+    {
+      "material": "SnS",
+      "confidence": 0.1,
+      "evidence": "Same Pnma family, but its main lines (~95, 163, 190, 219 cm-1) do not match the observed positions."
+    },
+    {
+      "material": "GeSe",
+      "confidence": 0.07,
+      "evidence": "Same Pnma family, but its lines (~82, 150, 175, 188 cm-1) are not observed."
+    },
+    {
+      "material": "GaSe",
+      "confidence": 0.05,
+      "evidence": "Lines near 134, 213 and 308 cm-1 do not fit the 105/244 cm-1 pair."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given in the metadata (material_hint is null), so this is an identification from the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 104.6,
+      "fwhm_cm1": 8.3,
+      "assignment": "GeS low-frequency Ag mode (tentative)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position measured by Lorentzian fit. Assignment by comparison with literature GeS Ag mode near 112 cm-1 (Pnma layered IV-VI monochalcogenide Raman studies). No polarization data, so the irrep is not verified."
+    },
+    {
+      "position_cm1": 205.4,
+      "fwhm_cm1": 6.3,
+      "assignment": "GeS Ag mode (tentative)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position measured by Lorentzian fit. Assignment by comparison with literature GeS Ag mode near 214 cm-1. Offset of about -9 cm-1 from the literature value."
+    },
+    {
+      "position_cm1": 243.9,
+      "fwhm_cm1": 5.1,
+      "assignment": "GeS mode near 238 cm-1 (tentative)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position measured by Lorentzian fit. Assignment by comparison with literature GeS mode near 238 cm-1. Symmetry label not assigned because there is no polarization data."
+    },
+    {
+      "position_cm1": 520.6,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "First-order Si optical phonon at about 520.7 cm-1, from the SiO2/Si substrate."
+    }
+  ],
+  "properties": [
+    {
+      "name": "flake thickness / layer number",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "crystal phase",
+      "value": "likely orthorhombic Pnma (GeS-type), low confidence",
+      "provenance": "inferred",
+      "source": "Comparison with literature Raman spectra of layered group-IV monochalcogenides"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "No cosmic-ray spikes identified. Narrow maxima in the 60-1100 cm-1 range other than the four reported lines are consistent with noise on a sloping baseline.",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Reported GeS Raman modes (Ag near 112 and 214 cm-1, plus a mode near 238 cm-1), recalled from the layered GeS Raman literature rather than looked up",
+    "Si first-order optical phonon at 520.7 cm-1 (standard reference)"
+  ],
+  "limits": [
+    "Identification rests on only three weak-to-moderate sample lines. The GeS assignment is tentative, and the confidence is below 0.5.",
+    "The 105 and 205 cm-1 lines sit about 7-9 cm-1 below the GeS values I recall. This could come from strain, a different phase or a different material. The literature values are quoted from memory and were not checked.",
+    "Other GeS modes (about 150, 273 and 295 cm-1) are not resolved at this signal-to-noise ratio. Their absence weakens the GeS assignment.",
+    "Single unpolarized spectrum, so mode symmetries cannot be verified and polarization patterns are not classified.",
+    "Layer number, strain and doping cannot be determined from these data.",
+    "The broad baseline slope (intensity falling from about 5200 to 3700 counts) is probably background or the SiO2/Si substrate and was not analysed further. No peak fit was done below 60 cm-1."
+  ]
+}

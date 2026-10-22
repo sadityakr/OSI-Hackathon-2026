@@ -1,0 +1,77 @@
+{
+  "candidates": [
+    {
+      "material": "unidentified layered material",
+      "confidence": 0.1,
+      "evidence": "Three measured Raman bands at 155.70, 299.57 and 354.10 cm-1 (532 nm, 295 K). The data are consistent with a layered crystal only in the weak sense that the bands are narrow (FWHM 5-9 cm-1). I found no reference mode list in the folder or in the literature search that matches these three positions, so no specific material can be named."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "The material hint is null, so this is an identify task. I could not match the three bands to any reference. A literature search by material concept (layered oxyhalide Raman modes; InOCl Raman) returned no Raman spectrum for InOCl. The results were for BiOCl lattice dynamics, Bi-oxychalcogenides, MoTe2, MoO3 and PbFCl, and I did not read their mode tables, so I cite none of them. The reference-mode scripts and material notes in the skill directory are outside this folder and were not used, per the folder restriction.",
+  "peaks": [
+    {
+      "position_cm1": 155.7,
+      "fwhm_cm1": 5,
+      "assignment": "unassigned (no reference mode available)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 299.6,
+      "fwhm_cm1": 6.7,
+      "assignment": "unassigned (no reference mode available)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 354.1,
+      "fwhm_cm1": 8.5,
+      "assignment": "unassigned (no reference mode available)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "not determinable from this spectrum",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "layers",
+      "value": "not determinable (no thickness-sensitive band identified)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "substrate",
+      "value": "none detected (no Si line at 520.7 cm-1 in the 60-1100 cm-1 range)",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike, single point at 897.47 cm-1, 9238 counts, about 6x the neighbouring points (~1500). Replaced by the mean of its two neighbours before fitting. Not reported as a peak.",
+      "position_cm1": 897.47
+    }
+  ],
+  "citations": [],
+  "limits": [
+    "No reference: I could not identify the material. The three bands are measured, but nothing in the folder or the literature I could reach gives their assignment. Any named material would be a guess.",
+    "Literature search: no Raman spectrum or mode table for InOCl was found. Searches returned unrelated materials (MoTe2, MoO3, Bi-oxychalcogenides, BiOCl lattice dynamics), and I did not read their mode tables. The iopic-bond tool failed (VALENCY_BOND_TOKEN not set), so its figure search was unavailable.",
+    "The folder path mentions a material name. I did not use it as evidence, since the data do not confirm it and I found no reference Raman data for it.",
+    "Data quality: the point-to-point noise is about 240 counts against a 6000-count band, and a fluorescence-like background slopes from ~3000 counts at 60 cm-1 to ~1000 at 1100 cm-1. Peak positions and FWHMs come from Lorentzian fits on a linear background over 100-420 cm-1 (residual RMS 241 counts, equal to the noise). Position uncertainties are fit statistics only (0.07, 0.47, 0.23 cm-1); no Si calibration was available to add calibration error.",
+    "No bands above noise were found in 420-1100 cm-1. Bumps in a 5-point-binned spectrum reached about 3.6 sigma at ~936 cm-1 and 3.0 sigma at ~1073 cm-1. With about 20 candidate bumps and a crude cubic background, these are not significant, so I did not report them.",
+    "The spectrum covers 60-1100 cm-1 with 0.8 cm-1 sampling, so the lowest acoustic and ultra-low modes below 60 cm-1 cannot be checked. No polarization or angle series was given, so polarization classes and irreps cannot be assigned.",
+    "At 532 nm, resonance with an exciton or electronic transition could enhance some bands and suppress others. I cannot judge that without a reference, and it does not change the lack of an identification.",
+    "What would settle it: the chemical composition (EDS or XPS) or the diffraction pattern, and a reference Raman spectrum of the candidate material at 532 nm. With those, the three positions can be compared directly with calculated or measured modes."
+  ]
+}

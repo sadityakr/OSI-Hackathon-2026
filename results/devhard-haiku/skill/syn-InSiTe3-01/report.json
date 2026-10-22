@@ -1,0 +1,94 @@
+{
+  "candidates": [
+    {
+      "material": "InSiTe3",
+      "confidence": 0.6,
+      "evidence": "match_library ranks InSiTe3 first (score 0.989, CRD row 4232, P-31m, frequency scale 1.013). All three measured peaks match (108.9 to A1g, 123.2 to Eg, 142.9 to A1g) with no unmatched peaks and no missing strong reference modes in 60.5 to 1099.4 cm-1. Literature abstracts (Chen et al. 2022 ACS Nano; arXiv:2602.20747) describe InSiTe3 as a layered trigonal van der Waals compound with polarization-resolved Raman, which is consistent with the data. Confidence is moderate because only three modes are observed in the window and several other CRD entries fit two of them."
+    },
+    {
+      "material": "HgI2",
+      "confidence": 0.1,
+      "evidence": "Matches 108.9 (A1g) and 123.2 (A1g) with frequency scale 1.042, but leaves 142.9 cm-1 unexplained; score 0.849."
+    },
+    {
+      "material": "Bi2PbTe4",
+      "confidence": 0.05,
+      "evidence": "Matches 108.9 (Eg) and 142.9 (A1g) with scale 0.999, but leaves 123.2 cm-1 unexplained; score 0.839."
+    },
+    {
+      "material": "Bi4PbTe7",
+      "confidence": 0.03,
+      "evidence": "Matches 108.9 (Eg) and 142.9 (A1g), leaves 123.2 cm-1 unexplained; score 0.827."
+    },
+    {
+      "material": "CdI2",
+      "confidence": 0.02,
+      "evidence": "Matches only the 108.9 cm-1 A1 mode; 123.2 and 142.9 cm-1 unexplained; score 0.784."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identification from the spectrum alone. The top candidate was not chosen from the folder name or any prior label. The candidate InSiTe3 is consistent with the literature abstracts on layered trigonal InSiTe3, but the mode table was not accessed (see limits).",
+  "peaks": [
+    {
+      "position_cm1": 108.9,
+      "fwhm_cm1": 4.24,
+      "assignment": "A1g (InSiTe3, DFT mode, scaled 1.013)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Position 108.898 +/- 0.035 cm-1 and FWHM 4.24 +/- 0.11 cm-1 are measured (Lorentzian fit, rl_fit.py). Label from Computational Raman Database row 4232 (Bagheri and Komsa 2023, Sci. Data 10, 80), reference 108.8 cm-1. Strongest peak in the spectrum, height about 11,000 counts. Single spectrum, so no polarization class."
+    },
+    {
+      "position_cm1": 123.2,
+      "fwhm_cm1": 4.1,
+      "assignment": "Eg (InSiTe3, DFT mode, scaled 1.013)",
+      "irrep": "Eg",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Position 123.196 +/- 0.35 cm-1 and FWHM 4.1 +/- 1.0 cm-1 are measured; the fit uncertainty is large because the peak is weak (about 10 percent of the main peak height). Label from CRD row 4232 (Bagheri and Komsa 2023, Sci. Data 10, 80), reference 122.3 cm-1."
+    },
+    {
+      "position_cm1": 142.9,
+      "fwhm_cm1": 6.2,
+      "assignment": "A1g (InSiTe3, DFT mode, scaled 1.013)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Position 142.864 +/- 0.33 cm-1 and FWHM 6.2 +/- 1.0 cm-1 are measured. Label from CRD row 4232 (Bagheri and Komsa 2023, Sci. Data 10, 80), reference 144.0 cm-1 (about 1 cm-1 offset, within the scale range)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "trigonal P-31m (D3d) layered van der Waals, as in the InSiTe3 candidate",
+      "provenance": "literature",
+      "source": "CRD row 4232 space group P-31m (162) (Bagheri and Komsa 2023, Sci. Data 10, 80); Chen et al. 2022 ACS Nano 16, 7745 (doi 10.1021/acsnano.1c11628) abstract: 'trigonal symmetry and layered structure'."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 426.5
+    },
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 847.1
+    }
+  ],
+  "citations": [
+    "Bagheri, Komsa, Sci. Data 10, 80 (2023), Computational Raman Database, CRD row 4232 (InSiTe3, mp-567931, P-31m)",
+    "Chen et al., ACS Nano 16, 7745-7754 (2022), doi:10.1021/acsnano.1c11628, https://pubmed.ncbi.nlm.nih.gov/35499232/",
+    "Belojica et al., arXiv:2602.20747 (2026), Phonon frequency comb close to an isolated Einstein mode in InSiTe3, https://arxiv.org/abs/2602.20747"
+  ],
+  "limits": [
+    "The identification is moderate confidence. Only three modes are observed (108.9, 123.2, 142.9 cm-1). Several CRD candidates reproduce two of them, and the matcher fits one frequency scale per candidate, so the discrimination rests on which candidate also explains all three peaks.",
+    "Spectral window is 60.5 to 1099.4 cm-1 only. Nothing below about 60 cm-1 or above about 1100 cm-1 was measured, so high-frequency modes cannot be checked. Both the low and high cutoffs limit identification.",
+    "Literature tension: arXiv:2602.20747 (abstract only) reports a localized high-energy A1g phonon near 500 cm-1 in InSiTe3. No peak is seen there. A windowed fit over 400 to 600 cm-1 (rl_fit.py --window 400 600 --min-snr 2) returned no peaks; the only flagged feature is a cosmic-ray spike at 426.5 cm-1. In 440 to 560 cm-1 the maximum is a single point at 491.7 cm-1, 2.9 sigma above the local mean (101 points, std about 208 counts), which is what noise gives over that many points. The paper's mode table and its intensity relative to the 108.9 cm-1 mode could not be accessed (VALENCY_BOND_TOKEN not set), so I cannot say whether the mode is weak at 532 nm, absent in this sample, or the identification is wrong. This is the main open point against the InSiTe3 assignment.",
+    "The 400 to 600 cm-1 windowed refit rewrote fit.png and peaks.json in the data folder; those files now reflect that window rather than the full-range fit.",
+    "No Si substrate line (520.7 cm-1) is present, so no substrate line is reported. The substrate is unknown, and the metadata gives none.",
+    "The spectrum has a rising background from about 1700 counts near 60 cm-1 to about 2300 counts near 1100 cm-1. This is not fitted as a peak and is probably luminescence or instrument background, but I have not confirmed its origin.",
+    "No layer number, strain, doping or defect relation was applied. No such relation for InSiTe3 is available in the reference notes, and a single spectrum with three low-frequency modes cannot fix layer number. Layer-dependent claims would need a relation with its source and validity range. None is stated here.",
+    "The peak fit uses a Lorentzian model and an ALS baseline. The 123.2 cm-1 peak is weak and its position uncertainty is about 0.35 cm-1. The 142.9 cm-1 FWHM is larger than the 108.9 cm-1 FWHM, which may indicate a partially overlapping feature or instrument broadening; the data alone do not separate these.",
+    "Polarization, temperature dependence and resolution were not measured or available. The data cannot test the polarization classes or the 200 K anomaly reported in arXiv:2602.20747. The measurement is at 295 K as stated in the metadata, which is above the anomaly temperature."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "candidates": [
+    {
+      "material": "BiOBr (tetragonal matlockite-type bismuth oxybromide)",
+      "confidence": 0.2,
+      "evidence": "Strongest measured line is at 163.0 cm-1 (FWHM 3.2, parallel-only, angle-independent), which is near the strong A1g band usually reported for BiOBr. The 107.2 cm-1 and 390.9 cm-1 lines are not checked against BiOBr literature because no reference was available in the folder, so this is a partial match only."
+    },
+    {
+      "material": "CrI3",
+      "confidence": 0.05,
+      "evidence": "Two parallel-only, angle-independent lines near 107 and 163-166 cm-1 would fit the Ag-type pair often reported for CrI3, from memory and not checked here. The 390.9 cm-1 fourfold band has no counterpart in CrI3 that I can recall, and the expected 132 cm-1 line is absent from the data, so this is a weak match."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to check the spectrum against. The material cannot be identified confidently from three Raman lines, and the candidates above are low-confidence partial matches from memory of the literature, which I could not verify in this folder.",
+  "peaks": [
+    {
+      "position_cm1": 107.22,
+      "fwhm_cm1": 8.04,
+      "assignment": "Mode at 107 cm-1, A1g-like (totally symmetric), tentative",
+      "irrep": "A1g (tentative)",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Pseudo-Voigt fit to the angle-averaged parallel spectrum; fit converged to a pure Lorentzian. Per-angle parallel amplitude 8237 +/- 18 counts is constant over 0-170 deg (constant chi2 11.7/17), and crossed is 12 +/- 18 counts (zero within error). Irrep is inferred from the parallel-only, isotropic pattern under z-backscattering; it is not a literature assignment."
+    },
+    {
+      "position_cm1": 163.04,
+      "fwhm_cm1": 3.17,
+      "assignment": "Mode at 163 cm-1, A1g-like (totally symmetric), tentative",
+      "irrep": "A1g (tentative)",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Lorentzian-shaped fit to the averaged spectrum. Parallel amplitude 1456 +/- 27 counts is constant across angle (constant chi2 8.8/17). Crossed is -34 +/- 27 counts, consistent with zero at about 1.3 sigma. Irrep inferred from the symmetry pattern; not a literature assignment."
+    },
+    {
+      "position_cm1": 390.85,
+      "fwhm_cm1": 5.44,
+      "assignment": "Mode at 391 cm-1, B1g-type (x2-y2 tensor component), tentative",
+      "irrep": "B1g (tentative)",
+      "pattern": "fourfold",
+      "provenance": "measured",
+      "source": "Pseudo-Voigt (eta 0.86) fit. Parallel 390.85 cm-1, crossed 390.77 cm-1. Parallel intensity follows a cos^2(2(theta-50 deg)) form (fourfold fit chi2 12.5/15; twofold 1641/15; constant 1643/17). Crossed is the complementary sin^2 form, and parallel plus crossed is flat (2373 +/- 103 counts). Irrep is inferred from the fourfold pattern under the D4h tensor rule; it is not a literature assignment and an E-type alternative is not excluded."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "tetragonal-like (fourfold B-type mode) - unconfirmed",
+      "provenance": "inferred",
+      "source": "Inferred from the fourfold angular pattern of the 391 cm-1 band; the point group is not determined by these data."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No thickness, contrast or layer-dependent mode information in the data."
+    },
+    {
+      "name": "substrate_lines",
+      "value": "none detected",
+      "provenance": "measured",
+      "source": "Suspended sample. No peak above the pooled noise threshold (about 60 counts) at the Si 520.7 cm-1 position or elsewhere in 60-542 cm-1."
+    }
+  ],
+  "artifacts": [],
+  "citations": [],
+  "limits": [
+    "Identification is low confidence. Three Raman lines in a 60-542 cm-1 window are not enough to fix the material. Literature was not consulted because no reference data is available in the working folder and this sandbox has no internet access. The candidate names and the 'recalled' BiOBr and CrI3 line positions must be checked against the literature before use.",
+    "The spectral window is 60-542 cm-1. Modes below 60 cm-1 and above 542 cm-1 (for example overtones or high-frequency stretches) are not measured, and these would be needed to discriminate candidate materials.",
+    "The pooled detection threshold on the residual is about 60 counts (3.5 sigma of the smoothed average). Weaker features below about 0.7 percent of the 107 cm-1 intensity, or about 5 percent of the 391 cm-1 intensity, cannot be excluded.",
+    "Irreps (A1g, B1g) are tentative. They rely on the z-backscattering tensor rules and an assumed tetragonal point group, which the data do not establish. An E-type assignment for the 391 cm-1 band is not excluded.",
+    "The angle origin is the measured lab-frame angle. The fourfold maximum at about 50 deg relative to the measured axis depends on how the sample was mounted and is not a crystal-axis direction.",
+    "Absolute frequency calibration is not verified. There is no internal Si reference, so positions carry only the instrument calibration.",
+    "Per-spectrum noise is about 175 counts (rms residual), so per-angle amplitudes have uncertainties of about 75-115 counts. Crossed-polarisation values for the 107 and 163 cm-1 bands are consistent with zero, but a small leakage below about 60 counts cannot be ruled out.",
+    "No cosmic-ray spikes were found. Single-point residuals never exceed 5 sigma, and cross-angle outlier checks flagged only the 391 cm-1 band's own angular variation. The artifacts list is therefore empty.",
+    "Analysis files (overview.png and the analysis/ folder with pv.py, angle_fit.py, symmetry_test.py, weak_search.py and CSV outputs) were written into the working folder."
+  ]
+}

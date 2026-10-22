@@ -1,0 +1,80 @@
+{
+  "candidates": [
+    {
+      "material": "none (no confident match)",
+      "confidence": 0,
+      "evidence": "Three significant peaks at 155.7, 299.6 and 354.1 cm-1 (fitted, measured). I have no offline reference library and did not verify any literature mode table, so no formula can be matched with confidence. The strongest feature is a dominant ~156 cm-1 mode with a second strong mode near 354 cm-1; this pattern needs a reference spectrum to test."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "The task is 'identify' and material_hint is null, so there is no stated material to check against. I did not use the directory name as evidence. The identification rests only on the peak positions, widths and relative intensities in spectrum.csv, and those do not match any material I can confirm.",
+  "peaks": [
+    {
+      "position_cm1": 155.7,
+      "fwhm_cm1": 5,
+      "assignment": "unassigned (strongest mode, dominant feature)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit, 60-260 cm-1 window, cubic baseline; centre \u00b10.06, FWHM \u00b10.2 cm-1; t(amplitude)\u224838"
+    },
+    {
+      "position_cm1": 299.6,
+      "fwhm_cm1": 6.8,
+      "assignment": "unassigned (weak-moderate mode)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit, 250-420 cm-1 window, quadratic baseline; centre \u00b10.5, FWHM \u00b11.6 cm-1; t\u22487"
+    },
+    {
+      "position_cm1": 354.1,
+      "fwhm_cm1": 8.7,
+      "assignment": "unassigned (strong-moderate mode)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit, 250-420 cm-1 window; centre \u00b10.2, FWHM \u00b10.8 cm-1; t\u224819"
+    },
+    {
+      "position_cm1": 382.4,
+      "fwhm_cm1": null,
+      "assignment": "unassigned, tentative shoulder (not significant)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; width pinned at the lower bound (unresolved), t\u22482.4, below a 3-sigma criterion"
+    }
+  ],
+  "properties": [
+    {
+      "name": "strongest_mode_cm1",
+      "value": "155.7",
+      "provenance": "measured",
+      "source": "Lorentzian fit, 60-260 cm-1 window"
+    },
+    {
+      "name": "identification",
+      "value": "unidentified",
+      "provenance": "inferred",
+      "source": "No peak set matched to a reference I can verify offline"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 897.47
+    }
+  ],
+  "citations": [],
+  "limits": [
+    "I cannot identify the material with confidence. The three significant peaks (155.7, 299.6, 354.1 cm-1) would need to be compared against a reference Raman library or literature mode table for layered candidates. None was available offline and I did not cite any literature values.",
+    "Above about 420 cm-1 no feature reaches 3 sigma. The noise is about 240 counts and the features are about 400-600 counts, so the weak bands at 478-1071 cm-1 that a naive peak search lists are consistent with noise plus background and are not reported as peaks.",
+    "The broad background (fluorescence-like slope) and the choice of baseline change the amplitudes and widths of the weak peaks. The 299.6 cm-1 width and the 382.4 cm-1 feature are the least reliable numbers.",
+    "No Si substrate line is claimed. There is only a weak feature at 524.4 cm-1 (t\u22482.3), 3.7 cm-1 from the Si 520.7 cm-1 line, which is too weak to call. No calibration standard was given, so absolute shifts may carry an offset of roughly 1-2 cm-1.",
+    "The spectrum starts at 60 cm-1. Features at 70-190 cm-1 other than the 155.7 cm-1 peak are not significant (t\u22482-3).",
+    "This is one unpolarized backscattering spectrum. No polarization dependence was measured, so no symmetry (irrep) or polarization pattern can be assigned to any peak.",
+    "Layer number, defect level and strain cannot be determined from these data.",
+    "The single-point spike at 897.47 cm-1 (9238 counts against neighbours of about 1500-1700) was replaced by the neighbour average before fitting. No other spikes were found at the 4.5-sigma level."
+  ]
+}

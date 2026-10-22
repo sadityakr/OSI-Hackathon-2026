@@ -1,0 +1,103 @@
+{
+  "candidates": [
+    {
+      "material": "InSiTe3",
+      "confidence": 0.3,
+      "evidence": "Only one significant Raman line at 108.9 cm-1 with a weak shoulder near 143 cm-1, all below 150 cm-1. That fits a heavy-Te layered tellurosilicate (Si2Te6 units) with low-frequency Te-dominated modes. This is a family-level fit only. I have no reference spectrum for InSiTe3, so I cannot confirm the specific compound."
+    },
+    {
+      "material": "CrSiTe3 / Cr2Ge2Te6 family (M-X-Te3 telluride)",
+      "confidence": 0.2,
+      "evidence": "These tellurides have a strong Eg-type mode near 105-110 cm-1 and an A1g near 135-145 cm-1 (literature values from memory, not checked). The 109 and ~143 cm-1 lines are at similar positions. Their other lines (about 78, 90, 117, 200 cm-1) are not resolved here."
+    },
+    {
+      "material": "trigonal Te (elemental)",
+      "confidence": 0.15,
+      "evidence": "Te has modes near 92, 103 (E1), 121 (A1) and 141 (E2) cm-1. The weak 123 and 143 cm-1 features could match. However, the A1 mode near 121 cm-1 is normally dominant, and here it is nearly absent. The strong 109 cm-1 line does not fit Te well."
+    },
+    {
+      "material": "Bi2Te3 / Sb2Te3",
+      "confidence": 0.1,
+      "evidence": "These have low-frequency Eg and A1g lines at about 100-115 and 135-165 cm-1, but a single dominant 109 cm-1 line with nothing else is not a good match."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so this is an open identification.",
+  "peaks": [
+    {
+      "position_cm1": 108.9,
+      "fwhm_cm1": 4.1,
+      "assignment": "Dominant low-frequency Te-related mode, probably an Eg-type mode",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of the spectrum. The mode assignment is inferred, not verified against a reference."
+    },
+    {
+      "position_cm1": 142.8,
+      "fwhm_cm1": 5.5,
+      "assignment": "Weak mode, possibly A1g-like or Te E2",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. The peak is about 1000 counts above a noise level of about 220, so it is marginal. The assignment is tentative."
+    },
+    {
+      "position_cm1": 123,
+      "fwhm_cm1": null,
+      "assignment": "Possible very weak shoulder, not reliably resolved",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Smoothed local maximum of about 600 counts. It is within noise and not confirmed."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "A single unpolarised spectrum with no thickness reference cannot give a layer count."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "No reference spectrum is available to compare against."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none determinable",
+      "provenance": "inferred",
+      "source": "There is no reference peak position to compare against."
+    },
+    {
+      "name": "signal_to_noise",
+      "value": "about 220 counts rms noise on a baseline of about 1700-2200 counts; the main peak is about 10000 counts high",
+      "provenance": "measured",
+      "source": "Statistics from spectrum.csv. The baseline rises slowly with shift, probably from fluorescence or background."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single point, about 11000 counts, neighbours at baseline)",
+      "position_cm1": 426.5
+    },
+    {
+      "type": "cosmic-ray spike (single point, about 12400 counts, neighbours at baseline)",
+      "position_cm1": 847.1
+    }
+  ],
+  "citations": [
+    "Trigonal Te Raman modes: Pine & Dresselhaus, Phys. Rev. B 4, 356 (1971), cited from memory.",
+    "Cr2Ge2Te6 / CrSiTe3 Raman: general literature on M2X2Te6 and MXTe3 layered tellurides, quoted from memory and not checked here. No InSiTe3 reference spectrum was consulted."
+  ],
+  "limits": [
+    "The spectrum has one confident Raman peak (108.9 cm-1) and one marginal peak (~143 cm-1). That is too little to identify the material uniquely. InSiTe3 is the best guess only because it is a Te-based layered compound with low-frequency modes. I could not check it against a reference spectrum.",
+    "Irreps and polarisation patterns cannot be determined. This is a single spectrum with no angle or parallel/crossed analysis, so the 'pattern' fields are null.",
+    "No Si substrate line near 520.7 cm-1 is seen, and the substrate is unknown. The sample may be thick or opaque, or the substrate may be something else.",
+    "The lines at 426.5 and 847.1 cm-1 are single-point spikes with a width of one sample point. They are cosmic rays, not sample peaks, and I excluded them. Ignoring them, there are no clear modes above about 150 cm-1. The ~764 and ~391 cm-1 features are noise-level.",
+    "Te-based and other heavy-chalcogenide layered materials give similar low-frequency lines, so the alternatives listed cannot be excluded. A wider low-wavenumber range (below 60 cm-1), higher S/N, polarisation data, and the substrate identity would be needed to decide.",
+    "Layer number, doping, strain and defect level cannot be determined from these data."
+  ]
+}

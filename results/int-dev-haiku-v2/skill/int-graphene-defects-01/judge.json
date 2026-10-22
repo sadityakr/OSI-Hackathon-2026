@@ -1,0 +1,70 @@
+{
+ "key": "3a74f19388d3010a",
+ "score": 0.875,
+ "by_kind": {
+  "finding": 0.8333333333333334,
+  "quantitative": 1.0,
+  "caveat": 0.75,
+  "question": 1.0
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 2,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report says doses 1\u20133 are in stage 1 with the D/G ratio rising 0.25\u21920.57\u21921.19 and \"G FWHM stays at ~14 cm-1 (13.8-14.0)\"; it gives the 2D band as sharp (FWHM ~32 cm-1, 2D/G \u2248 3.0) and shows D' rising too (I_D'/I_G 0.04, 0.09, 0.17)."
+   },
+   {
+    "id": "n1",
+    "met": 1,
+    "why": "It uses peak heights at 532 nm and gives \"L_D = 24.0 nm (20-27), 15.9 nm (13.5-18), 11.0 nm (9.4-12.4)\" for D/G = 0.25, 0.57 and 1.19, all inside the rubric ranges."
+   },
+   {
+    "id": "c1",
+    "met": 1,
+    "why": "It applies \"L_D^2 = 1.8e-9 * lambda^4 / (I_D/I_G) with lambda = 532 nm\" and warns that \"The ratio depends on the excitation energy through lambda^4 (532 nm used)\", so the same ratio would give a different L_D at another laser line."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "It says \"Dose 4 is past the D/G maximum (stage 2...)... lower D/G at dose 4 means lost sp\u00b2 crystallinity, not fewer defects\"; it notes G broadened \u00d73.3 and merged with D', the 2D band has nearly vanished, no stage-1 L_D can be read, and gives a rough L_D of 1\u20132 nm."
+   },
+   {
+    "id": "f3",
+    "met": 0,
+    "why": "It never states I_D/I_D' (about 7) and never cites Eckmann's defect-type ratios; it lists only I_D'/I_G values."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "It states that height ratios are used and that \"height ratio and the area ratio differ by 5-25%\", but it does not say that Cancado's relation is calibrated on peak heights (only \"Literature normally uses one of these\")."
+   },
+   {
+    "id": "q1",
+    "met": 1,
+    "why": "It asks \"What is the 'dose'? Ar+ or other ion dose..., electron dose, plasma or laser dose?\" and notes that \"The stage-1 relation assumes point-defect (ion-type) disorder\"."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "It says dose 4 \"is the most damaged spectrum\" and declines to give a stage-1 L_D for it."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "It uses the \u03bb^4 relation explicitly at 532 nm."
+   },
+   {
+    "id": "w3",
+    "made": false,
+    "why": "It removed the 2154.08 cm-1 spike in dose 2 as a cosmic ray (\"Despiked one cosmic ray\")."
+   }
+  ],
+  "citation_specificity": 2
+ },
+ "judge_model": "claude-opus-5-5"
+}

@@ -1,0 +1,92 @@
+{
+  "candidates": [
+    {
+      "material": "Sb2Te3",
+      "confidence": 0.2,
+      "evidence": "Only three real modes, at 108.9, 123.0 and 142.6 cm-1, all below 150 cm-1 with no detectable structure above that. Heavy-atom telluride A1g/Eg modes of Sb2Te3 are recalled at roughly 113 and 125 cm-1, which is the closest match. Recalled from memory, not checked against a reference spectrum. Against it: no ~70 cm-1 Eg mode, no ~165 cm-1 A1g mode, and 142.6 cm-1 is unmatched."
+    },
+    {
+      "material": "Bi2Te3",
+      "confidence": 0.1,
+      "evidence": "Same heavy-atom Te low-frequency cluster pattern (A1g near 103-108 cm-1, Eg near 118-136 cm-1). Recalled from memory, unverified. Against it: the Eg mode near 62 cm-1 and the strong A1g mode near 165 cm-1 are absent from this spectrum, and 165 cm-1 lies inside the measured range."
+    },
+    {
+      "material": "In2Se3",
+      "confidence": 0.08,
+      "evidence": "Low-frequency modes near 107 and 125-140 cm-1 are reported for In2Se3 polytypes, as recalled from memory and unverified. Against it: its 175-200 cm-1 modes are absent here (fitted residual at 190-215 cm-1 is -77 counts, about 1.7 sigma, so no peak)."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "material_hint is null, so there is no stated material to verify against. The identification rests on the three measured low-shift modes and the absence of modes elsewhere. No reference spectrum was available in the sandbox, so literature values are from memory and unverified. The spectrum does not uniquely identify the material; the candidates above are low confidence.",
+  "peaks": [
+    {
+      "position_cm1": 108.9,
+      "fwhm_cm1": 4.3,
+      "assignment": "unassigned; dominant mode (about 11000 counts above background)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "pseudo-Voigt least-squares fit over 60-1100 cm-1 with quadratic background, centre +/-0.03 cm-1, eta 0.96 (almost purely Lorentzian)"
+    },
+    {
+      "position_cm1": 123,
+      "fwhm_cm1": 5.1,
+      "assignment": "unassigned; weak mode (about 1050 counts, about 6 sigma)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "pseudo-Voigt least-squares fit over 60-1100 cm-1, centre +/-0.35 cm-1, amplitude +/-171 counts"
+    },
+    {
+      "position_cm1": 142.6,
+      "fwhm_cm1": 7.5,
+      "assignment": "unassigned; weak, broad mode (about 1300 counts, about 8 sigma)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "pseudo-Voigt least-squares fit over 60-1100 cm-1, centre +/-0.36 cm-1, eta about 0.4"
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Only three low-shift modes and no structure above about 150 cm-1; no phase can be assigned from this spectrum alone."
+    },
+    {
+      "name": "substrate_520_7_peak",
+      "value": "not detected",
+      "provenance": "measured",
+      "source": "Residual over 520-560 cm-1 after the three-peak fit is +0.4 +/- 36 counts, so no Si line at 520.7 cm-1."
+    },
+    {
+      "name": "spectral_coverage_cm1",
+      "value": "60.5 to 1099.4 (step 1.18 cm-1)",
+      "provenance": "measured",
+      "source": "shift_cm1 column of spectrum.csv"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_single_channel_426.5",
+      "position_cm1": 426.51
+    },
+    {
+      "type": "cosmic_ray_single_channel_847.1",
+      "position_cm1": 847.06
+    }
+  ],
+  "citations": [
+    "No reference spectrum or database was available in the sandbox. Literature values quoted in candidates (Sb2Te3, Bi2Te3, In2Se3 low-frequency modes) are recalled from general knowledge and are unverified; check them against primary references before relying on them."
+  ],
+  "limits": [
+    "Material identity is not determined by this spectrum. The candidates are low confidence: three modes, all below 150 cm-1, do not uniquely fix a compound, and the candidate ranking rests on recalled literature.",
+    "Silicon substrate: no line at 520.7 cm-1 is detected, and the Si-Si/Si-Te band region (about 300-500 cm-1) shows nothing above noise, so a Si-containing compound is not supported by the spectrum, though it cannot be strictly excluded.",
+    "Detection limit: noise is about 200 counts per point, so broad or weak modes below roughly 250-300 counts (about 2-3% of the 108.9 cm-1 peak) cannot be excluded anywhere in 60-1100 cm-1.",
+    "Modes below about 60 cm-1 are outside the measured range, so the lowest-frequency Raman-active modes of the material cannot be checked.",
+    "Sampling is 1.18 cm-1 per point, so the 4-8 cm-1 widths are only 3-7 points wide and fitted centres are good to about +/-0.3 cm-1 only; a 1-point-wide feature could be a cosmic ray, but the 108.9 cm-1 peak is symmetric over about 4 points with neighbouring points at about 6000-10000 counts, so it is treated as a real mode.",
+    "Single spectrum at 532 nm, 295 K, backscattering: no polarization analysis, so no symmetry (irrep) assignment is possible, and the 1.18 cm-1 sampling and a sloping background (about 1500 counts at 200 cm-1 rising to about 2200 at 1080 cm-1) limit the fine structure that can be resolved.",
+    "The residual rms (about 200 counts) matches the white-noise level in the high-frequency region, so no significant broad background feature is present; the 3-4 sigma residual bumps at 391, 623, 765, 904 and 1034 cm-1 are consistent with noise fluctuations across about 300 independent points and are not reported as peaks."
+  ]
+}

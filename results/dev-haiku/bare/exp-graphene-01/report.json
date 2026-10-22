@@ -1,0 +1,121 @@
+{
+  "candidates": [
+    {
+      "material": "graphene",
+      "confidence": 0.8,
+      "evidence": "Three sp2-carbon bands: D at 1344.3 cm-1 (FWHM 34.5), G at 1580.4 cm-1 (FWHM 25.6), and a single symmetric 2D band at 2681.2 cm-1 (FWHM 42.0). I2D/IG (height) is about 3 and the 2D band is one Lorentzian, which fits a monolayer-like lineshape. D/IG (height) is about 0.96, so the flake is disordered. The 2D position is in the range expected for graphene near 532 nm, but the laser wavelength is not stated. No other Raman modes (for example MoS2, hBN, Si, Au) are present."
+    },
+    {
+      "material": "bilayer graphene",
+      "confidence": 0.12,
+      "evidence": "Few-layer graphene cannot be excluded: the 2D FWHM of 42 cm-1 is broader than a typical monolayer (about 25-30 cm-1), and bilayer 2D is broader and multi-component. A single Lorentzian and an I2D/IG of about 3 argue against it, and the Rayleigh tail hides the low-frequency layer-breathing and shear modes that would settle the layer count."
+    },
+    {
+      "material": "amorphous carbon",
+      "confidence": 0.05,
+      "evidence": "Broad D and G bands with D/G near 1 are typical of disordered carbon. However, amorphous carbon has no sharp 2D overtone, and the 2681 cm-1 band here is clearly present with I2D/IG about 3, so this is unlikely."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material_hint was supplied (identify task), so there is nothing to check for consistency. The identification rests on the band positions, widths and ratios measured from this spectrum, and on comparison with the literature sp2-carbon Raman signatures.",
+  "peaks": [
+    {
+      "position_cm1": 1344.3,
+      "fwhm_cm1": 34.5,
+      "assignment": "D band: A1g breathing mode of sp2 rings at the K point, activated by defects (double resonance)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment: Ferrari & Robertson, PRB 61, 14095 (2000); Ferrari et al., PRL 97, 187401 (2006). Position and FWHM from a Lorentzian fit with a quadratic background over 1150-1800 cm-1. Polarization not measured (single spectrum)."
+    },
+    {
+      "position_cm1": 1580.4,
+      "fwhm_cm1": 25.6,
+      "assignment": "G band: in-plane E2g C-C stretch at the zone centre",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment: Tuinstra & Koenig, J. Chem. Phys. 53, 1126 (1970); Ferrari et al., PRL 97, 187401 (2006). Position and FWHM from the same fit as the D band."
+    },
+    {
+      "position_cm1": 2681.2,
+      "fwhm_cm1": 42,
+      "assignment": "2D (G') band: second-order overtone of the D phonon (2 x TO-K double resonance); single component",
+      "irrep": "overtone of A1g (2D)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment: Ferrari et al., PRL 97, 187401 (2006); Malard et al., Phys. Rep. 473, 51 (2009). Position stable to 0.2 cm-1 and FWHM 40-43 cm-1 across windows 2400-3000 and 2450-2900 cm-1 and quadratic/cubic backgrounds."
+    }
+  ],
+  "properties": [
+    {
+      "name": "material_family",
+      "value": "sp2 carbon: graphene",
+      "provenance": "inferred",
+      "source": "D, G and 2D bands at 1344, 1580 and 2681 cm-1 with the lineshapes described in the limits (Ferrari et al., PRL 97, 187401 (2006))."
+    },
+    {
+      "name": "layers",
+      "value": "1 (tentative; monolayer-like 2D lineshape)",
+      "provenance": "inferred",
+      "source": "Single symmetric 2D Lorentzian, I2D/IG (height) about 3, and 2D position 2681 cm-1 (Ferrari et al., PRL 97, 187401 (2006); Malard et al., Phys. Rep. 473, 51 (2009)). The 42 cm-1 2D width is broad, and the low-frequency layer modes are not observable here, so the layer count is not established."
+    },
+    {
+      "name": "defect_level",
+      "value": "medium",
+      "provenance": "inferred",
+      "source": "I_D/I_G (height) about 0.96 from the fit (Ferrari & Robertson, PRB 61, 14095 (2000))."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "about 20 (assumes 532 nm excitation)",
+      "provenance": "inferred",
+      "source": "Cancado et al., Nano Lett. 11, 3190 (2011), L_a = 2.4e-10 x lambda^4 / (I_D/I_G). Laser wavelength not given, so this is conditional on 532 nm."
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "The G position of 1580.4 cm-1 is close to the undoped, unstrained value. The 2D/G position ratio is not used because the laser wavelength is unknown."
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No reliable G-band reference for doping without a laser wavelength and a reference spectrum."
+    },
+    {
+      "name": "substrate_lines",
+      "value": "none detected (no Si 520.7 cm-1 line; no sharp Au features)",
+      "provenance": "measured",
+      "source": "Inspection of the spectrum. Au has no first-order Raman modes, so the sloping broad background is not attributed to the substrate."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "rayleigh_laser_leakage (elastic line, not a Raman mode; not a cosmic ray)",
+      "position_cm1": 0.75
+    },
+    {
+      "type": "no cosmic-ray spikes detected (single-pixel outliers test found only the elastic-line points)",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Ferrari AC, Meyer JC, Scardaci V, et al. Raman spectrum of graphene and graphene layers. PRL 97, 187401 (2006).",
+    "Ferrari AC, Robertson J. Interpretation of Raman spectra of disordered and amorphous carbon. PRB 61, 14095 (2000).",
+    "Tuinstra F, Koenig JL. Raman spectrum of graphite. J. Chem. Phys. 53, 1126 (1970).",
+    "Malard LM, Pimenta MA, Dresselhaus G, Dresselhaus MS. Raman spectroscopy in graphene. Phys. Rep. 473, 51 (2009).",
+    "Cancado LG, et al. Quantifying defects in graphene via Raman spectroscopy at different excitation energies. Nano Lett. 11, 3190 (2011)."
+  ],
+  "limits": [
+    "Laser wavelength and power are not stated. The 2D position (2681 cm-1) fits graphene near 532 nm, but the wavelength cannot be checked. The L_D value is conditional on 532 nm.",
+    "Single unpolarised spectrum, not angle-resolved, so no polarization classification is possible (pattern set to null for all peaks).",
+    "The Rayleigh line is at about -0.7 to +0.75 cm-1 (apex estimate 0.75 cm-1, so a small calibration offset is possible). Its wings cover about -25 to +30 cm-1, so modes below about 40 cm-1 (layer breathing and shear modes) cannot be observed. The layer count is therefore not confirmed from low frequency.",
+    "The background is strong and sloping (about 1000 counts near 0 cm-1, 1450 near 2500 cm-1, 1300 near 3600 cm-1), probably luminescence from the Au droplet or residues. The D/G height ratio (about 0.96) depends on the baseline; the area ratio is about 1.3-1.4 depending on baseline. The 2D width and position are robust to the window and baseline choice.",
+    "The D' band (about 1620 cm-1) and D+D' (about 2940 cm-1) are not resolved above the noise (noise sigma about 15 counts). The broad feature fitted near 1605 cm-1 is not a distinct band.",
+    "Identification as graphene rests on the lineshape, width and intensity ratios. Without a reference spectrum, a mapping study, or a second excitation wavelength, it cannot be shown to be distinct from other disordered sp2 carbons.",
+    "The sample is described as a solidified Au droplet/wire after CVD growth. The Raman data cannot tell whether the carbon is a graphene shell on Au or carbon elsewhere on the wire, and the Au substrate contributes no first-order Raman lines.",
+    "Temperature 295 K; no temperature correction is applied to the peak positions."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.8,
+      "evidence": "Two sharp peaks at 391.3 and 415.3 cm-1 (separation ~24 cm-1) match the E2g(1)/A1g pair of few-layer to bulk MoS2 (E2g ~383-386, A1g ~405-408 cm-1; Lee et al. ACS Nano 2010). Both are blueshifted by ~6-8 cm-1 relative to typical values, so an offset or calibration or strain/doping effect is plausible and not excluded."
+    },
+    {
+      "material": "2H-MoSe2 / other MoX2",
+      "confidence": 0.05,
+      "evidence": "MoSe2 has A1g near 241 cm-1 and E2g near 287 cm-1, nothing there. Not supported."
+    },
+    {
+      "material": "2H-WSe2",
+      "confidence": 0.02,
+      "evidence": "The WSe2 E2g/A1g band (~250 cm-1) and 2LA(M) (~260 cm-1) are absent. No peak above noise appears between 200 and 370 cm-1."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "WSe2 at 532 nm shows a near-degenerate E2g(\u0393)/A1g(\u0393) peak at ~249-252 cm-1, a 2LA(M) shoulder at ~260 cm-1, and weak features near 308 (B2g1, multilayer) and ~360-375 cm-1 (Zhao et al. Nanoscale 2013; Luo et al. Nanoscale 2013; Terrones et al. Sci. Rep. 2014). In this spectrum the 200-370 cm-1 region is flat. The scatter is about 130-180 counts, and the largest excursion is about 3-5% of the baseline of ~9400. The only sample peaks are at 391.3 and 415.3 cm-1, well above any WSe2 first-order mode (WSe2 phonon energies are lower because W and Se are heavy). The pair matches MoS2 in position and in the ~24 cm-1 spacing. The spectrum is therefore inconsistent with WSe2.",
+  "peaks": [
+    {
+      "position_cm1": 391.3,
+      "fwhm_cm1": 5.2,
+      "assignment": "E2g (in-plane) of MoS2-like lattice",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. The assignment to MoS2 E2g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured."
+    },
+    {
+      "position_cm1": 415.3,
+      "fwhm_cm1": 7.2,
+      "assignment": "A1g (out-of-plane) of MoS2-like lattice",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. The assignment to MoS2 A1g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured."
+    },
+    {
+      "position_cm1": 520.5,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "First-order Si optical phonon at ~520.7 cm-1 from the SiO2/Si substrate. The fit gives 520.5 and the local maximum is at 520.9."
+    }
+  ],
+  "properties": [
+    {
+      "name": "Peak separation A1g - E2g",
+      "value": "~24.0 cm-1",
+      "provenance": "measured",
+      "source": "Difference of fitted centres, 415.3 - 391.3. For MoS2 this corresponds to roughly bulk-like thickness (bulk ~25 cm-1, monolayer ~18-19 cm-1; Lee 2010). Layer number is only loosely constrained because the absolute positions look shifted."
+    },
+    {
+      "name": "Absolute mode positions",
+      "value": "Both modes ~6-8 cm-1 above typical MoS2 values",
+      "provenance": "inferred",
+      "source": "Comparison with Lee et al., ACS Nano 2010. The cause could be calibration offset, strain, or something else, and it cannot be determined from this spectrum."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Zhao et al., Nanoscale 5, 9677 (2013): Raman of WSe2, E2g/A1g at ~250 cm-1 and 2LA(M) at ~260 cm-1",
+    "Luo et al., Nanoscale 5, 5833 (2013): Raman of WSe2, E2g/A1g near 250 cm-1",
+    "Lee et al., ACS Nano 4, 2695 (2010): Raman of MoS2, E2g near 383-386 cm-1 and A1g near 405-408 cm-1",
+    "Temple/Parker/Balkanski: Si first-order Raman at 520.7 cm-1"
+  ],
+  "limits": [
+    "Only a single spectrum was available, with no polarization or layer-dependent series. Mode symmetries (E2g vs A1g) are assigned from position and literature analogy, not measured.",
+    "The 391/415 cm-1 positions are about 6-8 cm-1 higher than textbook MoS2. I cannot tell whether that is calibration, strain, doping, or a different material, so the MoS2 identification is likely but not certain.",
+    "The data cover 60-1100 cm-1 with the baseline around 7500-10000 counts and a rising background, so very weak WSe2 features cannot be strictly excluded. A real WSe2 sample would still show a strong ~250 cm-1 peak under these conditions, and it is absent.",
+    "Layer number cannot be reliably determined because the absolute mode positions look offset.",
+    "Resonance conditions (532 nm vs the WSe2 and MoS2 excitons) and any photoluminescence background are not characterised."
+  ]
+}

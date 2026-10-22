@@ -1,0 +1,60 @@
+{
+ "key": "cf58a18e9f3ffb5b",
+ "score": 0.95,
+ "by_kind": {
+  "finding": 1.0,
+  "quantitative": 1.0,
+  "caveat": 1.0,
+  "question": 0.5
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 2,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report calls the G and 2D softening \"monotonic with laser power and consistent with laser heating\", says both bands broaden (\"G 13.4\u219215.6, 2D 26.2\u219229.9\"), and notes that \"the Si line stays at 520.86\u2013520.91 cm-1\"."
+   },
+   {
+    "id": "n2",
+    "met": 1,
+    "why": "It uses -0.016 and -0.034 cm-1/K to get \"\u0394T of about 116 K (G) and 151 K (2D)\" at 5 mW relative to 0.5 mW, and \"about 25\u201330 K/mW\"; the 5 mW value is close to 125 K, though the roughly 50 K at 2 mW is only implied by the rate, not stated."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "It states \"The heating vector (slope 2.8) is close to the strain slope 2.2\", cites the Calizo ratio \"0.034/0.016 = 2.1\", and warns that a naive analysis gives an \"apparent 'tensile strain' of about 0.06\u20130.09 %\" that is \"a thermal artifact\"."
+   },
+   {
+    "id": "c1",
+    "met": 1,
+    "why": "It says to \"Trust the 0.5 mW spectrum, and ideally the zero-power extrapolation\", \"not 2 or 5 mW\", because the higher-power positions are heating artifacts."
+   },
+   {
+    "id": "q1",
+    "met": 0.5,
+    "why": "It asks for \"the spot size... the spot size gives the power density\" and notes that 0.5 mW is \"still heated by about 10\u201315 K\", but it does not recommend measuring at an additional lower power to confirm the heating-free regime; the proposed 0.5 mW repeat is a reversibility check."
+   },
+   {
+    "id": "n1",
+    "met": 1,
+    "why": "It takes the 0.5 mW spectrum (G 1581.14, 2D 2669.32) as the reference and finds it \"essentially at the strain-free, undoped origin\", with an uncertainty caveat on the \"estimated 2D dispersion\" correction from 532 to 514 nm."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "The report says the shifts \"come from laser heating, not from strain or doping\" and computes the apparent strain only to label it \"a thermal artifact\"."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "It explicitly recommends \"0.5 mW (or extrapolation to zero power); not 2 or 5 mW\"."
+   }
+  ],
+  "citation_specificity": 2
+ },
+ "judge_model": "claude-opus-5-5"
+}

@@ -1,0 +1,108 @@
+{
+  "summary": "The flake did not measurably change between day 1 and day 2. The one clear difference is a rigid +2.5 cm-1 shift of every line, including the Si substrate line, plus a ~38% higher background on day 2. That pattern is a spectrometer calibration or drift between sessions, not physics of the flake. Every flake-internal observable agrees within about 0.1 cm-1 or a few percent: the E2g-A1g separation, the E2g and A1g positions relative to Si, the linewidths, and the A1g/E2g intensity ratio. Adsorbate doping (which would move A1g relative to E2g) and strain (which would move E2g relative to Si) are not supported at this sensitivity. Thickness and defect content also look unchanged. Method note: the skill's validated scripts and literature notes sit outside this working folder, which the operator told me not to read, so all fitting was done with inline Python (Lorentzians plus a linear baseline, covariance-matrix errors) on the two CSVs.",
+  "observations": [
+    {
+      "finding": "All lines shift by the same amount between days, including the Si substrate line. This is a rigid calibration-type shift, not a flake shift.",
+      "evidence": "Fitted centres (day1 -> day2, delta): E2g 383.33\u00b10.01 -> 385.83\u00b10.02 (+2.50); A1g 404.91\u00b10.07 -> 407.35\u00b10.10 (+2.44); Si 519.98\u00b10.02 -> 522.47\u00b10.03 (+2.49) cm-1. Fit windows 365-425 cm-1 (two Lorentzians plus linear baseline) and 505-535 cm-1 (one Lorentzian plus linear baseline).",
+      "provenance": "measured",
+      "source": "spectrum_day1.csv and spectrum_day2.csv, inline Python fit in this folder"
+    },
+    {
+      "finding": "The A1g-E2g separation is unchanged. A doping- or strain-driven change would show up here, so this rules out a significant change in either.",
+      "evidence": "Delta(A1g-E2g) = 21.59\u00b10.07 cm-1 (day 1) vs 21.52\u00b10.10 cm-1 (day 2); difference -0.07\u00b10.12 cm-1 (fit errors only). Relative to Si: E2g-Si = -136.65 vs -136.64 cm-1; A1g-Si = -115.07 vs -115.12 cm-1.",
+      "provenance": "measured",
+      "source": "spectrum_day1.csv, spectrum_day2.csv (inline fit)"
+    },
+    {
+      "finding": "Linewidths are the same within error, so there is no sign of added disorder or a change in crystal quality.",
+      "evidence": "E2g FWHM 2.07\u00b10.04 vs 2.14\u00b10.06 cm-1; A1g FWHM 6.38\u00b10.24 vs 6.39\u00b10.37 cm-1; Si FWHM 3.52\u00b10.05 vs 3.48\u00b10.10 cm-1. Day 2 has 0.66 cm-1 point spacing against 0.53 cm-1 on day 1, so about 3 points span the E2g FWHM on day 2; its width error is probably understated.",
+      "provenance": "measured",
+      "source": "spectrum_day1.csv, spectrum_day2.csv (inline fit)"
+    },
+    {
+      "finding": "The A1g/E2g intensity ratio is unchanged. Absolute intensities are not comparable between sessions, so this is only a weak check.",
+      "evidence": "Amplitude ratio A1g/E2g = 0.341\u00b10.008 (day 1) vs 0.338\u00b10.012 (day 2). Area ratio 1.050\u00b10.051 vs 1.009\u00b10.075, consistent within errors. Peak amplitudes are background-subtracted, and E2g amplitude changed by about -2% (877 -> 857 counts).",
+      "provenance": "measured",
+      "source": "spectrum_day1.csv, spectrum_day2.csv (inline fit)"
+    },
+    {
+      "finding": "The local background is about 38% higher on day 2, with no change in peak amplitudes beyond about 2%.",
+      "evidence": "Fitted baseline at 400 cm-1: 364.8 counts (day 1) vs 502.6 counts (day 2). Median intensity 368 vs 497 counts over the full range.",
+      "provenance": "measured",
+      "source": "spectrum_day1.csv, spectrum_day2.csv"
+    },
+    {
+      "finding": "No second-order 2LA(M)-region band near 450 cm-1 is significant in either spectrum, and the extra day-2 bumps are at the noise level.",
+      "evidence": "Lorentzian in 425-475 cm-1: amplitude 10.0\u00b113.5 counts (day 1, A/\u03c3=0.7) and 12.6\u00b17.7 counts (day 2, A/\u03c3=1.6). Day-2 peaks at 332, 360, 439, 500 and 630 cm-1 have prominence of about 30 counts, roughly 2 to 2.5 point-to-point noise (\u03c3 \u2248 13 to 16 counts). Neither file has isolated single-point spikes.",
+      "provenance": "measured",
+      "source": "spectrum_day1.csv, spectrum_day2.csv (inline fit and peak search)"
+    },
+    {
+      "finding": "The phonon pattern matches 2H-MoS2 (E2g near 384 cm-1 and A1g near 405 to 407 cm-1), consistent with the stated material. The sample identity is not changed between days.",
+      "evidence": "Measured E2g and A1g positions on both days, with the pair separation near 21.5 cm-1 (see the separation observation above).",
+      "provenance": "inferred",
+      "source": "Position pattern from this analysis; expected 2H-MoS2 values are from the literature (see citations, recalled from memory and not checked in this environment)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "unchanged between days; separation 21.5-21.6 cm-1 is intermediate between monolayer and bulk values, so the flake is likely at least bilayer but a number cannot be fixed from this alone",
+      "provenance": "inferred",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010), monolayer and bulk E2g-A1g separations at 514.5 nm; recalled from memory and not checked against the paper in this environment"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (no change detected)",
+      "provenance": "inferred",
+      "source": "E2g shift relative to Si is 0.01 cm-1 between days, and the E2g and A1g shifts are equal within error. Strain-type shifts would show as a relative E2g change; none is seen."
+    },
+    {
+      "name": "doping_type",
+      "value": "none (no change detected)",
+      "provenance": "inferred",
+      "source": "A1g-specific shift relative to E2g or Si is -0.05\u00b10.12 cm-1. Doping-type shifts are A1g-specific in MoS2 (Chakraborty et al., PRB 85, 161403(R) (2012); recalled from memory, not verified here)."
+    },
+    {
+      "name": "defect_level",
+      "value": "low, unchanged between days",
+      "provenance": "inferred",
+      "source": "Linewidths unchanged within error; 2LA(M) region not significant on either day. Linewidth-to-defect relations were not applied (no relation source available in this environment)."
+    },
+    {
+      "name": "phase",
+      "value": "2H (as stated; consistent with the E2g/A1g pattern)",
+      "provenance": "inferred",
+      "source": "Stated material plus position pattern (see observations)"
+    }
+  ],
+  "caveats": [
+    "The Si line should read 520.7 cm-1 (the standard room-temperature value, not checked against a source here). If so, day 1 is offset by about -0.7 cm-1 and day 2 by about +1.8 cm-1. A 2.5 cm-1 change in calibration is much larger than typical calibration scatter (a few tenths of a cm-1), so the spectrometer was likely re-zeroed or drifted between sessions.",
+    "Laser heating red-shifts Raman lines, so it cannot explain the common shift, which goes up. The Si line moving up too rules out a local temperature change of the flake.",
+    "Adsorbate doping and strain in MoS2 are expected to produce shifts of the order of 1 cm-1 or less (Chakraborty et al. 2012; Conley et al. 2013, Nano Lett. 13, 3626, both recalled from memory). A relative shift below about 0.1 cm-1 therefore argues against a meaningful change, but that depends on the literature values being right.",
+    "Day 2 was sampled at 0.66 cm-1 per point against 0.53 cm-1 on day 1. Fitted widths and positions on day 2 are less well resolved, so their errors are probably understated.",
+    "Absolute intensities are not comparable between sessions (background changed by about 38%; laser power and collection were not reported). Intensity ratios are only a weak check here.",
+    "The fitting was done inline with Lorentzians and a linear baseline, not with the skill's validated scripts (the scripts and reference notes are outside this working folder, which the operator told me not to read). Errors are fit-covariance only, with no systematic term added.",
+    "The matching of the positions to 2H-MoS2 uses literature values recalled from memory (Lee et al. 2010; Chakraborty et al. 2012; Conley et al. 2013), not checked against the papers in this environment."
+  ],
+  "questions_for_user": [
+    "Was the spectrometer recalibrated, re-zeroed, or the grating/detector repositioned between the two days? Was a reference Si wafer measured on each day? The 2.5 cm-1 common shift is the main thing to explain, and that is the first thing to check.",
+    "Why do the two files have different point spacing (0.53 vs 0.66 cm-1)? Did the grating, spectral range, or resolution setting change?",
+    "Were laser power, objective, integration time, and acquisition settings the same on both days? The background is about 38% higher on day 2.",
+    "Was the same spot relocated from an optical image or from stage coordinates? A small spatial offset can change the local layer number or strain, though the observables here show no such change.",
+    "Is there any independent thickness reference for this flake (AFM, optical contrast, PL), so that the Delta of about 21.5 cm-1 can be turned into a layer number?"
+  ],
+  "citations": [
+    "Lee, C. et al., ACS Nano 4, 2695-2700 (2010): monolayer and bulk E2g-A1g separation at 514.5 nm (recalled from memory; not verified in this environment)",
+    "Chakraborty, B. et al., Phys. Rev. B 85, 161403(R) (2012): A1g-specific response to electron doping in monolayer MoS2 (recalled from memory; not verified in this environment)",
+    "Conley, H. J. et al., Nano Lett. 13, 3626-3630 (2013): strain-dependent E2g and A1g shifts in MoS2 (recalled from memory; not verified in this environment)"
+  ],
+  "limits": [
+    "Cannot separate doping from strain from a single spectrum pair without the literature shift coefficients (not checked here); the null result is relative to the sensitivity of about 0.1 cm-1.",
+    "Cannot give an absolute layer number from Delta alone without a verified reference (Lee et al. 2010 values are recalled and unverified).",
+    "No PL, AFM, or optical-contrast data in this folder, so thickness and disorder are inferred only from Raman.",
+    "Did not fit the 150-330 cm-1 region or the 450-650 cm-1 region beyond the peak search; weak bands such as E1g (about 286 cm-1) were not analysed. The peak search found nothing above noise in those regions except the day-2 bumps listed above.",
+    "Relations (for example, E2g strain or A1g doping coefficients) were not applied, because the validated relation tool and reference notes are outside this working folder.",
+    "Assumes the same spot was measured on both days and that the material is 2H-MoS2 as stated."
+  ]
+}

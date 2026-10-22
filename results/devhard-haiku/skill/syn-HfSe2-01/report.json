@@ -1,0 +1,77 @@
+{
+  "candidates": [
+    {
+      "material": "1T-HfSe2 (unconfirmed)",
+      "confidence": 0.1,
+      "evidence": "Single dominant band at 197.12 cm-1 is in the low-frequency range where bulk 1T layered dichalcogenides typically show an Eg-type mode, but the strong A1g band that usually sits near 250 cm-1 is absent in 60-1100 cm-1. The HfSe2 mode values were not verified against a fetched source (the Valency search returned HfS2 and HfSe2 pressure papers without mode numbers in the abstracts), so this is weak and mostly inferred from memory."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so there is no stated material to verify. The filename mentions HfSe2, but the task is to identify, and the file name is not a measurement fact. The spectrum has only one clear sample band (197.12 cm-1) plus the Si substrate line, which cannot fingerprint a material by itself. Identity is therefore not determined.",
+  "peaks": [
+    {
+      "position_cm1": 197.12,
+      "fwhm_cm1": 3.74,
+      "assignment": "unassigned sample mode (strongest sample band, pseudo-Voigt fit, Lorentzian fraction 1.0, centre error 0.04 cm-1)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit of 180-215 cm-1 window in ./fit_check.py; centre +/- 0.04 cm-1, amplitude 10323 counts above linear baseline; no polarization series so no pattern class"
+    },
+    {
+      "position_cm1": 521.12,
+      "fwhm_cm1": 3.4,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit of 505-540 cm-1 window in ./fit_check.py; centre +/- 0.06 cm-1; standard Si first-order Raman line at 520.7 cm-1 (general reference value, not from a fetched source), so offset +0.4 cm-1 relative to that reference"
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "One sample band cannot fix a phase; no reference matched by the data"
+    },
+    {
+      "name": "layers",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No intensity-ratio or low-frequency-shear/breathing evidence in this single spectrum; no relation applied"
+    },
+    {
+      "name": "defect_level",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No defect-activated band (e.g. D band) is seen above noise; absence of a band is not proof of low defects"
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No reference mode position for the sample material was available to compare against"
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No reference mode position available; no doping relation applied"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "[arXiv:2212.05924](https://arxiv.org/abs/2212.05924): bulk HfS2 Raman paper; reports A1g and Eg modes and a 134 cm-1 mode and an approx. 184 cm-1 mode Z. Used only as context for layered hafnium dichalcogenide mode structure, not for numbers, since HfSe2 values were not available.",
+    "[doi:10.1021/acs.inorgchem.0c03223](https://doi.org/10.1021/acs.inorgchem.0c03223): 1T-HfSe2 pressure study with Raman and DFT; the abstract gives no mode positions. Listed for context only."
+  ],
+  "limits": [
+    "One unpolarized spectrum at one temperature (295 K). No angle series, so symmetry (A1g vs Eg) and polarization class cannot be assigned.",
+    "Spectral coverage is 60.4-1099.9 cm-1 with 0.94 cm-1 step. Modes above 1100 cm-1, and below 60 cm-1, were not measured, so the absence of any band there cannot be assessed.",
+    "Noise is large: residual sigma about 220 counts against a background of about 3000 counts. Residual search after removing the two fitted lines found nothing above about 4.7 sigma apart from a marginal band at 149.5 cm-1 (smoothed SNR 4.7 at 1 cm-1 width). It is not reported as a peak and needs a second measurement to confirm.",
+    "The 197.12 cm-1 band is the only sample feature; one band cannot identify a material. Several layered compounds could show a single dominant low-frequency band. HfSe2 is not confirmed or excluded because the reference mode positions were not verified from a fetched source.",
+    "The skill's reference library and matching scripts sit in a folder outside the working directory, and I was instructed not to read files outside this folder. So I did not run match_library or lookup_reference_modes, and no ranking against the Computational Raman Database or curated tables was done. Candidate ranking is therefore not supported by the reference match.",
+    "The 521.12 cm-1 line is consistent with the Si substrate; its +0.4 cm-1 offset relative to 520.7 cm-1 is within typical calibration error for a single unreferenced spectrum but is not corrected here.",
+    "Scripts written for this analysis, fit_check.py and residual_check.py, are in the data folder."
+  ]
+}

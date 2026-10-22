@@ -1,0 +1,118 @@
+{
+  "candidates": [
+    {
+      "material": "FePS3",
+      "confidence": 0.2,
+      "evidence": "Spectrum shows five sample modes at 123.8, 240.4, 263.5, 368.7 and 550.7 cm-1 plus Si, the general pattern expected for a metal thiophosphate (MPS3-type). Positions do not match my recollection of FePS3 bands: 550.7 cm-1 is ~25 cm-1 below the ~575 cm-1 band I recall, and 263.5 and 368.7 are ~10-20 cm-1 below the ~280 and ~380 cm-1 bands I recall. Literature values are unverified here (no reference data or internet access)."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The spectrum has the broad character of an MPS3-type metal thiophosphate: a few sharp modes in 100-600 cm-1, with the strongest at 368.7 cm-1 and a second strong band at 263.5 cm-1. It does not clearly match FePS3 as I recall the room-temperature 532 nm literature. The most diagnostic mismatch is the highest-frequency P2S6-unit band, which I recall near 575 cm-1 for FePS3 but which appears at 550.7 cm-1 here; that is about 25 cm-1 off, far more than the Si calibration offset (+0.17 cm-1) or the expected few-cm-1 temperature shift between 295 K and low-temperature literature. The 263.5 and 368.7 bands are also 10-20 cm-1 below my recalled values. Because my reference values are recalled rather than checked, this is an inconsistency at low-to-moderate confidence, not a proof that the sample is a different material. The absence of a resolved magnetic feature is consistent with 295 K being above T_N (~118 K) but does not discriminate. A reference FePS3 spectrum at the same temperature and laser would settle the question.",
+  "peaks": [
+    {
+      "position_cm1": 520.87,
+      "fwhm_cm1": 3.45,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Si first-order optical phonon, ~520.7 cm-1 at room temperature (standard reference value, recalled: Temple & Hathaway, PRB 7, 3685 (1973)); measured position 520.87 cm-1, offset +0.17 cm-1"
+    },
+    {
+      "position_cm1": 368.7,
+      "fwhm_cm1": 8.16,
+      "assignment": "sample mode, strongest band, unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 263.47,
+      "fwhm_cm1": 6.49,
+      "assignment": "sample mode, second-strongest band, unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 550.66,
+      "fwhm_cm1": 6.55,
+      "assignment": "sample mode, highest-frequency band, unassigned; ~25 cm-1 below the ~575 cm-1 P2S6-unit band I recall for FePS3 (recalled, unverified)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 240.42,
+      "fwhm_cm1": 7.62,
+      "assignment": "sample mode, unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 123.76,
+      "fwhm_cm1": 8.32,
+      "assignment": "sample mode, low-frequency band, unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 74.7,
+      "fwhm_cm1": 4.3,
+      "assignment": "tentative low-frequency component, F~13 below my significance threshold of 15; not counted as established",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "magnetic_features_at_295K",
+      "value": "none resolved",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "expected_magnetic_state_at_295K",
+      "value": "paramagnetic (above T_N ~118 K)",
+      "provenance": "literature",
+      "source": "FePS3 Neel temperature ~118 K, recalled from the FePS3 literature (e.g. Lee et al., Nano Lett. 16, 7433 (2016)); not verified in this session"
+    },
+    {
+      "name": "layers",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "no thickness-dependent reference spectrum available"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "no D-type or defect-related reference available"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee, J.-U. et al., Nano Lett. 16, 7433 (2016), Ising-type magnetic ordering in atomically thin FePS3 (FePS3 Raman band positions and T_N, recalled; not checked in this session)",
+    "Temple, P. A. & Hathaway, C. E., Phys. Rev. B 7, 3685 (1973) (Si first-order phonon near 520 cm-1, recalled)"
+  ],
+  "limits": [
+    "No FePS3 reference spectrum or internet access was available, so the FePS3 band positions are from memory and need checking against the cited paper or an in-house reference at 295 K and 532 nm. The verdict rests on those recalled values.",
+    "The spectrum is a single unpolarised measurement with no angle series, so polarization classification (isotropic/twofold/fourfold) does not apply and no symmetry (irrep) assignments are made.",
+    "Band assignments are unknown: the data do not identify which mode of FePS3 each peak is, so they cannot separately confirm the material from mode symmetry.",
+    "Noise is about 560 counts per point, against sample band heights of 2000-10500 counts. Weak modes under about 2000 counts could be missed. The 74.7 cm-1 component is marginal and tentative.",
+    "Peak positions are raw fitted values. The Si line sits 0.17 cm-1 above 520.7 cm-1, so a calibration correction would shift all positions by about -0.2 cm-1; this does not change the conclusions.",
+    "A broad background of about 2500-3500 counts (fluorescence or substrate contribution) was removed with a low-order polynomial baseline. Baseline order 4-10 gave stable positions to within 0.1 cm-1 and widths to within about 1 cm-1 for the stronger bands.",
+    "No single-point cosmic-ray spikes were found. The narrow 520-521 cm-1 pair is the Si substrate line, confirmed by its position and width.",
+    "The working-directory name contains the string 'CdPS3'. This was not used as evidence in the analysis; it is noted only because it conflicts with the stated FePS3 hint and would be a labelling issue to check if the sample identity is uncertain.",
+    "Magnetic (two-magnon or spin-phonon) features are not expected at 295 K above T_N, so their absence does not discriminate between candidate materials."
+  ]
+}

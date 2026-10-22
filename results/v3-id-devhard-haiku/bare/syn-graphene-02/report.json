@@ -1,0 +1,127 @@
+{
+  "candidates": [
+    {
+      "material": "C (monolayer graphene)",
+      "confidence": 0.92,
+      "evidence": "Three sp2-carbon bands: D 1344.2 cm-1 (FWHM 15.2), G 1579.3 cm-1 (FWHM 14.3), 2D 2689.8 cm-1 (FWHM 32.4, single Lorentzian; a second component is not significant, F=1.6). I2D/IG = 3.0 by height (6.8 by area). Monolayer-like 2D shape and intensity ratio. Weak D' shoulder at ~1620 cm-1 (F=26) gives ID/ID' ~6-10. No Si or SiO2 bands are inside the measured window."
+    },
+    {
+      "material": "C (few-layer / bilayer graphene)",
+      "confidence": 0.04,
+      "evidence": "Bilayer would give a multi-component, broader 2D band (typically ~50 cm-1 FWHM) and I2D/IG near or below 1-2. Here the 2D is a single 32 cm-1 Lorentzian with I2D/IG = 3, so this is disfavoured but not fully excluded by one spectrum."
+    },
+    {
+      "material": "reduced graphene oxide / disordered carbon",
+      "confidence": 0.02,
+      "evidence": "Disordered carbon would show very broad D and G bands with G near 1590-1600 cm-1 and no sharp 2D. The narrow 14-15 cm-1 D and G widths and the sharp 2D argue strongly against it."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null). The identification rests only on the spectrum: the G/2D/D pattern at 532 nm, the 2D line shape and I2D/IG ratio, and the absence of the characteristic substrate lines within 1100-3000 cm-1.",
+  "peaks": [
+    {
+      "position_cm1": 1344.2,
+      "fwhm_cm1": 15.2,
+      "assignment": "D band (defect-activated breathing mode at K)",
+      "irrep": "A1g (K-point phonon, defect-activated)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment: Tuinstra & Koenig, J. Chem. Phys. 53, 1126 (1970); Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013). Position and FWHM from Lorentzian fit (centre \u00b10.2 cm-1). Height 2589 counts, area ~6.2e4."
+    },
+    {
+      "position_cm1": 1579.3,
+      "fwhm_cm1": 14.3,
+      "assignment": "G band (in-plane sp2 C-C stretch, Gamma point)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment: Ferrari et al., PRL 97, 187401 (2006); Ferrari & Basko 2013. Position \u00b10.1 cm-1 from fit. Height 5340 counts, area ~1.2e5. Position is ~2-3 cm-1 below the ~1582 cm-1 pristine reference, which is not diagnostic of doping or strain on its own."
+    },
+    {
+      "position_cm1": 1623.1,
+      "fwhm_cm1": 15.4,
+      "assignment": "D' band (defect-activated intravalley mode near Gamma)",
+      "irrep": "E2g-derived (iTO, Gamma; defect-activated)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment: Eckmann et al., Nano Lett. 12, 3925 (2012); Lucchese et al., Carbon 48, 1592 (2010). Weak shoulder on G: height ~250-420 counts depending on background model; position uncertain to ~\u00b11-3 cm-1. Significance F~26 vs no-D' model."
+    },
+    {
+      "position_cm1": 2689.8,
+      "fwhm_cm1": 32.4,
+      "assignment": "2D band (second-order overtone of D, double resonance at K)",
+      "irrep": "A1g overtone (2D)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment and monolayer shape criteria: Ferrari et al., PRL 97, 187401 (2006); Ferrari & Basko 2013. Position \u00b10.04 cm-1 from fit. Height 15929 counts, area ~8.1e5, single Lorentzian."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "I2D/IG = 3.0 (height), single 32 cm-1 Lorentzian 2D band; monolayer criteria per Ferrari et al., PRL 97, 187401 (2006)."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "ID/IG = 0.49 (height) / 0.52 (area) at 532 nm, giving L_D ~17 nm (>10 nm, isolated-defect regime). Borderline: the ID/IG value alone could be read as medium. Cancado et al., Nano Lett. 11, 3190 (2011)."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "17 (range ~15-19)",
+      "provenance": "inferred",
+      "source": "L_D^2 = (1.8\u00b10.5)e-9 * lambda^4 / (ID/IG) with lambda = 532 nm, ID/IG = 0.49-0.52 -> L_D = 16.7-17.2 nm. Range from the \u00b10.5e-9 coefficient uncertainty. Cancado et al., Nano Lett. 11, 3190 (2011). Implied defect density ~1e11 cm-2 using n_D = 1e14/(pi L_D^2)."
+    },
+    {
+      "name": "defect_type",
+      "value": "vacancy-like or mixed (ID/ID' ~ 6-10); sp3 (~13) not excluded; boundary (~3.5) disfavoured",
+      "provenance": "inferred",
+      "source": "ID/ID' ratio values from Lucchese et al., Carbon 48, 1592 (2010) and Eckmann et al., Nano Lett. 12, 3925 (2012). Low confidence: the D' band is weak and its height varies from ~250 to ~420 counts with the background model."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected (not resolvable from a single spectrum)",
+      "provenance": "inferred",
+      "source": "G at 1579.3 cm-1 and 2D at 2689.8 cm-1 do not fit a simple strain signature. No calibration was applied to separate strain from doping."
+    },
+    {
+      "name": "doping_type",
+      "value": "none detected (not resolvable from a single spectrum)",
+      "provenance": "inferred",
+      "source": "G position is slightly low relative to the ~1582 cm-1 pristine reference. Without a G/2D doping-strain calibration (Lee et al., Nat. Commun. 3, 1024 (2012)) the sign cannot be established."
+    },
+    {
+      "name": "substrate",
+      "value": "SiO2/Si as stated in metadata; not verified",
+      "provenance": "literature",
+      "source": "Measurement metadata. The Si 520.7 cm-1 line and the Si second-order band lie outside the measured 1100-3000 cm-1 window, so the substrate could not be checked from this spectrum."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari AC, Meyer JC, Scardaci V, et al. Raman spectrum of graphene and graphene layers. PRL 97, 187401 (2006).",
+    "Ferrari AC, Basko DM. Raman spectroscopy as a versatile tool for studying the properties of graphene. Nat. Nanotechnol. 8, 235 (2013).",
+    "Cancado LG, Jorio A, Martins Ferreira EH, et al. Quantifying defects in graphene via Raman spectroscopy at different excitation energies. Nano Lett. 11, 3190 (2011).",
+    "Eckmann A, Felten A, Mishchenko A, et al. Probing the nature of defects in graphene by Raman spectroscopy. Nano Lett. 12, 3925 (2012).",
+    "Lucchese MM, Stavale F, Martins Ferreira EH, et al. Quantifying ion-induced defects and Raman relaxation length in graphene. Carbon 48, 1592 (2010).",
+    "Tuinstra F, Koenig JL. Raman spectrum of graphite. J. Chem. Phys. 53, 1126 (1970).",
+    "Lee JE, Ahn G, Shim J, Lee YS, Ryu S. Optical separation of mechanical strain from charge doping in graphene. Nat. Commun. 3, 1024 (2012)."
+  ],
+  "limits": [
+    "Single spot, single spectrum, no polarisation data. Only the material and defect character at that spot can be stated, not the whole flake.",
+    "L_D uses the empirical Cancado (2011) relation at 532 nm with ID/IG ~0.5. The stated range is only the coefficient uncertainty; the formula itself has roughly \u00b120-30% systematic uncertainty. The older crystallite-size relation L_a = 2.4e-10 lambda^4/(ID/IG) (Cancado 2006) gives ~40 nm, a different quantity, so it was not used for L_D.",
+    "The D' band is weak (~250-420 counts over a ~1000-1500 count background). Its amplitude depends on the background model, so ID/ID' (6-10) and the defect-type call are low confidence. Boundaries (~3.5) are disfavoured; vacancy-like (~7) versus sp3 (~13) cannot be cleanly separated.",
+    "The D-band origin (point defects versus edges) cannot be separated from one spot. L_D assumes defect-activated scattering.",
+    "A bilayer or few-layer admixture under the spot cannot be fully excluded. The 2D band is well described by one Lorentzian (second component F~1.6, not significant), and I2D/IG ~3 fits monolayer.",
+    "Doping and strain cannot be separated from G and 2D positions alone. No calibration was applied.",
+    "The Si 520.7 cm-1 line and SiO2 bands lie outside 1100-3000 cm-1, so substrate lines are not in the data and the SiO2/Si substrate could not be verified.",
+    "A feature near 1168 cm-1 found in the first pass was a baseline edge effect and disappeared with a smooth background. It is not reported as a peak.",
+    "No cosmic-ray spikes were confirmed. The largest single-pixel excess (2181.25 cm-1, ~+580 counts, ~3.9 sigma against noise of ~140 counts) is consistent with noise and not reported. Several 3.3-sigma single-pixel excursions also exist.",
+    "A broad background (~1000-1600 counts, with a hump near 1850 cm-1) is not assigned. It may be luminescence, substrate, or residue, and cannot be identified from this data.",
+    "No peak was assigned for D+D'' near 2450 cm-1; the largest residual there is a single-pixel 3-sigma excess, not a band.",
+    "Temperature is given as 295 K; no laser-heating correction could be determined from the data."
+  ]
+}

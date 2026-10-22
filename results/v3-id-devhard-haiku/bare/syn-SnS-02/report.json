@@ -1,0 +1,105 @@
+{
+  "candidates": [
+    {
+      "material": "SnS",
+      "confidence": 0.6,
+      "evidence": "Four measured peaks at 93.8, 161.3, 192.9 and 221.2 cm-1 sit within about 1 to 3 cm-1 of the bulk SnS set (~96, ~160, ~190, ~218-220 cm-1, Chandrasekhar et al. 1977, recalled from memory). Same Pnma structure as SnSe, so it is the closest isostructural match in the data."
+    },
+    {
+      "material": "SnSe",
+      "confidence": 0.1,
+      "evidence": "Expected bulk SnSe first-order modes near 108-110, 128-130, 150 and 186-190 cm-1 (Chandrasekhar et al. 1977, recalled from memory). Measured 93.8 is 14 cm-1 below the ~108 mode, the strongest measured peak at 161.3 is 11 cm-1 above the ~150 mode, and no peak is detected at 128-130 (fitted amplitude not significant)."
+    },
+    {
+      "material": "SnS-SnSe alloy (Sn(S,Se))",
+      "confidence": 0.1,
+      "evidence": "Intermediate mode positions would be expected for a mixed-anion alloy. The measured set is a better fit to pure SnS than to an intermediate composition, and no composition is determinable from positions alone."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The spectrum (532 nm, 295 K, backscattering, no substrate line) shows four real peaks at 93.8, 161.3, 192.9 and 221.2 cm-1 (Lorentzian fit, linear baseline, BIC improves by about 90 when the 221 cm-1 term is added). Against SnSe, the mode pattern is wrong: the lowest measured mode is 14 cm-1 below the B3g-type SnSe mode near 108 cm-1, the strongest measured peak is 11 cm-1 above the A_g mode near 150 cm-1, and there is no significant peak at 128-130 cm-1. A 11-14 cm-1 offset is far larger than typical spectrometer calibration error (about 0.5 cm-1), and the spectrum is not Si-referenced, so calibration cannot explain it fully. Against SnS (same Pnma structure, Sn in the same valence state), the set matches literature positions to within about 1 to 3 cm-1 (~96, ~160, ~190, ~218-220 cm-1). The data therefore do not support the SnSe label; the best match is SnS. This verdict relies on literature values recalled from memory, which I could not check against the source in this session (no internet access), so the SnS identification should be confirmed against Chandrasekhar et al. (1977) or another primary reference before it is used.",
+  "peaks": [
+    {
+      "position_cm1": 93.78,
+      "fwhm_cm1": 4.5,
+      "assignment": "SnS-like A_g mode (~96 cm-1 in bulk SnS); not SnSe-like (SnSe ~108-110 cm-1)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit (sigma 2.25 cm-1, height 4005 counts, 60-260 cm-1 window). Lit. comparison: Chandrasekhar, Humphreys, Zwick, Cardona, PRB 15, 2177 (1977), recalled from memory."
+    },
+    {
+      "position_cm1": 161.27,
+      "fwhm_cm1": 4.3,
+      "assignment": "SnS-like mode near 160 cm-1 (strongest peak); SnSe strongest A_g near 150 cm-1 is 11 cm-1 lower",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit (height 9447 counts). Lit. comparison: Chandrasekhar et al. (1977), recalled from memory."
+    },
+    {
+      "position_cm1": 192.86,
+      "fwhm_cm1": 4.2,
+      "assignment": "SnS-like mode near 190 cm-1; SnSe mode near 186-190 cm-1 is also a possible match",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit (height 6696 counts). Lit. comparison: Chandrasekhar et al. (1977), recalled from memory."
+    },
+    {
+      "position_cm1": 221.19,
+      "fwhm_cm1": 15.8,
+      "assignment": "Broad SnS-like feature near 218-220 cm-1; could be two unresolved components",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit, amplitude t=6.2, position +/-0.7 cm-1. Lit. comparison: Chandrasekhar et al. (1977), recalled from memory."
+    }
+  ],
+  "properties": [
+    {
+      "name": "material",
+      "value": "SnS-like orthorhombic (Pnma) pattern; not consistent with SnSe",
+      "provenance": "inferred",
+      "source": "Peak positions compared with recalled bulk SnS and SnSe literature (Chandrasekhar et al. 1977)."
+    },
+    {
+      "name": "phase",
+      "value": "Pnma (orthorhombic), tentative",
+      "provenance": "inferred",
+      "source": "Mode pattern only; no polarization data to confirm symmetry."
+    },
+    {
+      "name": "layers",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "Single spectrum with no thickness or layer-breathing information."
+    },
+    {
+      "name": "substrate",
+      "value": "none detected (no Si line at 520.7 cm-1 in the data range 60-1100 cm-1)",
+      "provenance": "measured",
+      "source": "Spectrum scan; substrate was null in metadata."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 1082.04
+    }
+  ],
+  "citations": [
+    "Chandrasekhar, H.R., Humphreys, R.G., Zwick, U., Cardona, M. (1977). Infrared and Raman spectra of the IV-VI compounds SnS and SnSe. Phys. Rev. B 15, 2177. Cited from memory; values not checked against the paper in this session."
+  ],
+  "limits": [
+    "Literature mode positions are recalled from memory; no internet access was available to check them against the source. Treat the SnS vs SnSe comparison as provisional until verified.",
+    "No Si reference line is present, so absolute calibration is not verified. A few cm-1 of offset is plausible; the 11-14 cm-1 mismatches for SnSe are too large to be calibration alone.",
+    "Single unpolarized spectrum: symmetry irreps (A_g, B_3g, etc.) cannot be assigned, and no polarization pattern is classified.",
+    "The data start at 60.1 cm-1 and stop at about 1100 cm-1. SnS and SnSe low-frequency modes below 60 cm-1 cannot be checked.",
+    "The 221 cm-1 feature is broad (FWHM about 16 cm-1) and could be two overlapping components; its width and position are poorly constrained.",
+    "Peak positions alone cannot exclude a mixed Sn(S,Se) alloy or strain shifts; these could move modes by several cm-1.",
+    "Candidate features at 481 and 763 cm-1 are not significant: fitted amplitudes are about 1 sigma and the 763 fit is negative. They are consistent with noise (noise sigma about 326 counts). No SnO2 band near 634 cm-1 is present, so an oxide assignment is not supported.",
+    "The 1082.04 cm-1 point is a single-channel spike (8572 counts against a neighbourhood of about 2400); it was excluded from the fit.",
+    "Thickness, layer number and laser heating at 295 K were not assessed."
+  ]
+}

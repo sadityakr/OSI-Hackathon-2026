@@ -1,0 +1,100 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.6,
+      "evidence": "Two bands: 359.7 cm-1 (FWHM 4.9) and 426.0 cm-1 (FWHM 4.5), spacing 66.3 cm-1. Literature WS2 E2g ~356 and A1g ~420 (Berkdemir et al. 2013), so the pair and its spacing match WS2 (~64 cm-1). The 426 band is parallel-only, as an A1g mode should be in backscatter. Both bands sit about 4-6 cm-1 above the literature values, which may be a calibration offset (no reference line in the file). The 359.7 band is isotropic in both configurations, which contradicts the fourfold pattern expected for E2g, so the identification is tentative. No Si substrate line is present (suspended sample)."
+    },
+    {
+      "material": "black phosphorus (Ag1 ~362 cm-1 family)",
+      "confidence": 0.1,
+      "evidence": "The 359.7 cm-1 band is near the BP Ag1 mode (~362 cm-1). However BP also has B2g (~439) and Ag2 (~467) modes that are strong and absent here, and the 426 cm-1 band matches neither. Disfavoured. Literature: Ribeiro et al., ACS Nano 9, 4270 (2015)."
+    },
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.03,
+      "evidence": "MoS2 E2g ~383 and A1g ~408 cm-1 give an E-A spacing of ~25 cm-1. The measured spacing is 66.3 cm-1 and both bands are shifted away from MoS2 values. Excluded."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was supplied (material_hint null), so this is an identify task with nothing to verify against. The peak pair at 359.7 and 426.0 cm-1 with a ~66 cm-1 spacing is best matched by 2H-WS2 (E2g ~356 / A1g ~420 in the literature). Two points weaken the assignment: the 359.7 band is isotropic in both configurations, not fourfold as E2g should be, and both bands are 4-6 cm-1 above the literature values. The material is therefore WS2 tentatively, not firmly.",
+  "peaks": [
+    {
+      "position_cm1": 359.7,
+      "fwhm_cm1": 4.9,
+      "assignment": "E^1_2g in-plane mode of 2H-WS2 (tentative)",
+      "irrep": "E2g",
+      "pattern": "isotropic_both",
+      "provenance": "inferred",
+      "source": "Assignment by position: WS2 E^1_2g ~356 cm-1 (Berkdemir et al., Sci. Rep. 3, 1755, 2013). Measured: parallel mean 148.5k vs crossed 148.8k counts (per-angle CV 1.5%, paired t-test p=0.67, no cos2\u03b8/cos4\u03b8 modulation beyond ~2\u03c3). The top of this band is clipped at the detector limit in 20 of 36 spectra, so position and FWHM come from the unclipped flanks. The isotropic pattern disagrees with the fourfold cos\u00b22\u03b8 / sin\u00b22\u03b8 expected for E2g; see limits."
+    },
+    {
+      "position_cm1": 426,
+      "fwhm_cm1": 4.5,
+      "assignment": "A1g out-of-plane mode of 2H-WS2",
+      "irrep": "A1g",
+      "pattern": "isotropic_par_only",
+      "provenance": "inferred",
+      "source": "Assignment by position: WS2 A1g ~420 cm-1 (Berkdemir et al., Sci. Rep. 3, 1755, 2013). A1g has a diagonal Raman tensor, so it appears only in parallel backscatter and is angle-independent. Measured: parallel 48.7k \u00b1 1.7k counts, flat over 0-170\u00b0, no harmonic term above ~1.1\u03c3; crossed 0.7k \u00b1 1.4k counts (~1.5% of parallel, consistent with zero)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "E^1_2g + A1g pair with ~66 cm-1 spacing, consistent with the 2H (D6h) polytype of WS2; 1T or other phases not tested."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "E-A spacing 66.3 cm-1 is at or above the bulk-WS2 value (~64 cm-1) but the absolute calibration is uncertain, so no reliable layer number can be given."
+    },
+    {
+      "name": "temperature",
+      "value": "295 K",
+      "provenance": "measured",
+      "source": "Measurement metadata. No temperature-induced shift correction applied."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Positions are 3.7 and 6.0 cm-1 above literature, but without a calibration reference this cannot be separated from strain or calibration offset."
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessable",
+      "provenance": "inferred",
+      "source": "Only two bands are present; defect-activated modes (e.g. LA(M) region) are not detected above noise."
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Not assessable from these two bands."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "detector saturation: flat-topped 359.7 cm-1 band, clipped near 20 000 counts in 20 of 36 spectra (9 parallel, 11 crossed); absolute height of this band is a lower bound",
+      "position_cm1": 360
+    }
+  ],
+  "citations": [
+    "Berkdemir, A. et al., Sci. Rep. 3, 1755 (2013), Identification of individual and few layers of WS2 using Raman spectroscopy (WS2 E^1_2g ~356 cm-1, A1g ~420 cm-1)",
+    "Ribeiro, H. B. et al., ACS Nano 9, 4270 (2015), Unusual angular dependence of the Raman response in black phosphorus (BP Ag1 ~362, B2g ~439, Ag2 ~467 cm-1)",
+    "Raman selection rules for D6h layered TMDs (backscatter, z-normal): A1g diagonal tensor (parallel only, angle-independent); E2g tensor (xx-yy, xy) giving parallel ~cos\u00b22\u03b8 and crossed ~sin\u00b22\u03b8"
+  ],
+  "limits": [
+    "Detector saturation: the 359.7 cm-1 band is flat-topped at about 20 000 counts in 20 of 36 spectra. Its position (359.7) and FWHM (4.9) are fitted from the unclipped flanks and are reliable to about 0.1 cm-1, but its absolute height and integrated intensity are not. The 20 552-count maximum is a noisy point on that plateau, not a cosmic ray.",
+    "Calibration: the file has no reference line, so the absolute position scale is unverified. Both bands sit 3.7 and 6.0 cm-1 above typical WS2 values. The offset is not uniform, so the 66.3 cm-1 spacing is the more robust identifier, but it is also larger than the bulk value (~64). This leaves the identification tentative.",
+    "Polarization conflict: the 359.7 cm-1 band is equal in parallel and crossed configurations at every angle (no angular modulation at the ~1.5% level). A first-order E2g mode in backscatter should give a fourfold pattern, so this band is not consistent with a pure E2g assignment. The data cannot distinguish between a non-first-order contribution (e.g. a two-phonon 2LA(M) band, which lies near 350 cm-1 in WS2 and is not resolved here), a depolarized or instrumental component, or a misassignment of the material. Resolving this needs analyzer/polarizer calibration or a second excitation wavelength.",
+    "Coverage: only 60-526 cm-1 was measured. After smoothing, no features above 4\u03c3 appear besides the two bands, so no Si line (520.7 cm-1) and no other first-order bands are present. Weak modes below the noise (per-spectrum sd ~220 counts) or outside this range cannot be excluded.",
+    "Layer number, strain, doping and defect density cannot be determined from two bands and no reference spectrum. Phase (2H) is inferred from the E/A pair only.",
+    "Angle convention: the zero of the angle axis and the sign of the analyzer convention are unknown. The classifications above rely only on whether the amplitudes vary with angle, so they do not depend on the angle origin.",
+    "Crossed A1g amplitude is 0.7k \u00b1 1.4k counts (mean about 2\u03c3 above zero, i.e. about 1.5% of parallel). This is taken as zero within error, possibly with a small analyzer leak.",
+    "Single spot, single temperature (295 K), suspended flake. Laser-heating and power dependence were not checked."
+  ]
+}

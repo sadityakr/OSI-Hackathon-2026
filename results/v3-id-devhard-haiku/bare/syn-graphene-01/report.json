@@ -1,0 +1,117 @@
+{
+  "candidates": [
+    {
+      "material": "C (monolayer graphene)",
+      "confidence": 0.9,
+      "evidence": "Three dominant bands: D 1347.9 cm-1 (height ~844 counts above baseline), G 1581.2 cm-1 (FWHM 14.1, height ~5316), 2D 2699.0 cm-1 (FWHM 32.0, height ~16079). I2D/IG ~3.0 (height) and a single Lorentzian 2D fits to the noise floor (residual 90 counts, noise ~90-100). The G-band position, sharp G, and D-band presence with a 2D/G ratio of ~3 are the standard monolayer-graphene fingerprint at 532 nm (Ferrari 2006). No band near 520.7 cm-1 (Si) or 800/1060 cm-1 (SiO2) is in the measured window, so substrate lines are not used for identification."
+    },
+    {
+      "material": "C (bilayer graphene)",
+      "confidence": 0.04,
+      "evidence": "Bilayer 2D is a four-component band of width ~50+ cm-1 with a lower I2D/IG (~1-2 or less). The measured 2D is a single 32 cm-1 Lorentzian at noise level, and I2D/IG ~3, so bilayer is disfavoured for this spot."
+    },
+    {
+      "material": "C (few-layer graphite)",
+      "confidence": 0.02,
+      "evidence": "Graphite/thick multilayers show 2D near 2716 cm-1, FWHM ~50 cm-1 and I2D/IG << 1. Neither the 2D position nor the width nor the intensity ratio matches."
+    },
+    {
+      "material": "C (sp2 carbon nanotube)",
+      "confidence": 0.02,
+      "evidence": "Nanotubes show a split, asymmetric G (G- ~1570 / G+ ~1590) and an RBM at 150-300 cm-1 (outside this window). The measured G is a single symmetric Lorentzian of FWHM 14 cm-1, which argues against nanotubes."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "placeholder",
+  "peaks": [
+    {
+      "position_cm1": 1347.9,
+      "fwhm_cm1": 13.9,
+      "assignment": "D band: breathing mode of sp2 rings (K-point phonon, A1g-type), activated by defects/edges",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+-0.4 cm-1 on position). Assignment: Tuinstra & Koenig, J. Chem. Phys. 53, 1126 (1970); Ferrari & Robertson, PRB 61, 14095 (2000); Ferrari et al., PRL 97, 187401 (2006)."
+    },
+    {
+      "position_cm1": 1581.2,
+      "fwhm_cm1": 14.1,
+      "assignment": "G band: E2g in-plane sp2 C-C stretching at the Brillouin-zone centre",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+-0.05 cm-1). Assignment: Ferrari et al., PRL 97, 187401 (2006); Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)."
+    },
+    {
+      "position_cm1": 2699,
+      "fwhm_cm1": 32,
+      "assignment": "2D band: second-order (two-phonon, double-resonance) overtone of the D mode, not a defect-activated mode",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+-0.03 cm-1). Assignment: Ferrari et al., PRL 97, 187401 (2006); Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "I2D/IG ~3.0 (peak heights; area ratio ~6.9). Single-Lorentzian 2D (FWHM 32 cm-1) fits to the noise floor, with no multi-component bilayer structure. Ferrari et al., PRL 97, 187401 (2006)."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "ID/IG = 844/5316 = 0.16 (area ratio 0.156). Cancado et al., Nano Lett. 11, 3190 (2011)."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "30 (range ~26-34)",
+      "provenance": "inferred",
+      "source": "Cancado et al., Nano Lett. 11, 3190 (2011): L_D^2 = (1.8 +- 0.5) x 10^-9 lambda^4 (ID/IG)^-1, with lambda = 532 nm. Range from the +-0.5 coefficient uncertainty, plus ID/IG uncertainty of a few percent. Point-defect form of the relation."
+    },
+    {
+      "name": "defect_type",
+      "value": "undetermined (weak evidence against a vacancy- or edge-dominated D band)",
+      "provenance": "inferred",
+      "source": "D' (expected ~1620 cm-1) is not significant: residual mean in 1612-1632 cm-1 is 4 +- 20 counts, so the 3-sigma upper limit is ~60 counts. This gives ID/ID' >~ 13. Eckmann et al., Nano Lett. 12, 3925 (2012), gives ~13 for sp3-type, ~7 for vacancy and ~3.5 for boundary defects. This is a non-detection and is weak evidence only."
+    },
+    {
+      "name": "doping_type",
+      "value": "none / low (not determined)",
+      "provenance": "inferred",
+      "source": "G at 1581.2 cm-1 (close to undoped value) and I2D/IG ~3 (high 2D/G ratio, typical of low doping). Lee et al., Nat. Commun. 3, 1024 (2012), for the G/2D doping-versus-strain separation. Not conclusive from one spectrum."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none/not determined",
+      "provenance": "inferred",
+      "source": "2D is at 2699 cm-1, about 15-20 cm-1 above the ~2680-2690 typical of an unstrained, undoped monolayer at 532 nm. This is consistent with doping or strain, and G/2D positions alone cannot separate them (Lee et al., Nat. Commun. 3, 1024 (2012))."
+    },
+    {
+      "name": "phase",
+      "value": "graphene (sp2 carbon)",
+      "provenance": "inferred",
+      "source": "D, G, 2D band set and positions. Ferrari et al., PRL 97, 187401 (2006)."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Tuinstra F., Koenig J.L., J. Chem. Phys. 53, 1126 (1970)",
+    "Ferrari A.C., Robertson J., Phys. Rev. B 61, 14095 (2000)",
+    "Ferrari A.C. et al., Phys. Rev. Lett. 97, 187401 (2006)",
+    "Cancado L.G. et al., Nano Lett. 11, 3190 (2011)",
+    "Eckmann A. et al., Nano Lett. 12, 3925 (2012)",
+    "Ferrari A.C., Basko D.M., Nat. Nanotechnol. 8, 235 (2013)",
+    "Lee J.E. et al., Nat. Commun. 3, 1024 (2012)"
+  ],
+  "limits": [
+    "The spectrum covers only 1100-2999.7 cm-1. The Si first-order line (520.7 cm-1) and the SiO2 bands are outside the window, so there is no substrate reference for wavenumber calibration. The absolute positions (especially 2D at 2699) rest on the instrument calibration, which I could not check.",
+    "No significant D' (~1620 cm-1) or D+D' (~2940 cm-1) feature: residuals are 4 +- 20 and 7 +- 13 counts. The defect type (vacancy vs. edge/boundary vs. sp3) therefore cannot be determined; only the lower bound I_D/I_D' >~ 13 is given. The 2D' band (~3240 cm-1) is outside the window.",
+    "Doping and strain cannot be separated from one spectrum with one laser (G and 2D positions are degenerate). The layer count is for this spot only; laterally mixed mono/bi-layer regions cannot be excluded without a map.",
+    "L_D from the Cancado relation assumes point-like defects and carries roughly +-20% systematic uncertainty. For edge- or boundary-dominated disorder the length has a different meaning, and the D-band intensity cannot be assigned to a defect type here.",
+    "Single spectrum, not polarisation- or angle-resolved, so no polarisation classification is given. Noise is about 90-100 counts per point, so features below ~60 counts cannot be detected. Peaks of 100-400 counts found by naive peak-picking are noise and are not reported. The background is a smooth, non-zero slope (~2600 to ~1000 counts across the window), probably fluorescence or substrate; it was modelled as a quadratic and affects the D intensity by a few percent.",
+    "No cosmic-ray spikes were found (single-point residual test against a 5-point median filter, threshold 5 sigma, found none)."
+  ]
+}

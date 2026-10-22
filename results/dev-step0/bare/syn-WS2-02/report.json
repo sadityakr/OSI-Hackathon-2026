@@ -1,0 +1,75 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.8,
+      "evidence": "Two sharp first-order lines at 360.3 (E2g/E' in-plane) and 420.3 cm-1 (A1g/A1' out-of-plane), matching WS2 (bulk ~356/421 cm-1; monolayer ~357/418-419 cm-1 at 532 nm). No other TMD fits: MoS2 is 383/408, WSe2 ~250, MoSe2 ~241/286, and none of those have lines here. No peaks between 450 and 1100 cm-1, so no substrate or other-phase lines."
+    }
+  ],
+  "hint_verdict": "consistent",
+  "hint_reasoning": "The spectrum is consistent with WS2. The only two sample lines, at 360.3 and 420.3 cm-1, fall where the WS2 in-plane E2g (~356-358) and out-of-plane A1g (~418-421) modes are reported at 532 nm (Berkdemir et al., Sci. Rep. 3, 1755 (2013); Zhao et al., Nanoscale 5, 9677 (2013)). The 60 cm-1 splitting is below the bulk value (~65) and close to the monolayer/few-layer value (~61-62). No other common TMD has modes at these positions. Three things are unusual: (1) the E2g is ~3-4 cm-1 above typical WS2 values, (2) the 2LA(M) band at ~350 cm-1 is absent or very weak although it is usually strong under 532 nm resonance, and (3) the A1g/E2g intensity ratio is low (~0.18). These do not contradict WS2, but they limit how precisely layer number and strain can be stated.",
+  "peaks": [
+    {
+      "position_cm1": 360.3,
+      "fwhm_cm1": 3.4,
+      "assignment": "E2g (E') in-plane mode of WS2",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit with a quadratic background over 300-470 cm-1. Mode assignment from Berkdemir et al., Sci. Rep. 3, 1755 (2013)."
+    },
+    {
+      "position_cm1": 420.3,
+      "fwhm_cm1": 5.8,
+      "assignment": "A1g (A1') out-of-plane mode of WS2",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit with a quadratic background over 300-470 cm-1. Mode assignment from Berkdemir et al., Sci. Rep. 3, 1755 (2013); Zhao et al., Nanoscale 5, 9677 (2013)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "E2g-A1g separation",
+      "value": "60.0 cm-1, which is less than the bulk value (~65 cm-1) and close to the monolayer/few-layer value (~61-62 cm-1). This suggests a thin flake, but strain or doping can shift the modes, so it is not a unique layer count.",
+      "provenance": "inferred",
+      "source": "Measured peak positions compared with Berkdemir et al., Sci. Rep. 3, 1755 (2013)."
+    },
+    {
+      "name": "E2g position",
+      "value": "360.3 cm-1, about 3-4 cm-1 above typical WS2 values (356-358 cm-1). Possible causes are compressive strain, doping or a calibration offset.",
+      "provenance": "inferred",
+      "source": "Comparison with literature WS2 values."
+    },
+    {
+      "name": "A1g/E2g intensity ratio",
+      "value": "about 0.18 from Lorentzian amplitudes (A1g ~3460 vs E2g ~19600 counts), compared with a typical ~0.3-0.5 for monolayer WS2",
+      "provenance": "measured",
+      "source": "Lorentzian fit"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single-point, ~20700 counts on a ~2700 baseline)",
+      "position_cm1": 162.56
+    },
+    {
+      "type": "smooth rising photoluminescence/background, with no sharp structure",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Berkdemir et al., Sci. Rep. 3, 1755 (2013): identification of the E2g, A1g and 2LA(M) Raman modes of WS2 under 532 nm excitation and their layer dependence",
+    "Zhao et al., Nanoscale 5, 9677 (2013): Raman modes of WS2 as a function of layer number",
+    "Late literature knowledge of reference mode positions for MoS2 (~383/408), WSe2 (~250) and MoSe2 (~241/286)"
+  ],
+  "limits": [
+    "The two lines at 360/420 cm-1 point to WS2, but the data cannot give a definite layer number: the 60 cm-1 splitting is only suggestive, and strain or doping can shift it.",
+    "The E2g position (360.3 cm-1) is higher than typical, and the data cannot separate strain, doping and calibration effects.",
+    "2LA(M) near 350 cm-1 and LA(M) near 176 cm-1 are not resolved. A weak 2LA(M) shoulder cannot be fully excluded because it overlaps the strong E2g line, and the weak component a fit placed near 334 cm-1 is not statistically meaningful.",
+    "Only unpolarized single-spectrum data are available, so mode symmetry (E2g vs A1g) is assigned from position only, not from polarization.",
+    "The 162.56 cm-1 feature is a single-point spike. It is treated as a cosmic ray and not as a low-frequency mode.",
+    "The substrate is not specified, and no Si line at 520.7 cm-1 is seen (the data are flat there, ~6700-6800 counts).",
+    "The measurement does not rule out a trace of WO3 or oxidation, because no features are resolved above the noise."
+  ]
+}

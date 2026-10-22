@@ -1,0 +1,107 @@
+{
+  "candidates": [
+    {
+      "material": "CrI3",
+      "confidence": 0.15,
+      "evidence": "Only the material class fits: a few strong low-frequency bands (80-170 cm-1) and nothing strong above about 200 cm-1. Literature exists for CrI3 Raman with DFT mode assignments (Djurdjic-Mijin et al., arXiv:1807.03259, DOI 10.1103/PhysRevB.98.104307; Larson and Kaxiras, arXiv:1803.10825). Only the abstracts were retrieved, and they give no mode positions, so the band-by-band match is unverified."
+    },
+    {
+      "material": "Bi2Te3",
+      "confidence": 0.07,
+      "evidence": "The 104 cm-1 band is near the expected Eg mode, but the strongest band at 120 cm-1 and the 166 cm-1 band do not match the expected A1g frequencies. Reference from memory, not checked in-session: A1g ~62, Eg ~103, A1g ~137 cm-1. Shahil et al. (arXiv:1201.5678) is a Raman study of few-quintuple films, but its abstract gives no numbers."
+    },
+    {
+      "material": "Sb2Te3",
+      "confidence": 0.05,
+      "evidence": "The 166 cm-1 band could match the A1g mode, but the 80 and 120 cm-1 bands have no clear counterpart. Reference from memory, not checked in-session: A1g ~66, Eg ~112, A1g ~165 cm-1 (Shahil et al., arXiv:1201.5678)."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given, so there is nothing to verify. The identity is undetermined: the spectrum shows four low-frequency bands at 79.6, 104.5, 120.3 and 165.9 cm-1 and no reliably resolved band above about 200 cm-1 in the recorded 60-1100 cm-1 range. None of the candidates matches all four bands. The top candidate, CrI3, is a low-confidence pattern match only.",
+  "peaks": [
+    {
+      "position_cm1": 79.63,
+      "fwhm_cm1": 6.92,
+      "assignment": "unassigned (fit centre +/-0.49 cm-1, FWHM +/-1.81)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 104.45,
+      "fwhm_cm1": 8.86,
+      "assignment": "unassigned (fit centre +/-0.24 cm-1, FWHM +/-0.85)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 120.34,
+      "fwhm_cm1": 7.45,
+      "assignment": "unassigned (fit centre +/-0.18 cm-1, FWHM +/-0.64); strongest band, about 19000 counts above a 4500-count baseline",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 165.85,
+      "fwhm_cm1": 8.08,
+      "assignment": "unassigned (fit centre +/-0.33 cm-1, FWHM +/-1.15)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "si_520_line",
+      "value": "absent (no peak above about 3000 counts in 510-530 cm-1; window mean about 1400 counts)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "absolute_calibration",
+      "value": "not verified (no Si reference line; position errors are fit statistics only)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "high_frequency_bands_200_1100",
+      "value": "none resolved above noise (point-to-point noise about 950 counts)",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike (single pixel, about 15100 counts, removed by 5-point median)",
+      "position_cm1": 785.92
+    },
+    {
+      "type": "cosmic_ray_spike (single pixel, about 26400 counts, removed by 5-point median; highest point in the spectrum)",
+      "position_cm1": 935.79
+    }
+  ],
+  "citations": [
+    "arXiv:1807.03259 (Djurdjic-Mijin et al., Lattice dynamics and phase transition in CrI3 single crystals), DOI 10.1103/PhysRevB.98.104307 - abstract only, used for existence of CrI3 Raman/DFT work; mode positions not read",
+    "arXiv:1803.10825 (Larson and Kaxiras, Raman Spectrum of CrI3: an ab-initio study), DOI 10.1103/PhysRevB.98.085406 - listed by search only, abstract not read",
+    "arXiv:1201.5678 (Shahil et al., Micro-Raman Spectroscopy of Mechanically Exfoliated Few-Quintuple Layers of Bi2Te3, Bi2Se3 and Sb2Te3), DOI 10.1063/1.3690913 - abstract only, no numbers used"
+  ],
+  "limits": [
+    "Identity not determined. CrI3 (confidence 0.15) is the best pattern match, but it is unverified against reference frequencies: the retrieved abstracts give no mode positions and no full text was read. Bi2Te3 and Sb2Te3 are partial matches only. Overall the identity remains open.",
+    "The skill's helper scripts (rl_qc, rl_fit, rl.py match_library) and its reference notes are stored outside this working folder, and I was instructed not to read files outside it. So: no Computational Raman Database matching, no curated reference mode tables, no relation lookup, and no polarization analysis (single spectrum). Band assignments and rejections below rely on my own knowledge of these materials, not the skill's notes.",
+    "Absolute wavenumber calibration is unverified. There is no Si line to calibrate against, so position errors (0.2-0.5 cm-1) are fit statistics only and the systematic offset is unknown.",
+    "Recorded range is 60-1100 cm-1. Ultra-low-frequency modes below 60 cm-1 are not recorded. Bands above 1100 cm-1 (for example graphene G/2D, hBN E2g near 1366 cm-1) are not recorded and cannot be checked. The statement 'no bands above 200 cm-1' applies only within 200-1100 cm-1.",
+    "Detection limit: point-to-point noise is about 950 counts rms, so a band weaker than roughly 2000-3000 counts above baseline (about 15-20 % of the 120 cm-1 peak) would be hard to see. Absence claims refer to strong bands only. Local S/N of the 120 cm-1 band is about 15.",
+    "About 31 % of points in 300-1100 cm-1 and 24 % of all points are exactly zero. This suggests clipping or background subtraction in the processing chain, so absolute baseline and intensities are unreliable; use relative intensities only and treat the region above 300 cm-1 as noise-dominated.",
+    "Fit: four Lorentzians on a cubic baseline over 60-260 cm-1 (fit script analysis/fit_low.py, plots analysis/fit_low.png and analysis/overview.png). R-squared is about 0.9 and the residual has no clear structure at the four band positions. The 79.6 cm-1 band has the largest relative uncertainty (FWHM 6.9 +/- 1.8). A fifth band near 173 cm-1 fitted with a negative amplitude and was rejected. A single-pixel excursion at 138.6 cm-1 (9255 counts, neighbours 3000-5400) was not flagged as a spike and is treated as noise on the 120 cm-1 band envelope.",
+    "Spike handling: the two flagged spikes (785.92 and 935.79 cm-1) were replaced by 5-point median values. They are outside the fitted window, so the fit is unaffected.",
+    "Rejected candidates (from my knowledge of their main modes, not the skill's notes): MoS2, WS2, MoSe2 and WSe2 have strong first-order bands between about 240 and 420 cm-1, which are absent. Black phosphorus has strong bands near 360-470 cm-1, also absent. Graphene has no band cluster at 80-170 cm-1, and its G band lies outside the recorded range. hBN has no first-order band in the recorded 60-1100 cm-1 range except through its 1366 cm-1 line, which is outside it; its low-frequency cluster is absent, so it is inconsistent with the data. Bi2Se3 (about 72/131/175 cm-1 from memory) does not match the observed 80/104/120/166 pattern.",
+    "Temperature (295 K) and 532 nm excitation are recorded as metadata. Resonance with excitons or electronic states at 532 nm can change relative band intensities and can activate extra bands; this was not checked and could alter the pattern.",
+    "No properties (layer number, strain, doping, defect density, phase) are reported. None could be derived from one spectrum without a reference, and no relation was applied."
+  ]
+}

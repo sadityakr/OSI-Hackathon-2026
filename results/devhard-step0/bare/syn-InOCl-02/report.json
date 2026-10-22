@@ -1,0 +1,100 @@
+{
+  "candidates": [
+    {
+      "material": "InOCl",
+      "confidence": 0.5,
+      "evidence": "Three Raman lines at 155, 299 and 353 cm-1 and nothing above 360. This is consistent with a layered metal oxychloride (MOCl). A strong, fully isotropic A1g-like line plus two twofold lines would fit an orthorhombic FeOCl-type layer. I assigned the material by family and not by matching a measured reference spectrum."
+    },
+    {
+      "material": "BiOCl",
+      "confidence": 0.1,
+      "evidence": "Same MOCl family, but the strong 144 cm-1 A1g and the ~200 and ~397 cm-1 Eg/B1g lines are missing. The 299 and 353 cm-1 lines are also not expected for BiOCl."
+    },
+    {
+      "material": "FeOCl",
+      "confidence": 0.1,
+      "evidence": "Same structure type, but the line positions do not match the expected Fe-O modes."
+    },
+    {
+      "material": "SbOCl",
+      "confidence": 0.05,
+      "evidence": "Same MOCl family, with no specific supporting line."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given, so the material was identified from the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 155.3,
+      "fwhm_cm1": 3.3,
+      "assignment": "Totally symmetric (A1g/Ag-like) mode",
+      "irrep": "A1g/Ag",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Angle-series fit. The parallel area is flat within ~\u00b18% over 0-170 deg. The crossed area is consistent with zero (noise-level, <5% of parallel). The irrep label is inferred, not measured."
+    },
+    {
+      "position_cm1": 299,
+      "fwhm_cm1": 3.2,
+      "assignment": "In-plane anisotropic mode (Ag/B-type)",
+      "irrep": null,
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Parallel area varies about 20-fold with a 180-deg period (maximum near 30-50 deg, minimum near 90-170 deg). The crossed area is weak, noisy and also modulated (~0.5-6k counts), so its phase is poorly constrained. The irrep is not assigned."
+    },
+    {
+      "position_cm1": 353,
+      "fwhm_cm1": 4.5,
+      "assignment": "In-plane anisotropic mode (Ag/B-type)",
+      "irrep": null,
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Parallel area has a 180-deg period (minimum near 30 deg, maximum near 120-130 deg, ~7x contrast). It is roughly 90 deg out of phase with the 299 cm-1 line. The crossed area is weak (\u22643k counts) and noisy. The irrep is not assigned."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "bulk/thick (not determinable)",
+      "provenance": "inferred",
+      "source": "Peak positions are not thickness-calibrated."
+    },
+    {
+      "name": "symmetry",
+      "value": "Low in-plane symmetry (orthorhombic-like): twofold modes plus one isotropic mode",
+      "provenance": "inferred",
+      "source": "Polarization patterns of the three lines."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "Narrow lines (FWHM ~3-5 cm-1) and no broad background."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No reference peak positions are available."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray / single-channel spikes (isolated high points in individual scans, removed by using medians across angles)",
+      "position_cm1": null
+    },
+    {
+      "type": "apparent weak features near 567 cm-1 and 75 cm-1 are noise-level, not reproducible across angles; not reported as peaks",
+      "position_cm1": 567
+    }
+  ],
+  "citations": [],
+  "limits": [
+    "The material assignment (InOCl) rests on the MOCl-family pattern of three lines, not on a matched reference spectrum. No literature values were checked in this session. Treat it as a probable identification.",
+    "The twofold lines (299 and 353 cm-1) have a weak, noisy crossed channel, so the parallel/crossed phase relation and the exact irreps (Ag vs B1g/B2g/B3g) are not determined.",
+    "The 155 cm-1 line is flat in parallel and ~zero in crossed, which fits a totally symmetric mode. The data cannot distinguish whether the in-plane Raman tensor is exactly isotropic or only nearly so.",
+    "There is no substrate line, as expected for a suspended sample. Layer number, strain and doping cannot be determined from these data.",
+    "The BiOCl, FeOCl and SbOCl alternatives are not excluded quantitatively. They are ranked lower because their expected characteristic lines are absent or do not match.",
+    "Weak features near 75, 135, 567 cm-1 and others are at or below the noise level and are not reported as peaks."
+  ]
+}

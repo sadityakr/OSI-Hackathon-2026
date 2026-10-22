@@ -1,0 +1,157 @@
+{
+  "candidates": [],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "Identify task with material_hint null, so there is no stated material to check against. The spectrum does not support a confident identification: only three features clear the noise (206, 471 and the Si line at 520), the rest are close to the noise level, and I had no reference spectra or peak library to match against. I did not use the working-folder name as evidence. No candidate is ranked because none can be supported from these data.",
+  "peaks": [
+    {
+      "position_cm1": 206.5,
+      "fwhm_cm1": 3.2,
+      "assignment": "unassigned Raman mode of the sample",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit (scipy curve_fit, quadratic baseline), position +/- 0.14, FWHM +/- 0.41; height ~1000 counts over ~530-count noise"
+    },
+    {
+      "position_cm1": 270.7,
+      "fwhm_cm1": 1,
+      "assignment": "unassigned weak feature, near noise, width not well constrained",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM at lower bound (1.0 +/- 0.8); height ~1190 counts, about 2 sigma of noise after smoothing"
+    },
+    {
+      "position_cm1": 296.6,
+      "fwhm_cm1": 1,
+      "assignment": "unassigned weak feature, near noise, width not well constrained",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM at lower bound (1.0 +/- 1.6); height ~970 counts"
+    },
+    {
+      "position_cm1": 323.3,
+      "fwhm_cm1": 3.4,
+      "assignment": "unassigned weak feature, near noise",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM 3.4 +/- 2.0; height ~205 counts in the fit, but ~745 counts in the smoothed spectrum"
+    },
+    {
+      "position_cm1": 403.5,
+      "fwhm_cm1": 29.7,
+      "assignment": "unassigned broad, weak feature; may partly reflect the 277 cm-1 median-filter baseline",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM 29.7 +/- 8.2, position +/- 2.6"
+    },
+    {
+      "position_cm1": 471.5,
+      "fwhm_cm1": 6.5,
+      "assignment": "unassigned strongest mode of the sample",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; position +/- 0.12, FWHM +/- 0.35; resolved in the raw data over about 460-485 cm-1"
+    },
+    {
+      "position_cm1": 520.5,
+      "fwhm_cm1": 3.7,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "first-order Si optical phonon at Gamma, about 520.7 cm-1 at room temperature (standard Si calibration line); measured 520.54 +/- 0.11 cm-1 agrees within about 0.2 cm-1"
+    },
+    {
+      "position_cm1": 684.3,
+      "fwhm_cm1": 1,
+      "assignment": "unassigned weak feature, near noise, width not well constrained",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM at lower bound (1.0 +/- 1.5); height ~1430 counts in the fit, ~690 counts in the smoothed spectrum"
+    },
+    {
+      "position_cm1": 910.3,
+      "fwhm_cm1": 1.2,
+      "assignment": "unassigned weak feature, near noise",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM 1.2 +/- 1.8; height ~720 counts"
+    },
+    {
+      "position_cm1": 957.4,
+      "fwhm_cm1": 1,
+      "assignment": "unassigned weak feature, near noise; could be a Si second-order band, which I could not check",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM at lower bound (1.0 +/- 1.6); height ~620 counts"
+    },
+    {
+      "position_cm1": 996.2,
+      "fwhm_cm1": 5,
+      "assignment": "unassigned weak, broad feature, width poorly constrained",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM 5.0 +/- 4.4; height ~77 counts in the fit, ~580 counts in the smoothed spectrum"
+    },
+    {
+      "position_cm1": 1064.9,
+      "fwhm_cm1": 2,
+      "assignment": "unassigned weak feature, near noise",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "constrained Lorentzian fit; FWHM 2.0 +/- 1.2; height ~390 counts in the fit, ~840 counts in the smoothed spectrum"
+    }
+  ],
+  "properties": [
+    {
+      "name": "substrate_line",
+      "value": "Si 520.5 cm-1 present, matching the SiO2/Si substrate",
+      "provenance": "measured",
+      "source": "fit position 520.54 cm-1 vs literature Si 520.7 cm-1"
+    },
+    {
+      "name": "noise_sigma_counts",
+      "value": "about 530 counts per point",
+      "provenance": "measured",
+      "source": "median absolute first difference / sqrt(2) / 0.6745"
+    },
+    {
+      "name": "spectral_range_cm1",
+      "value": "60.3 to 1099.9 cm-1, step about 0.92 cm-1",
+      "provenance": "measured",
+      "source": "spectrum.csv"
+    },
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "no reference spectrum or peak library was available to match against"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Si first-order phonon at Gamma, about 520.7 cm-1 at room temperature (standard Si calibration line, used for the 520.5 cm-1 assignment)"
+  ],
+  "limits": [
+    "The material is not identified. The spectrum has only two strong non-substrate modes (206.5 and 471.5 cm-1). The remaining features (270, 296, 323, 403, 684, 910, 957, 996, 1065 cm-1) are at or near the noise level (about 530 counts per point, comparable to their heights), so their positions and widths are uncertain and their presence is not secure.",
+    "No reference spectra, literature peak tables or database were consulted, so no mode can be assigned to a specific material, symmetry or irrep. All non-Si assignments are 'unassigned' rather than literature-backed.",
+    "No polarization or angle-resolved data, so symmetry (irrep) and polarization pattern cannot be assessed.",
+    "The spectrum covers only 60-1100 cm-1, so low-frequency shear and breathing modes (below 60 cm-1) and any higher-frequency modes are not measured.",
+    "The two strongest modes alone do not distinguish between candidate layered materials.",
+    "No cosmic-ray spikes were detected: the single-point outlier test found no isolated spikes, and the largest 5-point residual (at 471.7 cm-1) sits inside a broad, real peak.",
+    "Peak widths for the weak features (270, 296, 684, 910, 957, 1065 cm-1) are at or near the fit bounds, so their FWHM values are not reliable.",
+    "Possible second-order Si bands near 300 and about 930-1000 cm-1 could contribute to the weak features in the 290-1000 cm-1 range, but I did not model them separately.",
+    "The working-folder name was not used as evidence for the identification.",
+    "Measurement conditions (532 nm, 295 K, backscattering, SiO2/Si substrate) were taken from the metadata and not checked against the data."
+  ]
+}

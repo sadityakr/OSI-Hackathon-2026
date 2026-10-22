@@ -1,0 +1,103 @@
+{
+  "summary": "The G and 2D shifts are real (not calibration) and scale with laser power. Their most likely cause is laser heating, not a doping change. Strain is not excluded but cannot be separated from heating with these three spectra. For absolute G/2D positions, trust the 0.5 mW spectrum (least laser-perturbed), with caveats: it was taken first in the sequence, so exposure history is confounded with power, and it has the lowest signal-to-noise. Single-layer identity is consistent with I2D/IG \u2248 3.0 and a single Lorentzian 2D band, but substrate and laser dependence keep that from being definitive. No D band is detected, so defect density is low. Fits were done with numpy/lmfit in this folder; the skill's scripts and reference notes sit outside the working folder, which the system prompt excludes, so they were not used, and the literature values below are recalled and unverified.",
+  "observations": [
+    {
+      "finding": "G and 2D both soften monotonically with power at a fixed spot; the shift is not a calibration offset because the Si 520 line is constant across the three spectra.",
+      "evidence": "Lorentzian fits with polynomial baseline. G: 1581.29\u00b10.10 (0.5 mW), 1580.62\u00b10.06 (2 mW), 1579.49\u00b10.05 (5 mW), i.e. -1.80\u00b10.11 cm-1 from 0.5 to 5 mW. 2D: 2669.51\u00b10.05, 2666.42\u00b10.03, 2664.38\u00b10.02, i.e. -5.13\u00b10.05 cm-1. Si: 520.86\u00b10.03, 520.91\u00b10.02, 520.91\u00b10.01 (shift +0.05). Window and baseline variations move G by at most 0.03 cm-1 and 2D by at most 0.03 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Slope ratio of 2D to G shift is 2.85\u00b10.18, which lies between the strain-type and doping-type ratios I recall from the literature but is not decisive.",
+      "evidence": "d\u03c92D/d\u03c9G = (-5.13\u00b10.05)/(-1.80\u00b10.11) = 2.85\u00b10.18 (0.5 to 5 mW). Recalled literature values: about 2.2 for uniaxial strain and about 0.7 for electron/hole doping (Mohiuddin et al., PRB 79, 205433 (2009); Das et al., Nat. Nanotechnol. 3, 210 (2008)). I did not check these figures in this session.",
+      "provenance": "inferred",
+      "source": "Mohiuddin et al., Phys. Rev. B 79, 205433 (2009) and Das et al., Nat. Nanotechnol. 3, 210 (2008) \u2014 values recalled, figure/table not checked"
+    },
+    {
+      "finding": "Intensity ratios point against a doping change with power: I2D/IG (peak-height ratio) is constant, and G and 2D intensities scale linearly with power, as does the Si line.",
+      "evidence": "I2D/IG height ratio = 2.95, 3.01, 2.98 (0.5, 2, 5 mW). G height ratio to 0.5 mW = 1.00, 3.95, 9.91. 2D height ratio = 1.00, 4.02, 10.0. Si area ratio = 1.00, 4.22, 10.66 (roughly linear, slightly superlinear for Si).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Linewidths broaden with power for both G and 2D, consistent with laser heating (anharmonic phonon broadening); the D band is absent, so defects are not the cause of the broadening.",
+      "evidence": "G FWHM 13.74\u00b10.44, 15.71\u00b10.29, 17.91\u00b10.23 cm-1. 2D FWHM 32.0\u00b10.3, 34.8\u00b10.2, 39.3\u00b10.1 cm-1. D-band fit at fixed 1350 cm-1: area 65\u00b1167 (0.5 mW), consistent with zero; 4868\u00b112444 (5 mW), unconstrained. Upper bound I_D/I_G \u2272 0.01 at 0.5 mW from 3\u03c3 of the area over G area 51515.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The power dependence is not linear. Most of the 2D shift occurs between 0.5 and 2 mW, which could indicate an exposure-history or sequencing artifact rather than heating alone.",
+      "evidence": "Weighted linear fit of 2D vs power gives slope -0.91\u00b10.01 cm-1/mW with residuals +1.12, -0.60, +0.09 cm-1. Step 0.5\u21922 mW: -3.09 cm-1 (-2.1 cm-1/mW). Step 2\u21925 mW: -2.04 cm-1 (-0.7 cm-1/mW). G is closer to linear: slope -0.39\u00b10.02 cm-1/mW, residuals \u22640.05 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Zero-power limit (linear extrapolation) for G is about 1581.4 cm-1 with small uncertainty; for 2D about 2669 cm-1, poorly constrained by a linear model.",
+      "evidence": "Linear weighted intercept: G 1581.44\u00b10.08 cm-1; 2D 2668.85\u00b10.04 cm-1 with large residuals, so the 2D intercept is model-dependent. Measured 0.5 mW values (1581.29, 2669.51) are upper bounds on the unperturbed positions for heating-induced shifts.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "Layer number is consistent with single-layer graphene but not confirmed by this data alone.",
+      "evidence": "Single-Lorentzian 2D band with FWHM about 32 cm-1 at 0.5 mW; I2D/IG height ratio about 3.0, constant across powers. Comparison with a published monolayer I2D/IG threshold would need a reference paper, which I did not verify.",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (single-layer consistent)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "low (D band absent, I_D/I_G \u2272 0.01 at 0.5 mW)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined (not separable from heating with these spectra)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined (I2D/IG constant with power argues against power-induced doping change, but absolute doping not determined)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Sequential acquisition: the spectra were taken one after another in the order 0.5, 2, 5 mW (as labelled); power and exposure history are confounded. Photo-induced doping or adsorbate desorption can change G and 2D in an irreversible way, which heating does not. Repeating 0.5 mW after 5 mW would test this.",
+    "Background is not linear in power: median background (1800-2000, 2100-2400, 2900-3100 cm-1) is about 190/350/200 at 0.5 mW, 350/310/280 at 2 mW and 2100/2500/3550 at 5 mW. The 5 mW spectrum also has the highest noise (about 104 vs 22 at 0.5 mW). This suggests different acquisition settings or an added luminescence background; it does not move the fitted G and 2D positions by more than 0.03 cm-1 across window and baseline choices.",
+    "Spectrum sampling differs (step 1.05, 1.01, 0.97 cm-1 per point) with the same 450-3199 cm-1 range, so the three files were resampled or recorded with different point counts. Positions were fit on the native grids.",
+    "Calibration: the Si line sits at about 520.9 cm-1, about +0.2 cm-1 above the commonly quoted room-temperature value of 520.7 cm-1 (recalled, not checked). The offset is the same in all three spectra, so shifts are unaffected but absolute positions should be read with about 0.2 cm-1 offset.",
+    "Excitation dependence: the 2D position depends on laser energy (dispersion about 100 cm-1/eV, Ferrari et al., PRL 97, 187401 (2006), recalled), so absolute 2D positions at 532 nm cannot be compared with values at other wavelengths without correction.",
+    "Heating coefficients: the temperature coefficients for G and 2D needed to turn the shift into a temperature rise are not verified here, so I cannot convert the measured shifts to a temperature.",
+    "Substrate: SiO2/Si was taken from the user's description; oxide thickness, and therefore interference enhancement and I2D/IG, were not provided."
+  ],
+  "questions_for_user": [
+    "What was the acquisition order and integration time per spectrum? If the sequence was 0.5, 2, 5 mW as labelled, the 0.5 mW spectrum is the least laser-exposed; re-measure 0.5 mW after 5 mW to test whether the shifts are reversible (heating) or persistent (photo-doping or desorption).",
+    "Are the three spectra identical in accumulations and grating? The background and noise differ strongly between them (especially 5 mW) and the point spacing differs.",
+    "What is the oxide thickness and is there an unstrained or known reference (e.g. a bilayer or a flake from the same chip)? Without a reference, absolute strain and doping cannot be fixed.",
+    "Was the sample temperature controlled, and was the laser power measured at the sample (not just nominal)?",
+    "Was polarization analysed? Strain would split or broaden the G band in polarized spectra; a single unpolarized spectrum cannot show that."
+  ],
+  "citations": [
+    "Mohiuddin et al., Phys. Rev. B 79, 205433 (2009) \u2014 recalled slope ratio about 2.2 for uniaxial strain; figure/table not checked",
+    "Das et al., Nat. Nanotechnol. 3, 210 (2008) \u2014 recalled doping-type behaviour, slope ratio about 0.7; figure/table not checked",
+    "Ferrari et al., Phys. Rev. Lett. 97, 187401 (2006) \u2014 recalled 2D dispersion about 100 cm-1/eV; not checked",
+    "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011) \u2014 recalled stage-1 relation for L_a from I_D/I_G at 532 nm; not used in the numbers reported"
+  ],
+  "limits": [
+    "Literature search tools: find_papers failed (VALENCY_BOND_TOKEN not set) and the Valency MCP server is unavailable; library search returned no paper matching strain/doping slope ratios or heating coefficients. All literature values above are recalled and unverified.",
+    "Skill scripts and reference notes (ramanlens raman-analysis) are located outside the working folder, which the system prompt excludes, so they were not run or read; all fitting was done with numpy/lmfit directly on the three CSVs.",
+    "Heating versus strain separation: the measured 2D/G slope ratio (2.85\u00b10.18) cannot distinguish them, since laser heating also produces thermal-expansion strain on SiO2. The sequential acquisition confounds time-dependent doping with power.",
+    "Cannot determine absolute strain or doping from the 532 nm positions without an unstrained reference and the 2D excitation-energy dispersion.",
+    "Layer number and defect density come from single-spot intensity ratios, which depend on substrate interference and laser energy; they are indicative, not definitive.",
+    "The 2D power dependence is non-linear over three points, so the zero-power extrapolation for 2D (about 2669 cm-1) is uncertain by at least 0.5 cm-1."
+  ]
+}

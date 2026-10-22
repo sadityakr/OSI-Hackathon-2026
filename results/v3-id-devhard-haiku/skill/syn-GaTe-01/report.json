@@ -1,0 +1,98 @@
+{
+  "candidates": [
+    {
+      "material": "GaTe (hexagonal P6_3/mmc polymorph, CRD mp-10009)",
+      "confidence": 0.3,
+      "evidence": "Top match_library score 0.85. Two measured lines map to A1g modes at 97.2 and 284.3 cm-1 in the Computational Raman Database entry (Bagheri and Komsa 2023, row 2968). Only 2 peaks support it, and the 281.6 line sits 2.7 cm-1 from its reference. The predicted E2g at 179.7 cm-1 (rel. intensity 0.14) is not clearly seen (+144 +/- 64 counts, about 2 sigma). This is a hypothetical high-symmetry polymorph in the DFT database, not the usual monoclinic C2/m GaTe. No curated GaTe table exists in the skill."
+    },
+    {
+      "material": "ClInTe (P2_1/c, CRD)",
+      "confidence": 0.15,
+      "evidence": "Score 0.51. Ag references at 97.1 and 282.7 cm-1 match both lines, but the predicted strong Ag modes at 131.9 (rel. 1.0) and 289.9 cm-1 (rel. 0.68) are missing from the data. Only the 131.9 region has a noise-level feature, so this candidate is disfavoured."
+    },
+    {
+      "material": "I2Mn (P-3m1, CRD)",
+      "confidence": 0.1,
+      "evidence": "Score 0.82. Only the 98.55 cm-1 line is matched (Eg at 99.1). The 281.6 cm-1 line is unexplained, and no strong modes are missing. Two lines cannot separate it from GaTe."
+    },
+    {
+      "material": "I2Yb (P-3m1, CRD)",
+      "confidence": 0.05,
+      "evidence": "Score 0.57. Matches only the 98.55 cm-1 line (A1g at 98.6). A strong predicted Eg mode at 78.6 cm-1 (rel. 0.78) is not seen in the data, and the 281.6 cm-1 line is unexplained."
+    },
+    {
+      "material": "CCl2Lu2 (R-3m, CRD)",
+      "confidence": 0.03,
+      "evidence": "Score 0.48. Matches only the 98.55 cm-1 line (Eg at 96.7). The predicted strong A1g mode at 274.7 cm-1 is not matched to the 281.6 cm-1 line, and it is missing a strong A1g near 275 cm-1."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null). Identification is therefore from two significant Raman lines only. The top candidate, GaTe, is the one the matcher ranks first, but the evidence is thin. The spectrum is not a clear identification. The data cannot confirm a unique material.",
+  "peaks": [
+    {
+      "position_cm1": 98.55,
+      "fwhm_cm1": 7.06,
+      "assignment": "A1g (tentative), candidate GaTe hexagonal polymorph; reference 97.2 cm-1",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit.py (Lorentzian, position err 0.10, FWHM err 0.35). Refit with --min-snr 2 --window 60 400 gives 98.545 cm-1, FWHM 7.26 (err 0.35). Assignment from rl.py match_library against Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD row 2968, P6_3/mmc), score 0.85. Tentative, the candidate is not confirmed."
+    },
+    {
+      "position_cm1": 281.59,
+      "fwhm_cm1": 1.48,
+      "assignment": "A1g (tentative), candidate GaTe hexagonal polymorph; reference 284.3 cm-1 (2.7 cm-1 offset)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit.py (Lorentzian, position err 0.13, FWHM err 0.76). Refit window gives 281.591 cm-1, FWHM 1.44 (err 1.16). Assignment from rl.py match_library against Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD row 2968, P6_3/mmc). Tentative: the 2.7 cm-1 offset is larger than the calibration error, and the line is weak (SNR about 4-5)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "hexagonal P6_3/mmc (candidate only)",
+      "provenance": "inferred",
+      "source": "Top CRD match, Bagheri and Komsa 2023, Sci. Data 10, 80, row 2968. Two lines only; not confirmed."
+    },
+    {
+      "name": "layers",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "No layer-number relation applies to a two-line spectrum with no angle series and no reference table for this material."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No measurable E2g splitting or shift against a reference with the two lines available."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No reference for the A1g shift in this material."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "No D-type or disorder bands; the broad hump near 600-1000 cm-1 is treated as background, not a defect band."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Bagheri, Komsa, Sci. Data 10, 80 (2023), Computational Raman Database (CC BY 4.0), entries crd:2968 (GaTe, P6_3/mmc), crd:450, crd:2370, crd:2078, crd:3171, as returned by rl.py match_library."
+  ],
+  "limits": [
+    "Only two significant peaks are present (98.55 and 281.59 cm-1) in 60-1100 cm-1. SNR of the strongest line is 27. QC found no cosmic-ray spikes, no Si line, and no saturation. The spectrum cannot uniquely identify the material.",
+    "The 98.55 cm-1 line is broad (FWHM about 7 cm-1) and the 281.59 cm-1 line is narrow (about 1.5 cm-1). Both are fitted as Lorentzians on an ALS baseline. Fit residuals are noise-like at about 230 counts (1 sigma).",
+    "Weak-mode check. The low-SNR refit (rl_fit.py --min-snr 2 --window 60 400) completed. It returned the same two significant lines plus two components at 388.97 cm-1 (FWHM 14.4, height error 80,849 against height 6,896, position error 15.5) and 397.36 cm-1 (height 1,291 +/- 1,417). Both extra components are fit artifacts, not peaks. Predicted modes of the top candidate were not directly tested by this fit. My own residual estimate gives +53 +/- 58 counts at 110-125 cm-1, about 0 at 128-142 cm-1, -118 +/- 60 at 155-170 cm-1, and +144 +/- 64 at 179.7 cm-1 (about 2 sigma, the predicted E2g). These residual numbers are my own estimate, not a fit.",
+    "The known ground-state GaTe is monoclinic (C2/m). From recollection, not verified against any tool output, it shows several Raman lines in the roughly 100-170 cm-1 range. This spectrum has no clear lines there beyond the tail of the 98.55 cm-1 line. If that recollection is right, the hexagonal CRD assignment is not the ground-state phase and monoclinic GaTe is disfavoured here. I could not retrieve a monoclinic GaTe mode table to confirm this.",
+    "The literature search located Huang et al., ACS Nano (2016), doi 10.1021/acsnano.6b05002 (In-Plane Optical Anisotropy of Layered Gallium Telluride), and Hoang et al., Sci. Rep. (2021), doi 10.1038/s41598-021-00673-0 (Thickness-dependent in-plane anisotropy of GaTe phonons). I did not read their mode tables, so they are not cited for any value here. They would be the first place to check the monoclinic mode list.",
+    "No angle-series data, so no polarization classification. No curated reference table exists for GaTe in the skill, so mode assignments rest on the DFT CRD matcher, not on measured literature modes.",
+    "The matcher's reported reference positions for the top candidate differ from the measured lines by 0.8 cm-1 (98.55 vs 97.2) and 2.7 cm-1 (281.59 vs 284.3). The frequency scale (1.006) is applied internally and I could not confirm how it enters the reported reference positions. The 2-line ratio (281.6/98.55 = 2.857) differs from the reference ratio (284.3/97.2 = 2.925) by about 2%.",
+    "The 20-cm-1 separation of the two lines and their unequal widths are consistent with more than one material. Rejected: I2Mn, I2Yb, CCl2Lu2 (each explains at most one line, or leaves strong predicted modes unmatched), and ClInTe (strong predicted modes at 131.9 and 289.9 cm-1 not seen).",
+    "Unresolved: which phase and stoichiometry this is. A higher-SNR spectrum with more lines (especially 110-180 cm-1), a polarization series, or a known reference spectrum for the sample would settle it."
+  ]
+}

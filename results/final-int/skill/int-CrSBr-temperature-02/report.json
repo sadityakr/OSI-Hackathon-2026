@@ -1,0 +1,171 @@
+{
+  "summary": "Both flakes show the CrSBr Ag2/Ag3 pair, with no Ag1 and no low-frequency modes, because the window starts at 151 cm-1. The two flakes agree on the Ag3 cooling response (+3.6 vs +3.5 cm-1 from 300 K to 4 K) but differ in Ag2. At 300 K the Ag2 positions agree within 0.5 cm-1. At 4 K flake B's Ag2 sits 2.7 cm-1 lower, is about twice as broad, and is not described by a single line; its cooling shift is +6.0 vs +8.2 cm-1 for A. Flake B also has an extra band at ~361 cm-1 at 4 K only, and wider Lorentzian components at 300 K. Flake A is the cleaner spectrum: narrow, near-resolution-limited lines and no extra bands in the window. The two exports were also processed differently. A is raw integer counts on a ~2000-count pedestal, while B is baseline-subtracted with negative values and roughly 2x the residual noise at 4 K. So absolute intensities and intensity ratios are not comparable between flakes. The data cannot give layer number (no Ag1, no Si calibration, and the Ag2 difference is temperature-dependent, which a simple thickness offset would not be), strain, or doping. The most likely reading of B is a spot that sees more than one region (domain, step, or thickness change) or a more disordered region. The 361 cm-1 band is not assignable from these data.",
+  "observations": [
+    {
+      "finding": "Flake A: Ag2 and Ag3 positions and widths. 4 K: Ag2 250.01 +- 0.07 cm-1 (FWHM 4.12), Ag3 343.88 +- 0.04 cm-1 (FWHM 3.77). 300 K: Ag2 241.78 +- 0.06 (FWHM 5.28), Ag3 340.25 +- 0.06 (FWHM 4.63).",
+      "evidence": "rl_fit.py on spectrum_A_4K.csv and spectrum_A_300K.csv (ALS baseline + Lorentzian least squares; errors are fit statistics only). Si calibration not possible: no Si line in the 151-401 cm-1 window.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Flake B: Ag2 and Ag3 positions and widths. 4 K: Ag2 247.27 +- 0.11 (FWHM 7.54 +- 0.31 in the full-range fit; 8.98 in a 232-264 window fit), Ag3 342.57 +- 0.10 (FWHM 3.80). 300 K: Ag2 241.29 +- 0.08 (FWHM 6.28), Ag3 339.03 +- 0.06 (FWHM 5.70).",
+      "evidence": "rl_fit.py on spectrum_B_4K.csv and spectrum_B_300K.csv, and rl_series.py across all four. Flake B Ag2 at 4 K fails the single-Lorentzian residual test (see the next observation).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Ag2 temperature response differs between flakes. Ag2 shifts +8.23 cm-1 (A) and +5.98 cm-1 (B) from 300 K to 4 K. Ag3 shifts +3.63 (A) and +3.54 (B) cm-1.",
+      "evidence": "Differences of fitted positions in the same session (rl_series.py). Fit errors ~0.1 cm-1, but calibration offset is not known, so only the differences between flakes and between temperatures are meaningful. The Ag3 shift is identical in both flakes; the Ag2 shift is not.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Flake offsets (B minus A): Ag3 is -1.3 cm-1 at both temperatures. Ag2 is -0.5 cm-1 at 300 K and -2.7 cm-1 at 4 K.",
+      "evidence": "Same-session position differences from rl_series.py, fit errors about 0.1 cm-1. The temperature dependence of the Ag2 offset argues against a simple thickness offset: a thickness difference would give a T-independent shift, unless the thermal response itself depends on layer number, which the notes do not cover.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Ag3-Ag2 separation is 93.9 cm-1 (A, 4 K), 95.3 (B, 4 K), 98.5 (A, 300 K), and 97.7 (B, 300 K).",
+      "evidence": "rl_series.py two-strongest-separation output, errors about 0.1 cm-1. Literature Ag3-Ag2 spacings at 2.33 eV: Mondal 2025 4L 344-244 = 100; Klein 2023 bulk 344-245.5 = 98.5 (Fig. 3). Pawbake 2023 bulk at 633 nm is 345-257 = 88. The spacing is consistent with CrSBr but does not uniquely identify it.",
+      "provenance": "literature",
+      "source": "Mondal et al. 2025 npj 2D Mater., arXiv:2410.22164, p.2; Klein et al. 2023 ACS Nano 17, 5316, doi:10.1021/acsnano.2c07316, Fig. 3; Pawbake et al. 2023 PRB 107, 075421, arXiv:2211.12939, p.3"
+    },
+    {
+      "finding": "Systematic offset from 2.33 eV (532 nm) literature at 300 K. Both flakes sit low: Ag2 is 2.2 to 4.2 cm-1 below 244 (Mondal) and 245.5 (Klein); Ag3 is 3.7 to 5.0 cm-1 below 344.",
+      "evidence": "Comparison of 300 K fitted positions (A 241.8/340.3, B 241.3/339.0) against the 2.33 eV literature values. The offset is about the same for all lines and both flakes, which suggests calibration or local heating rather than sample difference, but this cannot be checked without a Si or Ne reference in the window.",
+      "provenance": "inferred",
+      "source": "Mondal et al. 2025 npj 2D Mater., arXiv:2410.22164, p.2 (4L, 2.33 eV); Klein et al. 2023 ACS Nano 17, 5316, Fig. 3 (bulk, 2.33 eV)"
+    },
+    {
+      "finding": "Ag2 cooling direction disagrees with the bulk literature. Pawbake reports Ag2 257 cm-1 at 300 K and 254 at 5 K, i.e. softening on cooling, while both flakes here harden by +6 to +8 cm-1. Ag3 is +3.5 here against about +1 in Pawbake.",
+      "evidence": "Comparison of the measured 300 K to 4 K shifts with the literature values. Pawbake used 633 nm and a different sample, so excitation energy, calibration, laser heating and layer number could each account for part of this. It is not explained by the notes.",
+      "provenance": "literature",
+      "source": "Pawbake et al. 2023 PRB 107, 075421, arXiv:2211.12939, p.3 (117/257/345 at 300 K; 121/254/346 at 5 K)"
+    },
+    {
+      "finding": "Flake B Ag2 at 4 K is not a single line. Single Lorentzian rms 52 (x0 247.4, FWHM 9.0), Voigt rms 38, two Lorentzians rms 28 (246.2, FWHM 6.1, h 754; and 250.4, FWHM 3.7, h 433). Noise sigma 12.7 counts. The two-component fit is preferred (delta BIC -21.5), with the second component near flake A's 250.0 cm-1.",
+      "evidence": "Fits over 232-264 cm-1 (25 points) done by hand with scipy, a linear baseline, and multi-starts. The two-component preference is weaker than it looks: flake A's Ag2 is also better with two components (rms 15 to 8), though a single Voigt describes A to noise level (rms 7.3, Gaussian FWHM 4.6).",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "Ag3 at 4 K is near instrument-limited in both flakes: a Voigt fit gives a Gaussian FWHM of 4.07 (A) and 4.05 cm-1 (B) with Lorentzian parts of 0.83 and 0.55 cm-1. Ag2 in A at 4 K is also near 4.6 cm-1 Gaussian.",
+      "evidence": "Voigt fits on 326-358 cm-1 (Ag3) and 232-264 cm-1 (Ag2). The matched Gaussian width indicates the same spectrometer settings for both flakes. Instrumental resolution is not given in the files, so ~4 cm-1 is inferred, not measured.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "At 300 K the Lorentzian components are wider in flake B. Ag2: A 4.1 vs B 5.8 cm-1. Ag3: A 2.1 vs B 4.5 cm-1.",
+      "evidence": "Voigt decomposition with a free Gaussian term at 300 K. The decomposition is poorly constrained at 300 K (Gaussian parts drift), so treat this as qualitative.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "Extra band in flake B at 4 K only, at 361 cm-1 (fit 360.98 +- 0.21, FWHM 4.97, height 143; refit 361.15, height 133). It is about 18 cm-1 above Ag3. Raw data: value ~138 counts above baseline against noise sigma 12.7 (roughly 10 sigma). Absent in flake A at 4 K (flank difference 0.6 +- 2.7 counts) and in flake B at 300 K (8.6 +- 9.3 counts).",
+      "evidence": "Raw counts 352-368 cm-1 of spectrum_B_4K.csv, plus rl_fit and window refit. The 358.9 component from the first full-range fit was unstable (position error 0.88) and disappears in the window refit, so it is not reported as a peak.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Intensity ratio Ag3/Ag2 (fitted heights) changes differently with temperature in the two flakes. A: 0.39 at 300 K and 1.64 at 4 K (x4.2). B: 0.87 at 300 K and 0.66 at 4 K (x0.76). Area ratios are A 0.34 to 1.50 and B 0.79 to 0.33.",
+      "evidence": "Heights from rl_fit (A 300 K Ag2 958, Ag3 372; A 4 K Ag2 432, Ag3 709; B 300 K Ag2 945, Ag3 822; B 4 K Ag2 840, Ag3 554). Flake B's 4 K Ag2 area is inflated by its broad shape, so heights are the better ratio here.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Export processing differs. Flake A files are integer raw counts on a pedestal of about 2020 (4 K) and 2140 (300 K). Flake B files are float values baseline-subtracted to about zero, with negative excursions (down to -26 at 4 K and -55 at 300 K). Residual noise sigma is 6.0 (A, 4 K), 12.7 (B, 4 K), 14.8 (A, 300 K), 20.8 (B, 300 K). rl_qc SNR of the strongest band is 104, 62, 60, 41 respectively. No spikes were flagged in any file.",
+      "evidence": "Raw inspection with numpy and rl_qc.py. The A pedestal shifts by about 120 counts between 4 K and 300 K, which suggests a different background or dark reference. Sampling is identical (1.314 cm-1, 151.16 to 400.82 cm-1) across all four files.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "No Si reference is in the window, so no calibration was applied. rl_series.py --si-correct found no Si line; absolute positions carry the unknown calibration offset (lab-to-lab spreads of several cm-1 are reported).",
+      "evidence": "rl_series.py output: 'no Si line found, not calibration-corrected' for all four spectra. Calibration errors of 5-7 cm-1 are reported for single-grating spectrometers without a full calibration.",
+      "provenance": "literature",
+      "source": "Lee et al. 2012 Nat. Commun. 3, 1024 (arXiv:1209.0234), Methods p.10, via artifacts.md and general-measurement.md"
+    },
+    {
+      "finding": "Temperature regimes. 4 K lies in the AFM regime below T_N (about 132-134 K), and 300 K lies in the paramagnetic regime above T_C (about 160-165 K). The 4 K and 300 K pair cannot resolve the iFM window, the 25 K Ag3 jump, or the sharp 467 cm-1 peak (below 40 K, outside the window).",
+      "evidence": "Literature values as quoted in the CrSBr note. The two temperatures bracket the transitions but do not resolve them.",
+      "provenance": "literature",
+      "source": "Torres et al. 2022 arXiv:2212.01754, p.8 (T_C 160, T_N 134 K); Markina et al. 2026 npj Quantum Mater. 11, 11, doi:10.1038/s41535-026-00850-2, corpus p.3 (T_C about 165, T_N about 132 K); Pawbake et al. 2023 PRB 107, 075421, arXiv:2211.12939, p.4 (Ag3 jump at about 25 K)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Ag1 (the thickness-sensitive mode, 108-127 cm-1) is outside the window; the Ag2 offset is temperature-dependent and uncalibrated. Layer number should come from AFM or optical contrast (Ye et al. 2022, ACS Nano 16, 11876, corpus p.5)."
+    },
+    {
+      "name": "phase",
+      "value": "CrSBr, orthorhombic Pmmn (D2h), assumed",
+      "provenance": "inferred",
+      "source": "User identification plus the Ag2/Ag3 pair at the expected positions and spacing (Pawbake 2023, p.3; Mondal 2025, p.2)."
+    },
+    {
+      "name": "defect_level",
+      "value": "flake A: low (inferred from narrow lines, low residual, no extra bands in window). flake B: elevated (inferred from broader Lorentzian components at 300 K, a non-single-line Ag2 at 4 K, and the 361 cm-1 band). Defect type not identified.",
+      "provenance": "inferred",
+      "source": "Quality criteria from CrSBr note (sharp Lorentzian Ag modes, no D1/D3); the note gives no primary source for this bullet. D1 (Ag1 shoulder) and D3 (~350 cm-1) are outside or ambiguous in this window (Torres et al. 2022, arXiv:2212.01754, p.4-5)."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Ag2 offset between flakes is temperature-dependent and uncalibrated; the note gives no per-layer strain coefficient for CrSBr."
+    },
+    {
+      "name": "doping_type",
+      "value": "none detected",
+      "provenance": "inferred",
+      "source": "No doping-sensitive band or relation for CrSBr is applicable in this window; the curated relation covers axis assignment only and needs a polarization series."
+    },
+    {
+      "name": "temperature_regime",
+      "value": "4 K: AFM (below T_N about 132-134 K). 300 K: paramagnetic (above T_C about 160-165 K).",
+      "provenance": "literature",
+      "source": "Torres et al. 2022, arXiv:2212.01754, p.8; Markina et al. 2026, npj Quantum Mater. 11, 11, corpus p.3"
+    }
+  ],
+  "caveats": [
+    "The 151-401 cm-1 window excludes Ag1 (114-121 cm-1), the shear and folded B3g modes (57, 71 cm-1), the B2g modes that need tilted geometry (92, 194, 301 cm-1), the sharp 467 cm-1 peak, and the second-order bands (370-780 cm-1). Absence of these is not evidence of absence.",
+    "Absolute frequencies are uncalibrated. Only differences within this session (same instrument) are meaningful, and even these are fit statistics only (~0.1 cm-1). A ~3-5 cm-1 low offset relative to 2.33 eV literature is seen for both flakes.",
+    "Circular crossed polarization (sigma+ in, sigma- out) gives intensities that are invariant to in-plane rotation of the flake (from the rotation of a diagonal 2x2 Raman tensor: the (alpha_xx - alpha_yy)^2 + 4 alpha_xy^2 invariant). This is my own derivation, not checked against a source in this session. It implies the Ag3/Ag2 intensity differences between flakes do not come from in-plane orientation, but from intrinsic (resonant or local-environment) differences, focus or spot change, or thin-film interference. Thin-film interference affects the Ag2/Ag3 ratio mainly for thick flakes (~62 nm, Mondal 2025 p.4-5); the flake thickness is unknown here.",
+    "The 4 K to 300 K intensity change of the Ag3/Ag2 ratio in flake A (x4.2) is much larger than in flake B (x0.76). The first suspect is spot or focus drift on cooling in the cryostat, not physics. Check the spot position and focus at both temperatures before interpreting it as a magnetic or resonance effect (Markina 2026 proposes exciton-mediated intensity changes near T_N, interpretation not yet independently confirmed).",
+    "The two exports differ (raw counts with pedestal vs baseline-subtracted with negative values). Peak positions and widths are fairly robust to a constant or smooth baseline, but intensities, SNR and any ratio that depends on the background are not directly comparable. If B's subtraction used a reference, its residual structure must be checked against the raw data.",
+    "Two-component fits of 25-point windows are not unique. Flake A also prefers two components, so the 246/250 cm-1 decomposition of flake B's 4 K Ag2 is a hypothesis, not a result. A higher-resolution, denser sampling of 230-265 cm-1 would be needed.",
+    "The 361 cm-1 band in B at 4 K is not assigned. Candidates from the literature are not strong: D3 is reported near 350 cm-1 in 1L after air and heating (Torres 2022 p.5); an infrared magnetic mode near 360 cm-1 below T_N (Uykur et al. 2024, arXiv:2405.07853, p.3-4) is IR, not Raman, and the note explicitly advises against assigning a 360 cm-1 Raman feature without polarization and temperature data. A laser plasma line would appear in A too if the same laser was used, and A shows no band there.",
+    "The 4 K Ag3 widths in both flakes (~4.0 cm-1 Gaussian) look instrument-limited, so the 4 K Ag3 linewidth is not a sample property here. The instrumental resolution is not in the files and must be measured (e.g. with a Ne or Rayleigh line).",
+    "Writes made to the data folder: series_all.png, fit_spectrum_*.png, fitwin_B_4K_ag2.png, fitwin_B_4K_ag3.png, fitwin_A_4K_ag2.png, and peaks.json (overwritten by each rl_fit run, so it holds the last run only)."
+  ],
+  "questions_for_user": [
+    "How was flake B's export processed? Did you subtract a dark frame, a background, or a substrate reference? Flake A looks like raw counts on a ~2000-count pedestal. Please share the raw files and the processing steps for both, since the B negative values and the 361 cm-1 band depend on them.",
+    "Were the 4 K and 300 K spectra taken at the same spot on each flake? Please share the spot images or coordinates and say whether focus was checked after cooling. The A intensity ratio changes by x4 between temperatures, which needs this check first.",
+    "What was the laser power at the sample and the spot size? Integration time and number of accumulations? A power series at 4 K would test laser heating, which affects both the absolute positions and the Ag2 cooling shifts.",
+    "What is the spectrometer resolution and calibration? Please add a Si line or a Ne/plasma reference in the same session. The window should also be extended below 150 cm-1 (Ag1 at 114-121 cm-1, if the notch filter allows) and above 401 cm-1 (Si at 520.7 cm-1, the second-order bands above 370 cm-1).",
+    "What are the flake thicknesses (AFM or optical contrast), the substrate and oxide thickness, and the encapsulation? Has flake B been exposed to air or heating (D3-type defects)? Layer number is needed before any of the Ag2 differences can be interpreted.",
+    "Is the 361 cm-1 band in flake B reproducible? Please check other spots on B at 4 K, and a repeat at 4 K after warming to 300 K and recooling. A reproducible band that disappears at 300 K would then need a polarization test before any assignment.",
+    "Is the circular crossed geometry confirmed? If you also have a linear angle series, it would give the axis information that the circular data cannot provide (curated relation crsbr_ag_mode_assignment_with_polarization_axis)."
+  ],
+  "citations": [
+    "Pawbake et al. 2023, Phys. Rev. B 107, 075421, arXiv:2211.12939 (https://arxiv.org/abs/2211.12939), p.3 (300 K and 5 K positions), p.4 (Ag3 hardening, flat between T_C and T_N, jump at ~25 K), p.5 (second-order bands below 160 K), Fig. 3-4",
+    "Mondal et al. 2025, npj 2D Mater., arXiv:2410.22164 (https://arxiv.org/abs/2410.22164), p.2 (4L Ag1 114, Ag2 244, Ag3 344 cm-1 at 2.33 and 1.96 eV), p.3-4 and Fig. 3 (Ag2 axis switching), p.4-5 (thin-film interference at 62 nm)",
+    "Klein et al. 2023, ACS Nano 17, 5316, doi:10.1021/acsnano.2c07316, Fig. 3 (bulk 115, 245.5, 344 cm-1 at 2.33 eV) \u2014 read from the curated CrSBr note, not from the primary paper in this session",
+    "Torres et al. 2022, arXiv:2212.01754 (https://arxiv.org/abs/2212.01754), p.3 and Fig. 1h (Ag1 and Ag2 redshift with decreasing layer number; Ag3 nearly layer independent), p.4-5 (D1, D3 defects, air exposure), p.8 (T_C 160 K, T_N 134 K; defect enhancement)",
+    "Markina et al. 2026, npj Quantum Materials 11, 11, doi:10.1038/s41535-026-00850-2, corpus p.3 (T_C about 165 K, T_N about 132 K), p.6 (exciton-mediated intensity interpretation, authors' view)",
+    "Ye et al. 2022, ACS Nano 16, 11876, doi:10.1021/acsnano.2c01151, corpus p.5 (layer number from contrast or AFM rather than Raman shifts)",
+    "Uykur et al. 2024, arXiv:2405.07853, p.3-4 (infrared magnetic mode near 360 cm-1; not a Raman assignment)",
+    "Lee et al. 2012, Nat. Commun. 3, 1024, arXiv:1209.0234, Methods p.10 (single-grating calibration errors of 5 to 7 cm-1), via artifacts.md and general-measurement.md"
+  ],
+  "limits": [
+    "Two temperatures only (4 K and 300 K). The T_N, T_C, iFM window, and the 25 K Ag3 jump cannot be resolved. A temperature series is needed for any magnetic claim.",
+    "The window is 151-401 cm-1 with only the Ag2 and Ag3 bands in the strong range. The matcher's top CRD candidates (I3NaO8, BaF10Te2, BrInO) are not CrSBr and are not meaningful for two bands; identification as CrSBr rests on the user's statement plus the Ag2/Ag3 positions and spacing.",
+    "The curated polarization relation crsbr_ag_mode_assignment_with_polarization_axis requires a linear angle series (max_parallel_angle_deg) and a known axis. It was not applicable: these are single circular spectra.",
+    "No CrSBr-specific temperature coefficient or per-layer strain/doping relation is in the notes, so no property value beyond the qualitative ones above is supported.",
+    "Fit errors are fit statistics only. Calibration uncertainty (several tenths to several cm-1) is not included and is the dominant error on absolute positions.",
+    "Lineshape tests (Lorentzian, Voigt, two-component) were run by hand on 25-40 point windows with a linear baseline. They are diagnostic, not conclusive."
+  ]
+}

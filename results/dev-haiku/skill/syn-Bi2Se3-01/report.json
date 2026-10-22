@@ -1,0 +1,61 @@
+{
+  "candidates": [
+    {
+      "material": "Bi2Se3",
+      "confidence": 0.2,
+      "evidence": "Top matcher hit (CRD row 2666, R-3m) and the only library-matched candidate in the 60 to 1100 cm-1 window. The 181.4 cm-1 line sits about 6 cm-1 above the A1g2 position of few-quintuple-layer Bi2Se3 at 488 nm (about 174 to 176 cm-1, read by eye from Fig. 4 of arXiv:1201.5678). The strong E2g (about 131 cm-1) and A1g1 (about 72 cm-1) modes that Fig. 4 shows as the dominant lines are absent. The weak 140.2 cm-1 shoulder is about 9 cm-1 from E2g. The intensity pattern argues against Bi2Se3; it is kept as the best of the weak options, not as an identification."
+    },
+    {
+      "material": "MoTe2 (2H)",
+      "confidence": 0.05,
+      "evidence": "Matcher (CRD row 3497) matches only the 181.4 cm-1 line as A1g with frequency scale 1.041. The 140.2 cm-1 shoulder is unmatched. The known strong 2H-MoTe2 modes near 170 to 173 and 290 cm-1 are not what the matcher reports. Weak evidence; not supported by the spectrum beyond one line."
+    },
+    {
+      "material": "GeSe",
+      "confidence": 0.03,
+      "evidence": "Matcher (CRD row 1012) matches 181.4 cm-1 as Ag and 140.2 cm-1 as B3g. The reference Ag mode at 172.9 cm-1 is reported missing but is weak (relative intensity 0.13). Weak evidence from two line positions only."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null, task identify). The working-directory name was not used as evidence. The spectrum does not establish a material. The matcher's top hit (Bi2Se3) is inconsistent with the expected intensity pattern.",
+  "peaks": [
+    {
+      "position_cm1": 181.36,
+      "fwhm_cm1": 8.82,
+      "assignment": "unassigned in the strict sense; tentatively A1g (Bi2Se3 A1g2 if Bi2Se3)",
+      "irrep": "A1g (tentative)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit.py (single Lorentzian, 181.36 +/- 0.06 cm-1, FWHM 8.6 to 8.8 cm-1) and a 120 to 240 cm-1 two-component fit (181.36 +/- 0.06, FWHM 8.82 +/- 0.20). Label is inferred from the CRD Bi2Se3 A1g entry (Bagheri and Komsa 2023, Sci. Data 10, 80, row 2666, scale 1.01). Position compared with Fig. 4 of arXiv:1201.5678 (A1g2 about 174 to 176 cm-1 at 488 nm, by eye). Not a confirmed assignment."
+    },
+    {
+      "position_cm1": 140.2,
+      "fwhm_cm1": 10.6,
+      "assignment": "unassigned weak shoulder; matcher suggests Eg (CRD row 2666) but that is inconsistent with Bi2Se3 Eg2 near 131",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Two-component fit in 120 to 240 cm-1: centre 140.2 +/- 0.9 cm-1, FWHM 10.6 +/- 3.9 cm-1, amplitude 911 +/- 165 counts (about 7 percent of the main line; about 5.5 sigma). Residual rms falls from 344 to 303 counts when it is added. Not reported by the default fitter threshold (rl_fit.py without --min-snr)."
+    }
+  ],
+  "properties": [],
+  "artifacts": [],
+  "citations": [
+    "Fig. 4 of arXiv:1201.5678 (Bi2Se3 few-quintuple-layer Raman, 10 to 250 cm-1, 488 nm; E2g, A1g1 and A1g2 positions read by eye)",
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, row 2666 Bi2Se3 R-3m; row 3497 MoTe2; row 1012 GeSe)",
+    "Mondal et al. 2025, npj 2D Mater., arXiv 2410.22164 (CrSBr Ag modes at 114, 244, 344 cm-1; used to rule out CrSBr)",
+    "Pawbake et al. 2023, Phys. Rev. B 107, 075421, arXiv 2211.12939 (CrSBr bulk Ag modes, same ruling out)"
+  ],
+  "limits": [
+    "The spectrum has one strong line (181.4 cm-1, SNR about 36) and one weak shoulder (140 cm-1). With so few lines, several DFT candidates match equally, so the material is not identified. The best guess is Bi2Se3 at low confidence (0.2).",
+    "Bi2Se3 is disfavoured. The E2g (about 131 cm-1) and A1g1 (about 72 cm-1) modes, which are the strongest lines in the Fig. 4 reference, are absent. The 532 nm excitation here differs from the 488 nm reference, but that is unlikely to remove both modes. The A1g2 position is about 6 cm-1 high of the reference value; the reference value was read by eye from a figure, not from a table. Sample thickness is unknown, so a thickness-dependent shift cannot be ruled in or out.",
+    "The matcher's missing-strong-mode penalty did not flag Bi2Se3's 72 and 131 cm-1 modes, and did not flag MoTe2's strong modes near 290 cm-1 either. This suggests the penalty is unreliable for single-line input. The ranking is therefore not treated as evidence.",
+    "CrSBr is ruled out: its Ag modes are at 114, 244 and 344 cm-1, and none is present here. Other curated materials (MoS2, WS2, MoSe2, WSe2, graphene, hBN, black phosphorus) were not directly tested by a lookup; the matcher returned no strong match for them.",
+    "A broad elevated background of about 700 to 800 counts between about 140 and 250 cm-1 sits above the decreasing trend (about 6000 counts at 60 cm-1, about 5100 at 1000 cm-1). It could be fluorescence or a broad band. It was not assigned or fitted as a peak, and the 532 nm excitation could induce photoluminescence.",
+    "Weak residual bumps at 392, 796, 848 and 888 cm-1 reach about 3 sigma in a smoothed residual. They are below the fitter threshold and are not reported as peaks.",
+    "No Si line near 520.7 cm-1 is present, so no substrate line is reported. The substrate is unknown.",
+    "No polarization data, no angle series, no layer-number relation, no reference spectrum on the same substrate and no instrument resolution were given. Layer number, strain, doping and defect density cannot be estimated. FWHM of about 8.8 cm-1 cannot be interpreted without a resolution reference.",
+    "QC found no cosmic-ray spikes and no saturation.",
+    "A tool output noted a held-out evaluation entry (Wdowik et al. 2025); I did not consult or use it."
+  ]
+}

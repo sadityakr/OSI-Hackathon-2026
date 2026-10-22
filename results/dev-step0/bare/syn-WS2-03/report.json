@@ -1,0 +1,79 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.8,
+      "evidence": "Two dominant lines at 359.7 and 426.1 cm-1 (532 nm). These sit in the WS2 E2g(\u0393)/E'(\u0393) (~356-360) and A1g/A1' (~418-426) range. The 359.7 line is equal in parallel and crossed and the 426 line appears only in parallel, which is the E / A1 selection rule of D6h/D3h. No 2LA(M) resolved at ~352."
+    },
+    {
+      "material": "1L-WS2",
+      "confidence": 0.1,
+      "evidence": "Same mode symmetries (E', A1'), so the data cannot tell monolayer from few-layer or bulk. The E'-A1' separation here is ~66 cm-1, larger than the usual ~61-65 cm-1 for monolayer and bulk WS2. This points to a calibration offset, strain, or a synthetic spectrum."
+    },
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.03,
+      "evidence": "E2g/A1g would be ~383/408 cm-1. They are not observed."
+    },
+    {
+      "material": "WSe2",
+      "confidence": 0.02,
+      "evidence": "E2g/A1g would be ~250 cm-1. Nothing is observed there."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null). The identification comes from the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 359.7,
+      "fwhm_cm1": 4.95,
+      "assignment": "E2g(\u0393) / E'(\u0393) in-plane mode of WS2, with possible overlap from 2LA(M)",
+      "irrep": "E2g (E' in the monolayer)",
+      "pattern": "isotropic_both",
+      "provenance": "measured",
+      "source": "Position and FWHM from a Lorentzian fit to the median spectrum over angles. Mode assignment and expected ~356 cm-1 from Berkdemir et al., Sci. Rep. 3, 1755 (2013), and Zhao et al., Nanoscale 5, 9677 (2013). Intensity is constant with angle (~20000 counts) in both parallel and crossed, with equal intensity in the two. Apex counts reach ~20000, so the line is slightly clipped and its amplitude and FWHM are approximate."
+    },
+    {
+      "position_cm1": 426.1,
+      "fwhm_cm1": 4.6,
+      "assignment": "A1g(\u0393) / A1'(\u0393) out-of-plane mode of WS2",
+      "irrep": "A1g (A1' in the monolayer)",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Lorentzian fit. Mode assignment and expected ~418 cm-1 from Berkdemir et al., Sci. Rep. 3, 1755 (2013). Parallel intensity is ~7000 and shows no angular modulation beyond noise (~4500-5200 at the raw peak maximum). Crossed is at the noise level (~1000-1700 counts) at every angle, so it is zero within noise."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layer_number",
+      "value": "Not determined. E' and A1' are present, but the layer-count-sensitive features (LA(M) ~176 cm-1, 2LA(M)/A1g intensity ratio, E-A1 spacing) are not clearly resolved. A tiny bump at ~177 cm-1 in parallel is at the noise level (~1070 counts against a ~960 baseline).",
+      "provenance": "inferred",
+      "source": "Berkdemir et al., Sci. Rep. 3, 1755 (2013)"
+    },
+    {
+      "name": "E-A1 separation",
+      "value": "66.4 cm-1",
+      "provenance": "measured",
+      "source": "Difference of fitted positions 426.1 and 359.7 cm-1"
+    },
+    {
+      "name": "crystal symmetry / polarization behaviour",
+      "value": "Consistent with 2H (D6h/D3h) selection rules. The A1 mode is Raman-active only in the parallel configuration and the E mode appears in both configurations equally, with no angular dependence in backscattering from the basal plane.",
+      "provenance": "literature",
+      "source": "Standard Raman tensors for D3h/D6h TMDs, e.g. Zhao et al. 2013"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Berkdemir et al., Sci. Rep. 3, 1755 (2013): identification of the Raman modes of WS2 layers",
+    "Zhao et al., Nanoscale 5, 9677 (2013): Raman modes of WS2 and polarization behaviour"
+  ],
+  "limits": [
+    "The 359.7 cm-1 peak top is slightly clipped at ~20000 counts, so its amplitude and FWHM are approximate.",
+    "Layer number cannot be determined. The weak LA(M) and 2LA(M) features are not resolved above noise.",
+    "The 66 cm-1 E-A1 spacing and the 426 cm-1 A1g position are higher than typical WS2 values (~417-421). This suggests a calibration offset or strain, and it cannot be separated from doping or a synthetic spectrum.",
+    "Other low-intensity bumps at 66, 93, 143, 177, 191 and 237 cm-1 are at the noise level (~1000-1100 counts against a ~960 baseline) and were not reported as peaks. The crossed 'peak' near 422 cm-1 is noise (fitted amplitude ~150 counts, FWHM ~1.6 cm-1).",
+    "The twofold and fourfold angular patterns were checked only on the main two peaks, and no angular modulation was detected. A very weak anisotropy is below the noise level (~5-10%).",
+    "No cosmic rays were found. The max-across-angles of the intensity near the peaks is stable, with no isolated spikes."
+  ]
+}

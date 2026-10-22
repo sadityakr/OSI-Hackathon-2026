@@ -1,0 +1,137 @@
+{
+  "candidates": [
+    {
+      "material": "Sb2Te3 (R-3m, quintuple-layer tetradymite-type)",
+      "confidence": 0.3,
+      "evidence": "Measured 165.8 cm-1 (A1g2 reference ~165, Shahil et al. arXiv:1201.5678 Fig. 5, 488 nm, ~40 nm film) and 120.3 cm-1 (Eg2 reference ~115, same figure, +5 cm-1). Mismatches: expected A1g1 ~70 cm-1 vs measured 79.7 (+10 cm-1, too large for a calibration offset), and the strongest measured band at 104.5 cm-1 has no Sb2Te3 counterpart. No Eg1 (~35 cm-1) is in the 60 cm-1 window. Partial match only."
+    },
+    {
+      "material": "WTe2 (orthorhombic Td/Td-type)",
+      "confidence": 0.1,
+      "evidence": "Jiang et al. arXiv:1501.04898 Fig. 2a (bulk, 300 K): A2^4 ~110, A1^9 ~120, A1^8 ~132, A1^6 ~141, A1^5 ~161, A1^2 ~210 cm-1. 120 and 166 cm-1 fall near A1^9 and A1^5. Inconsistent: the strong A1^2 band near 210 cm-1 is absent (only a marginal feature near 218 cm-1), and 80 and 104 cm-1 have no counterpart."
+    },
+    {
+      "material": "Bi2Te3",
+      "confidence": 0.1,
+      "evidence": "Measured 104.5 cm-1 matches Eg2 (~102-104 cm-1, Shahil et al. arXiv:1201.5678 Fig. 6a, 633 nm). The A1g2 band (~135 cm-1) is absent from the data (the only point near 138 cm-1 is a single-sample feature), and 120 and 166 cm-1 are unexplained. Inconsistent."
+    },
+    {
+      "material": "Bi2Se3",
+      "confidence": 0.05,
+      "evidence": "Reference Eg2 ~131 and A1g2 ~172-175 cm-1 (Shahil et al. arXiv:1201.5678 Fig. 6b; Kim et al. arXiv:1112.1364 abstract for A1g2 dominance). Neither band is present at those positions. Inconsistent."
+    },
+    {
+      "material": "Trigonal Te precipitates on or in a telluride",
+      "confidence": 0.05,
+      "evidence": "Manjon et al. arXiv:2102.11580 report broad anomalous bands at 119-145 cm-1 in many tellurides, attributed to trigonal Te clusters, and link them to laser heating. A band near 120 cm-1 is therefore compatible with Te segregation, but the expected Te E1 (~92 cm-1) and E2 (~140 cm-1) bands are not clearly present, and the paper does not give the Te mode positions. Not confirmed."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "dummy",
+  "peaks": [
+    {
+      "position_cm1": 79.66,
+      "fwhm_cm1": 6.82,
+      "assignment": "Tentative A1g1-type low-frequency mode (not confirmed; sits 10 cm-1 above Sb2Te3 A1g1 ~70 and close to the 60 cm-1 low-cutoff edge)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (pseudo-Voigt fit, 60-200 cm-1 window, spikes removed, +/-0.49 cm-1). Assignment inferred from Shahil et al. arXiv:1201.5678 Fig. 5 (Sb2Te3 A1g1 ~70 cm-1, 488 nm). Offset too large to be confident."
+    },
+    {
+      "position_cm1": 104.45,
+      "fwhm_cm1": 8.92,
+      "assignment": "Unassigned strong band (Bi2Te3 Eg2 ~103 cm-1 is the closest reference but is not consistent with the other bands)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from fit (+/-0.25 cm-1). Reference comparison: Shahil et al. arXiv:1201.5678 Fig. 6a (Bi2Te3, 633 nm)."
+    },
+    {
+      "position_cm1": 120.34,
+      "fwhm_cm1": 7.51,
+      "assignment": "Eg2-type in-plane mode (tentative, Sb2Te3-like)",
+      "irrep": "Eg",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (+/-0.19 cm-1). Matched to Sb2Te3 Eg2 ~115 cm-1 in Shahil et al. arXiv:1201.5678 Fig. 5 (488 nm). +5 cm-1 offset; the label is tentative because the matching is incomplete. Also falls in the 119-145 cm-1 Te-precipitate window of Manjon et al. arXiv:2102.11580."
+    },
+    {
+      "position_cm1": 165.76,
+      "fwhm_cm1": 8.49,
+      "assignment": "A1g2-type out-of-plane mode (tentative, Sb2Te3-like)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (+/-0.34 cm-1; fitted Gaussian fraction 0.6). Matched to Sb2Te3 A1g2 ~165 cm-1 in Shahil et al. arXiv:1201.5678 Fig. 5 (488 nm). Good agreement, but the other bands are unexplained."
+    },
+    {
+      "position_cm1": 446.46,
+      "fwhm_cm1": null,
+      "assignment": "Weak, unassigned feature (tentative)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Found from 31-point Savitzky-Golay smoothed trace, prominence 1229 counts. Not fitted. Close to the noise level (point-to-point scatter ~500 counts), so it may not be real."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "not determined; candidate R-3m tetradymite-type (Sb2Te3-like), unconfirmed",
+      "provenance": "inferred",
+      "source": "Partial match of 120 and 166 cm-1 to Sb2Te3 reference modes (arXiv:1201.5678 Fig. 5). Two strong bands are unexplained."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No relation applied. Layer-number signatures for these materials were not checked, and the spectrum does not show the A1u-type or thickness-dependent features used for few-quintuple films (arXiv:1003.4775, arXiv:1201.5678)."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No shift reference is available to measure strain against. Absolute frequencies are not calibrated (no Si line)."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No Raman doping indicator was checked."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No defect indicator was checked for this material class."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 785.92
+    },
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 935.79
+    }
+  ],
+  "citations": [
+    "arXiv:1201.5678 (Shahil, Hossain, Goyal, Balandin, Micro-Raman of few-quintuple Bi2Te3, Bi2Se3, Sb2Te3): Fig. 5 (Sb2Te3, 488 nm) and Fig. 6 (Bi2Te3 and Bi2Se3, 633 nm) used for reference mode positions",
+    "arXiv:1501.04898 (Jiang, Gao, Wang, Raman fingerprint of WTe2): Fig. 2a used for WTe2 bulk mode positions",
+    "arXiv:2102.11580 (Manjon et al., Anomalous Raman modes in tellurides): broad bands 119-145 cm-1 attributed to trigonal Te; used only for the Te-precipitate alternative",
+    "arXiv:1112.1364 (Kim et al., Temperature dependence of Raman-active optical phonons in Bi2Se3 and Sb2Te3): abstract only, A1g2 described as dominant mode"
+  ],
+  "limits": [
+    "Identity not established. The four strong bands fit no single candidate: Sb2Te3 matches 120 and 166 cm-1 only, and the 80 and 104 cm-1 bands are unexplained. This is a partial match, not an identification.",
+    "No DFT library ranking was run. The skill's scripts (rl_qc.py, rl_fit.py, rl.py) live outside this working folder, and I kept to the folder as instructed. The fit, spike check and peak search were done directly with numpy, scipy and lmfit on ./spectrum.csv.",
+    "The data is noisy. Point-to-point scatter is about 500 counts, and 276 of 1152 points are exactly 0.0, so the trace looks clipped at zero, probably by background subtraction on export. The fit residual RMS (about 1250 counts over 60-200 cm-1) is above the point noise, so the fitted widths and amplitudes are approximate.",
+    "The 79.7 cm-1 band sits about 20 cm-1 above the 60 cm-1 low-frequency cutoff of the data. The notch-filter edge may distort its width and position, so treat it as uncertain.",
+    "No Si reference line at 520.7 cm-1 was found, so there is no internal frequency calibration. Absolute positions could be offset by several cm-1. Sampling is 0.9 cm-1 per point and the instrumental resolution is not given, so widths below about 3 cm-1 cannot be trusted.",
+    "Weak features at 218, 255, 316, 360, 482 and 508 cm-1 were seen only after heavy smoothing and are close to the noise. They are not reported as peaks.",
+    "Reference positions are from the abstracts or figure readings of arXiv:1201.5678 and arXiv:1501.04898 (read from plots, roughly +/-2 cm-1) and from the Manjon abstract. The Sb2Te3 numbers come from a 488 nm, 40 nm film, and the Bi2Te3 and Bi2Se3 numbers from 633 nm, while this spectrum was taken at 532 nm. Resonance and thickness effects can shift relative intensities and positions.",
+    "Temperature is 295 K, so there is no low-temperature check. The laser at 532 nm is not resonant with the candidates' gap features as far as I checked, so resonance does not explain the missing bands, but this was not verified.",
+    "To settle the identity: (1) measure a reference Sb2Te3 and Bi2Te3 film at 532 nm with a Si line for calibration; (2) lower the laser power to test whether the 120 cm-1 band is trigonal Te from laser heating (arXiv:2102.11580); (3) measure a wider spectral range (to about 300 cm-1 with clear high-frequency modes) and at higher resolution; (4) check composition with EDX or XPS."
+  ]
+}

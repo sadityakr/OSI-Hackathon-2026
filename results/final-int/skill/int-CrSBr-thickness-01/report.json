@@ -1,0 +1,130 @@
+{
+  "summary": "All six flakes show the same CrSBr fingerprint: three Ag modes near 108\u2013114 (Ag1), 238\u2013244 (Ag2) and 340\u2013343 cm-1 (Ag3), with no sample Si line in the measured window. The flakes differ mainly in line widths, whether Ag1 is resolved at all, and raw Ag3 counts (about 8x range). Thickness is not measured here: no layer-number relation for CrSBr is in the library, and no AFM yet. Tentative thin-to-thick order, low confidence: A (most red-shifted Ag1, separated from the rest) < F \u2248 D \u2248 B (cluster, order not robust). C and E cannot be placed: no resolved Ag1, broad lines, and a broad hump near 103 cm-1. The AFM and a polarization check are needed before any thickness statement.",
+  "observations": [
+    {
+      "finding": "All six spectra contain the CrSBr Ag triplet (Ag1, Ag2, Ag3); identity is consistent with the reference set. Narrow-window single-Lorentzian fits: Ag1 A 108.58\u00b10.04, B 114.03\u00b10.04, D 113.31\u00b10.03, F 111.93\u00b10.05 cm-1; Ag2 A 241.49\u00b10.08, B 244.42\u00b10.04, D 243.94\u00b10.06, F 242.69\u00b10.09 cm-1; Ag3 A 341.12\u00b10.03, B 342.89\u00b10.03, D 342.07\u00b10.03, F 340.56\u00b10.04 cm-1.",
+      "evidence": "rl_fit.py with --window 95 130 (Ag1), 225 262 (Ag2), 328 356 (Ag3) on spectrum_A..F.csv; Ag1 FWHM 3.9-4.6 cm-1 in B, D, F and 7.0 in A. Reference: Mondal et al. 2025 (arXiv 2410.22164, p.2): 4L at 2.33 eV Ag1 114, Ag2 244, Ag3 344 cm-1; Pawbake et al. 2023 (arXiv 2211.12939, p.3): bulk 633 nm Ag1 117, Ag2 257, Ag3 345.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "C and E have no resolved Ag1 line. The only feature in the 95-130 window is a broad Lorentzian at 103.42 cm-1 (FWHM 9.9 in C, 11.0 in E), roughly 2-3x wider than the Ag1 lines in B, D, F. Ag2 is also broad (8.1 and 7.8 cm-1) and shifted down to 238.3 and 238.7 cm-1. Ag3 is at 340.8 (C) and 340.2 (E).",
+      "evidence": "rl_fit windowed fits on C and E; visual check of fit_C/fit.png and series.png: no sharp peak near 110-115 cm-1 in C or E.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Ag1 spread across the set is 5.44 cm-1 (A to B), comparable to the 1L-to-bulk Ag1 span in Torres et al. (about 107 vs 113 cm-1, read from Fig. 1h, +-1 cm-1). Ag1 redshifts as layer number decreases, but the source gives only the direction and an approximate magnitude, measured with 1.58 eV resonant excitation rather than 2.33 eV.",
+      "evidence": "Ag1 positions from the window fits above; Ag1 minus Ag3 separation A 232.54, B 228.86, D 228.76, F 228.63 cm-1 (fit errors about 0.05 cm-1). Ag1 minus Ag3 cancels a rigid calibration offset, so A is the outlier in the calibration-free measure.",
+      "provenance": "literature",
+      "source": "Torres et al. 2022 (arXiv 2212.01754, Fig. 1h, read from plot, p.3); Ye et al. 2022 (ACS Nano 16, 11876, doi:10.1021/acsnano.2c01151, corpus p.6) for the same downshift trend."
+    },
+    {
+      "finding": "Ag3 is nearly layer-independent in the literature, but here it spans 340.17 to 342.89 cm-1 (2.7 cm-1) across the six flakes at identical settings. That scatter is larger than the fit errors and points to calibration drift between acquisitions, flake-to-flake strain, or spot differences rather than thickness. No Si reference is in the measured window to check it.",
+      "evidence": "Ag3 positions above; QC si_line null (window 50.8-430.8 cm-1, Si 520 cm-1 outside it); rl_series --si-correct made no correction (notes: no Si line found for all six).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Flake B matches the 4-layer reference at 2.33 eV on 85 nm SiO2/Si (Ag1 114.0 vs 114, Ag2 244.4 vs 244, Ag3 342.9 vs 344). This is a consistency check, not a layer number: the match is within the calibration scatter, and Ag1 also changes with laser energy and substrate.",
+      "evidence": "B window fits vs Mondal et al. 2025 p.2 values.",
+      "provenance": "literature",
+      "source": "Mondal et al. 2025 (arXiv 2410.22164, p.2)."
+    },
+    {
+      "finding": "Line widths separate the set: B and D are sharpest (Ag3 FWHM 4.1 and 4.6 cm-1), F intermediate (5.5), A broader (6.8), and C and E broadest (7.1 and 7.0). Raw Ag3 counts vary about 8x (B 2.3k, C 1.2k, E 3.5k, D 10.5k, A 13.5k, F 18.0k) at identical settings, so counts do not map to thickness.",
+      "evidence": "Ag3 window fits: FWHM and height; point spacing is 1.22 cm-1, so FWHM near 4 cm-1 is only about 3 points and may be instrument-limited (resolution not supplied).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A weak band near 301-302 cm-1 appears in A, C, E and F but not in B or D. In normal-incidence backscattering the 301 cm-1 B2g mode should be absent: it appears only in a 60-degree tilted sample, per Pawbake et al. 2023 (p.3, Fig. 1c). Its presence needs an explanation, such as objective NA leakage, a tilted or wrinkled flake, or Si 2TA; it is not a thickness marker.",
+      "evidence": "Full-window fits: 302.3 cm-1 (C, FWHM 11.0, height 238), 302.1 (E, FWHM 12.2, height 720), 301.6 (A, height 435), 301.2 (F, height 189); none resolved in B or D.",
+      "provenance": "literature",
+      "source": "Pawbake et al. 2023 (arXiv 2211.12939, p.3, Fig. 1c); Grosche et al. 2020 (Opt. Express, doi 10.1364/OE.388943, via general-measurement note) for NA leakage."
+    },
+    {
+      "finding": "The steep rise between about 65 and 80 cm-1 in every spectrum looks like the low-wavenumber edge filter. The broad humps at 85 cm-1 (A, F) and about 100 cm-1 (C, E) sit on that edge, so they cannot yet be assigned to a sample mode. For C and E, the 103 cm-1 hump is 8-10 cm-1 below the expected Ag1 position, which is where a D1 defect shoulder would sit (Torres 2022 p.4-5), but a filter-edge or background explanation is equally possible.",
+      "evidence": "Raw spectra in series.png; fit_F residual of about -4000 counts at 50-110 cm-1 from the broad-Lorentzian fit; fit_D residual positive at 70-180 cm-1.",
+      "provenance": "inferred",
+      "source": "reference/artifacts.md (low-wavenumber cutoff); Torres et al. 2022 (arXiv 2212.01754, p.4-5) for D1."
+    },
+    {
+      "finding": "D shows a 1.7 cm-1 doublet in its full-window Ag3 fit (341.48 and 343.21 cm-1) and an over-fitted Ag2 triplet (241.7, 243.5, 245.3 cm-1 with errors up to 4 cm-1). A single-Lorentzian refit gives Ag2 243.94 and Ag3 342.07, but the residual still shows structure at the top of Ag3, so a real doublet (two domains or a strain gradient within the spot) is possible.",
+      "evidence": "fit_D/fit.png and win_ag3_D/fit.png residuals; the window fit is 342.07 with FWHM 4.6 and a systematic of about 0.8 cm-1 from the doublet ambiguity.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "undetermined by Raman in this dataset; ordering only: A thinnest candidate (Ag1 108.58 cm-1, Ag1-Ag3 separation 232.5 cm-1, outlier by about 3.7 cm-1 from the others), F \u2248 D \u2248 B cluster (Ag1 111.9-114.0 cm-1, Ag1-Ag3 228.6-228.9 cm-1, not separable), C and E not placed",
+      "provenance": "inferred",
+      "source": "Torres 2022 (arXiv 2212.01754, Fig. 1h, read from plot); Ye 2022 (ACS Nano 16, 11876); AFM not yet analysed (user)"
+    },
+    {
+      "name": "phase",
+      "value": "orthorhombic CrSBr (Pmmn, D2h); assumed from the material, not measured",
+      "provenance": "literature",
+      "source": "Pawbake et al. 2023 (arXiv 2211.12939, p.1-2)"
+    },
+    {
+      "name": "defect_level",
+      "value": "low for B and D (sharpest Ag lines, no D1-like shoulder resolved); elevated or uncertain for A, C and E (broader lines; C and E lack a resolved Ag1 and show a broad hump near 103 cm-1); medium uncertainty for F",
+      "provenance": "inferred",
+      "source": "Torres 2022 (arXiv 2212.01754, p.4-5, D1 and D3 descriptions)"
+    },
+    {
+      "name": "magnetic_state",
+      "value": "paramagnetic at 295 K; no magnetic-order Raman feature expected (T_C about 160-165 K)",
+      "provenance": "literature",
+      "source": "Torres 2022 (arXiv 2212.01754, p.8); Pawbake 2023 (arXiv 2211.12939, p.1); Markina et al. 2026 (npj Quantum Mater. 11, 11, doi:10.1038/s41535-026-00850-2)"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none determined; Ag3 position scatter (2.7 cm-1) is not interpretable without a calibration reference",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Absolute layer number cannot come from these data. The only validated CrSBr thickness trend in the notes is qualitative (Ag1 and Ag2 redshift as layers are removed, Ag3 flat), and the quantitative Ag1 magnitude comes from a 1.58 eV resonant plot read to about 1 cm-1. Optical contrast or AFM is the right method (Ye 2022, corpus p.5). The AFM you have not analysed yet is the decisive check.",
+    "The substrate was not stated. I assumed SiO2/Si (the note's reference substrate is 85 nm SiO2/Si; your 'marked substrate' may differ). Oxide thickness is unknown, so intensity ratios and absolute counts are interference-dependent and were not used for ranking.",
+    "No Si reference is inside the measured window (50.8-430.8 cm-1, so Si 520 cm-1 is excluded). The --si-correct flag therefore did nothing, and absolute positions carry an unknown calibration offset. Only differences between flakes measured in one session are meaningful, and even these carry a systematic of order a few tenths to about 1 cm-1 (Lee et al. 2012, Nat. Commun. 3, 1024, Methods p.10).",
+    "The Ag1 and Ag2 positions differ between literature sources by several cm-1 (Ag2 244 at 4L, 2.33 eV, vs 257 for bulk at 633 nm; Pawbake 2023 vs Mondal 2025), and Ag2 also switches with laser energy and crystal axis. Ag2 is therefore a weaker thickness marker here than Ag1, and I did not use Ag2 to set the ranking beyond a consistency check.",
+    "Polarization geometry is unknown. Ag1 and Ag3 are maximal with E parallel to b, and Ag2 is maximal along a at 2.33 eV (Mondal 2025). If C and E sit with b perpendicular to the laser polarization, Ag1 and Ag3 would be suppressed without any thickness change, which may explain their weak Ag1 and low counts. An angle series on C and E would separate orientation from thickness or quality.",
+    "The spectral sampling is 1.22 cm-1 per point and the instrument resolution was not supplied. FWHM values near 4 cm-1 (B, D) are only about 3 points wide and may be partly instrument-limited, so width differences of about 1 cm-1 are not significant.",
+    "Only the 50-431 cm-1 window was measured. Second-order bands (370-780 cm-1, which Pawbake 2023 reports below about 160 K), the D3 region near 350 cm-1, and the Si 520 line were not checked. Absence in this window is not evidence of absence.",
+    "Laser power density, spot size, numerical aperture and exposure time were not given. Laser heating and photodamage cannot be excluded. A power series on one flake would test heating (Ag3 and Ag1 softening) and damage (irreversible change), per the general-measurement note.",
+    "The fit scripts wrote output into the data folder: series.png, and fit_A to fit_F and win_ag1_*, win_ag2_*, win_ag3_* subfolders with fit.png and peaks.json. Delete them if you do not want them there.",
+    "Ag3 is the only mode the literature says is nearly thickness-independent, so its 2.7 cm-1 scatter is my main evidence that calibration or flake-to-flake strain differs between the six acquisitions. This has not been checked against a Si or Ne reference."
+  ],
+  "questions_for_user": [
+    "AFM heights for flakes A to F. This is the only route to layer number. The Raman ordering here is a hypothesis to test against it, and it is not yet a thickness result.",
+    "Did you acquire a Si reference in the same session, and can you extend the spectra to about 600 cm-1? That gives a calibration offset for Ag3 and a Si-normalised intensity, and brings the second-order region into view.",
+    "What substrate and oxide thickness did you use? Interference on SiO2/Si changes absolute counts by large factors (Yoon et al. 2009, PRB 80, 125422), so counts cannot rank the flakes without it.",
+    "What is the laser polarization relative to the flake's long edge (a axis) and what was the orientation of each flake? An angle series on C and E would show whether their weak Ag1 and Ag3 is orientation or thickness.",
+    "How long were the flakes exposed to air between exfoliation or transfer and measurement? Thin CrSBr degrades in air, and the broad, Ag1-depleted spectra in C and E could be degradation (Torres 2022, p.4-5).",
+    "What is the instrument resolution (Rayleigh line width at 532 nm) and the power density at the sample? These decide whether B and D's 4 cm-1 widths are real and whether heating is a concern at 200 uW.",
+    "Were all six spectra taken from one spot per flake, and in what order? Acquisition order and drift would explain part of the 2.7 cm-1 Ag3 scatter."
+  ],
+  "citations": [
+    "Torres et al. 2022, arXiv 2212.01754, Fig. 1h (layer dependence, read from plot), p.2-5 (D1/D3 defects, air stability), p.8 (T_C and polarization of thin-flake modes)",
+    "Mondal et al. 2025, npj 2D Mater., arXiv 2410.22164, p.2 (4L Ag1 114, Ag2 244, Ag3 344 cm-1 at 2.33 eV on 85 nm SiO2/Si), p.3-4 (axis and polarization of Ag1, Ag2, Ag3)",
+    "Pawbake et al. 2023, Phys. Rev. B 107, 075421, arXiv 2211.12939, p.1-2 (structure, T_C and T_N), p.3 (bulk Ag values, 633 nm; B2g only with 60-degree tilt, Fig. 1c)",
+    "Ye et al. 2022, ACS Nano 16, 11876, doi:10.1021/acsnano.2c01151, corpus p.5-6 (layer dependence; optical contrast or AFM preferred for layer number)",
+    "Lee et al. 2012, Nat. Commun. 3, 1024, arXiv 1209.0234, Methods p.10 (first-order calibration error and quadratic correction)",
+    "Grosche et al. 2020, Opt. Express, doi:10.1364/OE.388943 (tight-focus longitudinal field leakage; via general-measurement note, magnitude not verified)",
+    "Yoon et al. 2009, PRB 80, 125422, arXiv 0908.4322 (SiO2 interference changes intensity ratios; via artifacts note)",
+    "Markina et al. 2026, npj Quantum Materials 11, 11, doi:10.1038/s41535-026-00850-2 (T_C about 165 K, T_N about 132 K; corpus p.3)"
+  ],
+  "limits": [
+    "Thickness of each flake is not determined. The ranking is a tentative ordering from Ag1 position and Ag1-Ag3 separation, not a layer count.",
+    "The ordering among B, D and F (Ag1 111.9 to 114.0 cm-1) is within the plausible calibration scatter (Ag3 spread 2.7 cm-1) and is not robust.",
+    "C and E could not be placed: no resolved Ag1 line and broad Ag2. Their broad lines and missing Ag1 are consistent with thin or degraded flakes, with orientation effects, or with a filter-edge artifact, and the data alone cannot pick one.",
+    "The relation library has no validated layer-number relation for CrSBr. The only applicable relation (mode-axis assignment) needs an angle series, which was not measured, so it was not applied.",
+    "No polarization data, no Si or other calibration reference, no substrate thickness, no AFM, no power density and no resolution figure were supplied. Each limits the thickness and calibration statements above.",
+    "Mode assignments use the curated CrSBr reference set (Ag1, Ag2, Ag3). B2g assignments are excluded for normal incidence. The 302 cm-1 band is flagged as unexplained rather than assigned."
+  ]
+}

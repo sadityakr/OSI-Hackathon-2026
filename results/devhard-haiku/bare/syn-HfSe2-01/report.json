@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "material": "1T-HfSe2",
+      "confidence": 0.2,
+      "evidence": "One strong, real mode near 197 cm-1 (FWHM about 3.8 cm-1) and one weak mode near 150 cm-1 are consistent in broad terms with a 1T group-IV dichalcogenide. I could not check exact literature positions against a reference here, so this is a guess, not an identification."
+    },
+    {
+      "material": "1T-ZrSe2",
+      "confidence": 0.1,
+      "evidence": "Same structural family as HfSe2 with lattice modes in a similar range. The 197 cm-1 position is not verified against any reference spectrum, so this is a low-confidence alternative only."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is no stated material to verify. The spectrum contains only two real features: a strong mode at 197.1 cm-1 and a weak mode near 150 cm-1, plus the Si substrate line at 521.1 cm-1. Two modes are not enough to identify a material from my own knowledge. I have no reference library here to match positions against, so the candidates below are low-confidence guesses.",
+  "peaks": [
+    {
+      "position_cm1": 197.1,
+      "fwhm_cm1": 3.8,
+      "assignment": "Unassigned strong mode of the sample (candidate host-lattice mode; no firm assignment)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Pseudo-Voigt fit (lmfit) over 185-212 cm-1; fitted amplitude about 10,350 counts over a ~3,000-count baseline, SNR about 35 against ~280-count point-to-point noise. The assignment is inferred and was not matched against any literature value here. The peak is about 7 points wide, so it is not a cosmic-ray spike."
+    },
+    {
+      "position_cm1": 150,
+      "fwhm_cm1": 5.7,
+      "assignment": "Unassigned weak mode of the sample (inferred real; no firm assignment)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Gaussian-shaped fit over 135-165 cm-1; height about 940 counts. Four or five consecutive points sit about 1,000 counts above the local baseline (about 3.5 sigma per point), so the feature is probably real. It is weak and close to the noise, so it needs confirmation with a longer acquisition."
+    },
+    {
+      "position_cm1": 521.1,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "First-order Si optical phonon, about 520.7 cm-1 at room temperature (standard Si calibration value; no specific paper retrieved). The measured position is 521.1 cm-1, so the calibration offset is about +0.4 cm-1. The 197.1 cm-1 position corrected by this offset is about 196.7 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Only two sample modes are above the noise, and no reference spectrum was available to match them."
+    },
+    {
+      "name": "calibration_offset_cm1",
+      "value": "+0.4 (measured Si at 521.1 vs 520.7 reference)",
+      "provenance": "measured",
+      "source": "Si substrate line fit in this spectrum, compared against the standard room-temperature Si value."
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "The spectrum starts at 60 cm-1, so the low-frequency shear and breathing modes that would indicate layer number are not measured."
+    },
+    {
+      "name": "defect_level",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "No defect-related bands (for example the SiO2 D-bands near 490 and 600 cm-1) are visible above the noise."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Standard room-temperature Si calibration value of about 520.7 cm-1 for the first-order Si phonon (no specific paper retrieved for this run)."
+  ],
+  "limits": [
+    "The material is not identified. The sample modes are one strong mode at 197.1 cm-1 and one weak mode near 150 cm-1, which is too few to match against a known material without a reference spectrum or literature positions, and I do not have either here.",
+    "Point-to-point noise is about 9.5% of the signal level (about 280 counts). Only the 197 cm-1 mode is clearly above the noise. The 150 cm-1 feature is about 3.5 sigma per point and needs confirmation.",
+    "The spectrum covers 60 to 1100 cm-1 only. The low-frequency shear and breathing modes, which are the usual indicators of layer number in van der Waals materials, are not measured.",
+    "No polarization dependence was measured (single spectrum), so no mode symmetry (irrep) can be assigned.",
+    "The directory name is not used as evidence. The metadata gives no material hint, so this is a blind identification.",
+    "Other 532 nm laser plasma lines or residual instrument lines were not explicitly ruled out for the 197 cm-1 feature. Its width matches the Si line, which argues for a real sample mode, but I did not verify this independently.",
+    "The Si calibration offset of about +0.4 cm-1 is a single-line estimate and carries an uncertainty of about 0.5 cm-1, so absolute sample positions are only good to roughly that level."
+  ]
+}

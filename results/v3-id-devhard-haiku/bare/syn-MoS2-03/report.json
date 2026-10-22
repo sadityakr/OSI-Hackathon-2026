@@ -1,0 +1,110 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.93,
+      "evidence": "Two Lorentzian-shaped modes at 383.8 and 403.3 cm-1 (E2g1/E' and A1g/A1') with splitting 19.5 cm-1, plus Si at 520.9 cm-1. This pair is the textbook MoS2 fingerprint (literature ~383-385 and ~403-409 cm-1). Other TMDs are excluded: WS2 has its E' near 356 cm-1 and A1g near 420, and MoSe2 has its A1g near 241 cm-1, neither of which is present."
+    },
+    {
+      "material": "1L-MoS2 (monolayer, 2H)",
+      "confidence": 0.6,
+      "evidence": "Splitting Delta = 19.5 cm-1, which sits at the monolayer value (about 19-20 cm-1 in the literature). Bilayer would be about 21 cm-1 and bulk about 25 cm-1. The margin to bilayer is about 1.5 cm-1, so bilayer is not fully excluded given strain or doping shifts."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was supplied (material_hint is null), so the identification rests only on the peak set. The measured spectrum (E2g/E' near 384 cm-1 and A1g near 403 cm-1, separated by about 19.5 cm-1, plus a Si line at 520.9 cm-1 from the SiO2/Si substrate) matches MoS2. The task is identify, so no verify comparison applies.",
+  "peaks": [
+    {
+      "position_cm1": 520.91,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Si first-order optical phonon, literature ~520.7 cm-1 at room temperature (Temple & Hathaway, PRB 7, 3685, 1973). Measured value sits about +0.2 cm-1 above this, which is the calibration offset used for the reference."
+    },
+    {
+      "position_cm1": 383.81,
+      "fwhm_cm1": 2.04,
+      "assignment": "E' (monolayer) / E2g^1 (bulk) in-plane Mo-S mode",
+      "irrep": "E' (1L) / E2g^1 (bulk)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment from literature: Lee et al., ACS Nano 4, 2695 (2010); Mak et al., PRL 105, 136805 (2010). Position and width are from a Lorentzian fit. Non-angle-resolved data, so no polarization classification."
+    },
+    {
+      "position_cm1": 403.29,
+      "fwhm_cm1": 3.87,
+      "assignment": "A1' (monolayer) / A1g (bulk) out-of-plane S-Mo-S mode",
+      "irrep": "A1' (1L) / A1g (bulk)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Assignment from literature: Lee et al., ACS Nano 4, 2695 (2010); Mak et al., PRL 105, 136805 (2010). Position and width are from a Lorentzian fit. Non-angle-resolved data, so no polarization classification."
+    },
+    {
+      "position_cm1": 178.5,
+      "fwhm_cm1": 2.58,
+      "assignment": "LA(M) longitudinal acoustic phonon at M, activated by disorder or finite-size effects",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Assignment by inference from literature (approximately 175-180 cm-1 in MoS2 at 532 nm; e.g. Mignuzzi et al., PRB 91, 195411, 2015). Height about 250 counts against a fit noise of about 145 counts per pixel, so this is weak and only moderately confident."
+    }
+  ],
+  "properties": [
+    {
+      "name": "material",
+      "value": "MoS2 (2H polytype)",
+      "provenance": "inferred",
+      "source": "Peak positions and splitting match MoS2 literature values (Lee et al., ACS Nano 4, 2695, 2010; Mak et al., PRL 105, 136805, 2010)."
+    },
+    {
+      "name": "layers",
+      "value": "1",
+      "provenance": "inferred",
+      "source": "A1'-E' splitting Delta = 19.48 cm-1 (measured) compared with literature values of about 19-20 cm-1 for monolayer, 21-22 for bilayer, and 25 for bulk (Lee et al. 2010; Li et al., Adv. Funct. Mater. 22, 1385, 2012). Moderate confidence because the value is close to the bilayer boundary."
+    },
+    {
+      "name": "A1g_minus_E2g_splitting_cm1",
+      "value": "19.5",
+      "provenance": "measured",
+      "source": "Difference between Lorentzian centres 403.29 and 383.81 cm-1. Calibration-independent, because both peaks shift together with any calibration offset."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Weak LA(M) shoulder present, but the D-band region at about 1350 cm-1 was not in the measured window. Defect activation cannot be judged reliably."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Absolute positions are about 1-1.5 cm-1 below typical monolayer literature values. Both modes shift in the same direction, which could reflect strain, doping, or substrate effects, so this is not a confident strain assignment."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_suspect_single_pixel",
+      "position_cm1": 453.52
+    }
+  ],
+  "citations": [
+    "Lee C. et al., ACS Nano 4, 2695 (2010) - MoS2 Raman mode assignment and E'/A1' splitting vs layer number",
+    "Mak K.F. et al., PRL 105, 136805 (2010) - Atomically thin MoS2 Raman signature",
+    "Li H. et al., Adv. Funct. Mater. 22, 1385 (2012) - layer-number dependence of the A1g-E2g splitting",
+    "Mignuzzi S. et al., PRB 91, 195411 (2015) - LA(M) and 2LA(M) features in MoS2",
+    "Temple P.A., Hathaway C.E., PRB 7, 3685 (1973) - Si first-order Raman line near 520 cm-1"
+  ],
+  "limits": [
+    "Layer count rests on one number, the A1'-E' splitting of 19.5 cm-1. This sits between the monolayer (about 19-20) and bilayer (about 21) literature values, so the call is monolayer with moderate confidence. Strain, doping, substrate, laser heating and the choice of literature reference can each shift the splitting by about 1 cm-1. Bilayer is not fully excluded.",
+    "The low-frequency shear and layer-breathing modes (roughly 20-50 cm-1, the best direct discriminator of thickness) lie below the 150 cm-1 start of the window, so they cannot be checked here. The D-band region (about 1350 cm-1) is also outside the window.",
+    "Linewidths are not a reliable layer discriminator here. The E2g/E' peak fits to FWHM 2.0 cm-1, narrower than the Si reference line at 3.5 cm-1, which is unusual because the instrument resolution sets a lower limit on width. The fit is a single Lorentzian, so the width is fit-dependent. Positions and the splitting are robust (centre errors about 0.02-0.05 cm-1).",
+    "The absolute mode positions (E' at 383.8, A1' at 403.3) are about 1-1.5 cm-1 below typical monolayer values, while the Si line reads about 0.2 cm-1 high. The offset was not applied to the reported positions. The splitting is unaffected by it.",
+    "Polarization selection rules were not tested (single unpolarized spectrum, no angle series), so no polarization class is assigned.",
+    "E1g (about 286-288 cm-1) is forbidden for backscattering along the layer normal in this geometry, so its absence is expected and does not argue against MoS2. Weak single-point bumps near 256 and 291 cm-1, and near 630 cm-1, are narrower than one pixel (0.68 cm-1) or have amplitudes within noise. They were not assigned.",
+    "The 2LA(M) feature (about 450-455 cm-1, literature for 532 nm) is not reliably detected. The only candidate at 453.5 cm-1 is a single-pixel excursion of about 600 counts above its neighbours, most likely a cosmic-ray hit, and was listed as an artifact instead of a peak. The 178.5 cm-1 LA(M) assignment is weak and moderate in confidence.",
+    "The broad sloped background (about 2300 counts at 160 cm-1 rising to about 4000 near 400 cm-1) was not modelled. It may be photoluminescence or substrate contribution and could affect absolute intensities, but not the peak positions. Intensity ratios were not used.",
+    "Temperature (295 K) and laser (532 nm) are taken from the metadata. Positions are referenced to literature at these conditions. A different laser wavelength would change the expected splitting and the monolayer/bilayer boundary."
+  ]
+}

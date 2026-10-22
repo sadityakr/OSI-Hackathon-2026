@@ -1,0 +1,121 @@
+{
+  "candidates": [
+    {
+      "material": "C (monolayer graphene)",
+      "confidence": 0.88,
+      "evidence": "Three bands at 1347.8 (D), 1581.2 (G) and 2699.0 (2D) cm-1. The library matcher gives C top (score 0.87) from the Lee 2012 table: G 1581.2 vs 1589.5 and 2D 2699.0 vs 2690.3, scale 1.005. The 2D is one Lorentzian with FWHM 25.4 cm-1 (turbostratic graphite is about 50), and I2D/IG = 2.8 by height (5.7 by area). The D band is the expected defect-activated line and is absent from the literature table, so it is unmatched there."
+    },
+    {
+      "material": "C (few-layer graphene / turbostratic graphite)",
+      "confidence": 0.07,
+      "evidence": "Not supported: the 2D FWHM of 25.4 cm-1 is far below turbostratic (about 50), and a single 2D component with I2D/IG near 3 is the monolayer pattern (Ferrari et al. 2006). Bilayer would need four 2D components; the refit window gives one."
+    },
+    {
+      "material": "H4O3Sr (CRD entry 2171)",
+      "confidence": 0.02,
+      "evidence": "Rejected: only the 2D band matches (2709.7 vs 2699 after a 1.049 scale), the D and G bands are unexplained, and the scale is at the edge of the allowed range for a DFT entry. The score of 0.63 is an artefact of matching a single band."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identify task. The three-band pattern (D about 1348, G about 1581, 2D about 2699 cm-1 at 532 nm) with a single sharp 2D is the graphene signature. The best library match is literature graphene (C), with D unmatched because the literature table omits it. The CRD matches are poor (single-band matches with unexplained strong modes).",
+  "peaks": [
+    {
+      "position_cm1": 1347.85,
+      "fwhm_cm1": 12.9,
+      "assignment": "D (defect-activated double-resonance band, A1' breathing mode near K)",
+      "irrep": "A1'",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit (fwhm error 1.2 cm-1, position error 0.4 cm-1). Assignment: Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856) for the D band as a defect-activated double-resonance line. Irrep A1' (D3h) is inferred from standard graphene labelling, not from the reference note. Width is unusually narrow for a D band."
+    },
+    {
+      "position_cm1": 1581.21,
+      "fwhm_cm1": 12.8,
+      "assignment": "G (zone-centre E2g in bulk, E2' in D3h monolayer)",
+      "irrep": "E2g (bulk D6h) / E2' (monolayer D3h)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit (position error 0.06 cm-1, FWHM error 0.18 cm-1). Assignment: Ferrari et al. 2006, PRL 97, 187401 (arXiv cond-mat/0606284, p.2); graphene reference entry (Lee et al. 2012, Nat. Commun. 3, 1024, arXiv 1209.0234, origin 1581.6 cm-1 at 514.5 nm)."
+    },
+    {
+      "position_cm1": 2699,
+      "fwhm_cm1": 25.4,
+      "assignment": "2D (second-order double-resonance band, iTO phonon near K)",
+      "irrep": "A1' (D3h, inferred)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit (position error 0.07 cm-1, FWHM error 0.23 cm-1). Windowed refit (2550-2900 cm-1) gives 2699.0 and 25.7 cm-1. Assignment: Ferrari et al. 2006 (arXiv cond-mat/0606284, p.2) for a single sharp 2D in monolayer graphene; irrep inferred."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "graphene (C, sp2 honeycomb)",
+      "provenance": "inferred",
+      "source": "Band set D/G/2D and library match C (literature graphene table, score 0.87)."
+    },
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "graphene_layers_from_2D_shape relation: one 2D component with FWHM 25.4 cm-1 and I2D/IG about 2.8 (height). Ferrari et al. 2006 (arXiv cond-mat/0606284, p.2). Confidence high per the relation. The 2D/G height ratio is below the textbook 4x monolayer value, so the call rests on the line shape and width, not the ratio."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "I_D/I_G = 0.158 (heights) and FWHM(G) = 12.8 cm-1, which is at or below the about 14 cm-1 stage-1 value. Cancado et al. 2011 (arXiv 1105.0175, p.5, Fig. 5c). Low-defect branch assumed."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "30 +/- 4 (relation constant only; about +/-1 from the I_D/I_G fit error)",
+      "provenance": "inferred",
+      "source": "graphene_defect_distance_from_ID_IG (Cancado et al. 2011, Nano Lett. 11, 3190, Eq. 4, arXiv 1105.0175), with lambda = 532 nm and heights as inputs. Validity: L_D >= 10 nm (satisfied). Stage-1 branch assumed; see limits."
+    },
+    {
+      "name": "n_D_cm2",
+      "value": "3.5e10 cm-2",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011 Eq. 6, via the same relation output."
+    },
+    {
+      "name": "defect_type",
+      "value": "undetermined (point-type defects assumed by the L_D relation; vacancy, sp3 and boundary types not separable)",
+      "provenance": "inferred",
+      "source": "Eckmann et al. 2012 (arXiv 1207.2058) needs I(D)/I(D'). No D' peak is resolved: the 1590-1640 cm-1 region is the G wing (max 1590.9 cm-1), so the ratio cannot be formed."
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "graphene_strain_doping_from_G_2D is valid only at 513-516 nm; this spectrum is at 532 nm, so the relation was not applied. G (1581.2) sits near the strain-free origin (1581.6 cm-1 at 514.5 nm), but the 2D position is about 20-30 cm-1 above what a 514-nm origin plus dispersion predicts (Lee et al. 2012, arXiv 1209.0234)."
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "Lee et al. 2012 (arXiv 1209.0234) relation out of range (532 nm). The 2D upshift with a reduced I2D/IG is compatible with hole doping (Das et al. 2008, arXiv 0709.1174), but a single spectrum cannot separate this from calibration or laser dispersion."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari, A. C. et al. 2006, Phys. Rev. Lett. 97, 187401 (arXiv cond-mat/0606284), p.2: 1L 2D single sharp peak, 2D/G about 4, bilayer and bulk 2D components",
+    "Ferrari, A. C. & Basko, D. M. 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856): D band as defect-activated double resonance; turbostratic 2D width",
+    "Cancado, L. G. et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175), Eqs. 3-6 and Fig. 5c: L_D from I_D/I_G at 532 nm; stage-1 FWHM(G) about 14 cm-1",
+    "Lee, J.-U. et al. 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234): graphene reference origin (1581.6, 2676.9) cm-1 at 514.5 nm; strain-doping relation (513-516 nm validity)",
+    "Neumann, C. et al. 2015, Nat. Commun. 6, 8429 (arXiv 1406.7771): FWHM(2D) above 22 cm-1 typical on SiO2 versus 16-20 on hBN",
+    "Yoon, D. et al. 2009, PRB 80, 125422 (arXiv 0908.4322): I2D/IG depends strongly on SiO2 thickness",
+    "Das, A. et al. 2008, Nat. Nanotechnol. 3, 210 (arXiv 0709.1174): doping effects on G and 2D intensity and position"
+  ],
+  "limits": [
+    "Identity: the three bands and a single 2D line support monolayer graphene, but only the 1100-3000 cm-1 window was measured. The low-frequency shear and breathing modes (the best layer-number test) and the 2D' band (about 3240 cm-1) are outside the data, so layer number rests on the 2D shape alone. The 2D/G ratio (2.8 height) is below the 4x rule, which can reflect doping or substrate interference.",
+    "Defect density: L_D = 30 nm comes from I_D/I_G = 0.158 using the stage-1 (low-defect) branch of Cancado 2011. The same ratio also fits a high-defect (stage-2, L_D below about 3 nm) branch that this relation does not cover, so the choice is decided by FWHM(G). FWHM(G) = 12.8 cm-1 favours stage 1, but the D band width (12.9 cm-1) is about the same as G, which the reference note lists as a sign of the high-defect branch. Confidence in L_D is therefore moderate. The stated +/-4 nm is the relation's constant uncertainty; the fit error on I_D/I_G adds only about +/-1 nm.",
+    "Defect type: not determinable. I(D)/I(D') needs a resolved D' band, and the 1590-1640 cm-1 region is dominated by the G wing (no D' peak was fitted). The 2D+D' combination near 2930 cm-1 shows at most a weak bump that is not significant at this signal-to-noise, so it was not used. Point-defect (sp3/vacancy/boundary) classes cannot be separated from this spectrum.",
+    "Strain and doping: the strain-doping decomposition is valid only at 513-516 nm and this spectrum is at 532 nm, so it was not applied. G is close to the strain-free origin, but the 2D is about 20-30 cm-1 above what a 514.5-nm origin plus about 100 cm-1/eV dispersion would give. Hole doping, calibration and dispersion coefficients cannot be separated from one spectrum. Doping type is undetermined.",
+    "Fit quality: the residual of the full-range fit has a dispersive pattern of about +/-900 counts (about 5 percent of the 2D height) on the 2D flanks (2550-2800 cm-1). A window-only single-Lorentzian refit gives the same 2D position and width (25.7 cm-1), so no second component was resolved. A peak-shape mismatch (not a bilayer 2D) is the likely cause, but this was not tested with alternative line shapes.",
+    "Substrate and environment: the substrate is SiO2/Si with unknown oxide thickness. Intensity ratios (I_D/I_G, I_2D/I_G) depend on oxide thickness through interference, so the ratios are only comparative; absolute intensities cannot give thickness or coverage. The laser was 532 nm at 295 K; laser heating at the sample was not characterised (power unknown), so position offsets of 1-3 cm-1 may include heating.",
+    "Calibration: the data start at 1100 cm-1, so the Si first-order line (about 520.7 cm-1) and its second-order features are outside the window and were not assessed. No calibration check was possible, so positions carry an unquantified offset of a few tenths of a cm-1 or more.",
+    "No polarization, angle-series or temperature information was given, so no polarization classes were assigned and the D-band edge versus point-defect origin was not tested (D-band polarization, Ferrari and Basko 2013).",
+    "Literature: no Valency or iopic-bond search was run; references are those already in the skill's reference notes and were not checked against the original papers beyond the notes' locators."
+  ]
+}

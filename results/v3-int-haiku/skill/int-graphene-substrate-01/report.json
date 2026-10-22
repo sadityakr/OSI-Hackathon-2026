@@ -1,0 +1,136 @@
+{
+  "summary": "Graphene is the most likely identity on both metals, but the evidence is strong on Au and weak on Cu. On Au, a sharp G (1580.3 cm-1) and 2D (2681.1 cm-1) sit with a strong D band (I_D/I_G about 0.95 by height). The 2D is a single Lorentzian at 2.9x the G height (4.2x by area): monolayer-compatible, but below the ~4x rule and broad (FWHM 36.6 cm-1), so the layer number is not fixed. On Cu, G (1580.4 +/- 2.7 cm-1, height 22) and 2D (2695.7 cm-1, height 48) are present but close to the noise (SNR about 9) on a strong background. Two unassigned lines (2326 narrow, 2436 broad) do not fit graphene, so the Cu identification rests on the 2D-G pair and the matcher ranking rather than a clean G band. The spectra differ for three reasons, most likely in this order: (1) they are not directly comparable as recorded (laser wavelength missing, no Si or other calibration reference, different setups: MicroReactor vs UHV); (2) Au carries much more defect signal and has a higher SNR; (3) Cu has a stronger background and a lower signal. The 2D positions differ by 14.6 +/- 1.3 cm-1 while the G positions agree (difference 0.1 +/- 2.8 cm-1). A 2D-only shift lies outside the strain (slope 2.2) and doping (slope 0.7) directions of Lee et al. 2012, so it points to excitation energy (2D disperses about 100 cm-1/eV) or a 2D-specific change rather than substrate strain or doping alone. Resolving this needs the laser wavelength.",
+  "observations": [
+    {
+      "finding": "Au: D, G and 2D all present. D 1344.4 +/- 1.0 cm-1 (FWHM 34.3 +/- 3.3, height 109.5); G 1580.3 +/- 0.9 cm-1 (FWHM 25.1 +/- 2.9, height 115.2); 2D 2681.1 +/- 0.4 cm-1 (FWHM 36.6 +/- 1.4, height 329.9, area 18990). Au ratios: I_D/I_G = 0.95 (height), 1.30 (area); I_2D/I_G = 2.86 (height), 4.18 (area).",
+      "evidence": "rl_fit.py on spectrum_Au.csv (ALS baseline plus multi-Lorentzian least squares, covariance errors); fit_Au.png residual is structureless apart from a slight negative dip near 2600-2700 cm-1 where the baseline hump lies under the 2D.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Cu: G 1580.4 +/- 2.7 cm-1 (FWHM 22 +/- 9, height 22.3 +/- 5.3); 2D 2695.7 +/- 1.2 cm-1 (FWHM 37.8 +/- 3.8, height 47.9); unassigned narrow line 2326.2 +/- 0.6 cm-1 (FWHM 5.3 +/- 1.8, height 37.3, close to the 2.3 cm-1 sampling so under-resolved); unassigned broad band 2435.9 +/- 4.5 cm-1 (FWHM 48 +/- 26, height 22). I_2D/I_G about 2.1 (height), 3.6 (area), large uncertainty on G. No D band fitted.",
+      "evidence": "rl_fit.py on spectrum_Cu.csv; rl_qc.py flags strong_background (baseline swing about 200 counts, larger than twice the strongest band) and low_snr (9.4). Residual is noise-like, +/-20 counts.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Cross-spectrum: G positions agree (1580.3 vs 1580.4, difference 0.1 +/- 2.8 cm-1). 2D differs by +14.6 +/- 1.3 cm-1 (Cu higher). 2D-G separation: Au 1100.8 +/- 1.0 cm-1; Cu 1115.2 +/- 2.9 cm-1. Neither file has a Si line, so no calibration correction was applied.",
+      "evidence": "rl_series.py on both files (bands matched within 6 cm-1); notes from the tool: 'Au: no Si line found, not calibration-corrected'; 'Cu: no Si line found, not calibration-corrected'.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Physical reading of the 2D-only offset: the Lee et al. 2012 vector analysis gives strain slope 2.2 and hole-doping slope 0.7. A 2D-only shift at fixed G is in neither direction, so it is not a clean strain or doping signature. 2D disperses about 100 cm-1/eV while G does not disperse in stage 1, so a 15 cm-1 offset is equivalent to about 0.15 eV of laser energy. A turbostratic stack would also upshift 2D, but the Cu 2D width (38) is not about twice the Au width (37), which argues against turbostratic stacking.",
+      "evidence": "Comparison of the measured slopes and offsets in the Lee 2012 vector scheme with the dispersion values in graphene.md; the Lee analysis itself is valid only at 514 nm.",
+      "provenance": "inferred",
+      "source": "Lee et al. 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234), p.3 Fig. 2 and p.5; Cancado et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175), p.5; Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856), p.7"
+    },
+    {
+      "finding": "Defect distance on Au from I_D/I_G = 0.95: L_D = 11.5 +/- 1.6 nm at an assumed 514.5 nm, and 17.4 +/- 2.4 nm at an assumed 632.8 nm. The laser is not recorded. The low-defect branch is assumed; the D width (34) is comparable to the G width (25), which the notes assign to the high-defect branch, where L_D would be below 3 nm.",
+      "evidence": "rl.py apply_relation graphene_defect_distance_from_ID_IG with I_D/I_G 0.950 at 514.5 and 632.8 nm.",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175), Eqs. 3-6 and validity p.4; branch rule from graphene.md (Cancado 2011 abstract; Ferrari and Basko 2013 p.10)"
+    },
+    {
+      "finding": "Layer class on Au: the tool returns monolayer with 'high' confidence from one 2D component, but it does not use the 2D/G ratio or the width. The ratio (2.9 in height) is below the approximately 4x monolayer value and the FWHM (37) is broad, so I downgrade to moderate. Cu layer class cannot be assigned because G is too weak.",
+      "evidence": "rl.py apply_relation graphene_layers_from_2D_shape with n_2D_components = 1 and I_2D/I_G = 2.86 (Au) and 2.15 (Cu). The tool result did not change with the ratio.",
+      "provenance": "inferred",
+      "source": "Ferrari et al. 2006, PRL 97, 187401 (arXiv cond-mat/0606284), p.2 (single sharp 2D about 4x G); FWHM(2D) above about 22 cm-1 typical on SiO2, Neumann et al. 2015 (arXiv 1406.7771), p.2"
+    },
+    {
+      "finding": "Library matching ranks graphene first on both: Au score 0.80 (G 1580.3 vs ref 1583.2, 2D 2681.1 vs ref 2679.6); Cu score 0.48 (G 1580.4 vs ref 1587.9, 2D 2695.7 vs ref 2687.6). The Cu G is about 7 cm-1 below the table value, within the calibration range the notes report but weak in signal. No DFT candidate matches the strong 2D on Au; the next Cu candidate scores 0.29 and only matches the narrow 2326 line.",
+      "evidence": "rl.py match_library, two calls (Au peaks; Cu peaks including 2326 and 2436).",
+      "provenance": "inferred",
+      "source": "literature table lit:graphene, Lee et al. 2012 (arXiv 1209.0234); CRD entries from Bagheri and Komsa 2023, Sci. Data 10, 80"
+    },
+    {
+      "finding": "Unassigned Cu lines: the narrow 2326.2 cm-1 line is 5 cm-1 below the N2 vibrational Q-branch (about 2331 cm-1), so it is plausibly atmospheric N2 if the Cu setup has a calibration offset of about -5 cm-1, which is inside the 5 to 7 cm-1 range reported for uncalibrated setups. It is not a spike (rl_qc found none). The broad 2436 cm-1 band has no graphene assignment.",
+      "evidence": "Position comparison; rl_qc found no spikes; match_library gives the 2326 line only a weak CRD match (score 0.29).",
+      "provenance": "inferred",
+      "source": "Calibration range from artifacts.md (Lee et al., Nat. Commun. 3, 1024, 2012); N2 position is general spectroscopic knowledge, not from the skill notes"
+    },
+    {
+      "finding": "Both spectra sit on broad backgrounds. Au baseline rises from about 1000 to 1500 counts with a hump near 2650 cm-1; Cu baseline rises from about 620 to 820 counts with a hump near 1900 cm-1. Metal luminescence or fluorescence is a plausible source, not verified here. Baseline choice also changes the Cu G and Au 2D amplitudes.",
+      "evidence": "fit_Au.png and fit_Cu.png (baseline curves); rl_qc strong_background flag on Cu.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "sp2 carbon, graphene (both spectra)",
+      "provenance": "inferred",
+      "source": "rl.py match_library: lit:graphene (Lee et al. 2012, arXiv 1209.0234) top-ranked for Au (0.80) and Cu (0.48)"
+    },
+    {
+      "name": "layers",
+      "value": "Au: 1 (monolayer-compatible, moderate confidence; ratio 2.9 and FWHM 37 do not match the textbook monolayer). Cu: undetermined (G too weak).",
+      "provenance": "inferred",
+      "source": "Ferrari et al. 2006, PRL 97, 187401 (arXiv cond-mat/0606284), p.2; relation graphene_layers_from_2D_shape"
+    },
+    {
+      "name": "defect_level",
+      "value": "Au: high (I_D/I_G about 0.95 height, 1.30 area). Cu: undetermined (no D band fitted; detection limit about 0.7 to 0.9 in I_D/I_G).",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011 Nano Lett. 11, 3190 (arXiv 1105.0175), Eqs. 3-6; detection limit is my estimate"
+    },
+    {
+      "name": "L_D_nm",
+      "value": "Au: 11.5 +/- 1.6 nm at assumed 514.5 nm; 17.4 +/- 2.4 nm at assumed 632.8 nm. Laser not recorded; low-defect branch assumed.",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011 Nano Lett. 11, 3190 (arXiv 1105.0175), Eq. 4, p.4"
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined (laser unknown; the Lee 2012 strain-doping decomposition is valid only at 514 nm and was not applied)",
+      "provenance": "inferred",
+      "source": "Lee et al. 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234), validity p.9"
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined (laser unknown; G is the same on both metals at 1580.3 to 1580.4 cm-1, below the 514 nm origin of 1581.6 cm-1, but neither spectrum is calibrated)",
+      "provenance": "inferred",
+      "source": "Lee et al. 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234), p.4 origin"
+    }
+  ],
+  "caveats": [
+    "Laser wavelength not recorded: 2D and D positions disperse with excitation energy (about 100 and 52 cm-1/eV), so the 14.6 cm-1 2D offset between the two spectra cannot be read as strain or doping. L_D values are at assumed wavelengths (514.5 and 632.8 nm).",
+    "No calibration reference in either spectrum, so absolute positions carry an unknown offset (the notes cite 5 to 7 cm-1 for uncalibrated setups). The 2326 cm-1 line could be N2 (about 2331) after such an offset, but this is not established.",
+    "The two spectra come from different setups (MicroReactor vs UHV), with different background and probably different optics. Intensity ratios and widths are not directly comparable across the two; the Au and Cu comparison is qualitative.",
+    "The Cu G band is weak (SNR about 9; FWHM and position poorly constrained). Any Cu-specific conclusion about G, strain, doping or layer number is not supported.",
+    "The Au 2D sits on a broad hump in the baseline. A different baseline could change the 2D area and width noticeably; the height ratio is less sensitive than the area ratio.",
+    "The Au L_D result sits near the 10 nm validity edge and on the branch boundary: a D width comparable to the G width points to the high-defect branch (L_D below 3 nm), so the stage assignment is uncertain.",
+    "The layer-class relation returned 'monolayer, high confidence' for both spectra but ignores the 2D/G ratio and width. I did not accept that confidence for Au.",
+    "Expectations about graphene on Au versus Cu (work function, doping direction, thermal-expansion strain on cooling from growth) are general physics knowledge. They are not in the skill notes, were not checked against a source here, and are not used in the numbers above.",
+    "No literature search was run (Valency and iopic-bond unused). Citations come from the skill's graphene reference note and the matcher's literature table.",
+    "Files written into the data folder: fit_Au.png and fit_Cu.png (per-spectrum fit plots), series.png (two-spectrum overlay), peaks.json (holds the Cu fit, the last rl_fit run)."
+  ],
+  "questions_for_user": [
+    "What laser wavelength and power at the sample were used for each setup? The 2D offset (14.6 cm-1) and the L_D values depend on it, and the Lee 2012 strain-doping analysis is valid only at 514 nm.",
+    "Is there a calibration reference (Si, neon lamp, or a known line) for each spectrum? Without one the 2326 cm-1 line and the absolute G and 2D positions cannot be checked.",
+    "Are the two spectra from the same instrument and grating? Setup differences (MicroReactor vs UHV) would explain part of the background and signal differences.",
+    "Was the Cu spectrum acquired in air, or after transfer? A 2331 cm-1 N2 line would be expected in that case and could explain the 2326 cm-1 line.",
+    "Can you record a bare-metal spectrum (Au droplet and Cu droplet with no graphene) under identical conditions? That would separate metal background and luminescence from graphene and show whether the 2436 cm-1 band is intrinsic to the metal.",
+    "Is the Au D band from grain boundaries, wrinkles or point defects? Mapping the D/G ratio across the droplet would show whether the high D/G is local or global, and would help decide between the stage-1 and stage-2 defect branches.",
+    "How long was the Cu integration? A longer acquisition would test whether a D band is absent or just below the current detection limit, and would firm up the Cu G position and width.",
+    "Does the growth history (ethylene flux, temperature, cooling rate) differ in a way that would give a different number of layers or more multilayer patches on Au? Spectra at several spots would show whether the Au 2D width and layer class vary."
+  ],
+  "citations": [
+    "Ferrari et al. 2006, Phys. Rev. Lett. 97, 187401 (arXiv cond-mat/0606284), p.2 and Fig. 2: single sharp 2D about 4x G for monolayer; 2D shape vs layer number.",
+    "Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856): 2D dispersion (p.7); turbostratic single 2D about twice as wide and upshifted (p.9); stage 1 vs stage 2 defects (p.10).",
+    "Cancado et al. 2011, Nano Lett. 11, 3190 (arXiv 1105.0175): L_D relation Eqs. 3-6 (p.4), validity p.4; D dispersion about 52 cm-1/eV and 2D about 100 cm-1/eV (p.5); FWHM(G) vs L_D (Fig. 5c).",
+    "Lee, Ahn, Shim, Lee, Ryu 2012, Nat. Commun. 3, 1024 (arXiv 1209.0234): strain-doping vector origin (1581.6, 2676.9 cm-1) at 514 nm (p.4); strain slope 2.2 and doping slope 0.70 (p.5, Figs. 2-3); 514 nm validity (p.9).",
+    "Neumann et al. 2015, Nat. Commun. 6, 8429 (arXiv 1406.7771), p.2 Fig. 1h: FWHM(2D) above about 22 cm-1 typical on SiO2.",
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database): CRD candidates returned by match_library (not used for the graphene assignment)."
+  ],
+  "limits": [
+    "Laser wavelength not recorded: positions, L_D and the strain-doping decomposition are conditional on assumed values (514.5 and 632.8 nm); the strain-doping decomposition was not applied because it is valid only at 514 nm.",
+    "No calibration reference in either spectrum: absolute positions have an unknown offset. Shifts below about 5 cm-1 cannot be called significant across the two setups.",
+    "The Cu spectrum is near the noise floor: G position and width, the D-band limit and the Cu layer class are not determined.",
+    "Relation outputs: the layer relation ignores the 2D/G ratio and width, so its 'high' confidence was not accepted. The L_D relation assumes the low-defect branch; a D width comparable to G points to the high-defect branch.",
+    "What the data cannot tell: whether the Au D band comes from edges, grain boundaries or point defects; whether the Au 2D width (37) reflects strain, doping, multilayer patches or the baseline; whether the Cu 2436 band is intrinsic; whether the 2326 line is atmospheric N2 or a plasma line.",
+    "Rejected or not supported: the Cu spectrum as a clean monolayer (no clean G); the Au spectrum as a definite monolayer (ratio below 4x and broad 2D); a turbostratic stack for Cu (2D width not about twice the Au width); the strain-doping reading from the G-2D vector (laser unknown).",
+    "No literature search (Valency and iopic-bond unused). Expectations about graphene on Au versus Cu (work function, doping direction, thermal-expansion strain) are unsourced physics and not used in the numbers."
+  ]
+}

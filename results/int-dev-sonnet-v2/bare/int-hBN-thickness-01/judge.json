@@ -1,0 +1,56 @@
+{
+ "key": "115cad95e82e5e08",
+ "score": 0.6428571428571429,
+ "by_kind": {
+  "finding": 1.0,
+  "caveat": 0.5,
+  "question": 1.0
+ },
+ "wrong_claims_made": [
+  "w2"
+ ],
+ "citation_specificity": 1,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report states flake 2 is \"2.8 cm\u207b\u00b9 higher (1369.0 vs 1366.2 cm\u207b\u00b9) and is slightly broader (22 vs 18 cm\u207b\u00b9)\", which \"fits a very thin flake\" and is \"the qualitative trend reported for thinning toward a monolayer\"."
+   },
+   {
+    "id": "c1",
+    "met": 0.5,
+    "why": "The report says the shift is \"not specific to a monolayer\" and that the monolayer is only \"a few cm\u207b\u00b9 higher\", but it never gives the 2\u20134 cm\u207b\u00b9 size or the roughly \u00b12 cm\u207b\u00b9 sample-to-sample variation."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "The report says the upshift \"can also arise from strain\" and that the shift is \"smaller than the range from strain\", but it never says cleavage strain typically red-shifts the band by 1\u20132 cm\u207b\u00b9 or that this dominates in bilayers."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "The report finds the E2g area \"about 10\u00d7 weaker\" under the same conditions, uses roughly linear scaling with layer number, and says absolute layer number \"needs an intensity calibration (AFM height, or known 1L/2L/3L flakes on the same substrate)\"."
+   },
+   {
+    "id": "q1",
+    "met": 1,
+    "why": "The report asks for \"AFM, optical contrast calibrated against known layers\" and a bare-Si reference spectrum so intensities can be \"Si-normalised\"."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "The report explicitly says \"Raman alone does not show that flake 2 is a monolayer\"."
+   },
+   {
+    "id": "w2",
+    "made": true,
+    "why": "The report states the \"+2.8 cm\u207b\u00b9 upshift can also arise from ... a different thin-layer count (2\u20135 layers)\" and that \"a thin few-layer flake gives the same signature\", which treats bilayers and few-layer flakes as upshifted like a monolayer."
+   }
+  ],
+  "citation_specificity": 1
+ },
+ "judge_model": "claude-opus-5-5"
+}

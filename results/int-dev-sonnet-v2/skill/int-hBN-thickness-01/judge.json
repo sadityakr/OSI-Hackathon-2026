@@ -1,0 +1,56 @@
+{
+ "key": "3896a21ba160f25b",
+ "score": 0.7142857142857143,
+ "by_kind": {
+  "finding": 1.0,
+  "caveat": 0.8333333333333334,
+  "question": 0.5
+ },
+ "wrong_claims_made": [
+  "w2"
+ ],
+ "citation_specificity": 2,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report states flake 2's E2g line sits \"2.85 \u00b1 0.25 cm-1 higher (1368.8\u20131369.0 cm-1)\" than flake 1 at 1366.0\u20131366.2, \"with a 3\u20134 cm-1 larger FWHM\", and that \"All of that fits a 1L flake\"."
+   },
+   {
+    "id": "c1",
+    "met": 1,
+    "why": "It cites \"1L upshifted 2\u20134 cm-1 (\u00b12)\" from Gorbachev and says the position \"cannot tell 1L from 2L\", so position alone is not conclusive."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "It says \"strain from the substrate and from transfer dominates it\" and notes 2L is \"usually downshifted 1\u20132 cm-1\", but never ties that red shift to random cleavage strain being strongest in bilayers."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "It reports the line is \"about 10x weaker\" under the same laser, power and integration time, which \"points to a thinner flake\"; it cites Gorbachev for \"linearity for the first several layers on a given substrate\" and calls for \"a calibrated intensity ladder measured on the same substrate and spectrometer\"."
+   },
+   {
+    "id": "q1",
+    "met": 0.5,
+    "why": "It clearly suggests AFM (\"Do you have AFM or step-height data\") and mentions optical contrast, but it treats normalising to Si as unreliable rather than proposing calibration against the Si line."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "It explicitly declines: \"I would not call it a monolayer in print on this evidence.\""
+   },
+   {
+    "id": "w2",
+    "made": true,
+    "why": "It says the upshift \"fits a 2L flake on SiO2 equally well\" and that flake 2 \"matches 2L slightly better\" (citing Cai), so it treats a bilayer as upshifted like a monolayer even though it also quotes Gorbachev's 2L downshift."
+   }
+  ],
+  "citation_specificity": 2
+ },
+ "judge_model": "claude-opus-5-5"
+}

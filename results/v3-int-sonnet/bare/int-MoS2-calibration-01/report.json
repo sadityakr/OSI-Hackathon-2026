@@ -1,0 +1,112 @@
+{
+  "summary": "The flake did not measurably change. Both MoS2 modes sit about 2.5 cm-1 higher on day 2, and the Si 520 cm-1 line moves by the same amount (+2.49 cm-1). A rigid shift of the whole spectrum is a spectrometer calibration offset, not strain or doping. Referenced to Si, the E2g and A1g positions agree to within about 0.03 cm-1 and the A1g\u2013E2g separation is unchanged. Linewidths and intensity ratios also match. The data give no evidence of adsorbate doping or strain. They do show that the two days were not calibrated the same way.",
+  "observations": [
+    {
+      "finding": "All three Raman lines (MoS2 E2g, MoS2 A1g, Si) shift together by about +2.5 cm-1 from day 1 to day 2.",
+      "evidence": "Voigt fits, day1 \u2192 day2 (cm-1): E2g 383.33\u00b10.01 \u2192 385.83\u00b10.02 (\u0394+2.51); A1g 404.91\u00b10.07 \u2192 407.35\u00b10.10 (\u0394+2.44); Si 519.98\u00b10.015 \u2192 522.47\u00b10.03 (\u0394+2.49). The three shifts agree within ~0.07 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The shift is a calibration or axis offset, not a sample effect. Strain or doping in the MoS2 cannot move the Si substrate line. After Si referencing (520.7 cm-1) the two days coincide.",
+      "evidence": "Applying a Si-based correction (day 1 +0.72, day 2 \u22121.77 cm-1) gives E2g 384.05 vs 384.07 and A1g 405.63 vs 405.58 cm-1. Note that day 1 is itself ~0.7 cm-1 low and day 2 is ~1.8 cm-1 high relative to the 520.7 cm-1 Si line. Neither day is perfectly calibrated.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "The A1g\u2013E2g separation, which is thickness-sensitive and largely insensitive to calibration, is unchanged.",
+      "evidence": "Separation 21.57 (day 1) vs 21.52 (day 2) cm-1, difference \u22120.05 cm-1 with a fit uncertainty of ~0.1 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "There is no sign of doping or strain in the line shapes or in the relative positions of E2g and A1g. Electron doping would soften and broaden A1g much more than E2g, and strain would shift E2g much more strongly than A1g.",
+      "evidence": "E2g FWHM 2.13 \u2192 2.21 cm-1. A1g FWHM 6.4 \u2192 6.4 cm-1. A1g/E2g height ratio 0.32 \u2192 0.31 (0.345 vs 0.336 from the constrained fits). Si FWHM 3.58 \u2192 3.54 cm-1, so the instrumental resolution is the same. Differential shift A1g\u2212E2g is \u22120.07\u00b10.12 cm-1.",
+      "provenance": "measured",
+      "source": "Chakraborty et al., PRB 85, 161403 (2012) (A1g softens/broadens with electron doping, E2g barely changes); Rice et al., PRB 87, 081307 (2013) (E2g strain sensitivity ~ \u22122 cm-1 per % uniaxial strain, A1g much weaker)"
+    },
+    {
+      "finding": "The peak separation of ~21.5 cm-1 is consistent with a thin flake of about 2 layers. It is not bulk, which is ~25 cm-1, and not monolayer, which is ~18\u201319 cm-1. This is a rough estimate, and the thickness did not change between days.",
+      "evidence": "A1g\u2212E2g = 21.5 cm-1 on both days. The A1g line is unusually broad (FWHM ~6.4 cm-1), which may hide unresolved structure and makes the separation a little less certain.",
+      "provenance": "literature",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010), Fig. 2 (frequency difference vs layer number)"
+    },
+    {
+      "finding": "Intensities and noise are comparable, but the baseline and the sampling differ between days. This points to different acquisition settings, not a sample change.",
+      "evidence": "Background-subtracted heights: E2g 861 vs 839, A1g 297 vs 282, Si 905 vs 901 (differences \u22645%, with the Si line also slightly lower on day 2). Baseline ~370 vs ~500 counts. Point spacing 0.527 vs 0.662 cm-1 and 949 vs 756 points over the same 150\u2013650 cm-1 range. Noise ~14\u201319 vs ~16\u201324 counts.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "There are no defect-activated or new features, and no sign of oxidation, in either spectrum within the noise.",
+      "evidence": "No peaks above the noise (~14\u201324 counts) apart from E2g, A1g and Si. The LA(M)/2LA region near 227 and 450 cm-1 shows only noise-level features. The fits there are unconstrained and meaningless.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "~2 (thin few-layer; from A1g\u2013E2g = 21.5 cm-1)",
+      "provenance": "inferred",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010)"
+    },
+    {
+      "name": "defect_level",
+      "value": "low / not detectable (no extra peaks; E2g FWHM ~2.1\u20132.2 cm-1, which is narrow, though comparable to the Si line width so partly instrument-limited)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (no change; differential shift consistent with zero)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none detected (no A1g shift or broadening relative to E2g)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "day-to-day_calibration_offset",
+      "value": "+2.5 cm-1 (day 2 minus day 1), common to E2g, A1g and Si",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "2H (E2g/A1g pair present; no J-peaks)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "The Si line is the reference. Its 520.7 cm-1 literature value and the assumption that it is stable make the calibration conclusion rest on a single reference line. A Ne/Hg lamp or a plasma line would check the axis at other wavenumbers. I only assumed that the offset is a constant shift across 150\u2013650 cm-1.",
+    "Stat-only fit uncertainties are 0.01\u20130.1 cm-1. Systematic effects are larger: a grating or spectrometer drift or a re-alignment, a different grating position or the different pixel sampling (0.53 vs 0.66 cm-1) could cause ~0.1\u20130.3 cm-1 errors in absolute positions.",
+    "Day 1 is itself ~0.7 cm-1 off the nominal Si position, which shows the calibration is only good to about \u00b11 cm-1 on both days. Absolute E2g/A1g values quoted in either raw file should not be used for strain or doping analysis. Use the Si-referenced values (~384.06 and ~405.6 cm-1).",
+    "Small simultaneous doping and strain that cancel in both E2g and A1g are not excluded. Small changes below ~0.1\u20130.2 cm-1 (the combined fit and calibration uncertainty) cannot be ruled out. Charge-transfer doping on thin MoS2 on SiO2 is usually seen better in the PL A-exciton/trion ratio.",
+    "Same spot is assumed. A different spot, laser power or focus could affect heating and intensity. A ~2\u20135% intensity difference is within what spot repositioning would cause, and I cannot verify the laser power from the files.",
+    "The A1g line is broad (FWHM 6.4 cm-1) and was fit as a single Voigt. It may contain unresolved structure, such as an overlapping feature or the Fano-like A1g(\u0393) shape, so its centre is less precise than the E2g centre and the layer count from the separation is only approximate.",
+    "Ambient adsorbates are expected to produce only small effects (<~1 cm-1) in the E2g/A1g frequencies. The ~2.5 cm-1 uniform shift is far too large and too uniform, since it also moves the Si line, to be attributed to them."
+  ],
+  "questions_for_user": [
+    "Was the spectrometer recalibrated, or the grating or centre wavelength moved, between the two days? The 0.53 vs 0.66 cm-1 point spacing and the different baseline suggest different settings. I need this to confirm the offset is instrumental.",
+    "Was a Si reference (or a lamp line) measured on both days under the same conditions? If so, I can apply an explicit correction instead of using the substrate line on the sample spot.",
+    "What were the laser power, objective, integration time, and spot-position method on each day? Heating or defocus would change peak positions and intensities and rule out alternative explanations.",
+    "How was the thickness of the flake determined (optical contrast, AFM)? It checks the ~2-layer estimate from the separation.",
+    "Is PL or a differential reflectance measurement available for the same spot? It is more sensitive to doping and adsorbates than Raman and could test the colleague's hypothesis."
+  ],
+  "citations": [
+    "Lee et al., 'Anomalous Lattice Vibrations of Single- and Few-Layer MoS2', ACS Nano 4, 2695 (2010), Fig. 2",
+    "Chakraborty et al., 'Symmetry-dependent phonon renormalization in monolayer MoS2 transistor', Phys. Rev. B 85, 161403(R) (2012)",
+    "Rice et al., 'Raman-scattering measurements and first-principles calculations of strain-induced phonon shifts in monolayer MoS2', Phys. Rev. B 87, 081307(R) (2013)"
+  ],
+  "limits": [
+    "The data cannot show a change in doping or strain below about 0.1\u20130.2 cm-1, and Raman at one wavelength cannot separate doping from strain in isolation. It cannot say whether adsorbates are present but spectroscopically silent.",
+    "It cannot give the absolute carrier density, strain magnitude, or layer count from two modes alone. The ~2-layer value is a literature-based estimate.",
+    "It cannot say anything about the sample before day 1 or between the two days, or about parts of the flake beyond the one spot.",
+    "The data cover only 150\u2013650 cm-1, so higher-frequency features such as photoluminescence background or oxidation products (MoO3 modes at ~820\u2013995 cm-1) are not tested."
+  ]
+}

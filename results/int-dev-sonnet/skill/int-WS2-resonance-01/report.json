@@ -1,0 +1,115 @@
+{
+  "summary": "Spot 1 is consistent with a monolayer. Once the 351/355 cm-1 pair is resolved into 2LA(M) and E2g1, the E2g1\u2013A1g separation is 61.99 cm-1, which matches the 1L value of 62.0 cm-1 at 514.5 nm. The 2LA(M)/A1g height ratio is about 2.2, which is also a monolayer signature. Spot 2 is bulk-like: A1g is at 420.08 cm-1, the separation is 64.7 cm-1, and 2LA(M) is weak (0.46 of A1g). That means 3L or thicker, not separable from bulk with these data. From the spectra alone, 1L is the best-supported reading for spot 1. 2L is disfavoured but not excluded by the separation alone. The monolayer-to-bulk change is mainly A1g stiffening (+2.8 cm-1) and the collapse of the resonant 2LA(M) enhancement.",
+  "observations": [
+    {
+      "finding": "Both spectra show the WS2 first-order and second-order pattern at 514.5 nm. Spot 1 has 2LA(M) at 351.1, E2g1 at 355.3 and A1g at 417.3 cm-1 (1L-like). Spot 2 has 2LA(M) at 349.9, E2g1 at 355.4 and A1g at 420.1 cm-1 (bulk-like). The 520.8 cm-1 line is the Si substrate.",
+      "evidence": "Two-component fit of the 351/355 doublet plus A1g, window 320-445 cm-1. Spot 1: 351.10\u00b10.05 (FWHM 8.95), 355.29\u00b10.07 (FWHM 3.95), 417.28\u00b10.02 (FWHM 4.55). Spot 2: 349.86\u00b10.11 (FWHM 8.73), 355.38\u00b10.03 (FWHM 4.13), 420.08\u00b10.02 (FWHM 4.40). The two-component model beats one Lorentzian (BIC 987 vs 1225 for spot 1, 1030 vs 1460 for spot 2; reduced chi2 about 4x lower, still about 170-180, so residual structure or non-Lorentzian line shapes remain).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Mode labels: A1g is the out-of-plane S vibration (D6h A1g in bulk, A1' in a D3h monolayer). E2g1 is the in-plane W/S vibration (E2g in bulk, E' in 1L). The broad band about 4 cm-1 below E2g1 is the second-order 2LA(M) overtone. The band near 175 cm-1 is LA(M). Si at 520.8 cm-1 is substrate.",
+      "evidence": "Positions as fitted above; LA(M) at 175.68\u00b10.23 (spot 1) and 175.21\u00b10.59 (spot 2) from the series fit, with relative heights of 0.058 and 0.043. 2LA(M) is 4.2 cm-1 (spot 1) and 5.5 cm-1 (spot 2) below E2g1.",
+      "provenance": "literature",
+      "source": "Berkdemir et al. 2013, Sci. Rep. 3, 1755, Table 1 (514.5 nm: 1L 351.1/355.2/417.2; bulk 350.0/355.3/420.1); Hait et al. 2022, J. Appl. Phys. 132, 133901, p.4 (irreps); Yang et al. 2017, arXiv:1706.01677, p.5 (D3h/D3d labels)"
+    },
+    {
+      "finding": "Spot 1 is a monolayer by the A1g-E2g1 separation. Delta = 61.99 cm-1 gives 1L with high confidence, against the tabulated 62.0 cm-1. The fitted positions reproduce the Berkdemir 1L set almost exactly (351.1/355.3/417.3 vs 351.1/355.2/417.2). The A1g is also the softest (417.3 cm-1) of the layer series 417.2/418.4/419.0/420.1.",
+      "evidence": "Delta = 417.28 - 355.29 = 61.99 cm-1. apply_relation ws2_layer_number_from_separation (validity 61-66 cm-1, 488-647 nm, SiO2/Si): 1L, single candidate, delta_err 0.5. For comparison, 2L is 63.4 cm-1 (about 3 sigma away at the 0.5 default error and 1.4 cm-1 from the measured value). Si calibration offset is +0.21 cm-1 at spot 1, a rigid shift that cancels in the difference.",
+      "provenance": "inferred",
+      "source": "Berkdemir et al. 2013, Sci. Rep. 3, 1755, Table 1"
+    },
+    {
+      "finding": "Spot 1 also shows the resonant monolayer intensity pattern: 2LA(M) is the strongest band and exceeds A1g by about 2x. This independent flag supports 1L over 2L or more.",
+      "evidence": "Height 2LA(M)/A1g = 1802/806 = 2.24 at spot 1; 527/1133 = 0.46 at spot 2 (A1g now strongest). Total pair area (2LA+E2g) / A1g area is 4.8 at spot 1 and 1.6 at spot 2 (single-Lorentzian series fit; rough). Polarization was not controlled (unpolarized or unknown), so the ratio is only a semi-quantitative flag.",
+      "provenance": "inferred",
+      "source": "Berkdemir et al. 2013 (ratio about 2 at 514 nm for 1L, decreasing with N; WS2 note)"
+    },
+    {
+      "finding": "Spot 2 is thick, bulk-like (3L or more). The separation, A1g position and the weak 2LA(M) all match the bulk set. The data cannot separate 3L from bulk or give a thickness number.",
+      "evidence": "Delta = 420.08 - 355.38 = 64.70 cm-1 (reference 3L 64.6, bulk 64.8); A1g 420.08\u00b10.02 vs bulk 420.1; 2LA(M) at 349.86 vs bulk 350.0. Relation returns candidates 3L and bulk, confidence low.",
+      "provenance": "inferred",
+      "source": "Berkdemir et al. 2013, Table 1"
+    },
+    {
+      "finding": "What changes from spot 1 to spot 2: A1g +2.80 cm-1 (417.28 to 420.08), E2g1 +0.09 cm-1 (essentially unchanged), 2LA(M) -1.2 cm-1 (351.10 to 349.86) and its relative intensity falls about 5x. This is the layer-number signature in WS2: interlayer coupling stiffens the out-of-plane A1g, while the in-plane E2g1 hardly moves, and the resonant 2LA(M) enhancement weakens with N. The FWHM of A1g (4.5 vs 4.4) and E2g1 (3.9 vs 4.1) do not change, so crystal quality is comparable at the two spots.",
+      "evidence": "Fitted values above. Shifts are 0.1-0.2 cm-1 larger or smaller than the Si-offset difference between the spots (0.13 cm-1: +0.21 vs +0.08), far below the 2.8 cm-1 A1g change. The single-Lorentzian series fit (E2g/2LA blended) gives a misleading shift of +1.57 cm-1 and separation 65.6/66.9 cm-1; do not use it.",
+      "provenance": "measured",
+      "source": "Berkdemir et al. 2013, Table 1 for the trend"
+    },
+    {
+      "finding": "Strain/doping/defects are not indicated as a cause of the differences, but these data cannot rule them out at the 1 cm-1 level. Both spots have similar linewidths and no sizeable defect-activated structure was tested. The weak LA(M) near 175 cm-1 is expected at near-resonance excitation and is not a defect marker in WS2. A possible weak band near 312 cm-1 (multilayer marker) at spot 2 is only about 30 counts above the median in a noise of roughly 15-20 counts, so it is not established.",
+      "evidence": "LA(M) height relative to the strongest band is 0.058 (spot 1) and 0.043 (spot 2). Spot 2 local maximum near 312.2 cm-1 is 447 vs median 415; spot 1 has no peak in the 305-318 range (max 482 vs median 453, noise-level).",
+      "provenance": "measured",
+      "source": "Berkdemir et al. 2013 (LA(M) present in pristine spectra near resonance); Zhao et al. 2013, arXiv:1304.0911, p.10, Fig. 5b (310 cm-1 multilayer band)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "spot 1: 1 (monolayer, high confidence from the separation; 2L disfavoured). Spot 2: 'bulk' (3L or thicker, not distinguishable)",
+      "provenance": "inferred",
+      "source": "Berkdemir et al. 2013, Sci. Rep. 3, 1755, Table 1 via ws2_layer_number_from_separation"
+    },
+    {
+      "name": "phase",
+      "value": "2H (E2g1/A1g pair at 355/417-420 cm-1; no 1T/1T' fingerprint tested)",
+      "provenance": "inferred",
+      "source": "Berkdemir et al. 2013, Table 1"
+    },
+    {
+      "name": "defect_level",
+      "value": "low to undetermined (linewidths narrow and equal between spots; no WS2 defect calibration available)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected (not separable from calibration at the sub-cm-1 level; E2g1 355.29 vs 355.2 reference for 1L)",
+      "provenance": "inferred",
+      "source": "Berkdemir et al. 2013, Table 1"
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined (no WS2 doping calibration; the A1g of spot 1 is at the 1L reference value, with no sign of anomalous shift or broadening)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "The 2LA(M) and E2g1 overlap. A single-Lorentzian fit (including the default rl_fit/rl_series output) merges them, puts a band at 351.5 / 353.0 cm-1 and gives a separation of 65.6 / 66.9 cm-1, which would wrongly suggest thick material at both spots. The doublet must be fit with two components (Mitioglu et al. 2014, arXiv:1406.3511, abstract).",
+    "The doublet fit is still imperfect: reduced chi2 remains about 170-180, so the E2g1 position (small shoulder on the large 2LA band) is model-dependent, perhaps by several tenths of a cm-1. The E2g1 height is only about 23% of 2LA at spot 1 and the 2LA/E2g1 fit parameters are correlated. This affects Delta at the 0.1-0.3 cm-1 level; the 1L-to-2L gap (1.4 cm-1) is larger, but not by a huge margin.",
+    "The 1L-vs-2L decision rests on a 1.4 cm-1 gap in Delta plus the 2LA/A1g ratio; the 2LA/A1g ratio depends on polarization, substrate interference (SiO2 thickness) and exact laser line, none of which are known here. 2L cannot be rejected on Delta alone beyond the 0.5 cm-1 uncertainty assumption used by the relation.",
+    "The 514.5 nm line lies between the WS2 A (about 2.0 eV) and B (about 2.4 eV) excitons, so the spectrum is resonant. Relative intensities are enhanced and depend on thickness, strain and temperature through exciton detuning (Zhang et al. 2015, arXiv:1502.00701; Kumar et al. 2019, arXiv:1906.10661). Absolute intensity differences between spots (spot 1 strongest peak about 2.5x spot 2) are not a thickness measure.",
+    "Differences in absolute position between papers (e.g. Hait 2022 1L: 354.0/358.0/418.2 vs Berkdemir 351.1/355.2/417.2) reflect calibration and fitting; comparisons are made to Berkdemir because the laser line and substrate (SiO2/Si, CVD) match.",
+    "Calibration: Si line offsets of +0.21 and +0.08 cm-1 are small, but the Si fit at spot 2 has a larger error (\u00b10.13). A rigid calibration offset cancels in Delta, but would shift absolute A1g by up to 0.1-0.2 cm-1; this does not affect the conclusions.",
+    "The low-frequency window starts at 120 cm-1, so the shear and breathing modes (the most direct layer-number counter, with absence in a monolayer) are not covered. Their absence in the data is not evidence.",
+    "Laser heating and substrate strain from CVD growth (thermal expansion mismatch) can shift modes by about 1 cm-1 at the same layer number; power was not given. The unchanged E2g1 between spots argues against a large strain difference but does not rule out a uniform strain."
+  ],
+  "questions_for_user": [
+    "Is the spectrometer grating/range able to reach below 120 cm-1 (or an ultralow-frequency filter)? Shear and breathing modes would distinguish 1L (none) from 2L and 3L (modes present) independent of resonance effects.",
+    "Were the spectra taken unpolarized, parallel or crossed? The 2LA(M) intensity is strongly polarization-dependent, so the ratio of 2LA to A1g is only a valid layer flag at known polarization.",
+    "What are the laser power and spot size? Heating on SiO2 shifts A1g and E2g1 by tenths of cm-1 and can mimic small thickness trends.",
+    "What is the SiO2 thickness? Interference changes the relative intensities by large factors at 514.5 nm.",
+    "Can you provide photoluminescence (A-exciton at about 1.95-2.0 eV for 1L, strongly quenched in thick material) or AFM height (about 0.7-0.8 nm for 1L) from the same island? These are independent confirmations of monolayer thickness.",
+    "Is the triangle uniform (map the A1g position and 2LA/A1g ratio across the island)? Bilayer cores/seeds are common in CVD islands and a single point cannot exclude them.",
+    "Which fit model was used for the 350 cm-1 region if layer number was previously assigned from a table?"
+  ],
+  "citations": [
+    "Berkdemir A. et al. 2013, Sci. Rep. 3, 1755, doi:10.1038/srep01755, Table 1 (1L/2L/3L/bulk positions at 488, 514.5 and 647 nm; 2LA(M)/A1g ratio) and Fig. 3",
+    "Mitioglu A. A. et al. 2014, Phys. Rev. B 89, 245442, arXiv:1406.3511, abstract and p.2, p.4, Fig. 3 (2LA/E2g1 doublet, single-Lorentzian pitfall, polarization dependence)",
+    "Yang J. et al. 2017, arXiv:1706.01677, p.4-5 (D3h/D3d labels, resonance enhancement of 2LA and A1g, cross polarization isolates E2g1)",
+    "Zhang X. et al. 2015, Chem. Soc. Rev. 44, 2757, arXiv:1502.00701, p.13-14, Fig. 11c, Table III (resonant combination bands, resonance range)",
+    "Hait S. et al. 2022, J. Appl. Phys. 132, 133901, doi:10.1063/5.0107655, p.4 (irreps and alternative 1L positions)",
+    "Zhao W. et al. 2013, Nanoscale 5, 9677, arXiv:1304.0911, p.10, Fig. 5b (310 cm-1 multilayer band)",
+    "Kumar D. et al. 2019, J. Phys.: Condens. Matter, arXiv:1906.10661, abstract (temperature/strain effects on supported 1L WS2)"
+  ],
+  "limits": [
+    "Layer number for spot 2 cannot be given beyond '3L or thicker': the A1g-E2g1 separation saturates at 64.6-64.8 cm-1 for 3L-to-bulk, so no thickness in nm can be extracted.",
+    "The monolayer claim for spot 1 rests on Raman alone, at a single laser line and unknown polarization. It is strongly supported but not proven; PL, AFM or low-frequency modes are needed for confirmation and to rule out a bilayer.",
+    "Strain, doping, heating and defect density were not quantified: no verified WS2-specific calibrations exist in the reference notes, so no numbers are given for them.",
+    "The 310 cm-1 multilayer band and the E1g (about 297) / E2g2+LA (about 325) features are at noise level in these spectra and were not used. Their absence or presence cannot support or contradict the assignment.",
+    "Only two spots are given; no statement is possible on island uniformity, edges or substrate-coupling variations.",
+    "Relations used are valid for CVD WS2 on SiO2/Si at 488-647 nm; temperature (295 K) is in the expected range. No claim extends beyond that."
+  ]
+}

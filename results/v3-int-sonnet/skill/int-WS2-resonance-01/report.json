@@ -1,0 +1,124 @@
+{
+  "summary": "Spot 1 is consistent with a WS2 monolayer; spot 2 is thick (\u22653L, most likely bulk-like). With the 2LA(M)/E2g1 doublet fitted as two components, spot 1 gives E2g1 = 355.30 cm-1 and A1g = 417.28 cm-1, so \u0394 = 61.98 cm-1, which matches the 1L value of 62.0 at 514.5 nm. Spot 2 gives \u0394 = 64.70 cm-1, which matches 3L/bulk (64.6/64.8). The 514.5 nm laser is near resonance with the WS2 A and B excitons, so 2LA(M) dominates spot 1 and is strongly enhanced at spot 2. One measurement-level caveat: 1L assignment rests on \u0394, A1g position and the 2LA/A1g ratio from a single laser line and unknown polarization. A low-frequency or PL check would make it definitive.",
+  "observations": [
+    {
+      "finding": "Both spectra are 2H-WS2 at near-resonant excitation. Bands: LA(M) ~176, 2LA(M) ~351/350, E2g1 ~355, A1g ~417/420, plus Si substrate at 520.9 cm-1.",
+      "evidence": "rl_fit: spot1 175.9 (FWHM 9.7), 351.7 (single-Lorentzian, merged doublet), 417.3 (4.5), Si 520.91 (3.5). Spot2 175.6 (11.7), 353.1 (merged), 420.1 (4.4), Si 520.79. No spikes. SNR 124 (spot1) and 78 (spot2).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The ~352 cm-1 band is an unresolved doublet of 2LA(M) and E2g1. The default single-Lorentzian fit gives a wrong E2g1 and a wrong \u0394, so a two-component fit is needed.",
+      "evidence": "Two-Lorentzian fit over 300-445 cm-1 lowers reduced chi2 from 664 to 180 (spot1; BIC 1399 to 1138) and from 1552 to 175 (spot2; BIC 1659 to 1190). Spot1: 2LA(M) 351.12\u00b10.05 (\u03c3 4.5, area 25500), E2g1 355.30\u00b10.07 (\u03c3 1.9, area 2470). Spot2: 2LA(M) 349.86\u00b10.11 (\u03c3 4.4, area 7240), E2g1 355.38\u00b10.03 (\u03c3 2.1, area 4340). The raw maximum sits at 351.4 (spot1) vs 354.9 (spot2), i.e. the 2LA/E2g1 weight differs.",
+      "provenance": "measured",
+      "source": "Mitioglu 2014 abstract (single-Lorentzian fit of the pair gives wrong E2g1 and layer number)"
+    },
+    {
+      "finding": "A1g is 417.28 cm-1 at spot 1 and 420.08 cm-1 at spot 2 (+2.8 cm-1 stiffening). E2g1 is the same within error (355.30 vs 355.38). This is the thickness-dependent pattern of WS2, with A1g stiffening and E2g1 nearly flat.",
+      "evidence": "\u0394A1g = 2.80 \u00b1 0.05 cm-1 (fit error). Si offsets +0.21 and +0.09 cm-1 differ by only 0.12 cm-1, so the 2.8 cm-1 shift is not a calibration artifact. A1g FWHM is 4.5 vs 4.4 cm-1. Spot 1 A1g (417.3) matches the 1L reference 417.2; spot 2 (420.1) matches bulk 420.1.",
+      "provenance": "inferred",
+      "source": "Berkdemir 2013, Sci. Rep. 3, 1755, Table 1 (514.5 nm: A1g 417.2, 418.4, 419.0, 420.1 for 1L, 2L, 3L, bulk)"
+    },
+    {
+      "finding": "The A1g-E2g1 separation gives spot 1 = 1L (high confidence) and spot 2 = 3L or bulk (not separable).",
+      "evidence": "Spot1 \u0394 = 417.28 \u2212 355.30 = 61.98 cm-1 (reference 1L 62.0, 2L 63.4; 1.4 cm-1 from 2L). apply_relation with \u03b4=0.3: 1L, confidence high. Spot2 \u0394 = 420.08 \u2212 355.38 = 64.70 cm-1: candidates 3L/bulk (64.6/64.8), confidence low.",
+      "provenance": "inferred",
+      "source": "Berkdemir 2013, Table 1; relation ws2_layer_number_from_separation"
+    },
+    {
+      "finding": "The 2LA(M) to A1g intensity ratio supports 1L at spot 1, as 2LA(M) is strongly resonantly enhanced there.",
+      "evidence": "Spot1 2LA(M)/A1g fitted height ratio ~2.35 using the single-Lorentzian peak heights (1895/805), and area ratio 2LA(M):A1g = 25500/5750 \u2248 4.4. Spot2 area ratio 7240/7830 \u2248 0.9. The ratio decreases by ~5x going from spot 1 to spot 2. The literature gives ~2 at 514 nm for 1L, decreasing with N (polarization-dependent).",
+      "provenance": "inferred",
+      "source": "Berkdemir 2013 (2LA/A1g about 2 for 1L at 514 nm, decreasing with N); Mitioglu 2014 Fig. 3 (polarization dependence)"
+    },
+    {
+      "finding": "Naive single-peak analysis would be misleading. Using the merged ~351.7/353.1 cm-1 peak as E2g gives \u0394 = 65.6 (spot1) and 66.9 (spot2), which would indicate a thick/bulk-like sample for both spots. That is wrong for spot 1 and outside the 61-66 validity range of the relation for spot 2.",
+      "evidence": "rl_series: separations 65.61 \u00b1 0.05 and 66.95 \u00b1 0.13 cm-1 for the two strongest bands. 2LA(M) alone dominates the merged peak.",
+      "provenance": "measured",
+      "source": "Berkdemir 2013, Table 1 caveat; Mitioglu 2014 abstract"
+    },
+    {
+      "finding": "LA(M) at ~176 cm-1 is present at both spots. It is not a defect marker in WS2 at this near-resonant excitation.",
+      "evidence": "Height 5.8% (spot1) and 4.3% (spot2) of the strongest band; FWHM ~9-12 cm-1, positions agree within error (175.9\u00b10.2 vs 175.6\u00b10.6).",
+      "provenance": "literature",
+      "source": "Berkdemir 2013 (LA(M) ~176 cm-1 at 488 nm in pristine WS2); WS2.md inference"
+    },
+    {
+      "finding": "No evidence of strain or doping difference. E2g1 is equal within error. The A1g shift is explained by thickness. The line widths are similar, so crystal quality looks comparable at the two spots.",
+      "evidence": "E2g1 355.30\u00b10.07 vs 355.38\u00b10.03 cm-1; A1g FWHM 4.5 vs 4.4; Si offsets differ by 0.12 cm-1.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "Assignment of modes. Bulk D6h labels: A1g (~417-420), E2g1 (~355), 2LA(M) (~351), LA(M) (~176). In 1L (D3h): A1g becomes A1', E2g1 becomes E'.",
+      "evidence": "Positions as above.",
+      "provenance": "literature",
+      "source": "Hait et al. 2022, J. Appl. Phys. 132, 133901, p.4; Yang et al. 2017, arXiv:1706.01677, p.5; Berkdemir 2013 Table 1"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "spot 1: 1 (monolayer); spot 2: 3 or bulk (not separable; \u22653L)",
+      "provenance": "inferred",
+      "source": "Berkdemir 2013, Sci. Rep. 3, 1755, Table 1"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable (low-to-none suggested by narrow A1g 4.4-4.5 cm-1 and no extra bands, but no WS2 calibration exists)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detectable (E2g1 equal within error between spots)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none determinable",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Absolute 1L assignment rests on a ~1.4 cm-1 gap to 2L in \u0394 (62.0 vs 63.4). The doublet decomposition (\u03c3 of E2g1 is ~2 cm-1, with a strong 2LA(M) neighbour) has model dependence. Using the same fit model on both spots is what makes the 2.8 cm-1 A1g shift reliable.",
+    "3L and bulk cannot be separated by \u0394 (64.6 vs 64.8). The 310 cm-1 band (absent in 1L, present in multilayers, Zhao 2013 Fig. 5b) and low-frequency shear/breathing modes would help but the data start at 120 cm-1, so shear/breathing modes are out of range.",
+    "Resonance changes intensity ratios. At 514.5 nm (2.41 eV, near A/B excitons) 2LA(M) can exceed E2g1 and A1g. Polarization is unknown (2LA and A1g are suppressed in crossed polarization), so use the intensity ratio only qualitatively.",
+    "Substrate interference on 285/90 nm SiO2 and the CVD growth process change absolute intensities (Si line intensity differs strongly between spots, ~1234 vs 117), so intensity is not a thickness measure. The Si 520.7 reference offsets are +0.21/+0.09 cm-1 and are small.",
+    "The reference values come from CVD layers on SiO2/Si at 514.5 nm in a different lab; CVD WS2 has substrate-induced strain/doping that can shift A1g and E2g1 by a cm-1 or so, which is similar to the 1L-2L \u0394 gap (1.4 cm-1).",
+    "'Triangular island' (spot 1) can be a thicker central nucleation region; a single spot says nothing about uniformity. Mapping across the island would test this.",
+    "The 2LA(M) component of the spot 2 fit (349.86 cm-1) is close to the literature bulk value of 350.0, but it is correlated with E2g1 in the fit; use errors as lower bounds."
+  ],
+  "questions_for_user": [
+    "Was the measurement polarized (parallel, crossed, or unpolarized)? 2LA(M) and A1g are polarization-dependent and this determines whether the 2LA/A1g ratio can be used.",
+    "Laser power and spot size? Needed to rule out heating-induced redshift of A1g/E2g1 at the thin island (monolayers on SiO2 heat more).",
+    "Do you have a photoluminescence spectrum or a map of the island? A 1L WS2 shows strong A-exciton PL near ~2.0 eV (~620 nm) that thick regions lack, so this is the quickest independent test of 1L vs 2L.",
+    "SiO2 thickness and the growth method (CVD precursors)? Interference affects intensity ratios; precursor residues or strain from growth cooling shift A1g/E2g1 by ~1 cm-1.",
+    "Can you extend the range below 120 cm-1 (shear/breathing) or measure the 310 cm-1 region more carefully? That would give layer number directly and separate 3L from bulk for spot 2.",
+    "Is spot 2 an area of multilayer growth atop the island, or a different island? This changes how to read the ratio between spots."
+  ],
+  "citations": [
+    "Berkdemir A. et al. 2013, Sci. Rep. 3, 1755, doi:10.1038/srep01755, Table 1 and Fig. 3 (not on arXiv; cited without a figure view)",
+    "Mitioglu A. A. et al. 2014, PRB 89, 245442, arXiv:1406.3511, abstract, Fig. 3, p.2, p.4",
+    "Yang J. et al. 2017, arXiv:1706.01677, p.5, Fig. 1c,d",
+    "Zhao W. et al. 2013, Nanoscale 5, 9677, arXiv:1304.0911, Fig. 5b",
+    "Hait S. et al. 2022, J. Appl. Phys. 132, 133901, doi:10.1063/5.0107655, p.4",
+    "ramanlens WS2 notes and relation ws2_layer_number_from_separation (Berkdemir 2013, Table 1)"
+  ],
+  "limits": [
+    "Cannot distinguish 3L from bulk at spot 2 by \u0394; no low-frequency data below 120 cm-1.",
+    "Layer number from a single laser line and one relation (\u0394). The relation is tabulated for 1L-4L and bulk, with a 1.4 cm-1 gap between 1L and 2L, and the doublet fit model adds uncertainty at that scale.",
+    "No strain, doping or defect density quantification: no WS2-specific calibration was verified in the notes.",
+    "Polarization, laser power (heating), substrate oxide thickness and calibration beyond the Si line were not known. They are stated as assumptions: unpolarized/unknown, no significant heating, standard SiO2/Si.",
+    "Cannot say anything about uniformity or edge-vs-centre differences from two spots.",
+    "Did not view literature figures with the iopic-bond tools; comparisons rest on the curated note and tabulated values, not independent figure checks."
+  ]
+}

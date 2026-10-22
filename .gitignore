@@ -1,19 +1,21 @@
-*.h5
-*.npz
-*.parquet
-.DS_Store
+# The repo is private and shared with collaborators: everything is tracked except secrets and what cannot be pushed.
+# Clean up (raw data, private Lit-RAG code, transcripts) before making anything public.
+
+# secrets
 .env
-.ipynb_checkpoints/
+
+# machine-specific environment and generated caches (rebuild with pip install -e src[trace] and iopic-bond[parse])
 .venv/
 __pycache__/
-data/processed/
-data/raw/
-scratch/
-
-# private reference code (Lit-RAG), never in the public repo
-resources/src/
 *.egg-info/
-# agent scratch from eval runs
-eval/runs/
-loop/logs/
+.ipynb_checkpoints/
+.DS_Store
+
+# single files over GitHub's 100 MB limit; data/get_data.ps1 downloads them
+data/raw/crd/Computational_Raman_Database_v1.0.1.zip
+data/raw/crd/crd.json
+data/raw/spectra/graphene/005_Data.zip
+data/raw/spectra/graphene/zenodo14883846/005_Data.zip
+
+# loop control file
 loop/STOP

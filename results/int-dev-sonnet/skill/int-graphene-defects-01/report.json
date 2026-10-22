@@ -1,0 +1,130 @@
+{
+  "summary": "Defect density rises monotonically with dose. Doses 1\u20133 are in the low-defect regime (stage 1): I_D/I_G (heights) goes 0.25 \u2192 0.57 \u2192 1.19, which gives inter-defect distance L_D \u2248 24 \u2192 16 \u2192 11 nm (n_D \u2248 5.6e10 \u2192 1.3e11 \u2192 2.7e11 cm-2). That is about a 2.3x and 4.8x increase over dose 1, with a ~14% scale uncertainty from the relation constant that cancels in the ratios. Dose 4 is a different regime: 2D has vanished, G and D' have merged into one broad band at ~1592 cm-1 (FWHM ~36 cm-1), and D has broadened to ~41 cm-1. This is the onset of stage 2 (amorphisation). The apparent drop in I_D/I_G to 0.57 is not a recovery. The Cancado relation cannot be used for dose 4 and gives only a bound: L_D \u2272 3\u20134 nm, n_D \u2273 3e12 cm-2. The defects in doses 1\u20133 look vacancy-like (I_D/I_D' \u2248 6\u20137).",
+  "observations": [
+    {
+      "finding": "Doses 1\u20133: D grows strongly, G and 2D stay sharp, so the sample is in stage 1 with D at ~1347 cm-1, G at 1580 cm-1 and 2D at 2690 cm-1 (532 nm). The D, G and 2D bands are the same single-layer graphene bands throughout.",
+      "evidence": "I_D/I_G (height, own D/G/D' Lorentzian fit): 0.249, 0.569, 1.19; area ratio: 0.26, 0.60, 1.26. D height 700 \u2192 2050 \u2192 2970 counts while G height is 2800/3600/2500. G FWHM 13.3/12.1/12.5 cm-1 (series fit; 13.9/14.0/13.8 in a 3-peak fit with D') with no significant broadening. G position 1580.1/1580.4/1580.2 \u00b10.06 (fit). D FWHM ~14\u201315 cm-1 in all three.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Quantitative inter-defect distance and density for doses 1\u20133 from the Cancado relation (point defects, low-defect branch, 532 nm). The relation's validity range is L_D \u2265 ~10 nm and G FWHM ~14 cm-1, and dose 3 (11 nm) sits at the edge of it.",
+      "evidence": "L_D = 24.1 \u00b13.3, 15.9 \u00b12.2, 11.0 \u00b11.5 nm; n_D = 5.6e10, 1.28e11, 2.67e11 cm-2 (apply_relation, graphene_defect_distance_from_ID_IG; 'energy form' agrees within 0.3 nm). n_D increases \u00d72.3 (dose 2) and \u00d74.8 (dose 3) relative to dose 1; I_D/I_G \u221d n_D in this range. The \u00b114% constant uncertainty is common to all doses and cancels in the ratios.",
+      "provenance": "inferred",
+      "source": "Cancado et al., Nano Lett. 11, 3190 (2011), arXiv 1105.0175, Eqs. (3)\u2013(6), p.4"
+    },
+    {
+      "finding": "Defect type in stage 1 looks vacancy-like, with some admixture toward sp3 as dose increases. This conclusion is weak because D' is a weak band on a G tail.",
+      "evidence": "I_D/I_D' (height): 6.0, 6.2, 6.9; area ratio: 7.0, 8.0, 7.6. D' at ~1621 cm-1 (FWHM 11\u201313 cm-1) has height 117/331/432 counts. D' FWHM error is \u00b14 cm-1 for dose 1 and \u00b11.6 cm-1 for dose 2, and the series fit only picked up D' in dose 3. Reference values: ~7 vacancy, ~13 sp3, ~3.5 boundary.",
+      "provenance": "inferred",
+      "source": "Eckmann et al., Nano Lett. 12, 3925 (2012), arXiv 1207.2058, abstract and p.6"
+    },
+    {
+      "finding": "Dose 4 is in stage 2 (amorphisation onset), not 'fewer defects'. G and D' merge into a single broad band, D is as wide as G, and 2D is lost.",
+      "evidence": "Single-band fit: G+D' at 1591.8 \u00b10.2 cm-1, FWHM 36.3 \u00b10.6; D at 1351.9, FWHM 40.8 \u00b11.1 (\u22483x the 14 cm-1 of doses 1\u20133). A two-Lorentzian fit gives G FWHM ~46 and D ~61, so widths depend on the model and the merged G+D' is not decomposable. The 2D region (2550\u20132850) has a maximum of ~860 counts on a ~600 count baseline with ~85 count noise, versus a ~9200 count peak (7500 above baseline) in dose 1; 2D is therefore below ~5% of its dose-1 height. I_D/I_G is 0.57 (height) or 0.75 (area), equal to the dose 2 height ratio, which is the descending branch of the Cancado curve rather than a dose-2-like defect density. The G area is ~4x that of dose 1, from the merged G+D'.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The L_D relation cannot be applied to dose 4. The tool still returns a number (~16 nm), but that is the wrong branch. Stage 2 implies L_D below ~3\u20134 nm, hence n_D \u2273 3e12 cm-2 (n_D = 1e14/(\u03c0 L_D\u00b2) with L_D in nm), a lower bound only.",
+      "evidence": "The tool's own note: I_D/I_G is non-monotonic and a broad G or D band indicates the high-defect branch. The stage-1/stage-2 boundary is at L_D \u2248 3 nm; G FWHM is ~14 cm-1 through stage 1 and much larger in stage 2. Dose 4 has FWHM(G+D') \u2248 36\u201346 cm-1, which is stage 2.",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, arXiv 1105.0175, p.5, Fig. 5c; Ferrari and Basko, Nat. Nanotechnol. 8, 235 (2013), arXiv 1306.5856, p.10"
+    },
+    {
+      "finding": "The 2D band survives doses 1\u20133 with little change in shape, so the lattice stays intact in stage 1. 2D is only slightly broader after dose 1.",
+      "evidence": "2D position 2689.6/2690.7/2690.0 \u00b10.1 cm-1; FWHM 23.5/25.2/25.3 \u00b10.2\u20130.3 (+1.7 cm-1 vs dose 1). Single Lorentzian, FWHM near 25 cm-1, consistent with single-layer graphene. I(2D)/I(G) \u2248 2.7\u20132.8 in all three (heights), similar to what is expected for supported graphene with modest doping on SiO2/Si. Substrate interference sets the ratio and I did not use it to infer doping.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "No evidence of strain, doping or heating drifting between doses that would bias the D/G ratio. Small shifts (\u22641 cm-1) are within the calibration uncertainty.",
+      "evidence": "Si line offset +0.21/+0.20/+0.20/+0.18 cm-1 vs 520.7 (scatter 0.03), so calibration is stable. G shifts vs dose 1 are 0.29 and 0.11 cm-1 (\u00b10.09 fit, \u00b10.3 calibration). 2D shifts are 1.03 and 0.33 cm-1 (\u00b10.1 fit). G FWHM is ~12\u201314 cm-1 with no narrowing or broadening trend, so no large doping change. The D shift of +1.3 cm-1 in dose 2 is near the fit noise for the weak dose-1 D (\u00b10.26 cm-1 error).",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (single layer; single Lorentzian 2D FWHM ~24\u201325 cm-1, consistent with the stated exfoliated monolayer; not tested for turbostratic or twisted stacking)",
+      "provenance": "inferred",
+      "source": "Ferrari et al., PRL 97, 187401 (2006); Lee et al., Nat. Commun. 3, 1024 (2012)"
+    },
+    {
+      "name": "defect_level",
+      "value": "dose 1: low; dose 2: medium; dose 3: medium-high (stage 1); dose 4: high (stage 2)",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, arXiv 1105.0175; Ferrari and Basko 2013, p.10"
+    },
+    {
+      "name": "L_D_nm",
+      "value": "dose 1: 24 \u00b13; dose 2: 16 \u00b12; dose 3: 11 \u00b11.5; dose 4: \u22723\u20134 (bound; the relation does not apply)",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, Nano Lett. 11, 3190, Eqs. (3)\u2013(6)"
+    },
+    {
+      "name": "n_D_cm-2",
+      "value": "5.6e10, 1.3e11, 2.7e11 (doses 1\u20133); \u22733e12 for dose 4 (lower bound)",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, arXiv 1105.0175"
+    },
+    {
+      "name": "defect_type",
+      "value": "vacancy-like point defects (I_D/I_D' \u2248 6\u20137), loosely constrained, doses 1\u20133 only",
+      "provenance": "inferred",
+      "source": "Eckmann et al. 2012, arXiv 1207.2058"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none resolved (G, 2D shifts \u22641 cm-1, within calibration)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined (G FWHM 12\u201314 cm-1 and no G/2D trend: no large doping change between doses 1\u20133)",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "I_D/I_G is non-monotonic in L_D: one ratio maps to two defect densities. Doses 1\u20133 are assigned to the low-defect branch because the G FWHM stays ~12\u201314 cm-1 and 2D is strong. Dose 4, with a ratio of 0.57, would be mistaken for dose 2 if only I_D/I_G were used. The FWHM of G and the 2D loss decide it.",
+    "The relation holds for point defects and visible lasers; Cancado's validity limit is L_D \u2265 ~10 nm, so dose 3 (11 nm) is at the edge and its n_D has additional model uncertainty. The \u00b114% quoted is the relation's own constant only, with no fit error added.",
+    "Doping lowers D and D' intensity at fixed defect count; ignoring a Fermi level of ~0.5 eV underestimated n_D by more than 2x in Bruna et al. (ACS Nano 2014, arXiv 1405.4264, p.5). Doping looks modest (G 1580 cm-1, FWHM 12\u201314), but I did not determine it independently, and any dose-induced doping change would bias the apparent density.",
+    "The D' band is weak. The fit gave D' FWHM errors of \u00b14 cm-1 for dose 1 and \u00b11.6 cm-1 for dose 2, and the series tracker only found D' in dose 3. I_D/I_D' is a loose guide, not a proof of defect type. The Eckmann ratios apply in stage 1 only, so no defect type is given for dose 4.",
+    "Dose 4's merged G+D' band cannot be decomposed reliably; the G FWHM in the fit (36\u201346 cm-1) depends on the model. A G position of ~1592 cm-1 in dose 4 is G+D' merging, not strain or doping.",
+    "The laser itself (532 nm, ~1 mW, 100x, ~1 \u00b5m spot) may add damage or heating, and the same flake spot may have been exposed cumulatively. Spectra were taken at the same conditions, so any contribution is common to all four, but it is not separable from the treatment dose. Heating shifts G by about -0.016 cm-1/K for supported graphene (Calizo 2007) and the observed G shifts are \u22640.3 cm-1, so heating is not evident.",
+    "Absolute intensities vary between spectra (G height 2400\u20133500, 2D 6600\u20139600) with focus, spot position and interference, so only band ratios were used. The 2D FWHM from a wide-window fit (~32 cm-1) was inflated by baseline tails, and the narrower series-fit value (~24\u201325 cm-1) is the one quoted.",
+    "One spectrum per dose on one flake: no spatial statistics, no map, no error from spot-to-spot variation. Edge-related D cannot be excluded if the spot was near an edge, although the D growth with dose argues against an edge origin."
+  ],
+  "questions_for_user": [
+    "What does 'dose' mean (ion fluence, plasma time, e-beam, or other), what are the actual dose values, and what ion or species? Without it I can only give n_D versus step number, not a damage cross-section or per-ion defect yield.",
+    "Was each spectrum taken at the same spot, and were there repeated or cumulative laser exposures? Laser-induced damage and heating are then not separable from the treatment.",
+    "Is the flake in the dose-4 spectrum still conductive or was it annealed, and was it measured in air? Stage 2 and oxidation or adsorbed species would change the interpretation.",
+    "Can you provide a Raman map or several spots per dose? That would show the D distribution (edge versus bulk) and give the spread to put on L_D.",
+    "What is the SiO2 thickness, and was there any transfer, anneal or gating history? This is needed to treat I(2D)/I(G) as a doping indicator, because the ratio changes by almost 370% for a 60% change in oxide thickness (Yoon 2009).",
+    "What is the instrument resolution and was it calibrated against another reference in the 1300\u20132700 cm-1 range? The Si line only checks calibration near 520 cm-1.",
+    "Is a second excitation wavelength available? D disperses and 2D disperses, while G does not, so a second laser would test the stage assignment and the L_D scaling (I_D/I_G \u221d \u03bb^4)."
+  ],
+  "citations": [
+    "Cancado et al., Nano Lett. 11, 3190 (2011), arXiv 1105.0175, Eqs. (3)\u2013(6) p.4; Fig. 5c p.5",
+    "Ferrari and Basko, Nat. Nanotechnol. 8, 235 (2013), arXiv 1306.5856, p.10 (stage 1 and stage 2)",
+    "Eckmann et al., Nano Lett. 12, 3925 (2012), arXiv 1207.2058, abstract, p.6",
+    "Bruna et al., ACS Nano (2014), arXiv 1405.4264, p.5",
+    "Ferrari et al., PRL 97, 187401 (2006), arXiv cond-mat/0606284, p.2",
+    "Lee et al., Nat. Commun. 3, 1024 (2012), arXiv 1209.0234, Methods p.10",
+    "Yoon et al., PRB 80, 125422 (2009), arXiv 0908.4322, Fig. 2",
+    "Calizo et al. 2007, arXiv 0708.1223, Table I p.7"
+  ],
+  "limits": [
+    "No numbers can be given for dose 4 from the Cancado relation: its validity (low-defect branch, L_D \u2265 ~10 nm, G FWHM ~14 cm-1) is violated, and the only statement is a bound (L_D \u2272 3\u20134 nm, n_D \u2273 3e12 cm-2).",
+    "The data cannot separate point vacancies from sp3 or other defect classes with confidence, and cannot see Raman-silent defects (charged impurities, perfect zigzag edges, intercalants, strain).",
+    "Dose values are unknown, so no dose-response law is extracted (the n_D ratios of ~1:2.3:4.8 are per step, not per dose unit).",
+    "L_D is a spot-averaged inter-defect distance over a ~1 \u00b5m area and assumes homogeneous, randomly distributed point defects; the data say nothing about clustering or spatial inhomogeneity.",
+    "Calibration was checked only near 520 cm-1 (Si offset ~0.2 cm-1, constant across the series); a single Si check does not validate the 2D region, so shifts below ~0.3\u20131 cm-1 are not interpreted.",
+    "Strain and doping were not quantified: the vector analysis of Lee et al. is calibrated for 514.5 nm and hole doping, and the data are at 532 nm.",
+    "Number of layers and stacking were not tested beyond the 2D line shape, which cannot exclude turbostratic or twisted bilayers.",
+    "The low-wavenumber range below 450 cm-1 is not covered by the data."
+  ]
+}

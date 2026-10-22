@@ -1,0 +1,101 @@
+{
+  "candidates": [
+    {
+      "material": "m-GaTe (monoclinic, few-layer/thin)",
+      "confidence": 0.3,
+      "evidence": "Weak 281.5 cm-1 line matches the reported high-frequency GaTe Ag mode near 282-283 cm-1. The strong, broad 98.6 cm-1 line sits in the low-frequency band where GaTe has intense modes, but it is 10-15 cm-1 below the usual ~110-115 cm-1 position. The other GaTe lines (about 117, 127, 144, 164, 207, 217, 270 cm-1) are not seen above the noise. This is a tentative match only."
+    },
+    {
+      "material": "Bi2Te3",
+      "confidence": 0.08,
+      "evidence": "Eg2 near 103 cm-1 could fit the strong line, but the A1g1 line at about 62 cm-1 and the A1g2 line at about 134 cm-1 are not detected, and nothing explains the 281 cm-1 feature."
+    },
+    {
+      "material": "Elemental Te (possible Te-rich surface or decomposition product)",
+      "confidence": 0.07,
+      "evidence": "The E mode at about 92 cm-1 is somewhat close to 98.6 cm-1. The A1 line at about 121 cm-1 and the E line at about 141 cm-1 are absent."
+    },
+    {
+      "material": "Sb2Te3",
+      "confidence": 0.04,
+      "evidence": "The Eg mode at about 112 cm-1 is the nearest match to the strong line. The A1g line at about 165 cm-1 is missing."
+    },
+    {
+      "material": "1T'-WTe2",
+      "confidence": 0.03,
+      "evidence": "Only a weak low-frequency overlap. The characteristic lines at about 112, 117, 134, 165 and 212 cm-1 are absent."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given in the metadata (material_hint is null), so this is a blind identification.",
+  "peaks": [
+    {
+      "position_cm1": 98.55,
+      "fwhm_cm1": 7.1,
+      "assignment": "Strong low-frequency Raman mode (candidate: GaTe low-frequency Ag-type mode)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit plus linear background; amplitude about 5700 counts against about 230 counts noise per point (S/N above 20). Assignment to GaTe is tentative and the line sits below the usual GaTe position."
+    },
+    {
+      "position_cm1": 281.5,
+      "fwhm_cm1": 1.4,
+      "assignment": "Weak mode (candidate: GaTe high-frequency Ag mode, about 282 cm-1)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal detection at about 5 sigma in a Gaussian-smoothed matched filter, spanning only 2 adjacent points at 281-282 cm-1. The Lorentzian width (1.4 cm-1) is poorly constrained. GaTe Raman literature, e.g. Huang et al., 2D Mater. 2015 and related GaTe Raman studies; the exact reference was not checked here."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "Not determinable from a single weak-feature spectrum."
+    },
+    {
+      "name": "phase",
+      "value": "possibly monoclinic (GaTe-type); unconfirmed",
+      "provenance": "inferred",
+      "source": "Based only on the tentative 281.5 cm-1 match."
+    },
+    {
+      "name": "defect_level",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "The broad, noisy spectrum does not allow a defect estimate."
+    },
+    {
+      "name": "background",
+      "value": "Baseline rises from about 2400 counts at 120 cm-1 to about 3300 counts at 900 cm-1, consistent with weak photoluminescence or fluorescence.",
+      "provenance": "measured",
+      "source": "Binned means of spectrum.csv"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "Rising broad background (likely photoluminescence); no Si 520.7 cm-1 line is detectable, so the substrate is unidentified",
+      "position_cm1": null
+    },
+    {
+      "type": "Noise-level local maxima (such as around 526, 555, 568, 747, 804, 968 cm-1) were not treated as peaks, because the prominence is within about 2 sigma of the roughly 230-count point-to-point noise",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "GaTe Raman literature (monoclinic GaTe, Ag modes near 110-130, 164, 207-217, 270 and 282 cm-1), e.g. Huang et al., 2D Mater. 2015. Not re-verified here.",
+    "Bi2Te3 Raman: A1g1 about 62, Eg2 about 103, A1g2 about 134 cm-1 (Richter and Becker 1977). Cited from memory.",
+    "Elemental Te Raman: E about 92, A1 about 121, E about 141 cm-1. Cited from memory."
+  ],
+  "limits": [
+    "The identification is low-confidence. Only one strong peak (98.6 cm-1) and one marginal peak (about 281.5 cm-1) are detected, so the material cannot be pinned down uniquely.",
+    "The 98.6 cm-1 line is 10-15 cm-1 below the usual GaTe mode position. The shift is unexplained, and strain or a different material cannot be ruled out.",
+    "The other expected GaTe lines (117, 127, 144, 164, 207, 217, 270 cm-1) are not seen above the noise of about 230 counts per point. Their absence could mean the sample is not GaTe or the signal is too weak.",
+    "Polarization, layer number and the direction of strain or doping cannot be assessed from a single unpolarized spectrum.",
+    "No substrate line is visible, so the substrate is unidentified.",
+    "Symmetry labels are literature-based expectations. They were not measured, since this is not angle-resolved data.",
+    "The 281.5 cm-1 line is about 5 sigma and spans only 2 points. It is not firmly established as a real mode."
+  ]
+}

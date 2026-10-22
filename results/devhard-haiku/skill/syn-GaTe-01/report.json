@@ -1,0 +1,46 @@
+{
+  "candidates": [
+    {
+      "material": "GaTe",
+      "confidence": 0.3,
+      "evidence": "The weak band at 281.6 cm-1 is close to the Ag mode at 283.8 cm-1 reported for GaTe (Hoang et al. 2021, Sci Rep, doi:10.1038/s41598-021-00673-0; abstract only). The folder name 'syn-GaTe-01' also points to GaTe, but that is not used as evidence. Against it: the strong band at 98.5 cm-1 matches none of the three Ag modes listed in that abstract (40.2, 152.5, 283.8 cm-1), and I could not read the full mode table. The match is one weak band plus a naming hint, so this is low confidence."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material_hint was given (null), so there was nothing to verify. The task was identification. I did not use the folder name as evidence.",
+  "peaks": [
+    {
+      "position_cm1": 98.5,
+      "fwhm_cm1": 5.1,
+      "assignment": "unassigned (strong band; no reliable reference match found)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Pseudo-Voigt fit, window 60-160 cm-1, linear baseline: centre 98.51 +/- 0.10 cm-1, sigma 2.15 cm-1 (FWHM 5.1). Lorentzian fit gives centre 98.54 +/- 0.09 cm-1 and FWHM 8.3. Shape checked on raw points: about 6 points wide, not a single-pixel cosmic-ray spike. Height about 5400 counts over a baseline of about 2700 (SNR above 100)."
+    },
+    {
+      "position_cm1": 281.6,
+      "fwhm_cm1": 2.3,
+      "assignment": "candidate GaTe A_g mode at 283.8 cm-1 (tentative)",
+      "irrep": "A_g (per the cited source, not confirmed by this data)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit, window 230-340 cm-1: centre 281.59 +/- 0.21 cm-1, FWHM 2.3 +/- 0.8 cm-1 (poorly constrained at 0.96 cm-1 sampling). Height about 850 counts; noise is about 227 counts per point, so the band is only about 2 to 4 sigma above the noise. The assignment comes from Hoang et al. 2021 (doi:10.1038/s41598-021-00673-0), which lists GaTe Ag at 283.8 cm-1; the cited abstract does not give the position uncertainty."
+    }
+  ],
+  "properties": [],
+  "artifacts": [],
+  "citations": [
+    "Hoang N.T. et al., 'Thickness-dependent in-plane anisotropy of GaTe phonons', Sci Rep (2021), doi:10.1038/s41598-021-00673-0, https://pubmed.ncbi.nlm.nih.gov/34707186/ (abstract only; used for the 283.8 cm-1 Ag mode and the 40.2 and 152.5 cm-1 Ag modes)"
+  ],
+  "limits": [
+    "Identification is not reliable. The spectrum has one strong band (98.5 cm-1) and one weak, marginal band (281.6 cm-1) on a noisy, rising background. The background (about 2500 counts at 300 cm-1 rising to about 3300 at 1000 cm-1) looks like photoluminescence or a broad instrumental slope; I did not characterise it.",
+    "Noise is high: about 227 counts per point, roughly 7 % of the baseline. The 281.6 cm-1 band is only a two-point excursion (about 3480 and 3440 counts against about 2700 background) and could be partly noise, although a single excursion of this size is unlikely by chance across about 1000 points.",
+    "The strong 98.5 cm-1 band has no assignment I could verify. The GaTe abstract I found lists Ag modes at 40.2, 152.5 and 283.8 cm-1, none near 98.5. I could not read the full GaTe mode table, so I cannot rule GaTe in or out from the strong band.",
+    "I did not run the Raman reference matcher or the other skill scripts. The skill's scripts and reference notes live outside this folder, and the task said not to read files outside it. The literature search through iopic-bond failed because VALENCY_BOND_TOKEN is not set. Only the Valency abstract search was used, and only the abstract of Hoang et al. was read. Candidate ranking is therefore not systematic, and the other candidates were not tested.",
+    "Calibration cannot be checked. No Si line at 520.7 cm-1 is present (the only candidate near 520 cm-1 is noise), so the substrate is unknown and there is no wavenumber reference. The window starts at 60 cm-1, so modes below about 60 cm-1, including the GaTe 40.2 cm-1 Ag mode, cannot be observed here.",
+    "Temperature (295 K) and the 532 nm laser are given. The data is a single unpolarised spectrum, so polarization classification and irrep assignment are not possible. Resonance effects at 532 nm were not checked against GaTe excitonic transitions.",
+    "No cosmic-ray spikes were found; the single flagged point (98.61 cm-1) is the top of the strong band. Peak widths are fit-dependent: the strong band is 5.1 cm-1 (pseudo-Voigt) to 8.3 cm-1 (Lorentzian) FWHM.",
+    "Housekeeping: I created overview.png and fit_work.py in this folder. I also ran a mkdir on a path outside the folder (C:\\WINDOWS\\TEMP\\ramanlens-work), then removed it with rmdir because it was empty. Its timestamp suggests it may have existed before my command, so I cannot be certain I created it."
+  ]
+}

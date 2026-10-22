@@ -1,0 +1,139 @@
+{
+  "summary": "The G and 2D shifts between spectra are not a doping signature. From 0.5 to 5 mW (Si-referenced) G softens by 1.83 cm-1 and 2D by 5.19 cm-1, a 2D/G shift ratio of 2.8, on the strain/temperature side of the Lee et al. (2012) plane rather than the doping side (~0.7). G does not stiffen, and I2D/IG is power-independent. The power series also broadens both peaks, which points to laser heating as the leading interpretation. The Si line in the same spot does not shift, though, so heating is not confirmed and a time/history drift in the fixed 0.5 -> 2 -> 5 mW sequence cannot be excluded. If the change is read as strain, it is a small tensile-like change of about 0.03%. Trust the 0.5 mW spectrum for the absolute positions: it is effectively the zero-power point (linear extrapolation agrees within 0.2 cm-1), with Si-referenced G = 1581.1 cm-1 and 2D = 2669.4 cm-1. Do not quote an absolute strain or doping value from these three spectra alone, because the unstrained/undoped 2D reference at 532 nm is not established for this setup.",
+  "observations": [
+    {
+      "finding": "G and 2D both soften monotonically with laser power; the trend is real, not calibration drift.",
+      "evidence": "Lorentzian fits (linear baseline, 1535-1630 and 2620-2730 cm-1 windows): G centre 1581.297 +/- 0.10, 1580.633 +/- 0.07, 1579.511 +/- 0.05 cm-1 at 0.5, 2, 5 mW; 2D centre 2669.537 +/- 0.045, 2666.421 +/- 0.035, 2664.395 +/- 0.026 cm-1. Lorentzian and Voigt fits agree to ~0.001 cm-1. Si reference (520.864, 520.904, 520.908 +/- 0.01-0.03 cm-1) moves only +0.04 cm-1 over the same powers.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Over 0.5 -> 5 mW the shift ratio is 2.8, which is inconsistent with a pure-doping response. The ratio is not constant across steps, so the response is nonlinear.",
+      "evidence": "Si-corrected dG = -1.83 cm-1, d2D = -5.19 cm-1, ratio 2.83. Step ratios: 0.5->2 mW dG = -0.70, d2D = -3.16 (ratio 4.5); 2->5 mW dG = -1.13, d2D = -2.03 (ratio 1.8). Pure doping gives a ratio near 0.7 and strain near 2.2; the G peak softens here, whereas doping stiffens G in either sign.",
+      "provenance": "inferred",
+      "source": "Lee JE et al., Nat. Commun. 3, 1024 (2012) (2D/G slope ~2.2 for strain, ~0.7 for doping; recalled from memory, verify against the paper's figures). Das A et al., Nat. Nanotechnol. 3, 210 (2008) (G-peak stiffening with doping)."
+    },
+    {
+      "finding": "The Si substrate line gives a calibration offset of about +0.2 cm-1 and no meaningful drift, so the graphene shifts are local and not instrumental.",
+      "evidence": "Si 520 cm-1 centre 520.864 (0.5 mW), 520.904 (2 mW), 520.908 (5 mW) versus the standard 520.7 cm-1. The 0.04 cm-1 change would need ~2 K of Si heating at -0.02 cm-1/K. A linear axis-scale error consistent with that 0.04 cm-1 at 520 cm-1 would imply only ~0.2 cm-1 at 2670 cm-1, far below the observed 5.2 cm-1 2D shift.",
+      "provenance": "measured",
+      "source": "Balkanski M et al., Phys. Rev. B 28, 1928 (1983) (Si first-order temperature coefficient, ~ -0.02 cm-1/K; recalled, verify)."
+    },
+    {
+      "finding": "Both peaks broaden with power, consistent with phonon-lifetime reduction (heating-like) and/or increased inhomogeneity.",
+      "evidence": "G FWHM 13.73 -> 15.58 -> 17.83 cm-1 (+30%); 2D FWHM 31.97 -> 34.89 -> 39.25 cm-1 (+23%), Lorentzian fits.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "I2D/IG is stable with power, and the spectrum is monolayer-like.",
+      "evidence": "Area ratio 6.87, 6.77, 6.58; height ratio 2.95, 3.02, 2.99. Single Lorentzian 2D with 32 cm-1 FWHM at 0.5 mW; residuals are white (lag-1 autocorrelation -0.10 to 0.07). A stable I2D/IG argues against a large doping change, since I2D/IG falls strongly only at high doping.",
+      "provenance": "inferred",
+      "source": "Ferrari AC et al., Phys. Rev. Lett. 97, 187401 (2006) (monolayer 2D lineshape and I2D/IG criteria)."
+    },
+    {
+      "finding": "Graphene intensities grow faster than the Si line with power, which I cannot explain from the data.",
+      "evidence": "G/Si area ratio 2.62 -> 2.93 -> 3.35 (+28%). For x10 power (0.5->5 mW), Si area grows x10.0 but G area x12.8 and 2D area x12.3. No peak-top flattening (no saturation signature); max counts 25664.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "No D band is resolved above the noise at 0.5 mW.",
+      "evidence": "Max residual in 1330-1370 cm-1 after a flank-based linear baseline is 0.077 x G height; flank noise is 0.024 x G height. The D-band Lorentzian fits are unstable (parameters pinned at bounds). A rough upper bound is I_D/I_G of ~0.05-0.08, which via Canado et al. (APL 88, 163106, 2006), L_a = 2.4e-10 lambda^4 / (I_D/I_G) = 19.2 nm / (I_D/I_G), gives L_a of roughly 240-380 nm.",
+      "provenance": "inferred",
+      "source": "Canado LG et al., Appl. Phys. Lett. 88, 163106 (2006) (L_a equation)."
+    },
+    {
+      "finding": "If the G and 2D downshifts are read as strain, they correspond to a small tensile-like change of about 0.03% between 0.5 and 5 mW. If they are read as heating, the G shift alone would need ~90-115 K of heating, which the Si line does not support.",
+      "evidence": "dG/(-60 cm-1/%) = 0.030%; d2D/(-150 cm-1/%) = 0.035%. Heating: 1.83/0.016-0.020 cm-1/K = 90-115 K.",
+      "provenance": "literature",
+      "source": "Strain rates -60 cm-1/% (G) and ~ -150 cm-1/% (2D) for biaxial strain, from Mohiuddin TMG et al., Phys. Rev. B 79, 205433 (2009) and related work (recalled from memory, verify). Temperature coefficients from Calizo I et al., Nano Lett. 7, 2645 (2007) (recalled, verify)."
+    },
+    {
+      "finding": "The 0.5 mW spectrum is effectively the zero-power point and is the one to use for absolute positions, with adequate S/N. The 5 mW spectrum is the most perturbed.",
+      "evidence": "Linear extrapolation to P=0 gives G 1581.29 and 2D 2669.30 cm-1 (0.5 mW: 1581.13 and 2669.37). S/N: G height 775 vs flank noise 25 (~30), 2D height 2245 vs ~19 (~120); statistical position errors ~0.1 and ~0.05 cm-1.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "Single Lorentzian 2D, FWHM ~32 cm-1 and I2D/IG ~3 (height) at 0.5 mW; Ferrari et al. PRL 97, 187401 (2006). Layer count is user-stated and this only supports it spectroscopically."
+    },
+    {
+      "name": "defect_level",
+      "value": "low / none detected",
+      "provenance": "inferred",
+      "source": "No D band above noise at 0.5 mW; upper bound I_D/I_G ~0.05-0.08 (baseline-limited). Canado et al. APL 88, 163106 (2006)."
+    },
+    {
+      "name": "doping_type",
+      "value": "none resolved (no measurable doping change with power)",
+      "provenance": "inferred",
+      "source": "2D/G shift ratio 2.8 is not the doping ratio ~0.7; I2D/IG constant. Lee et al. Nat. Commun. 3, 1024 (2012); Das et al. Nat. Nanotechnol. 3, 210 (2008). Absolute doping state at 0.5 mW is not determined."
+    },
+    {
+      "name": "strain_sign",
+      "value": "tensile-like change with increasing power (~0.03%); absolute strain at 0.5 mW not determined",
+      "provenance": "inferred",
+      "source": "Strain rates from Mohiuddin et al. PRB 79, 205433 (2009) (recalled). Mechanism (strain vs heating vs drift) not separable from these three spectra."
+    },
+    {
+      "name": "G_position_zero_power_cm1",
+      "value": "1581.1 (Si-referenced, 0.5 mW); zero-power extrapolation 1581.3",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "2D_position_zero_power_cm1",
+      "value": "2669.4 (Si-referenced, 0.5 mW); zero-power extrapolation 2669.3",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "temperature_K",
+      "value": "295 nominal; sample heating up to ~90-115 K above ambient is not supported by the Si control",
+      "provenance": "inferred",
+      "source": "Balkanski et al. PRB 28, 1928 (1983); Calizo et al. Nano Lett. 7, 2645 (2007) (recalled)."
+    }
+  ],
+  "caveats": [
+    "Absolute strain or doping cannot be stated reliably. The unstrained/undoped 2D reference at 532 nm is not established for this setup, and 2D shifts with laser energy (dispersion roughly 90-100 cm-1/eV, Ferrari et al. PRL 2006, recalled), so textbook reference values may be off by several cm-1, equivalent to ~0.05% strain. The relative power-series analysis is more trustworthy than the absolute assignment.",
+    "Heating, a power-induced strain change, photo-induced doping/desorption, and a time drift in the fixed 0.5 -> 2 -> 5 mW order all predict some change. With one sequence and no re-measurement, they cannot be separated.",
+    "The Si control (no shift beyond 0.04 cm-1) argues against large substrate heating, but the Si Raman signal and the graphene may heat differently across the SiO2 interface, so this is a constraint, not a proof.",
+    "The 2D response is nonlinear across power (ratio 4.5 then 1.8), so a simple linear-in-power heating model does not fit cleanly; with only three powers the zero-power extrapolation is ill-conditioned (quadratic gives 2670.7 for 2D vs linear 2669.3).",
+    "Intensities grow superlinearly with power for graphene (x12-13 for x10 power) but linearly for Si. This could be detector nonlinearity, power-meter calibration, background/normalisation, or a real change in the graphene signal. It affects any heating estimate that assumes linear power scaling.",
+    "The grid spacing differs between files (1.05, 1.01, 0.97 cm-1/point over the same 450-3199 cm-1 range), so the files were probably resampled. The Si check bounds any axis-scale inconsistency to ~0.2 cm-1 at 2670 cm-1, well below the observed shifts.",
+    "Literature values quoted here (Lee 2012 slopes 2.2/0.7; strain rates -60 and -150 cm-1/%; Si and graphene temperature coefficients; 2D dispersion) are recalled from memory and were not checked against the papers in this session. Verify them before quantitative use.",
+    "Peak fits use a single Lorentzian per G and 2D with linear baseline; the D-band fits did not converge (parameters pinned at bounds), so the D-band result is a model-free upper bound only."
+  ],
+  "questions_for_user": [
+    "What was the time interval between the three spectra, and was the 0.5 mW spectrum re-measured after the 5 mW one? This decides between a power effect and a time/history drift.",
+    "Are the mW values measured at the sample (after the objective) and was the power meter calibrated recently? The graphene intensity grows superlinearly with power, which could point to a power-calibration or detector issue.",
+    "What is the Si reference convention on your spectrometer? The Si line reads 520.86-520.91 cm-1 rather than 520.7; I used 520.7 as the standard reference.",
+    "What is the environment (ambient, vacuum, N2) and the sample history (annealing, PMMA residue, transfer method)? Adsorbates and photo-desorption change doping under illumination and could explain a power-dependent response.",
+    "What is the SiO2 thickness and substrate doping? Both affect the heat flow and the optical contrast, and so the heating estimate.",
+    "Do you have an independent reference for this sample (e.g., a same-setup spectrum of an area known to be unstrained, or the 2D position at a known laser energy)? That is the only way to turn the relative shifts into an absolute strain or doping value.",
+    "Were the intensities background-subtracted or normalised (counts per second, dark-subtracted)? This affects the superlinear intensity behaviour and the D-band limit."
+  ],
+  "citations": [
+    "Lee JE, Ahn G, Shim J, Lee YS, Ryu S. Optical separation of mechanical strain from charge doping in graphene. Nat. Commun. 3, 1024 (2012) \u2014 2D/G shift-ratio slopes ~2.2 (strain) and ~0.7 (doping); recalled, verify figure.",
+    "Das A, et al. Monitoring dopants by Raman scattering in an electrochemically top-gated graphene transistor. Nat. Nanotechnol. 3, 210 (2008) \u2014 G-peak stiffening with doping; recalled.",
+    "Mohiuddin TMG, et al. Uniaxial strain in graphene by Raman spectroscopy: G peak splitting, Gr\u00fcneisen parameters, and sample orientation. Phys. Rev. B 79, 205433 (2009) \u2014 strain rates; recalled, verify numbers.",
+    "Calizo I, et al. Temperature dependence of the Raman spectra of graphene and graphene multilayers. Nano Lett. 7, 2645 (2007) \u2014 G and 2D temperature coefficients; recalled, verify.",
+    "Balkanski M, Wallis RF, Haro E. Anharmonic effects in light scattering due to optical phonons in silicon. Phys. Rev. B 28, 1928 (1983) \u2014 Si first-order temperature coefficient; recalled, verify.",
+    "Ferrari AC, et al. Raman spectrum of graphene and graphene layers. Phys. Rev. Lett. 97, 187401 (2006) \u2014 monolayer 2D lineshape, I2D/IG, and excitation dependence; recalled, verify.",
+    "Can\u00e7ado LG, et al. General equation for the determination of the crystallite size L_a of nanographite by Raman spectroscopy. Appl. Phys. Lett. 88, 163106 (2006) \u2014 L_a = 2.4e-10 \u03bb^4 (I_D/I_G)^-1; recalled."
+  ],
+  "limits": [
+    "Only the three CSV files in the working folder were used. No other data or reference files were consulted, and no literature was accessed, so every literature value is from memory and flagged for verification.",
+    "Analysis used Lorentzian and Voigt fits with a linear baseline (lmfit) in /tmp/raman-analysis (outside the data folder). Position errors are statistical only; the calibration offset (Si 520.86-520.91 vs 520.7) carries a systematic uncertainty of roughly +/-0.2 cm-1 that is common to all spectra.",
+    "The D-band result is a model-free upper bound, not a measured I_D/I_G, because the D-band Lorentzian fits did not converge.",
+    "The absolute strain and doping state at 0.5 mW cannot be determined without an in-setup reference. The power-dependent trend is the only quantity this dataset supports directly.",
+    "Mechanism cannot be settled: heating, strain change, photo-induced doping, and time drift in the fixed sequence are not separable with three spectra in one order and no repeat.",
+    "The 2D/G slope analysis assumes the relations in Lee et al. (2012), and the strain and heating numbers depend on recalled coefficients."
+  ]
+}

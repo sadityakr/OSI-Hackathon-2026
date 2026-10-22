@@ -1,0 +1,97 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.88,
+      "evidence": "Two in-plane/out-of-plane bands at 383.0 and 406.4 cm-1 (calibrated to Si 520.7), separation 23.4 cm-1. This E2g/A1g pair with that spacing is MoS2-specific in the 150-650 cm-1 window. Few-layer, not monolayer (monolayer separation ~19 cm-1) and not bulk (~25 cm-1)."
+    },
+    {
+      "material": "2H-WS2",
+      "confidence": 0.02,
+      "evidence": "Expected E2g ~352 and A1g ~418 cm-1 (separation ~65 cm-1). Neither band is present at those positions; the 383/406 pair does not fit WS2."
+    },
+    {
+      "material": "2H-MoSe2",
+      "confidence": 0.02,
+      "evidence": "Expected E2g ~286 and A1g ~243 cm-1 (A1g below E2g). No bands near these positions; the observed A1g is above the E2g, the reverse of MoSe2."
+    },
+    {
+      "material": "2H-WSe2",
+      "confidence": 0.01,
+      "evidence": "E2g and A1g near 250 cm-1 overlap (nearly degenerate). The spectrum shows two bands 23 cm-1 apart near 383 and 406 cm-1, so WSe2 is excluded."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "Identify task with no material hint. The candidate list was built from my own knowledge of reference Raman positions, not from the skill's matcher or material notes, which are outside the working folder and were not used. Ranked candidates are returned as required.",
+  "peaks": [
+    {
+      "position_cm1": 520.51,
+      "fwhm_cm1": 3.48,
+      "assignment": "Si substrate (first-order Si line)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit position 520.51 cm-1 (+-0.01 fit error). Reference Si line 520.7 cm-1 at room temperature (standard calibration value, quoted from memory, not verified in this session). Calibration offset about -0.2 cm-1; the MoS2 positions below are corrected by +0.19 cm-1."
+    },
+    {
+      "position_cm1": 383.03,
+      "fwhm_cm1": 2.7,
+      "assignment": "E^1_2g (in-plane E' mode, 2H-MoS2)",
+      "irrep": "E^1_2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit position 382.84 cm-1 raw (+-0.03), corrected to 383.03 with Si calibration (+-0.2). Assignment is inferred from the 2H-MoS2 reference modes in Molina-Sanchez and Wirtz, PRB 84, 155413 (2011), doi:10.1103/PhysRevB.84.155413, and Lee et al., ACS Nano 4, 2695 (2010), doi:10.1021/nn1003937 (quoted from memory, not checked in this session)."
+    },
+    {
+      "position_cm1": 406.38,
+      "fwhm_cm1": 4.9,
+      "assignment": "A_1g (out-of-plane mode, 2H-MoS2)",
+      "irrep": "A_1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit position 406.19 cm-1 raw (+-0.11), corrected to 406.38 with Si calibration (+-0.2). Assignment from the same MoS2 literature (Molina-Sanchez and Wirtz 2011; Lee et al. 2010, both from memory). The fit is broader than E2g (FWHM ~4.9 vs ~2.7 cm-1); the cause is not resolved."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H (bulk-like hexagonal stacking)",
+      "provenance": "inferred",
+      "source": "The E2g/A1g pair and their spacing match 2H-MoS2. No stacking-sensitive (shear or layer-breathing) modes lie in the 150-650 cm-1 window, so 2H versus 3R is not tested."
+    },
+    {
+      "name": "layers",
+      "value": "few-layer, about 4 (plausible range 3-5)",
+      "provenance": "inferred",
+      "source": "Separation A1g minus E2g = 23.4 cm-1 (calibration-independent, about +-0.3 cm-1 from fit and Si offset). This is above the monolayer value (~19 cm-1) and below bulk (~25 cm-1) on the thickness trend in Lee et al., ACS Nano 4, 2695 (2010), doi:10.1021/nn1003937. That trend was recalled from memory and the exact per-layer table was not checked here."
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessed",
+      "provenance": "inferred",
+      "source": "Defect and strain analysis needs the material's defect-activated bands (e.g. LA(M) or disorder bands) and reference relations, which were not checked in this session."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Strain needs a separate E2g shift and splitting check against reference values. Not checked here."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee, C. et al., ACS Nano 4, 2695 (2010), doi:10.1021/nn1003937 (layer-dependent E2g/A1g separation; cited from memory, not verified in this session)",
+    "Molina-Sanchez, A. & Wirtz, L., Phys. Rev. B 84, 155413 (2011), doi:10.1103/PhysRevB.84.155413 (MoS2 mode assignment; cited from memory, not verified in this session)"
+  ],
+  "limits": [
+    "Working scope: the operator limited file access to this folder, so I did not use the skill's scripts (rl_qc, rl_fit, match_library), its material reference notes, or its relations. The analysis is my own inline Python fit on ./spectrum.csv (pseudo-Voigt peaks with local linear baselines). The reference positions and the layer trend are from memory and were not checked against a source.",
+    "Layer count is approximate. The separation-to-layer mapping is a trend, not a calibrated table. Laser power (heating), substrate interference from the 285 nm SiO2 layer, strain and doping all shift the bands and can change the separation by about 1 cm-1, which could move the estimate by one or more layers. Monolayer (~19 cm-1) and bulk (~25 cm-1) are excluded at the level of the fit.",
+    "Laser power is not given, so heating-induced shifts cannot be separated from thickness or strain. The A1g position (406.4 cm-1) is below bulk (~408 cm-1), which fits a few-layer film, but doping or strain could also lower it.",
+    "Calibration: the Si line sits at 520.51 cm-1 against a 520.7 cm-1 reference, an offset of about -0.2 cm-1. The E and A1g positions are corrected by this offset; the separation does not depend on it.",
+    "Signal: sampling is 0.53 cm-1 per point. Noise is about 160-200 counts (robust sigma ~136) against peak heights of ~7,000 (E2g) and ~3,000 (A1g) counts above baseline. The 150-300 cm-1 region shows no feature above noise. The 2LA(M) band near 450 cm-1 is not resolved: after removing the high-side wing of the A1g band, nothing stands above noise, so its absence is not a firm result.",
+    "Spike check: no isolated single-point spikes. The points flagged by the outlier scan (382.6, 383.1, 520.05-521.11 cm-1) lie on the real E2g and Si lines, which are several points wide. The Si line is near 24.7k counts without flat-topping, so no saturation is flagged.",
+    "Window: the data cover only 150-650 cm-1. Bands above 650 cm-1 (for example graphene G or 2D, hBN E2g near 1366) cannot be checked, so material exclusions rest on this window only. The candidates rejected above are excluded on the E/A positions and separation alone.",
+    "Not an angle series: polarization classification does not apply. The 'pattern' field is null for every peak.",
+    "The sample is identified as MoS2 from the E2g/A1g pair and spacing, with no independent confirmation from a second material-specific band or from a reference spectrum. Confidence is high for MoS2 and only approximate for the layer count."
+  ]
+}
