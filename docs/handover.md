@@ -17,7 +17,7 @@ You are taking over RamanLens, Aditya Kumar's entry for the 4th Open Scientific 
 - Not run yet: the loop, any API run of `eval/run_agent.py`, Bond calls from iopic-bond (needs `VALENCY_BOND_TOKEN`).
 - Data on disk in `data/raw/` (about 3.5 GB, not in git): CRD (`crd.json`, `crd_2d.pkl`), 11 arXiv PDFs, CrSBr (Zenodo 15048152 unzipped twice under `CrSBrPaper1/` and `zenodo15048152/x/`), WS2, MoS2, MoSe2, WSe2, graphene (2.4 GB), RRUFF oriented minerals. `data/get_data.ps1 -All` has not been run; the extra series sets in `data/catalog-series-quantum-magnetic.md` are optional.
 
-**Git.** Local branch `master` (commits `846b3c3`, `ca79151`, `c83f350`) and GitHub `origin/main` have unrelated histories. Planned sync: create branch `sync/pc-oct21` from `origin/main`, add the local work in one commit (stage files by name, never `git add -A`), let Aditya review, then push. Never commit `.env`, `.venv/`, `data/raw/`, `eval/runs/`, `loop/logs/`. A `.gitignore` exists on the PC although `CLAUDE.md` says there is none; ask Aditya which is intended before relying on either.
+**Git.** Local `master` and GitHub `main` were merged on Oct 22 (`902177d`) and are one history; push with `git push origin master:main`, pull first, stage files by name (never `git add -A`). The tracked `.gitignore` keeps `.env`, `.venv/`, `data/raw/`, `scratch/`, `resources/src/`, `eval/runs/`, `loop/logs/` out of git.
 
 **Do next, in order.**
 1. Check `.env` has `ANTHROPIC_API_KEY` (and ideally `VALENCY_BOND_TOKEN`, LangSmith keys). Run the fast tests: `.venv\Scripts\python.exe -m pytest tests -q -m "not slow"` and note the baseline.
