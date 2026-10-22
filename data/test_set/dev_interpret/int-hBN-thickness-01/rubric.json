@@ -1,0 +1,58 @@
+{
+  "case_id": "int-hBN-thickness-01",
+  "source": {
+    "paper": "Gorbachev et al. 2011, Hunting for monolayer boron nitride: optical and Raman signatures, Small 7, 465, arXiv:1008.2868",
+    "dataset": "synthetic (eval/synth/make_interpret_dev.py)",
+    "locator": "p.1, p.3-5 text, Fig. 4a,b (preprint pages)"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 2,
+      "text": "The E2g band of flake 2 is upshifted by about 3 cm-1 relative to flake 1 (about 1366 cm-1) and is broader, consistent with a monolayer",
+      "locator": "Gorbachev 2011 p.1, p.4 (HWHM 10 to 12 cm-1 for 1L vs 9 for bulk)"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 2,
+      "text": "The monolayer upshift is small (2 to 4 cm-1) and varies from sample to sample by about +-2 cm-1, so position alone is not conclusive",
+      "locator": "Gorbachev 2011 p.4, Fig. 4b caption"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Random strain from cleavage shifts the band (red shifts of typically 1 to 2 cm-1, dominant in bilayers), comparable to the monolayer upshift",
+      "locator": "Gorbachev 2011 p.1, p.5 conclusion ('not as unambiguous as the Raman signatures for mono- and bi-layer graphene')"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 1,
+      "text": "The much weaker E2g signal of flake 2 under the same conditions, compared on the same substrate, supports a very thin flake; intensity is the more useful layer measure here: the integrated intensity is proportional to the layer number for the first few layers once the spectrometer is calibrated for the substrate",
+      "locator": "Gorbachev 2011 p.3-4, Fig. 4a inset"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Suggests an independent check (optical contrast at a suitable oxide thickness, or AFM) and calibration against the Si line",
+      "locator": "Gorbachev 2011 (optical contrast); Si line Castellanos-Gomez et al. 2014, arXiv:1403.0499 p.7"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 2,
+      "text": "Declares flake 2 a monolayer with certainty from the peak position alone"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Treats a bilayer as upshifted like a monolayer (Gorbachev: 2L usually downshifted 1 to 2 cm-1, Gorbachev p.1)"
+    }
+  ],
+  "notes": "Synthetic, 514.5 nm. Flake 1 = bulk (E2g 1366.0, FWHM 18.0); flake 2 = monolayer (+3.0 cm-1, FWHM 22.0), from Gorbachev 2011 (p.1, p.4; widths given there as HWHM). Curator: monolayer height 0.06 of the thick flake, Si heights, noise."
+}

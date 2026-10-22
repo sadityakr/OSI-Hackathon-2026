@@ -1,0 +1,65 @@
+{
+  "case_id": "int-graphene-substrate-01",
+  "source": {
+    "paper": "Bukvisova, Kalousek, Patocka, Zlamal, Planer, Mahel, Citterberg, Novak, Sikola, Kolibal 2025, Casimir-like effect driven self-assembly of graphene on molten metals, arXiv:2503.04327",
+    "dataset": "Zenodo 14883846 (CC BY 4.0), 005_Data.zip, S1/FigS1D Au and Cu exported_Raman.txt",
+    "locator": "Fig. S1D and caption; main text p.3"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 2,
+      "text": "Both spectra show G (near 1580 cm-1) and 2D (near 2680 to 2700 cm-1), confirming graphene on both metals",
+      "locator": "Bukvisova 2025 main text p.3 ('we have confirmed that the layers ... are graphene'), Fig. S1D"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 2,
+      "text": "The D peak (near 1345 to 1350 cm-1) is relatively stronger on Au (I_D/I_G about 1 by peak height) than on Cu (about 0.6, poorly constrained because the Cu signal is weak)",
+      "locator": "Fig. S1D caption ('Higher intensity D peak ... on Au'); ratio measured by the curator"
+    },
+    {
+      "id": "f3",
+      "kind": "finding",
+      "weight": 1,
+      "text": "Reports the authors' explanation: the stronger D on Au is likely related to strain from the rapid solidification of the droplet, and labels it as their hypothesis",
+      "locator": "Fig. S1D caption"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 2,
+      "text": "Points out that the D band needs a defect (or edge) to be activated, so a strong D means more Raman-active defects or domain edges in the spot; strain by itself shifts G and 2D, and a strain explanation should be checked against the G and 2D positions",
+      "locator": "Cancado, Jorio, Martins Ferreira, Stavale, Achete, Capaz, Moutinho, Lombardo, Kulmala, Ferrari 2011, Quantifying defects in graphene via Raman spectroscopy at different excitation energies, Nano Lett. 11, 3190, doi:10.1021/nl201432g, arXiv:1105.0175 p.2 (D requires a defect for activation); Mohiuddin et al. 2009, Phys. Rev. B 79, 205433, arXiv:0812.1538 (strain shifts G and 2D)"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks for the laser wavelength, needed for any L_D estimate (I_D/I_G scales with lambda^4) and for comparing 2D positions (2D disperses with excitation energy)",
+      "locator": "Cancado, Jorio, Martins Ferreira, Stavale, Achete, Capaz, Moutinho, Lombardo, Kulmala, Ferrari 2011, Quantifying defects in graphene via Raman spectroscopy at different excitation energies, Nano Lett. 11, 3190, doi:10.1021/nl201432g, arXiv:1105.0175 Eq. 4 and p.5"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "The Cu spectrum has a much weaker signal, so its D/G ratio and peak widths are poorly constrained; comparisons need error bars or longer integration",
+      "locator": "measured (Cu G height about 25 counts over a noise of about 9)"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 1,
+      "text": "Gives a quantitative L_D or defect density without knowing the laser wavelength"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "States as established fact that the D peak on Au is caused by strain"
+    }
+  ],
+  "notes": "Experimental, unchanged except for dropping shifts below 100 cm-1 and sorting x ascending. The paper states only what items f1 and f3 and the caption say; it gives no laser wavelength, no layer number and no peak positions. Curator fits (Lorentzians on a linear baseline): Au D 1344.4, G 1580.3, 2D 2681.1 cm-1, D/G heights 111/117 about 0.95, 2D/G about 2.9; Cu G about 1580 to 1587 (height about 22 to 26 counts, noise sd about 9), 2D 2695.7 (height about 50), D weak (about 14 counts, poorly constrained). The Au spectrum is also used by the identification case dev/exp-graphene-01."
+}

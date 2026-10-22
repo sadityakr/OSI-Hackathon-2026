@@ -1,0 +1,65 @@
+{
+  "case_id": "int-WS2-resonance-01",
+  "source": {
+    "paper": "Berkdemir et al. 2013, Identification of individual and few layers of WS2 using Raman spectroscopy, Sci. Rep. 3, 1755, doi:10.1038/srep01755",
+    "dataset": "synthetic (eval/synth/make_interpret_dev.py)",
+    "locator": "Table 1 (514.5 nm positions and 2LA(M)/A1g ratios), Results (overlap, Fig. 1e fit)"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 3,
+      "text": "The band near 350 to 356 cm-1 is two overlapping modes, the second-order 2LA(M) (about 351.1 cm-1 in 1L) and the first-order E2g1 (about 355.2 cm-1), and must be fitted with two components",
+      "locator": "Berkdemir 2013 Results ('the multi-peak Lorentzian fitting shown in Figure 1e clearly separates their individual contributions'), Table 1"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 2,
+      "text": "At 514.5 nm 2LA(M) is about twice as strong as A1g at spot 1 (ratio above 2, the monolayer fingerprint) and much weaker relative to A1g at the thick spot (about 0.5)",
+      "locator": "Berkdemir 2013 Results ('approximately twice the intensity of the first-order A1g'; 'larger than 2 only for monolayer films') and Table 1 (2.2, 1.01, 0.72, 0.47 for 1L, 2L, 3L, bulk)"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 2,
+      "text": "A1g stiffens from about 417.2 cm-1 (spot 1) to about 420.1 cm-1 (spot 2), consistent with a monolayer at spot 1 and a bulk-like region at spot 2",
+      "locator": "Berkdemir 2013 Table 1 (1L 417.2, 2L 418.4, 3L 419.0, bulk 420.1 at 514.5 nm)"
+    },
+    {
+      "id": "n2",
+      "kind": "quantitative",
+      "weight": 1,
+      "text": "The A1g minus E2g1 separation is about 62 cm-1 for spot 1 and about 65 cm-1 for spot 2, but only after E2g1 is separated from 2LA(M)",
+      "locator": "Berkdemir 2013 Table 1"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "A1g and separation steps between 2L, 3L and bulk are about 1 cm-1, so beyond the monolayer the layer number is weakly constrained by positions",
+      "locator": "Berkdemir 2013 Table 1 (3L 419.0 vs bulk 420.1 cm-1)"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Checks calibration against the Si line and/or asks about the laser line, since the 2LA(M) intensity depends strongly on excitation (resonance)",
+      "locator": "Berkdemir 2013 Table 1 (488, 514.5 and 647 nm rows); Methods (Si 520 cm-1 used for calibration)"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 2,
+      "text": "Assigns the maximum of the 350 to 356 cm-1 band to E2g1 alone and builds the layer number on that position or on the separation from it"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Calls the 2LA(M) band a defect or impurity peak"
+    }
+  ],
+  "notes": "Synthetic. Positions from Berkdemir 2013 Table 1, 514.5 nm: 1L 2LA(M) 351.1, E2g1 355.2, A1g 417.2; bulk 350.0, 355.3, 420.1 cm-1; 2LA(M)/A1g {1: 2.2, 'bulk': 0.47} (Table 1, Europe PMC PMC3639451 full text). LA(M) 176.0 cm-1 as a weak band (Table 1 lists it for 488 nm). Curator choices: FWHM {'2LA': 9.0, 'E2g': 4.0, 'A1g': 4.5, 'LA': 10.0} (the paper gives none), E2g1/A1g height 0.5 (1L) and 0.6 (bulk), Si heights (Si at 520.9 cm-1). The thick spot uses Berkdemir's bulk values, which were measured on powder."
+}

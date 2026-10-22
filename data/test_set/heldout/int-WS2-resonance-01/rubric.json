@@ -1,0 +1,91 @@
+{
+  "case_id": "int-WS2-resonance-01",
+  "source": {
+    "paper": "McDonnell, Huang, Cui, Hewak, Smith 2018, 'Probing Excitons, Trions and Dark Excitons in Monolayer WS2 using Resonance Raman Spectroscopy', Nano Lett. 18, 1428, doi:10.1021/acs.nanolett.7b05184 (author manuscript in the dataset record)",
+    "dataset": "https://doi.org/10.5258/SOTON/D0371 (RRS_Spectra.xlsx), sheets '4K Shift/Intensity/WL'",
+    "locator": "Fig. 1a, Figs. 2, 4, 5, 6, Table 1, main text"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 1,
+      "text": "Assigns the main peaks: E' near 356 cm-1 and A1' near 417 cm-1 (single phonon), defect-activated LA near 174 cm-1, 2ZA near 294 cm-1, 2LA near 349 cm-1 (overlapping E'), a broad unassigned feature near 479 to 485 cm-1, and the Si substrate peak at 520 cm-1 on a luminescence background",
+      "locator": "Fig. 1a and text ('defect activated LA ... 174, 2ZA ... 294, 2LA ... 349, E' ... 356, A1' ... 417 ... new peak ... 479 cm-1')"
+    },
+    {
+      "id": "n1",
+      "kind": "quantitative",
+      "weight": 1,
+      "text": "Uses the A1'-E' separation (about 61 cm-1) to identify the flake as a monolayer",
+      "locator": "Methods paragraph: 'difference in Raman shift of A1' and E' peaks of 61.1 cm-1' (with AFM 0.72 nm)"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 1,
+      "text": "Peak positions and widths do not change with excitation energy; only the intensities change (resonance)",
+      "locator": "text: 'the center energy and linewidth were independent of excitation energy'"
+    },
+    {
+      "id": "f3",
+      "kind": "finding",
+      "weight": 2,
+      "text": "The A1' intensity is strongly resonant near 2.05 to 2.12 eV (about 585 to 605 nm) and the profile has structure, with two maxima separated by roughly the phonon energy, explained as incoming and outgoing resonance with the A exciton",
+      "locator": "Fig. 2 (4 K profile), Fig. 4a: 'two main peaks ... explained by incoming and outgoing resonances with a single bright excitation'"
+    },
+    {
+      "id": "f4",
+      "kind": "finding",
+      "weight": 2,
+      "text": "A low-energy tail of the resonance requires a second bright state: the trion, about 26 meV below the exciton (exciton about 2.064 eV, trion about 2.038 eV at 4 K), with exciton-trion scattering",
+      "locator": "Fig. 4c, text: 'upper and lower energy resonances, at 2.064 and 2.038 eV, are the A exciton and the A exciton based trion ... separation ... 26 meV'"
+    },
+    {
+      "id": "f5",
+      "kind": "finding",
+      "weight": 1,
+      "text": "Different peaks have different resonance profiles (e.g. 2ZA has much less weight at lower excitation energy than A1'), reflecting different exciton/trion channel weights; the two-phonon and defect peaks involve large-wavevector dark states",
+      "locator": "Fig. 6, Table 1, text on two-phonon peaks"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Comparing intensities across excitation wavelengths needs correction for thin-film interference on SiO2/Si (paper uses micro-reflectivity) in addition to spectrometer response; these spectra are not interference corrected",
+      "locator": "Methods: 'microreflectivity experiments ... substrate related optical interference effects ... corrected'; dataset readme: 'corrections for REF not applied to this data'"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Near resonance a broad photoluminescence background sits under the Raman peaks and must be modelled (e.g. a polynomial background) when fitting",
+      "locator": "Fig. 1a caption ('superposed on luminescence'); fitting with 'a quadratic background, to account for the luminescence'"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks whether the power is in the linear regime and free of laser heating (e.g. power series, Stokes/anti-Stokes ratio)",
+      "locator": "Methods: power dependence measured, 0.7 mW in the linear regime; heating checked with Stokes/anti-Stokes ratio"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 1,
+      "text": "Claims the A1' or E' frequency shifts (disperses) with excitation wavelength"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Assigns the broad feature near 479 to 485 cm-1 to a first-order single-phonon mode"
+    },
+    {
+      "id": "w3",
+      "penalty": 1,
+      "text": "Attributes the intensity changes to thickness or sample changes between spectra"
+    }
+  ],
+  "notes": "Twelve 4 K excitation energies spanning about 1.94 to 2.14 eV. Energies quoted in the paper come from fits to interference-corrected profiles; in these uncorrected data the A1' maxima still fall near the incoming and outgoing A-exciton resonances. The paper's unassigned peak is quoted as 479 cm-1 in the text and 485 cm-1 in the abstract."
+}

@@ -39,14 +39,22 @@ PLUGIN_DIR = ROOT / "skill" / "ramanlens"
 WORK_ROOT = Path(tempfile.gettempdir()) / "ramanlens-eval"
 
 # The SDK runner ends with a submit_report tool; here the report is Claude Code's structured output instead.
+FOLDER_RULE = ("The data is in the current folder. Do not look for other data or answer files elsewhere on this "
+               "machine; scripts and notes provided by a skill you load may be used wherever they live.")
+# The SDK runner's 'current folder only' wording made Haiku refuse to run skill scripts stored outside the case
+# folder; the rule exists to keep agents away from the test set, which permission deny rules also enforce.
 SYSTEM_CC = SYSTEM.replace(
+    "Work in the current folder only: the data file is ./spectrum.csv. Do not read files outside this folder.",
+    FOLDER_RULE + " The data file is ./spectrum.csv."
+).replace(
     "Then call submit_report exactly once.",
     "Your final answer is the structured report. Python 3 with numpy, scipy, pandas, lmfit and matplotlib is "
     "available as `python`.")
 
 SYSTEM_INTERPRET = """You are helping a researcher interpret Raman spectra of a layered (van der Waals) material
-they know. Work in the current folder only; do not read files outside it. Python 3 with numpy, scipy, pandas, lmfit
-and matplotlib is available as `python`. Analyse the data quantitatively before concluding.
+they know. The data is in the current folder. Do not look for other data or answer files elsewhere on this machine;
+scripts and notes provided by a skill you load may be used wherever they live. Python 3 with numpy, scipy, pandas,
+lmfit and matplotlib is available as `python`. Analyse the data quantitatively before concluding.
 
 Answer like a senior Raman spectroscopist: what changes between the spectra and what it means for the sample
 (thickness, crystal quality, defects, strain, doping, temperature, magnetic order, ...), backed by measured numbers.

@@ -1,0 +1,72 @@
+{
+  "case_id": "int-WS2-temperature-01",
+  "source": {
+    "paper": "McDonnell, Huang, Cui, Hewak, Smith 2018, 'Probing Excitons, Trions and Dark Excitons in Monolayer WS2 using Resonance Raman Spectroscopy', Nano Lett. 18, 1428, doi:10.1021/acs.nanolett.7b05184 (author manuscript in the dataset record)",
+    "dataset": "https://doi.org/10.5258/SOTON/D0371 (RRS_Spectra.xlsx), sheets 4K, 150K, 295K",
+    "locator": "Fig. 2, Fig. 5, main text"
+  },
+  "items": [
+    {
+      "id": "f1",
+      "kind": "finding",
+      "weight": 2,
+      "text": "The Raman intensity (A1' in particular) increases strongly on cooling, by roughly an order of magnitude at 4 K relative to 295 K",
+      "locator": "text after Fig. 1: 'As the temperature decreases the Raman intensity increases significantly, by approximately a factor of ten at 4K'"
+    },
+    {
+      "id": "f2",
+      "kind": "finding",
+      "weight": 2,
+      "text": "The excitation energy of maximum enhancement moves to higher energy on cooling (room-temperature resonance a single peak near 2.02 eV; at 4 K higher and structured), following the exciton energy that decreases with increasing temperature",
+      "locator": "Fig. 2 text: 'at room temperature the resonance has the form of a single peak centered at 2.02eV ... the central energy of the resonance increases'; Fig. 5b"
+    },
+    {
+      "id": "f3",
+      "kind": "finding",
+      "weight": 1,
+      "text": "At low temperature the resonance develops structure (exciton plus trion channels, incoming and outgoing resonances), whereas at room temperature it is one broad peak",
+      "locator": "Fig. 2; Figs. 4 to 5"
+    },
+    {
+      "id": "f4",
+      "kind": "finding",
+      "weight": 1,
+      "text": "The trion contribution weakens much faster with temperature than the exciton one (trion-trion amplitude down about 22 times from 4 K to 295 K, exciton-exciton about 40 percent)",
+      "locator": "Fig. 5a and text"
+    },
+    {
+      "id": "c1",
+      "kind": "caveat",
+      "weight": 2,
+      "text": "Comparing temperatures at one fixed laser wavelength mixes the intensity change with the shift of the resonance; a proper comparison needs the full excitation profile at each temperature",
+      "locator": "Fig. 2 (resonance center moves with temperature); follows from the resonance-profile method of the paper"
+    },
+    {
+      "id": "c2",
+      "kind": "caveat",
+      "weight": 1,
+      "text": "Thin-film interference on SiO2/Si and its temperature dependence should be corrected (paper: micro-reflectivity at each temperature); these spectra are not interference corrected",
+      "locator": "Methods; dataset readme ('corrections for REF not applied')"
+    },
+    {
+      "id": "q1",
+      "kind": "question",
+      "weight": 1,
+      "text": "Asks how the actual sample temperature / absence of laser heating was verified (e.g. Stokes/anti-Stokes ratio)",
+      "locator": "Methods: 'absence of laser induced sample heating was further confirmed using measurements of the Stokes/Anti-Stokes ratio'"
+    }
+  ],
+  "wrong_claims": [
+    {
+      "id": "w1",
+      "penalty": 1,
+      "text": "Attributes the order-of-magnitude intensity increase on cooling to the Bose-Einstein (n+1) factor (which changes the Stokes intensity of a 417 cm-1 mode by only about 15 percent between 295 K and 4 K)"
+    },
+    {
+      "id": "w2",
+      "penalty": 1,
+      "text": "Claims the resonance moves to lower excitation energy on cooling"
+    }
+  ],
+  "notes": "Twelve spectra: 4, 150, 295 K, each at the dataset excitation energies closest to 2.11, 2.07, 2.03 and 1.99 eV. The factor of ten is the paper's value for interference-corrected profiles; in these uncorrected data the peak A1' height is also about ten times larger at 4 K than at 295 K. The Bose factor in w1 is a textbook Stokes population factor (Cardona, Light Scattering in Solids I, 1983)."
+}
