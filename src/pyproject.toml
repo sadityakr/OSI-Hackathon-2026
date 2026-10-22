@@ -14,13 +14,16 @@ dependencies = [
   "python-dotenv>=1.0",
   "httpx>=0.27",
   "pillow>=10",
+  "marimo>=0.9",
+  "nbformat>=5",
+  "nbconvert[webpdf]>=7",
 ]
 
 [project.optional-dependencies]
 trace = ["langsmith>=0.2"]
 pdf = ["docling>=2.0"]
 ml = ["torch>=2.3"]
-dev = ["pytest>=8", "marimo>=0.9"]
+dev = ["pytest>=8"]
 
 [build-system]
 requires = ["setuptools>=68"]

@@ -10,6 +10,10 @@ Output: plain functions read by the store, the Bond client and the CLI.
     VALENCY_BOND_URL     Bond endpoint (default https://mcp.valency.io/)
     IOPIC_BOND_DEVICE    Docling device: "auto" (default), "cpu", or "cuda".
                          auto uses cuda when PyTorch can see a GPU, otherwise cpu.
+    IOPIC_BOND_EXCLUDE   withheld papers: arXiv ids, DOIs or title fragments (see exclude.py)
+    IOPIC_BOND_EXCLUDE_FILE  the same, one entry per line in a file
+    IOPIC_BOND_SEARCH    "on" (default) also serves find_papers and expand through Valency Bond;
+                         "off" serves only the parse and figure tools (the litpick plugin)
 """
 from __future__ import annotations
 
@@ -47,6 +51,10 @@ def bond_token() -> str | None:
 
 def bond_url() -> str:
     return os.environ.get("VALENCY_BOND_URL", DEFAULT_BOND_URL)
+
+
+def search_enabled() -> bool:
+    return (os.environ.get("IOPIC_BOND_SEARCH") or "on").strip().lower() not in ("off", "0", "false", "no")
 
 
 def parse_device() -> str:
