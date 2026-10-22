@@ -84,11 +84,12 @@ def _doctor() -> None:
 
 def _warmup() -> None:
     try:
-        from .pdf.pipeline import _build_converter
+        from .pdf.pipeline import load_converter
     except ImportError:
         sys.exit("docling is not installed: pip install iopic-bond[parse]")
-    print("loading Docling models (first run downloads them) ...")
-    conv = _build_converter(2.0, config.parse_device(), 0.4)
+    device = config.parse_device()
+    print(f"loading Docling models on {device} (first run downloads them) ...")
+    conv = load_converter(device)
     # models load lazily on first conversion; initialise the PDF pipeline explicitly
     try:
         from docling.datamodel.base_models import InputFormat

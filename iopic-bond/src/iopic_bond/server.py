@@ -122,8 +122,9 @@ async def expand(paper_id: str, mode: Literal["citing", "similar"] = "citing", l
 async def ingest_paper(arxiv_id: str, force: bool = False) -> dict:
     """Download an arXiv paper and parse it into a graph of sections, paragraphs and figures.
 
-    Returns at once if the paper is already in the library. A first parse takes from tens of
-    seconds to a few minutes. Returns the section outline and the figure list (label, caption).
+    Returns at once if the paper is already in the library. A first parse runs the layout model on
+    the pages that contain figures, not on the whole PDF, and skips table-structure recognition.
+    Returns the section outline and the figure list (label, caption).
     """
     if not looks_like_arxiv_id(arxiv_id):
         return {"status": "bad_request", "detail": f"{arxiv_id!r} is not an arXiv id (e.g. 1005.2509)"}
