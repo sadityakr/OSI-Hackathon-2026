@@ -25,7 +25,8 @@ def _repo() -> Path:
     for candidate in PLUGIN.parents:
         if (candidate / "iopic-bond" / "src").is_dir() and (candidate / ".venv").is_dir():
             return candidate
-    sys.stderr.write("litpick: repo not found. Set RAMANLENS_REPO.\n")
+    sys.stderr.write("litpick: repo not found on this computer. Rebuild the package here with "
+                     "`python skill/build_plugins.py` in your checkout, or set RAMANLENS_REPO.\n")
     sys.exit(1)
 
 

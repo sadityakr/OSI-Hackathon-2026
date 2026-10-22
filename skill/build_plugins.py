@@ -4,7 +4,8 @@ Input: the plugin folders skill/litpick and skill/ramanlens in this repo.
 Process: zips each folder with .claude-plugin/plugin.json at the top. An uploaded plugin is copied out
 of the repo, so litpick gets .claude-plugin/repo_root.txt and absolute paths to this checkout's venv
 Python and server launcher. Leftover analysis outputs and caches are skipped.
-Output: skill/dist/litpick.plugin and skill/dist/ramanlens.plugin.
+Output: skill/dist/litpick.plugin and skill/dist/ramanlens.plugin. The litpick package only works on
+the computer that built it: run this script on each computer, never share the built file.
 
 Valency Bond is not packed: it is a separate hosted MCP server that each user connects on their own.
 """
@@ -49,7 +50,14 @@ def _pack(name: str, manifest_edit=None, extra: dict[str, str] | None = None) ->
     return out
 
 
+def _check_server() -> None:
+    exes = (REPO / ".venv" / "bin" / "iopic-bond", REPO / ".venv" / "Scripts" / "iopic-bond.exe")
+    if not any(exe.is_file() for exe in exes):
+        sys.exit(f"iopic-bond is not installed in {REPO / '.venv'}: pip install -e iopic-bond[parse]")
+
+
 def main() -> None:
+    _check_server()
     launcher = SKILL / "litpick" / "scripts" / "serve_litpick.py"
 
     def litpick_manifest(m: dict) -> None:
