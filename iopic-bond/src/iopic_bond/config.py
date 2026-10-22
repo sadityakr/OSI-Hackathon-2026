@@ -8,7 +8,8 @@ Output: plain functions read by the store, the Bond client and the CLI.
     IOPIC_BOND_HOME      library root (default: the OS cache dir from platformdirs)
     VALENCY_BOND_TOKEN   Valency Direct API token from https://app.valency.io/settings
     VALENCY_BOND_URL     Bond endpoint (default https://mcp.valency.io/)
-    IOPIC_BOND_DEVICE    Docling device, "cpu" or "cuda" (default cpu)
+    IOPIC_BOND_DEVICE    Docling device: "auto" (default), "cpu", or "cuda".
+                         auto uses cuda when PyTorch can see a GPU, otherwise cpu.
 """
 from __future__ import annotations
 
@@ -49,4 +50,12 @@ def bond_url() -> str:
 
 
 def parse_device() -> str:
-    return os.environ.get("IOPIC_BOND_DEVICE", "cpu")
+    """Device Docling should run on. ``auto`` picks cuda when it is available."""
+    choice = (os.environ.get("IOPIC_BOND_DEVICE") or "auto").strip().lower()
+    if choice not in ("", "auto"):
+        return choice
+    try:
+        import torch
+    except Exception:
+        return "cpu"
+    return "cuda" if torch.cuda.is_available() else "cpu"

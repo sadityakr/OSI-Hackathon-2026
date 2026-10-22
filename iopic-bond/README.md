@@ -28,7 +28,7 @@ Settings come from the environment, or from a `.env` file found from the current
 |---|---|
 | `VALENCY_BOND_TOKEN` | Valency Direct API bearer token, from the Settings page in the Valency app; see https://docs.valency.io/guides/api/ |
 | `IOPIC_BOND_HOME` | library folder (default: the OS cache dir, e.g. `%LOCALAPPDATA%\iopic-bond` on Windows) |
-| `IOPIC_BOND_DEVICE` | `cpu` (default) or `cuda` for Docling |
+| `IOPIC_BOND_DEVICE` | `auto` (default: cuda when a GPU is visible, otherwise cpu), `cpu`, or `cuda` |
 | `LANGSMITH_TRACING`, `LANGSMITH_API_KEY`, `LANGSMITH_PROJECT` | optional tracing; `LANGSMITH_PROJECT` defaults to `iopic-bond` |
 
 Chat clients such as Claude Code connect to Bond itself with a browser sign-in; iopic-Bond is a program calling Bond, which is the case Valency's Direct API token is for.
