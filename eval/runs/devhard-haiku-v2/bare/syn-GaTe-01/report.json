@@ -1,0 +1,74 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (orthorhombic, layered)",
+      "confidence": 0.1,
+      "evidence": "Only weak partial resemblance: a strong low-frequency band near 98 cm-1 and a weak band near 282 cm-1 are compatible with some reported SnS Raman patterns. However, SnS literature bands expected near 160, 190 and 218 cm-1 are absent (residual at those positions is consistent with noise). Literature values were not checked against a reference in this sandbox, so this is a guess, not a match."
+    },
+    {
+      "material": "GaTe (monoclinic, layered)",
+      "confidence": 0.08,
+      "evidence": "Layered Ga-chalcogenide family, but I could not confirm a ~98 cm-1 dominant mode for GaTe from a reference. Weak features checked near 134-140 cm-1 are not significant (amplitude about 1.4 sigma). Not a supported identification."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to test. The spectrum is not identified with confidence. The two significant bands at 98.5 and 281.6 cm-1 do not match any reference I could verify offline, so the candidate ranking is low-confidence only.",
+  "peaks": [
+    {
+      "position_cm1": 98.5,
+      "fwhm_cm1": 7.8,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 281.6,
+      "fwhm_cm1": 1.9,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "identification",
+      "value": "not determined from this spectrum",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "background",
+      "value": "broad rising baseline from about 2300 to 3300 counts across 60-1090 cm-1 (possible photoluminescence or fluorescence; not assessed further)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "Si_substrate_520_7",
+      "value": "not detected (residual at 520.7 cm-1 is consistent with noise)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "noise_sigma_counts",
+      "value": "about 229 (white Gaussian residual, lag-1 autocorrelation 0.04)",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "artifacts": [],
+  "citations": [],
+  "limits": [
+    "Identification is not possible from this data. The spectrum has only two significant features (98.5 and 281.6 cm-1) on a sloped background, over 60-1090 cm-1 with about 0.96 cm-1 sampling.",
+    "No reference library or literature was consulted; the sandbox is offline. Candidate materials are low-confidence guesses, and no literature provenance is claimed.",
+    "Excluded by absence of significant bands: GaSe-type bands near 134, 213 and 308 cm-1 (fitted amplitudes not significant at 213 or 308 cm-1; 134 cm-1 is about 1.4 sigma).",
+    "The 98.5 cm-1 band is fit with a single symmetric Voigt (FWHM 7.8 cm-1, gamma = sigma). An unresolved doublet cannot be excluded at this signal-to-noise; the residual is white, so a single band is adequate at this level.",
+    "The 281.6 cm-1 band has amplitude 2527 +/- 648 (about 4 sigma) and FWHM 1.9 +/- 0.7 cm-1. It is real but weak, and its width is poorly constrained.",
+    "No cosmic-ray spikes: the largest residual is 3.0 sigma, so no single-point outliers were found. No Si substrate line at 520.7 cm-1.",
+    "Polarization and layer number cannot be determined from one unpolarized spectrum with no angle series. Temperature (295 K) and 532 nm excitation were used only as context.",
+    "The folder name was not used as evidence. To identify the material, the full spectrum (0-60 and 1090+ cm-1), a reference spectrum or library, and ideally angle-resolved or multi-laser data are needed."
+  ]
+}

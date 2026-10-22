@@ -1,0 +1,87 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.85,
+      "evidence": "Two dominant modes at 391.3 and 415.5 cm-1 (FWHM 5.2 and 6.7 cm-1), spacing 24.1 cm-1. This matches the MoS2 E'(E2g)/A1g pair (bulk ~383/408 cm-1, spacing ~25 cm-1). Both sit about 8 cm-1 above the usual bulk values, which is unexplained."
+    },
+    {
+      "material": "2H-WS2",
+      "confidence": 0.03,
+      "evidence": "Pair spacing (24 cm-1) is far from WS2's ~63 cm-1 (E2g ~355, A1g ~418). The 391 cm-1 mode is about 36 cm-1 above WS2 E2g. Not supported."
+    },
+    {
+      "material": "2H-WSe2",
+      "confidence": 0.02,
+      "evidence": "WSe2's signature modes near 250 (A1g/E2g), 258 (2LA) and 309 cm-1 are absent. Fixed-position fits give 219+-86 counts at 250 (2.5 sigma, not significant), negative at 258 and consistent with zero at 309, against a 21000-count MoS2 mode."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The stated material is WSe2, but the spectrum does not show WSe2's characteristic first-order modes. WSe2 should give a strong A1g/E2g feature near 250 cm-1, with 2LA near 258 cm-1 and a weaker mode near 309 cm-1 (532 nm, room temperature). Within the detection limit there is no peak at any of these positions. The two dominant peaks, at 391.3 and 415.5 cm-1 with a 24 cm-1 spacing, are the MoS2 E2g/A1g pair, not WSe2. The Si line at 520.5 cm-1 confirms the wavenumber calibration to within about 0.2 cm-1. The sample is therefore not consistent with WSe2 and looks like MoS2 (with an unexplained upshift of about 8 cm-1).",
+  "peaks": [
+    {
+      "position_cm1": 391.31,
+      "fwhm_cm1": 5.22,
+      "assignment": "MoS2 E^1_2g (in-plane E' mode)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and width measured from a Lorentzian fit (lmfit, residual after ALS baseline). Assignment inferred from the MoS2 literature: bulk E2g ~383 cm-1 (Lee et al., ACS Nano 4, 2695, 2010; Molina-Sanchez & Wirtz, PRB 84, 155413, 2011). Observed position is about +8 cm-1 above that bulk value, so the assignment is tentative. Recalled from memory; not verified against a reference file."
+    },
+    {
+      "position_cm1": 415.45,
+      "fwhm_cm1": 6.7,
+      "assignment": "MoS2 A^1_1g (out-of-plane A' mode)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and width measured from a Lorentzian fit. Assignment inferred from the MoS2 literature: bulk A1g ~408 cm-1 (Lee et al., ACS Nano 4, 2695, 2010; Molina-Sanchez & Wirtz, PRB 84, 155413, 2011). Observed position is about +7.5 cm-1 above that bulk value. Recalled from memory; not verified against a reference file."
+    },
+    {
+      "position_cm1": 520.51,
+      "fwhm_cm1": 3.54,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. Standard first-order Si reference at room temperature is ~520.7 cm-1 (widely tabulated), so the calibration offset is about -0.2 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H (MoS2-type)",
+      "provenance": "inferred",
+      "source": "The E2g/A1g pair and their spacing match 2H MoS2 literature (Lee et al. 2010). Assumed, not confirmed by additional modes."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "The 24.1 cm-1 spacing is closer to bulk (~25 cm-1) than monolayer (~19 cm-1). This is a rough heuristic only, and the 8 cm-1 upshift makes it unreliable."
+    },
+    {
+      "name": "strain_or_doping",
+      "value": "unexplained upshift of ~+8 cm-1 in both modes",
+      "provenance": "inferred",
+      "source": "Larger than typical thickness shifts for MoS2 on SiO2. Could arise from strain or doping, but this single spectrum cannot distinguish these. Calibration is not the cause, since the Si line sits at 520.5 cm-1 (lit 520.7)."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee, C. et al., ACS Nano 4, 2695 (2010), MoS2 E2g ~383 and A1g ~408 cm-1 (bulk). Recalled from memory; not checked against the paper.",
+    "Molina-Sanchez, A. & Wirtz, L., PRB 84, 155413 (2011), mode assignments for MoS2 phonons. Recalled from memory.",
+    "Tonndorf, P. et al., Opt. Express 21, 4908 (2013), WSe2 A1g/E2g near 250 cm-1 and 2LA near 258 cm-1. Recalled from memory; approximate values.",
+    "Terrones, H. et al., Sci. Rep. 3, 1549 (2013), WSe2 modes including the ~309 cm-1 feature. Recalled from memory; approximate values.",
+    "Silicon first-order Raman line at ~520.7 cm-1 at room temperature, standard reference. Recalled from memory."
+  ],
+  "limits": [
+    "The sample is not WSe2 by this measurement, but this does not say what the material is beyond the MoS2 match. The modes at 391 and 415 cm-1 are a good match for MoS2 by position and spacing, but no other MoS2 modes were checked. Expected features near 383 cm-1 and 408 cm-1 are present; the 8 cm-1 offset from bulk is not explained.",
+    "Only one unpolarized spectrum with no angle series was measured. The E2g vs A1g assignment is based on frequency and spacing only, not on symmetry or polarization. Therefore the 'pattern' field is null.",
+    "Layer number is not determined from this spectrum. The 24.1 cm-1 spacing is only a rough thickness indicator.",
+    "WSe2 detection limit: fixed-position fits (3 cm-1 FWHM) give 219+-86 counts at 250 cm-1 (2.5 sigma, not significant), negative at 258 cm-1 and consistent with zero at 309 cm-1. The 3 sigma upper limit is ~330 counts, under 2% of the 391 cm-1 MoS2 mode (~19000 counts). I cannot state the expected intensity ratio of WSe2 to MoS2 under these conditions, so a faint WSe2 contribution is not strictly excluded, but a WSe2-dominated spectrum is.",
+    "Noise is ~144 counts per point (estimated from second differences). Residual structure after ALS baseline subtraction gives many 5-7 sigma local bumps across 540-1100 cm-1 that are not real peaks. Weak features below ~300 counts cannot be separated from background structure, so the list of peaks is limited to the three strong features.",
+    "Literature values in the citations were recalled from memory and could not be checked here (no internet access, and the folder contains only spectrum.csv). Verify them before using the numbers quantitatively.",
+    "No cosmic-ray spikes were found. The broad 391 and 520 cm-1 features are 5-7 cm-1 wide, far wider than single-point spikes."
+  ]
+}

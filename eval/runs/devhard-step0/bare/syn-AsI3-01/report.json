@@ -1,0 +1,119 @@
+{
+  "candidates": [
+    {
+      "material": "AsI3",
+      "confidence": 0.35,
+      "evidence": "Four modes at 80, 104, 120 and 166 cm-1 and nothing above about 170 cm-1 are what a heavy-iodide layered MX3 (BiI3-type R-3) compound gives. I could not check a reference spectrum here, so this is tentative. The expected As-I stretches near 200-220 cm-1 are not clearly seen: the weak features at 209, 223 and 228 cm-1 are within the noise. That counts against AsI3."
+    },
+    {
+      "material": "SbI3",
+      "confidence": 0.25,
+      "evidence": "The same layered MX3 family. Its reported A1g/Eg Sb-I stretches (about 150-165 cm-1) and lower-frequency modes (about 80-110 cm-1) are of similar magnitude. The 166.6 cm-1 mode could be a stretch, but I see no distinct 145-150 cm-1 partner."
+    },
+    {
+      "material": "Sb2Te3",
+      "confidence": 0.15,
+      "evidence": "Its A1g(2) at about 165-167 cm-1 and Eg(2) at about 112 cm-1 are close to the observed lines. Its A1g(1) at about 69 cm-1 is not resolved, and the 120 cm-1 line is hard to explain, so the match is poor."
+    },
+    {
+      "material": "BiI3",
+      "confidence": 0.1,
+      "evidence": "Its A1g near 113 cm-1 and Eg near 138 cm-1 do not match the observed 120 and 166 cm-1 lines well."
+    },
+    {
+      "material": "Elemental Te (as an oxidation or decomposition product)",
+      "confidence": 0.05,
+      "evidence": "Te has an A1 mode at about 121 cm-1, which coincides with the strongest line. The other expected Te lines, E at about 92 cm-1 and E at about 141 cm-1, are absent."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was supplied (material_hint is null), so this is a blind identification.",
+  "peaks": [
+    {
+      "position_cm1": 79.7,
+      "fwhm_cm1": 6.5,
+      "assignment": "low-frequency lattice/bending mode (tentative, MX3 layered iodide)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit with exponential background; assignment to a specific irrep is not made."
+    },
+    {
+      "position_cm1": 104.4,
+      "fwhm_cm1": 8.9,
+      "assignment": "I-M-I bending / lattice mode (tentative)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; the symmetry label is not established because this is a single unpolarized spectrum."
+    },
+    {
+      "position_cm1": 120.4,
+      "fwhm_cm1": 7.6,
+      "assignment": "strongest mode, tentatively an A1-type M-I vibration",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. The A1/E character is inferred only from the MX3 analogy."
+    },
+    {
+      "position_cm1": 165.8,
+      "fwhm_cm1": 8.6,
+      "assignment": "highest-frequency mode, tentatively an M-I stretch",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; the stretch assignment is by analogy with the MI3 family (SbI3/BiI3)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "bulk (thickness not determinable)",
+      "provenance": "inferred",
+      "source": "There is no layer-number-sensitive low-frequency or Si reference in the spectrum."
+    },
+    {
+      "name": "defect_level",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "The spectrum is noisy and has only four sharp modes of 6.5-9 cm-1 FWHM."
+    },
+    {
+      "name": "phase",
+      "value": "layered trigonal R-3 (BiI3-type) if AsI3/SbI3",
+      "provenance": "inferred",
+      "source": "Analogy only."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single-point, much narrower than any real band)",
+      "position_cm1": 785.9
+    },
+    {
+      "type": "cosmic-ray spike (single-point, much narrower than any real band)",
+      "position_cm1": 935.8
+    },
+    {
+      "type": "decaying low-wavenumber background/Rayleigh tail, fitted as an exponential",
+      "position_cm1": null
+    },
+    {
+      "type": "noise-level bumps (e.g. 255, 275, 298, 338, 363, 449 cm-1), not reported as peaks",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "No reference spectra were consulted, because the task is restricted to this folder. Comparisons rest on recalled literature values for MI3 (AsI3, SbI3, BiI3) and Sb2Te3 Raman modes, which should be verified against primary sources."
+  ],
+  "limits": [
+    "The assignment is tentative. A four-line spectrum below 170 cm-1 cannot uniquely fix the material, and I could not check it against a reference database.",
+    "No polarization data, so the symmetry labels (A1/E) are not measured.",
+    "The expected As-I stretches near 200-220 cm-1 are not clearly seen. This weakens AsI3 and favours a heavier or different MX3-type phase. I cannot rule out AsI3 if those modes are weak under 532 nm excitation.",
+    "The weak features above 200 cm-1 are within the noise (about 1500 counts rms) and are not claimed as peaks.",
+    "The spikes at 785.9 and 935.8 cm-1 are single-point cosmic rays and were excluded.",
+    "The sample may be unstable in air or under the laser (iodides, Te-based compounds). Possible photo-oxidation or decomposition cannot be judged from this one spectrum.",
+    "Layer number, strain and doping cannot be determined."
+  ]
+}

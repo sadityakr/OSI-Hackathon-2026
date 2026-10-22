@@ -1,0 +1,134 @@
+{
+  "candidates": [
+    {
+      "material": "graphene (monolayer-like sp2 carbon)",
+      "confidence": 0.9,
+      "evidence": "Single Lorentzian 2D band at 2689.8 cm-1 (FWHM 32.3 cm-1, residual at noise level, rms 124 vs ~130 count noise). Height ratio I2D/IG = 2.98. G band at 1579.3 cm-1 (FWHM 14.2). Disorder bands D (1344.3) and D' (1623.1) present. No splitting or asymmetry of 2D that would indicate multilayer stacking. Band positions and ratios match monolayer graphene at 532 nm."
+    },
+    {
+      "material": "few-layer graphene (2 or more layers)",
+      "confidence": 0.08,
+      "evidence": "Not excluded by the spectrum alone: the 2D FWHM of 32 cm-1 is somewhat broader than the ~25-30 cm-1 usually quoted for clean monolayers, which a few-layer contribution could also produce. A bilayer would normally show a multi-component 2D with a larger width, and the single-Lorentzian fit leaves no structure, so this is weakly disfavoured."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "material_hint is null, so this is an identify task with no stated material to verify against. The identification rests on the band positions, widths and ratios, not on a hint.",
+  "peaks": [
+    {
+      "position_cm1": 1344.26,
+      "fwhm_cm1": 15.33,
+      "assignment": "D (defect-activated breathing mode, K-point phonons)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position, width and area from a Lorentzian fit with linear baseline over 1250-1700 cm-1 (+-0.16 cm-1). Assignment from literature: Cancado et al., Nano Lett. 11, 3190 (2011), arXiv:1105.0175."
+    },
+    {
+      "position_cm1": 1579.33,
+      "fwhm_cm1": 14.23,
+      "assignment": "G (in-plane E2g stretching mode at Gamma)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and width from the same fit (+-0.08 cm-1). Assignment from literature: Cancado et al., Nano Lett. 11, 3190 (2011), arXiv:1105.0175."
+    },
+    {
+      "position_cm1": 1623.13,
+      "fwhm_cm1": 14.5,
+      "assignment": "D' (defect-activated intravalley mode, E2g-derived)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Weak component. Fitted at 1623.1 +- 1.0 cm-1 with area 9368 +- 1645 (about 5.7 sigma above the no-D' fit). Assignment from literature: Cancado et al., Nano Lett. 11, 3190 (2011), arXiv:1105.0175. Its width is poorly constrained (+-3.2 cm-1)."
+    },
+    {
+      "position_cm1": 2689.77,
+      "fwhm_cm1": 32.27,
+      "assignment": "2D (second-order overtone of the D mode, zone-edge phonons at K)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Single Lorentzian fit over 2550-2800 cm-1 (+-0.04 cm-1). Centre and width change by less than 0.2 cm-1 with linear or quadratic baseline and window choice. Assignment from literature: Cancado et al., Nano Lett. 11, 3190 (2011), arXiv:1105.0175."
+    }
+  ],
+  "properties": [
+    {
+      "name": "material",
+      "value": "graphene (sp2 carbon; monolayer-like)",
+      "provenance": "inferred",
+      "source": "Band set (D, G, D', single symmetric 2D) and positions consistent with graphene at 532 nm. See candidates."
+    },
+    {
+      "name": "layers",
+      "value": "1 (monolayer-like; few-layer not excluded)",
+      "provenance": "inferred",
+      "source": "Qualitative: single Lorentzian 2D with I2D/IG ~3 (height ratio), G FWHM 14 cm-1. The I2D/IG and 2D width thresholds are from memory of Ferrari et al., PRL 97, 187401 (2006); not retrieved in this session."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "I_D/I_G = 0.49 (height) / 0.52 (area), from fitted peaks. Low disorder regime, the one where the Cancado 2011 L_D relation is used."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "17 (+-3 from the 1.8e-9 coefficient uncertainty alone)",
+      "provenance": "inferred",
+      "source": "Cancado et al., Nano Lett. 11, 3190 (2011), arXiv:1105.0175: L_D^2 = (1.8+-0.5)e-9 * lambda^4 / (I_D/I_G), lambda = 532 nm. Coefficient quoted from memory, not checked against the paper text in this session. Applied at I_D/I_G ~0.5, in the low-defect (inter-defect distance) regime."
+    },
+    {
+      "name": "defect_type",
+      "value": "vacancy-like (point defects) most likely; boundary-type not excluded",
+      "provenance": "inferred",
+      "source": "I_D/I_D' = 6.3 (height) / 6.7 (area), from the fitted D' (+-~18%). Eckmann et al., Nano Lett. 12, 3925 (2012), arXiv:1207.2058: I_D/I_D' ~7 for vacancies, ~3.5 for boundaries, ~13 for sp3 defects. Ratio values quoted from memory, not checked against the paper text in this session."
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "G at 1579.3 and 2D at 2689.8 cm-1 do not show a clear strain or doping signature. Without an in-spectrum Si reference and a reference undoped monolayer at the same calibration, the two cannot be separated."
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "Same reason as strain_sign. G position is about 2-3 cm-1 below the commonly quoted undoped monolayer value near 1582 cm-1 at 532 nm, which could be calibration or doping; one spectrum cannot distinguish these."
+    },
+    {
+      "name": "phase",
+      "value": "graphene (sp2 carbon, no polytype)",
+      "provenance": "inferred",
+      "source": "Graphene has no polytype; identification from band set above."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spikes: none detected (robust 6-sigma single-point test, 0 points; noise sigma ~130 counts)",
+      "position_cm1": null
+    },
+    {
+      "type": "detector saturation: none (max 16682 counts at 2689.7 cm-1; no flat-topped plateau, only 6 points above 16000 with distinct values)",
+      "position_cm1": null
+    },
+    {
+      "type": "broad background ramp (about 1360 counts at 1100 cm-1, about 1500 at 1300-1700, about 300 at 2999 cm-1). Not a spike; probably fluorescence or instrument response, not subtracted here",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Cancado, L. G. et al., Quantifying defects in graphene via Raman spectroscopy at different excitation energies, Nano Lett. 11, 3190 (2011), [arXiv:1105.0175](https://arxiv.org/abs/1105.0175), DOI 10.1021/nl201432g. Source for D/G/D'/2D assignments and the L_D relation (formula from memory).",
+    "Eckmann, A. et al., Probing the Nature of Defects in Graphene by Raman Spectroscopy, Nano Lett. 12, 3925 (2012), [arXiv:1207.2058](https://arxiv.org/abs/1207.2058), DOI 10.1021/nl300901a. Source for the I_D/I_D' defect-type ratios (values from memory)."
+  ],
+  "limits": [
+    "Helper scripts from the ramanlens skill were not run. They are stored outside this working folder, and I was limited to this folder. All fits were done directly with numpy/scipy/lmfit on ./spectrum.csv.",
+    "The spectrum covers only 1100-2999 cm-1. It has no Si first-order line (520.7 cm-1), so the wavenumber calibration cannot be checked against Si. The G position (1579.3) is therefore uncalibrated, and a calibration offset of a few cm-1 cannot be excluded.",
+    "The L_D value (17 nm) and the defect-type ratio thresholds come from my memory of Cancado 2011 and Eckmann 2012. I searched for the papers (they exist, with the DOIs above) but did not read the formulas or the thresholds in the text. Treat them as to-be-verified before quoting.",
+    "The L_D relation applies to the low-defect (inter-defect-distance) regime. I_D/I_G ~0.5 is consistent with that regime, but the relation's applicable range was not verified here.",
+    "The layer number rests on a qualitative reading (2D width and I2D/IG). I did not apply a quantitative layer-count relation; the thresholds I cite are from memory and not checked here. Monolayer vs few-layer is not fully separated.",
+    "The D' component is weak (about 0.16 of D). Its amplitude is determined to about 18%, and it sits on the tail of the G band, so the vacancy-like assignment is tentative. A boundary-type contribution is not excluded.",
+    "Strain and doping cannot be separated with a single spectrum and no Si or reference-graphene calibration, so both are reported as undetermined.",
+    "The 2D width (32.3 cm-1) is somewhat broader than the commonly quoted monolayer range. This could reflect disorder, strain, a few-layer contribution, or a sample-specific width; the spectrum alone does not settle which.",
+    "No polarization or angle series was provided, so the polarization pattern for each peak is not reported (set to null).",
+    "The spectrum does not include the 2D' band (about 3240 cm-1), so the 2D' cannot be used as a further check on layer number or defects."
+  ]
+}

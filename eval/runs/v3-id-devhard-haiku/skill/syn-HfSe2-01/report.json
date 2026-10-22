@@ -1,0 +1,106 @@
+{
+  "candidates": [
+    {
+      "material": "HfSe2",
+      "confidence": 0.55,
+      "evidence": "Computational Raman Database row 179 (mp-985831, P-3m1, 1T-type layered) matches both measured bands: Eg 149.75 vs 149.4 ref and A1g 197.11 vs 197.1 ref, with frequency scale 1.002. Its missing_strong_modes list is empty within 60-1100 cm-1. Top matcher score 0.68. Only two sample bands are available to fit, so the identification is moderate, not firm."
+    },
+    {
+      "material": "Br2Fe",
+      "confidence": 0.1,
+      "evidence": "Same P-3m1 space group as HfSe2 (CRD row 507). Matcher score 0.61. Eg reference 153.7 cm-1 is about 4 cm-1 from the measured 149.75, which is a poor fit at the stated 0-3 % DFT accuracy."
+    },
+    {
+      "material": "AuBr",
+      "confidence": 0.08,
+      "evidence": "CRD row 3091, P4_2/ncm. Matches only the A1g band at 197.0; the 149.7 band is unexplained. Score 0.61."
+    },
+    {
+      "material": "OSn",
+      "confidence": 0.07,
+      "evidence": "CRD row 845, P4/nmm. Matches only the 197.1 band; the 149.7 band is unexplained. Score 0.61."
+    },
+    {
+      "material": "As2O3",
+      "confidence": 0.02,
+      "evidence": "CRD row 1539, P2_1/c. Two Ag matches (197.1, 521.5) but two strong Ag reference modes at 442 and 465 cm-1 are absent from the spectrum, so it is rejected."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so there is no stated material to verify. The identification rests on the library match alone. HfSe2 is the top candidate by matcher score and by matching both bands within about 0.3 cm-1 of the reference values. The 149.7 and 197.1 bands are consistent with a 1T-type layered dichalcogenide, but the peak count is small. No literature Raman table exists for HfSe2 in the skill's curated set, and the Valency literature search could not run (no VALENCY_BOND_TOKEN), so the assignment is not cross-checked against a published HfSe2 spectrum.",
+  "peaks": [
+    {
+      "position_cm1": 149.747,
+      "fwhm_cm1": 5.443,
+      "assignment": "Eg (HfSe2, P-3m1, CRD row 179)",
+      "irrep": "Eg",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured by rl_fit (position err 0.41 cm-1, FWHM err 1.26 cm-1; height about 6.7 sigma). Assignment from match_library to Bagheri and Komsa 2023, Sci. Data 10, 80, CRD row 179 (ref 149.4 cm-1, scale 1.002). No angle series, so the polarization pattern is not classified."
+    },
+    {
+      "position_cm1": 197.113,
+      "fwhm_cm1": 3.74,
+      "assignment": "A1g (HfSe2, P-3m1, CRD row 179)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured by rl_fit (position err 0.04 cm-1, FWHM err 0.13 cm-1). Assignment from match_library to Bagheri and Komsa 2023, Sci. Data 10, 80, CRD row 179 (ref 197.1 cm-1). Strongest band in the spectrum. No angle series, so the polarization pattern is not classified."
+    },
+    {
+      "position_cm1": 521.119,
+      "fwhm_cm1": 3.399,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position measured by rl_fit and rl_qc (521.12 cm-1, offset +0.42 from the 520.7 cm-1 Si reference). Identified as the first-order Si line of the SiO2/Si substrate. QC notes Si second-order features near 950 and 980 cm-1 and a 2TA band near 300 cm-1, none of which are resolved in this spectrum."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "1T-type, P-3m1 (CRD row 179 structure)",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database), row 179, mp-985831, P-3m1 (164)"
+    },
+    {
+      "name": "layers",
+      "value": "not determinable from this spectrum",
+      "provenance": "inferred",
+      "source": "No validated layer-number relation for HfSe2 is in the skill's reference set; the 197.1 cm-1 band width and the single spectrum do not fix the thickness"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none reported",
+      "provenance": "inferred",
+      "source": "No reference mode positions for HfSe2 with a strain relation are available to compare against"
+    },
+    {
+      "name": "doping_type",
+      "value": "none reported",
+      "provenance": "inferred",
+      "source": "No A1g-only shift relation for HfSe2 is available; the measured A1g position is within 0.1 cm-1 of the CRD reference"
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessed",
+      "provenance": "inferred",
+      "source": "No defect indicator (e.g. D-band equivalent) is established for HfSe2 in the skill's reference set"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, CC BY 4.0), row 179, mp-985831, P-3m1 (164) - HfSe2 reference modes (Eg 149.4, A1g 197.1 cm-1); also used for the other candidates listed.",
+    "Si first-order reference line 520.7 cm-1 (as used by rl_qc.py and rl_fit.py for the substrate offset)."
+  ],
+  "limits": [
+    "The material is inferred from two sample bands (149.7 and 197.1 cm-1) plus the Si line. Two-band matches from a DFT database are weak evidence: several other compounds in the matcher list match one band, and HfSe2 is ranked first mainly because it matches both. Other 1T-type or P-3m1 dichalcogenides (e.g. ZrSe2, HfS2) were not individually scored against this spectrum and could not be ruled out with the tools here.",
+    "The matcher only returns the top five candidates and matches only the strong predicted modes within 60-1100 cm-1. I could not list the full predicted mode set for HfSe2 (weak or high-frequency modes) with the tools available, so the absence of other HfSe2 bands is not fully verified.",
+    "No literature table for HfSe2 Raman is in the skill's curated set. The Valency literature search could not run because VALENCY_BOND_TOKEN is not set. The local iopic-bond library search for HfSe2 returned only unrelated papers (WTe2, Bi2Se3), so the assignment is not checked against a published HfSe2 spectrum.",
+    "The metadata says bulk-like backscattering from the layer normal with a SiO2/Si substrate, but the sample thickness is not given. The spectrum does not show whether the flake is bulk or few-layer, and the matcher's bulk DFT frequencies may shift for thin flakes.",
+    "Si calibration offset is +0.42 cm-1 (fit scale vs 520.7 cm-1). Sample positions are reported uncorrected; subtracting the offset would move 149.7 to about 149.3 and 197.1 to about 196.7. Both are within the matcher's 0.98-1.05 frequency-scale tolerance, so the identification does not depend on the correction.",
+    "The spectrum shows a single Si line at 521.1 cm-1 and no other bands above 200 cm-1 except noise. The Si second-order features and 2TA band are expected to be weak and are not resolved here; their absence is not evidence against the substrate.",
+    "No laser power, acquisition time or resolution was given. The 532 nm laser is not checked against HfSe2 electronic resonances, so relative intensities (Eg vs A1g) are not interpreted."
+  ]
+}

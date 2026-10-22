@@ -1,0 +1,95 @@
+{
+  "candidates": [
+    {
+      "material": "SnS2",
+      "confidence": 0.05,
+      "evidence": "Only the 206.5 cm-1 peak is close to a plausible SnS2 mode (Eg, about 205 cm-1 from memory). The strong A1g near 314 cm-1 is absent: the only feature nearby is a tentative 323 cm-1 peak at about 3.5 sigma. The 471.5 cm-1 peak has no SnS2 counterpart. Weak match, not supported."
+    },
+    {
+      "material": "TiNCl",
+      "confidence": 0.03,
+      "evidence": "Named in the working-folder name only, not in the measurement metadata (material_hint is null), so not used as evidence. I have no verified reference Raman peak list for TiNCl in this environment, so the spectrum can neither confirm nor exclude it."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "The metadata gives no material hint (material_hint null, task 'identify'), so there is nothing to test against. The working-folder name mentions TiNCl, but I did not use it as evidence. The spectrum has only two non-substrate peaks (206.5 and 471.5 cm-1), which is too few to identify a layered compound without a reference library, and none is available here.",
+  "peaks": [
+    {
+      "position_cm1": 206.48,
+      "fwhm_cm1": 3.05,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit over 180-240 cm-1 with linear baseline; centre uncertainty 0.15 cm-1; SNR about 12 from fixed-width local scan"
+    },
+    {
+      "position_cm1": 471.5,
+      "fwhm_cm1": 6.07,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit over 430-515 cm-1 with linear baseline; centre uncertainty 0.15 cm-1; SNR about 19. Sits on a broad background hump (about 4100 counts at 360-480 cm-1 vs about 2600 at 1050 cm-1); could partly be SiO2 network or fluorescence background, not separable with this data"
+    },
+    {
+      "position_cm1": 520.55,
+      "fwhm_cm1": 3.51,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "First-order Si optical phonon, about 520.7 cm-1 at room temperature (standard Si reference value, quoted from memory). Measured centre 520.55 +/- 0.14 cm-1, i.e. about -0.2 cm-1 offset from the reference, which may be calibration"
+    },
+    {
+      "position_cm1": 323.2,
+      "fwhm_cm1": 4.14,
+      "assignment": "unassigned, tentative",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; centre uncertainty 0.7 cm-1. Peak amplitude 1139 counts, about 3.5 sigma against the noise of about 585 counts per point. Marginal; not reliable enough to assign"
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "Only two non-substrate Raman features; no reference spectrum or mode set available"
+    },
+    {
+      "name": "layers",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "Low-frequency shear/breathing modes (typically below 60 cm-1) are outside the measured range (starts at 60.3 cm-1)"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "No defect-activated features are identifiable above the noise"
+    },
+    {
+      "name": "si_calibration_offset_cm1",
+      "value": "-0.2",
+      "provenance": "measured",
+      "source": "Si peak centre 520.55 cm-1 vs reference 520.7 cm-1 (literature). Likely calibration offset"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Standard first-order Si Raman reference, about 520.7 cm-1 at room temperature (quoted from memory, not checked against a source in this environment)",
+    "SnS2 Eg about 205 cm-1 and A1g about 314 cm-1 (quoted from memory, not checked against a source in this environment)"
+  ],
+  "limits": [
+    "Identity cannot be determined from this spectrum. Only two non-substrate peaks (206.5 and 471.5 cm-1) are resolved, which is too few to match a layered compound. No reference library or literature access was available to compare against, so I did not claim a match.",
+    "Literature values in this report (Si 520.7 cm-1, SnS2 modes) are quoted from memory and were not verified here.",
+    "The 471.5 cm-1 peak sits on a broad background hump. It may be partly SiO2 (Si-O-Si bands near 440-490 cm-1 on SiO2/Si) or fluorescence; this cannot be separated with one spectrum.",
+    "Measured range is 60.3-1099.9 cm-1. Modes below 60 cm-1 and above 1100 cm-1 are not covered, so high-frequency and interlayer modes cannot be checked.",
+    "Noise is about 585 counts per point against a baseline of about 3400 counts. The 206.5 and 471.5 peaks are well above noise; the 323 cm-1 feature is marginal (about 3.5 sigma).",
+    "No cosmic-ray spikes were found (no point exceeds 5 sigma of local residual). Artifacts list is therefore empty.",
+    "Single unpolarized spectrum, so no polarization classification is possible.",
+    "Layer number, phase, defect level and strain cannot be inferred from this data."
+  ]
+}

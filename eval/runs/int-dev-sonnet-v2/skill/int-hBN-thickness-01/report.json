@@ -1,0 +1,125 @@
+{
+  "summary": "Flake 2 is a thin hBN flake, and it could be a monolayer, but Raman alone cannot show that it is. Its E2g line is about 10x weaker than flake 1's and sits 2.85 \u00b1 0.25 cm-1 higher (1368.8\u20131369.0 cm-1), with a 3\u20134 cm-1 larger FWHM. All of that fits a 1L flake, but it fits a 2L flake on SiO2 equally well. The extra bands at 950/980 cm-1 are Si second-order lines, not hBN. Confirming N=1 needs AFM, or a calibrated intensity ladder measured on the same substrate and spectrometer. I would not call it a monolayer in print on this evidence.",
+  "observations": [
+    {
+      "finding": "Both flakes are hBN. Each shows the in-plane E2g line near 1366\u20131369 cm-1 and nothing else belonging to the sample in 450\u20131650 cm-1. No carbon D/G is present in flake 2.",
+      "evidence": "Flake 1 E2g: 1366.0\u20131366.2 cm-1 (Lorentzian, \u00b10.08), FWHM 15.5 (ALS baseline) or 18.0 (local linear background), peak height about 3060 counts, SNR about 72. Flake 2 E2g: 1368.8\u20131369.0 cm-1 (\u00b10.24), FWHM 18.8 \u00b1 0.8 (ALS) or 21.8 \u00b1 0.8 (local linear), height about 250 counts. The region 1500\u20131640 is flat in flake 2 (slope 0.16 counts/cm-1, noise about 19), so no G band near 1580.",
+      "provenance": "measured",
+      "source": "Bulk E2g about 1366 cm-1: Gorbachev et al. 2011, Small 7, 465 (arXiv 1008.2868, p.3); Cai et al. 2017, Nanoscale 9, 3059 (arXiv 2008.01656, p.7)"
+    },
+    {
+      "finding": "The E2g line of flake 2 is upshifted by about +2.9 cm-1 relative to flake 1. This is larger than the calibration scatter, so it is probably real.",
+      "evidence": "Shift 2.85 \u00b1 0.25 cm-1 (fit error only) from rl_series. The Si 520 line sits at 520.93 in flake 1 and 520.90 in flake 2, offset +0.2 cm-1 in both, so calibration cancels. Allowing a few tenths of a cm-1 of extra calibration scatter, the shift is still more than 5 sigma. Flake 1 at 1366.0\u20131366.2 matches the bulk value of 1366.6 \u00b1 0.2.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The position is compatible with 1L, but it cannot tell 1L from 2L, and strain from the substrate and from transfer dominates it. The sources are also in disagreement on whether position tracks layer number at all.",
+      "evidence": "Gorbachev 2011 (pp.1, 4, Fig. 4b): 1L upshifted 2\u20134 cm-1 (\u00b12), 2L usually downshifted 1\u20132 cm-1. Flake 2 is +2.6 to +2.9 vs bulk, which fits 1L under Gorbachev. Cai 2017 (pp.7\u20138, Fig. 1) reports substrate-bound 1L at 1369.6 \u00b1 0.6 and 2L at 1369.0 \u00b1 0.5, and 3L at 1367.5 \u00b1 0.2. Flake 2 (1368.8\u20131369.0 \u00b1 0.24) matches 2L slightly better and 1L within 1\u20133 sigma. Cai concludes the shifts are mainly substrate strain. Annealing alone adds +2.2 to +3.0 cm-1 (Cai Fig. 4), so the shift may reflect thermal history, not N.",
+      "provenance": "literature",
+      "source": "Gorbachev et al. 2011, Small 7, 465, Fig. 4b, arXiv 1008.2868; Cai et al. 2017, Nanoscale 9, 3059, Fig. 1 and Fig. 4, arXiv 2008.01656"
+    },
+    {
+      "finding": "Flake 2's E2g line is about 10x weaker than flake 1's. This points to a thinner flake, but it is not a layer count because flake 1's thickness is unknown.",
+      "evidence": "Integrated E2g area: flake 1 74.6e3 (ALS fit) or 91e3 (local fit); flake 2 7.3e3 or 9.2e3. Ratio 10.2 (ALS) or 9.9 (local). Same laser, power and integration time. If the area scales linearly with N, flake 1 is about 10x as thick as flake 2, and N2 = 1 only if flake 1 is about 10 layers (about 3.3 nm). Gorbachev 2011 (Fig. 4a inset) gives linearity for the first several layers on a given substrate.",
+      "provenance": "inferred",
+      "source": "Gorbachev et al. 2011, Small 7, 465, Fig. 4a inset (intensity proportional to N), arXiv 1008.2868"
+    },
+    {
+      "finding": "The Si-normalised intensity is very different from the absolute ratio, so the two spots cannot be compared directly. The Si signal in flake 1 is about 18x weaker than in flake 2, which is odd for a flake that is transparent at 514 nm.",
+      "evidence": "Si 520 height: 981 counts (flake 1) vs 17993 (flake 2); area 5.3e3 vs 97.9e3. E2g/Si area: 14 (flake 1) vs 0.075 (flake 2), a factor of about 190. The absolute ratio is 10x and the Si-normalised ratio is about 190x. A 3 nm flake would not suppress Si 18x. Flake 1 is therefore either much thicker than 10 layers (interference/refraction, and consistent with its sloping 500\u21921200 count baseline), or it was measured with different focus or collection. If flake 1 is much thicker than 10 layers, flake 2 would be several layers, not 1L. Flake 2 gives E2g/Si 0.075 and has a flat baseline, so its Si is effectively unattenuated.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The bands at about 950 and 979 cm-1 in flake 2 are second-order silicon (2TO), not hBN. Their presence confirms that flake 2 is thin enough for the Si substrate to dominate the spectrum.",
+      "evidence": "Positions 950.4 \u00b1 0.4 and 979.3 \u00b1 0.4 cm-1, FWHM 19 and 17 cm-1, heights 283 and 286 counts, about 1.6 % of the Si 520 height (17993). They are absent in flake 1, where the Si 520 line is 18x weaker and the 2TO would sit below the noise (about 40 counts). The strong Si line with weak sample bands is the signature of a thin flake.",
+      "provenance": "measured",
+      "source": "Gillet et al. 2017, arXiv 1708.05874, Fig. 1 (Si second-order features near 950 and 980 cm-1); reference/artifacts.md"
+    },
+    {
+      "finding": "The weak feature at about 1474 cm-1 in the flake 2 fit is noise and should not be assigned.",
+      "evidence": "Height 59 \u00b1 41 counts, FWHM 3.4 \u00b1 5.5 cm-1 (error larger than the value), against local noise std about 19 counts. It is a 2\u20133 sigma excursion in a 1440\u20131510 window of about 90 points.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The width of flake 2 is slightly larger than flake 1, which is consistent with a thin strained flake but is not diagnostic.",
+      "evidence": "FWHM difference +3.3 (ALS) or +3.8 (local) cm-1, with a fit error of about 0.8 and a baseline-dependent systematic of about 3 cm-1 in absolute width. Gorbachev 2011 gives 1L HWHM 10\u201312 vs about 9 bulk, i.e. FWHM about 20\u201324 vs about 18. Flake 2's HWHM is 9.4\u201310.9 and flake 1's is 7.8\u20139.0. The width is baseline-dependent, so the 3 cm-1 broadening is marginal.",
+      "provenance": "measured",
+      "source": "Gorbachev et al. 2011, Small 7, 465, p.4, arXiv 1008.2868"
+    },
+    {
+      "finding": "The faint optical appearance of flake 2 is consistent with a very thin flake but does not fix N.",
+      "evidence": "Gorbachev 2011 (pp.1\u20133) gives 1L contrast under 1.5 % in white light, about 2.5 % per layer on about 80 nm SiO2, and a sign change near 530 nm. Our 290 nm oxide and 514.5 nm laser are not the conditions in that study, so I did not scale the contrast.",
+      "provenance": "literature",
+      "source": "Gorbachev et al. 2011, Small 7, 465, pp.1\u20133, arXiv 1008.2868"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "Thin, probably 1\u20133 layers. A monolayer is possible but not established; 1L vs 2L vs 3L is undecided from Raman alone. Flake 1 is much thicker than flake 2 (about 10x the E2g area, thickness unknown).",
+      "provenance": "inferred",
+      "source": "Gorbachev et al. 2011, Small 7, 465, Fig. 4; Cai et al. 2017, Nanoscale 9, 3059, Fig. 1"
+    },
+    {
+      "name": "strain_sign",
+      "value": "Cannot be signed. E2g upshift +2.85 \u00b1 0.25 cm-1 vs flake 1 is consistent with compressive strain or the substrate effect for thin hBN, but no strain-shift coefficient was available in this skill, so no number is given.",
+      "provenance": "inferred",
+      "source": "Cai et al. 2017, Nanoscale 9, 3059, Fig. 1 and Fig. 4"
+    },
+    {
+      "name": "doping_type",
+      "value": "none (not applicable: hBN is an insulator, so doping is not a normal explanation of shifts)",
+      "provenance": "literature",
+      "source": "Cai et al. 2017, Nanoscale 9, 3059, p.7"
+    },
+    {
+      "name": "defect_level",
+      "value": "Not determinable. No sourced Raman defect metric exists for hBN beyond width, and width is baseline-dependent and the isotope floor differs between sources.",
+      "provenance": "inferred",
+      "source": "Janzen et al. 2023, arXiv 2306.13358, pp.3, 7"
+    },
+    {
+      "name": "phase",
+      "value": "hexagonal hBN (E2g, D6h bulk label; D3h for a monolayer)",
+      "provenance": "inferred",
+      "source": "Gorbachev et al. 2011, arXiv 1008.2868"
+    }
+  ],
+  "caveats": [
+    "Layer number from position is disputed. Gorbachev 2011 attributes the 1L upshift to shorter bonds plus strain; Cai 2017 attributes thin-hBN shifts mainly to substrate strain and shows the suspended 1L\u20133L lines are within 0.3 cm-1 of bulk. A +2.9 cm-1 shift fits 1L, 2L and an annealed or strained thicker flake.",
+    "The intensity comparison depends on the thickness of flake 1, which is unknown, and on E2g intensity staying linear in N, which only holds for the first several layers on a given substrate. Interference on 290 nm SiO2 at 514.5 nm modulates the intensity per layer, so absolute counts are not layer number.",
+    "The Si 520 intensity differs 18x between the two spots, so focus, collection or flake thickness changed between measurements. This weakens any normalisation to Si, and the absolute E2g ratio (about 10x) and the Si-normalised ratio (about 190x) point to different thickness ratios. I could not reconcile them from the data alone.",
+    "The width values depend on the baseline model: ALS gives 15.5 and 18.8, a local linear background gives 18.0 and 21.8. The literature notes also disagree on bulk width (HWHM about 9 in Gorbachev vs FWHM about 9 in Purdie 2018 and a natural-boron floor of 7.5\u20138 FWHM in Janzen 2023). Flake 1's FWHM of 15.5\u201318 is about 2x the Cai/Purdie bulk values, and the Si line FWHM (3.4\u20133.5) rules out instrument broadening as the main cause. Treat only the flake-to-flake difference (+3\u20134 cm-1) as measured and do not read absolute widths as crystal quality.",
+    "Raw intensities in flake 2 sit on a Si second-order background and a flat pedestal of about 1600 counts. The hBN line is only about 250 counts above it (SNR about 12 against local noise of about 20 counts), so its fitted height and area carry a baseline systematic of order 10\u201320 %.",
+    "The 1474 cm-1 feature, the broad 608 cm-1 background hump in the flake 2 fit, and the other small residual structure were not treated as sample bands.",
+    "No shift test for heating was possible with one power. Heating softens E2g (1367.7 cm-1 at 75 C, 1366.4 at 100 C, Cai 2017 p.7) so it cannot explain an upshift, and hBN absorbs little at 514.5 nm.",
+    "Both spectra were taken at one laser and one polarisation setting. E2g gives no in-plane angular contrast in backscattering by symmetry (inferred, not from a source I read), so polarisation would not help."
+  ],
+  "questions_for_user": [
+    "Do you have AFM or step-height data for flake 2 (and flake 1)? One thickness measurement turns this from 'thin' into a layer count and calibrates the intensity ladder.",
+    "What is the thickness of flake 1, from AFM or optical contrast? Without it the 10x intensity ratio cannot be turned into N.",
+    "Were both spectra taken at the same focus, objective and spot? The Si 520 line differs 18x between them, and that may change the intensity comparison.",
+    "Has either flake been annealed, or was it transferred (PDMS, polymer)? Annealing upshifts thin-hBN E2g by about 2\u20133 cm-1 on SiO2/Si (Cai 2017 Fig. 4), which would mimic the 1L signature.",
+    "What is the bulk source and isotope composition (natural B, HPHT, flux-grown)? The width floor differs by a factor of about 2 between natural and enriched crystals.",
+    "What are the laser power, objective NA and spectral resolution? Power above a few hundred microwatts risks heating, and a resolution comparable to about 8 cm-1 would hide width differences.",
+    "Is a low-frequency range available? The interlayer shear E2g near 50 cm-1 in bulk is absent in a monolayer and would give an independent layer test, but our data start at 450 cm-1."
+  ],
+  "citations": [
+    "Gorbachev et al. 2011, Small 7, 465 (arXiv 1008.2868): Fig. 4a inset (intensity vs N), Fig. 4b (position vs N), pp.1\u20134 text on 1L upshift and width, pp.1\u20133 on contrast",
+    "Cai et al. 2017, Nanoscale 9, 3059 (arXiv 2008.01656): Fig. 1 (supported vs suspended 1L\u20133L positions), Fig. 4 (annealing upshift), p.7 (bulk 1366.6 \u00b1 0.2, heating, no doping)",
+    "Janzen et al. 2023 (arXiv 2306.13358), pp.3, 7: isotope width floor and shear mode near 50 cm-1",
+    "Purdie et al. 2018, Nat. Commun. 9, 5387 (doi 10.1038/s41467-018-07558-3), p.6: bulk FWHM about 9, no dispersion",
+    "Gillet et al. 2017 (arXiv 1708.05874), Fig. 1: Si second-order features near 950 and 980 cm-1",
+    "Skill reference notes: reference/materials/hBN.md and reference/artifacts.md (used for the literature values above)"
+  ],
+  "limits": [
+    "Raman alone cannot assign N=1 for hBN. No relation in the skill's relation list covers hBN layer number, so the layer assessment comes from the literature notes and the flake-to-flake comparison, not from a validated relation.",
+    "I could not calibrate the E2g intensity per layer on 290 nm SiO2 at 514.5 nm. That needs a ladder of AFM-verified flakes, and the Gorbachev data are for a different oxide thickness.",
+    "Rejected hypotheses: 2TO Si bands as hBN modes (they are Si); the 1474 cm-1 feature as a real band (noise); carbon contamination near 1350/1580 (no G band, and the 1369 line is narrower and positioned like hBN); heating (it would downshift, not upshift).",
+    "Not testable here: crystal quality or defect density (no sourced hBN defect metric), isotope content (width is ambiguous between sources), strain magnitude and sign (no calibrated coefficient), and stacking or twist (only E2g is visible and the shear mode is outside the window).",
+    "The dataset starts at 450 cm-1, so the interlayer shear mode (absent for 1L, present near 50 cm-1 in bulk) was not observed; its absence in these data is not evidence."
+  ]
+}

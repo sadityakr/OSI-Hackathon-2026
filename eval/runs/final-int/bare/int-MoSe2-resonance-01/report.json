@@ -1,0 +1,133 @@
+{
+  "summary": "Monolayer MoSe2 (assumed 2H, hBN-encapsulated, 4 K) shows two very different regimes. (1) 1.9746-2.1236 eV (8 spectra, same Si-referenced scale, good S/N): the A1' (~241 cm-1) and E' (~289-290 cm-1) bands are present throughout. Their intensities are resonance-enhanced with a maximum near 2.04 eV, the A1' area peaks at ~8.8 (vs ~1.6-1.8 at 2.10-2.12 eV) and E' at ~14.2, and the E'/A1' ratio falls from ~2.9 at 1.975 eV to ~0.2 at 2.124 eV. The 2.04 eV maximum points to a higher-lying optical transition (B-exciton region or above), but this is not established from these data alone. (2) 1.6479 and 1.6791 eV: these lie at the neutral/charged A-exciton region and show a huge A1' band (~230-320 counts against a Si line of only ~8-10). However these two files are not on the same scale or acquisition conditions as the others (different spectral range, ~100x intensity, missing or weak Si reference, negative counts, Rayleigh leakage), so they cannot be compared quantitatively with group (1) until the normalization is checked. The overall picture is a strongly resonant A1' near the A exciton and an E'-favoured resonance near 2.04 eV, with the 1.6 eV data currently the least trustworthy quantitatively.",
+  "observations": [
+    {
+      "finding": "The 1.9746-2.1236 eV spectra share a consistent Si-referenced scale; the Si 520 line sits at 519.95-520.03 cm-1 with area 8.5-12.6 and height ~1.9-2.3 in all eight, so the normalization is stable across this group.",
+      "evidence": "Lorentzian fits over 505-535 cm-1: centres 519.95-520.03, FWHM 2.7-3.6 cm-1, areas 8.5 (2.0808 eV) to 12.6 (1.9746 eV); no systematic trend in Si height across 1.97-2.12 eV.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A1' (~240-241 cm-1) and E' (~289-290 cm-1) are present in every spectrum of the 1.97-2.12 eV group; the E'-A1' separation is nearly constant at ~48-50 cm-1.",
+      "evidence": "Lorentzian centres: A1' 240.1-241.3 cm-1 (FWHM 1.8-2.5), E' 289.2-290.7 cm-1 (FWHM 2.5-4.2); separation 48.3-49.6 cm-1 across 1.9746-2.1236 eV. Fit reduced chi-squared 0.0006-0.01 for these bands.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Both A1' and E' intensities are strongly resonant in the 1.97-2.12 eV group, with a maximum near 2.04 eV. The E'/A1' area ratio falls monotonically above ~2.05 eV.",
+      "evidence": "A1' area (Lorentzian, Si-normalized units): 1.54 (1.9746), 3.63 (2.0000), 6.81 (2.0196), 8.75 (2.0415), 5.70 (2.0539), 2.34 (2.0685), 1.79 (2.0808), 1.57 (2.0957), 1.84 (2.1236). E' area: 4.48, 9.44, 10.69, 14.21, 12.89, 4.81, 2.22, 0.59, 0.30 for the same order. E'/A1' ratio: 2.9, 2.6, 1.6, 1.6, 2.3, 2.1, 1.2, 0.37, 0.16. The E' stderr at 2.1236 eV is ~0.5 cm-1 in position, so the lowest-intensity values are the least certain.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 2.04 eV resonance is most plausibly a higher-lying optical transition (B-exciton region or above) rather than the A exciton, but this assignment is not established by Raman data alone; exciton energies on this device need PL, reflectance or PLE measured on the same spot.",
+      "evidence": "Resonance maximum at ~2.04 eV is ~0.4 eV above the A-exciton region (1.6-1.7 eV) probed by the 1.65 eV set. The B-exciton energy in MoSe2 at low temperature is roughly 1.8-1.95 eV (from memory; see literature).",
+      "provenance": "inferred",
+      "source": "Wang et al., Rev. Mod. Phys. 90, 021001 (2018), exciton overview (from memory, not checked this session); Kormanyos et al., 2D Mater. 2, 022001 (2015), band structure and spin splitting (from memory)"
+    },
+    {
+      "finding": "The 1.6479 and 1.6791 eV spectra are on a different scale from the 1.97-2.12 eV group: A1' heights ~260-320 counts (fits) against a Si line height of only ~8-10 (vs ~2 in the other group), with no clean Si peak at 1.6479 eV.",
+      "evidence": "Fit heights: 1.6791 eV A1' 259, Si 9.8; 1.6479 eV A1' 320, Si 7.9 (poor fit, reduced chi-squared 2.5 for Si and 265 for E'). Noise (MAD) 1.1 and 5.6 counts vs 0.02-0.08 in the 2 eV group. A1'/Si ratio ~26 at 1.6791 vs ~1.3 at 2.0415 eV.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 1.6479 eV spectrum has a Rayleigh-line leak at low shift and negative counts; its baseline below ~330 cm-1 has ringing features and two broad humps (~455 and ~597 cm-1) that look like a PL/background residue rather than sharp Raman bands.",
+      "evidence": "Global max 4241.5 counts at 25.4 cm-1 (outside the 150-620 window) and min -1522.9 at 13.7 cm-1; in 150-620 cm-1 the range is -58.5 to +306.4; the 1.6479 spectrum alone covers 13.7-793 cm-1 (other files start at ~150 cm-1).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 1.6791 eV spectrum is clean (low noise, peaks at ~240, 289, 303 and 320 cm-1) and shows the A1' band as the dominant feature. Its E' and other-band fit is still poor (reduced chi-squared 26.6), so only the A1' centre (240.2 cm-1) is reasonably reliable.",
+      "evidence": "Peak finder: 240.2 cm-1 (I ~244), 289.0 cm-1 (I ~36), 303.5 (~28), 320.0 (~41); 1.6791 eV A1' centre fitted at 240.20 +/- 0.01 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A1' centre shifts by ~1.2 cm-1 across excitation (240.1 at 2.0000 eV to 241.3 at 2.1236 eV). This exceeds the Si-axis calibration precision (~0.05 cm-1), so it is either a real resonance-dependent shift or a line-shape/overlap effect (e.g. a 2LA(M)-type component, which is near the same frequency and is often reported near 230-235 cm-1 in MoSe2; from memory).",
+      "evidence": "A1' centre: 240.13 (2.0000), 240.45 (2.0196), 240.86 (2.0415-2.0685), 241.00 (2.0808), 241.12 (2.0957), 241.30 (2.1236) eV, with Si at 519.95-520.00 in the same files.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Weaker bands in the 420-610 cm-1 region: a broad band at ~432 cm-1 (FWHM 10-16), a broad band at ~455-457 cm-1 (FWHM 7-16), a narrow band at ~480-481 cm-1 (FWHM 2-5), a narrow band at ~531 cm-1 (FWHM ~3, fixed shift), and a band at ~582-585 cm-1 (FWHM 4-9). Assignments are tentative: ~481 is consistent with 2A1' (2x241 = 482), ~531 with A1'+E' (241+290 = 531), ~583 with 2E' (2x290 = 580). The 531 line sits ~11 cm-1 above Si and is not expected from MoSe2 itself, so it may be instrumental (e.g. a ghost) and needs an Si-only check.",
+      "evidence": "Lorentzian fits over 420-610 cm-1 (Si modelled separately): 531 cm-1 band centre 530.5-531.0 with FWHM 2.7-5.7 across 2.0196-2.1236 eV; 583 band area up to 10.5 at 2.0539 eV; broad 432/457 pair with reduced chi-squared ~1e-3, but with correlated parameters so individual areas are less reliable.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "The 2.0000 eV spectrum is noisier than its neighbours (MAD 0.16 vs 0.04-0.06 for 2.0196-2.0539 eV), so its relative intensities carry extra uncertainty.",
+      "evidence": "Noise (MAD of savgol-smoothed residual, 150-620 cm-1): 0.16 at 2.0000 eV vs 0.059 at 2.0196 eV and 0.072 at 2.0415 eV.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 2.0 eV spectra show a broad hump near ~340-380 cm-1 at 1.9746 and 2.0000 eV; it is not a MoSe2 Raman mode I can assign and may be residual luminescence.",
+      "evidence": "Visible in the stacked plot (left panel) as a broad feature between ~330 and ~380 cm-1 only in the two lowest-energy 2 eV spectra.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer, as stated by the user); the ~49 cm-1 E'-A1' separation and the absence of strong interlayer modes are consistent with 1L but not a proof",
+      "provenance": "inferred",
+      "source": "Monolayer E'-A1' separation range from Tonndorf et al., Opt. Express 21, 4908 (2013) (from memory, not checked this session)"
+    },
+    {
+      "name": "phase",
+      "value": "2H (A1' + E' pattern with no E1g/B-mode features in the 2 eV group; consistent with 2H MoSe2)",
+      "provenance": "inferred",
+      "source": "Tonndorf et al., Opt. Express 21, 4908 (2013) (from memory)"
+    },
+    {
+      "name": "defect_level",
+      "value": "low (no defect-activated D-like bands seen in 150-620 cm-1; narrow A1' FWHM ~2 cm-1 in the 2 eV group); not quantified",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (cannot determine); the ~1.2 cm-1 A1' drift with excitation is a resonance/overlap effect, not a clean strain measurement",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none (cannot determine from frequencies alone; A1' and E' centres are stable at ~240.5 and ~289.5 cm-1 within 1 cm-1)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Intensity-ratio caveat: the spectra are parallel minus crossed polarization. Subtracting crossed from parallel can remove part of the in-plane E' signal (E' appears in both channels), so the E'/A1' ratios reported here are not raw Raman-tensor ratios. Check how the subtraction treats E' before comparing with other work.",
+    "Absolute calibration: the stated 'x1e8' scattering probability normalisation cannot be checked from these files. Si-referenced intensities are used here only as relative numbers. The 1.65 eV group does not carry a usable Si reference, so the ~100x difference between groups cannot be attributed to physics until normalization is verified.",
+    "Thin-film interference correction on 290 nm SiO2 varies with laser wavelength but typically by factors of ~2-4, which cannot explain the ~20-100x jump between the 1.65 and 2.0 eV groups. The correction is an unlikely cause of that jump.",
+    "Overlap of A1' with the 2LA(M) overtone (near 230-240 cm-1 in MoSe2, from memory) would make the apparent A1' area and position depend on excitation through resonance, so single-Lorentzian areas for A1' are only approximate. A two-component fit or polarization-resolved data would separate them.",
+    "Narrow 531 cm-1 line: fixed shift across excitations and ~11 cm-1 above the Si line. It could be an instrumental ghost, a substrate/spectrometer artifact, or a combination (A1'+E'). Check with an Si-only spectrum and with an empty-sample background on the same setup.",
+    "Excitation power, integration time and spectrometer grating/slit are not stated per spectrum; intensity comparisons across excitations are invalid without them. Laser power is stated only as <100 uW.",
+    "Literature values (exciton energies, Raman frequencies, 2LA(M) location, A1'-E' separation) are recalled from memory and were not checked against the sources in this session; they should be verified before use."
+  ],
+  "questions_for_user": [
+    "Were the 1.6479 and 1.6791 eV spectra taken with the same spectrometer setup, grating, slit, integration time, laser power and Si normalization as the 1.97-2.12 eV set? Their intensity scale, missing Si line and different spectral range suggest a different acquisition or unit convention.",
+    "Was the 1.6479 eV spectrum taken with a notch/edge filter? It contains Rayleigh leakage (4241 counts at 25 cm-1) and negative counts (-1523 at 13.7 cm-1). Was the parallel minus crossed subtraction done on a crossed spectrum from the same spot and time?",
+    "Do you have PL, reflectance contrast or PLE measured on this same spot? That would pin the neutral exciton, trion and B-exciton energies and tell us what the 2.04 eV resonance is.",
+    "Please confirm the layer number (1L vs 2L) independently (e.g. PL contrast, AFM, optical contrast) because the Raman band set alone does not exclude a small bilayer patch under a 1 um laser spot.",
+    "Laser power at each excitation energy, integration times, and whether the Si reference was measured at each laser wavelength on the same day. Without these, the absolute x1e8 values cannot be compared across energies.",
+    "Is the 531 cm-1 line present in an Si-only or empty-substrate spectrum on the same setup? If yes it is instrumental and should be removed before analysis.",
+    "Is the broad ~340-380 cm-1 hump in the 1.97 and 2.00 eV spectra residual PL, and was it subtracted as part of the parallel/crossed difference?"
+  ],
+  "citations": [
+    "Wang et al., Rev. Mod. Phys. 90, 021001 (2018), 'Colloquium: Excitons in atomically thin transition metal dichalcogenides' (exciton energies in MoSe2; cited from memory, not checked this session)",
+    "Tonndorf et al., Opt. Express 21, 4908 (2013), 'Photoluminescence emission and Raman response of monolayer MoS2, MoSe2, and WSe2' (monolayer MoSe2 A1' and E' positions and separation; cited from memory, not checked this session)",
+    "Kormanyos et al., 2D Mater. 2, 022001 (2015), 'k.p theory for two-dimensional transition metal dichalcogenide semiconductors' (valence-band spin splitting and band structure; cited from memory, not checked this session)"
+  ],
+  "limits": [
+    "No PL, reflectance or PLE data were provided, so exciton energies and the assignment of the 2.04 eV and 1.65 eV resonances are inferred, not measured.",
+    "Absolute scattering-probability calibration cannot be verified from the files; only relative, Si-referenced quantities are analysed.",
+    "The 1.6479 and 1.6791 eV spectra have poor fit quality (reduced chi-squared 26-265), so their band positions and widths beyond the A1' centre are not quantitative.",
+    "Literature values were not checked against the original papers in this session; they are recalled from memory.",
+    "The plotting-only diagnostic figure is saved outside the data folder at C:/WINDOWS/TEMP/ramanlens-analysis/series.png for inspection, not as a deliverable."
+  ]
+}

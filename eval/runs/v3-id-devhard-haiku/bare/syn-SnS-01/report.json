@@ -1,0 +1,99 @@
+{
+  "candidates": [
+    {
+      "material": "SnS",
+      "confidence": 0.85,
+      "evidence": "Four robust modes at 92.5, 162.4, 189.4 and ~226.6 cm-1 match the SnS (Pnma) Raman set of ~96 (Ag), ~163 (B3g), ~190 (Ag) and ~218/224 (B2g/Ag) cm-1 in my recollection of Chandrasekhar et al. 1977 (not re-checked in this session). The 162 cm-1 line is a clean fourfold B3g-type pattern and the 189 cm-1 line is isotropic-parallel, as expected for those symmetries. Ag-type lines at 93 and 226 share one in-plane axis (~64 deg) and the B3g axis sits 45 deg from it, which is the expected relation between diagonal and off-diagonal Raman elements. Offsets are about -3.5 cm-1 for the 93 line and -0.6 cm-1 for 162 and 189, so the absolute calibration is uncertain by a few cm-1."
+    },
+    {
+      "material": "SnSe",
+      "confidence": 0.04,
+      "evidence": "Same Pnma family, but its dominant mode is near 150 cm-1 and a ~108 cm-1 B3g line is expected. Neither is present; the strongest line here is at 92.5 cm-1."
+    },
+    {
+      "material": "SnS2",
+      "confidence": 0.02,
+      "evidence": "Its dominant A1g line is near 314 cm-1 and its Eg line near 205 cm-1. Neither dominates here; the 93 cm-1 line is the strongest."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null) and the task is identify, so no hint was checked. The identification rests on the peak set, the polarization pattern of each line, and the in-plane symmetry relations between Ag (diagonal) and B3g (off-diagonal) lines.",
+  "peaks": [
+    {
+      "position_cm1": 92.51,
+      "fwhm_cm1": 3.34,
+      "assignment": "Ag1 of SnS (lit. ~96 cm-1); strongest line in the spectrum",
+      "irrep": "Ag",
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Position and width from Lorentzian fit to the polarization-summed spectrum. Pattern: parallel is 180-degree periodic (max ~64 deg, min ~154 deg, ratio ~13:1) with a fourfold admixture; crossed is sin^2(2 theta)-like (max ~19 and ~109 deg, ~480 counts, near zero at ~64 and ~154 deg). The two-parameter diagonal Ag model (par=(p+q cos2(theta-phi))^2, cross=q^2 sin^2 2(theta-phi)) fits with chi2/ndf 1.9, while pure twofold (5.0) and pure fourfold (106) do not. Assignment inferred from symmetry and literature (Chandrasekhar et al., PRB 15, 2177, 1977; recalled, not re-checked)."
+    },
+    {
+      "position_cm1": 162.41,
+      "fwhm_cm1": 3.66,
+      "assignment": "B3g of SnS (lit. ~163 cm-1)",
+      "irrep": "B3g",
+      "pattern": "fourfold",
+      "provenance": "measured",
+      "source": "Position and width from the polarization-summed fit. Parallel ~ cos^2 2(theta-18.3 deg) and crossed ~ sin^2 2(theta-18.3 deg), with a ~4000-count amplitude, a near-zero offset and chi2/ndf 1.7. Off-diagonal (in-plane b-c) symmetry inferred from the fourfold pattern; literature value from Chandrasekhar et al., PRB 15, 2177, 1977 (recalled)."
+    },
+    {
+      "position_cm1": 189.42,
+      "fwhm_cm1": 4,
+      "assignment": "Ag2 of SnS (lit. ~190 cm-1)",
+      "irrep": "Ag",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Parallel is flat at ~2880 counts across all 18 angles (harmonic terms within ~3%). Crossed averages ~30 +/- 16 counts, about 1% of parallel, consistent with zero. Isotropic_both is rejected (crossed would be ~1450). Assignment inferred from symmetry and literature (Chandrasekhar et al., PRB 15, 2177, 1977; recalled)."
+    },
+    {
+      "position_cm1": 226.64,
+      "fwhm_cm1": 8.42,
+      "assignment": "Ag3 of SnS (lit. ~224 cm-1); broad band, may hide an unresolved component near 218 cm-1 (B2g)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Parallel varies between ~1230 (max ~61 deg) and ~670 (min ~151 deg) with a 180-degree period (2-theta harmonic ~240 counts, roughly 14 sigma). Crossed is consistent with zero (15 +/- 12 counts). Twofold fits with chi2/ndf 1.7 and isotropic_par_only is rejected (7.5). A two-component 215/226 fit did not improve the residuals, so the width is reported as one band. Assignment inferred from symmetry and literature (Chandrasekhar et al., PRB 15, 2177, 1977; recalled). B2g is expected to be silent for a beam along the layer normal, so an unresolved 218 cm-1 component is uncertain."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "alpha-SnS, orthorhombic Pnma (inferred from mode set and symmetry; not confirmed by diffraction)",
+      "provenance": "inferred",
+      "source": "Peak set (92.5, 162.4, 189.4, 226.6 cm-1) and polarization pattern versus literature SnS modes (Chandrasekhar et al., PRB 15, 2177, 1977; recalled)."
+    },
+    {
+      "name": "ag_axis_angle_deg",
+      "value": "~64 (lab frame of the angle scan; 180-degree ambiguity)",
+      "provenance": "measured",
+      "source": "Parallel maximum of the Ag-type 92.5 cm-1 line (fit phi = 63.7 deg); 226.6 cm-1 twofold maximum at ~61 deg agrees within the fit uncertainty."
+    },
+    {
+      "name": "b3g_axis_angle_deg",
+      "value": "~18 (lab frame; 45 deg from the Ag axis)",
+      "provenance": "measured",
+      "source": "Parallel maximum of the 162.4 cm-1 fourfold line (fit theta0 = 18.3 deg)."
+    },
+    {
+      "name": "diagonal_raman_anisotropy",
+      "value": "92.5 cm-1 line: a/b ~ 3.4 (p=37, q=20 in the diagonal model); 226.6 cm-1 line: q/p ~ 0.13 (nearly isotropic in-plane)",
+      "provenance": "measured",
+      "source": "Diagonal Ag tensor fit (par=(p+q cos2(theta-phi))^2, cross=q^2 sin^2 2(theta-phi)) to the per-angle amplitudes."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Chandrasekhar, H. R., Humphreys, R. G., Zwick, U., & Cardona, M. (1977). Infrared and Raman spectra of the IV-VI compounds SnS and SnSe. Phys. Rev. B 15, 2177. (Mode values quoted from recollection; not re-checked in this session.)",
+    "Raman tensor selection rules for orthorhombic Pnma (standard group theory): Ag diagonal (xx, yy, zz); B1g xy; B2g xz; B3g yz. For a beam along the layer normal (a axis, assumed for SnS), only the in-plane components are accessible, so Ag and B3g are expected and B2g and B1g are expected silent."
+  ],
+  "limits": [
+    "Material: the identification of SnS rests on four lines and their symmetry. Literature mode values come from my recollection and were not checked against the source, and the absolute calibration is uncertain by a few cm-1 (the 92.5 cm-1 line is 3.5 cm-1 below the usual ~96 cm-1 value). Only the 60-382 cm-1 window was measured, so higher-frequency SnS modes and any confirmation from them are not available.",
+    "Layers and thickness: the spectrum carries no thickness-dependent information that I could use, so the layer number is not determined. The sample is suspended, so no substrate lines are expected and none are in range (the 520.7 cm-1 Si line lies outside the measured window).",
+    "Weak features: after removing the four strong lines the residuals show only marginal bumps (~2.5-3 sigma per config) near 129, 254, 284 and 319 cm-1. These are not reported as peaks. They could be two-phonon combinations of the strong lines (93+162=255, 93+189=282, 93+226=319, 2x162=324, 162+189=351, 2x189=378), but I could not confirm this and no per-angle pattern can be assigned to them.",
+    "Noise and clipping: per-spectrum noise is about 120 counts. 901 of 11628 values are exactly 0 (clipped, spread across the range), so the crossed-configuration baselines are biased slightly upward. This makes the crossed-zero claims for 189 and 226 conservative, not overstated. No amplitude correction for analyzer or grating polarization throughput was possible, so parallel/crossed ratios are relative.",
+    "Angles: 18 angles at 10-degree steps over 0-170 degrees in both configurations. The 180-degree periodicity was assumed (not measured). The lab-frame angle origin relative to the crystal axes is set by mounting, so only relative phases (Ag axis vs B3g axis) are reliable, not absolute crystal orientation.",
+    "Artifacts: no cosmic-ray spikes were found. The sharp features at 92.5, 162.4 and 189.4 cm-1 recur at the same shift across angles with Lorentzian-like profiles, so they are real phonons, not spikes.",
+    "Alternatives: the Ag-type 93 cm-1 pattern is mixed (twofold-dominated parallel plus fourfold crossed). I classified it as 'other' rather than forcing it into twofold or fourfold. Sample thickness, temperature (295 K assumed), and 532 nm resonance effects on relative intensities are not analysed."
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.9,
+      "evidence": "Two bands at 379.9 and 404.4 cm-1 (FWHM about 8 cm-1) with separation 24.5 cm-1. These match the E2g1 and A1g modes of MoS2, which are literature-known near 383 and 408 cm-1 for bulk. The separation fits thicker-than-monolayer films (Lee et al. 2010: monolayer about 19 cm-1, bulk about 25 cm-1). Both bands sit about 3-4 cm-1 low versus bulk, so calibration, heating or strain is possible. Only two main bands lie in the 350-451 window, and the other MoS2 modes (E1 2g near 286, 1LA(M) near 227) are outside it, so the identification rests on the pair alone."
+    },
+    {
+      "material": "WS2",
+      "confidence": 0.03,
+      "evidence": "Rejected. WS2 has E2g near 355 and A1g near 418 cm-1, a separation of about 63 cm-1. The data have no band near 355 and the separation is about 24 cm-1."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identify task. The analysis supports 2H-MoS2 as the most likely material, with the caveats below.",
+  "peaks": [
+    {
+      "position_cm1": 379.93,
+      "fwhm_cm1": 8.07,
+      "assignment": "E2g1 (E' in monolayer notation)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a 3-peak pseudo-Voigt fit of 355-445 cm-1 (position stderr 0.08). Assignment from Lee et al. 2010, ACS Nano 4, 2695, doi:10.1021/nn1003937 (https://pubmed.ncbi.nlm.nih.gov/20392077/; arXiv https://arxiv.org/abs/1005.2509). Bulk value near 382-383 cm-1 in that work; observed position is about 3 cm-1 lower."
+    },
+    {
+      "position_cm1": 404.38,
+      "fwhm_cm1": 7.86,
+      "assignment": "A1g (A1' in monolayer notation)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from the same 3-peak fit (position stderr 0.06). Assignment from Lee et al. 2010 (doi:10.1021/nn1003937; https://arxiv.org/abs/1005.2509). Bulk value near 407-408 cm-1 in that work; observed position is about 3-4 cm-1 lower."
+    },
+    {
+      "position_cm1": 412.17,
+      "fwhm_cm1": 7.05,
+      "assignment": "unassigned weak shoulder (about 9 % of A1g amplitude; appears only in the 3-peak fit, position stderr 0.70)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "Band positions and separation match 2H-MoS2 E2g1/A1g pair; the 1T-type J modes that would indicate another phase are absent in the 350-451 window. Lee et al. 2010 (doi:10.1021/nn1003937)."
+    },
+    {
+      "name": "layers",
+      "value": "more than one layer; thick or bulk-like, exact count not determined",
+      "provenance": "inferred",
+      "source": "Separation 24.5 cm-1 (fit: 24.45-24.7 depending on model). Lee et al. 2010 gives roughly 19 cm-1 for a monolayer and about 25 cm-1 for bulk, approximate values quoted from the paper's trend, not re-read from its numeric table. The bands are not resolved enough to fix N."
+    },
+    {
+      "name": "A1g_FWHM",
+      "value": "about 7.9 cm-1",
+      "provenance": "measured",
+      "source": "3-peak pseudo-Voigt fit, stderr 0.14."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "A broad line (FWHM about 8 cm-1) is consistent with reduced crystallinity or non-uniformity of ALD-grown films, but no defect relation was applied and no defect-activated band (for example the D-like band near 230-250 cm-1) is in the window."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee, C. et al. Anomalous lattice vibrations of single- and few-layer MoS2. ACS Nano 4, 2695-2700 (2010). doi:10.1021/nn1003937. https://pubmed.ncbi.nlm.nih.gov/20392077/ ; arXiv:1005.2509 https://arxiv.org/abs/1005.2509 (Fig. 2 shows E2g and A1g frequencies and their difference versus layer number)."
+  ],
+  "limits": [
+    "Calibration is not checked. The Si 520.7 cm-1 line is outside the 350-451 cm-1 window, so absolute shifts carry about 1-2 cm-1 uncertainty. Both modes sit about 3-4 cm-1 below typical bulk values (E2g 382-383, A1g 407-408); calibration offset, laser heating, strain or doping could explain this. They cannot be separated from one spectrum.",
+    "Only the two main bands are present in the window. The low-frequency modes (1LA(M) near 227, E1 2g near 286) and the 2LA(M) band near 450 cm-1 are outside it or at the edge; the 445-450 cm-1 data show no clear band above noise (about 0.006). Identification therefore rests on the pair position and separation, not on a full fingerprint.",
+    "The weak 412 cm-1 shoulder is supported only by the 3-peak fit. It has about 9 % of the A1g amplitude and is not assigned. It may be an artefact of line shape.",
+    "Layer number is qualitative only. A separation of 24.5 cm-1 says the film is thicker than a monolayer, but no exact count is given. Thickness nonuniformity across the spot is not excluded.",
+    "No polarization data (single spectrum), laser wavelength or temperature were supplied. Resonance enhancement, 2nd-order bands and selection rules could not be checked, so the irreps are bulk-D6h labels by default.",
+    "The skill's scripts (rl_qc, rl_fit, rl.py match_library, reference relations and notes) live outside the working folder and were not run or read, per the folder restriction. Fitting was done with my own script in ./analysis/. Candidate ranking was done by comparing positions with the literature, not with the Computational Raman Database matcher. Layer-number thresholds are from memory of Lee et al. 2010, cited above, and should be checked against its numeric table.",
+    "ALD-grown MoS2 films are often amorphous or nanocrystalline. The sharp-ish bands (FWHM about 8 cm-1) suggest a crystalline or partly crystalline film, but the data cannot establish its phase purity. Other sulfides with bands in this range (for example 1T-MoS2) are not fully excluded because their diagnostic bands fall outside the window; they are disfavoured by the observed separation.",
+    "No cosmic-ray spikes or saturation were seen by inspection of the data. The maximum is 1.0 (normalized) at 404.3 cm-1, with noise sigma about 0.006."
+  ]
+}

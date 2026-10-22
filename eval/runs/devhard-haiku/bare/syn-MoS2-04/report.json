@@ -1,0 +1,93 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.9,
+      "evidence": "Two Lorentzian peaks at 382.8 and 406.2 cm-1 (fit) with separation 23.35 cm-1, matching the MoS2 E2g1 and A1g pair at 532 nm; no other Raman bands from other candidate materials (e.g. WS2 E2g ~355/A1g ~420, MoSe2 A1g ~240) are present. Si substrate line also present at 520.5 cm-1."
+    },
+    {
+      "material": "2H-MoS2 (few-layer, ~4-5 layers)",
+      "confidence": 0.5,
+      "evidence": "Delta(A1g-E2g) = 23.35 cm-1 lies between the literature values for ~3-4 layers and bulk (~25 cm-1 at 532 nm). Best estimate 4-5 layers, uncertainty about +/-1-2 layers. Literature trend approximate, from Lee et al. ACS Nano 2010 and Mak et al. PRL 2010."
+    }
+  ],
+  "hint_verdict": "consistent",
+  "hint_reasoning": "No material hint was given. The two in-plane/out-of-plane modes at 382.8 and 406.2 cm-1 with a 23.4 cm-1 separation are the MoS2 fingerprint at 532 nm. The Si substrate line at 520.5 cm-1 (reference 520.7) is present, and the SiO2/Si substrate in the metadata is consistent with it. The measured E2g and A1g positions are within a few cm-1 of bulk MoS2 at 532 nm (E2g ~383, A1g ~407-408). The A1g is about 1.5-2 cm-1 softer than bulk, which is consistent with a thinner flake, though strain or doping could contribute.",
+  "peaks": [
+    {
+      "position_cm1": 382.8,
+      "fwhm_cm1": 2.34,
+      "assignment": "MoS2 E2g1 (in-plane E' mode, 2H-MoS2)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit over 370-420 cm-1 with linear background; position uncertainty ~0.02 cm-1 (fit only). Mode assignment: Molina-Sanchez & Wirtz, PRB 84, 155413 (2011); Lee et al., ACS Nano 4, 2695 (2010)."
+    },
+    {
+      "position_cm1": 406.2,
+      "fwhm_cm1": 4.56,
+      "assignment": "MoS2 A1g (out-of-plane mode, 2H-MoS2)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit over 370-420 cm-1 with linear background; position uncertainty ~0.08 cm-1 (fit only). FWHM is model-dependent (Voigt fit gives 2.6 cm-1). Mode assignment: Lee et al., ACS Nano 4, 2695 (2010); Molina-Sanchez & Wirtz, PRB 84, 155413 (2011)."
+    },
+    {
+      "position_cm1": 520.5,
+      "fwhm_cm1": 3.48,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit 500-540 cm-1. Reference first-order Si TO/LO Raman line at room temperature ~520.7 cm-1 (literature), so the measured position suggests a calibration offset of about -0.2 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "4-5 (best estimate ~5; range roughly 3-6)",
+      "provenance": "inferred",
+      "source": "Delta(A1g-E2g) = 23.35 cm-1 compared with literature trend: 1L ~18.5-19, 2L ~20-21, 3L ~21.5-22, 4L ~22.5-23, bulk ~24.5-25 cm-1 at 532 nm (Lee et al., ACS Nano 4, 2695 (2010); Mak et al., PRL 105, 136805 (2010)). Literature values vary by ~0.5 cm-1 between papers, so layer count is approximate."
+    },
+    {
+      "name": "material",
+      "value": "MoS2 (2H)",
+      "provenance": "inferred",
+      "source": "Peak pair E2g1 ~383 / A1g ~406 cm-1 at 532 nm (Lee et al., ACS Nano 2010; Molina-Sanchez & Wirtz, PRB 2011)"
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "Narrow E2g FWHM 2.3 cm-1 and no obvious defect-activated bands (e.g. LA(M) ~227 or 2LA(M) ~450 cm-1) above noise; defect-level inference from narrow linewidths, not a calibrated metric"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (not determined)",
+      "provenance": "inferred",
+      "source": "A1g is about 1.5-2 cm-1 below bulk, which could reflect thinning, strain, or doping. A single spectrum cannot separate these, so no strain sign is assigned."
+    },
+    {
+      "name": "doping_type",
+      "value": "none (not determined)",
+      "provenance": "inferred",
+      "source": "Doping would shift E2g and A1g in opposite directions and needs a reference spectrum to assess; not determined here."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee C. et al., ACS Nano 4, 2695 (2010) - MoS2 E2g1/A1g assignment and layer-dependent Delta at 514/532 nm",
+    "Mak K. F. et al., PRL 105, 136805 (2010) - layer dependence of E2g1 and A1g in MoS2",
+    "Molina-Sanchez A. & Wirtz L., PRB 84, 155413 (2011) - phonon assignments in MoS2",
+    "Si first-order Raman line ~520.7 cm-1 at room temperature (standard reference)"
+  ],
+  "limits": [
+    "The layer count rests on literature Delta-vs-N trends, which differ by about 0.5 cm-1 between papers and depend on laser wavelength, substrate, strain and doping. Treat 4-5 layers as approximate (roughly +/-1-2 layers) and do not read it as a precise count.",
+    "Delta saturates toward bulk (~25 cm-1) above about 5 layers, so a value of 23.35 cm-1 cannot tell 5 layers from thicker flakes with confidence.",
+    "A single spot cannot separate thickness from strain or doping. The A1g softening relative to bulk (~406.2 vs ~408 cm-1, after a -0.2 cm-1 Si calibration correction ~406.4) is consistent with thinning but is not diagnostic on its own.",
+    "The E1 2g (~287), LA(M) (~227), 2LA(M) (~450) and E1g (~176) bands show no significant intensity above noise (each below ~2 sigma). Their absence is not evidence against MoS2, since they are weak at 532 nm.",
+    "The A1g FWHM depends on the line shape (Lorentzian 4.6 vs Voigt 2.6 cm-1). The E2g width (2.3 cm-1) is more robust. No cosmic-ray spikes were found (no single-point outliers above 5 sigma).",
+    "No polarization or angle-resolved data was provided, so no polarization classification is given.",
+    "Temperature 295 K and substrate (SiO2/Si, 285 nm oxide) are taken from the metadata. Their effects on Raman positions were not separately modelled."
+  ]
+}

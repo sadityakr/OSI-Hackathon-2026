@@ -1,0 +1,87 @@
+{
+  "summary": "Spot 1 is most likely monolayer WS2 (moderate confidence; PL or AFM needed to confirm) and spot 2 is thick, bulk-like WS2. Spot 1 has A1g at 417.3 cm-1, an A1g-E separation of about 62 cm-1, a strongly enhanced 2LA(M) (2LA/A1g height about 2.2) and a strong Si signal. Spot 2 has A1g at 420.1 cm-1, a separation of about 64.7 cm-1, a weak 2LA (ratio about 0.46) and a Si signal about 10 times weaker. A bilayer is not excluded by Raman alone.",
+  "observations": [
+    {
+      "finding": "Peaks assigned: LA(M) ~176, 2LA(M) ~350, E'/E1_2g ~355, A1'/A1g 417-420, Si 520.8 cm-1",
+      "evidence": "Lorentzian fits (300-450 cm-1, 4 components): spot1 LA 175.9, 2LA 351.1, E 355.3, A1g 417.28+-0.02; spot2 LA 175.5, 2LA 349.9, E 355.4, A1g 420.08+-0.02; Si 520.9/520.8",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A1g hardens by 2.8 cm-1 from spot 1 to spot 2 while E stays at 355.3-355.4 cm-1, so the A1g-E separation grows from 62.0 to 64.7 cm-1. This is the thickness trend, with spot 1 near the monolayer value and spot 2 bulk-like.",
+      "evidence": "Delta(A-E) = 62.0 (spot 1) vs 64.7 (spot 2); A1g FWHM 4.5 vs 4.4",
+      "provenance": "measured",
+      "source": "Berkdemir et al., Sci. Rep. 3, 1755 (2013), layer-dependence of E and A1g; Zhao et al., Nanoscale 5, 9677 (2013) (recalled from memory, not checked)"
+    },
+    {
+      "finding": "The 2LA(M) mode is strongly enhanced at spot 1, a double-resonance effect near the A exciton at 514.5 nm that is typical of monolayer WS2, and is much weaker at spot 2.",
+      "evidence": "2LA/A1g height about 2.2 (area about 4.4) at spot 1 vs about 0.46 (area about 0.9) at spot 2",
+      "provenance": "measured",
+      "source": "Berkdemir et al., Sci. Rep. 3, 1755 (2013), Fig. 3"
+    },
+    {
+      "finding": "The Si substrate signal is about 10 times stronger through the island than at the thick spot, consistent with a thin, nearly transparent layer at spot 1 and an absorbing thick layer at spot 2.",
+      "evidence": "Si 520.8 cm-1 area about 6770 (spot 1) vs about 660 (spot 2)",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "spot1: 1 (possibly 2); spot2: bulk",
+      "provenance": "inferred",
+      "source": "Berkdemir 2013; Zhao 2013"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable; no direct defect markers (LA(M) at 176 cm-1 is broad, FWHM 10-13 cm-1)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determinable from these data",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "The 2LA(M) and E' peaks lie about 4 cm-1 apart and overlap strongly. Their fitted positions and areas are correlated, so the E position and the A-E separation are good to about +-1 cm-1 at best.",
+    "A1g is doping-sensitive and the modes shift with strain, so the A1g position alone can mimic a thickness change; substrate doping from SiO2 or CVD residue is possible.",
+    "The 2LA/A1g ratio depends on laser power, focus and substrate interference, so single-spectrum values should not be over-interpreted.",
+    "The monolayer-versus-bilayer call rests on small differences of about 1-2 cm-1, which is within the uncertainty of the fit; the Raman evidence for monolayer is therefore moderate.",
+    "The literature values were recalled from memory and not checked in this folder.",
+    "Wavenumber calibration was only checked against Si, which sits at 520.8-520.9 cm-1.",
+    "Spot 2 only indicates 'thick, bulk-like'; the layer count cannot be derived."
+  ],
+  "questions_for_user": [
+    "Do you have a PL spectrum of spot 1? A strong A-exciton near 2.0 eV would confirm a monolayer.",
+    "Do you have AFM or optical-contrast data? A step height of about 0.7-0.8 nm would settle the thickness.",
+    "What were the laser power, grating and spectral resolution, to rule out heating and instrumental broadening?",
+    "Is the island uniform? Mapping the A1g position and the 2LA/A1g ratio would show it, and also show any strain or doping inhomogeneity.",
+    "What is the SiO2 thickness, which affects interference and the Si intensity?"
+  ],
+  "citations": [
+    "Berkdemir et al., Sci. Rep. 3, 1755 (2013), Fig. 3",
+    "Zhao et al., Nanoscale 5, 9677 (2013)"
+  ],
+  "limits": [
+    "The data cannot give an absolute layer count, only a relative one.",
+    "The data cannot tell strain from doping, or give the sign of strain.",
+    "The data cannot give the defect density.",
+    "The data cannot tell whether the island is uniform in thickness."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "summary": "Both spectra show the graphene fingerprint: a G band at about 1580 cm\u207b\u00b9 (FWHM about 25\u201330 cm\u207b\u00b9) and a single-Lorentzian 2D band with I2D/IG > 2. The Au spectrum is strong and unambiguous (G amplitude 116 counts, 2D amplitude 345). The Cu spectrum is about 5\u20137\u00d7 weaker in G and 2D, sits on a broad background hump, and its G and 2D are detected at only about 5\u03c3 and 12\u03c3. Cu's D band is marginal (2.6\u03c3). I would call the Cu layer graphene too, with lower confidence, and I would call it monolayer-like on both (not proven). The difference is mainly intensity and signal-to-background, plus a 2D position offset of about 15 cm\u207b\u00b9. Line widths and G position match. The defect (D-band) signal is clearly present only on Au. The laser wavelength is not recorded, so I cannot separate strain from doping, convert the 2D offset into a physical cause, or give absolute defect spacing with confidence.",
+  "observations": [
+    {
+      "finding": "Au: G band at 1580.3 cm\u207b\u00b9 (\u00b10.9), FWHM 25\u201326 cm\u207b\u00b9 (deg-1 and deg-2 baselines, windows 1200\u20131750 and 1250\u20131700 cm\u207b\u00b9); amplitude 116\u00b18 counts.",
+      "evidence": "Lorentzian + polynomial background fit to raw spectrum_Au.csv; G-only window 1520\u20131650 gives 1580.1, FWHM 23.8. Fit residual variance matches the measured noise (\u03c3\u224817 counts).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Au: 2D band at 2681.0 cm\u207b\u00b9 (\u00b10.5), FWHM 41\u201346 cm\u207b\u00b9 (single Lorentzian), amplitude 345\u00b18 (range 330\u2013360); I2D/IG \u2248 3.0 by amplitude, \u2248 5.6 by area.",
+      "evidence": "Five window/background combinations give 2680.9\u20132681.1 cm\u207b\u00b9 and FWHM 41\u201346. A two-component fit does not improve the fit (redchi 432\u2192408) and the narrow component is unphysical, so no clear bilayer substructure. Ferrari et al. (2006) describe monolayer 2D as one sharp Lorentzian, so the broad width (vs ~25\u201330 cm\u207b\u00b9 for a clean monolayer) points to strain/doping inhomogeneity or a few-layer contribution.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Au: D band at 1344.1\u20131344.4 cm\u207b\u00b9, FWHM 35\u201337 cm\u207b\u00b9, amplitude 112\u00b17; ID/IG = 0.96\u20130.97 \u00b1 0.09 (amplitude), 1.4 by area. D\u2032 shoulder near 1617 cm\u207b\u00b9 is not significant (amplitude 14\u00b115).",
+      "evidence": "D+G fits with two baseline orders and two windows; D amplitude/error \u2248 17, G amplitude/error \u2248 15.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Cu: G band at 1580.1\u20131581.0 cm\u207b\u00b9 (\u00b12.6), FWHM 26\u201330 cm\u207b\u00b9, amplitude 24\u00b14 (range 23\u201326); G amplitude/error \u2248 5.",
+      "evidence": "Same fitting approach on spectrum_Cu.csv. Noise \u03c3 \u2248 8.6 counts in featureless region 1900\u20132250 cm\u207b\u00b9. The G position matches Au within the fit error, and the G width is similar (Au 25 vs Cu 27\u201330).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Cu: 2D band at 2695.6\u20132696.4 cm\u207b\u00b9 (\u00b11.4), FWHM 44\u201350 cm\u207b\u00b9, amplitude 51\u00b13\u20134 (range 50\u201356); I2D/IG \u2248 2.2 by amplitude, \u2248 3.8 by area.",
+      "evidence": "Five window/background combinations. The Cu 2D position is about 15 cm\u207b\u00b9 higher than Au's (2681) at the same G position (1580 in both). The two-component fit is unstable (a narrow component goes to an unphysical value), so I report only the single Lorentzian.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Cu: D band at 1348\u20131355 cm\u207b\u00b9, amplitude 14\u00b15, ID/IG = 0.6 \u00b1 0.3 (\u22482.6\u03c3, and the D position and width are poorly constrained across windows). Not a reliable defect measurement.",
+      "evidence": "Five D+G fit variants; D amplitude/error \u2248 2.6. A D\u2032 estimate at 1623 cm\u207b\u00b9 (amplitude 9\u00b14) is about 2\u03c3 and not claimed.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Intensity contrast: G amplitude ratio Au/Cu \u2248 4.8, 2D amplitude ratio \u2248 6.8. Relative to local background, the G band is 8.9% of background on Au and 3.1% on Cu; the 2D band is 23% on Au and 7% on Cu.",
+      "evidence": "Background from ALS baseline (\u03bb=1e5, p=0.01): Au \u22481306 counts at 1580 and \u22481467 at 2686; Cu \u2248777 and \u2248751. Cu background is lower in absolute counts, so the contrast loss is larger than the absolute signal drop would suggest.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Broad background hump: Au rises from ~950 counts at 100 cm\u207b\u00b9 to a maximum near 2600 cm\u207b\u00b9; Cu has a broad maximum near 1850 cm\u207b\u00b9 with about 180 counts of rise above the low-shift end. Neither has a sharp feature in the low-shift region (metal first-order phonons absent, no Cu\u2082O/CuO lines seen).",
+      "evidence": "ALS baselines (plot in scratch folder). Au low-shift end (100\u2013150 cm\u207b\u00b9) has an upturn to ~1100 counts, consistent with a Rayleigh-filter edge; exclude below ~150 cm\u207b\u00b9.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Line shape is the same on both substrates (G width, 2D width, I2D/IG > 2). Only intensity and the 2D position differ. This argues against amorphous carbon as the dominant material (amorphous carbon would give G widths of order 100 cm\u207b\u00b9 and no sharp 2D).",
+      "evidence": "Width comparison above; G FWHM 25 (Au) vs 27 (Cu) overlapping within errors.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "Monolayer-like on both substrates: I2D/IG > 2 and single-Lorentzian 2D. This is provisional because the 2D width (41\u201350 cm\u207b\u00b9) is broader than typical monolayers (~25\u201330 cm\u207b\u00b9).",
+      "evidence": "I2D/IG amplitude 3.0 (Au) and 2.2 (Cu), FWHM above.",
+      "provenance": "inferred",
+      "source": "Ferrari et al., PRL 97, 187401 (2006), for monolayer 2D lineshape and I2D/IG > 2 criterion (cited from memory, not re-checked here)."
+    },
+    {
+      "finding": "2D position differs by ~15 cm\u207b\u00b9 between Au (2681) and Cu (2696) at the same G (1580 both). 2D is excitation-dispersive (~90 cm\u207b\u00b9/eV), so this equals ~0.17 eV of excitation energy. That is comparable to a switch between common visible lasers, so the offset could reflect a different laser or setup rather than a different material state.",
+      "evidence": "Position uncertainties \u00b10.5 (Au) and \u00b11.4 (Cu); difference \u2248 9\u03c3. G-band positions coincide, which argues against a large uniform doping/strain difference, but the strain/doping vector cannot be resolved without the laser wavelength.",
+      "provenance": "inferred",
+      "source": "Dispersion ~90 cm\u207b\u00b9/eV for 2D from Ferrari et al., PRL 97, 187401 (2006) (from memory, not re-checked here). Strain vs doping separation via G/2D shift slopes: Lee et al., Nat. Commun. 3, 1024 (2012) (from memory, not re-checked here)."
+    },
+    {
+      "finding": "Defect density on Au is high-ish: ID/IG \u2248 1 with D width 35\u201337 cm\u207b\u00b9. Via the Can\u00e7ado relation, this corresponds to a defect spacing of about 4\u201312 nm at 532 nm, depending on which prefactor is used. Laser wavelength is not recorded, so this estimate is assumed.",
+      "evidence": "ID/IG 0.96\u20130.97 from fits; L_D \u221d \u03bb\u00b2 (or \u03bb\u2074 in L_D\u00b2 form) so the absolute value is wavelength-dependent.",
+      "provenance": "inferred",
+      "source": "Can\u00e7ado et al., Appl. Phys. Lett. 88, 163106 (2006) and Nano Lett. 11, 3190 (2011) for L_D relations and prefactors (from memory, not re-checked here)."
+    },
+    {
+      "finding": "Cu defect level cannot be stated from these data: the D band is 2.6\u03c3 with ID/IG 0.6 \u00b1 0.3, so 'lower defect density than Au' is not supported.",
+      "evidence": "D amplitude/error \u2248 2.6; ID/IG 0.56\u20130.64 across variants but with \u00b10.27 linear error.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer-like, provisional) on Au; monolayer-like but low confidence on Cu",
+      "provenance": "inferred",
+      "source": "I2D/IG > 2 and single-Lorentzian 2D; Ferrari et al., PRL 97, 187401, 2006 (from memory, not re-checked)."
+    },
+    {
+      "name": "defect_level",
+      "value": "medium on Au (ID/IG \u2248 0.97); not determined on Cu (ID/IG 0.6 \u00b1 0.3, 2.6\u03c3)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "L_D_nm",
+      "value": "Au \u2248 4\u201312 nm (assuming 532 nm; laser wavelength not recorded); Cu not determined",
+      "provenance": "inferred",
+      "source": "Can\u00e7ado et al., APL 88, 163106 (2006); Nano Lett. 11, 3190 (2011) (from memory, not re-checked)."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none/undetermined \u2014 G near 1580\u20131581 on both; 2D offset of ~15 cm\u207b\u00b9 between substrates cannot be assigned to strain or doping without the laser wavelength",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012) for the strain/doping separation method (from memory, not re-checked)."
+    },
+    {
+      "name": "doping_type",
+      "value": "none (not determined)",
+      "provenance": "inferred",
+      "source": "Giovannetti et al., PRL 101, 026803 (2008) on work-function-dependent charge transfer (from memory, not re-checked); the G position alone does not establish doping sign here."
+    },
+    {
+      "name": "phase",
+      "value": "graphene (sp\u00b2 carbon); no amorphous-carbon-dominated signal",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "The laser wavelength is missing for both files. The 2D position (dispersive, ~90 cm\u207b\u00b9/eV) cannot be interpreted absolutely, and the 15 cm\u207b\u00b9 Cu\u2013Au offset could be a laser or setup difference rather than material.",
+    "Cu signal is about 5\u20137\u00d7 weaker than Au and sits on a background hump with ~3\u00d7 lower relative contrast. Cu G and 2D are real (5\u03c3 and ~12\u03c3) but the D band and any D\u2032 are not significant. Any Cu defect or strain number should be treated as unreliable.",
+    "Intensity differences between substrates cannot be attributed to layer count, coverage or metal interaction from one spectrum. Candidates: metal-dependent optical enhancement or quenching at the laser wavelength (Au and Cu have different interband absorption in the visible, Johnson & Christy, PRB 6, 4370, 1972, from memory), less graphene coverage within the spot on Cu, different focus on a curved droplet, or a different acquisition setup.",
+    "The broad background hump (Au max ~2600 cm\u207b\u00b9, Cu max ~1850 cm\u207b\u00b9) is not identified. It could be luminescence from carbon contamination, emission from the metal/droplet, or an instrumental artifact. Its origin matters for the interpretation of contrast.",
+    "The Au 2D width (41\u201346 cm\u207b\u00b9) is broader than a clean monolayer. This could be strain/doping inhomogeneity across the spot, a few-layer contribution, or the spot covering several grains. One spectrum cannot distinguish these.",
+    "Literature values (Ferrari 2006, Can\u00e7ado 2006/2011, Lee 2012, Giovannetti 2008, Johnson & Christy 1972) are cited from memory; I could not check them here. Use them as pointers, and verify the prefactors before quoting numbers.",
+    "Baseline choice affects absolute intensities. ALS (\u03bb=1e5, p=0.01) and local polynomial backgrounds gave consistent positions, but the intensities and I2D/IG depend on the background model, so ratios carry systematic errors larger than the fit errors quoted."
+  ],
+  "questions_for_user": [
+    "What laser wavelength was used for each spectrum, and were both measured on the same system and calibration? Without this, the 2D position offset (Cu ~15 cm\u207b\u00b9 above Au) and any absolute strain, doping or L_D cannot be assigned.",
+    "Was a bare Au or bare Cu reference (same laser, power, grating, and integration) measured? This would let the broad background hump be subtracted and tell us whether it is metal emission or carbon luminescence.",
+    "What was the spot size, and was the spectrum taken at one point or averaged over the droplet? Was graphene coverage checked by mapping or SEM? A patchy Cu sample would lower the signal without changing the layer quality.",
+    "Are the Cu and Au growths comparable in carbon supply and time? The Au sample was grown at high ethylene flux, the Cu sample in UHV, so differences in carbon amount or multilayer patches are possible.",
+    "What is the integration time and number of accumulations for each spectrum? This sets the noise (17 vs 8.6 counts) and the detection limit for the Cu D band."
+  ],
+  "citations": [
+    "Ferrari, A.C. et al., Phys. Rev. Lett. 97, 187401 (2006) \u2014 monolayer 2D lineshape, I2D/IG criterion, 2D dispersion (cited from memory, not re-checked)",
+    "Can\u00e7ado, L.G. et al., Appl. Phys. Lett. 88, 163106 (2006) \u2014 L_a vs I_D/I_G relation (cited from memory, not re-checked)",
+    "Can\u00e7ado, L.G. et al., Nano Lett. 11, 3190 (2011) \u2014 L_D vs I_D/I_G at different excitation energies (cited from memory, not re-checked)",
+    "Lee, J.E. et al., Nat. Commun. 3, 1024 (2012) \u2014 optical separation of strain and doping via G/2D shift slopes (cited from memory, not re-checked)",
+    "Giovannetti, G. et al., Phys. Rev. Lett. 101, 026803 (2008) \u2014 work-function-dependent doping of graphene by metal contacts (cited from memory, not re-checked)",
+    "Johnson, P.B. & Christy, R.W., Phys. Rev. B 6, 4370 (1972) \u2014 optical constants of Au and Cu (cited from memory, not re-checked)"
+  ],
+  "limits": [
+    "Only two spectra, one spot each, no reference spectra, no laser wavelength and no mapping. Layer number and defect spacing are estimates, not measurements.",
+    "I did not re-check literature values in this session (no web access); they are from memory and should be verified before use.",
+    "Cu D and D\u2032 are not significant, so no defect comparison between the two substrates is possible from these data. The Cu 2D two-component decomposition is unstable and was not used.",
+    "The question 'why does it look different' can be answered only partly: intensity and background are measured differences, but their physical causes (metal coupling, coverage, laser/setup) cannot be separated from a single spectrum per substrate."
+  ]
+}

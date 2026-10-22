@@ -1,0 +1,126 @@
+{
+  "candidates": [
+    {
+      "material": "graphene (monolayer, defective)",
+      "confidence": 0.9,
+      "evidence": "Single narrow G band at 1579.3 cm-1 (FWHM 14.2), single symmetric 2D band at 2689.8 cm-1 (FWHM 32.5) with I2D/IG ~3 (height) / ~6.8 (area), and a D band at 1344.3 cm-1 with I_D/I_G ~0.49-0.53 plus a weak D' shoulder at ~1623 cm-1. This is the standard graphene Raman fingerprint at 532 nm with defect-activated D and D' bands."
+    },
+    {
+      "material": "few-layer graphene / graphite",
+      "confidence": 0.04,
+      "evidence": "Multilayer 2D would be broader (~50 cm-1 or more) and asymmetric, needing several components; the measured 2D is a single symmetric Lorentzian with residuals at the noise floor, and I2D/IG is higher than typical for bi- or few-layer."
+    },
+    {
+      "material": "reduced graphene oxide",
+      "confidence": 0.04,
+      "evidence": "Would show broad G (FWHM typically >30 cm-1) and a G band near 1590-1600 with comparable D and G intensities; here G is sharp (FWHM 14) and the 2D band is intense and single-component."
+    },
+    {
+      "material": "amorphous carbon",
+      "confidence": 0.01,
+      "evidence": "Would show very broad, overlapping D and G bands and no sharp 2D band; not observed."
+    },
+    {
+      "material": "Si/SiO2 substrate only",
+      "confidence": 0.01,
+      "evidence": "Substrate lines are not in the measured window (1100-2999 cm-1), and the strong G/D/2D features cannot come from the substrate."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so this is an identification task. The spectrum is consistent with monolayer graphene: G at 1579, a single 2D at 2690 with I2D/IG about 3, and a D band from defects. Laser 532 nm and backscattering are consistent with the usual graphene analysis; no conflicting features were found.",
+  "peaks": [
+    {
+      "position_cm1": 1344.25,
+      "fwhm_cm1": 15.41,
+      "assignment": "D band (defect-activated breathing mode at K, A1' symmetry)",
+      "irrep": "A1' (K-point TO phonon, double-resonance)",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Ferrari & Robertson, PRB 61, 14095 (2000); Ferrari et al., PRL 97, 187401 (2006). Position and FWHM measured from Lorentzian fit with quadratic background, centre error +-0.16 cm-1, height 2594, area 62797."
+    },
+    {
+      "position_cm1": 1579.33,
+      "fwhm_cm1": 14.2,
+      "assignment": "G band (in-plane E2g phonon at Gamma)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Ferrari et al., PRL 97, 187401 (2006). Position and FWHM measured, centre error +-0.08 cm-1, height 5334, area 118985. G position is slightly below the ~1580-1583 cm-1 usually quoted for undoped, unstrained graphene on SiO2, so doping or strain cannot be ruled out."
+    },
+    {
+      "position_cm1": 1623.16,
+      "fwhm_cm1": 14.72,
+      "assignment": "D' band (defect-activated intravalley TO/LO phonon near Gamma)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position of a weak shoulder, measured from fit with centre error +-1.0 cm-1, height 411 (about 3 sigma above noise of ~130 counts). Assignment inferred from position near 1620 cm-1 and co-occurrence with D; Ferrari & Robertson, PRB 61, 14095 (2000)."
+    },
+    {
+      "position_cm1": 2689.77,
+      "fwhm_cm1": 32.47,
+      "assignment": "2D band (second-order double-resonance overtone of D, sometimes labelled G')",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Ferrari et al., PRL 97, 187401 (2006); Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013). Single symmetric Lorentzian, centre error +-0.04 cm-1, height 15938, area 812834; residual RMS 128 counts equal to the noise."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "Single symmetric 2D Lorentzian (FWHM 32.5 cm-1, no multi-component structure) and I2D/IG about 3 by height (6.8 by area), consistent with monolayer graphene (Ferrari et al., PRL 97, 187401 (2006); Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)). Not independently checked by a second criterion."
+    },
+    {
+      "name": "defect_level",
+      "value": "medium",
+      "provenance": "inferred",
+      "source": "I_D/I_G = 0.49 (height) to 0.53 (area), with the Ferrari & Robertson (PRB 2000) and Cancado et al. (Nano Lett. 11, 3190 (2011)) criteria."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "approx. 6 nm (range 6-8 nm across published relations)",
+      "provenance": "inferred",
+      "source": "Cancado et al., Nano Lett. 11, 3190 (2011), with L^2 = 2.4e-10 * lambda^4 / (I_D/I_G) and lambda = 532 nm, giving 6.0-6.3 nm. The n_D relation n_D = 1.8e22 lambda^-4 (I_D/I_G)^-1 gives about 8 nm. Valid in the low-defect (stage-1) regime, L_D > ~3 nm."
+    },
+    {
+      "name": "defect_type",
+      "value": "point-like sp2 defects (vacancy-like) more likely than sp3 or boundary-type; tentative",
+      "provenance": "inferred",
+      "source": "I_D/I_D' = 6.3 (height) to 6.6 (area). Eckmann et al., Nano Lett. 12, 3925 (2012) report ratios of about 13 for sp3, about 7 for vacancy-like and about 3.5 for boundary-like defects (recalled from memory, not verified here). The D' shoulder is only about 3 sigma, so this is tentative."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not resolvable",
+      "provenance": "inferred",
+      "source": "Only G and 2D positions (1579.3, 2689.8 cm-1) are available and no reference spectrum is given, so strain and doping cannot be separated (Lee et al., Nat. Commun. 3, 1024 (2012))."
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "G is slightly low and 2D is high relative to undoped graphene at 532 nm, but two peaks cannot separate n- from p-doping without a reference (Lee et al., Nat. Commun. 3, 1024 (2012))."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari, A. C. & Robertson, J. Interpretation of Raman spectra of disordered and amorphous carbon. PRB 61, 14095 (2000).",
+    "Ferrari, A. C. et al. Raman spectrum of graphene and graphene layers. PRL 97, 187401 (2006).",
+    "Ferrari, A. C. & Basko, D. M. Raman spectroscopy as a versatile tool for studying the properties of graphene. Nat. Nanotechnol. 8, 235 (2013).",
+    "Cancado, L. G. et al. Quantifying defects in graphene via Raman spectroscopy at different excitation energies. Nano Lett. 11, 3190 (2011).",
+    "Eckmann, A. et al. Probing the nature of defects in graphene by Raman spectroscopy. Nano Lett. 12, 3925 (2012).",
+    "Lucchese, M. M. et al. Quantifying ion-induced defects and Raman relaxation length in graphene. Carbon 48, 1592 (2010).",
+    "Lee, J.-E. et al. Optical separation of mechanical strain from charge doping in graphene. Nat. Commun. 3, 1024 (2012)."
+  ],
+  "limits": [
+    "Single 532 nm spectrum at 295 K in backscattering; no polarization series, so no angular classification is possible.",
+    "Measured window is 1100-2999 cm-1. The Si substrate line (520.7 cm-1), SiO2 bands, the low-frequency range (including any RBM) and the 2D' band (about 3240 cm-1) are outside the data, so no substrate peaks are reported.",
+    "Noise is about 130 counts per point (about 1% of G). The D' shoulder is only about 3 sigma and its position uncertainty is +-1 cm-1, so its presence and assignment are tentative. No D+G combination (about 2930-2950 cm-1) is significant above noise, so none is reported.",
+    "Layer number rests on the 2D shape and I2D/IG ratio without a reference spectrum or a second method (e.g. optical contrast or AFM). A single symmetric 2D with I2D/IG about 3 indicates monolayer, but this does not fully exclude a thin, non-graphene or decoupled stack.",
+    "L_D values come from empirical relations that differ by about 30% and are only valid in the low-defect regime. The 6-8 nm estimate has uncertainty of roughly 30-50%, not a measured value.",
+    "Defect type comes from the D/D' ratio alone, which is only partially diagnostic and depends on a weak D' shoulder. It cannot distinguish vacancies from mixed defect populations; the literature ratios are recalled from memory and were not checked.",
+    "Strain and doping cannot be separated from two peak positions without a reference; only the qualitative note above is possible."
+  ]
+}

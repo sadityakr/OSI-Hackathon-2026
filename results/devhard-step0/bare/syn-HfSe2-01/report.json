@@ -1,0 +1,83 @@
+{
+  "candidates": [
+    {
+      "material": "1T-HfSe2",
+      "confidence": 0.85,
+      "evidence": "Strong A1g-type band at 197.1 cm-1 and weaker Eg band at 149.9 cm-1, with a ratio of about 9:1. Both match literature 1T-HfSe2 values (Eg ~145-150, A1g ~199-200 cm-1). The only other strong line is the Si substrate."
+    },
+    {
+      "material": "1T-ZrSe2",
+      "confidence": 0.08,
+      "evidence": "Same structure type, but its A1g sits near 195 cm-1 and Eg near 145 cm-1. Not fully excluded by position alone. The Eg is slightly high for ZrSe2, so HfSe2 is preferred."
+    },
+    {
+      "material": "1T-SnSe2",
+      "confidence": 0.04,
+      "evidence": "A1g is near 185 cm-1 and Eg near 108 cm-1, which does not match the observed 197/150 pair."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given.",
+  "peaks": [
+    {
+      "position_cm1": 197.1,
+      "fwhm_cm1": 3.7,
+      "assignment": "A1g (out-of-plane Hf-Se stretch), 1T-HfSe2",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of this work. Mode assignment from literature on 1T-HfSe2 Raman (A1g ~199 cm-1)."
+    },
+    {
+      "position_cm1": 149.9,
+      "fwhm_cm1": 6.5,
+      "assignment": "Eg (in-plane Hf-Se mode), 1T-HfSe2",
+      "irrep": "Eg",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of this work (amplitude ~1150 counts over a ~270-count noise). Mode assignment from literature on 1T-HfSe2 Raman (Eg ~145-150 cm-1)."
+    },
+    {
+      "position_cm1": 521.1,
+      "fwhm_cm1": 3.4,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "First-order Si optical phonon at ~520.7 cm-1 from the SiO2/Si substrate."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "1T (P-3m1)",
+      "provenance": "inferred",
+      "source": "Mode positions match the 1T polytype of HfSe2. Group theory gives two Raman-active modes, Eg and A1g."
+    },
+    {
+      "name": "layers",
+      "value": "not determined (likely few-layer to bulk)",
+      "provenance": "inferred",
+      "source": "A1g/Eg intensity ratio and linewidths alone do not fix thickness. No low-frequency shear or breathing modes were resolved."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "Narrow A1g (3.7 cm-1 FWHM), no extra bands, and no visible oxide or HfSe2 disorder features."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Literature on 1T-HfSe2 Raman: Eg ~145-150 cm-1 and A1g ~199-200 cm-1 (cited from memory, not checked against the papers)",
+    "Si first-order phonon at 520.7 cm-1 (standard reference value)"
+  ],
+  "limits": [
+    "Only two sample peaks are above the noise (~270 counts rms). The other local maxima are noise-level and are not reported.",
+    "The substrate second-order Si band (~300 cm-1) and the SiO2 features are not clearly resolved.",
+    "The measurement is unpolarized or has no angle resolution, so peak symmetry patterns cannot be classified.",
+    "Layer number is not determined. Strain and doping cannot be determined without a reference peak position.",
+    "Identification rests on two mode positions. ZrSe2 cannot be fully excluded without the position of an additional feature, though the Eg position favours HfSe2.",
+    "The literature values are cited from memory, so the exact ranges may differ slightly."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "candidates": [
+    {
+      "material": "Bi2O2Se",
+      "confidence": 0.1,
+      "evidence": "Only a weak recollection that Bi2O2Se shows a strong A1g-type mode near 160 cm-1, which resembles the measured 155.7 cm-1 peak. The 299 and 354 cm-1 modes were not checked against any reference, no literature was accessible here, and the match is unverified."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to verify. I did not identify the material from the working-directory name. The three measured modes do not match any reference I can check in this environment, so I cannot confirm a material from the spectrum.",
+  "peaks": [
+    {
+      "position_cm1": 155.69,
+      "fwhm_cm1": 5.21,
+      "assignment": "unassigned layered-material mode (strongest, Lorentzian line shape, S/N ~27)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 299.07,
+      "fwhm_cm1": 7.98,
+      "assignment": "unassigned weak mode (Gaussian line shape, S/N ~6)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 354.05,
+      "fwhm_cm1": 8.58,
+      "assignment": "unassigned mode (medium intensity, S/N ~12)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Three modes only; no reference set to match against, so no phase assignment is possible."
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Layer-number dependence is not determinable from this single spectrum without a reference series."
+    },
+    {
+      "name": "defect_level",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "No defect-activated bands (for example D-like features) were found above the noise."
+    },
+    {
+      "name": "strain_sign",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Requires a reference frequency for the same modes, which is not available."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No obvious doping-sensitive modes were identified, but this is a weak inference from the three-mode set."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 897.47
+    }
+  ],
+  "citations": [],
+  "limits": [
+    "Identification is not established. Three modes at 155.7, 299.1 and 354.1 cm-1 were measured, but I could not match them to a reference in this environment. The Bi2O2Se candidate is a weak recollection with confidence 0.1 and no supporting data. I did not use the working-directory name as evidence.",
+    "Noise is about 220 counts per point against a background of about 1000-2500 counts. Only the three modes above are significant. A weak bump near 147 cm-1 (S/N ~4.5) is a shoulder of the 156 mode, and a two-component fit was not preferred by BIC. Features near 122, 188, 211 and 267 cm-1 are at noise level and were not reported.",
+    "No Si substrate line is present. The 505-535 cm-1 window gives a broad bump at 525.8 cm-1 with FWHM 11.7 cm-1 and height 677 counts, which is not a Si line (it should be about 3-4 cm-1 wide at 520.7). Raw means of 2402, 2390 and 2328 counts at 510-530, 480-500 and 540-560 cm-1 show no step. Nothing was reported as Si substrate.",
+    "Spectral range is 60-1100 cm-1 only. Modes below 60 cm-1 and above 1100 cm-1 were not measured, so higher-frequency fingerprint modes of a candidate material cannot be checked.",
+    "There are no polarization or angle-resolved data, so no symmetry (irrep) or polarization pattern can be assigned. No temperature series was provided, so the 295 K measurement cannot be compared with low-temperature phonon behaviour.",
+    "The cosmic-ray spike at 897.47 cm-1 (9238 counts vs neighbours 1696 and 1499) is a single-pixel event and was removed before fitting. It is not a Raman peak.",
+    "The broad, decreasing background (about 2800 counts at 60 cm-1 falling to about 1000 at 1100 cm-1) was removed by asymmetric least-squares baseline subtraction. It is most likely fluorescence, and this subtraction may slightly shift the apparent intensities of the broad features."
+  ]
+}

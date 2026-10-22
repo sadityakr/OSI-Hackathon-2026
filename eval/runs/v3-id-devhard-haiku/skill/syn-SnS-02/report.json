@@ -1,0 +1,93 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (tin monosulfide, orthorhombic Pnma)",
+      "confidence": 0.85,
+      "evidence": "Four bands at 93.79, 161.27, 192.85 and 221.44 cm-1 (fit, sigma 0.06-0.7 cm-1). The top Computational Raman Database match is SSn = SnS, Pnma (mp-2231, crd:4496), score 0.88, with all four measured bands matched within 0-4 cm-1 after a 1.02 frequency scale. Its Ag/B3g/Ag/Ag labels match the experimental SnS modes in Fig. 2(c) of arXiv:2007.09362 (Sriv et al.), which show SnS bands near 95 (Ag), 160 (B3g), 192 (Ag) and 220 cm-1 (Ag) at 632.8 nm."
+    },
+    {
+      "material": "SnSe (stated hint, Pnma)",
+      "confidence": 0.05,
+      "evidence": "Not supported. The SnSe reference spectrum in Fig. 2(a) of arXiv:2007.09362 has its modes at roughly 30, 70, 110, 135 and 150 cm-1 (read by eye from the plot, about +/-5 cm-1) and essentially nothing between about 155 and 230 cm-1. Inside the measured 60-1100 cm-1 window, the SnSe modes near 70, 110 and 135-150 cm-1 are absent, while the measured 161, 193 and 221 cm-1 bands have no SnSe counterpart. The CRD SnSe entry did not rank in the top 5 matches."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The stated material is SnSe, but the spectrum does not match it. The four strong bands at 93.8, 161.3, 192.8 and 221.4 cm-1 are the orthorhombic SnS pattern (A_g/B_3g/A_g/A_g). Literature Raman spectra of SnSe (Pnma, same layered structure) have their main modes near 30, 70, 110 and 135-150 cm-1 and little above about 155 cm-1. The SnSe modes that fall inside the measured window (about 70, 110 and 135-150 cm-1) are missing, and the strongest measured band at 161-193 cm-1 has no SnSe partner. The sample is most likely SnS, not SnSe. Both are Pnma, so the identification relies on band positions, not on symmetry.",
+  "peaks": [
+    {
+      "position_cm1": 93.787,
+      "fwhm_cm1": 4.655,
+      "assignment": "A_g (SnS), inferred mode label A_g^2 in the SnS notation of Fig. 2(c) of arXiv:2007.09362",
+      "irrep": "A_g",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Fit position 93.787 +/- 0.163 cm-1, FWHM 4.655 +/- 0.507 cm-1 (rl_fit.py, lorentzian). Assignment: inferred from CRD SnS (crd:4496) Ag at 93.1 cm-1 (scaled 1.02) and Fig. 2(c) of arXiv:2007.09362. Pattern is a default for A_g; not measured in an angle series."
+    },
+    {
+      "position_cm1": 161.268,
+      "fwhm_cm1": 4.057,
+      "assignment": "B_3g (SnS), Fig. 2(c) label B_3g^2 in arXiv:2007.09362",
+      "irrep": "B_3g",
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Fit position 161.268 +/- 0.063 cm-1, FWHM 4.057 +/- 0.231 cm-1. Assignment: inferred from CRD SnS B3g at 162.6 cm-1 and Fig. 2(c) of arXiv:2007.09362 (about 160 cm-1). Pattern not measured (no angle series)."
+    },
+    {
+      "position_cm1": 192.846,
+      "fwhm_cm1": 4.42,
+      "assignment": "A_g (SnS), Fig. 2(c) label A_g^3 in arXiv:2007.09362",
+      "irrep": "A_g",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Fit position 192.846 +/- 0.104 cm-1, FWHM 4.420 +/- 0.336 cm-1. Assignment: inferred from CRD SnS Ag at 190.5 cm-1 and Fig. 2(c) of arXiv:2007.09362 (about 192 cm-1). Pattern not measured."
+    },
+    {
+      "position_cm1": 221.435,
+      "fwhm_cm1": 10.728,
+      "assignment": "A_g (SnS), Fig. 2(c) label A_g^4 in arXiv:2007.09362",
+      "irrep": "A_g",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Fit position 221.435 +/- 0.688 cm-1, FWHM 10.728 +/- 3.296 cm-1 (broad; the error is large, so the band may be a shoulder or doublet). Assignment: inferred from CRD SnS Ag at 224.8 cm-1 and Fig. 2(c) of arXiv:2007.09362 (about 220 cm-1). Pattern not measured."
+    }
+  ],
+  "properties": [
+    {
+      "name": "material_identity",
+      "value": "SnS (orthorhombic, Pnma), not SnSe",
+      "provenance": "inferred",
+      "source": "rl.py match_library: crd:4496 SSn (SnS) score 0.88; arXiv:2007.09362 Fig. 2(a,c) mode pattern"
+    },
+    {
+      "name": "phase",
+      "value": "orthorhombic Pnma (layered, D2h bulk modes)",
+      "provenance": "inferred",
+      "source": "Spacegroup of crd:4496 (Pnma, 62), Bagheri and Komsa 2023 Sci. Data 10, 80"
+    },
+    {
+      "name": "temperature_K",
+      "value": "295 (as stated in metadata)",
+      "provenance": "literature",
+      "source": "Measurement metadata; no temperature-dependent analysis performed"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 1082
+    }
+  ],
+  "citations": [
+    "Sriv et al., Optical phonons of SnSe(1-x)Sx layered semiconductor alloys, Sci. Rep. (2020), doi:10.1038/s41598-020-68744-2; arXiv:2007.09362 (https://arxiv.org/abs/2007.09362), Fig. 2(a) SnSe x=0 and Fig. 2(c) SnS x=1 at 632.8 nm, parallel polarization; positions read by eye from the plotted spectra (about +/-3-5 cm-1).",
+    "Bagheri and Komsa 2023, Sci. Data 10, 80, Computational Raman Database (CC BY 4.0), entries crd:4496 (SnS, Pnma, mp-2231, Ag/B3g/Ag/Ag DFT frequencies 93.1, 162.6, 190.5, 224.8 cm-1, scaled 1.02) and the SnSe entry was not among the top 5 matches."
+  ],
+  "limits": [
+    "The sample is not SnSe. The four measured bands match SnS, with the same orthorhombic Pnma structure. Identifying SnS versus SnSe rests only on band positions for one spectrum; I did not check a polarization series or resonance behaviour.",
+    "The measured window starts at 60.1 cm-1, so the lowest SnSe modes (about 30 cm-1, and about 35-40 cm-1 for a B3g mode) are outside it. Only the SnSe modes at about 70, 110 and 135-150 cm-1 can be tested, and they are absent.",
+    "No Si or other internal reference line is in the spectrum (si_line null), so the absolute calibration is unverified. Position errors are fit statistics only; I did not apply a calibration uncertainty. A shift of 1-2 cm-1 would not change the conclusion, since the SnSe-SnS difference is about 10-40 cm-1.",
+    "The reference band positions for SnS and SnSe come from Fig. 2 of arXiv:2007.09362 (632.8 nm excitation, not 532 nm, and not the same sample). SnSe values are read by eye from the figure (about +/-5 cm-1). I did not extract the numbers from a table, and I did not search the CRD specifically for SnSe.",
+    "The skill's reference library has no literature table or material note for SnS or SnSe (lookup_reference_modes returned an error for SnSe; list_relations has no SnSe or SnS relation). No relation was applied, so no layer number, strain, doping or defect density is reported.",
+    "The 221.4 cm-1 band is broad (FWHM 10.7 +/- 3.3 cm-1) and its position error is 0.7 cm-1, so it may be a shoulder or doublet. The fit plot does not show clear residual structure there, but it is less secure than the other three bands.",
+    "The fit is a single spectrum at 295 K with no polarization data and no substrate (none stated), so no polarization classification is given (the pattern fields are defaults, not measured)."
+  ]
+}

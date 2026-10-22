@@ -1,0 +1,54 @@
+{
+ "key": "a0eb25d8503f356c",
+ "score": 0.8571428571428571,
+ "by_kind": {
+  "finding": 0.8333333333333334,
+  "caveat": 0.8333333333333334,
+  "question": 1.0
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 2,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report says flake 2 is at \"1368.97 \u00b1 0.24 cm-1, 2.8 cm-1 above flake 1 (1366.19 \u00b1 0.04 cm-1)\", gives FWHM 22.47 vs 17.94 cm-1 (broader), and calls this \"consistent with a monolayer\"."
+   },
+   {
+    "id": "c1",
+    "met": 1,
+    "why": "It states \"Gorbachev's monolayer position varies by \u00b12 cm-1 between samples, which is about the same size as the flake 2 shift. The position alone does not separate monolayer from few-layer\"."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "It only says \"the 2.8 cm-1 shift could be partly strain, doping or laser heating\". It does not mention the 1-2 cm-1 red shifts from random cleavage strain, or that they dominate in bilayers."
+   },
+   {
+    "id": "f2",
+    "met": 0.5,
+    "why": "It notes the \"9.5\u00d7 weaker E2g\" and cites linear I_T vs N for N=1-6 (\"useful in principle\"), but says \"Intensity cannot give a layer number here\" and treats position as the main evidence, not intensity as the more useful measure."
+   },
+   {
+    "id": "q1",
+    "met": 1,
+    "why": "It asks for AFM (\"This is the decisive check\") and a reference flake to calibrate intensity, and it discusses Si-line normalisation and calibration at length. Optical contrast is not suggested."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "It explicitly says \"Raman alone cannot confirm that flake 2 is a monolayer\" and \"not confirmed by Raman alone\"."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "It places bilayer points at \"about 1363.5-1366.9 cm-1\", which is at or below bulk, and uses this to disfavour a bilayer, so it does not treat bilayers as upshifted."
+   }
+  ],
+  "citation_specificity": 2
+ },
+ "judge_model": "claude-opus-5-5"
+}

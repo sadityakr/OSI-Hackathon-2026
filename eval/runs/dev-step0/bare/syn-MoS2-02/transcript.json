@@ -1,0 +1,957 @@
+{
+ "case": {
+  "case_id": "syn-MoS2-02",
+  "kind": "single",
+  "task": "verify",
+  "material_hint": "WSe2",
+  "laser_nm": 532,
+  "temperature_K": 295,
+  "substrate": "SiO2/Si",
+  "geometry": "backscattering, beam along the layer normal",
+  "question": "The user says this sample is WSe2. Is the spectrum consistent with that? Justify from reference data or literature."
+ },
+ "arm": "bare",
+ "model": "claude-sonnet-5-5",
+ "effort": "high",
+ "usage": {
+  "input": 67005,
+  "output": 3076,
+  "cost_usd": 0.0658951,
+  "turns": 4,
+  "seconds": 35.0,
+  "tool_calls": 3
+ },
+ "stderr": "",
+ "messages": [
+  {
+   "type": "system",
+   "subtype": "init",
+   "cwd": "C:\\WINDOWS\\TEMP\\ramanlens-eval\\dev-step0\\bare\\syn-MoS2-02",
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "tools": [
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "StructuredOutput",
+    "TaskStop",
+    "ToolSearch",
+    "Workflow",
+    "Write"
+   ],
+   "mcp_servers": [],
+   "model": "claude-sonnet-5-5",
+   "permissionMode": "dontAsk",
+   "slash_commands": [
+    "deep-research",
+    "design",
+    "design-sync",
+    "dataviz",
+    "update-config",
+    "verify",
+    "debug",
+    "code-review",
+    "simplify",
+    "batch",
+    "fewer-permission-prompts",
+    "doctor",
+    "loop",
+    "schedule",
+    "claude-api",
+    "workflow-authoring",
+    "run",
+    "run-skill-generator",
+    "plugin-authoring",
+    "advisor",
+    "agents",
+    "auto-mode-setup",
+    "autocompact",
+    "clear",
+    "color",
+    "compact",
+    "config",
+    "output-style",
+    "context",
+    "effort",
+    "fast",
+    "focus",
+    "heapdump",
+    "init",
+    "mcp",
+    "import",
+    "model",
+    "__remote-workflow",
+    "workflow-launch-exec",
+    "reload-plugins",
+    "reload-skills",
+    "rename",
+    "ultrareview",
+    "security-review",
+    "usage-credits",
+    "extra-usage",
+    "usage",
+    "insights",
+    "recap",
+    "skill-doctor",
+    "goal",
+    "design-consent",
+    "design-revoke",
+    "list-agents",
+    "team-onboarding"
+   ],
+   "terminal_slash_commands": [
+    "doctor",
+    "color",
+    "focus",
+    "reload-plugins"
+   ],
+   "apiKeySource": "none",
+   "claude_code_version": "2.1.307",
+   "output_style": "default",
+   "agents": [
+    "claude",
+    "Explore",
+    "general-purpose",
+    "Plan",
+    "statusline-setup"
+   ],
+   "skills": [
+    "deep-research",
+    "design",
+    "design-sync",
+    "dataviz",
+    "update-config",
+    "verify",
+    "debug",
+    "code-review",
+    "simplify",
+    "batch",
+    "fewer-permission-prompts",
+    "doctor",
+    "loop",
+    "schedule",
+    "claude-api",
+    "workflow-authoring",
+    "run",
+    "run-skill-generator",
+    "plugin-authoring"
+   ],
+   "plugins": [
+    {
+     "name": "cc-plugin-agents-md",
+     "path": "builtin",
+     "source": "cc-plugin-agents-md@builtin"
+    },
+    {
+     "name": "cc-plugin-telemetry",
+     "path": "builtin",
+     "source": "cc-plugin-telemetry@builtin"
+    },
+    {
+     "name": "cc-plugin-plugin-authoring",
+     "path": "builtin",
+     "source": "cc-plugin-plugin-authoring@builtin"
+    }
+   ],
+   "capabilities": [
+    "interrupt_receipt_v1",
+    "interrupt_cancel_queued_v1",
+    "interrupt_send_now_v1",
+    "interrupt_requeue_taken_v1",
+    "msg_lifecycle_v1",
+    "request_marker_lists_v1",
+    "lifecycle_wakeup_source_v1",
+    "sdk_mcp_tools_list_changed",
+    "sdk_mcp_manifests",
+    "mcp_read_resource_v1",
+    "mcp_tool_ui_meta_v1",
+    "ui_surface_v1",
+    "mcp_call_result_not_for_model_v1"
+   ],
+   "analytics_disabled": false,
+   "product_feedback_disabled": false,
+   "uuid": "0d522fae-ea79-49c8-82ec-eae3c81b2235",
+   "memory_paths": {
+    "auto": "C:\\Users\\sadit\\.claude\\projects\\C--WINDOWS-TEMP-ramanlens-eval-dev-step0-bare-syn-MoS2-02\\memory\\"
+   },
+   "original_cwd": "C:\\WINDOWS\\TEMP\\ramanlens-eval\\dev-step0\\bare\\syn-MoS2-02",
+   "additional_directories": [],
+   "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-1a8c543c389893af10796ff29c62f490",
+   "fast_mode_state": "off",
+   "fast_mode_disabled_reason": "sdk_opt_in_required",
+   "per_turn_effort_active": true,
+   "view_mode": "default",
+   "powershell_path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGC4BdUoqsu8h8CnoLvF",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_0118VeGVQaaJSV7FB8L4WPRT",
+      "name": "Bash",
+      "input": {
+       "command": "head -5 spectrum.csv; wc -l spectrum.csv; python -c \"\nimport pandas as pd,numpy as np\nfrom scipy.signal import find_peaks\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\nprint(x.min(),x.max(),np.median(y),y.max())\np,_=find_peaks(y,prominence=5*np.std(np.diff(y))/1.4)\nfor i in p:print(x[i],y[i])\n\""
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 5688,
+     "cache_read_input_tokens": 15977,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 5688
+     },
+     "output_tokens": 16,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "976e0704-b9c0-4e5c-a119-d08c43574e6f",
+   "timestamp": "2026-10-21T22:43:47.692Z",
+   "request_id": "req_011CgGC4BNr1iThFixuDMQf4",
+   "wire_tool_inputs": {
+    "toolu_0118VeGVQaaJSV7FB8L4WPRT": {
+     "command": "head -5 spectrum.csv; wc -l spectrum.csv; python -c \"\nimport pandas as pd,numpy as np\nfrom scipy.signal import find_peaks\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\nprint(x.min(),x.max(),np.median(y),y.max())\np,_=find_peaks(y,prominence=5*np.std(np.diff(y))/1.4)\nfor i in p:print(x[i],y[i])\n\""
+    }
+   }
+  },
+  {
+   "type": "rate_limit_event",
+   "rate_limit_info": {
+    "status": "allowed",
+    "resetsAt": 1792632600,
+    "rateLimitType": "five_hour",
+    "overageStatus": "rejected",
+    "overageDisabledReason": "org_level_disabled",
+    "isUsingOverage": false,
+    "unifiedWindows": {
+     "five_hour": {
+      "utilization": 0.32,
+      "resetsAt": 1792632600
+     },
+     "seven_day": {
+      "utilization": 0.36,
+      "resetsAt": 1792836000
+     }
+    }
+   },
+   "uuid": "c8f280bb-d799-444c-86ad-5eefc49ed424",
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176"
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "task_id": "bfejv1m7f",
+   "run_id": "0mvip8bfn-a20c7577",
+   "tool_use_id": "toolu_0118VeGVQaaJSV7FB8L4WPRT",
+   "description": "head -5 spectrum.csv; wc -l spectrum.csv; python -c \"\nimport pandas as pd,numpy as np\nfrom scipy.signal import find_peaks\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\nprint(x.min(),x.max(),np.median(y),y.max())\np,_=find_peaks(y,prominence=5*np.std(np.diff(y))/1.4)\nfor i in p:print(x[i],y[i])\n\"",
+   "is_backgrounded": false,
+   "task_type": "local_bash",
+   "uuid": "e207b6ad-315c-44c3-8b5a-0cbb8b84a20e",
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "task_id": "bfejv1m7f",
+   "run_id": "0mvip8bfn-a20c7577",
+   "tool_use_id": "toolu_0118VeGVQaaJSV7FB8L4WPRT",
+   "status": "completed",
+   "output_file": "",
+   "summary": "head -5 spectrum.csv; wc -l spectrum.csv; python -c \"\nimport pandas as pd,numpy as np\nfrom scipy.signal import find_peaks\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\nprint(x.min(),x.max(),np.median(y),y.max())\np,_=find_peaks(y,prominence=5*np.std(np.diff(y))/1.4)\nfor i in p:print(x[i],y[i])\n\"",
+   "uuid": "1e7ba082-672c-4c74-94cc-cd75fc9dd6dc",
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176"
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_0118VeGVQaaJSV7FB8L4WPRT",
+      "type": "tool_result",
+      "content": "shift_cm1,intensity\r\n60.20,7582.2\r\n61.07,7691.8\r\n61.94,7569.2\r\n62.82,7699.0\r\n1191 spectrum.csv\n60.2 1099.57 7578.5 28756.7\r\n391.5 28756.7\r\n415.1 16040.5\r\n520.88 18737.0\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\dev-step0\\bare\\syn-MoS2-02",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "5f520021-2a6a-461f-9568-f216f0e0d319",
+   "timestamp": "2026-10-21T22:43:53.008Z",
+   "tool_use_result": {
+    "stdout": "shift_cm1,intensity\r\n60.20,7582.2\r\n61.07,7691.8\r\n61.94,7569.2\r\n62.82,7699.0\r\n1191 spectrum.csv\n60.2 1099.57 7578.5 28756.7\r\n391.5 28756.7\r\n415.1 16040.5\r\n520.88 18737.0",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\dev-step0\\bare\\syn-MoS2-02",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_0118VeGVQaaJSV7FB8L4WPRT",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 50,
+   "estimated_tokens_delta": 50,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "6e345406-b1de-405f-aa93-b6c76d4ac1f0"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 204,
+   "estimated_tokens_delta": 154,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "6adf5e6b-5885-4269-b0b8-74e6989984d9"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGC4n98eexibdzXpVrtr",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSpgYKEAgTGAI4AUIIdGhpbmtpbmcSDMesXw0G5bCDjVvrGRoMBScaQFFsoAixbvBQIjDhxKZpR9wMOcGTS8RbsJGsWN3GK4YUvedOd5GaKQciEJ2DHevCTkMVULPtMrmUHSQqwwVxfSmL0MRTHB1YP4kdQRVCHZxpSIaMqZ+oXaK/DKTxh0fnYWmezHg7DevAEDyD7N+5bfgU3jMCAafJGdgpy4PTKIA1ciiQyDjGVDOPV9SNFvIj8ceBaIrwZoxpVMFQxZ3L3/LJblBB6CJKvdNHXp1kvctFPhKXdwJyet70VsawTNnKQxqDRjTg6Oyt7t1m2GlE/h+FBjPwFsUsE2HCK9zn4KgRuIB2lx+0u4YjYzF6rKLMWrYmZiSW0TL2KZBsoec54rSfPaTLWGp+fNhmsPskBZDxOZzAd2IR67dPd+EWYNanS+s1/yu9I8qIAbOwc8ISYpIFRVj50r8cuQ/4m1O7pqxfRiOp017oXTFRYSejM+JoirjsCgYeQ7OSHv80IZhGVTCyyhfHBOtuvOrMbLywxwuZoD69Qj6pOQwWcfqlpAsGaCuGaU3zb2lPMBt35+RR5VbeELHOnS65OnciCD6bh45LK63Q1kKVOK6UeyJbMlr4SNA0HSfV210leZEWIAxLs4pEGnfQjctw1kUGX6P6jSOU5s0h9j27rVKyVQ5apzzvrSRsYOd0qDa0qr+T8nYAF+Noh9fF++wY4lxQD/mjo4IgG35A5LsuwZWjgMR/al9E+tWMPjbZyvRIAg3zBZAByQp9bBRiKwj/yL04X7bjsvdIiUhBD9JmDkjQ5q4Rq9p0+TXCf5egN3BmMbWKfcjT4V4PGGeHAOiiYFbYqWJ2RtZT+0WOjL1RhNMx/qfkgeVFeGc0T2NY2lHE9BughYPOhDwb6ycum8qeSCP84ye23Hdd0dhUydSuZ56UWA/F3n7Tg/euvgD9SMsf9taZVCZ5cGxt0PFOhWBsGoHSLcACdyFa5dOyphMJitgX9tKlZNtKjXMRCsPRp0alCoEuO9LiveXhwG0nmZUk713hekjbvm7v8rBFveuxiHC19gYMOvOwMRgB"
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 404,
+     "cache_read_input_tokens": 21665,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 404
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "0092aac7-7883-4085-a520-2f9561abfdb7",
+   "timestamp": "2026-10-21T22:43:55.315Z",
+   "request_id": "req_011CgGC4mUhPEXto9hZi1vCV",
+   "thinking_duration_ms": 1496,
+   "thinking_display": "updates"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGC4n98eexibdzXpVrtr",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_019vbLBE7BmV32Dg4GHzSTDk",
+      "name": "Bash",
+      "input": {
+       "command": "python -c \"\nimport pandas as pd,numpy as np\nfrom lmfit.models import LorentzianModel,ConstantModel\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\nfor lo,hi in [(200,300),(120,200),(300,370),(430,500),(540,1100)]:\n    m=(x>lo)&(x<hi);print(lo,hi,y[m].mean(),y[m].std(),y[m].max(),x[m][y[m].argmax()])\nfor c,lo,hi in [(391.5,370,405),(415.1,405,435),(520.9,505,535)]:\n    m=(x>lo)&(x<hi);mod=LorentzianModel()+ConstantModel()\n    r=mod.fit(y[m],mod.make_params(amplitude=1e5,center=c,sigma=4,c=7500),x=x[m]);print(r.best_values,2*r.best_values['sigma'])\nm=(x>380)&(x<425);print(np.round(y[m],0))\n\""
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 404,
+     "cache_read_input_tokens": 21665,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 404
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "90022983-812a-4a35-a51c-e989d285eb27",
+   "timestamp": "2026-10-21T22:43:57.880Z",
+   "request_id": "req_011CgGC4mUhPEXto9hZi1vCV",
+   "wire_tool_inputs": {
+    "toolu_019vbLBE7BmV32Dg4GHzSTDk": {
+     "command": "python -c \"\nimport pandas as pd,numpy as np\nfrom lmfit.models import LorentzianModel,ConstantModel\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\nfor lo,hi in [(200,300),(120,200),(300,370),(430,500),(540,1100)]:\n    m=(x>lo)&(x<hi);print(lo,hi,y[m].mean(),y[m].std(),y[m].max(),x[m][y[m].argmax()])\nfor c,lo,hi in [(391.5,370,405),(415.1,405,435),(520.9,505,535)]:\n    m=(x>lo)&(x<hi);mod=LorentzianModel()+ConstantModel()\n    r=mod.fit(y[m],mod.make_params(amplitude=1e5,center=c,sigma=4,c=7500),x=x[m]);print(r.best_values,2*r.best_values['sigma'])\nm=(x>380)&(x<425);print(np.round(y[m],0))\n\""
+    }
+   }
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_019vbLBE7BmV32Dg4GHzSTDk",
+      "type": "tool_result",
+      "content": "200 300 9373.997391304347 183.80552504392512 9838.9 283.11\r\n120 200 8726.736263736266 267.84907203169115 9216.9 198.31\r\n300 370 9621.38 130.19170134843475 9914.7 366.15\r\n430 500 8936.76625 274.5079484021137 9627.2 432.59\r\n540 1100 5165.6577223088925 1440.7519517370522 8323.8 546.23\r\n{'c': 9598.123338541407, 'amplitude': 158257.75164441924, 'center': 391.3142117962567, 'sigma': 2.6125877591286084} 5.225175518257217\r\n{'c': 9348.411540757343, 'amplitude': 73680.26412578866, 'center': 415.3239783000138, 'sigma': 3.5878087865604584} 7.175617573120917\r\n{'c': 8271.566919966803, 'amplitude': 60768.182437848176, 'center': 520.4985342789356, 'sigma': 1.7701208048958912} 3.5402416097917824\r\n[10660. 10754. 11050. 11156. 11384. 11849. 12687. 13557. 14996. 16995.\r\n 19810. 23936. 27687. 28757. 26114. 21943. 18469. 16161. 14421. 13141.\r\n 12587. 11893. 11542. 11348. 11273. 10703. 11029. 10624. 10636. 10770.\r\n 10872. 10703. 10886. 11226. 11305. 11827. 12035. 13363. 14354. 15098.\r\n 16040. 15826. 14857. 13763. 13043. 12076. 11334. 11165. 10891. 10611.\r\n 10226.  9784.]\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\dev-step0\\bare\\syn-MoS2-02",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "52cedec7-c728-4ee0-b21a-058646a409f5",
+   "timestamp": "2026-10-21T22:44:00.756Z",
+   "tool_use_result": {
+    "stdout": "200 300 9373.997391304347 183.80552504392512 9838.9 283.11\r\n120 200 8726.736263736266 267.84907203169115 9216.9 198.31\r\n300 370 9621.38 130.19170134843475 9914.7 366.15\r\n430 500 8936.76625 274.5079484021137 9627.2 432.59\r\n540 1100 5165.6577223088925 1440.7519517370522 8323.8 546.23\r\n{'c': 9598.123338541407, 'amplitude': 158257.75164441924, 'center': 391.3142117962567, 'sigma': 2.6125877591286084} 5.225175518257217\r\n{'c': 9348.411540757343, 'amplitude': 73680.26412578866, 'center': 415.3239783000138, 'sigma': 3.5878087865604584} 7.175617573120917\r\n{'c': 8271.566919966803, 'amplitude': 60768.182437848176, 'center': 520.4985342789356, 'sigma': 1.7701208048958912} 3.5402416097917824\r\n[10660. 10754. 11050. 11156. 11384. 11849. 12687. 13557. 14996. 16995.\r\n 19810. 23936. 27687. 28757. 26114. 21943. 18469. 16161. 14421. 13141.\r\n 12587. 11893. 11542. 11348. 11273. 10703. 11029. 10624. 10636. 10770.\r\n 10872. 10703. 10886. 11226. 11305. 11827. 12035. 13363. 14354. 15098.\r\n 16040. 15826. 14857. 13763. 13043. 12076. 11334. 11165. 10891. 10611.\r\n 10226.  9784.]",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\dev-step0\\bare\\syn-MoS2-02",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_019vbLBE7BmV32Dg4GHzSTDk",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 50,
+   "estimated_tokens_delta": 50,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "0505c6e8-da37-4cc0-af1e-008f83855ec2"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 150,
+   "estimated_tokens_delta": 100,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "789c4edc-a475-4543-9b59-b8840eb09256"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 232,
+   "estimated_tokens_delta": 82,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "e5d481d1-a572-4def-9123-ef9ab3ad2bd9"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGC5LmSAnZv6sAScoKqL",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSmAcKEAgTGAI4AUIIdGhpbmtpbmcSDHkv69v/RSywx2l04BoMEys06oDHfC7BGypeIjCb6SuYhzFMqSe0L4wAYqvI0VuKfonN6iUuemAdXDfxqnZeReu4qY9wWMqT4gdZUV4qtQbdTNP6hTPY/Pndo5IKu2ZgDZ67hVJVwx3JieAyGhix008QVo8U5k7zZOqxyu0CoD97/2M4yZQt6QBM6WxaXOgFL9OHz1HjiLb/y62oGngkgXutv9gS+rNiJMsyx+zDZuiDvxwziJ0C41Xvx5GkvpnuqoMPLBW2+tt8CK6F9o+seDPFwdBOY0+7Nhm8Ayej2Ra8FoIccFRyXRcBJhcVPLD87CJVoRSkXxQM7Liim9efJpWRhmc5g7u4f27059xERvEhLh96eqKKLr0lSAiw1Cm8uw9qzS7P2upm63cT1HWemy2K7ziQxO3gNkHJEWvwd19GU5qNu0RXBmgntiMgEIx72AAGfy5n5lnRSPOl1AC39CUM/6V/0FGQPJx3suyZNQglUB+LZbJQgmCvPpNR5C+cti4SgLCBmtzCG5LAX4lg51tGDEkVKA1P5K6nFFsLeEXJaZs82OU9jAlRJuNBLJYgYyD66QwB7Mr9LdRAaNvtlky1Vi+Z+nC0GcWzBKU5FMrWKD2fssMYWK4AKcnr13octNg2pyJQGzW4ZwJS+roJ5hUBjlBqz2OXsy46jj/d52z01lebsnEt0qM8vwSOKJO1wrtl9HOgz2hPQZsPRWFnbKRmum5oHTu2HvD0vfspoOfmun5FdNJO+KsExuF1g4niXEG/23NFFGgPC3I/PnjS0E0/hr/pb4eKCnnZQ0BDKaAME9kumXdy2/otoGyYq9m+NJuqCpBRkhexxLTTuK/XcXAWY3iuC16MRWf2yHFCg3qJ2dJqB6y9VWkzPsOMmBQZ5VKOxjl04lvPmvy8YgYYQGZE9asgmCDv1pcUoXp8+QcNz7uR5AVKRrVVE+cFvi/l32ROucKO6swK4U4N4d/nweiE5tpT3Xf7CzmxUuGZaQ9txDSdtbqIyaudMyYA60N5IDMK7aZ5X49id0oCxt3SCxiEH66h8gueuVTMgWw6ixTcP7n3+XB+V6xAVf17V/T8yiogm7qXp6HFvtOWSE/wP/8QzBUiMmkDyFSbEKku/kj1Cig7bK3MujIMwia1zXzPRp1GpPw5jwMiCkY8GWw4Y2K24InOfz1pT5+8FBk+FTzJhdRoUhgB"
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1196,
+     "cache_read_input_tokens": 22069,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 1196
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "dbf09871-22aa-4aac-87d7-b2c23decf62c",
+   "timestamp": "2026-10-21T22:44:03.245Z",
+   "request_id": "req_011CgGC5LSqStn62oMPhK9MK",
+   "thinking_duration_ms": 1786,
+   "thinking_display": "updates"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGC5LmSAnZv6sAScoKqL",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01X496QwRXM6RtuFervSXdQp",
+      "name": "StructuredOutput",
+      "input": {
+       "candidates": [
+        {
+         "material": "2H-MoS2",
+         "confidence": 0.8,
+         "evidence": "Two sharp peaks at 391.3 and 415.3 cm-1 (separation ~24 cm-1) match the E2g(1)/A1g pair of few-layer to bulk MoS2 (E2g ~383-386, A1g ~405-408 cm-1; Lee et al. ACS Nano 2010). Both are blueshifted by ~6-8 cm-1 relative to typical values, so an offset or calibration or strain/doping effect is plausible and not excluded."
+        },
+        {
+         "material": "2H-MoSe2 / other MoX2",
+         "confidence": 0.05,
+         "evidence": "MoSe2 has A1g near 241 cm-1 and E2g near 287 cm-1, nothing there. Not supported."
+        },
+        {
+         "material": "2H-WSe2",
+         "confidence": 0.02,
+         "evidence": "The WSe2 E2g/A1g band (~250 cm-1) and 2LA(M) (~260 cm-1) are absent. No peak above noise appears between 200 and 370 cm-1."
+        }
+       ],
+       "hint_verdict": "inconsistent",
+       "hint_reasoning": "WSe2 at 532 nm shows a near-degenerate E2g(\u0393)/A1g(\u0393) peak at ~249-252 cm-1, a 2LA(M) shoulder at ~260 cm-1, and weak features near 308 (B2g1, multilayer) and ~360-375 cm-1 (Zhao et al. Nanoscale 2013; Luo et al. Nanoscale 2013; Terrones et al. Sci. Rep. 2014). In this spectrum the 200-370 cm-1 region is flat. The scatter is about 130-180 counts, and the largest excursion is about 3-5% of the baseline of ~9400. The only sample peaks are at 391.3 and 415.3 cm-1, well above any WSe2 first-order mode (WSe2 phonon energies are lower because W and Se are heavy). The pair matches MoS2 in position and in the ~24 cm-1 spacing. The spectrum is therefore inconsistent with WSe2.",
+       "peaks": [
+        {
+         "position_cm1": 391.3,
+         "fwhm_cm1": 5.2,
+         "assignment": "E2g (in-plane) of MoS2-like lattice",
+         "irrep": "E2g",
+         "pattern": null,
+         "provenance": "measured",
+         "source": "Lorentzian fit of spectrum.csv. The assignment to MoS2 E2g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured."
+        },
+        {
+         "position_cm1": 415.3,
+         "fwhm_cm1": 7.2,
+         "assignment": "A1g (out-of-plane) of MoS2-like lattice",
+         "irrep": "A1g",
+         "pattern": null,
+         "provenance": "measured",
+         "source": "Lorentzian fit of spectrum.csv. The assignment to MoS2 A1g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured."
+        },
+        {
+         "position_cm1": 520.5,
+         "fwhm_cm1": 3.5,
+         "assignment": "Si substrate",
+         "irrep": null,
+         "pattern": null,
+         "provenance": "measured",
+         "source": "First-order Si optical phonon at ~520.7 cm-1 from the SiO2/Si substrate. The fit gives 520.5 and the local maximum is at 520.9."
+        }
+       ],
+       "properties": [
+        {
+         "name": "Peak separation A1g - E2g",
+         "value": "~24.0 cm-1",
+         "provenance": "measured",
+         "source": "Difference of fitted centres, 415.3 - 391.3. For MoS2 this corresponds to roughly bulk-like thickness (bulk ~25 cm-1, monolayer ~18-19 cm-1; Lee 2010). Layer number is only loosely constrained because the absolute positions look shifted."
+        },
+        {
+         "name": "Absolute mode positions",
+         "value": "Both modes ~6-8 cm-1 above typical MoS2 values",
+         "provenance": "inferred",
+         "source": "Comparison with Lee et al., ACS Nano 2010. The cause could be calibration offset, strain, or something else, and it cannot be determined from this spectrum."
+        }
+       ],
+       "artifacts": [],
+       "citations": [
+        "Zhao et al., Nanoscale 5, 9677 (2013): Raman of WSe2, E2g/A1g at ~250 cm-1 and 2LA(M) at ~260 cm-1",
+        "Luo et al., Nanoscale 5, 5833 (2013): Raman of WSe2, E2g/A1g near 250 cm-1",
+        "Lee et al., ACS Nano 4, 2695 (2010): Raman of MoS2, E2g near 383-386 cm-1 and A1g near 405-408 cm-1",
+        "Temple/Parker/Balkanski: Si first-order Raman at 520.7 cm-1"
+       ],
+       "limits": [
+        "Only a single spectrum was available, with no polarization or layer-dependent series. Mode symmetries (E2g vs A1g) are assigned from position and literature analogy, not measured.",
+        "The 391/415 cm-1 positions are about 6-8 cm-1 higher than textbook MoS2. I cannot tell whether that is calibration, strain, doping, or a different material, so the MoS2 identification is likely but not certain.",
+        "The data cover 60-1100 cm-1 with the baseline around 7500-10000 counts and a rising background, so very weak WSe2 features cannot be strictly excluded. A real WSe2 sample would still show a strong ~250 cm-1 peak under these conditions, and it is absent.",
+        "Layer number cannot be reliably determined because the absolute mode positions look offset.",
+        "Resonance conditions (532 nm vs the WSe2 and MoS2 excitons) and any photoluminescence background are not characterised."
+       ]
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1196,
+     "cache_read_input_tokens": 22069,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 1196
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "a268bf1d-7dcb-4ae1-b988-c2e165cea7c5",
+   "timestamp": "2026-10-21T22:44:18.189Z",
+   "request_id": "req_011CgGC5LSqStn62oMPhK9MK",
+   "wire_tool_inputs": {
+    "toolu_01X496QwRXM6RtuFervSXdQp": {
+     "candidates": [
+      {
+       "material": "2H-MoS2",
+       "confidence": 0.8,
+       "evidence": "Two sharp peaks at 391.3 and 415.3 cm-1 (separation ~24 cm-1) match the E2g(1)/A1g pair of few-layer to bulk MoS2 (E2g ~383-386, A1g ~405-408 cm-1; Lee et al. ACS Nano 2010). Both are blueshifted by ~6-8 cm-1 relative to typical values, so an offset or calibration or strain/doping effect is plausible and not excluded."
+      },
+      {
+       "material": "2H-MoSe2 / other MoX2",
+       "confidence": 0.05,
+       "evidence": "MoSe2 has A1g near 241 cm-1 and E2g near 287 cm-1, nothing there. Not supported."
+      },
+      {
+       "material": "2H-WSe2",
+       "confidence": 0.02,
+       "evidence": "The WSe2 E2g/A1g band (~250 cm-1) and 2LA(M) (~260 cm-1) are absent. No peak above noise appears between 200 and 370 cm-1."
+      }
+     ],
+     "hint_verdict": "inconsistent",
+     "hint_reasoning": "WSe2 at 532 nm shows a near-degenerate E2g(\u0393)/A1g(\u0393) peak at ~249-252 cm-1, a 2LA(M) shoulder at ~260 cm-1, and weak features near 308 (B2g1, multilayer) and ~360-375 cm-1 (Zhao et al. Nanoscale 2013; Luo et al. Nanoscale 2013; Terrones et al. Sci. Rep. 2014). In this spectrum the 200-370 cm-1 region is flat. The scatter is about 130-180 counts, and the largest excursion is about 3-5% of the baseline of ~9400. The only sample peaks are at 391.3 and 415.3 cm-1, well above any WSe2 first-order mode (WSe2 phonon energies are lower because W and Se are heavy). The pair matches MoS2 in position and in the ~24 cm-1 spacing. The spectrum is therefore inconsistent with WSe2.",
+     "peaks": [
+      {
+       "position_cm1": 391.3,
+       "fwhm_cm1": 5.2,
+       "assignment": "E2g (in-plane) of MoS2-like lattice",
+       "irrep": "E2g",
+       "pattern": null,
+       "provenance": "measured",
+       "source": "Lorentzian fit of spectrum.csv. The assignment to MoS2 E2g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured."
+      },
+      {
+       "position_cm1": 415.3,
+       "fwhm_cm1": 7.2,
+       "assignment": "A1g (out-of-plane) of MoS2-like lattice",
+       "irrep": "A1g",
+       "pattern": null,
+       "provenance": "measured",
+       "source": "Lorentzian fit of spectrum.csv. The assignment to MoS2 A1g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured."
+      },
+      {
+       "position_cm1": 520.5,
+       "fwhm_cm1": 3.5,
+       "assignment": "Si substrate",
+       "irrep": null,
+       "pattern": null,
+       "provenance": "measured",
+       "source": "First-order Si optical phonon at ~520.7 cm-1 from the SiO2/Si substrate. The fit gives 520.5 and the local maximum is at 520.9."
+      }
+     ],
+     "properties": [
+      {
+       "name": "Peak separation A1g - E2g",
+       "value": "~24.0 cm-1",
+       "provenance": "measured",
+       "source": "Difference of fitted centres, 415.3 - 391.3. For MoS2 this corresponds to roughly bulk-like thickness (bulk ~25 cm-1, monolayer ~18-19 cm-1; Lee 2010). Layer number is only loosely constrained because the absolute positions look shifted."
+      },
+      {
+       "name": "Absolute mode positions",
+       "value": "Both modes ~6-8 cm-1 above typical MoS2 values",
+       "provenance": "inferred",
+       "source": "Comparison with Lee et al., ACS Nano 2010. The cause could be calibration offset, strain, or something else, and it cannot be determined from this spectrum."
+      }
+     ],
+     "artifacts": [],
+     "citations": [
+      "Zhao et al., Nanoscale 5, 9677 (2013): Raman of WSe2, E2g/A1g at ~250 cm-1 and 2LA(M) at ~260 cm-1",
+      "Luo et al., Nanoscale 5, 5833 (2013): Raman of WSe2, E2g/A1g near 250 cm-1",
+      "Lee et al., ACS Nano 4, 2695 (2010): Raman of MoS2, E2g near 383-386 cm-1 and A1g near 405-408 cm-1",
+      "Temple/Parker/Balkanski: Si first-order Raman at 520.7 cm-1"
+     ],
+     "limits": [
+      "Only a single spectrum was available, with no polarization or layer-dependent series. Mode symmetries (E2g vs A1g) are assigned from position and literature analogy, not measured.",
+      "The 391/415 cm-1 positions are about 6-8 cm-1 higher than textbook MoS2. I cannot tell whether that is calibration, strain, doping, or a different material, so the MoS2 identification is likely but not certain.",
+      "The data cover 60-1100 cm-1 with the baseline around 7500-10000 counts and a rising background, so very weak WSe2 features cannot be strictly excluded. A real WSe2 sample would still show a strong ~250 cm-1 peak under these conditions, and it is absent.",
+      "Layer number cannot be reliably determined because the absolute mode positions look offset.",
+      "Resonance conditions (532 nm vs the WSe2 and MoS2 excitons) and any photoluminescence background are not characterised."
+     ]
+    }
+   }
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01X496QwRXM6RtuFervSXdQp",
+      "type": "tool_result",
+      "content": "Structured output provided successfully"
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "uuid": "a30822d7-70e6-433b-bc8b-abc38dee8d2d",
+   "timestamp": "2026-10-21T22:44:18.209Z",
+   "tool_use_result": "Structured output provided successfully",
+   "tool_result_meta": [
+    {
+     "id": "toolu_01X496QwRXM6RtuFervSXdQp",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config"
+     }
+    }
+   ]
+  },
+  {
+   "duration_api_ms": 24991,
+   "stop_reason": "tool_use",
+   "session_id": "4f1ed4ac-200f-4656-a5e4-f99e021c2176",
+   "total_cost_usd": 0.0658951,
+   "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 7288,
+    "cache_read_input_tokens": 59711,
+    "output_tokens": 3076,
+    "output_tokens_details": {
+     "thinking_tokens": 336
+    },
+    "server_tool_use": {
+     "web_search_requests": 0,
+     "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+     "ephemeral_1h_input_tokens": 7288,
+     "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+     {
+      "input_tokens": 2,
+      "output_tokens": 2302,
+      "cache_read_input_tokens": 22069,
+      "cache_creation_input_tokens": 1196,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 1196
+      },
+      "type": "message"
+     }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+   },
+   "modelUsage": {
+    "claude-sonnet-5-5": {
+     "inputTokens": 6,
+     "outputTokens": 3076,
+     "cacheReadInputTokens": 59711,
+     "cacheCreationInputTokens": 7288,
+     "webSearchRequests": 0,
+     "costUSD": 0.0658951,
+     "contextWindow": 1000000,
+     "maxOutputTokens": 128000,
+     "thinkingTokens": 336,
+     "canonicalModel": "claude-sonnet-5-5",
+     "provider": "firstParty",
+     "costBasis": "list"
+    }
+   },
+   "permission_denials": [],
+   "terminal_reason": "completed",
+   "fast_mode_state": "off",
+   "fast_mode_disabled_reason": "sdk_opt_in_required",
+   "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+     "background": 0,
+     "foreground": 0,
+     "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+     "parent": 0,
+     "user": 0,
+     "system": 0
+    },
+    "refused": {
+     "depth_limit": 0,
+     "concurrency_limit": 0,
+     "budget": 0
+    },
+    "by_type": {}
+   },
+   "safety_stops": 0,
+   "is_error": false,
+   "num_turns": 4,
+   "subtype": "success",
+   "api_error_status": null,
+   "result": "{\"candidates\":[{\"material\":\"2H-MoS2\",\"confidence\":0.8,\"evidence\":\"Two sharp peaks at 391.3 and 415.3 cm-1 (separation ~24 cm-1) match the E2g(1)/A1g pair of few-layer to bulk MoS2 (E2g ~383-386, A1g ~405-408 cm-1; Lee et al. ACS Nano 2010). Both are blueshifted by ~6-8 cm-1 relative to typical values, so an offset or calibration or strain/doping effect is plausible and not excluded.\"},{\"material\":\"2H-MoSe2 / other MoX2\",\"confidence\":0.05,\"evidence\":\"MoSe2 has A1g near 241 cm-1 and E2g near 287 cm-1, nothing there. Not supported.\"},{\"material\":\"2H-WSe2\",\"confidence\":0.02,\"evidence\":\"The WSe2 E2g/A1g band (~250 cm-1) and 2LA(M) (~260 cm-1) are absent. No peak above noise appears between 200 and 370 cm-1.\"}],\"hint_verdict\":\"inconsistent\",\"hint_reasoning\":\"WSe2 at 532 nm shows a near-degenerate E2g(\u0393)/A1g(\u0393) peak at ~249-252 cm-1, a 2LA(M) shoulder at ~260 cm-1, and weak features near 308 (B2g1, multilayer) and ~360-375 cm-1 (Zhao et al. Nanoscale 2013; Luo et al. Nanoscale 2013; Terrones et al. Sci. Rep. 2014). In this spectrum the 200-370 cm-1 region is flat. The scatter is about 130-180 counts, and the largest excursion is about 3-5% of the baseline of ~9400. The only sample peaks are at 391.3 and 415.3 cm-1, well above any WSe2 first-order mode (WSe2 phonon energies are lower because W and Se are heavy). The pair matches MoS2 in position and in the ~24 cm-1 spacing. The spectrum is therefore inconsistent with WSe2.\",\"peaks\":[{\"position_cm1\":391.3,\"fwhm_cm1\":5.2,\"assignment\":\"E2g (in-plane) of MoS2-like lattice\",\"irrep\":\"E2g\",\"pattern\":null,\"provenance\":\"measured\",\"source\":\"Lorentzian fit of spectrum.csv. The assignment to MoS2 E2g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured.\"},{\"position_cm1\":415.3,\"fwhm_cm1\":7.2,\"assignment\":\"A1g (out-of-plane) of MoS2-like lattice\",\"irrep\":\"A1g\",\"pattern\":null,\"provenance\":\"measured\",\"source\":\"Lorentzian fit of spectrum.csv. The assignment to MoS2 A1g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured.\"},{\"position_cm1\":520.5,\"fwhm_cm1\":3.5,\"assignment\":\"Si substrate\",\"irrep\":null,\"pattern\":null,\"provenance\":\"measured\",\"source\":\"First-order Si optical phonon at ~520.7 cm-1 from the SiO2/Si substrate. The fit gives 520.5 and the local maximum is at 520.9.\"}],\"properties\":[{\"name\":\"Peak separation A1g - E2g\",\"value\":\"~24.0 cm-1\",\"provenance\":\"measured\",\"source\":\"Difference of fitted centres, 415.3 - 391.3. For MoS2 this corresponds to roughly bulk-like thickness (bulk ~25 cm-1, monolayer ~18-19 cm-1; Lee 2010). Layer number is only loosely constrained because the absolute positions look shifted.\"},{\"name\":\"Absolute mode positions\",\"value\":\"Both modes ~6-8 cm-1 above typical MoS2 values\",\"provenance\":\"inferred\",\"source\":\"Comparison with Lee et al., ACS Nano 2010. The cause could be calibration offset, strain, or something else, and it cannot be determined from this spectrum.\"}],\"artifacts\":[],\"citations\":[\"Zhao et al., Nanoscale 5, 9677 (2013): Raman of WSe2, E2g/A1g at ~250 cm-1 and 2LA(M) at ~260 cm-1\",\"Luo et al., Nanoscale 5, 5833 (2013): Raman of WSe2, E2g/A1g near 250 cm-1\",\"Lee et al., ACS Nano 4, 2695 (2010): Raman of MoS2, E2g near 383-386 cm-1 and A1g near 405-408 cm-1\",\"Temple/Parker/Balkanski: Si first-order Raman at 520.7 cm-1\"],\"limits\":[\"Only a single spectrum was available, with no polarization or layer-dependent series. Mode symmetries (E2g vs A1g) are assigned from position and literature analogy, not measured.\",\"The 391/415 cm-1 positions are about 6-8 cm-1 higher than textbook MoS2. I cannot tell whether that is calibration, strain, doping, or a different material, so the MoS2 identification is likely but not certain.\",\"The data cover 60-1100 cm-1 with the baseline around 7500-10000 counts and a rising background, so very weak WSe2 features cannot be strictly excluded. A real WSe2 sample would still show a strong ~250 cm-1 peak under these conditions, and it is absent.\",\"Layer number cannot be reliably determined because the absolute mode positions look offset.\",\"Resonance conditions (532 nm vs the WSe2 and MoS2 excitons) and any photoluminescence background are not characterised.\"]}",
+   "structured_output": {
+    "candidates": [
+     {
+      "material": "2H-MoS2",
+      "confidence": 0.8,
+      "evidence": "Two sharp peaks at 391.3 and 415.3 cm-1 (separation ~24 cm-1) match the E2g(1)/A1g pair of few-layer to bulk MoS2 (E2g ~383-386, A1g ~405-408 cm-1; Lee et al. ACS Nano 2010). Both are blueshifted by ~6-8 cm-1 relative to typical values, so an offset or calibration or strain/doping effect is plausible and not excluded."
+     },
+     {
+      "material": "2H-MoSe2 / other MoX2",
+      "confidence": 0.05,
+      "evidence": "MoSe2 has A1g near 241 cm-1 and E2g near 287 cm-1, nothing there. Not supported."
+     },
+     {
+      "material": "2H-WSe2",
+      "confidence": 0.02,
+      "evidence": "The WSe2 E2g/A1g band (~250 cm-1) and 2LA(M) (~260 cm-1) are absent. No peak above noise appears between 200 and 370 cm-1."
+     }
+    ],
+    "hint_verdict": "inconsistent",
+    "hint_reasoning": "WSe2 at 532 nm shows a near-degenerate E2g(\u0393)/A1g(\u0393) peak at ~249-252 cm-1, a 2LA(M) shoulder at ~260 cm-1, and weak features near 308 (B2g1, multilayer) and ~360-375 cm-1 (Zhao et al. Nanoscale 2013; Luo et al. Nanoscale 2013; Terrones et al. Sci. Rep. 2014). In this spectrum the 200-370 cm-1 region is flat. The scatter is about 130-180 counts, and the largest excursion is about 3-5% of the baseline of ~9400. The only sample peaks are at 391.3 and 415.3 cm-1, well above any WSe2 first-order mode (WSe2 phonon energies are lower because W and Se are heavy). The pair matches MoS2 in position and in the ~24 cm-1 spacing. The spectrum is therefore inconsistent with WSe2.",
+    "peaks": [
+     {
+      "position_cm1": 391.3,
+      "fwhm_cm1": 5.2,
+      "assignment": "E2g (in-plane) of MoS2-like lattice",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. The assignment to MoS2 E2g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured."
+     },
+     {
+      "position_cm1": 415.3,
+      "fwhm_cm1": 7.2,
+      "assignment": "A1g (out-of-plane) of MoS2-like lattice",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. The assignment to MoS2 A1g is by analogy with Lee et al., ACS Nano 4, 2695 (2010), and is inferred. Polarization was not measured."
+     },
+     {
+      "position_cm1": 520.5,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "First-order Si optical phonon at ~520.7 cm-1 from the SiO2/Si substrate. The fit gives 520.5 and the local maximum is at 520.9."
+     }
+    ],
+    "properties": [
+     {
+      "name": "Peak separation A1g - E2g",
+      "value": "~24.0 cm-1",
+      "provenance": "measured",
+      "source": "Difference of fitted centres, 415.3 - 391.3. For MoS2 this corresponds to roughly bulk-like thickness (bulk ~25 cm-1, monolayer ~18-19 cm-1; Lee 2010). Layer number is only loosely constrained because the absolute positions look shifted."
+     },
+     {
+      "name": "Absolute mode positions",
+      "value": "Both modes ~6-8 cm-1 above typical MoS2 values",
+      "provenance": "inferred",
+      "source": "Comparison with Lee et al., ACS Nano 2010. The cause could be calibration offset, strain, or something else, and it cannot be determined from this spectrum."
+     }
+    ],
+    "artifacts": [],
+    "citations": [
+     "Zhao et al., Nanoscale 5, 9677 (2013): Raman of WSe2, E2g/A1g at ~250 cm-1 and 2LA(M) at ~260 cm-1",
+     "Luo et al., Nanoscale 5, 5833 (2013): Raman of WSe2, E2g/A1g near 250 cm-1",
+     "Lee et al., ACS Nano 4, 2695 (2010): Raman of MoS2, E2g near 383-386 cm-1 and A1g near 405-408 cm-1",
+     "Temple/Parker/Balkanski: Si first-order Raman at 520.7 cm-1"
+    ],
+    "limits": [
+     "Only a single spectrum was available, with no polarization or layer-dependent series. Mode symmetries (E2g vs A1g) are assigned from position and literature analogy, not measured.",
+     "The 391/415 cm-1 positions are about 6-8 cm-1 higher than textbook MoS2. I cannot tell whether that is calibration, strain, doping, or a different material, so the MoS2 identification is likely but not certain.",
+     "The data cover 60-1100 cm-1 with the baseline around 7500-10000 counts and a rising background, so very weak WSe2 features cannot be strictly excluded. A real WSe2 sample would still show a strong ~250 cm-1 peak under these conditions, and it is absent.",
+     "Layer number cannot be reliably determined because the absolute mode positions look offset.",
+     "Resonance conditions (532 nm vs the WSe2 and MoS2 excitons) and any photoluminescence background are not characterised."
+    ]
+   },
+   "ttft_ms": 2730,
+   "type": "result",
+   "duration_ms": 33266,
+   "uuid": "0c9302ee-e945-4825-8c43-3ed970dda025",
+   "ttft_stream_ms": 1229,
+   "time_to_request_ms": 120,
+   "first_content_frame_ms": 1230,
+   "queued_turn_count": 0,
+   "result_index": 0
+  }
+ ]
+}

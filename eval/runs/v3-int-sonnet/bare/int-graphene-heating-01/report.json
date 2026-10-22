@@ -1,0 +1,131 @@
+{
+  "summary": "The G and 2D shifts are almost certainly laser heating, not a different strain or doping state of the flake. From 0.5 to 5 mW, G moves 1581.3 \u2192 1579.5 cm-1 (\u22121.8) and 2D moves 2669.5 \u2192 2664.4 cm-1 (\u22125.1). Both peaks soften and broaden with power. Everything that would change with doping stays fixed, and so does the Si 520 cm-1 reference. Use the 0.5 mW spectrum, or better a power series extrapolated to zero power, for strain/doping analysis. Treat 2 and 5 mW as heated. At 0.5 mW the flake looks close to neutral and nearly unstrained, with D absent. That absolute statement depends on a 532 nm reference value that I estimated, so it is only good to a few cm-1.",
+  "observations": [
+    {
+      "finding": "Both G and 2D red-shift monotonically with laser power.",
+      "evidence": "Single-peak Voigt fits (Lorentzian fits agree within \u22640.05 cm-1) with local linear background. G: 1581.30\u00b10.10 (0.5 mW), 1580.63\u00b10.06 (2 mW), 1579.50\u00b10.05 (5 mW). 2D: 2669.51\u00b10.05, 2666.42\u00b10.03, 2664.39\u00b10.02. Total shifts 0.5\u21925 mW: \u0394G = \u22121.8 cm-1 (\u22120.40 cm-1/mW); \u03942D = \u22125.1 cm-1 (\u22121.13 cm-1/mW). Errors are statistical only.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The Si 520 cm-1 line is a fixed internal reference. The shifts are therefore real changes in the graphene, not spectrometer drift or an axis error.",
+      "evidence": "Si fit centre 520.86\u00b10.04, 520.90\u00b10.03, 520.91\u00b10.03 cm-1 across the three spectra, FWHM 3.7\u20133.9. The Si line is steady while G shifts by 1.8 and 2D by 5.1 cm-1, so substrate heating is negligible compared with the graphene.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The shift is thermal in origin: \u0394\u03c9G and \u0394\u03c92D are in the same direction, the 2D shift is larger, and linewidths grow with power.",
+      "evidence": "\u03942D/\u0394G = 5.1/1.8 \u2248 2.8\u00b10.3 over the full range, but \u22484.6 for 0.5\u21922 mW and \u22481.8 for 2\u21925 mW (each \u00b1~0.9 or worse). G FWHM 13.8 \u2192 15.7 \u2192 17.9 cm-1. 2D FWHM 32.2 \u2192 34.9 \u2192 39.5 cm-1. Using the G temperature coefficient of about \u22120.016 cm-1/K for single-layer graphene on SiO2 (Calizo 2007, quoted from memory), the G shift corresponds to a local heating of order 100 K at 5 mW (about 25 K/mW) and about 10 K at 0.5 mW. This is an order-of-magnitude estimate that rests on that one literature coefficient.",
+      "provenance": "inferred",
+      "source": "Calizo et al., Nano Lett. 7, 2645 (2007), temperature-dependent G band of single-layer graphene (value quoted from memory); Yoon et al., PRL 106, 155502 (2011), temperature dependence of G/2D"
+    },
+    {
+      "finding": "A doping change is not supported, because the doping-sensitive quantities do not change with power.",
+      "evidence": "I2D/IG height ratio 2.96, 3.05, 3.02 (area ratio 6.92, 6.92, 6.78) for 0.5, 2, 5 mW. G peak height per mW is 1520, 1480, 1490 counts/mW, so the signal is linear. Doping would change I2D/IG and the G width, and shift G and 2D in different proportions (\u03942D/\u0394G \u2248 0.7 on the doping line).",
+      "provenance": "measured",
+      "source": "Das et al., Nat. Nanotechnol. 3, 210 (2008), G width, G position and I2D/IG versus gating; Lee et al., Nat. Commun. 3, 1024 (2012), Fig. 3 (doping slope \u22480.7)"
+    },
+    {
+      "finding": "The \u03942D/\u0394G ratio of about 2.8 is close to the strain line, but that is not evidence of real strain. Heating also gives a 2D shift larger than the G shift, so the correlation plot cannot separate thermal shift from strain here.",
+      "evidence": "Measured 2.8\u00b10.3 against the strain-line slope of about 2.2 and the doping-line slope of about 0.7 in the Lee et al. correlation analysis. The strain line is a calibration for static strain, not for laser-induced temperature changes. Because the ratio differs between the two power steps (4.6 vs 1.8), it is noisy and not a clean constant.",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012), Fig. 3 (\u0394\u03c9G\u2013\u0394\u03c92D vector decomposition); Mohiuddin et al., PRB 79, 205433 (2009), uniaxial strain (2D \u2248 \u221264 cm-1/%, quoted from memory)"
+    },
+    {
+      "finding": "No defect-induced D band appears at any power, so the laser did not damage the flake.",
+      "evidence": "The 1300\u20131400 cm-1 region is at noise level: mean excess over baseline \u2248 28 (0.5 mW), 55 (2 mW), \u2212197 (5 mW, baseline-subtraction artefact); standard deviation 22, 65, 112 counts, with no peak. Compare G height 761, 2960, 7451 counts. Estimated D/G is \u2272 0.05 at 0.5 mW and \u22720.1 at 2\u20135 mW (noise limited). G and 2D peak heights scale linearly with power.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The sample is single-layer graphene with low or moderate doping at the lowest power.",
+      "evidence": "2D is a single peak, with FWHM 32 cm-1 at 0.5 mW, and I2D/IG \u2248 3 (height) or \u2248 6.9 (area). G FWHM is 13.8 cm-1 at 0.5 mW. 2D is somewhat wider than the ~25\u201330 cm-1 typical of clean single layers, which suggests strain or doping inhomogeneity (puddles, ripples) in the beam spot.",
+      "provenance": "inferred",
+      "source": "Ferrari et al., PRL 97, 187401 (2006), single-layer 2D line shape and I2D/IG; Das et al. 2008, doping dependence"
+    },
+    {
+      "finding": "At 0.5 mW the positions look close to the neutral, strain-free point, but this rests on a reference I estimated and not on a measured calibration.",
+      "evidence": "G = 1581.3 cm-1. The Lee et al. origin is \u03c9G\u2070\u22481581.6 and \u03c92D\u2070\u22482677 at 514 nm. Correcting 2D by the ~100 cm-1/eV dispersion for 532 nm (\u0394\u22480.08 eV, about \u22128 cm-1) gives \u22482669 cm-1, against the measured 2669.5. That puts the 0.5 mW point on or near the origin within a few cm-1, i.e. strain \u22720.1% and EF small. Residual heating at 0.5 mW (about 0.2 cm-1 in G, about 0.5 in 2D, estimated) is within that uncertainty.",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012), Fig. 3 for the origin values (quoted from memory); Ferrari/Basko-type 2D dispersion \u2248100 cm-1/eV (literature, order of magnitude)"
+    },
+    {
+      "finding": "The change with power is not strictly linear, so the 0.5 mW point may be affected by something other than steady-state heating.",
+      "evidence": "2D slope is \u22122.05 cm-1/mW between 0.5 and 2 mW but \u22120.68 cm-1/mW between 2 and 5 mW. G slopes are \u22120.45 and \u22120.38 cm-1/mW. The 0.5 mW spectrum has the lowest SNR (noise \u03c3\u224822 counts, peak 2250). Photo-desorption or annealing of adsorbates during the sequence, or fit uncertainty, could contribute. The data cannot decide between these.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1",
+      "provenance": "inferred",
+      "source": "Ferrari et al., PRL 97, 187401 (2006)"
+    },
+    {
+      "name": "defect_level",
+      "value": "none/low (no D band detectable; D/G \u2272 0.05\u20130.1, noise limited)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none or undetermined: no strain change can be separated from heating; the 0.5 mW spectrum is near the unstrained position (\u00b1~0.1%, reference-dependent)",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012)"
+    },
+    {
+      "name": "doping_type",
+      "value": "none/low (near neutral; no n/p assignment possible from these data)",
+      "provenance": "inferred",
+      "source": "Das et al., Nat. Nanotechnol. 3, 210 (2008)"
+    },
+    {
+      "name": "local_heating_estimate_K",
+      "value": "~10 K at 0.5 mW, ~100 K at 5 mW above ambient 295 K (order of magnitude, from the G shift)",
+      "provenance": "inferred",
+      "source": "Calizo et al., Nano Lett. 7, 2645 (2007)"
+    },
+    {
+      "name": "recommended_spectrum",
+      "value": "0.5 mW (lowest heating), ideally with a power series extrapolated to P\u21920",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Positions come from single-peak fits to data with ~1 cm-1 sampling. Quoted errors are fit-only. The 0.5 mW spectrum is noisy, so its shift relative to the other two carries an uncertainty of order 0.1\u20130.2 cm-1 in G and more in 2D.",
+    "The data cannot separate heating from heating-induced strain. Thermal mismatch with SiO2 or Si (graphene expands negatively) can change strain together with temperature, and both move G and 2D the same way. In a measurement at fixed temperature the power dependence points to heating, but the real temperature is not measured here.",
+    "The temperature estimate relies on a single literature coefficient. The 2D temperature coefficient is less well established, so I did not use it to estimate the temperature.",
+    "The \u03942D/\u0394G ratio of ~2.2 for strain is for static strain, and the vector analysis assumes no temperature change. Placing the 2 mW and 5 mW points on the strain/doping correlation plot would wrongly suggest growing tensile strain.",
+    "The 'near unstrained, near neutral' statement at 0.5 mW depends on the 532 nm 2D reference (2D dispersion correction applied by me). Without a measured neutral and unstrained reference on this setup, the absolute strain and doping have an uncertainty of several cm-1 in 2D.",
+    "The spectra were taken in order of increasing power, so any irreversible change (adsorbate desorption, annealing of the substrate interface) would be mixed into the power dependence. The sublinear 2D shift hints at this but does not prove it.",
+    "The wavenumber step differs between the files (\u22481.055, 1.005, 0.965 cm-1). The Si line at 520.9 cm-1 in all three shows the axis is consistent, but the cause (rebinning, different grating position) should be confirmed.",
+    "The baseline rises with power (flat-region level ~240 \u2192 340 \u2192 2200 counts), and no spectra are normalised by integration time. Intensity comparisons assume equal acquisition time.",
+    "The G-band shift of the order of 2 cm-1 also overlaps with the typical sample-to-sample spread from charge puddles, so even the lowest-power value should be treated as \u00b11 cm-1 for absolute strain/doping."
+  ],
+  "questions_for_user": [
+    "What were the acquisition times and the objective/spot size (NA)? Needed to convert power into power density and to check the intensity linearity, and to see whether the temperature rise is plausible.",
+    "Was the 0.5 mW spectrum taken first, and was the order strictly increasing? If you return to 0.5 mW after the 5 mW exposure and the peaks come back, the shift is reversible heating. If not, adsorbate desorption or a change in contact with the substrate is involved.",
+    "Can you record at 0.1\u20130.25 mW (longer integration) and extrapolate the peak positions to zero power? This gives the unheated G and 2D without relying on a single noisy spectrum.",
+    "Is the spectrometer calibration checked against a standard (Si, neon lamp) on the day, and why are the wavenumber steps different between files? This sets the absolute accuracy of the positions.",
+    "Do you have a gated device or a reference flake, or a measured 2D position for your setup at 532 nm? Without it, absolute strain and doping from the correlation plot are uncertain by several cm-1.",
+    "Is the flake uniform? A map of G/2D positions and widths at low power would separate real strain/doping variation from the thermal shift and show how wide the beam-spot inhomogeneity is (2D FWHM is somewhat large)."
+  ],
+  "citations": [
+    "Calizo I., Balandin A. A., Bao W., Miao F., Lau C. N., Nano Lett. 7, 2645 (2007): temperature dependence of the Raman G band of single-layer graphene (coefficient quoted from memory).",
+    "Lee J. E., Ahn G., Shim J., Lee Y. S., Ryu S., Nat. Commun. 3, 1024 (2012), Fig. 3: optical separation of strain and doping by the \u03c9G\u2013\u03c92D correlation (slopes \u22482.2 and \u22480.7, origin values quoted from memory).",
+    "Mohiuddin T. M. G. et al., Phys. Rev. B 79, 205433 (2009): uniaxial strain in graphene by Raman spectroscopy (shift rates quoted from memory).",
+    "Das A. et al., Nat. Nanotechnol. 3, 210 (2008): monitoring dopants by Raman scattering in an electrochemically top-gated graphene transistor.",
+    "Ferrari A. C. et al., Phys. Rev. Lett. 97, 187401 (2006): Raman spectrum of graphene and graphene layers.",
+    "Yoon D., Son Y.-W., Cheong H., Phys. Rev. Lett. 106, 155502 (2011): negative thermal expansion coefficient of graphene measured by Raman spectroscopy."
+  ],
+  "limits": [
+    "The data cannot give a quantitative strain or doping value with confidence, because there is no neutral/unstrained reference at 532 nm for this setup and no gate or independent temperature measurement.",
+    "The data cannot say whether strain is uniaxial or biaxial (no G-band splitting is resolved) or whether it is spatially uniform, since only one spot was measured.",
+    "The data cannot give the real temperature of the graphene (only a rough estimate from one literature coefficient), nor separate the thermal contribution from strain induced by the heating.",
+    "The sign and carrier density of doping (n or p) cannot be determined from these spectra, since G and 2D are insensitive to the sign at the level of this analysis.",
+    "A D/G upper bound of ~0.05\u20130.1 is noise limited, so point-defect densities below that cannot be excluded, and D\u2032 and other weak features were not searched for in the noise."
+  ]
+}

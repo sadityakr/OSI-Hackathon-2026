@@ -1,0 +1,118 @@
+{
+  "candidates": [
+    {
+      "material": "monolayer graphene (defective)",
+      "confidence": 0.85,
+      "evidence": "D 1350.7, G 1580.7 and 2D 2698.2 cm-1 at 514.5 nm. The 2D band is a single Lorentzian (FWHM ~32 cm-1) with I2D/IG \u2248 3.0 in height, which is typical of monolayer graphene. A D' shoulder at 1619.6 cm-1 and I_D/I_G \u2248 0.6 show a moderate defect density."
+    },
+    {
+      "material": "bilayer or few-layer graphene",
+      "confidence": 0.1,
+      "evidence": "The 2D band is not split and is narrow, with a high 2D/G ratio. This argues against more than one layer, but a turbostratic stack cannot be fully excluded."
+    },
+    {
+      "material": "graphene oxide / reduced graphene oxide",
+      "confidence": 0.03,
+      "evidence": "The G band is narrow (14 cm-1) and the 2D band is strong, so heavy oxidation is not supported."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given. The task is to identify the material from the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 1350.7,
+      "fwhm_cm1": 15.1,
+      "assignment": "D band (defect-activated, breathing mode of sp2 rings, intervalley double-resonance)",
+      "irrep": "A1g-like (zone-edge K-point phonon)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit with linear local baseline; assignment per Ferrari & Basko 2013 and Malard 2009. Peak height ~2190 counts."
+    },
+    {
+      "position_cm1": 1580.7,
+      "fwhm_cm1": 14.1,
+      "assignment": "G band (in-plane C-C stretch, zone-centre)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; assignment per Ferrari 2006. Peak height ~3630 counts."
+    },
+    {
+      "position_cm1": 1619.6,
+      "fwhm_cm1": 13.2,
+      "assignment": "D' band (intravalley defect-activated)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Two-Lorentzian fit of the G region. It is a weak shoulder, ~327 counts above baseline, so the position and width are less certain. Assignment per Eckmann 2012."
+    },
+    {
+      "position_cm1": 2698.2,
+      "fwhm_cm1": 31.9,
+      "assignment": "2D (G') band, overtone of D, double resonance",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Single Lorentzian fit; assignment per Ferrari 2006. Peak height ~10900 counts."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1",
+      "provenance": "inferred",
+      "source": "A single symmetric Lorentzian 2D band with FWHM ~32 cm-1 and I2D/IG \u2248 3.0 (height; area ratio \u2248 6.8) indicates monolayer graphene (Ferrari 2006). The 2D width is somewhat above the ~25-30 cm-1 of pristine monolayer, probably from defects or inhomogeneity."
+    },
+    {
+      "name": "defect_level",
+      "value": "medium",
+      "provenance": "inferred",
+      "source": "I_D/I_G \u2248 0.60 (height) or 0.65 (area), with a visible D' band. The G band stays narrow (14 cm-1), so the sample is in the low-defect-density regime (stage 1 of the Ferrari-Robertson amorphization trajectory, Can\u00e7ado 2011), not heavily disordered."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "~14 (range 13.9-14.5 depending on whether height or area ratio is used)",
+      "provenance": "inferred",
+      "source": "Can\u00e7ado et al. 2011, Nano Lett. 11, 3190: L_D^2 = (1.8e-9) \u03bb^4 (I_D/I_G)^-1 with \u03bb = 514.5 nm, which gives L_D^2 \u2248 126 nm^2 / 0.6 \u2248 210 nm^2. This corresponds to a defect density of roughly 1.5e11 cm-2. It is valid only for L_D \u2273 3-4 nm, which holds here."
+    },
+    {
+      "name": "defect_type",
+      "value": "vacancy-like (sp2 point defects) most likely; boundaries or sp3 defects less likely",
+      "provenance": "inferred",
+      "source": "I_D/I_D' \u2248 6.7 (height). Eckmann et al. 2012, Nano Lett. 12, 3925 give ~13 for sp3 defects, ~7 for vacancies and ~3.5 for grain boundaries. The D' shoulder is weak and the ratio uncertain (~\u00b12), so vacancy-type is only a tentative assignment."
+    },
+    {
+      "name": "doping_type",
+      "value": "none or weak, undetermined",
+      "provenance": "inferred",
+      "source": "G at 1580.7 cm-1 and 2D at 2698 cm-1 are near the values for undoped, unstrained graphene at 514.5 nm. The G width of 14 cm-1 does not suggest strong doping."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No significant offset from the expected G and 2D positions. The G/2D correlation was not analysed in detail, so only large strain is excluded."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "No cosmic-ray spikes found: robust outlier screening found only noise-level points and peak tops. A smooth, slowly varying luminescence/background is present (about 800 counts at 1100 cm-1 and about 1200 counts near 1700 cm-1, falling to about 530 counts near 3000 cm-1), which was treated as baseline.",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Ferrari et al., Phys. Rev. Lett. 97, 187401 (2006)",
+    "Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)",
+    "Malard et al., Phys. Rep. 473, 51 (2009)",
+    "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011)",
+    "Eckmann et al., Nano Lett. 12, 3925 (2012)"
+  ],
+  "limits": [
+    "The spectrum stops at 3000 cm-1, so 2D' (~3240) is not covered, and D+D'' (~2450) and D+D' (~2950) are not measurable. D+D' sits on a steep background and was not detected, which is not evidence against defects.",
+    "The Si 520.7 cm-1 line is outside the 1100-3000 cm-1 window, so there is no substrate line to report and no internal calibration against Si.",
+    "L_D comes from an empirical I_D/I_G relation (Can\u00e7ado 2011) that assumes point-like defects and the 514.5 nm calibration. It has roughly \u00b130% or larger uncertainty and depends on how the baseline is subtracted. The estimate does not distinguish the low-defect branch from the high-defect branch, but the narrow G band (14 cm-1) and strong 2D favour the low-defect branch.",
+    "The defect type rests on the weak, poorly constrained D' shoulder (~327 counts, about 10% of G). I_D/I_D' \u2248 7 is only suggestive of vacancy-like defects. Mixed defect types cannot be excluded, and the ratio is also affected by doping and laser energy.",
+    "Layer number was judged from the single 2D line shape and the intensity ratio only. A twisted or turbostratic bilayer would also give a single 2D peak. Doping and strain cannot be separated without a G-vs-2D position correlation analysis and a calibrated reference.",
+    "This is a single spectrum (one spot), so spatial homogeneity is unknown. No polarization dependence was measured, so no polarization pattern is assigned to the peaks."
+  ]
+}

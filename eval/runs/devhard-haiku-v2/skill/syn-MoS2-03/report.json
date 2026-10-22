@@ -1,0 +1,100 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.92,
+      "evidence": "Two Raman bands at 383.81 cm-1 (FWHM 2.03) and 403.29 cm-1 (FWHM 3.74), i.e. an E^1_2g-type / A1g-type pair with separation 19.48 cm-1 (calibration-independent). This pair is the MoS2 signature; the Si line at 520.91 cm-1 fits 'Si substrate' with +0.21 cm-1 offset vs the stated 520.7. No WS2 (E2g ~356 / A1g ~420) or MoSe2 (E2g ~286 / A1g ~243, reversed order) pattern is present. Layer number: separation 19.5 cm-1 is closest to the monolayer value in Lee et al. (arXiv:1005.2509, Fig. 2b; difference approx. 18.5-19 cm-1 at 1L, approx. 21-22 at 2L, approx. 25 for 4L-bulk), so 1L most likely with 2L as the main alternative."
+    },
+    {
+      "material": "1T-MoS2",
+      "confidence": 0.03,
+      "evidence": "The 1T phase would show J1/J2/J3 bands near 150/227/335 cm-1 and no E2g/A1g pair at 384/403. Nothing resolved above noise in the 150-350 cm-1 region, and the 383.8/403.3 pair is not 1T-like. Retained only for completeness."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given. The identification is from the spectrum: the E2g/A1g pair at 383.8/403.3 cm-1 with separation 19.5 cm-1 points to 2H-MoS2. Layer number is one of 1L or 2L from the separation against literature; the spectrum alone (150-650 cm-1, no shear or breathing mode in range) cannot separate 1L from 2L with confidence.",
+  "peaks": [
+    {
+      "position_cm1": 383.81,
+      "fwhm_cm1": 2.03,
+      "assignment": "E^1_2g in-plane mode (E' in D3h monolayer); calibrated to 383.6 cm-1 using Si offset +0.21",
+      "irrep": "E' (monolayer D3h); E^1_2g (bulk D6h)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Own fit (quadratic background + Lorentzian, scipy curve_fit), stat error 0.02 cm-1; assignment from Lee et al., arXiv:1005.2509 (ACS Nano 2010)"
+    },
+    {
+      "position_cm1": 403.29,
+      "fwhm_cm1": 3.74,
+      "assignment": "A1g out-of-plane mode (A1' in D3h monolayer); calibrated to 403.1 cm-1 using Si offset +0.21",
+      "irrep": "A1' (monolayer D3h); A1g (bulk D6h)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Own fit, stat error 0.05 cm-1; assignment from Lee et al., arXiv:1005.2509 (ACS Nano 2010)"
+    },
+    {
+      "position_cm1": 520.91,
+      "fwhm_cm1": 3.48,
+      "assignment": "Si substrate (first-order Si, stated reference 520.7 cm-1, offset +0.21)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Own fit; reference position 520.7 cm-1 from the task statement"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (most likely); 2 (alternative)",
+      "provenance": "inferred",
+      "source": "Separation 19.48 cm-1 vs layer-dependent values read from Fig. 2b of Lee et al., arXiv:1005.2509 (monolayer approx. 18.5-19, bilayer approx. 21-22 cm-1, read by eye, approximate). Laser and substrate differences shift absolute values; treat as indicative."
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "E'/A1' pair with separation of about 19.5 cm-1, characteristic of 2H-MoS2; no 1T J-modes resolved."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Calibrated A1g 403.1 and E2g 383.6 cannot be separated from doping and calibration offset with one spectrum; no relation applied."
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "A1g alone not conclusive; no relation applied."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No D-band-type defect indicator in range; E2g FWHM 2.0 cm-1 suggests good crystallinity but no calibrated relation used."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single sample point, not a Raman band)",
+      "position_cm1": 453.52
+    },
+    {
+      "type": "noise-level features at 2-5 sigma (not reproducible, not reported as peaks; e.g. 630.5, 357.6, 291.5 cm-1)",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Lee, C. et al., Anomalous lattice vibrations of single- and few-layer MoS2, ACS Nano 2010, doi:10.1021/nn1003937, arXiv:1005.2509 (abstract: E^1_2g frequency decreases and A1g increases with thickness; Fig. 2b frequencies and difference vs layer number, read by eye)",
+    "Task statement: Si reference line at 520.7 cm-1"
+  ],
+  "limits": [
+    "Analysis done in the working folder only with my own Python code. I did not use the skill's scripts or its reference notes (materials notes, relations, artifacts list) because they live outside this folder; the Lee et al. thresholds were taken from the paper via the literature tool instead, read off a plot (approx. +/-0.5 cm-1).",
+    "Layer number: one spectrum cannot give it unambiguously. Separation 19.5 cm-1 sits between the monolayer (about 18.5-19) and bilayer (about 21-22) values in Lee et al. (SiO2/Si, 514 nm in that work as far as I know, not verified in the paper text here). The data window (150-650 cm-1) excludes the low-frequency shear and layer-breathing modes (about 20-40 cm-1), which are the decisive check between 1L and 2L. Recommend measuring below 50 cm-1 or a PL check.",
+    "Absolute positions: E2g 383.6 and A1g 403.1 (after Si offset correction) are a little low for a monolayer on SiO2 in Lee et al. (E2g about 384.3, A1g about 403 at 1L by eye). Laser (532 nm here), substrate and strain/doping can shift these by about 0.5-1 cm-1, so they are not used to set the layer number; only the separation is.",
+    "Weak features: 2LA(M) near 450-455 cm-1, LA(M) near 230 cm-1 and E^1_2g near 286 cm-1 are not resolved. The apparent 453.5 band is a single-point spike; the 230, 286, 357 and 630 cm-1 features are below 5 sigma and not reproducible under window changes, so I report none of them.",
+    "Background: a broad slope 2300-4000 cm-1 counts across 150-500 cm-1 is present but not interpreted (could be fluorescence or substrate). It does not affect the peak positions, which come from local fits with a quadratic background.",
+    "Noise sigma about 148 counts; no polarization or angle series, so no polarization class is assigned. Temperature 295 K assumed for all position comparisons (no temperature shift applied).",
+    "Si calibration: 520.91 vs 520.7 gives +0.21 cm-1 offset, applied only to the absolute positions in the text. The separation 19.48 cm-1 is unaffected by calibration. Stat errors are fit-only; calibration uncertainty is a few tenths of a cm-1."
+  ]
+}

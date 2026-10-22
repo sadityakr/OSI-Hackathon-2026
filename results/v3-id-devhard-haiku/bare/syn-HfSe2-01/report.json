@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "material": "1T-TiSe2",
+      "confidence": 0.5,
+      "evidence": "Strongest band at 197.1 cm-1 (fit; 196.7 after the +0.4 cm-1 Si offset correction), FWHM ~4 cm-1, is close to the reported A1g of 1T-TiSe2 (~196-200 cm-1 at room temperature). The weak band at 150.0 cm-1 (corrected 149.6) sits a few cm-1 above the Eg of 1T-TiSe2 (~141-146 cm-1, literature from memory, not checked here). No significant band near 250 cm-1, and the sample is in the normal (non-CDW) phase at 295 K, which is consistent. The A1g position fits well, the Eg position is a few cm-1 high."
+    },
+    {
+      "material": "1T-HfSe2",
+      "confidence": 0.2,
+      "evidence": "Same 1T CdI2-type layered structure, and an Eg-like band near 150 cm-1 is possible. However its A1g is reported near 204-206 cm-1 (literature from memory), about 8 cm-1 above the measured 197 cm-1 band, which is larger than the calibration offset. HfSe2 also normally shows a strong Eg near 250 cm-1, and there is no significant band there (matched-filter SNR below 4.5). Not the best fit."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to check against. The identification is from the band positions alone.",
+  "peaks": [
+    {
+      "position_cm1": 197.1,
+      "fwhm_cm1": 4.05,
+      "assignment": "A1g (tentative; strongest in-plane/out-of-plane mode)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a Voigt fit (matched-filter SNR about 66). Assignment inferred: literature 1T-TiSe2 A1g at about 196-200 cm-1 at room temperature (from memory, not checked in this session)."
+    },
+    {
+      "position_cm1": 150,
+      "fwhm_cm1": 6,
+      "assignment": "Eg-like weak mode (tentative)",
+      "irrep": "Eg",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a Voigt fit (amplitude about 5 sigma, matched-filter SNR about 7). Assignment inferred: literature 1T-TiSe2 Eg at about 141-146 cm-1 (from memory, not checked in this session); the measured band is about 4-8 cm-1 higher than that."
+    },
+    {
+      "position_cm1": 521.1,
+      "fwhm_cm1": 3.7,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fitted Si first-order line. Reference value 520.7 cm-1 at room temperature (Temple & Hathaway 1973, from memory); the 0.4 cm-1 difference is taken as the calibration offset."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "1T (tentative)",
+      "provenance": "inferred",
+      "source": "Inferred from the band pattern (strong mode near 197 cm-1, weak mode near 150 cm-1, no mode near 250 cm-1) compared with literature 1T-TiSe2 Raman spectra (from memory)."
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Layer number cannot be determined from these band positions and widths alone; no thickness or layer-dependent reference was available."
+    },
+    {
+      "name": "temperature_K",
+      "value": "295",
+      "provenance": "measured",
+      "source": "Measurement metadata."
+    },
+    {
+      "name": "defect_level",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No D or defect-related bands (for example near 1350 cm-1 for graphene-like materials) were found above noise; this is not a meaningful test for a TMD-like material and only indicates no obvious extra bands."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Temple & Hathaway 1973, Phys. Rev. B 7, 3685 (Si Raman reference position, from memory; not checked in this session)",
+    "Literature Raman values for bulk 1T-TiSe2 (A1g ~196-200 cm-1, Eg ~141-146 cm-1 at room temperature) and 1T-HfSe2 (A1g ~204-206 cm-1), from memory of the literature; not checked in this session, so treat the exact numbers as approximate"
+  ],
+  "limits": [
+    "Only three bands are significant above the noise (sigma about 263 counts, matched-filter SNR 7, 33 and 66 for the 150, Si and 197 bands). The identification rests on one strong mode and one weak mode. Many smaller bumps in the 80-900 cm-1 range are at the noise level and are not reported as peaks.",
+    "No polarization or angle-resolved data, so no symmetry (irrep) assignment is firm. The Eg and A1g labels are tentative.",
+    "Wavenumber calibration: the Si line fits at 521.1 cm-1 against a 520.7 cm-1 reference, so a +0.4 cm-1 offset is assumed. After correction the bands are about 196.7 and 149.6 cm-1. The offset is small compared with the mismatch to HfSe2, but the Eg mismatch to TiSe2 is larger than the offset.",
+    "The 1T-TiSe2 vs 1T-HfSe2 decision is based on the strong band position and the absence of a band near 250 cm-1; both are from literature values recalled without online verification. Other layered materials with a strong mode near 197 cm-1 and a weak mode near 150 cm-1 are not fully excluded.",
+    "Raman alone cannot give the layer number, stacking, or sample quality from these data. The SiO2 broad bands of the substrate are not resolved, so the substrate was identified only from the Si line.",
+    "The working-folder name contains a material label. I did not use it as evidence; the identification is from the spectrum alone."
+  ]
+}

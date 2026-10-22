@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "material": "graphene (monolayer to few-layer, defective, CVD-grown)",
+      "confidence": 0.85,
+      "evidence": "Three bands at ~1347 (D), ~1581 (G) and ~2681 cm-1 (2D) with no other sample modes. I2D/IG \u2248 3.1 by fitted amplitude, which fits mono- or turbostratic few-layer graphene. D/G \u2248 1, so there are significant defects or edges."
+    },
+    {
+      "material": "nanocrystalline / disordered sp2 carbon (graphitic carbon, amorphous-to-nanocrystalline)",
+      "confidence": 0.1,
+      "evidence": "D and G are present, but a strong, single, narrow 2D band (FWHM ~40, I2D > IG) argues against purely amorphous carbon."
+    },
+    {
+      "material": "turbostratic multilayer graphene / thin graphite",
+      "confidence": 0.05,
+      "evidence": "Same band set. The 2D band is a single Lorentzian rather than the multi-component graphite profile, so this is less likely."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given. The Au substrate note (solidified droplet or wire after CVD growth) fits a carbon/graphene CVD product.",
+  "peaks": [
+    {
+      "position_cm1": 1346.9,
+      "fwhm_cm1": 33.8,
+      "assignment": "D band (defect-activated, A1g-like breathing mode near K, double resonance)",
+      "irrep": "A1g (K-point zone-boundary phonon)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of the spectrum (centre and FWHM, amplitude ~107 above local baseline). Assignment: Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013); Ferrari et al., PRL 97, 187401 (2006)."
+    },
+    {
+      "position_cm1": 1581.1,
+      "fwhm_cm1": 20.6,
+      "assignment": "G band (in-plane C-C stretch, sp2 carbon)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit (amplitude ~109). Assignment: Ferrari et al., PRL 97, 187401 (2006). Polarization not measured, so no pattern is given."
+    },
+    {
+      "position_cm1": 2681.2,
+      "fwhm_cm1": 39.6,
+      "assignment": "2D (G') band, overtone of D",
+      "irrep": "second-order, K-point phonon pair",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit (amplitude ~340). Assignment: Ferrari et al., PRL 97, 187401 (2006); Malard et al., Phys. Rep. 473, 51 (2009)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layer number",
+      "value": "Probably monolayer or electronically decoupled (turbostratic) few-layer. I2D/IG \u2248 3 (amplitude) and the 2D band is a single peak with FWHM ~40 cm-1. A single peak is the expected monolayer shape. The width is larger than for clean exfoliated monolayer (~25-30), consistent with defects or inhomogeneity.",
+      "provenance": "inferred",
+      "source": "Ferrari et al., PRL 97, 187401 (2006); Malard et al., Phys. Rep. 473, 51 (2009)"
+    },
+    {
+      "name": "defect level",
+      "value": "I_D/I_G \u2248 1.0 by amplitude. This is a substantial defect or edge density (nanocrystallite size of order 10-20 nm if the laser is ~532 nm). No resolved D' (~1620) or D+D' (~2940) bands, so the defects are not clearly of the vacancy type.",
+      "provenance": "inferred",
+      "source": "Can\u00e7ado et al., Appl. Phys. Lett. 88, 163106 (2006); Eckmann et al., Nano Lett. 12, 3925 (2012)"
+    },
+    {
+      "name": "excitation wavelength",
+      "value": "~532 nm (not stated). D at ~1347 and 2D at ~2681 are consistent with visible excitation near 532 nm, since D and 2D disperse with laser energy.",
+      "provenance": "inferred",
+      "source": "Dispersion of D and 2D with excitation energy, Ferrari & Basko 2013"
+    },
+    {
+      "name": "doping/strain",
+      "value": "G at 1581 cm-1 is slightly above the undoped value (~1580), so there is weak p-doping or compressive strain at most. Au charge transfer and strain cannot be separated without the G\u20132D correlation analysis, which the data are not good enough for.",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012)"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "Rayleigh/elastic-line tail near 0 cm-1 (strong rise below ~150 cm-1, peak ~4950 counts) and a weak feature near 26 cm-1 that is probably part of the tail or a filter edge",
+      "position_cm1": 0
+    },
+    {
+      "type": "Broad, slowly varying background (~1000 counts at 200-600, rising to ~1450-1600 counts at 2000-3000). This is probably fluorescence or the Au substrate's luminescence/continuum, and it was treated as a baseline.",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Ferrari et al., Phys. Rev. Lett. 97, 187401 (2006)",
+    "Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)",
+    "Malard et al., Phys. Rep. 473, 51 (2009)",
+    "Can\u00e7ado et al., Appl. Phys. Lett. 88, 163106 (2006)",
+    "Lee et al., Nat. Commun. 3, 1024 (2012)"
+  ],
+  "limits": [
+    "Laser wavelength and polarization are not given and only a single spectrum was measured. Dispersion-based and polarization-based checks are therefore not possible, and the excitation energy was inferred.",
+    "The layer count is not definitive. I2D/IG and the 2D width are affected by defects, doping and the Au substrate, so mono-, turbostratic few-layer and thin graphite are not strictly separable.",
+    "The 2D width (~40 cm-1) and the large D intensity mean the film is defective or inhomogeneous. A different spot could give a different D/G ratio.",
+    "Au gives no first-order Raman lines, so no substrate peak is reported. The background is probably Au luminescence or fluorescence.",
+    "The Au substrate may cause SERS-like enhancement and charge transfer, so absolute intensities and the doping and strain split cannot be trusted.",
+    "The spectrum has no information on edge versus point-defect type. D' and D+D' are not resolved above the noise (~\u00b130 counts) around 1620 and 2940 cm-1.",
+    "Peak parameters come from simple single-Lorentzian fits on a local constant baseline, with no uncertainties reported."
+  ]
+}

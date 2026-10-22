@@ -1,0 +1,132 @@
+{
+  "summary": "Defect density rises with dose from dose 1 to dose 3, then the spectrum of dose 4 shows that the D/G ratio is no longer a usable measure. Lorentzian fits give I_D/I_G (peak heights) of 0.250 \u00b1 0.017, 0.570 \u00b1 0.017, 1.19 \u00b1 0.03 and 0.57 \u00b1 0.03 for doses 1\u20134. Using the stage-1 graphene relation of Can\u00e7ado et al. (Nano Lett. 2011) at 532 nm, the mean defect distance L_D falls from about 24 nm to 16 nm to 11 nm, and the defect density n_D rises from about 5.5e10 to 1.3e11 to 2.6e11 cm\u207b\u00b2 (coefficient uncertainty \u00b128%). Dose 4 is past the D/G maximum: the G band is ~3.3\u00d7 wider, the D band ~4\u00d7 wider, G is up-shifted by ~11 cm\u207b\u00b9, and 2D is essentially gone. This is the amorphization (stage-2) signature, so the L_D formula does not apply there and dose 4 has the most disorder even though its D/G is lower than dose 3. The absolute densities are calibration-dependent; the trend across doses 1\u20133 is robust across window and baseline choices (spread \u2264 0.004 in I_D/I_G).",
+  "observations": [
+    {
+      "finding": "I_D/I_G (peak heights from Lorentzian fits, D and G with linear baseline) rises from 0.250 to 0.570 to 1.19 across doses 1\u20133 (about \u00d72.3 then \u00d72.1 per step), then falls to 0.57 at dose 4.",
+      "evidence": "Fit table (primary window): D_H = 703\u00b146, 2046\u00b152, 2971\u00b137, 1833\u00b149 counts; G_H = 2808\u00b148, 3593\u00b156, 2492\u00b143, 3201\u00b1168 counts. Window/baseline variants (narrowD, quadratic baseline) change I_D/I_G by \u22640.004. Area-based ratio gives 0.27, 0.61, 1.26, 0.74, the same trend.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Stage-1 defect spacing and density at 532 nm: L_D \u2248 24, 16 and 11 nm and n_D \u2248 5.5e10, 1.3e11 and 2.6e11 cm\u207b\u00b2 for doses 1\u20133, using L_D\u00b2 = 1.8e-9\u00b7\u03bb\u2074/(I_D/I_G) (\u03bb in nm) and n_D = 1/(\u03c0L_D\u00b2) = 1.8e22\u00b7(I_D/I_G)/\u03bb\u2074. The coefficient 1.8\u00b10.5 gives an L_D range of about \u00b114% and an n_D range of \u00d70.72\u20131.28.",
+      "evidence": "\u03bb\u2074 = 8.01e10 nm\u2074 at 532 nm, so the prefactor is 144 nm\u00b2. I_D/I_G = 0.250, 0.570, 1.192 gives L_D\u00b2 = 577, 253, 121 nm\u00b2. Dose 4 is not computed because the relation is invalid there.",
+      "provenance": "literature",
+      "source": "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011), stage-1 relation for L_D and n_D (coefficient as recalled, not checked against the paper)"
+    },
+    {
+      "finding": "Dose 4 is in the amorphization regime: I_D/I_G is no longer a monotonic measure of defect density, even though disorder indicators are highest there.",
+      "evidence": "G FWHM 13.8 \u2192 45.0 cm\u207b\u00b9 (\u00d73.3); D FWHM 14.7 \u2192 58.4 cm\u207b\u00b9 (\u00d74); G position 1580.4 \u2192 1591.4 cm\u207b\u00b9; I_2D/I_G 3.0 (doses 1\u20133) \u2192 0.07\u20130.19 (dose 4, 2D not resolved, 2D/Si 0.036 vs ~1.5 earlier). Dose-4 2D fit variants give 236, 600, 296 counts with FWHM 95\u2013300 cm\u207b\u00b9, i.e. unreliable.",
+      "provenance": "literature",
+      "source": "Ferrari & Robertson, Phys. Rev. B 61, 14095 (2000), three-stage model: I_D/I_G peaks and then falls as sp\u00b2 clusters shrink; Can\u00e7ado et al., Nano Lett. 11, 3190 (2011) for the stage-2 crossover near L_D \u2248 3 nm"
+    },
+    {
+      "finding": "Doses 1\u20133 show a single-layer-like 2D band with no detectable strain or doping change; the G position and 2D width are constant across these doses.",
+      "evidence": "2D FWHM = 32.1, 31.9, 31.9 cm\u207b\u00b9; 2D position = 2689.8, 2690.9, 2690.1 cm\u207b\u00b9; G position = 1580.28, 1580.57, 1580.43 cm\u207b\u00b9; I_2D/I_G = 3.02, 2.98, 2.97.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "At dose 4 the G up-shift of ~11 cm\u207b\u00b9 is not accompanied by a comparable 2D shift, which points to disorder rather than pure charge doping, though this is not conclusive.",
+      "evidence": "\u0394Pos(G) \u2248 +11.0 cm\u207b\u00b9 (1580.4 \u2192 1591.4) while \u0394Pos(2D) \u2248 +2.5 cm\u207b\u00b9 (2690 \u2192 2692.4, with large uncertainty from the broad 2D fit). Doping would give a 2D shift of roughly 0.7\u00d7 the G shift.",
+      "provenance": "inferred",
+      "source": "Lee et al., Nat. Commun. 3, 1024 (2012) on separating strain from doping via the Pos(G)\u2013Pos(2D) correlation (slope value as recalled)"
+    },
+    {
+      "finding": "I_D/I_D' is about 6.2 (dose 1, but D' is only 2.2\u03c3 above noise), 6.3 (dose 2) and 6.9 (dose 3), in the range associated with vacancy-like defects; dose 4 is not determinable.",
+      "evidence": "D' heights 114 \u00b1 51, 326 \u00b1 61, 430 \u00b1 45 counts, giving I_D/I_D' = 6.2, 6.3 \u00b1 1.2 and 6.9 \u00b1 0.8. The dose-4 D' fit is degenerate with the broad G band (I_D/I_D' 14\u201319, not reliable).",
+      "provenance": "literature",
+      "source": "Eckmann et al., Nano Lett. 12, 3925 (2012): I_D/I_D' \u2248 13 for boundaries, \u2248 7 for vacancies, \u2248 3.5 for sp\u00b3 defects (values as recalled)"
+    },
+    {
+      "finding": "Instrument stability is good across doses 1\u20133: the G and 2D intensities normalised to the Si 520 cm\u207b\u00b9 reference are constant, so the absolute intensities can be compared even though the Si height itself varies by about 20%.",
+      "evidence": "Si peak heights 5691, 7242, 4920, 6542 counts; G/Si = 0.493, 0.496, 0.507, 0.489 (doses 1\u20134); 2D/Si = 1.49, 1.48, 1.50 (doses 1\u20133). Si position 520.9 cm\u207b\u00b9 vs the 520.7 cm\u207b\u00b9 reference, i.e. a ~+0.2 cm\u207b\u00b9 absolute offset; relative shifts are unaffected.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The dose-4 spectrum carries a broad elevated background between ~1100 and 2300 cm\u207b\u00b9 (about 1000 counts at 1250 cm\u207b\u00b9 versus ~700 for dose 1), which a linear baseline does not model.",
+      "evidence": "Binned median intensity in the 1100\u20131300 cm\u207b\u00b9 and 1600\u20131900 cm\u207b\u00b9 regions is about 1.5\u20132\u00d7 the level of dose 1 for dose 4; the D-band fit residuals remain structured near the peak wings.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "2D FWHM 32 cm\u207b\u00b9 (single Lorentzian), I_2D/I_G \u2248 3.0 for doses 1\u20133; no independent thickness check in the data"
+    },
+    {
+      "name": "defect_level",
+      "value": "low (dose 1) \u2192 medium (dose 2) \u2192 high (dose 3) \u2192 amorphized / very high disorder (dose 4)",
+      "provenance": "inferred",
+      "source": "I_D/I_G 0.25 \u2192 0.57 \u2192 1.19 \u2192 0.57 with the dose-4 G/2D/D-width changes; I_D/I_G is not monotonic"
+    },
+    {
+      "name": "L_D_nm",
+      "value": "24 (dose 1), 16 (dose 2), 11 (dose 3); not applicable at dose 4",
+      "provenance": "literature",
+      "source": "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011), stage-1 relation at 532 nm (coefficient as recalled)"
+    },
+    {
+      "name": "n_D_cm-2",
+      "value": "5.5e10 (dose 1), 1.3e11 (dose 2), 2.6e11 (dose 3); dose 4 not computed",
+      "provenance": "literature",
+      "source": "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011), n_D = 1.8e22\u00b7(I_D/I_G)/\u03bb\u2074"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected",
+      "provenance": "inferred",
+      "source": "2D at 2689.8\u20132690.9 cm\u207b\u00b9 and G at 1580.3\u20131580.6 cm\u207b\u00b9 for doses 1\u20133, unchanged with dose"
+    },
+    {
+      "name": "doping_type",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "G/2D positions in doses 1\u20133 are constant; dose-4 G up-shift is ambiguous between doping and disorder"
+    },
+    {
+      "name": "phase",
+      "value": "graphene (sp\u00b2), amorphized at dose 4",
+      "provenance": "inferred",
+      "source": "G/D/2D pattern at dose 4"
+    }
+  ],
+  "caveats": [
+    "The absolute densities depend on the calibration. The graphene stage-1 relation (Can\u00e7ado 2011) gives L_D \u2248 24/16/11 nm. The older graphite Tuinstra\u2013Koenig form (L_a = 2.4e-10\u00b7\u03bb\u2074/(I_D/I_G), Can\u00e7ado et al., APL 88, 163106 (2006)) gives L_a \u2248 77/34/16 nm for the same ratios. The trend across doses is robust; the absolute values can differ by a factor of ~2\u20134 between models.",
+    "I cited the Can\u00e7ado 2011, Ferrari & Robertson 2000, Eckmann 2012, Lee 2012 and Lucchese 2010 coefficients and values from memory. I could not check them against the papers in this environment; verify the 1.8\u00b10.5e-9 coefficient, the I_D/I_D' values and the stage-2 boundary before quoting numbers.",
+    "Dose-4 I_D/I_G (0.57) is numerically the same as dose 2 but physically the opposite situation. Applying the L_D formula to it would wrongly suggest a low defect density. Quote dose 4 as amorphized/strongly disordered, not as a defect density.",
+    "The dose-4 2D peak is effectively unresolved (height 236 \u00b1 99 counts over a 600-count background; fit variants range 236\u2013600). Its I_2D/I_G and any 2D-based strain/doping inference are unreliable.",
+    "D' is only 2.2\u03c3 above noise at dose 1 (114 \u00b1 51 counts), so I_D/I_D' = 6.2 there is weak. Dose 2 and 3 values are better determined (\u00b1 ~1 and \u00b1 ~0.8).",
+    "Uncertainties are fit-only (lmfit covariance; variant spread \u22640.004). If each dose is one spectrum from one spot, spot-to-spot heterogeneity on the flake is not included and may be larger than the fit errors.",
+    "The 1 mW, 532 nm laser could create defects itself. Check that the dose-0 / pristine reference is not affected by repeated measurement at this power before attributing all D-band growth to the dose treatment.",
+    "The Si reference sits at 520.9 cm\u207b\u00b9 instead of 520.7, so absolute Raman positions carry an offset of about +0.2 cm\u207b\u00b9. Relative shifts between doses are not affected.",
+    "The fits used Lorentzian peaks on a linear (or quadratic) baseline. The dose-4 background hump may bias the dose-4 D/G, so treat that ratio with extra caution."
+  ],
+  "questions_for_user": [
+    "What is the 'dose' physically (ion, electron beam, plasma, laser exposure, chemical)? Without its units I can't convert the D/G trend into defects per unit dose or a cross-section.",
+    "Were all four spectra taken from the same spot, or from different spots on the flake? If different spots, is there spot-to-spot repeatability data? This determines whether the dose-1\u21923 trend is a real trend or flake heterogeneity.",
+    "Is there a dose-0 (pristine) reference spectrum from the same flake? That would set the zero of the defect density and check the 1 mW laser-damage concern.",
+    "Was the flake monolayer confirmed independently (optical contrast, AFM, or a second technique)? I inferred single-layer from the 2D shape and I_2D/I_G \u2248 3 only.",
+    "Was the broad elevated background at dose 4 (about 1100\u20132300 cm\u207b\u00b9) from resist/PMMA residue, amorphous carbon or substrate luminescence? The answer changes how much of the dose-4 D/G is intrinsic.",
+    "Is the calibration the same as in your lab's standard L_D formula? Please check the coefficients (1.8e-9 vs 2.4e-10 forms) against your reference before using absolute densities."
+  ],
+  "citations": [
+    "Can\u00e7ado, L. G. et al. Quantifying defects in graphene via Raman spectroscopy at different excitation energies. Nano Lett. 11, 3190 (2011) \u2014 stage-1 L_D and n_D relations (coefficient 1.8\u00b10.5\u00d710\u207b\u2079 \u03bb\u2074 as recalled); stage-2 crossover near L_D \u2248 3 nm; verify exact equations and figure.",
+    "Ferrari, A. C. & Robertson, J. Interpretation of Raman spectra of disordered and amorphous carbon. Phys. Rev. B 61, 14095 (2000) \u2014 three-stage model; I_D/I_G maximum and decrease with amorphization.",
+    "Can\u00e7ado, L. G. et al. Measuring the degree of structural disorder in graphite / graphite-type materials. Appl. Phys. Lett. 88, 163106 (2006) \u2014 graphite L_a = 2.4e-10 \u03bb\u2074/(I_D/I_G), used as the alternative calibration.",
+    "Eckmann, A. et al. Probing the nature of defects in graphene by Raman spectroscopy. Nano Lett. 12, 3925 (2012) \u2014 I_D/I_D' \u2248 13 (boundary), \u2248 7 (vacancy), \u2248 3.5 (sp\u00b3) (values as recalled).",
+    "Lee, J. E. et al. Optical separation of mechanical strain from charge doping in graphene. Nat. Commun. 3, 1024 (2012) \u2014 Pos(G)\u2013Pos(2D) correlation to separate strain from doping.",
+    "Lucchese, M. M. et al. Quantifying ion-induced defects and Raman relaxation length in graphene. Carbon 48, 1592 (2010) \u2014 original L_D\u00b2 = 1.8e-9 \u03bb\u2074/(I_D/I_G) relation (as recalled)."
+  ],
+  "limits": [
+    "The data are one spectrum per dose with unknown dose units, so I cannot give defects per unit dose or a cross-section, only the trend in I_D/I_G and the derived L_D/n_D for doses 1\u20133.",
+    "Dose 4 is outside the range where any stage-1 L_D relation applies. I can say it is strongly disordered but cannot give a defect density for it.",
+    "Literature coefficients are from memory and were not checked against the papers in this environment. The numbers depend on which calibration is used.",
+    "The 2D peak at dose 4 is not resolved, so the 2D-based conclusions there (I_2D/I_G, 2D position, strain/doping) are unreliable.",
+    "No spot-to-spot or repeat-measurement statistics are available, so the reported uncertainties are fit-only.",
+    "Analysis scripts and the fit table (fit_table.csv) and diagnostic figure (diag_fits.png) are in C:/WINDOWS/TEMP/raman-analysis-scratch, outside the data folder; the data folder was not modified."
+  ]
+}

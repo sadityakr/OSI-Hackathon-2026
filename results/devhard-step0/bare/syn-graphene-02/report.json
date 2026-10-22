@@ -1,0 +1,116 @@
+{
+  "candidates": [
+    {
+      "material": "monolayer graphene (CVD/defective)",
+      "confidence": 0.8,
+      "evidence": "G 1579, 2D 2690 (single Lorentzian, FWHM ~32 cm-1), I2D/IG \u2248 3, with D 1344 and D' ~1623"
+    },
+    {
+      "material": "few-layer graphene (2-3 L, turbostratic)",
+      "confidence": 0.12,
+      "evidence": "The 2D width of 32 cm-1 is somewhat broad for a pristine monolayer (~25-30), and the 2D line is not clearly split. Defects or inhomogeneity can broaden it, so I can't fully exclude a decoupled bilayer."
+    },
+    {
+      "material": "reduced graphene oxide / nanocrystalline graphite",
+      "confidence": 0.05,
+      "evidence": "The D/G ratio is moderate, but the G and D widths (~14-15) are narrow and the 2D line is strong, which does not fit amorphised carbon."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given.",
+  "peaks": [
+    {
+      "position_cm1": 1344.2,
+      "fwhm_cm1": 15.3,
+      "assignment": "D band (defect-activated breathing mode, TO near K, double resonance)",
+      "irrep": "A1' (K-point)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; assignment per Ferrari & Basko 2013; Ferrari 2006 PRL 97 187401"
+    },
+    {
+      "position_cm1": 1579.3,
+      "fwhm_cm1": 14.3,
+      "assignment": "G band (in-plane E2g zone-centre optical phonon)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; Ferrari 2006"
+    },
+    {
+      "position_cm1": 1623.1,
+      "fwhm_cm1": 15,
+      "assignment": "D' band (intravalley defect-activated)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; Can\u00e7ado 2011 Nano Lett 11 3190; Eckmann 2012 Nano Lett 12 3925"
+    },
+    {
+      "position_cm1": 2689.8,
+      "fwhm_cm1": 32.3,
+      "assignment": "2D (G') overtone of D, two-phonon double resonance",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; Ferrari 2006"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer most likely); I2D/IG \u2248 3 by height, single symmetric 2D peak",
+      "provenance": "inferred",
+      "source": "Ferrari 2006 PRL 97 187401"
+    },
+    {
+      "name": "defect_level",
+      "value": "medium",
+      "provenance": "inferred",
+      "source": "ID/IG \u2248 0.49 by height and 0.52 by area; D and D' are both clearly present"
+    },
+    {
+      "name": "L_D_nm",
+      "value": "~17 nm (rough, \u00b130%). From L_D^2 = 1.8e-9\u00b7\u03bb^4\u00b7(IG/ID) with \u03bb = 532 nm, IG/ID \u2248 1.9-2.0. This is point-like defect spacing and sits at the edge of the validity range (Stage 1, L_D \u2273 10 nm).",
+      "provenance": "inferred",
+      "source": "Can\u00e7ado et al. 2011 Nano Lett 11 3190; Lucchese 2010 Carbon 48 1592"
+    },
+    {
+      "name": "defect_type",
+      "value": "mostly vacancy-like / lattice point defects. ID/ID' \u2248 6.3 (about 7 for vacancies, about 13 for sp3 and about 3.5 for boundaries). Boundaries or sp3 contributions can't be excluded.",
+      "provenance": "inferred",
+      "source": "Eckmann 2012 Nano Lett 12 3925"
+    },
+    {
+      "name": "doping_type",
+      "value": "none / weak (G at 1579, 2D at 2690). The G position is close to the undoped value, and the G width of 14 cm-1 is only slightly broadened.",
+      "provenance": "inferred",
+      "source": "Das 2008 Nat Nanotechnol 3 210; Lee 2012 Nat Commun 3 1024"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (cannot be determined reliably)",
+      "provenance": "inferred",
+      "source": "Without a G/2D correlation analysis against a reference, strain and doping are degenerate."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari et al., Phys. Rev. Lett. 97, 187401 (2006)",
+    "Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)",
+    "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011)",
+    "Eckmann et al., Nano Lett. 12, 3925 (2012)",
+    "Lucchese et al., Carbon 48, 1592 (2010)",
+    "Das et al., Nat. Nanotechnol. 3, 210 (2008)",
+    "Lee et al., Nat. Commun. 3, 1024 (2012)"
+  ],
+  "limits": [
+    "The spectrum covers 1100-3000 cm-1 only. The Si 520.7 cm-1 substrate line and the 2D' (~3240) and D+D'' regions are not covered. The Si 2TO band at ~950-980 sits outside the window, so substrate lines are not reported.",
+    "The window ends at ~3000 cm-1 and the D+D' combination near 2930 is weak against a sloping baseline, so I did not report it.",
+    "The L_D value is a rough estimate from a single-spot intensity ratio. It uses the 532 nm calibration and assumes Stage 1 (point-like) disorder. It shifts if peak areas rather than heights are used, and it is unreliable if the defects are mainly edges or boundaries.",
+    "The defect type rests on ID/ID' \u2248 6.3. That sits between the vacancy and sp3 reference values and carries a large uncertainty (it depends on the baseline, and D' is weak and sits close to G).",
+    "Layer number is judged from I2D/IG and the 2D lineshape alone. A decoupled (turbostratic) few-layer stack can't be fully excluded. Strain and doping can't be separated without a reference.",
+    "No polarization data are available, so I assigned no polarization pattern.",
+    "I found no clear cosmic-ray spikes by peak finding. The isolated sharp features were noise-level and are not reported."
+  ]
+}

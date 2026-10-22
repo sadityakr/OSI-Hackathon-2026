@@ -1,0 +1,128 @@
+{
+  "candidates": [
+    {
+      "material": "FePS3",
+      "confidence": 0.1,
+      "evidence": "Stated hint. Low confidence because the two strongest in-window FePS3 bands are off by 11 and 17 cm-1 from the 295-300 K bulk reference (Lee et al. Fig. 1b: P6 ~380, P5 ~280), no FePS3 reference band near 123 cm-1 is strong at 300 K, and the 74.6 and 550.7 cm-1 bands have no counterpart. Only one reference spectrum (arXiv:1608.04169) could be read, by eye."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "Only one FePS3 room-temperature reference spectrum could be read (Lee et al., Nano Lett. 2016, arXiv:1608.04169, Fig. 1b at 300 K; Fig. 2a temperature series). Its 300 K modes are P1 ~98 (weak), P2 ~160 (weak), P3 ~230 (weak), P4 ~248 (weak to medium), P5 ~280 (medium), P6 ~380 (strong). The sample's strongest in-window bands are at 368.7 (FWHM 8.4) and 263.5 (FWHM 6.8) cm-1. The Si line at 520.9 cm-1 is only +0.2 cm-1 from 520.7, so calibration does not explain the 11 to 17 cm-1 offsets. The strongest FePS3 mode (P6, ~380) is therefore not matched, and the P5 comparison is also offset. A strong band at 123.6 cm-1 (FWHM 10.5) is not expected at 295 K: the 122 cm-1 Raman feature of FePS3 is a magnon below T_N ~118-120 K (McCreary et al., PRB 101, 064416, 2020, arXiv:1908.00608), and the 295 K reference shows no comparable band near 120. Extra bands at 74.6 and 550.7 cm-1 have no counterpart in the reference, and the 240.6 cm-1 weak band is 7 to 8 cm-1 from P4. The spectrum is therefore inconsistent with FePS3 at 295 K. The data alone do not identify the material: the library and matcher in the skill folder were outside the allowed directory and were not used.",
+  "peaks": [
+    {
+      "position_cm1": 74.66,
+      "fwhm_cm1": 4.84,
+      "assignment": "unassigned; no FePS3 room-temperature counterpart in reference (lowest FePS3 mode at 300 K is P1 ~98)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Pseudo-Voigt fit, 58-640 cm-1 window; centre scatter 0.5 cm-1 (noise injection). Reference: Lee et al. arXiv:1608.04169 Fig. 1b (300 K) for comparison, read by eye."
+    },
+    {
+      "position_cm1": 123.6,
+      "fwhm_cm1": 10.48,
+      "assignment": "unassigned; not a FePS3 300 K band in reference. At 80 K the reference has weak P1c/P1d near 110-120 cm-1; the 122 cm-1 Raman feature of FePS3 is a magnon below T_N",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit centre scatter 0.45 cm-1. Literature: Lee et al. arXiv:1608.04169 Fig. 1b, Fig. 2a; McCreary et al. PRB 101, 064416 (2020) / arXiv:1908.00608 (abstract)."
+    },
+    {
+      "position_cm1": 240.56,
+      "fwhm_cm1": 7.21,
+      "assignment": "weak; closest FePS3 reference band is P4 (~248 cm-1 at 300 K), 7-8 cm-1 away, or P3 (~230 cm-1); not a confident match",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit centre scatter 0.6 cm-1. Literature comparison: Lee et al. arXiv:1608.04169 Fig. 1b (300 K), read by eye, approximate to about +/-3 cm-1."
+    },
+    {
+      "position_cm1": 263.51,
+      "fwhm_cm1": 6.84,
+      "assignment": "candidate FePS3 P5 (~280 cm-1 at 300 K) but offset by about -17 cm-1, so not a match",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit centre scatter 0.1 cm-1. Literature: P5 position from Lee et al. arXiv:1608.04169 Fig. 1b (300 K), read by eye, approximate to about +/-3 cm-1."
+    },
+    {
+      "position_cm1": 368.7,
+      "fwhm_cm1": 8.41,
+      "assignment": "strongest in-window band; candidate FePS3 P6 (~380 cm-1, the strongest FePS3 mode at 300 K) but offset by about -11 cm-1, so not a match",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit centre scatter 0.1 cm-1. Literature: P6 position from Lee et al. arXiv:1608.04169 Fig. 1b (300 K), read by eye, approximate to about +/-3 cm-1."
+    },
+    {
+      "position_cm1": 520.87,
+      "fwhm_cm1": 3.55,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Si first-order line at 520.7 cm-1 (reference value given in the task instructions, not from a literature source I accessed). Measured offset +0.2 cm-1, within typical calibration. Centre scatter 0.05 cm-1."
+    },
+    {
+      "position_cm1": 550.67,
+      "fwhm_cm1": 6.99,
+      "assignment": "unassigned; no FePS3 reference band in 50-450 cm-1 range of Lee et al. Fig. 1b/2a, and the 550 cm-1 region was not in the figures I could read",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit centre scatter 0.6 cm-1. No literature counterpart found in the sources accessed."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "not determined; no phase identified from the data",
+      "provenance": "inferred",
+      "source": "The reference comparison (Lee et al. arXiv:1608.04169, Fig. 1b) is inconsistent with FePS3 at 295 K, and no other material could be matched with the sources available here."
+    },
+    {
+      "name": "temperature_regime",
+      "value": "295 K is above the FePS3 Neel temperature (~118-120 K)",
+      "provenance": "literature",
+      "source": "Lee et al. arXiv:1608.04169 abstract (T_N ~118 K); McCreary et al. arXiv:1908.00608 abstract (T_N ~120 K). No magnon or zone-folded bands are expected at 295 K."
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessable",
+      "provenance": "inferred",
+      "source": "The stated material does not match the reference, and no defect indicator was measured."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No relation applied: the material identity is not established."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "possible single-pixel outliers at 836.57 cm-1 (5455 counts) and 217.69 cm-1 (5219 counts), about 2-3 sigma above the local baseline and not sharp enough to be cosmic rays; not counted as peaks",
+      "position_cm1": 836.57
+    },
+    {
+      "type": "Si peak sampled at 520.39 and 521.29 cm-1 (18720 and 17937 counts); a flat-topped, high-count line, not a single-pixel spike. Consistent with Si first-order line; no saturation evidence in the data",
+      "position_cm1": 520.39
+    }
+  ],
+  "citations": [
+    "Lee, J.-U. et al., Ising-Type Magnetic Ordering in Atomically Thin FePS3, Nano Lett. 16, 7433 (2016), arXiv:1608.04169 (https://arxiv.org/abs/1608.04169). Used: abstract (T_N ~118 K); Fig. 1b (bulk FePS3 Raman at 300 K and 80 K, mode positions read by eye); Fig. 2a (temperature series, 295 K spectrum).",
+    "McCreary, A. et al., Quasi-Two-Dimensional Magnon Identification in Antiferromagnetic FePS3 via Magneto-Raman Spectroscopy, Phys. Rev. B 101, 064416 (2020), arXiv:1908.00608 (https://arxiv.org/abs/1908.00608). Used: abstract only (122 cm-1 Raman-active magnon below T_N ~120 K).",
+    "Scagliotti, M. et al., Raman scattering in antiferromagnetic FePS3 and FePSe3 crystals, Phys. Rev. B 35, 7097 (1987) (https://pubmed.ncbi.nlm.nih.gov/9940970/). Found in the literature search but no abstract was available; no numbers taken from it.",
+    "Das, S. et al., Raman and first-principles study of the pressure induced Mott-insulator to metal transition in bulk FePS3, arXiv:2109.04959 (https://arxiv.org/abs/2109.04959). Abstract only; no mode frequencies used."
+  ],
+  "limits": [
+    "The skill's reference notes, the computational Raman database and its scripts live outside this folder, and the task restricts file access to the current folder. I therefore did not use the skill's matcher or the MPS3 reference note, and did not run rl_qc, rl_fit or match_library. The fit and checks were my own (scipy/lmfit, in this folder).",
+    "Literature mode positions were read by eye from Lee et al. Fig. 1b and Fig. 2a (about +/-3 cm-1). The full-text tables were not available: the iopic-bond ingest needs a VALENCY_BOND_TOKEN that is not set, and only one FePS3 paper was in the local library. Exact FePS3 room-temperature mode values from other sources are therefore unverified here.",
+    "The reference laser wavelength and polarization geometry for the Lee et al. spectra were not checked, so a small laser-dependent shift cannot be excluded. The 11-17 cm-1 offsets are much larger than the Si calibration (+0.2 cm-1), but they are not formally proven to be laser- or instrument-independent.",
+    "Fit uncertainties are noise-only (30 noise-injection refits): centre scatter 0.05-0.1 cm-1 for strong bands and 0.5-0.6 cm-1 for weak ones. Calibration adds roughly 0.2-0.3 cm-1. The lmfit covariance could not be estimated because of boundary/degenerate parameters, so these are not formal standard errors.",
+    "The noise is large (point-to-point scatter ~500 counts on a ~3500-count baseline). Weak bands near 150-220 and 650-1100 cm-1 are within noise and were not reported as peaks. The spectrum ends at 1099.75 cm-1, so bands above that cannot be assessed, and the 60-70 cm-1 low-wavenumber edge may suppress real modes.",
+    "The stated temperature (295 K) is above T_N (~118-120 K), so magnon features should be absent. A strong magnon-like band at 123.6 cm-1 at 295 K would be unexpected; it is most likely a phonon or an unidentified mode, but this is not resolved here.",
+    "Assignments for the 74.6, 123.6, 240.6, 550.7 cm-1 bands remain unknown: no reference counterpart was found in the sources accessed. The data alone do not identify the material, so the verdict rests on the mismatch with FePS3 rather than on a positive identification of another material.",
+    "Files written to this folder: fit_check.py, fit_unc.py, fit_check.png, spectrum_overview.png."
+  ]
+}

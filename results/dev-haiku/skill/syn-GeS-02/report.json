@@ -1,0 +1,109 @@
+{
+  "candidates": [
+    {
+      "material": "GeS (bulk, orthorhombic Pnma, D2h)",
+      "confidence": 0.7,
+      "evidence": "match_library top candidate (score 0.973, CRD row 1495, mp-2242, Pnma; frequency scale 1.008). All three measured bands match within 1.0 cm-1: 102.8 to Ag 103.8, 205.8 to B3g 204.8, 241.9 to Ag 242.7. No unmatched bands and no missing strong modes. The tool's polarization classes agree with the labels (Ag twofold, B fourfold). Zawadzka et al. 2021 (arXiv 2110.14977) report Ag and B1g Raman modes for bulk GeS and identify the RS peaks with DFT; I read only the abstract, not its mode table. Confidence is limited by having only three bands to match."
+    },
+    {
+      "material": "CuPSe3Tl (P21/c)",
+      "confidence": 0.1,
+      "evidence": "Ranked second by match_library (score 0.915), but the 102.8 cm-1 band matches a reference at 98.2 cm-1, a 4.6 cm-1 offset that is larger than the 0.98 to 1.05 scale range allows. Ranked lower than GeS on this basis; not supported by the peak pattern alone."
+    },
+    {
+      "material": "F4NaSb (P21/c)",
+      "confidence": 0.05,
+      "evidence": "Score 0.862, but the 102.8 cm-1 band is unmatched, so the candidate does not explain the strongest low-frequency band."
+    },
+    {
+      "material": "As2O4Zn (P21/c)",
+      "confidence": 0.05,
+      "evidence": "Score 0.789, but the 102.8 cm-1 band is unmatched and the 205.8 and 241.9 matches are offset by 2 to 3 cm-1."
+    },
+    {
+      "material": "As2Se3 (P21/c)",
+      "confidence": 0.02,
+      "evidence": "Score 0.646. Three strong reference modes (185.2, 220.7, 250.7 cm-1) are missing from the spectrum, which argues against it."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identification task, not a verification. The top candidate, bulk GeS, is the best match to the three measured bands. The identification rests on three bands only.",
+  "peaks": [
+    {
+      "position_cm1": 102.76,
+      "fwhm_cm1": 5.21,
+      "assignment": "GeS Ag mode (DFT 103.8 cm-1, Pnma, scale 1.008); exact literature label not verified",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (fit \u00b10.05 cm-1, \u00b10.2 cm-1). Ag label from Computational Raman Database entry crd:1495 (Bagheri & Komsa 2023, Sci. Data 10, 80). Pattern measured: twofold, max parallel at 53 deg, A2/P0 = 1.25."
+    },
+    {
+      "position_cm1": 205.78,
+      "fwhm_cm1": 8.62,
+      "assignment": "GeS B-type mode (DFT 204.8 cm-1, labelled B3g in the CRD entry; Zawadzka et al. label the B1g family)",
+      "irrep": "B3g (CRD); B1g family per Zawadzka et al.",
+      "pattern": "fourfold",
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (fit \u00b10.02 cm-1, \u00b10.09 cm-1 in the 150 to 300 cm-1 refit). B label from crd:1495 (Bagheri & Komsa 2023). Zawadzka et al. 2021, arXiv 2110.14977, abstract lists B1g-family modes for bulk GeS. Pattern measured: fourfold, A4/P0 = 1.03 with no 2theta term. Axis convention for B labels not verified."
+    },
+    {
+      "position_cm1": 241.86,
+      "fwhm_cm1": 3.44,
+      "assignment": "GeS Ag mode (DFT 242.7 cm-1, Pnma, scale 1.008); exact literature label not verified",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (fit \u00b10.02 cm-1, \u00b10.07 cm-1). Ag label from crd:1495 (Bagheri & Komsa 2023, Sci. Data 10, 80). Pattern measured: twofold, max parallel at 53.5 deg, A2/P0 = 0.43; crossed near zero for 40 to 70 and 130 to 170 deg."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "orthorhombic, Pnma (bulk GeS)",
+      "provenance": "inferred",
+      "source": "Computational Raman Database crd:1495 (Bagheri & Komsa 2023, Sci. Data 10, 80) as the top match_library candidate; supported by Zawadzka et al. 2021 (arXiv 2110.14977), which studies bulk GeS Raman."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No relation applied. Layer number was not derived from this spectrum; the layer-number relations and reference notes were not consulted (outside the working folder)."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No calibration or reference comparison against literature positions to within 1 to 2 cm-1 was possible; the matcher uses a fitted scale factor of 1.008."
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Not assessed; no relation applied."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Not assessed; no relation applied."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Bagheri, S. & Komsa, H.-P. (2023). Computational Raman Database. Sci. Data 10, 80. Entry crd:1495 (mp-2242, Pnma).",
+    "Zawadzka, N. et al. (2021). Anisotropic Optical and Vibrational Properties of GeS. Nanomaterials 11, 3109. DOI 10.3390/nano11113109. arXiv: [2110.14977](https://arxiv.org/abs/2110.14977). Abstract read; mode table not read.",
+    "Jadczak, J. et al. (2023). Resonant Exciton Scattering Reveals Raman Forbidden Phonon Modes in Layered GeS. J. Phys. Chem. Lett. DOI 10.1021/acs.jpclett.3c00783. Found in search only; not read."
+  ],
+  "limits": [
+    "Only three bands are above noise (SNR about 98 on the strongest). Zawadzka et al. report six RS peaks for bulk GeS at room temperature, so three missing modes are unexplained. They could be weak, sit under the broad 205.8 cm-1 band, or be forbidden in this geometry. The data cannot tell which.",
+    "Assignments of the 102.8 and 241.9 cm-1 bands to specific literature labels (A1g to A4g in Zawadzka et al.) were not verified. Only the abstract was read. The Ag and B labels come from the DFT entry crd:1495, not from measured mode tables.",
+    "The 205.8 cm-1 band is broad (FWHM 8.6 cm-1, versus 3.4 and 5.2 for the others). Refits with extra components under it did not stabilise (widths went to zero or to about 1000 cm-1), so an unresolved doublet is not excluded. The fit residual has a broad negative trough (about -10^4 counts) between 150 and 260 cm-1 that looks like baseline mismatch but was not fully resolved.",
+    "Excitation is 532 nm (2.33 eV). Zawadzka et al. found polarization and intensities depend on excitation energy, so the classes here apply to 532 nm only. Resonance could also change relative intensities.",
+    "Polarization classes are from the parallel curves. The 102.8 cm-1 crossed channel is not clean: it is not zero and does not follow an ideal sin^2(2theta) pattern. The 205.8 cm-1 band is classed fourfold (B-like) by the tool, consistent with the CRD B label, but the axis convention was not verified against armchair or zigzag directions.",
+    "Identity rests on three peaks and one matching database. Other low-symmetry candidates could match three peaks; the rejections above rely on unmatched or missing strong bands. The literature search returned abstracts only (the iopic-bond token is not set, so no figures were viewed).",
+    "No substrate lines were present (suspended sample, no Si line in range). Spikes: none. The window 60 to 417 cm-1 was analysed; the low-frequency cutoff is at 60 cm-1, so bands below that are unobserved.",
+    "Layer number, strain, doping and defect density were not derived. The reference notes and relation files in the skill folder were outside the working folder and were not read, so no relation was applied.",
+    "The summed angle series was used for band positions. Per-angle widths were fixed to the summed fit, so small angle-dependent shifts were not checked."
+  ]
+}

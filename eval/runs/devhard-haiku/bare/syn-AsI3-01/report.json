@@ -1,0 +1,128 @@
+{
+  "candidates": [
+    {
+      "material": "CrI3",
+      "confidence": 0.25,
+      "evidence": "Four bands at 79.7, 104.4, 120.4 and 165.8 cm-1 with nothing clear above ~200 cm-1 is loosely consistent with the low-frequency Ag-type modes usually reported for CrI3 (~73, ~106, ~130, ~166 cm-1). The 166 and 104 matches are reasonable; the 80 and 120 bands are 7-10 cm-1 off the recalled values. Literature values are from memory and were not checked in the sandbox."
+    },
+    {
+      "material": "WTe2 (Td)",
+      "confidence": 0.1,
+      "evidence": "Recalled Td-WTe2 modes near ~112, ~135, ~165 and ~212 cm-1 would match the 165.8 band and the broad 104-120 cm-1 envelope. The expected ~212 cm-1 band is absent above noise, and the 120 cm-1 band sits ~15 cm-1 from the recalled ~135 cm-1 mode. Recalled, not verified."
+    },
+    {
+      "material": "GaTe",
+      "confidence": 0.08,
+      "evidence": "Recalled GaTe A_g-type modes near ~113, ~134 and ~167 cm-1 partially match the 104-120 and 165.8 bands. The 104 band is ~9 cm-1 from the recalled 113 cm-1 mode, and no mode near 134 is significant in this fit. Recalled, not verified."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so there is nothing to check against. The spectrum shows four significant low-frequency bands (79.7, 104.4, 120.4, 165.8 cm-1) and no significant signal above ~200 cm-1. The working-folder name contains 'AsI3', but I did not use it as evidence. As I recall it, AsI3 is a molecular crystal whose strongest Raman band is the As-I stretch near 200 cm-1, which is absent here, so the spectrum does not clearly match AsI3 either. That recall is uncertain. Identification is low confidence and should be confirmed with a reference spectrum or a literature database.",
+  "peaks": [
+    {
+      "position_cm1": 79.7,
+      "fwhm_cm1": 7.3,
+      "assignment": "unassigned low-frequency mode (candidate CrI3 ~73 cm-1 Ag-type, tentative)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit to 60-200 cm-1 window (4-peak model, lowest BIC). Assignment is inferred from the candidate list, not from polarization data. Recalled CrI3 value unverified."
+    },
+    {
+      "position_cm1": 104.4,
+      "fwhm_cm1": 9.1,
+      "assignment": "unassigned strong low-frequency mode (candidate CrI3 ~106 cm-1, tentative)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit to 60-200 cm-1 window. Assignment inferred from recalled CrI3 literature values (approx. 106 cm-1), unverified. The band is broader than the others; a doublet is not preferred by BIC."
+    },
+    {
+      "position_cm1": 120.4,
+      "fwhm_cm1": 7.6,
+      "assignment": "unassigned strong low-frequency mode (candidate CrI3 ~130 cm-1 mode, weak match)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit to 60-200 cm-1 window. Assignment inferred from recalled CrI3 literature values (approx. 130 cm-1), unverified. The ~10 cm-1 offset makes this match weak."
+    },
+    {
+      "position_cm1": 165.8,
+      "fwhm_cm1": 8.2,
+      "assignment": "unassigned strong low-frequency mode (candidate CrI3 ~166 cm-1 Ag-type, tentative)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit to 60-200 cm-1 window. Assignment inferred from recalled CrI3 literature values (approx. 166 cm-1), unverified."
+    }
+  ],
+  "properties": [
+    {
+      "name": "high_frequency_modes",
+      "value": "none significant above ~200 cm-1 (residual is white noise, std ~650-1250 counts)",
+      "provenance": "measured",
+      "source": "Noise and autocorrelation check on 265-1100 cm-1 (lag-1 autocorrelation ~0)."
+    },
+    {
+      "name": "substrate_line_520_7",
+      "value": "not detected",
+      "provenance": "measured",
+      "source": "No Si-like feature above noise in 514-526 cm-1."
+    },
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Identification is not conclusive; see candidates."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 785.9
+    },
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 935.8
+    },
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 138.6
+    },
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 1055.9
+    },
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 497
+    },
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 684.8
+    },
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 691.1
+    },
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 217.1
+    }
+  ],
+  "citations": [
+    "Measured: spectrum.csv, despiked (8 single-pixel spikes replaced by 7-point median), 60-200 cm-1 Lorentzian fit, BIC comparison of 4/5/6-peak models (fit2.py, despiked.csv, overview.png in the working folder).",
+    "Literature (recalled from memory, not verified in this sandbox): CrI3 Raman at 532 nm, RT, approx. 73/106/130/166 cm-1 (e.g. Djurdjic-Mijin et al., PRB 98, 104307, 2018 - cited from memory, unverified).",
+    "Literature (recalled, not verified): WTe2 Td Raman approx. 112/135/165/212 cm-1; GaTe approx. 113/134/167 cm-1."
+  ],
+  "limits": [
+    "Identification is low confidence. Four low-frequency bands (79.7, 104.4, 120.4, 165.8 cm-1) cannot be matched to one material with confidence from memory alone. No reference spectrum or literature database was available offline, so the candidate ranking rests on recalled values.",
+    "Absence of modes above ~200 cm-1 means not detected at this SNR. Noise is white with std ~650-1250 counts and clips to zero above ~600 cm-1, so weak modes could be hidden.",
+    "Weak features at ~127.6 cm-1 (shoulder, not significant by BIC), ~188 cm-1 (1.3 cm-1 wide, probably a residual spike) and ~215 cm-1 (noise level) are not reported as peaks.",
+    "The 104 cm-1 band (FWHM ~9) might be a doublet, but a 5-peak split model is not preferred by BIC, so this is unresolved.",
+    "No polarization or angle-resolved data, so symmetry labels (Ag/Eg etc.) cannot be assigned from measurement. Any irrep label is from recalled literature only.",
+    "Spike list is conservative: a 6-sigma robust threshold flagged 8 spikes. Weaker single-pixel spikes at ~342.6, 435.6, 493.4, 618.9, 667.7 and 888.9 cm-1 may also be artifacts and were not removed.",
+    "No Si substrate line at 520.7 cm-1 was found, so no substrate peak is reported.",
+    "Temperature 295 K and 532 nm are used as given. The working-folder name contains 'AsI3'; this was not used as evidence. The spectrum does not clearly match a molecular AsI3 crystal, as I recall its Raman bands, but that recall is uncertain. A reference spectrum of the stated material would settle the question."
+  ]
+}

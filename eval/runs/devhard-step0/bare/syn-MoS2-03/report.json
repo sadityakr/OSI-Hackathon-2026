@@ -1,0 +1,115 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.9,
+      "evidence": "E2g(1) at 383.8 cm-1 and A1g at 403.3 cm-1, both with Lorentzian FWHM of 2.0 and 3.8 cm-1. Weak features near 231 and 452 cm-1 match LA(M) and 2LA(M). Laser is 532 nm."
+    },
+    {
+      "material": "2H-MoSe2",
+      "confidence": 0.02,
+      "evidence": "The A1g of MoSe2 is near 240 cm-1, and there is no such line."
+    },
+    {
+      "material": "2H-WS2",
+      "confidence": 0.03,
+      "evidence": "The WS2 E2g/2LA(M) complex is near 350 cm-1 and A1g near 418 cm-1. These do not match."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was supplied, so this is an identification task.",
+  "peaks": [
+    {
+      "position_cm1": 383.8,
+      "fwhm_cm1": 2,
+      "assignment": "MoS2 in-plane E2g(1)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. Mode assignment from Lee et al., ACS Nano 4, 2695 (2010)."
+    },
+    {
+      "position_cm1": 403.3,
+      "fwhm_cm1": 3.8,
+      "assignment": "MoS2 out-of-plane A1g",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. Mode assignment from Lee et al., ACS Nano 4, 2695 (2010)."
+    },
+    {
+      "position_cm1": 520.9,
+      "fwhm_cm1": 3.4,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "First-order Si optical phonon at 520.7 cm-1. The SiO2/Si substrate is stated in the metadata."
+    },
+    {
+      "position_cm1": 231,
+      "fwhm_cm1": null,
+      "assignment": "LA(M) (weak, broad)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Chakraborty et al., PRB 85, 161403 (2012). The feature is low in intensity and was not fitted."
+    },
+    {
+      "position_cm1": 452,
+      "fwhm_cm1": null,
+      "assignment": "2LA(M) (weak, broad)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Chakraborty et al., PRB 85, 161403 (2012). The feature is low in intensity and was not fitted."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (most likely); 2 cannot be excluded",
+      "provenance": "inferred",
+      "source": "A1g - E2g = 19.5 cm-1 (measured). Lee et al., ACS Nano 2010 gives about 18-19 cm-1 for 1L and about 21-22 cm-1 for 2L, so 19.5 is closer to the 1L range."
+    },
+    {
+      "name": "peak_separation_cm1",
+      "value": "19.5",
+      "provenance": "measured",
+      "source": "Lorentzian fit"
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "E2g/A1g pair. No J1/J2/J3 modes of the 1T phase are seen between 150 and 350 cm-1."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "The E2g line is narrow (2.0 cm-1) and there are no defect-activated bands."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "The E2g position (383.8) is near the unstrained value of about 384-385 cm-1, but its small downshift is ambiguous. It could be weak tensile strain or the bilayer trend."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee et al., ACS Nano 4, 2695 (2010): Anomalous lattice vibrations of single- and few-layer MoS2",
+    "Chakraborty et al., Phys. Rev. B 85, 161403 (2012): Symmetry-dependent phonon renormalization in monolayer MoS2",
+    "Li et al., Adv. Funct. Mater. 22, 1385 (2012): From bulk to monolayer MoS2"
+  ],
+  "limits": [
+    "The layer count rests on the single peak separation of 19.5 cm-1. It sits between the typical 1L (about 18-19) and 2L (about 21-22) values, so the 1L assignment is tentative.",
+    "Strain, doping and substrate effects can shift E2g and A1g by 1-2 cm-1. The shift alone therefore cannot separate 1L from 2L.",
+    "The intensity ratio of the two modes was not used. The photoluminescence background was not examined, and the spectrum starts at 150 cm-1.",
+    "The low-frequency interlayer shear and breathing modes (below 50 cm-1) are outside the measured range. They would settle the layer count.",
+    "The LA(M) and 2LA(M) features are weak and were not fitted. They are assigned from positions only.",
+    "No polarization data were given, so no polarization pattern is assigned.",
+    "No cosmic-ray spikes were identified. The sharp lines are the MoS2 and Si modes."
+  ]
+}

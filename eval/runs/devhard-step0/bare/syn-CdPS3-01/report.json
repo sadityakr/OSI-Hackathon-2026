@@ -1,0 +1,125 @@
+{
+  "candidates": [
+    {
+      "material": "CdPS3",
+      "confidence": 0.6,
+      "evidence": "Strong lines near 263.5 and 368.7 cm-1 plus lower-wavenumber modes near 75 and 123 cm-1 match my recollection of the MPS3 Cd member. The Cd compound has its P2S6 breathing mode (Ag) in the low 370s and an Eg near 260. I did not check these against the papers, and the cited CdPS3 positions are from memory."
+    },
+    {
+      "material": "MnPS3",
+      "confidence": 0.12,
+      "evidence": "Same MPS3 family. My recollection is Mn lines near 247 (Eg), 258 and 383 (Ag), but 263.5 and 368.7 are poor fits (about 5 and 15 cm-1 off)."
+    },
+    {
+      "material": "FePS3",
+      "confidence": 0.08,
+      "evidence": "The family is right, but the line positions do not fit. FePS3 is usually reported with strong lines near 247, 277 and 378 cm-1 and a band near 580-590. See limits and the hint reasoning."
+    },
+    {
+      "material": "ZnPS3",
+      "confidence": 0.05,
+      "evidence": "Another MPS3 compound. I cannot rule it out from the data, and I have no confident reference positions for it."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The spectrum is an MPS3-type thiophosphate. The two dominant sample lines are at 263.5 cm-1 (FWHM about 5.9) and 368.7 cm-1 (FWHM about 8.4), with weaker features at about 74.7, 123.5 and 551. Literature on FePS3 (Wang et al., 2D Mater. 2016; Lee et al., Nano Lett. 2016; Kim et al., 2019) reports room-temperature lines near 225 (Eg), 247 (Eg/Ag), 277-280 (Ag) and 377-380 (Ag). It also reports a P-S stretch near 580-590 and a low-frequency mode near 100-155. Compared with that: (1) there is no line near 247 or 277-280, and the strong 263.5 cm-1 line sits between them, about 16 cm-1 above the 247 line and 14 cm-1 below the 277 line. (2) The strongest high-frequency line is at 368.7, about 9-11 cm-1 below the 377-380 FePS3 Ag mode. That is more than plausible strain or thickness shifts at 295 K, and the 263.5 line would have to shift in the opposite direction at the same time. (3) There is no clear 580-590 band, only a weak feature near 551. (4) The 123.5 cm-1 mode and the 74.7 mode do not match the known FePS3 low-wavenumber lines at about 96 and 155. The line pattern fits the Cd analogue better (Eg near 260, Ag breathing mode near 370), so the sample is more likely CdPS3, though that rests on my recollection of the literature. The spectrum is not consistent with FePS3.",
+  "peaks": [
+    {
+      "position_cm1": 74.7,
+      "fwhm_cm1": 3.8,
+      "assignment": "low-frequency mode (weak, about 3.5 sigma)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of the spectrum; no assignment to a specific mode"
+    },
+    {
+      "position_cm1": 123.5,
+      "fwhm_cm1": 10,
+      "assignment": "low-frequency M-S / translational-type lattice mode",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position from fit. Mode type is an inference from MPS3 lattice-mode literature (Bernasconi et al. 1988), not checked."
+    },
+    {
+      "position_cm1": 263.5,
+      "fwhm_cm1": 5.9,
+      "assignment": "P2S6 internal mode, Eg-type",
+      "irrep": "Eg",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position from fit. Eg-type assignment by analogy with MPS3 literature (Bernasconi et al. 1988); polarization not measured."
+    },
+    {
+      "position_cm1": 368.7,
+      "fwhm_cm1": 8.4,
+      "assignment": "P2S6 breathing mode (P-P/P-S), Ag-type",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position from fit. Ag-type assignment by analogy with MPS3 literature (Bernasconi et al. 1988); polarization not measured."
+    },
+    {
+      "position_cm1": 520.9,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "First-order Si optical phonon, about 520.7 cm-1"
+    },
+    {
+      "position_cm1": 550.9,
+      "fwhm_cm1": 6.6,
+      "assignment": "weak feature, possibly P-S stretch; not assigned with confidence",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; height about 3.5 sigma of the noise"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "not determined (thickness not constrained; the Si line is visible, so the flake is thin enough or small enough to let the substrate show through)",
+      "provenance": "inferred",
+      "source": "Si 520.9 cm-1 line present"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "signal-to-noise too low"
+    },
+    {
+      "name": "magnetic_order",
+      "value": "no evidence either way at 295 K. FePS3 is antiferromagnetic only below TN of about 118 K, so the room-temperature spectrum has no magnetic signature.",
+      "provenance": "literature",
+      "source": "FePS3 TN about 118 K (Lee et al., Nano Lett. 2016)"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "possible cosmic-ray spikes: none identified as single-point spikes; the maximum at about 519.5 and 522.2 is Si-line noise",
+      "position_cm1": null
+    },
+    {
+      "type": "noisy baseline (noise sigma about 610 counts on a baseline of about 3640)",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Wang X. et al., 2D Mater. 3, 031009 (2016): Raman of FePS3 thin layers (from memory)",
+    "Lee J.-U. et al., Nano Lett. 16, 7433 (2016): Raman of FePS3, MnPS3 and NiPS3 (from memory)",
+    "Bernasconi M. et al., Phys. Rev. B 38, 12089 (1988): lattice dynamics of MPS3 compounds (from memory)",
+    "Kim K. et al., Nat. Commun. 10, 345 (2019): Raman of FePS3 (from memory)"
+  ],
+  "limits": [
+    "The spectrum is noisy (sigma about 610 counts), and the 74.7 and 551 features are only about 3.5 sigma. There is also a marginal bump near 241 that I could not fit reliably and did not report.",
+    "Reference positions are quoted from memory, not from a database in this folder. They are accurate to roughly \u00b13-5 cm-1, and I did not verify the papers. The core mismatch (263.5 versus 247/277, and 368.7 versus about 378) is larger than that uncertainty, but treat the CdPS3 assignment as probable rather than certain.",
+    "There is no polarization-resolved data, so Ag and Eg labels are inferred from position, not measured.",
+    "I cannot rule out other MPS3 compounds (Mn, Zn, Cd, mixed or alloyed) from a single room-temperature spectrum. A low-temperature scan below 118 K, checking for the FePS3 magnon and zone-folded modes, would test the FePS3 hypothesis directly.",
+    "I cannot tell the layer number or strain from these data. A systematic shift of the whole spectrum by strain or a calibration offset is excluded as an explanation because 263.5 and 368.7 would have to move in opposite directions relative to the FePS3 247/277 and 378 lines."
+  ]
+}

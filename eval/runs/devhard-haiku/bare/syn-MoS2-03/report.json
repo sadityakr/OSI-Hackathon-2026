@@ -1,0 +1,76 @@
+{
+  "candidates": [
+    {
+      "material": "MoS2",
+      "confidence": 0.93,
+      "evidence": "Two in-plane/out-of-plane modes at 383.8 (E2g1) and 403.3 cm-1 (A1g), difference 19.5 cm-1, match 2H-MoS2 at 532 nm. Si substrate line at 520.9 cm-1 also present. No other common TMD fits these two positions: WS2 is near 355/418, MoSe2 near 243/287, WSe2 near 250."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "material_hint is null, so there is no stated material to check against. The identification comes from the peak positions alone.",
+  "peaks": [
+    {
+      "position_cm1": 383.81,
+      "fwhm_cm1": 2.06,
+      "assignment": "MoS2 E2g1 (in-plane)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit over 355-430 cm-1 (sigma 1.03, +/-0.02 cm-1). Assignment from Lee et al., ACS Nano 4, 2695 (2010) and Li et al., Adv. Funct. Mater. 22, 1385 (2012): E2g1 near 384 cm-1 for MoS2."
+    },
+    {
+      "position_cm1": 403.29,
+      "fwhm_cm1": 3.83,
+      "assignment": "MoS2 A1g (out-of-plane)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit over 355-430 cm-1 (sigma 1.91, +/-0.05 cm-1). Assignment from Lee et al., ACS Nano 4, 2695 (2010) and Li et al., Adv. Funct. Mater. 22, 1385 (2012): A1g near 403-405 cm-1 for monolayer MoS2."
+    },
+    {
+      "position_cm1": 520.91,
+      "fwhm_cm1": 3.47,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position from fit over 495-545 cm-1. Literature Si first-order Raman line at about 520.7 cm-1 (Temple and Hathaway, PRB 7, 3685, 1973), so the offset is about +0.2 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1",
+      "provenance": "inferred",
+      "source": "A1g-E2g separation of 19.5 cm-1 (calibration-independent). Literature 532 nm trend (Lee et al. 2010; Li et al. 2012): monolayer about 18.5-19.5 cm-1, bilayer about 20-21 cm-1, bulk about 24-25 cm-1. The value sits at the top of the monolayer range and below the bilayer range."
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "E2g1 and A1g pair only. Literature: 2H-MoS2 shows these two modes; 1T' would show additional low-frequency modes around 150-230 cm-1, none of which are resolved here (Lee et al. 2010)."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "possible single-pixel spike, unconfirmed (about +600 counts, about 4 sigma of noise, isolated with no broadening; not reported as a peak)",
+      "position_cm1": 453.52
+    }
+  ],
+  "citations": [
+    "Lee, C. et al. ACS Nano 4, 2695 (2010) - MoS2 Raman modes and thickness dependence of E2g1 and A1g separation",
+    "Li, H. et al. Adv. Funct. Mater. 22, 1385 (2012) - from bulk to monolayer MoS2, Raman evolution with layer number",
+    "Temple, P.A. and Hathaway, C.E. PRB 7, 3685 (1973) - Si first-order Raman line near 520.7 cm-1"
+  ],
+  "limits": [
+    "Material: the two-peak pattern at 383.8 and 403.3 cm-1 with a 19.5 cm-1 separation identifies MoS2. Literature values are quoted from memory and should be checked against the papers before use.",
+    "Layer count: 1 layer is most likely, but the result is not decisive. A bilayer would give a separation of about 20-21 cm-1, and the measured 19.5 cm-1 is close to that edge. Single-spot data cannot exclude 2 layers. A second spot, a photoluminescence check, or a comparison against a reference monolayer on the same substrate would settle it.",
+    "Layer count is inferred from one number. Peak intensity ratios are not used because they depend on focus, substrate, and laser power.",
+    "E2g1 FWHM (2.06 cm-1) is narrower than usual for MoS2 on SiO2 and is only about 3 data points across the peak (0.68 cm-1 step). Its width is poorly constrained. The Si line has FWHM 3.5 cm-1, so the instrument resolution is not better than about 3 cm-1.",
+    "Absolute positions are good to about 0.3 cm-1 with the Si calibration. The A1g-E2g separation does not depend on calibration.",
+    "Weak MoS2 modes (2LA(M) near 450, LA(M) near 227, E1g near 286) are not resolved above the noise (about 145 counts per point). Their absence is weak evidence for a thin flake, not a proof.",
+    "The single 453.5 cm-1 excursion could be a cosmic-ray remnant or noise, and it cannot be assigned to 2LA(M) with this data.",
+    "Polarization dependence is not classified because this is a single spectrum, not an angle-resolved series.",
+    "The broad background (about 2500-4500 counts) was modeled only as a smooth low-order polynomial. Any broad SiO2 or fluorescence band is not separated out."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+ "key": "6af54493fe531a2d",
+ "score": 0.6428571428571429,
+ "by_kind": {
+  "finding": 1.0,
+  "caveat": 0.5,
+  "question": 1.0
+ },
+ "wrong_claims_made": [
+  "w2"
+ ],
+ "citation_specificity": 2,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report measures flake 2 at \"1368.99 \u00b1 0.23 cm-1, FWHM 21.6\" against flake 1 at \"1366.19\", a shift of \"+2.84 \u00b1 0.25 cm-1\", and says it \"fits a few-layer or monolayer flake on SiO2/Si\"."
+   },
+   {
+    "id": "c1",
+    "met": 0.5,
+    "why": "It gives the size of the shift (\"Gorbachev reports 1L shifted up 2-4 cm-1\") and says \"position is not a layer-number test\", but it never states the roughly \u00b12 cm-1 sample-to-sample scatter."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "It says \"strain can produce it\" and that substrate strain \"can produce a 1-4 cm-1 up-shift\", which makes strain comparable to the monolayer shift, but it misses the typical 1-2 cm-1 red shift and that strain dominates in bilayers."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "It reports that the E2g \"area is about 0.10 of flake 1's\" and that \"Integrated E2g intensity scales with layer number on a given substrate... It needs a calibration flake of known N\", which matches the intensity-as-layer-measure point."
+   },
+   {
+    "id": "q1",
+    "met": 1,
+    "why": "It proposes \"AFM or a calibrated optical contrast would decide it\" and normalises the hBN signal to the Si 520 line (\"Normalised to the Si 520 area... a factor of about 190\")."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "The report says \"Raman can't confirm that flake 2 is a monolayer\" and calls a monolayer \"plausible but unproven\"."
+   },
+   {
+    "id": "w2",
+    "made": true,
+    "why": "Although it quotes Gorbachev's \"2L usually down 1-2 cm-1\", the summary states flatly that \"A shift of that size also appears in 2L\" and that flake 2 \"matches 1L or 2L\", which treats a bilayer as upshifted like a monolayer."
+   }
+  ],
+  "citation_specificity": 2
+ },
+ "judge_model": "claude-opus-5-5"
+}

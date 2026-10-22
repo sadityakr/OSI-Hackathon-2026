@@ -1,0 +1,112 @@
+{
+  "summary": "No, the flake did not change in any way these spectra can resolve. Between day 1 and day 2 every MoS2 and Si line moved up by about +2.5 cm-1, but that shift is spectrometer calibration, not doping or strain. After correcting with the Si line, E2g and A1g positions agree to about 0.02 cm-1, the E2g-A1g separation is unchanged within error, and the peak intensities and widths are the same within error. The only real change is a flat background offset of about 137 counts on day 2, which does not scale with the Raman peaks and is not from the sample's Raman signal. The E2g-A1g separation of about 21.5 cm-1 is closest to the 2-layer value in Lee et al. (2010), but the laser wavelength behind that comparison is unverified, so treat the layer count as provisional.",
+  "observations": [
+    {
+      "finding": "All three lines (E2g, A1g, Si) shift by the same amount between days, so the shift is a rigid calibration offset.",
+      "evidence": "Lorentzian fits, windows and line shapes varied (6 settings x 2 shapes): day2-day1 E2g +2.507, A1g +2.439, Si +2.492 cm-1; setting-to-setting spread <=0.006 cm-1. Si line 519.976 +/- 0.015 (d1) vs 522.469 +/- 0.028 (d2). E2g 383.325 +/- 0.013 vs 385.833 +/- 0.019; A1g 404.915 +/- 0.065 vs 407.349 +/- 0.10.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "After referencing to the Si line, E2g and A1g are identical on both days, so neither doping nor strain is detected.",
+      "evidence": "Using Si = 520.7 cm-1 (commonly quoted room-temperature value, from memory): day 1 E2g 384.05, A1g 405.64; day 2 E2g 384.06, A1g 405.58 cm-1. Corrected shifts: E2g ~0.01 cm-1, A1g -0.06 cm-1, both within the ~0.1-0.3 cm-1 calibration uncertainty. An A1g-only shift would point to doping and an E2g shift with splitting change to strain; neither is seen.",
+      "provenance": "inferred",
+      "source": "Chakraborty et al., PRB 85, 161403(R) (2012), arXiv:1206.1758 (A1g vs E2g doping/strain sensitivity, from memory, not checked against the figure)"
+    },
+    {
+      "finding": "E2g-A1g separation is unchanged between days (within error). The separation is independent of spectrometer offset because both peaks come from one spectrum.",
+      "evidence": "Split day 1 21.590 +/- 0.07 cm-1, day 2 21.516 +/- 0.10 cm-1; day2-day1 = -0.07 +/- 0.12 (stat), fit-choice spread +/-0.01 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 21.5-21.6 cm-1 separation is closest to the 2-layer value in Lee et al. (2010). This is a read-off from their Fig. 2(b), so the layer count is approximate and provisional.",
+      "evidence": "Fig. 2(b) of Lee et al. (arXiv:1005.2509; ACS Nano 4, 2695): separation (right axis) about 19 cm-1 for 1L, about 21.5 for 2L, about 23.7 for 3L, about 24.5 for 4L, about 26 for bulk. Read-off error about +/-0.3 cm-1.",
+      "provenance": "literature",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010), arXiv:1005.2509, Fig. 2(b)"
+    },
+    {
+      "finding": "Peak intensities are unchanged between days, so there is no sign of a change in the sample's Raman response.",
+      "evidence": "Area ratios day2/day1: E2g 1.011, A1g 0.975, Si 0.985 (uncertainties about 0.02-0.05). A1g/E2g = 1.046 +/- 0.035 (d1) vs 1.009 +/- 0.052 (d2), difference not significant. E2g/Si = 0.561 vs 0.576, not significant.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The flat background rose by about 137 counts (1.38x) at 400 cm-1 with no change in peak areas, so it is additive and not a Raman change from the sample.",
+      "evidence": "Linear baseline at 400 cm-1: day 1 365.4 counts, slope -0.044 counts/cm-1; day 2 502.8 counts, slope +0.006. Peak areas scale-invariant (Si ratio unchanged), so the acquisition gain is the same; the offset is additive.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Peak widths are unchanged within error, so no defect or disorder change is detected.",
+      "evidence": "FWHM E2g 2.07 +/- 0.04 (d1) vs 2.14 +/- 0.06 (d2); A1g 6.35 +/- 0.22 vs 6.38 +/- 0.35; Si 3.54 vs 3.50 cm-1 (resolution unchanged). Residuals show no structure in either window.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The day-2 spectrum has a different sampling step (0.66 cm-1 vs 0.53 cm-1), which suggests a different spectrometer or grating setting between days.",
+      "evidence": "Median x step: day1 0.530 cm-1 (949 points), day2 0.660 cm-1 (756 points), both spanning 150.0-649.6 cm-1.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "about 2 (provisional; from the E2g-A1g separation of 21.5-21.6 cm-1 read against Lee et al. Fig. 2(b); laser wavelength of that paper unverified)",
+      "provenance": "inferred",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010), arXiv:1005.2509, Fig. 2(b)"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected (not separable from calibration offset at ~0.1-0.3 cm-1)",
+      "provenance": "inferred",
+      "source": "Chakraborty et al., PRB 85, 161403(R) (2012), arXiv:1206.1758 (from memory)"
+    },
+    {
+      "name": "doping_type",
+      "value": "none detected (no differential A1g shift; electron doping would soften A1g)",
+      "provenance": "inferred",
+      "source": "Chakraborty et al., PRB 85, 161403(R) (2012), arXiv:1206.1758 (from memory)"
+    },
+    {
+      "name": "defect_level",
+      "value": "unchanged between days; absolute level not determined from one spectrum",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "2H (bulk-like E2g/A1g pattern; assumed, not verified against reference modes)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Calibration reference: the Si first-order line is taken as 520.7 cm-1 from memory (commonly quoted room-temperature value); no source was checked in this session. Using 520.5 cm-1 changes only the absolute values, not the day-to-day comparison.",
+    "Lee et al. Fig. 2(b) values are read off the figure (about +/-0.3 cm-1). The laser wavelength used by Lee et al. was not confirmed from the parsed captions, so their separation-vs-layer mapping may not apply exactly at 514.5 nm.",
+    "The separation-to-layer mapping depends on substrate, strain and laser; on a SiO2/Si flake it is a consistency check, not a layer measurement. AFM or optical contrast is needed to confirm the layer count.",
+    "The A1g width (about 6.4 cm-1) is large compared with E2g (about 2.1 cm-1); it is consistent between days, but whether that reflects instrument, a fit compromise or the sample is not established.",
+    "The Chakraborty et al. reference (A1g softens with electron doping, E2g insensitive) is from memory and was not checked against its figure; the doping and strain conclusions rest on it.",
+    "Day-to-day calibration differences of about 2.5 cm-1 are much larger than a typical strain or doping shift, so any real effect of 0.1 cm-1 or below cannot be separated from calibration noise with these two spectra.",
+    "The skill's reference notes and scripts live outside the working folder, which I was told not to read; the analysis was done with my own fit code (analysis/fit_peaks.py, analysis/robust.py, analysis/intensities.py), so the skill's QC, Si-calibration and relation checks were not applied."
+  ],
+  "questions_for_user": [
+    "Was the spectrometer recalibrated or the grating/centre wavelength changed between the two days? The sampling step changed from 0.53 to 0.66 cm-1, and the Si line moved by +2.5 cm-1, which both point to a settings change.",
+    "Was there a Si reference (or a Ne/Hg lamp line) measured on each day? That would settle the calibration offset directly rather than inferring it from the Si line in the same spectrum.",
+    "What changed in the background (about +137 counts, flat)? Possible causes are a dark-offset or background-subtraction setting, stray light or room light, or surface fluorescence. Were integration times and the number of accumulations the same?",
+    "What laser power and objective were used on each day? Heating would shift lines down, not up, so power does not explain a +2.5 cm-1 shift, but a power change can still matter for other reasons.",
+    "Is the flake layer number known independently (AFM, optical contrast)? Only then can the 2-layer reading from the 21.5 cm-1 separation be checked.",
+    "Was the excitation 514.5 nm in both sessions, and was the polarization geometry the same? Both affect relative intensities and the A1g/E2g ratio."
+  ],
+  "citations": [
+    "[arXiv:1005.2509 / ACS Nano 4, 2695 (2010), Fig. 2(b)](https://arxiv.org/abs/1005.2509): E2g-A1g separation vs layer number, read off the figure",
+    "[arXiv:1206.1758 / PRB 85, 161403(R) (2012)](https://arxiv.org/abs/1206.1758): symmetry-dependent phonon renormalization in MoS2 (A1g vs E2g doping sensitivity); cited from memory, not checked against its figure"
+  ],
+  "limits": [
+    "What the data cannot tell: whether adsorbates doped or strained the flake at a level below about 0.1-0.3 cm-1 of phonon shift. The spectra also cannot give an absolute layer count, defect density or doping level without an external calibration relation.",
+    "Relations not applied: no quantitative doping or strain relation was used, because none was checked against a source in this session and the shift is within calibration.",
+    "Rejected hypotheses: (1) adsorbate doping (would shift A1g alone; no differential shift); (2) strain (would shift E2g and change the splitting; neither changed); (3) laser heating (would soften and shift Si down, not up); (4) fluorescence or PL as the cause of the peak shifts (the background change is additive, not tied to the peaks).",
+    "The skill's own reference notes and scripts were not used because they lie outside the working folder."
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "summary": "The six spectra fall into three groups by mode position and width, not by thickness. B, D and F have sharp modes with the ~110 cm-1 mode at 112-114 cm-1 (FWHM 4.2-4.8 cm-1). C and E have soft, broad modes (~104 and ~238 cm-1, FWHM 8.7-9.5 cm-1) and a weak hump near 302 cm-1. A is intermediate and very strong. Thickness cannot be assigned from these six spectra alone. The only thickness-sensitive channel for layered vdW materials (interlayer shear/breathing modes, below ~50 cm-1) is outside the measured window. A tentative ranking by the strength of the 341 cm-1 mode relative to the local background is D > F > A > B > E > C, but this is a signal-strength proxy and is confounded by orientation, substrate contrast, focus and background. Treat it as low confidence until AFM is in hand.",
+  "observations": [
+    {
+      "finding": "Two spectral families: B, D, F have sharp modes; C and E have soft, broad modes and a ~302 cm-1 hump; A is intermediate",
+      "evidence": "Pseudo-Voigt fits per window. P1 (~110) centre/FWHM: B 114.03/4.21, D 113.31/4.50, F 111.93/4.80, A 108.59/7.03, C 103.77/8.68, E 103.75/9.45. P2 (~243) centre: B 244.43, D 243.94, F 242.73, A 241.49, E 238.77, C 238.29. Overview and fit plots reviewed visually.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 341 cm-1 (P4) mode is the strongest feature in all six flakes; its centre spreads by ~2.7 cm-1 and its width ranges 4.2-7.1 cm-1",
+      "evidence": "P4 centre (cm-1, stat. err 0.01-0.05): A 341.13, B 342.88, C 340.85, D 342.07, E 340.18, F 340.58. P4 FWHM: B 4.24, D 4.72, F 5.52, A 6.75, E 6.99, C 7.09. Peak height above fitted background (counts): F 17065, A 12721, D 9769, E 3406, B 2226, C 1125.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Signal strength relative to local background ranks D > F > A > B > E > C; this is the only quantity that ordering rests on",
+      "evidence": "P4 height / background at centre: D 5.52, F 4.24, A 3.58, B 2.46, E 1.51, C 0.86. Background = mean counts 150-230 cm-1: A 3075, F 3500, D 1746, E 1689, C 1061, B 931. Background is high where the peaks are strongest (A, F), so collection efficiency likely scales everything together.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Mode-area ratios differ between flakes and do not follow the signal ranking, so they probably reflect orientation or local environment rather than thickness",
+      "evidence": "Area ratios from fits. P2/P4: B 0.478, F 0.490, D 0.279, C 0.131, E 0.121, A 0.073. P1/P4: B 0.398, D 0.379, F 0.337, A 0.251, C 0.121, E 0.119. The 0.07 for A's P2/P4 is the largest outlier.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The ~302 cm-1 feature is only a real peak in C and E; in A it is marginal and in B, D and F the fitted amplitude is zero or negative",
+      "evidence": "P3 fitted peak height above background: C 243 counts (centre 302.3), E 724 counts (302.1), A 429 counts (301.4, sits on a rising background), B/D/F no peak (fit amplitude <=0 or unstable). Fit plots show no peak in B, D, F.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The P1 and P2 shifts in C and E are larger than the P4 shift and are not a global calibration offset",
+      "evidence": "P4-P2 spacing (cm-1): A 99.64, B 98.45, C 102.56, D 98.13, E 101.41, F 97.85. The spacing changes by 4.7 cm-1 across flakes, so the shifts are mode-specific, not a uniform axis offset. Centre errors on C P1 (0.33) and E P1 (0.20) are larger but the ~8 cm-1 shift is well outside them.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Peak position does not track signal strength: the sharpest flake (B) is weak and the strongest flake (F) is not the most blue-shifted",
+      "evidence": "P1 centre vs P4 height: C 103.8/1125, E 103.7/3406, A 108.6/12721, D 113.3/9769, F 111.9/17065, B 114.0/2226. The relationship is not monotonic.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Data grid and quality: no NaNs; 313 points from 50.75 to 430.84 cm-1; step varies 1.18-1.26 cm-1; the lower edge (50-80 cm-1) is dominated by the Rayleigh filter edge",
+      "evidence": "Mean step 1.2182 cm-1, min 1.1811, max 1.2573. Intensity floor ~680 counts identical across all six at 50-70 cm-1. Rise between ~70 and ~85 cm-1 is the filter edge.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Thickness-sensitive low-frequency interlayer modes are not in the measured window",
+      "evidence": "Spectra start at 50.75 cm-1 and the filter edge rises through ~70-85 cm-1, so modes below ~50 cm-1 cannot be measured in these files.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "undetermined from these spectra; relative ordering only (see summary)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "undetermined; P4 FWHM 4.2-7.1 cm-1 with no calibrated linewidth-vs-defect reference available",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "orthorhombic CrSBr (assumed)",
+      "provenance": "literature",
+      "source": "Assumed from the material name; not verified against a reference in this session"
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined; P1 spread (103.8-114.0 cm-1) is consistent with strain, thickness, orientation or local heating",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none determined",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Ranking by 341 cm-1 signal strength is a proxy. The same intensity can come from different thickness, in-plane orientation (CrSBr is strongly anisotropic), substrate optical contrast (SiO2 thickness), focus, or a different collection efficiency. The background (150-230 cm-1 counts: 931-3500) is large and varies between flakes, and the peak-to-background ratio is only partly corrected for it.",
+    "At 532 nm, bulk-like absorption limits the probed depth. Above a certain thickness the signal saturates, so the strongest flakes may all be thick and the ranking cannot separate them. The penetration depth is an order-of-magnitude estimate I did not verify.",
+    "C and E have soft, broad modes and a ~302 cm-1 hump. Possible causes: thin flakes with weak signal, strain, defects, local heating, or a different orientation. Local heating would need a temperature coefficient of about 0.01-0.02 cm-1/K (an assumed typical range, not checked for CrSBr) to produce a ~5 cm-1 shift, which implies hundreds of K at 200 uW and seems unlikely, but a power series would settle it.",
+    "The 302 cm-1 hump could be a real mode, a PL/background feature or a fit artefact. Its amplitude is only 243-724 counts above background, so it is weak.",
+    "Fit uncertainties are statistical (0.01-0.05 cm-1 for P4). The real uncertainty is larger because the spectra are sampled at 1.2 cm-1 and the calibration is not checked against a Si reference. Widths should be read as +/-0.3 cm-1 at best.",
+    "Mode ratios (P1/P4, P2/P4) are orientation-dependent in anisotropic materials, so they should not be read as thickness indicators without polarization data."
+  ],
+  "questions_for_user": [
+    "Substrate type and SiO2 thickness (or other oxide) for the marked substrate? Optical contrast changes the Raman intensity strongly and non-monotonically with thickness.",
+    "Was a Si reference peak (520.7 cm-1) measured in the same session? The P2-P4 spacing varies by 4.7 cm-1 across flakes, so I cannot rule out per-flake axis drift without it.",
+    "Was the linear polarization or analyzer orientation controlled, and was each flake measured at the same in-plane angle? If not, intensity and mode-ratio differences may reflect orientation rather than thickness.",
+    "Can you extend the acquisition below ~70 cm-1 with a low-frequency (ultra-low-frequency) configuration? Interlayer shear and breathing modes are the most direct thickness marker in layered materials, and they are absent here.",
+    "Is the broad background PL or fluorescence? A wider spectral window (for example 100-1000 cm-1 plus a PL scan) would separate PL from substrate background.",
+    "What objective, spot size and exposure were used, and was each flake measured at a single spot? Spot-to-spot variation within a flake has not been assessed.",
+    "Were the spectra exported raw or resampled? The step varies from 1.18 to 1.26 cm-1, which is more than I would expect from a linear pixel-to-wavenumber axis.",
+    "Would you like a power series on one soft flake (C or E) and one sharp flake (B or D) to test heating directly? Stokes/anti-Stokes ratios would give the local temperature.",
+    "Please share AFM thickness for the six flakes when available. I would rerank and recalibrate the signal-strength proxy against it."
+  ],
+  "citations": [
+    "Lee, C. et al., ACS Nano 4, 2695 (2010), 'Anomalous lattice vibrations of single- and few-layer MoS2' - layer-dependent Raman as a method analogy; cited from recall, not checked in this session",
+    "Tan, P.-H. et al., Nature Materials 11, 294 (2012), 'The shear mode of multilayer graphene' - low-frequency interlayer modes as thickness markers; cited from recall, not checked in this session",
+    "No CrSBr-specific Raman mode assignment or thickness-dependence reference was verified in this session (no reference files or literature access were available). The 341 cm-1 and 110 cm-1 mode assignments are therefore unassigned here."
+  ],
+  "limits": [
+    "I could not verify any CrSBr-specific literature (mode assignments, thickness dependence, PL) in this session. Every literature statement above is from recall and flagged as such.",
+    "No AFM data was available, so no thickness value is given for any flake.",
+    "No polarization-resolved or power-dependent data, no Si reference and no PL spectrum were provided; orientation, heating and calibration effects cannot be separated from thickness with these files.",
+    "Analysis windows (P1 95-128, P2 228-258, P3 280-322, P4 330-356 cm-1) with pseudo-Voigt and a linear background; the P3 result is only meaningful for C and E. Outputs saved to C:/WINDOWS/TEMP/crsbr_out (overview.png, fits.png, peak_fits.csv, summary.csv)."
+  ]
+}

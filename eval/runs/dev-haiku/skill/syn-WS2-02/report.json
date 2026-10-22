@@ -1,0 +1,100 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.75,
+      "evidence": "Two strong sharp bands at 360.30 cm-1 (FWHM 3.4) and 420.32 cm-1 (FWHM 6.0), separation 60.0 cm-1. This matches the E2g/A1g pair of WS2 (approx. 355-357 and 418-421 cm-1, separation about 60-64 cm-1, from memory of Molina-Sanchez & Wirtz 2011 and Berkdemir et al. 2013, not re-checked in this session). The 2H-WS2 identification is the only candidate here whose pair spacing fits. The E2g position is about 3-5 cm-1 above the typical WS2 value and no separate 2LA(M) band is resolved, so this is a moderate-confidence match, not a confirmation."
+    },
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.03,
+      "evidence": "Expected E2g near 383 and A1g near 408 cm-1, spacing about 25 cm-1. Data show no bands near 383 or 408 and the spacing is 60 cm-1. Rejected."
+    },
+    {
+      "material": "2H-WSe2",
+      "confidence": 0.02,
+      "evidence": "Expected A1g near 250 cm-1 as the dominant band. The data show no band near 250 cm-1 above background (only smooth background at 250-300 cm-1). Rejected."
+    },
+    {
+      "material": "2H-MoSe2",
+      "confidence": 0.02,
+      "evidence": "Expected A1g near 240 and E2g near 286 cm-1. Neither is present as a strong band. Rejected."
+    }
+  ],
+  "hint_verdict": "consistent",
+  "hint_reasoning": "The spectrum shows a strong, sharp band at 360.3 cm-1 and a weaker, broader band at 420.3 cm-1, separated by 60.0 cm-1. This pair is the E2g/A1g signature of 2H-WS2 and is not the pattern of MoS2 (about 25 cm-1 spacing near 383/408), WSe2 (dominant A1g near 250), or MoSe2 (A1g near 240, E2g near 286). The WS2 hint is therefore consistent with the data. Two points keep it from a firm confirmation: (i) the 360 cm-1 band sits about 3-5 cm-1 above the usual WS2 E2g value (about 355-357 cm-1), and no 2LA(M) shoulder (about 350-353 cm-1, usually strong at 532 nm) is resolved; (ii) the 532 nm measurement has no Si calibration line, so the absolute frequency scale is not checked. The expected weak E1 2g (about 297 cm-1) and LA(M) (about 176 cm-1) are not detected above noise, which is consistent with their known weakness in WS2 but not proof. No layer-number claim is made from one spectrum.",
+  "peaks": [
+    {
+      "position_cm1": 360.3,
+      "fwhm_cm1": 3.41,
+      "assignment": "E2g^1 (in-plane E' / E2g mode of 2H-WS2); may include unresolved 2LA(M) contribution, which the single-Voigt fit does not resolve",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from pseudo-Voigt fit (lmfit) on 335-390 cm-1 after linear background; residuals at noise level (rms 157 vs 160 in featureless 450-500 cm-1). Assignment inferred from WS2 literature: Molina-Sanchez & Wirtz, PRB 84, 155413 (2011); Berkdemir et al., Sci. Rep. 3, 1755 (2013) (both cited from memory, not re-checked here)."
+    },
+    {
+      "position_cm1": 420.32,
+      "fwhm_cm1": 6,
+      "assignment": "A1g (out-of-plane) mode of 2H-WS2",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from pseudo-Voigt fit on 395-445 cm-1 with linear background. Two-component fit not preferred (BIC 470 vs 458 for one component). Assignment inferred from the same WS2 literature (Molina-Sanchez & Wirtz 2011; Berkdemir et al. 2013, from memory)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H (bulk-type D6h labels assumed)",
+      "provenance": "inferred",
+      "source": "Assumed from the E2g/A1g pattern and the stated material. Not established from polarization or other data."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "A single spectrum with E2g-A1g spacing of 60.0 cm-1 cannot fix the layer number. Spacing is at the low edge of the WS2 range from memory of Berkdemir et al. 2013, but strain, doping and calibration shift the spacing by comparable amounts."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none established",
+      "provenance": "inferred",
+      "source": "E2g at 360.3 cm-1 is about 3-5 cm-1 above the usual WS2 value. This could indicate compressive strain or a calibration offset, but no Si reference line is present to check calibration, so no strain sign is assigned."
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessed",
+      "provenance": "inferred",
+      "source": "Not determined; no defect-activated band (for example D-like or LA-related) is identified and no relation was applied."
+    },
+    {
+      "name": "doping_type",
+      "value": "not assessed",
+      "provenance": "inferred",
+      "source": "No A1g/E2g intensity ratio or position analysis against a doping relation was carried out."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 162.56
+    }
+  ],
+  "citations": [
+    "Molina-Sanchez A., Wirtz L., Phys. Rev. B 84, 155413 (2011), 'Phonons in single-layer and few-layer MoS2 and WS2' (cited from memory, not verified in this session)",
+    "Berkdemir A. et al., Sci. Rep. 3, 1755 (2013), 'Identification of individual and few layers of WS2 using Raman spectroscopy' (cited from memory, not verified in this session)"
+  ],
+  "limits": [
+    "The spike at 162.56 cm-1 (intensity 20744 against neighbours of about 2600-2900) is a single-channel cosmic-ray artifact. It was replaced by the mean of its neighbours before fitting and is not reported as a peak.",
+    "No Si substrate line (520.7 cm-1) is present, and no substrate was stated, so the frequency calibration could not be checked against a reference line. Absolute shifts of 1-5 cm-1 are therefore uncertain, which weakens the E2g-position argument.",
+    "The E2g band at 360.3 cm-1 is about 3-5 cm-1 above the typical WS2 E2g value from memory of the literature. Interpretation options are a calibration offset, compressive strain, a substrate or doping effect, or a different phase. A polarization series, a Si reference, or a reference spectrum of known WS2 would separate these.",
+    "No separate 2LA(M) band is resolved near 350-353 cm-1, although it is usually strong for WS2 at 532 nm through resonance. The single-Voigt fit residuals are at noise level, so a weak 2LA(M) shoulder cannot be excluded. A higher-resolution or longer-integration scan would be needed.",
+    "The expected weak E1 2g (about 297 cm-1) and LA(M) (about 176 cm-1) are not detected above noise (fit on 285-310 and 170-205 cm-1 gave no significant component; the best low-shift candidate at 193.5 cm-1 has SNR about 3, not significant). Their absence is consistent with weakness in WS2 but does not confirm the material.",
+    "The broad background rising to about 8000-9000 counts between about 700 and 1100 cm-1 is not a known WS2 Raman feature. It may be photoluminescence or fluorescence, or substrate contribution; the data cannot tell which, and no peak was fitted to it.",
+    "Relative intensities (about 6:1 height ratio of 360 to 420 cm-1) are not interpreted as layer number, because substrate interference and laser resonance affect them.",
+    "The skill's reference notes and matcher scripts live outside this folder and were not used, per the instruction to work only in the current folder. The CRD database match and the material note were therefore not run, and the literature values above are from memory and need checking against the sources.",
+    "No angle series was supplied, so polarization classification was not performed and pattern fields are null.",
+    "Single spectrum, so no series tracking or thickness/strain/doping relation was applied."
+  ]
+}

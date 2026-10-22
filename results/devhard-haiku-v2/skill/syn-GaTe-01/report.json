@@ -1,0 +1,104 @@
+{
+  "candidates": [
+    {
+      "material": "Bi2Te3 (tetradymite-type, low confidence)",
+      "confidence": 0.2,
+      "evidence": "Strong band at 98.5 cm-1 is near the Bi2Te3 E_g^2 mode (~102 cm-1 in Fig. 2 of arXiv:1201.5678, 488 nm), and the weak band at ~135 cm-1 is near A_1g^2 (~132-133 cm-1 in the same figure). Against it: the reference A_1u band near 116 cm-1 is absent here, the 135 band is about 1/8 the height of the 98.5 band whereas in the reference A_1g^2 and E_g^2 are comparable, the 98.5 band is ~3.5 cm-1 below the reference E_g^2, and the axis calibration is unknown (no Si line). Reference spectra were taken at 488 nm, not 532 nm."
+    },
+    {
+      "material": "Bi2Se3 (low confidence)",
+      "confidence": 0.07,
+      "evidence": "Weak band at ~177 cm-1 is near the A_1g^2 mode (~174 cm-1, Fig. 4 of arXiv:1201.5678, 488 nm). Against it: the dominant E_g^2 mode of Bi2Se3 is near 131 cm-1 with no comparable band at 131 here, the 98.5 cm-1 band has no Bi2Se3 counterpart, and the expected A_1g^1 near 72 cm-1 is not clearly present."
+    },
+    {
+      "material": "unidentified (no reference match in the consulted sources)",
+      "confidence": 0.73,
+      "evidence": "Only one strong band (98.5 cm-1) and a few weak bands below 300 cm-1; no reliable band above ~320 cm-1 (all < ~3.5 sigma of smoothed noise). Neither candidate reproduces the intensity pattern, and the library search covered only one reference paper. The CRD matcher and curated reference notes are outside this folder and were not used."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so there is nothing to verify. The data cannot be matched to a material with confidence. Best low-confidence candidate is Bi2Te3, based on partial position agreement for the 98.5 and 135 cm-1 bands with the reference figures in arXiv:1201.5678, but intensity pattern and a missing ~116 cm-1 band disagree. Bi2Se3 is weaker. The spectrum has only one strong band and no reliable high-frequency modes, so identification stays open.",
+  "peaks": [
+    {
+      "position_cm1": 98.5,
+      "fwhm_cm1": 7.2,
+      "assignment": "unassigned (candidate: Bi2Te3 E_g^2, ~102 cm-1 at 488 nm, Fig. 2 of arXiv:1201.5678)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "pseudo-Voigt fit, 60-125 cm-1 window (centre +-0.10 cm-1 statistical; calibration uncertainty not included, no Si reference). Candidate mode from Fig. 2 of arXiv:1201.5678, positions read by eye (+-1 cm-1). Single spectrum: no polarization classification."
+    },
+    {
+      "position_cm1": 135,
+      "fwhm_cm1": 4,
+      "assignment": "unassigned (candidate: Bi2Te3 A_1g^2, ~132-133 cm-1 at 488 nm, Fig. 2 of arXiv:1201.5678)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "pseudo-Voigt fit; FWHM poorly constrained (2-4 cm-1 across fits). Candidate mode from Fig. 2 of arXiv:1201.5678, read by eye."
+    },
+    {
+      "position_cm1": 177,
+      "fwhm_cm1": 12.5,
+      "assignment": "unassigned (candidate: Bi2Se3 A_1g^2, ~174 cm-1, Fig. 4 of arXiv:1201.5678)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "pseudo-Voigt fit; broad and weak, could partly be background structure. Candidate mode from Fig. 4 of arXiv:1201.5678, read by eye. Low confidence."
+    },
+    {
+      "position_cm1": 211,
+      "fwhm_cm1": 4.8,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "pseudo-Voigt fit; FWHM poorly constrained (1-5 cm-1 across fits). No reference match found in the consulted figures."
+    },
+    {
+      "position_cm1": 281.6,
+      "fwhm_cm1": 2.4,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "pseudo-Voigt fit; strongest of the weak bands (height ~1000 counts, roughly 9 sigma by a rough estimate). FWHM 2.4-4.0 cm-1 across fits. No reference match found in the consulted figures."
+    }
+  ],
+  "properties": [
+    {
+      "name": "background",
+      "value": "sloping, rising from ~2400 to ~3300 counts over 60-1100 cm-1, fluorescence-like",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "no reference match strong enough to assign a phase"
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "no thickness-sensitive band identified; no layer-number relation applied"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Fig. 2 of arXiv:1201.5678 (Bi2Te3 few-quintuple-layer Raman, 488 nm), https://arxiv.org/abs/1201.5678",
+    "Fig. 4 of arXiv:1201.5678 (Bi2Se3 few-quintuple-layer Raman, 488 nm), https://arxiv.org/abs/1201.5678"
+  ],
+  "limits": [
+    "Signal to noise is low: white-noise sigma is ~233 counts per point against a 5700-count main band, and no reliable band exists above ~320 cm-1 (all smoothed residual maxima are below ~3.5 sigma). The high-frequency fingerprint that would identify most layered materials is absent from this spectrum.",
+    "No Si substrate line (~520.7 cm-1) is detected, so the axis calibration is unverified; the 98.5 cm-1 position could carry an offset of a few cm-1.",
+    "Whether the 98.5 cm-1 band is a real phonon or an instrumental artifact (residual laser or filter leakage) cannot be settled from one spectrum. The spectrum starts at 60 cm-1, so modes below 60 cm-1 are not measured. The band is ~7 cm-1 wide, not a single-point cosmic-ray spike.",
+    "No cosmic-ray spikes were identified: the largest single-point residuals are ~3 sigma and consistent with noise. The data set is a single spectrum with no polarization series, so polarization classes are not assigned.",
+    "Reference positions are read by eye from figures of arXiv:1201.5678, which were measured at 488 nm rather than the 532 nm used here. Resonance can change relative intensities and activate bands, so the intensity-pattern mismatch is not decisive. The position agreement for two bands is partial.",
+    "The Computational Raman Database matcher and the curated reference notes are located outside this working folder. Per the instruction to work only in this folder, I did not use them, so no DFT frequency matching, space-group irreps, or curated mode tables were applied. Mode labels are therefore not from CRD.",
+    "The live literature search (find_papers) failed because the Valency Bond token is not set; only the local library search was used, returning one relevant paper. Other layered candidates were not checked against any reference. The working-directory name is not used as evidence for any material.",
+    "The 150 cm-1 band fit is degenerate (one fit gave width ~24 cm-1, another a stable ~150 cm-1 at ~290 counts), so it is not reported as a peak; similarly the 177 cm-1 band could partly be background curvature.",
+    "Fit statistics are per-fit only; the calibration uncertainty (a few tenths of a cm-1 at best, more without a Si reference) is not included in the stated errors."
+  ]
+}

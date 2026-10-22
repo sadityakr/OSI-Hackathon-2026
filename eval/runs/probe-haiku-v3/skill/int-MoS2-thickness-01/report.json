@@ -1,0 +1,182 @@
+{
+  "summary": "Layer number from the E'/A1' separation (Lee et al. 2010, Fig. 2b, 514.5 nm, SiO2/Si): flake B is monolayer (\u0394 = 19.23 \u00b1 0.10 cm-1), flake A is bilayer (\u0394 = 21.43 \u00b1 0.08), flake D is about 4 layers (\u0394 = 24.27 \u00b1 0.03, but the table has no entry between 4L and bulk, so 4 to about 6 layers cannot be excluded), and flake C is thick (\u0394 = 25.07 \u00b1 0.08, essentially the bulk value 25.2): \u0394 saturates above about 5 layers, so C is \"bulk-like, at least about 5 layers\" and no exact number can be given from this spectrum. The ordering B < A < D < C is the same for \u0394 and for the MoS2/Si integrated-area ratio (0.24, 0.59, 1.57, 2.1), which is a supporting check only if all four were acquired under identical conditions. The fitted E'/A1' pairs are clean and stable under narrower fit windows. Caveats: the 2H vs 3R stacking is not decided by these spectra (the top library hit is 3R-MoS2), no AFM was done, and the absolute positions carry about 0.7 cm-1 of Si-calibration uncertainty, though \u0394 does not depend on it.",
+  "observations": [
+    {
+      "finding": "Flake B is monolayer by the separation relation (single candidate, 1L).",
+      "evidence": "rl_fit/rl_series E' 383.91 \u00b1 0.03 cm-1 (raw), A1' 403.14 \u00b1 0.10 cm-1; \u0394 = 19.23 \u00b1 0.10 cm-1 vs table 1L \u0394 = 19.1; apply_relation returns 1L, confidence high, with delta_err 0.5. Narrower refit (window 340-560) gives the same positions.",
+      "provenance": "measured",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b (via mos2_layer_number_from_separation)"
+    },
+    {
+      "finding": "Flake A is bilayer by the separation relation (single candidate, 2L).",
+      "evidence": "E' 383.37 \u00b1 0.02 cm-1, A1' 404.80 \u00b1 0.07 cm-1 (raw); \u0394 = 21.43 \u00b1 0.08 cm-1 vs table 2L \u0394 = 21.4; apply_relation returns 2L, confidence high. The 3L value (23.1) is 1.7 cm-1 away and is excluded at delta_err 0.5.",
+      "provenance": "measured",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b"
+    },
+    {
+      "finding": "Flake D is about 4 layers by the table, but 4 to about 6 layers cannot be excluded.",
+      "evidence": "E' 382.37 \u00b1 0.01, A1' 406.64 \u00b1 0.03 (raw); \u0394 = 24.27 \u00b1 0.03 cm-1 vs table 4L \u0394 = 24.3 and bulk 25.2. apply_relation gives 4L with moderate confidence. The table has no 5L to 8L entries, so the mapping between 4L and bulk is not established by the tool.",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b; saturation above about 5L from Zhang X. et al. 2013, PRB 87, 115413, arXiv:1212.6796 (abstract, Fig. 2)"
+    },
+    {
+      "finding": "Flake C is bulk-like (at least about 5 layers); the separation cannot give its exact layer number.",
+      "evidence": "E' 382.24 \u00b1 0.04, A1' 407.31 \u00b1 0.06 (raw); \u0394 = 25.07 \u00b1 0.08 cm-1 vs bulk 25.2 (apply_relation: bulk, moderate). Above about 5 layers the separation saturates, so \u0394 cannot distinguish 6 layers from thicker flakes.",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b; Zhang X. et al. 2013, PRB 87, 115413, arXiv:1212.6796 (saturation above about 5L; low-frequency shear and breathing modes needed)"
+    },
+    {
+      "finding": "Ordering of flakes by thickness agrees between the separation and the Si-normalized MoS2 signal.",
+      "evidence": "\u0394: B 19.23 < A 21.43 < D 24.27 < C 25.07. Integrated E' area / Si (520) area from rl_fit: B 2134/8768 = 0.24; A 4236/7153 = 0.59; D 8407/5344 = 1.57; C 1099/519 = 2.12 (C Si fit unreliable, see below). Peak-height ratios give the same order: B 0.40, A 0.96, D 2.74, C 4.5. Valid only if integration time, power and focus were identical, which is not stated.",
+      "provenance": "measured",
+      "source": "Li S.-L. et al., arXiv:1308.3835 (abstract): Si-normalized MoS2 signal is monotonic with N; interference-dependent intensities per MoS2 note (Buscema et al. 2014, arXiv:1311.3869)"
+    },
+    {
+      "finding": "Raw (uncorrected) positions of all four flakes match the Lee 2010 reference modes; the Si line shows a -0.7 cm-1 offset that would move them away from the table if applied.",
+      "evidence": "Si line 520.02 / 520.00 / 519.99 cm-1 in A, B, D (offset -0.68, -0.70, -0.71 vs 520.7). Raw E'/A1': A 383.37/404.80 vs 2L 383.4/404.8; B 383.91/403.14 vs 1L 384.0/403.1; C 382.24/407.31 vs bulk 382.2/407.4; D 382.37/406.64 vs 4L 382.4/406.7. Si-corrected values are 0.6 to 0.7 cm-1 above the table. Table values were read from the figure (about \u00b10.3 cm-1), so the raw match may be partly coincidental.",
+      "provenance": "measured",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b (table read to about \u00b10.3 cm-1); Si reference 520.7 cm-1 from the artifacts note"
+    },
+    {
+      "finding": "No strain or doping signature beyond calibration is resolvable; E' positions match the table within the figure-reading uncertainty.",
+      "evidence": "E' offsets from table (raw): A -0.03, B -0.09, C +0.04, D -0.03 cm-1, all within \u00b10.3. A1' of A is 404.80 vs 2L table 404.8 (no shift). A1' FWHM of A is 6.16 \u00b1 0.29 cm-1 (broad end of the 3 to 6 cm-1 range), but without an A1' shift this does not point to electron doping (rule of thumb in MoS2 note: A1' shift with broadening = doping).",
+      "provenance": "measured",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, text p.4 (A1g width 3 to 6 cm-1 from 6L to 2L); Conley et al. 2013, arXiv:1305.3880 (E' -4.5 cm-1/% uniaxial strain, A1' unshifted); Chakraborty et al. 2012, arXiv:1206.1758 (electron doping softens A1g)"
+    },
+    {
+      "finding": "E' linewidths are about 2.0 to 2.1 cm-1 in all four flakes, below the stated 2.7 cm-1 spectral resolution, so widths cannot be read as intrinsic crystal quality or defect density here.",
+      "evidence": "E' FWHM: A 2.12 \u00b1 0.10, B 2.04 \u00b1 0.09, C 2.10 \u00b1 0.12, D 2.08 \u00b1 0.02 cm-1 (rl_series, Lorentzian fit). Spectral resolution 2.7 cm-1 (user-stated).",
+      "provenance": "measured",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509 (\u0393(E2g1) about 2.1 cm-1 at comparable resolution, text p.4); Mignuzzi et al. 2015, PRB 91, 195411 (LA(M) near 227 as defect band; no defect claim made here)"
+    },
+    {
+      "finding": "The 320 and 330 cm-1 components in D are fit artifacts of a broad background, not MoS2 modes; they do not change the thickness result.",
+      "evidence": "rl_fit on D: components at 320.8 (FWHM 38, position error \u00b125) and 329.9 (FWHM 33, \u00b116). Residual is negative (model above data) by up to about 200 counts over 290 to 350 cm-1. Refit with window 360-560 gives E' 382.371 and A1' 406.639 (\u0394 24.27, unchanged) and no 320/330 components. Library matcher leaves them unmatched. Si second-order 2TA (computed near 300 cm-1) is the other candidate, but B and A show no such feature.",
+      "provenance": "measured",
+      "source": "Gillet et al. 2017, arXiv:1708.05874, Fig. 1 (Si 2TA computed near 300 cm-1)"
+    },
+    {
+      "finding": "B's broad 222 cm-1 component is not a resolved peak; it gives no LA(M) defect evidence.",
+      "evidence": "B: position 222.2 \u00b1 48.2 cm-1, FWHM 64.9 \u00b1 210.7 cm-1, height 73 \u00b1 495. Refit with window 340-560 leaves E'/A1' unchanged (383.905 / 403.137). LA(M) defect band would be near 227 cm-1 but needs a narrow, well-determined line.",
+      "provenance": "measured",
+      "source": "Mignuzzi et al. 2015, PRB 91, 195411 (LA(M) near 227 cm-1 as defect-activated band; MoS2 note)"
+    },
+    {
+      "finding": "Library matcher: the top candidate is 3R-MoS2 (R3m, CRD row 98), matched only on the E/A pair; other top hits are unrelated compounds on the same two modes, so the match does not identify stacking.",
+      "evidence": "match_library on D peaks (383.08, 407.35, 320.8, 329.9, 519.99): R3m MoS2 score 0.76 (E 383.4, A1 406.8 matched); BrOPr 0.74, I3InO9 0.71, Cl6NaNb 0.65, Cl6NaTa 0.58 all matched on two modes with strong unmatched modes. Stacking (2H vs 3R) is not separable from E/A pair alone.",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database); MoS2 note: 2H vs 3R bilayers differ in low-frequency modes, not the E/A pair (Ranjuna et al. 2023, Sci. Rep. 13, 16418, doi:10.1038/s41598-023-43756-w, Fig. 1d to f)"
+    },
+    {
+      "finding": "Flake C has no usable Si calibration line and one cosmic-ray spike. Its Si-normalized ratio is high, which is consistent with strong MoS2 absorption attenuating the Si line in a thick flake, but this is not proof.",
+      "evidence": "rl_qc: no Si line flagged for C; Si fit at 519.94 \u00b1 0.29 cm-1, FWHM 4.5, height 74 vs E' height 334 (Si about 4.5x weaker than in A/B/D relative to MoS2). Spike at 265.1 cm-1 removed (artifact). SNR 19 (warning). For C use raw positions; the --si-correct value (-0.76) is unreliable.",
+      "provenance": "measured",
+      "source": "Artifacts note (cosmic-ray spikes and Si substrate line, Gillet 2017, arXiv:1708.05874); Li S.-L. et al., arXiv:1308.3835 (interference)"
+    },
+    {
+      "finding": "No second-order or defect-activated bands are resolved in any spectrum, and the laser is off the A exciton, so the spectra are E' and A1' only.",
+      "evidence": "Fit windows 150 to 650 cm-1 show only E', A1' and Si (plus artifacts discussed). No 2LA(M) near 450 cm-1 in any spectrum. Laser 514.5 nm (off the A exciton).",
+      "provenance": "measured",
+      "source": "MoS2 note: off resonance (514, 532 nm) the spectrum is mainly E' and A1' (Zhang X. et al. 2015, arXiv:1502.00701, Fig. 12, pp.13-14)"
+    },
+    {
+      "finding": "Modest laser heating does not change \u0394 meaningfully; both modes redshift together.",
+      "evidence": "Few-layer MoS2 coefficients: E2g -0.013, A1g -0.012 cm-1/K, so d\u0394/dT about 0.001 cm-1/K; a 10 K heating shifts E' by about -0.13 cm-1 and \u0394 by about 0.01 cm-1. Laser power at sample is unknown.",
+      "provenance": "literature",
+      "source": "Sahoo et al. 2013, J. Phys. Chem. C, arXiv:1302.5865, p.6 (coefficients as recorded in relations.md)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers_A",
+      "value": "2 (single candidate, high confidence by table; \u0394 within 0.03 of 2L)",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b"
+    },
+    {
+      "name": "layers_B",
+      "value": "1 (single candidate, high confidence by table)",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b"
+    },
+    {
+      "name": "layers_C",
+      "value": "bulk-like, at least about 5 layers (separation saturated; exact N not determinable from \u0394)",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b; Zhang X. et al. 2013, PRB 87, 115413, arXiv:1212.6796"
+    },
+    {
+      "name": "layers_D",
+      "value": "4 by table (nearest); 4 to about 6 not excluded",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b"
+    },
+    {
+      "name": "phase",
+      "value": "2H assumed by the user, not verified; 3R-MoS2 is the top library hit (E/A pair only)",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD); Ranjuna et al. 2023, Sci. Rep. 13, 16418, doi:10.1038/s41598-023-43756-w"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none resolvable (E' within 0.1 cm-1 of table, within the \u00b10.3 table reading uncertainty)",
+      "provenance": "measured",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b; Conley et al. 2013, arXiv:1305.3880"
+    },
+    {
+      "name": "doping_type",
+      "value": "none resolvable (A1' at table value for A; no A1' shift)",
+      "provenance": "measured",
+      "source": "Chakraborty et al. 2012, arXiv:1206.1758; MoS2 note (A1' shift with broadening = doping)"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable (E' FWHM about 2.1 cm-1 is below the 2.7 cm-1 resolution; no LA(M) band resolved)",
+      "provenance": "measured",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, text p.4; Mignuzzi et al. 2015, PRB 91, 195411"
+    }
+  ],
+  "caveats": [
+    "Layer assignment uses a 285 nm SiO2 reference (Lee 2010) at 514.5 nm and 2.7 cm-1 resolution, which match the user's conditions. The table values were read from a figure (about \u00b10.3 cm-1 each), so \u0394 has about \u00b10.4 cm-1 systematic uncertainty. That is enough for 1L/2L/3L separation but not for 4L vs 5L.",
+    "The Lee table has entries only for 1L, 2L, 3L, 4L and bulk. The separation saturates above about 5L, so 5 to 8 layers cannot be resolved by this relation. C is reported as bulk-like and D as 4 to about 6 layers for this reason.",
+    "Stacking (2H vs 3R) is unverified. The top library hit is 3R-MoS2 (R3m), but the matcher only compares the E/A pair and cannot separate polytypes. Natural molybdenite can contain both polytypes. The distinguishing low-frequency shear and breathing modes lie below the 150 cm-1 start of the data.",
+    "Absolute positions depend on calibration. The Si line in A, B and D sits at 520.0 cm-1 (-0.7 vs 520.7). Si-correcting moves all MoS2 positions by about +0.7 cm-1; \u0394 is unchanged. Raw positions match the table within 0.1 cm-1, which may be coincidental given the table reading uncertainty. For C, the Si correction is not meaningful (weak Si line, position error 0.29 cm-1), so raw positions should be used.",
+    "The Si-normalized intensity ratios assume identical integration time, laser power, focus and oxide thickness across the four spectra. None of these were stated.",
+    "Fitted E' widths (about 2.1 cm-1) are narrower than the 2.7 cm-1 stated resolution. They are not interpretable as intrinsic linewidths. The A1' width of flake A (6.2 cm-1) is at the broad end of the table range but is not a shift-plus-broadening doping signature.",
+    "The D fit's 320 and 330 cm-1 components and the B fit's 222 cm-1 component were checked by refitting with narrower windows. Their positions carry errors of 16 to 211 cm-1, so they are not resolved modes. No literature search was run; the curated MoS2 note and the Lee 2010 table were used throughout.",
+    "Temperature is recorded as 295 K. The Lee 2010 table temperature is null in the tool, so the reference is assumed to be room temperature. Laser power at the sample is unknown and could heat the flakes; the heating coefficients suggest this would shift \u0394 by under 0.01 cm-1 per 10 K."
+  ],
+  "questions_for_user": [
+    "Is AFM (or step-height) available for at least C and D? C is saturated in \u0394 and D's table assignment is ambiguous between 4 and 6 layers; AFM is the only independent thickness check, and the four flakes look different under the microscope.",
+    "What was the laser power at the sample, integration time, focus and number of accumulations, and were all four flakes measured under identical settings? The Si-normalized ratio ordering depends on this.",
+    "Was the spectrometer calibrated against Si on the day of measurement? The Si line at 520.0 cm-1 suggests a -0.7 cm-1 offset; a standard (e.g. Si at 520.7 or a neon line) would settle whether the absolute positions or the Si line is off.",
+    "Is the SiO2 thickness 285 nm (the stated Lee 2010 reference)? Oxide thickness changes the intensities and interference-based contrast, and the Si-ratio argument depends on it.",
+    "Do you need 2H confirmed? Natural molybdenite can contain 3R stacking. A low-frequency (shear and breathing) measurement with a notch filter reaching about 10 to 20 cm-1 would decide the stacking and extend the layer count beyond 5L, where \u0394 saturates.",
+    "Were any spots scanned repeatedly or at high power? Laser exposure can sublimate upper layers of multilayer MoS2 on SiO2 (Castellanos-Gomez et al. 2012, arXiv:1206.4323) and can change intensities (Bera et al. 2017, arXiv:1707.09386), so repeated scans of one spot are not independent.",
+    "What polarization geometry was used? Only the E'/A1' pair was analysed here; a polarization series would separate the two modes further and help check the irreps."
+  ],
+  "citations": [
+    "Lee C. et al. 2010, ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509 (Fig. 2b; text p.3-4)",
+    "Zhang X. et al. 2013, PRB 87, 115413, arXiv:1212.6796 (abstract, Fig. 2; saturation above about 5L, linear-chain model)",
+    "Zhang X. et al. 2015, Chem. Soc. Rev. 44, 2757, arXiv:1502.00701 (irreps, resonance; Fig. 12, pp.13-14)",
+    "Ranjuna M. K. et al. 2023, Sci. Rep. 13, 16418, doi:10.1038/s41598-023-43756-w (2H vs 3R; Fig. 1d-f)",
+    "Buscema M. et al. 2014, arXiv:1311.3869 (substrate and layer dependence, p.4 and p.7)",
+    "Li S.-L. et al., arXiv:1308.3835 (Si-normalized MoS2 signal monotonic with N)",
+    "Conley H. J. et al. 2013, Nano Lett. 13, 3626, arXiv:1305.3880 (E' strain coefficient)",
+    "Chakraborty B. et al. 2012, PRB 85, 161403, arXiv:1206.1758 (electron doping of A1g)",
+    "Sahoo S. et al. 2013, J. Phys. Chem. C, arXiv:1302.5865 (temperature coefficients, p.6)",
+    "Castellanos-Gomez A. et al. 2012, Nano Lett. 12, 3187, arXiv:1206.4323 (laser damage of multilayer MoS2 on SiO2, p.3)",
+    "Bera A. et al. 2017, arXiv:1707.09386 (laser exposure effects on intensities and frequencies)",
+    "Mignuzzi S. et al. 2015, PRB 91, 195411 (LA(M) defect band, abstract)",
+    "Gillet et al. 2017, arXiv:1708.05874 (Si second-order and 2TA features, Fig. 1)",
+    "Bagheri M. and Komsa H.-P. 2023, Sci. Data 10, 80 (Computational Raman Database; matcher candidates)"
+  ],
+  "limits": [
+    "Did not run a literature search with the Valency or iopic-bond tools; all literature claims come from the curated MoS2 note and the Lee 2010 table as recorded in the tools.",
+    "The separation relation covers 1L, 2L, 3L, 4L and bulk only. There is no validated mapping for 5L to 8L, so C and D's layer counts above 4 are bounded, not measured.",
+    "Cannot distinguish 2H from 3R from these spectra; the E/A pair does not encode stacking. The low-frequency shear and breathing modes are outside the measured window (starts at 150 cm-1).",
+    "Cannot determine laser power, spot size, oxide thickness, polarization geometry or temperature calibration from the files; these are assumed (295 K, 285 nm SiO2, backscattering, unpolarized) and flagged as questions.",
+    "Intensity-based thickness trend (Si-normalized ratio) is not used as a standalone measure; it is consistent with \u0394 but requires identical acquisition conditions that are not documented.",
+    "No crystal-quality, defect density (L_D) or strain value is reported: the E' width is below the stated resolution, the LA(M) defect band is not resolved, and no strain or doping shift exceeds the calibration uncertainty."
+  ]
+}

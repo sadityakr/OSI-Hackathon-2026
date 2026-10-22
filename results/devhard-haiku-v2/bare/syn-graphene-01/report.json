@@ -1,0 +1,116 @@
+{
+  "candidates": [
+    {
+      "material": "graphene (monolayer, on SiO2/Si)",
+      "confidence": 0.93,
+      "evidence": "Single symmetric Lorentzian 2D at 2699.0 cm-1 with FWHM 32.1 cm-1 (residual at noise level; a second 2D component is not significant); I2D/IG = 3.0 (peak height); G at 1581.2 cm-1 with FWHM 14.2 cm-1; sp2 D band at 1348 cm-1 with I_D/I_G = 0.16; no other peaks in 1100-3000 cm-1 above noise."
+    },
+    {
+      "material": "bilayer graphene",
+      "confidence": 0.04,
+      "evidence": "Would need a multi-component 2D (about four components) with FWHM of roughly 50 cm-1 or more and I2D/IG below about 2. The measured 2D is one narrow component with I2D/IG about 3, so this is disfavoured."
+    },
+    {
+      "material": "few-layer graphene / graphite",
+      "confidence": 0.01,
+      "evidence": "Would give a broader, asymmetric 2D and a weaker I2D/IG than measured; no such asymmetry or intensity pattern is present."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "material_hint is null, so there is no stated material to test. Identification is from peak positions, widths and intensity ratios. G near 1581 cm-1 and a single Lorentzian 2D near 2699 cm-1 at 532 nm, with I2D/IG about 3, match monolayer graphene on SiO2. The spectrum window (1100-3000 cm-1) does not cover the low-frequency region, so the substrate check and any other van der Waals material check are limited to these graphene-specific features.",
+  "peaks": [
+    {
+      "position_cm1": 1347.9,
+      "fwhm_cm1": 12.6,
+      "assignment": "D band (defect-activated breathing mode, zone-edge phonon near K)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit amplitude 832 +/- 45 counts. Assignment from Ferrari & Robertson, PRB 61, 14095 (2000) and Cancado et al., Nano Lett. 11, 3190 (2011). FWHM is 12.6 with a quartic baseline and 14-20 with lower-order baselines. Not angle-resolved, so pattern is null."
+    },
+    {
+      "position_cm1": 1581.2,
+      "fwhm_cm1": 14.2,
+      "assignment": "G band (in-plane sp2 E2g phonon at Gamma)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit amplitude 5331 +/- 42 counts. Assignment from Ferrari et al., PRL 97, 187401 (2006)."
+    },
+    {
+      "position_cm1": 1627,
+      "fwhm_cm1": 40,
+      "assignment": "D' band (defect-activated, intravalley TO phonon near K) - TENTATIVE",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Amplitude 40-85 counts with uncertainty about +/-25 across baseline choices, about 1.5-4 sigma, with width and centre on fit bounds. Treated as a weak shoulder on G, not a firm detection. Assignment from Cancado et al., Nano Lett. 11, 3190 (2011) and Eckmann et al., Nano Lett. 12, 3925 (2012)."
+    },
+    {
+      "position_cm1": 2699,
+      "fwhm_cm1": 32.1,
+      "assignment": "2D band (second-order overtone of D, 2TO-type)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit amplitude 16074 +/- 28 counts; single Lorentzian, residual at noise level. Assignment from Ferrari et al., PRL 97, 187401 (2006)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "Single symmetric 2D Lorentzian with FWHM 32 cm-1 and I2D/IG (height ratio) about 3.0, which is the monolayer signature (Ferrari et al., PRL 97, 187401, 2006). No multi-component 2D needed; bilayer rejected."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "I_D/I_G = 0.156 (range 0.148-0.166 across baseline choices), giving L_D about 11 nm; low-defect regime (Cancado et al., Nano Lett. 11, 3190, 2011)."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "11",
+      "provenance": "inferred",
+      "source": "Cancado et al., Nano Lett. 11, 3190 (2011): L_D^2 = 2.4e-10 * lambda^4 / (I_D/I_G), lambda = 532 nm. Gives 10.8-11.4 nm across baseline choices; about +/-1 nm plus the formula's own calibration uncertainty. Treat as order of magnitude because it sits near the formula's lower validity bound (about 10 nm)."
+    },
+    {
+      "name": "defect_type",
+      "value": "point-like (vacancy or sp3/adsorbate) favoured over grain boundaries; vacancy vs sp3 not resolved",
+      "provenance": "inferred",
+      "source": "I_D/I_D' is about 8-13 (1-sigma range) if D' is taken as measured, or lower-limit above about 9 at 2 sigma. Eckmann et al., Nano Lett. 12, 3925 (2012) give about 7 for vacancies, about 13 for sp3-type, and about 3.5 for boundaries. Weak D' rules out boundary-dominated disorder."
+    },
+    {
+      "name": "doping_type",
+      "value": "none (not quantified; no strong indication)",
+      "provenance": "inferred",
+      "source": "G at 1581.2 cm-1 and FWHM 14 cm-1 are close to neutral monolayer values and suggest low doping. No calibrated G/2D correlation was performed, so this is not quantified (Pisana et al., Nat. Mater. 6, 198, 2007, for G vs doping)."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Requires reference 2D/G position correlation to separate strain from doping. The position ratio 2D/G = 1.707 is not used for a strain call here."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari AC, Meyer JC, Scardaci V, et al. Raman spectrum of graphene and graphene layers. PRL 97, 187401 (2006).",
+    "Ferrari AC, Robertson J. Interpretation of Raman spectra of disordered and amorphous carbon. PRB 61, 14095 (2000).",
+    "Cancado LG, Jorio A, Ferreira EHM, et al. Quantifying defects in graphene via Raman spectroscopy at different excitation energies. Nano Lett. 11, 3190 (2011).",
+    "Eckmann A, Felten A, Mishchenko A, et al. Probing the nature of defects in graphene by Raman spectroscopy. Nano Lett. 12, 3925 (2012).",
+    "Pisana S, Lazzeri M, Casiraghi C, et al. Breakdown of the adiabatic Born-Oppenheimer approximation in graphene. Nat. Mater. 6, 198 (2007)."
+  ],
+  "limits": [
+    "Window is 1100-3000 cm-1 only. Low-frequency modes (RBM, LA/TA region) and the Si substrate line at 520.7 cm-1 are outside the window, so the substrate and any low-frequency signatures were not checked. The identification rests on the G/2D pattern, which is specific to sp2 carbon but would not exclude other sp2 or carbon-based materials with peaks outside the window.",
+    "Single spot, no polarization series, no mapping. Edge-type and point-type defects cannot be separated, and the laser may sample a locally defected region that is not representative of the flake.",
+    "L_D = 11 nm uses the Cancado (2011) relation, which is calibrated for point-defect-dominated samples at specific excitation wavelengths. The value sits near the formula's lower validity bound (about 10 nm), so treat it as an order-of-magnitude estimate. It is not a measured density.",
+    "A broad background of roughly 2000-2700 counts spans 1100-1700 cm-1, falling to about 1200 at 2900 cm-1. Its origin cannot be determined from this spectrum (fluorescence, resist residue, or substrate). Baseline choice changes the D height by under about 5% but changes the D FWHM between 13 and 20 cm-1 and the D' amplitude between 40 and 115 counts.",
+    "D' is not firmly resolved: its amplitude is 1.5-4 sigma depending on baseline, and its width and centre sit on fit bounds. D+D' near 2930 cm-1 is not detected (fit amplitude 19 +/- 29 counts). The defect-type call (vacancy vs sp3) is therefore unresolved; grain boundaries are disfavoured.",
+    "Doping and strain are not quantified. No calibrated G/2D correlation was applied. G at 1581.2 cm-1 and 2D at 2699 cm-1 are consistent with low doping and little strain, but a reference or multi-laser data would be needed for a number.",
+    "The monolayer call relies on line shape and intensity ratio from a single spectrum. A 2D FWHM of 32 cm-1 is slightly broader than typical ideal values (about 24-28 cm-1), which may reflect disorder, strain or doping inhomogeneity within the spot. A small bilayer or multilayer region inside the laser spot cannot be excluded.",
+    "Noise is about 90 counts (1 sigma). Features below about 3 sigma (roughly 270 counts) are not claimed. No cosmic-ray spikes or residual outliers above 4 sigma were found (residual std 91 counts, equal to noise), so the artifacts list is empty.",
+    "Measurement temperature 295 K and laser 532 nm were taken as given. No temperature correction was applied; none is expected to matter at this precision."
+  ]
+}

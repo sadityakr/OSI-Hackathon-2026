@@ -1,0 +1,76 @@
+{
+  "candidates": [
+    {
+      "material": "InOCl",
+      "confidence": 0.1,
+      "evidence": "Only the working-folder name mentions InOCl; the spectrum does not confirm it and I have no reliable reference Raman data for InOCl. Three modes (155.3, 299.0, 352.8 cm-1) cannot be matched to a known material with any confidence, so this is a low-confidence placeholder, not an identification."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material_hint was given (task = identify). The folder name contains 'InOCl', but that is not spectral evidence and I could not check it against a reference spectrum. Peak positions, widths and polarization were measured from the 18-angle parallel/crossed series (0-170 deg, 10 deg steps, 60-722 cm-1, 1 cm-1 step). The 155.3 cm-1 mode is strong and narrow and is parallel-only; 352.8 cm-1 is strong in parallel with 180-degree modulation; 299.0 cm-1 is weak and does not match any template. No set of assignments fits a specific known layered material well enough to name it.",
+  "peaks": [
+    {
+      "position_cm1": 155.32,
+      "fwhm_cm1": 3.24,
+      "assignment": "unassigned; polarization is the fully-symmetric-type pattern (parallel constant, crossed zero)",
+      "irrep": null,
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Lorentzian fit to angle-mean parallel spectrum (peak height ~7770 counts, FWHM fixed to this value per angle). Per-angle parallel amplitudes 7427-8240 counts with ~200 counts error; constant fit chi2/dof 1.6 vs twofold 1.2 (not significant). Crossed amplitude 10 +/- 47 counts (zero). Interpretation that this matches an A-type mode in backscattering from the layer normal is inferred from the standard Raman selection rule (Loudon 1964, Adv. Phys. 13, 423)."
+    },
+    {
+      "position_cm1": 298.97,
+      "fwhm_cm1": 4.26,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Lorentzian fit to angle-mean parallel spectrum (height ~900 counts). Parallel amplitude is a lobe peaking near 35-40 deg, near zero at 90-150 deg, with a twofold fit chi2/dof 6.8 (constant rejected at 34). Crossed is weak and nonzero (about 330-530 counts depending on estimator) and does not follow any template (constant chi2/dof 4.2, twofold 4.6, fourfold 1.9 with the wrong sign for crossed). A joint shared-angle E-type model gives chi2/dof 5.5. Parallel and crossed are not both constant, so isotropic_both does not apply."
+    },
+    {
+      "position_cm1": 352.81,
+      "fwhm_cm1": 4.59,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Lorentzian fit to angle-mean parallel spectrum (height ~2600 counts). Parallel amplitude I = 2593 - 586 cos2t - 1990 sin2t (twofold, 180-degree period, chi2/dof 1.8; constant chi2/dof 80), maximum near 127 deg, minimum near 37 deg. Crossed is weak (about 100-200 counts, under ~8% of parallel mean) with no clear modulation, so the crossed partner is only marginally detected."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No reference spectrum for any candidate was available to compare against; three modes alone do not fix the phase."
+    },
+    {
+      "name": "layers",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "Data start at 60 cm-1 and no low-frequency interlayer (shear or breathing) mode is visible, so layer number cannot be inferred."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray (single-point spike, crossed, 70 deg; 9516.9 counts vs neighbours ~0 and ~306-1395; excluded from fits)",
+      "position_cm1": 382
+    },
+    {
+      "type": "zero-clipped points (2988 of 23868 exact zeros, ~12.5%, mostly in background; probably noise clipped at zero, which biases the background slightly upward and weak-peak amplitudes slightly)",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Loudon, R. (1964). The Raman effect in crystals. Advances in Physics 13(52), 423-482. Standard backscattering selection rules used to interpret the 155.3 cm-1 parallel-only pattern as fully-symmetric-type."
+  ],
+  "limits": [
+    "Identification is not established. Three peaks at 155.3, 299.0 and 352.8 cm-1 are not enough to name a material, and I have no reliable reference Raman data for InOCl or other layered candidates. The folder name is the only hint for InOCl and was not used as evidence.",
+    "No Si substrate line is present (sample is suspended). The region around 520.7 cm-1 is flat (parallel 401 vs 409 background, crossed 432 vs 411), so no Si peak is reported.",
+    "The 299 cm-1 mode is noisy. The data sit on a background of about 450 counts with noise of a few hundred counts per point, and 12.5% of points are clipped to zero. The crossed-configuration amplitudes for 299 and 352.8 cm-1 are weak and estimator-dependent; the polarization classes for them are the least certain.",
+    "Two weak features were tested and not reported. A parallel feature near 593 cm-1 has an amplitude of 88 +/- 41 counts (about 2 sigma). Candidate features at 137, 165 and 240 cm-1 are not significant. Many weak features at 2-3 sigma in the crossed residual are consistent with noise.",
+    "Peak widths are 3-5 cm-1 at a 1 cm-1 step, so they are sampling- and resolution-limited. The instrument resolution is not given in the metadata, so the widths cannot be separated from the instrumental broadening. Crossed-configuration positions are poorly constrained (the mean-spectrum fit gave 354.8 +/- 0.7 cm-1 for the 353 mode).",
+    "Polarization classes assume the stated angle convention (0-170 deg, 10 deg steps) and an ideal analyser. Analyser leakage or depolarization is not characterized, so the weak crossed signal of the 352.8 cm-1 mode may be partly leakage; this cannot be separated from a true crossed component with these data.",
+    "The data cannot say whether the material is a monolayer, few-layer or bulk: no interlayer mode below 155 cm-1 is visible and the spectrum starts at 60 cm-1. Phase, defects and strain are also not determined."
+  ]
+}

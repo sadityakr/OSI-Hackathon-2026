@@ -1,0 +1,131 @@
+{
+  "summary": "The flake did not measurably change between day 1 and day 2. The raw peak positions differ by about +2.5 cm-1, but the Si substrate line moved by the same amount (519.98 to 522.47 cm-1), so the spectrometer calibration drifted between days. After Si correction, the E2g1-like band (384.05 vs 384.07 cm-1), the A1g-like band (405.61 vs 405.54 cm-1), their separation (21.56 vs 21.47 cm-1), their widths and their relative intensity are all unchanged within errors. The separation of 21.5 cm-1 points to bilayer (2L) on the Lee et al. 2010 table. Nothing supports the colleague's adsorbate doping or strain hypothesis at the sensitivity of these spectra. The only real day-to-day differences are instrumental: a higher background (about +120 counts) and a different spectral sampling (0.53 vs 0.66 cm-1 per point).",
+  "observations": [
+    {
+      "finding": "Si reference line shifted by +2.49 cm-1 between days, so the apparent sample shift is calibration.",
+      "evidence": "Si line 519.98 +/- 0.02 cm-1 on day 1 (offset -0.72 from 520.7) vs 522.47 +/- 0.03 cm-1 on day 2 (offset +1.77); difference +2.49 cm-1 (rl_qc.py, rl_fit.py). Raw E' 383.33 -> 385.83 (+2.51) and A1' 404.88 -> 407.31 (+2.43), i.e. the same rigid shift as the Si line.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "After Si correction, neither mode shifts between days within fit errors.",
+      "evidence": "rl_series.py --si-correct: E'-like 384.05 +/- 0.01 (day 1) vs 384.07 +/- 0.02 (day 2), shift +0.02 +/- 0.03 cm-1. A1'-like 405.61 +/- 0.07 vs 405.54 +/- 0.10, shift -0.07 +/- 0.12 cm-1. Series plot right panel shows both shifts consistent with zero.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The calibration-independent separation is unchanged, and it identifies a bilayer.",
+      "evidence": "omega(A1g-like) - omega(E2g1-like) = 21.56 +/- 0.07 cm-1 (day 1) vs 21.47 +/- 0.11 cm-1 (day 2); difference -0.09 +/- 0.13 cm-1. Relation mos2_layer_number_from_separation gives 2L (confidence high) using the Lee 2010 table (1L 19.1, 2L 21.4, 3L 23.1, 4L 24.3, bulk 25.2 cm-1). Same result on both days.",
+      "provenance": "inferred",
+      "source": "Lee, Yan, Brus, Heinz, Hone, Ryu 2010, ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509, Fig. 2b (via rl.py apply_relation)"
+    },
+    {
+      "finding": "Linewidths are unchanged, so no broadening signature of doping or defect change.",
+      "evidence": "E'-like FWHM 2.08 +/- 0.06 (day 1) vs 2.14 +/- 0.19 cm-1 (day 2); A1'-like FWHM 6.13 +/- 0.26 vs 6.22 +/- 0.42 cm-1. Both are within the 1 to 2 sigma errors of each other.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Relative band intensities are unchanged within errors.",
+      "evidence": "A1'-like/E'-like peak height ratio 0.335 (day 1) vs 0.334 (day 2). E'-like height relative to Si 0.965 vs 0.946 (about -2%), but day 2 height error is about 6%, so the change is not significant. Integrated-area ratio 0.986 vs 0.971 (not significant without area errors).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Day 2 background is higher, and peak positions and heights relative to Si are not affected by it.",
+      "evidence": "Mean counts 150 to 200 cm-1: 343 (day 1) vs 477 (day 2); 550 to 600 cm-1: 373 vs 482; the increase is roughly flat, about +120 to +130 counts (about +35%). Si peak height 908 vs 907 counts. Cause not identified (ambient light, dark or integration settings, or photoluminescence).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Acquisition settings differ between days, which is a measurement-setup change.",
+      "evidence": "Point spacing 0.53 cm-1 (day 1) vs 0.66 cm-1 (day 2); strongest-band SNR 68 vs 57; point counts 949 vs 756. Both spectra cover 150 to 649.6 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "No defect-activated LA(M) band (about 227 cm-1) is detected above noise in either spectrum.",
+      "evidence": "Mean counts in windows around 227 cm-1 are at background level on both days (day 1 345.8, day 2 489.3, background ranges 343 to 355 and 477 to 499). No spike and no peak was fitted there. Absence is weak evidence at SNR 57 to 68 on the main peak.",
+      "provenance": "measured",
+      "source": "Mignuzzi et al. 2015, PRB 91, 195411 (LA(M) as defect band, as cited in materials/MoS2.md)"
+    },
+    {
+      "finding": "The top library match is spurious (it matches the Si line), so the identification rests on the MoS2 literature entry, not the match score.",
+      "evidence": "rl.py match_library ranks HSi first (score 0.62, matched only the 520 cm-1 line), MoS2 CRD entry second (0.56, E and A1 matched), but the 2H-MoS2 literature table is the physically sensible reference.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "Absolute positions after Si correction sit about 0.7 to 0.8 cm-1 above Lee 2010's 2L values, and both modes move the same way. This points to calibration, not to doping or strain.",
+      "evidence": "Corrected E'-like 384.05 vs Lee 2L 383.4 cm-1 (+0.65); A1'-like 405.61 vs 404.8 (+0.8). Lee's Fig. 2b values are read to about +/-0.3 cm-1. Doping (A1' led) and strain (E' led, with splitting) would not move both modes together.",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, arXiv:1005.2509, Fig. 2b; Conley et al. 2013, arXiv:1305.3880; Chakraborty et al. 2012, arXiv:1206.1758 (as summarized in reference/materials/MoS2.md)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "2 (bilayer, 2L)",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b; relation mos2_layer_number_from_separation with separation 21.56 +/- 0.07 cm-1 (day 1) and 21.47 +/- 0.11 cm-1 (day 2); same answer on both days"
+    },
+    {
+      "name": "defect_level",
+      "value": "none detected (low confidence, limited by SNR and no LA(M) fit)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (no change between days)",
+      "provenance": "measured",
+      "source": "E'-like shift +0.02 +/- 0.03 cm-1 after Si correction; Conley et al. 2013, arXiv:1305.3880 (1L coefficient about -4.5 cm-1/% uniaxial, indicative only for this flake)"
+    },
+    {
+      "name": "doping_type",
+      "value": "none (no change between days)",
+      "provenance": "measured",
+      "source": "A1'-like shift -0.07 +/- 0.12 cm-1 with unchanged width; Chakraborty et al. 2012, arXiv:1206.1758 (1L A1g softens about 4 cm-1 at 1.8e13 cm-2, so 1L order-of-magnitude bound about 1e12 cm-2)"
+    },
+    {
+      "name": "phase",
+      "value": "2H (as stated by the user; E/A pair with 21.5 cm-1 separation is consistent with 2H bilayer)",
+      "provenance": "literature",
+      "source": "Lee et al. 2010, arXiv:1005.2509 (bulk D6h labels, used for all layer numbers); user-stated material"
+    }
+  ],
+  "caveats": [
+    "Si correction assumes the Si line in each spectrum tracks the sample's spectrometer offset; a 2.5 cm-1 drift in one day is large and was not explained, so the cause (grating move, recalibration, or a changed range/sampling) should be checked. The separation metric avoids this assumption and gives the same answer.",
+    "Fit errors are statistical only; calibration scatter (typically a few tenths of a cm-1) is not included in the position errors, so the shift bounds below are conservative in intent but not formal 2-sigma calibrated limits.",
+    "Relation bounds: an A1' shift of about -0.3 cm-1 (2-sigma) corresponds to roughly 1e12 cm-2 electron doping using the 1L Chakraborty coefficient; an E' shift below about 0.1 cm-1 corresponds to strain well below 0.1 % using the 1L Conley coefficient. Both coefficients are for monolayers, so they are indicative only for this bilayer-like flake.",
+    "Laser power at the sample, focus and temperature were not reported for either day. A power or heating difference would redshift both modes and could be masked by the calibration shift; the 2-sigma shift bound is the only thing ruling it out here.",
+    "The Lee 2010 separation table was measured at 2.7 cm-1 resolution and read from a figure (about +/-0.3 cm-1). Layers 2 and 3 differ by 1.7 cm-1 in separation, which is robust against the 0.07 to 0.11 cm-1 fit error but not against a systematic resolution or substrate effect.",
+    "Adsorbate doping is not directly constrained: the A1' shift is only a proxy, and the 1L-based coefficients cannot be converted to an ambient-adsorbate doping level for this sample.",
+    "Background, sampling and the Si line position all changed between days; the setup is not identical, so the comparison is between two configurations, not two identical measurements.",
+    "Same-spot identity was not verified (no map, optical image or position log), and no polarization geometry was given."
+  ],
+  "questions_for_user": [
+    "Why did the Si reference line move by 2.5 cm-1 between days (grating move, recalibration, different spectral window)? The day 2 point spacing is also 0.66 vs 0.53 cm-1, so the settings changed.",
+    "Was the laser power at the sample, the objective, the integration time and the number of accumulations the same on both days? Was the day 2 background increase (about +35%) from room light, dark counts, a longer integration, or photoluminescence?",
+    "Was the same spot confirmed on both days (optical image, stage coordinates, or a mapping reference)?",
+    "Were there any scans or laser exposures on this spot between day 1 and day 2, and what was the temperature? Previous laser exposure in air can change A1g and E2g1 by about 1 cm-1 (Bera et al. 2017, arXiv:1707.09386).",
+    "Is the layer number independently confirmed (optical contrast, AFM, or a low-frequency shear/breathing measurement)? The 150 cm-1 cutoff means the interlayer modes are not in these spectra."
+  ],
+  "citations": [
+    "Lee, Yan, Brus, Heinz, Hone, Ryu 2010, ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509, Fig. 2b (514.5 nm, E2g1/A1g positions and separation vs layer number; 1L 19.1, 2L 21.4, 3L 23.1, 4L 24.3, bulk 25.2 cm-1)",
+    "Conley et al. 2013, Nano Lett. 13, 3626, arXiv:1305.3880 (uniaxial strain: E' about -4.5 cm-1/%, 1L)",
+    "Chakraborty et al. 2012, PRB 85, 161403, arXiv:1206.1758 (electron doping: 1L A1g softens about 4 cm-1 at 1.8e13 cm-2)",
+    "Bera et al. 2017, arXiv:1707.09386 (laser exposure in air hardens A1g by 1.4 cm-1 and softens E2g1 by 1 cm-1)",
+    "Mignuzzi et al. 2015, PRB 91, 195411 (LA(M) near 227 cm-1 as the defect-activated band)",
+    "Buscema et al. 2014, arXiv:1311.3869 (A1g vs substrate doping, separation robust across substrates)",
+    "reference/materials/MoS2.md, sections Thickness, Strain and doping, Defects and quality, Temperature and heating, Pitfalls (summaries of the above and of Zhang X. et al. 2015, arXiv:1502.00701)"
+  ],
+  "limits": [
+    "The data cannot separate a few-tenths-cm-1 doping or strain change from calibration drift with a single-day Si reference, unless the Si line is trusted to track the sample.",
+    "No polarization geometry, temperature log, laser power or spot verification were available; these would be needed to rule out heating or a different spot.",
+    "Low-frequency modes (shear, breathing) lie outside the 150 cm-1 window, so they cannot independently confirm the layer count.",
+    "Doping and strain bounds rely on monolayer coefficients (Chakraborty 2012; Conley 2013) and are indicative only for this flake.",
+    "The Lee 2010 table was read from a figure, so layer assignments carry about +/-0.3 cm-1 systematic uncertainty.",
+    "rl_qc.py found no spikes and no saturation in either spectrum; the matcher's top hit (HSi) was rejected as spurious."
+  ]
+}

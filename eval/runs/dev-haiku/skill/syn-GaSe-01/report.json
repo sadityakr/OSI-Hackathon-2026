@@ -1,0 +1,97 @@
+{
+  "candidates": [
+    {
+      "material": "GaSe (P6_3/mmc, CRD mp-1943)",
+      "confidence": 0.85,
+      "evidence": "match_library score 0.985. Three measured peaks all matched within 1.7%: 127.84 to CRD A1g 128.3, 204.65 to E2g 208.2, 305.93 to A1g 305.4 (frequency scale 1.001). No unmatched peaks and no strong missing modes inside 60 to 1100 cm-1. Confidence is capped because the match uses DFT frequencies and a single spectrum, with no low-frequency or polarization data."
+    },
+    {
+      "material": "Cl3Ir (C2/m, CRD row 1715)",
+      "confidence": 0.05,
+      "evidence": "Score 0.758. Matches 127.8 (Ag 126.4) and 305.9 (Ag 306.2) only. 204.65 is unmatched and a strong Ag mode at 337.8 cm-1 (rel. intensity 0.73) is absent in the data. Rejected."
+    },
+    {
+      "material": "ILaO (P4/nmm, CRD row 1242)",
+      "confidence": 0.02,
+      "evidence": "Score 0.592. Matches 127.8 and 305.9 only, with 204.65 unmatched and strong Eg 410.2 and A1g 81.4 missing. Rejected."
+    },
+    {
+      "material": "AlCl3 (C2/m, CRD row 1165)",
+      "confidence": 0.02,
+      "evidence": "Score 0.500. Matches 204.65 and 305.9 but 127.84, the strongest line, is unmatched. Rejected."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null; task is identify), so there is no stated material to verify. The top identification, GaSe, comes from the Computational Raman Database match and the three-line pattern (strong low-frequency A1g near 128, weak E2g near 205, A1g near 306). A literature check (Molas et al. 2020; Lim et al. 2020; Osiekowicz et al. 2021) supports GaSe as a layered III-VI chalcogenide with a polytype-dependent Raman spectrum. I did not read the reference mode tables of those papers (only abstracts were available), so the mode positions and irreps rest on the CRD entry alone.",
+  "peaks": [
+    {
+      "position_cm1": 127.845,
+      "fwhm_cm1": 3.553,
+      "assignment": "A1g (GaSe, CRD ref 128.3 cm-1); strongest line, measured position error 0.014 cm-1 (fit), FWHM error 0.041",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit.py (Lorentzian fit, ALS baseline). Irrep and assignment inferred by matching to Bagheri and Komsa 2023 (Computational Raman Database, mp-1943, P6_3/mmc row 83). No polarization data, so pattern is not classified."
+    },
+    {
+      "position_cm1": 204.649,
+      "fwhm_cm1": 9.031,
+      "assignment": "E2g (GaSe, CRD ref 208.2 cm-1); weak. Position error 0.70 cm-1, FWHM error 2.2 cm-1. Narrow-window refit (150 to 260 cm-1) gives 204.77 plus or minus 0.69 cm-1 and FWHM 11.0 plus or minus 2.8 cm-1, so the line is stable under refit. SNR is marginal (about 3 to 5), so treat as tentative.",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit.py (full range and window 150 to 260). Irrep inferred from the CRD match (Bagheri and Komsa 2023, row 83)."
+    },
+    {
+      "position_cm1": 305.925,
+      "fwhm_cm1": 6.713,
+      "assignment": "A1g (GaSe, CRD ref 305.4 cm-1); position error 0.042 cm-1, FWHM error 0.13 cm-1",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from rl_fit.py. Irrep inferred from the CRD match (Bagheri and Komsa 2023, row 83). Cl3Ir also has an Ag near 306, but it does not explain the other two peaks."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "hexagonal P6_3/mmc (GaSe-type layered stacking; specific polytype beta, epsilon, gamma or delta not determined)",
+      "provenance": "inferred",
+      "source": "Space group of the top CRD match (Bagheri and Komsa 2023, Sci. Data 10, 80, mp-1943). Polytype discrimination needs ultra-low-frequency interlayer modes or polarization data (Lim et al. 2020, Nanoscale, doi 10.1039/D0NR00165A), which are outside this spectrum's 60 cm-1 lower limit."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No GaSe layer-number relation is available in the tool set (list_relations covers MoS2, WS2, graphene and CrSBr only). Layer number cannot be read from the 128/306 cm-1 pattern without a calibrated relation."
+    },
+    {
+      "name": "substrate",
+      "value": "not identified (no Si line in 60 to 1100 cm-1)",
+      "provenance": "measured",
+      "source": "rl_qc.py: si_line null. The 520.7 cm-1 Si line is outside the window or absent."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 327.1
+    }
+  ],
+  "citations": [
+    "Bagheri, Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, CC BY 4.0), row 83, mp-1943, P6_3/mmc: used for CRD match positions and labels",
+    "Molas et al. 2020, Faraday Discuss., doi:10.1039/D0FD00007H (https://arxiv.org/abs/2003.03336): Raman of GaSe and InSe layers vs thickness; abstract only read",
+    "Lim et al. 2020, Nanoscale, doi:10.1039/D0NR00165A (https://arxiv.org/abs/2009.10954): polytype-dependent ultra-low-frequency Raman of few-layer GaSe; abstract only read",
+    "Osiekowicz et al. 2021, Sci. Rep., doi:10.1038/s41598-020-79411-x (https://arxiv.org/abs/2010.12891): temperature-dependent resonance in epsilon-GaSe near 1.96 eV; abstract only read"
+  ],
+  "limits": [
+    "Identity rests on a single spectrum and a DFT-based match. The three measured lines match GaSe (P6_3/mmc) within 1.7%, and no strong reference mode is missing inside 60 to 1100 cm-1. I did not check the experimental GaSe mode table from a source in this session. From memory, the bulk A1' mode near 134 cm-1 is about 6 cm-1 higher than the measured 127.8 line. If that memory is right, the offset is too large for the calibration to explain. It could point to thickness, strain, polytype or a different assignment. I cannot settle this from the data here, so treat the assignment as tentative until the reference is checked.",
+    "Lower limit of 60 cm-1 excludes the interlayer shear and breathing modes, so polytype (beta, epsilon, gamma, delta) and layer number cannot be determined from this spectrum.",
+    "Layer number is not reported. No GaSe layer-number relation exists in the tool set, and absolute intensity is not a layer metric.",
+    "No polarization dependence can be classified: single spectrum, no angle series. Irreps (A1g, E2g) are the CRD labels for P6_3/mmc bulk, not experimentally checked. A tilted or thin flake could change which modes appear.",
+    "The 204.6 cm-1 E2g line is weak (SNR about 3 to 5). Its position and width are stable across two fits, but the FWHM uncertainty is 25 to 30 percent. A second component near 241 cm-1 in the narrow refit had an error of about 30 cm-1 and is not a peak. It is not reported.",
+    "The data has no Si reference line, so absolute position calibration is unverified. Errors are fit-only; systematic calibration may be 1 cm-1 or more.",
+    "Excitation is 532 nm (2.33 eV), above the bulk GaSe gap (about 2 eV). The broad rising background from about 400 to 1100 cm-1 (about 2000 to 3500 counts) looks like photoluminescence or fluorescence, which is inferred and not assigned. Resonance could change relative intensities and activate bands, so intensity ratios are not used for assignment. Osiekowicz et al. 2021 report GaSe resonance near 1.96 eV at about 270 K.",
+    "Temperature is 295 K, so no temperature correction was applied. Substrate is not stated and no Si line was found, so substrate interference was not evaluated."
+  ]
+}

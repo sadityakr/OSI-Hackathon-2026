@@ -1,0 +1,92 @@
+---
+title: The Raman Fingerprint of Graphene
+citable_key: 994b93d0187b7e09
+n_pages: 5
+---
+
+# The Raman Fingerprint of Graphene
+
+A. C. Ferrari1,∗ J. C. Meyer2, V. Scardaci1, C. Casiraghi1, M. Lazzeri2, F.
+
+Mauri2, S. Piscanec1, Da Jiang4 , K. S. Novoselov4, S. Roth2 , and A. K. Geim4
+
+1Cambridge University, Engineering Department, Trumpington Street, Cambridge CB3 0FA, UK
+
+2 Max Planck Institute for Solid State Research, Stuttgart 70569, Germany
+
+3 Institut de Mineralogie et de Physique des Milieux Condenses, Paris cedex 05, France
+
+4Department of Physics and Astronomy, University of Manchester, Manchester, M13 9PL, UK
+
+(Dated: August 21, 2018)
+
+Graphene is the two-dimensional (2d) building block for carbon allotropes of every other dimensionality. It can be stacked into 3d graphite, rolled into 1d nanotubes, or wrapped into 0d fullerenes. Its recent discovery in free state has finally provided the possibility to study experimentally its electronic and phonon properties. Here we show that graphene's electronic structure is uniquely captured in its Raman spectrum that clearly evolves with increasing number of layers. Raman fingerprints for single-, bi- and few-layer graphene reflect changes in the electronic structure and electron-phonon interactions and allow unambiguous, high-throughput, non-destructive identification of graphene layers, which is critically lacking in this emerging research area.
+
+PACS numbers:
+
+The current interest in graphene can be attributed to three main reasons. First, its electron transport is described by the Dirac equation and this allows access to the rich and subtle physics of quantum electrodynamics in a relatively simple condensed matter experiment [1, 2, 3, 4, 5]. Second, the scalability of graphene devices to nano-dimensions [6, 7, 8, 10, 11] makes it a promising candidate for electronic applications, because of its ballistic transport at room temperature combined with chemical and mechanical stability. Remarkable properties extend to bi-layer and few-layers graphene [4, 5, 6, 8, 12]. Third, various forms of graphite, nanotubes, buckyballs and others can all be viewed as derivatives of graphene and, not surprisingly, this basic material has been intensively investigated theoretically for the past fifty years [13]. The recent availability of graphene [1] at last allows to probe it experimentally, which paves the way to better understanding the other allotropes and to resolve controversies.
+
+Graphene samples can be obtained using the procedure of Ref. [1], i.e. micro-mechanical cleavage of graphite. Alternative procedures, such as exfoliation and growth, so far only produced multi-layer samples [6, 8, 9], but it is hoped that in the near future efficient growth methods will be developed, as happened for nanotubes. Despite the wide use of the micro-mechanical cleavage, the identification and counting of graphene layers is a major hurdle. Monolayers are a great minority amongst accompanying thicker flakes. They cannot be seen in an optical microscope on most substrates. Graphene layers only become visible when deposited on the top of oxidized Si substrates with a finely tuned thickness of the oxide layer (typically, 300 nm of SiO2) because, in this case, even a monolayer adds to the optical path of reflected light to change the interference color with respect to the empty substrate [1, 4]. Atomic Force Microscopy (AFM) has been so far the only method to identify single and few layers, but it is low throughput. Moreover, due to the chemical contrast between graphene and the substrate (which results in an apparent chemical thickness of 0.5-1nm, much bigger of what expected from the interlayer graphite spacing [1, 4]), in practice, it is only possible to distinguish between one and two layers by AFM if films contain folds or wrinkles [1, 4]. This poses a major limitation to the range of substrates and is a setback for the widespread utilization of this material. Here, we show that graphene's electronic structure is uniquely captured in its Raman spectrum. Raman fingerprints for single-, bi- and few-layers reflect changes in the electronic structure and allow unambiguous, high-throughput, nondestructive identification of graphene layers, which is critically lacking in this emerging research area.
+
+The samples studied in this work were prepared by micromechanical cleavage [1]. To provide the most definitive identification of single and bi-layer graphene (beyond the layer counting procedures by AFM) we perform Transmission Electron Microscopy (TEM) on some of the samples to be measured by Raman spectroscopy. Samples for TEM are prepared following a similar process to that previously utilized to make free-standing and TEMcompatible carbon nanotube devices [14]. In addition, this allows us to have free-standing layers on a grid easily seen in the optical Raman microscope, facilitating their location during Raman measurements, Fig. 1(a). Electron diffraction is done in a Zeiss 912Ω microscope at a voltage of 60kV, and high-resolution images are obtained with a Philips CM200 microscope at 120kV. A HR-TEM analysis of foldings at the edges or within the free hanging sheets gives the number of layers by direct visualization, since at a folding the sheet is locally parallel to the beam, Fig. 1(b-e). Edges and foldings of the one or two layers are dominated by one or two dark lines. The number of layers is also obtained by a diffraction analysis of the freely suspended sheets for varying incidence angles, and confirms the number of layers seen in the foldings, Fig. 1(d,e). In particular, the diffraction analysis of the bi-layer shows that it is A-B stacked (the intensity of the 11-20 diffraction spots (outer hexagon) is roughly twice that of the 1-100 (inner hexagon), Fig. 1(h), in agreement with image simulations. This confirms that multi-layer graphene maintains the same stacking as graphite.
+
+![[figures/fig1.md]]
+
+Unpolarized Raman spectra are measured on single, bi and multi-layers on Si+SiO2. Some are then processed into free-hanging sheets, also measured by TEM as described above, and measured again by Raman spectroscopy after TEM. The measurements are performed at room temperature with a Renishaw spectrometer at 514 and 633 nm. A 100× objective is used. Extreme care is taken to avoid sample damage or laser induced heating. Measurements are performed from ∼ 4mW to ∼ 0.04mW incident power. No significant change in the spectra is observed in this power range both for free standing and supported samples. The Raman spectra of suspended and on-substrate graphene are similar, one of the main differences being a D peak observed for the much smaller samples used for TEM. We also measure the reference bulk graphite used to produce the layers.
+
+Fig. 2(a) compares the 514 nm Raman spectra of graphene and bulk graphite. The two most intense features are the G peak at ∼ 1580cm-1 and a band at ∼ 2700cm-1, historically named G', since it is the second most prominent band always observed in graphite samples[15]. The G peak is due to the doubly degenerate zone centre E2g mode [16]. On the contrary, the G' band has nothing to do with the G peak, but is the second order of zone boundary phonons. Since zone-boundary phonons do not satisfy the Raman fundamental selection rule, they are not seen in the first order Raman spectra of defect-free graphite [17]. Such phonons give rise to a Raman peak at ∼ 1350cm-1 in defected graphite, called D peak [16]. Thus, for clarity, we refer to the G' peak as 2D. Fig. 2(a) shows that no D peak is observed in the centre of the graphene layers. This proves the absence of a significant number of defects in the structure. As expected, a D peak is only observed at the sample edge, Fig. 2(d). Fig. 2(a) shows a significant change in the shape and intensity of the 2D peak of graphene compared to bulk graphite. The 2D peak in bulk graphite consists of two components 2D1 and 2D2 [15, 17], roughly 1/4 and 1/2 the height of the G peak, respectively. Here we measure a single, sharp 2D peak in graphene, roughly 4 times more intense than the G peak. Notably, the G peak intensity of single layer and bulk graphite is comparable (note that Fig. 2(a) is re-scaled to show a similar 2D intensity) and the G position is 3-5 cm-1 higher than bulk graphite. The change in shape of the 2D band is nicely confirmed in Fig. 2(d), which compares the D peak observed on the graphite edge with that of the graphene edge. The graphene D peak is a single sharp peak, while that of graphite is a band consisting of two peaks D1and D2[15]. Fig. 2(b,c) plot the evolution of the 2D band as a function of the number of layers for 514.5 nm and 633 nm excitations. These immediately indicate that bilayer graphene has a much broader and up-shifted 2D band with respect to graphene. This band is also quite different from bulk graphite. It has 4 components, 2D1B, 2D1A, 2D2A, 2D2B, 2 of which, 2D1A and 2D2A, have higher relative intensities than the other 2, as indicated in Fig. 2(e). Fig. 2(b,c) show that a further increase of the number of layers leads to a significant decrease of the relative intensity of the lower frequency 2D1 peaks. For more than 5 layers the Raman spectrum becomes hardly distinguishable from that of bulk graphite. Thus Raman spectroscopy can clearly identify a single layer, from bilayer from few (less than 5) layers. This also explains why previous experiments on nano-graphites, but not individual or bi-layer graphene, failed to identify these features
+
+![[figures/fig2.md]]
+
+[18, 19]. In particular, it was noted from early studies that turbostratic graphite (i.e. without AB stacking) has a single 2D peak [20]. However, its Full Width at Half Maximum (FWHM) is 50 cm-1 almost double that of the 2D peak of graphene and upshifted of 20 cm-1 . Turbostratic graphite also often has a first order D peak [20]. SWNTs show a sharp 2D peak similar to that we measure here for graphene [21]. The close similarity (in position and FWHM) of our measured graphene 2D peak and the 2D peak in SWNTs of 1-2 nm diameter [22] implies that curvature effects are small for the 2D peak for SWNTs in this diameter range, the most commonly found in experiments. This questions the assumption that the 2D peak in SWNT should scale to the up-shifted average 2D peak position in bulk graphite for large diameters [22]. This assumption was utilized to fit a scaling law relating SWNT diameter and 2D peak position, which is often used to derive the diameter of inner tubes in double wall nanotubes [22, 23]. Despite the similarities, it is important to note that there are major differences between graphene and SWNT Raman spectra, which allow to easily distinguish these materials. Indeed, confinement and curvature split the two degenerate modes of the G peak in SWNTs [21], resulting in G+ and G- peaks.
+
+We now explain why graphene has a single 2D peak, and why this splits in four components in bi-layer graphene. Several authors previously attempted to explain the double structure of the 2D peak in graphite [15, 17, 18, 19, 20, 24], however they always neglected the evolution of the electronic bands with the number of layers, which is, on the contrary, the key fact. The 2D peak in graphene is due to two phonons with opposite momentum in the highest optical branch near the K (A′1 symmetry at K) [16, 25, 26]. Fig. 2 shows that this peak changes in position with varying excitation energy. This is due to a Double Resonance (DR) process, which links the phonon wave-vectors to the electronic band structure [27]. Within DR, Raman scattering is a third order process involving four virtual transitions: i) a laser induced excitation of an electron/hole pair (a→b vertical transition in Fig. 3(a)); ii) electron-phonon scattering with an exchanged momentum q close to K (b→c); iii) electron-phonon scattering with an exchanged momentum -q (c→b); iv) electron/hole recombination (b→a). The DR condition is reached when the energy is conserved in these transitions. The resulting 2D Raman frequency is twice the frequency of the scattering phonon, with q determined by the DR condition. For simplicity, Fig. 3(a,b) neglect the phonon energy and do not show the equivalent processes for hole-phonon scattering.
+
+Consistent with the experimental observation of a single component for the 2D peak in single layer graphene, Fig. 3(a,b) only shows the phonon satisfying DR conditions with momentum q>K, along the Γ -K-M direction (K<q<M ). The other two possible DR phonons, with q<K and q∼K, give a much smaller contribution to the Raman intensity. In fact, the q<K phonon involves a smaller portion of the phase-space because of the band-structure trigonal warping (see Fig.4 of Ref.[28] and related discussion) and the q∼K phonon has a zero electron-phonon coupling for this transition, as discussed in Ref [26] (see footnote 24, for q∼K, θ′′ = 0) and Ref. [24]. This differs from the models of Ref. [19, 24], which predict 2 similar components for the D peak even in single layer, in disagreement with the experiments of Fig. 2.
+
+![[figures/fig3.md]]
+
+| 514.5 | 2 Layers | 2 Layers | 2 Layers | 2 Layers |
+| --- | --- | --- | --- | --- |
+| Experimental | -44 | -10 | +10 | +25 |
+| Theory | -44 | -11 | +11 | +41 |
+| 633 |  |  |  |  |
+| Experimental | -55 | -10 | +10 | +30 |
+| Theory | -44 | -9 | +9 | +41 |
+
+We now examine the bi-layer case. The observed 4 components of the 2D peak could in principle be attributed to two different mechanisms: the splitting of the phonon branches [15, 17, 20, 29], or the spitting of the electronic bands [25]. To ascertain this we compute the phonon frequencies [26] for both single and bi-layer graphene (stacked AB, as indicated by TEM), at the q corresponding to the DR condition for the 514 and 633 nm lasers. The splitting of the phonon branches is <1.5 cm-1 , much smaller than the experimentally observed 2D splitting. Thus, this is solely due to electronic bands effects. In the bi-layer, the interaction of the graphene planes causes the π and π∗ bands to divide in four bands, with a different splitting for electrons and holes, Fig. 3(b). Amongst the 4 possible optical transitions, the incident light couples more strongly the two transitions shown in Fig. 3(b). The two almost degenerate phonons in the highest optical branch couple all electron bands amongst them. The resulting four processes involve phonons with momenta q1B, q1A, q2A, and q2B, as shown in Fig. 3(b). The four corresponding processes for the holes, and those associated to the 2 less intense optical transitions [not shown in Fig. 3(b)], are associated to momenta almost identical to q1B, q1A, q2A, q2B. These wave-vectors correspond to phonons with different frequencies, due to the strong phonon dispersion around K induced by the electron-phonon coupling [26]. They produce four different peaks in the Raman spectrum of bi-layer graphene. Tab. I reports the expected splittings and shows that they compare very well with experiments.
+
+In conclusion, graphene's electronic structure is uniquely captured in its Raman spectrum, that clearly evolves with the number of layers. Raman fingerprints for single-, bi- and few-layer graphene reflect changes in the electronic structure and electron-phonon interactions and allow unambiguous, high-throughput, nondestructive identification of graphene layers.
+
+A.C.F. acknowledges funding from EPSRC GR/S97613, The Royal Society and The Leverhulme Trust; C.C. from the Oppenheimer Fund.
+
+- ∗ Electronic address: acf26@eng.cam.ac.uk
+- K. S. Novoselov et al., Proc. Natl. Acad. Sci. USA 102, 10451 (2005)
+- K. S. Novoselov et al., Nature 438, 197 (2005)
+- Y. Zhang et al., Nature 438, 201 (2005)
+- K. S. Novoselov et al., Science 306, 666 (2004)
+- K. S. Novoselov et al., Nature Physics 2, 177 (2006)
+- Y. Zhang et al, Appl. Phys. Lett. 86, 073104 (2005)
+- N. M. Peres et al, cond-mat 0512091 (2005).
+- C. Berger et al, J. Phys. Chem. B 108, 19912 (2004).
+- L.M. Viculis, J.J. Mack,R.B. Kaner, Science 299, 1361 (2003).
+- K. Wakabayashi, Phys. Rev. B 64, 125428 (2001).
+- K. Nakada et al. Phys. Rev. B 54, 17954 (1996).
+- J. Scott Bunch et al., Nano Lett. 5, 287 (2005).
+- P. R. Wallace, Phys. Rev. 71, 622 (1947).
+- J. C. Meyer et al, Ultramicroscopy 106, 176 (2006); Science 309, 1539 (2005).
+- R. P. Vidano et al., Solid State Comm. 39, 341 (1981).
+- F. Tuinstra, J. Koenig, J. Chem. Phys. 53, 1126 (1970).
+- R. J. Nemanich, S. A. Solin, Phys. Rev. B 20, 392 (1979).
+- L. G. Cancado et al., Phys. Rev. Lett. 93, 047403 (2004).
+- L. G. Cancado et al., Phys. Rev. B 66, 035415 (2002).
+- P. Lespade et al., Carbon 4/5, 375 (1984).
+- A. Jorio et al., Phys. Rev. B 66, 115411 (2002).
+- A. G. Souza Filho et al., Phys. Rev. B 67, 035427 (2003).
+- R. Pfeiffer et al., Phys. Rev. B 71, 155409 (2005).
+- J. Maultzsch, S. Reich, C. Thomsen, Phys. Rev. B 70, 155403 (2004).
+- A.C. Ferrari, J.Robertson,Phys. Rev. B61, 14095 (2000).
+- S. Piscanec et al., Phys. Rev. Lett. 93, 185503 (2004).
+- C. Thomsen, S. Reich Phys. Rev. Lett. 85, 5214 (2000).
+- J. Kurti et al., Phys. Rev. B 65, 165433 (2002).
+- A. C. Ferrari and J. Robertson (eds.), Phyl. Trans. Roy. Soc A 362, 2267 (2004).

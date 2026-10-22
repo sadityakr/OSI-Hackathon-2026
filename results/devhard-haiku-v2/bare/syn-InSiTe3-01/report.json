@@ -1,0 +1,105 @@
+{
+  "candidates": [
+    {
+      "material": "Te (trigonal tellurium)",
+      "confidence": 0.08,
+      "evidence": "Partial match only. Measured 122.7 and 142.8 cm-1 sit near the recalled A1 (~121-122) and E (~139-141) modes. Expected E mode near 92 cm-1 is absent, and the measured strongest mode at 108.9 cm-1 does not match. Literature values recalled from memory, not verified in this sandbox."
+    },
+    {
+      "material": "Bi2Te3",
+      "confidence": 0.05,
+      "evidence": "Three modes in the same region, but recalled reference positions are ~62, ~103, ~136 cm-1. The measured 108.9 and 142.8 are 6-7 cm-1 off, and the expected ~62 cm-1 mode is absent (data start at 60.5 cm-1 and show no peak). Literature values recalled from memory, not verified."
+    },
+    {
+      "material": "SnSe",
+      "confidence": 0.05,
+      "evidence": "Recalled Pnma SnSe modes lie in the ~110-190 cm-1 band, which overlaps the measured 109/123/143 set. Positions and relative intensities are not reliably matched, and SnSe is expected to show modes above 150 cm-1 that are absent here. Literature values recalled from memory, not verified."
+    },
+    {
+      "material": "alpha-In2Se3",
+      "confidence": 0.04,
+      "evidence": "Recalled alpha-In2Se3 modes near ~105-110 and ~175-200 cm-1. The 109 cm-1 mode is close, but the expected 175-200 cm-1 modes are absent above the noise floor. Literature values recalled from memory, not verified."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "material_hint is null, so there is no stated material to verify. The working-directory name contains 'InSiTe3'; I did not treat it as a hint because it is not part of the measurement metadata and I cannot confirm this compound's Raman signature. The spectrum cannot be matched to a material with confidence (best candidate confidence about 0.08).",
+  "peaks": [
+    {
+      "position_cm1": 108.92,
+      "fwhm_cm1": 4.69,
+      "assignment": "unassigned (no reference matched above low confidence)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Voigt fit (lmfit), 75-175 cm-1 window, linear background, chi-square residual sd ~209 counts vs channel noise ~228; amplitude ~65000 counts area, height ~10450 counts"
+    },
+    {
+      "position_cm1": 122.74,
+      "fwhm_cm1": 5.86,
+      "assignment": "unassigned (no reference matched above low confidence)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Voigt fit (lmfit), same window; ~8.8 sigma in matched-filter search (FWHM 4 cm-1 template), height ~1040 counts, position uncertainty +/-0.4 cm-1"
+    },
+    {
+      "position_cm1": 142.75,
+      "fwhm_cm1": 7.1,
+      "assignment": "unassigned (no reference matched above low confidence)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Voigt fit (lmfit), same window; ~9.8 sigma in matched-filter search (FWHM 4 cm-1 template), height ~1310 counts, position uncertainty +/-0.4 cm-1"
+    }
+  ],
+  "properties": [
+    {
+      "name": "material_identity",
+      "value": "unidentified (no candidate above 0.08 confidence)",
+      "provenance": "inferred",
+      "source": "Comparison of three measured modes with recalled reference positions; no reference database available in the sandbox"
+    },
+    {
+      "name": "phase",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Raman alone with three low-frequency modes and no reference spectrum cannot fix the polytype"
+    },
+    {
+      "name": "fluorescence_background",
+      "value": "weak linear rise from ~1500 to ~2300 counts across 60-1100 cm-1, no broad band",
+      "provenance": "measured",
+      "source": "Median-filtered baseline over the full range"
+    },
+    {
+      "name": "substrate_signal",
+      "value": "no Si 520.7 cm-1 line detected",
+      "provenance": "measured",
+      "source": "Matched-filter search over 60-1100 cm-1, detection threshold 3.5 sigma"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 426.51
+    },
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 847.06
+    }
+  ],
+  "citations": [
+    "Literature mode positions for Te (E ~92, A1 ~121-122, E ~139-141 cm-1), Bi2Te3 (~62, ~103, ~136 cm-1), SnSe (~110-190 cm-1) and alpha-In2Se3 (~105-110, ~175-200 cm-1) were recalled from memory and are NOT verified against a source in this sandbox. Treat them as unverified."
+  ],
+  "limits": [
+    "Identification failed. Only three real modes (108.9, 122.7, 142.8 cm-1) rise above the noise floor, and nothing else is detected between 150 and 1100 cm-1 above about 3.5 sigma (sigma about 245 counts). Weak modes below roughly 800 counts (about 6% of the 109 cm-1 peak) could be hidden, so the absence of modes above 150 cm-1 is conditional on that detection limit.",
+    "The spectrum covers only 60.5-1099 cm-1 and starts at the edge of the Rayleigh-rejection region, so modes below about 60 cm-1 cannot be seen. A mode near 62 cm-1 would sit at the edge, so its absence is only weakly informative.",
+    "Only one unpolarized spectrum with no reference, calibration standard or instrument resolution was supplied. Wavenumber accuracy, intensity units and laser power are unknown, so peak positions carry an unquantified systematic offset.",
+    "The three measured modes are broad (FWHM 4.7-7.1 cm-1) relative to the 1.18 cm-1 channel spacing. Whether this is intrinsic linewidth, a broadened instrument response or overlapping modes cannot be decided from one spectrum.",
+    "The 109 cm-1 peak has a pedestal from about 95 to 115 cm-1. A single Voigt fits the residual (sd about 209 counts) well, but a closely spaced second mode cannot be excluded.",
+    "Two single-channel cosmic-ray spikes (426.51 and 847.06 cm-1, about 6.6-6.9 times their neighbours) were removed before the analysis. No peak was taken from them.",
+    "No Si substrate line at 520.7 cm-1 is present, so the substrate contribution cannot be checked. This is not a claim about the substrate's identity.",
+    "The working-directory name contains 'InSiTe3'. I did not use it as a material hint, and I am not aware of a reliable Raman reference for that compound. The result should not be read as confirming or excluding it.",
+    "Scratch scripts and plots were written to the _work subfolder of the working directory, not to any other location."
+  ]
+}

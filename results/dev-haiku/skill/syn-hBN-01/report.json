@@ -1,0 +1,69 @@
+{
+  "candidates": [
+    {
+      "material": "unidentified (not a common layered van der Waals material from this spectrum)",
+      "confidence": 0.7,
+      "evidence": "Only two real lines: Si substrate at 520.67 cm-1 and a sharp unassigned line at 1396.48 cm-1 (FWHM 4.45). No modes of graphene (G ~1580, 2D ~2700), TMDs (A1g/E2g ~380-420 cm-1 for MoS2/WS2), black phosphorus (~360-470 cm-1) or CrSBr were found above the residual noise (~70 counts). The spectrum is dominated by a broad fluorescence-like continuum, which points to an organic or contaminant species rather than a clean crystal."
+    },
+    {
+      "material": "hBN (hexagonal boron nitride)",
+      "confidence": 0.05,
+      "evidence": "Only layered candidate with a single sharp first-order line in this region: bulk E2g is near 1366 cm-1 (Nemanich et al. 1981, literature, not retrieved in this session). The observed line at 1396.5 cm-1 is about 30 cm-1 higher, far outside the Si calibration offset (-0.03 cm-1) and beyond any plausible strain or doping shift for hBN. Rejected on position."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null). The only layered-material candidate that fits the one-line count is hBN, but its E2g (about 1366 cm-1) is 30 cm-1 away from the observed 1396.5 cm-1. The Si reference line fits within 0.03 cm-1, so calibration does not explain the gap. The spectrum does not support a 2D or layered identification.",
+  "peaks": [
+    {
+      "position_cm1": 520.67,
+      "fwhm_cm1": 3.49,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Si first-order optical phonon at about 520.7 cm-1 (Temple & Hathaway, Phys. Rev. B 7, 3685 (1973), literature, not retrieved in this session). Measured position matches within 0.03 cm-1."
+    },
+    {
+      "position_cm1": 1396.48,
+      "fwhm_cm1": 4.45,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "identified_material",
+      "value": "not identified",
+      "provenance": "inferred",
+      "source": "Only one non-substrate line (1396.5 cm-1); no diagnostic modes of the common layered materials present; hBN rejected by position (about 30 cm-1 off)."
+    },
+    {
+      "name": "background",
+      "value": "broad fluorescence-like continuum, about 2300 counts at 60-300 cm-1 falling to about 600 counts above 1200 cm-1",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "laser_line_check",
+      "value": "1396.5 cm-1 at 532 nm corresponds to about 574.6 nm if it is an emission line rather than a Raman shift (arithmetic, not a database match)",
+      "provenance": "inferred",
+      "source": "Simple wavenumber-to-wavelength conversion."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "P. A. Temple and C. E. Hathaway, Phys. Rev. B 7, 3685 (1973) - Si first-order Raman phonon at about 520.7 cm-1 (cited from memory; not retrieved in this session).",
+    "R. J. Nemanich, S. A. Solin, R. M. Martin, Phys. Rev. B 23, 6348 (1981) - hBN E2g Raman mode near 1366 cm-1 (cited from memory; not retrieved in this session)."
+  ],
+  "limits": [
+    "I did not run the skill's scripts or reference notes: they live outside this folder, and the folder rule says not to read outside it. The analysis used Python (numpy, scipy, lmfit) on ./spectrum.csv only. As a result I did not run the Computational Raman Database matcher or the curated reference-mode tables, and I did not query the literature tools. The candidate list and the hBN rejection rest on my own knowledge of reference frequencies and are not database-verified.",
+    "The 1396.5 cm-1 line cannot be assigned from one spectrum. It is sharp (FWHM 4.45 cm-1, close to the Si line width of 3.49 cm-1, so likely resolution-limited) and strong (about 80 times the noise). It could be a Raman mode of an unknown species, or an emission line. Test: remeasure at a second laser wavelength (for example 633 or 785 nm). A true Raman line keeps the same Raman shift; an emission line keeps the same absolute wavelength.",
+    "Calibration: the Si line at 520.67 cm-1 fits the reference 520.7 cm-1 within 0.03 cm-1, so the 1396.5 cm-1 position is good to about 0.1 cm-1 before any laser-heating or strain correction. Laser heating at this power is not quantified and would only shift the line by a few tenths of a cm-1 at most.",
+    "Why the continuum matters: the broad background falls from about 2300 to about 600 counts across 60-1200 cm-1. This is consistent with fluorescence from an organic residue, contamination or a defective sample. I cannot tell from the spectrum alone whether the fluorescence comes from the sample or from the substrate. It is not a Raman peak and is not reported as one.",
+    "No artifacts: no isolated single-channel cosmic-ray spikes are visible in the overview plot, and the two lines are symmetric and several channels wide. I did not run a dedicated spike filter, so the check is visual. A residual search after baseline removal (smoothed noise about 70 counts) found no feature other than the two lines above the threshold.",
+    "Not measured in this spectrum: the 60-1600 cm-1 window omits the TMD interlayer and acoustic regions below 60 cm-1, the graphene 2D band near 2700 cm-1, and any high-frequency features above 1600 cm-1. Layered-material identification would need those regions as well, and an angle series would be needed for symmetry-based assignments."
+  ]
+}

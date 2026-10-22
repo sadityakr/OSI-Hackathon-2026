@@ -1,0 +1,107 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2 (few-layer, ~3L)",
+      "confidence": 0.9,
+      "evidence": "Strong in-plane E2g(1) at 382.8 cm-1 and out-of-plane A1g at 406.2 cm-1 (\u0394=23.4 cm-1), the signature MoS2 pair on SiO2/Si at 532 nm; \u0394 matches ~3 layers."
+    },
+    {
+      "material": "2H-MoS2 (4L)",
+      "confidence": 0.35,
+      "evidence": "\u0394\u224824 cm-1 would be 4L; the 23.4 cm-1 value sits between 3L (~23) and 4L (~24)."
+    },
+    {
+      "material": "2H-MoS2 (bulk)",
+      "confidence": 0.1,
+      "evidence": "Bulk \u0394\u224825 cm-1 and E2g\u2248383/A1g\u2248408; the observed A1g is lower and \u0394 is smaller than bulk."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was provided; this is an identification task.",
+  "peaks": [
+    {
+      "position_cm1": 382.8,
+      "fwhm_cm1": 2.4,
+      "assignment": "E2g(1) in-plane (MoS2)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; assignment per Lee et al., ACS Nano 4, 2695 (2010)"
+    },
+    {
+      "position_cm1": 406.2,
+      "fwhm_cm1": 4.7,
+      "assignment": "A1g out-of-plane (MoS2)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; assignment per Lee et al., ACS Nano 4, 2695 (2010)"
+    },
+    {
+      "position_cm1": 520.5,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Si first-order optical phonon, 520.7 cm-1 reference"
+    },
+    {
+      "position_cm1": 227.9,
+      "fwhm_cm1": null,
+      "assignment": "LA(M) (tentative, near noise)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Chakraborty et al., PRB 85, 161403 (2012); weak and near the noise level, not confirmed"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "3 (likely 3\u20134)",
+      "provenance": "inferred",
+      "source": "E2g\u2013A1g separation 23.4 cm-1 vs. layer-number calibration of Lee et al., ACS Nano 2010 (1L ~19, 2L ~21\u201322, 3L ~23, 4L ~24, bulk ~25)"
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "E2g and A1g only; no J1/J2/J3 modes (~150, 226, 330) expected for 1T"
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "Narrow E2g (2.4 cm-1 FWHM); no obvious defect-activated bands"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "E2g at 382.8 cm-1 is in the normal range for few-layer MoS2; no splitting"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "Si substrate line (520.5 cm-1) dominates the intensity",
+      "position_cm1": 520.5
+    },
+    {
+      "type": "Broad Si/SiO2 background ~3300\u20133900 counts with noise of a few hundred counts; small bumps at 150\u2013300 cm-1 are noise",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Lee et al., ACS Nano 4, 2695 (2010): Anomalous lattice vibrations of single- and few-layer MoS2",
+    "Chakraborty et al., Phys. Rev. B 85, 161403 (2012)",
+    "Li et al., Adv. Funct. Mater. 22, 1385 (2012)"
+  ],
+  "limits": [
+    "The layer number comes only from the E2g\u2013A1g separation. Strain, doping and substrate effects shift the modes, so 3L versus 4L is not firmly resolved. 2L (\u0394~21\u201322) and bulk (\u0394~25) are disfavoured.",
+    "No low-frequency shear or breathing modes (<60 cm-1) are in the range, because the data start at 150 cm-1. They would have given an independent layer count.",
+    "The LA(M) ~228 cm-1 and 2LA ~447 cm-1 features are at or below the noise level. The 2LA/A1g region is too noisy for a resonance or excitation-condition analysis.",
+    "This is a single spectrum with no polarization data, so peak polarization patterns are not classified.",
+    "The measured FWHM of the A1g may be influenced by the noise and by an unresolved sloped background. The linewidths are approximate."
+  ]
+}

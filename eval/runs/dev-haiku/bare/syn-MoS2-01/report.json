@@ -1,0 +1,75 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.85,
+      "evidence": "Two Lorentzian-dominated modes at 388.26 and 413.53 cm-1 (FWHM 6.1 and 6.5 cm-1), separation 25.27 cm-1, height ratio 0.32. This pair is the E2g/A1g doublet of MoS2 and its 25 cm-1 spacing matches bulk or thick few-layer flakes (monolayer ~19 cm-1). Both modes sit about +5.4 cm-1 above the usual 383/408 cm-1 values at 532 nm, so the absolute positions are not a clean match; the spacing and the mode pattern are."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "material_hint is null, so there is no stated material to check against. The task is identification.",
+  "peaks": [
+    {
+      "position_cm1": 388.26,
+      "fwhm_cm1": 6.14,
+      "assignment": "MoS2 in-plane E2g^1 (E^1_2g)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010): bulk MoS2 E2g^1 at ~383 cm-1 for 532/514 nm excitation. Measured position is +5.3 cm-1 above that value; the offset is not explained by the data (see limits)."
+    },
+    {
+      "position_cm1": 413.53,
+      "fwhm_cm1": 6.53,
+      "assignment": "MoS2 out-of-plane A1g",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010): bulk MoS2 A1g at ~408 cm-1. Measured position is +5.5 cm-1 above that value, the same offset as the E2g mode."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "E2g/A1g doublet with the 25 cm-1 spacing of 2H-MoS2; no polytype-specific modes were tested for"
+    },
+    {
+      "name": "layers",
+      "value": "bulk (thick, roughly >=4 layers)",
+      "provenance": "inferred",
+      "source": "Mode spacing 25.27 cm-1 vs. ~19 cm-1 for monolayer and ~25-26 cm-1 for bulk, from Lee et al., ACS Nano 4, 2695 (2010)"
+    },
+    {
+      "name": "defect_level",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No defect-activated band (for example the 350 cm-1 region or the disorder band in MoS2) rises above the noise"
+    },
+    {
+      "name": "substrate",
+      "value": "not detected",
+      "provenance": "measured",
+      "source": "No Si line at 520.7 cm-1. The only point near 521 cm-1 is a single-pixel bump (2182 counts vs. 1524 and 1729 on either side), consistent with noise."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray",
+      "position_cm1": 1063.28
+    }
+  ],
+  "citations": [
+    "C. Lee, H. Yan, L. E. Brus, T. F. Heinz, J. Hone, S. Ryu, 'Anomalous lattice vibrations of single- and few-layer MoS2', ACS Nano 4, 2695 (2010) - E2g and A1g positions near 383 and 408 cm-1 for bulk MoS2, and the layer-number dependence of their separation."
+  ],
+  "limits": [
+    "The absolute positions are +5.3 (E2g) and +5.5 (A1g) cm-1 above the literature values. There is no Si reference in the data to check calibration. Calibration error is the most likely explanation, but strain (biaxial compression) could also raise both modes. Heating would shift them down, not up. The data cannot separate these causes. The identification rests on the 25.27 cm-1 spacing and the E2g/A1g pattern, not on the absolute frequencies.",
+    "The spectrum is a single unpolarized measurement, so irreps are literature assignments only. No polarization test was done, so the E2g/A1g symmetry is not confirmed.",
+    "Layer number is only a rough estimate. Bulk and >=4-layer flakes give similar spacings, and the spacing is only as accurate as the calibration. Intensity ratios are not corrected for instrument response, so the 0.32 A1g/E2g height ratio is not used for thickness.",
+    "Expected second-order and secondary MoS2 features are absent above the noise: LA(M) near 227 cm-1, E1_2g near 286 cm-1 and 2LA(M) near 450 cm-1 (with the +5 cm-1 offset applied). A matched-filter search (Lorentzian FWHM 1.5-12 cm-1, noise sigma ~45-90 counts) found nothing else above 3.5 sigma. That puts the detection limit near 1.5-2% of the E2g height for FWHM ~6 cm-1 features. Weaker features cannot be excluded.",
+    "Point-to-point noise is about 190 counts on a background of roughly 1100-2200 counts. Individual noise bumps (for example near 521, 468, 713 and 810 cm-1) were checked and are not reported as peaks.",
+    "No Si or other substrate line was detected, so substrate is reported as not detected. The substrate could still be a material that gives no Raman lines in this range.",
+    "Other layered candidates were considered and excluded by the mode pattern. WS2 (E2g ~355, A1g ~420 cm-1, spacing ~65 cm-1), MoSe2 and WSe2 do not match the 388/413 pair with 25 cm-1 spacing. The only exception is the absolute offset, which is unexplained."
+  ]
+}

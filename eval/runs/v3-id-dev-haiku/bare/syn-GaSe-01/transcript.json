@@ -1,0 +1,356 @@
+{
+ "case": {
+  "case_id": "syn-GaSe-01",
+  "kind": "single",
+  "task": "identify",
+  "material_hint": null,
+  "laser_nm": 532,
+  "temperature_K": 295,
+  "substrate": null,
+  "geometry": "backscattering, beam along the layer normal",
+  "question": "Which material is this? Assign the Raman peaks."
+ },
+ "arm": "bare",
+ "model": "claude-haiku-5-5",
+ "effort": "high",
+ "usage": {
+  "input": 0,
+  "output": 0,
+  "cost_usd": 0,
+  "turns": 1,
+  "seconds": 5.5,
+  "tool_calls": 0
+ },
+ "stderr": "",
+ "messages": [
+  {
+   "type": "system",
+   "subtype": "init",
+   "cwd": "C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-id-dev-haiku\\bare\\syn-GaSe-01",
+   "session_id": "02215ada-da49-4cbf-8c4f-b8df4493625c",
+   "tools": [
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "StructuredOutput",
+    "TaskStop",
+    "ToolSearch",
+    "Workflow",
+    "Write"
+   ],
+   "mcp_servers": [],
+   "model": "claude-haiku-5-5",
+   "permissionMode": "dontAsk",
+   "slash_commands": [
+    "deep-research",
+    "design",
+    "design-sync",
+    "dataviz",
+    "update-config",
+    "verify",
+    "debug",
+    "code-review",
+    "simplify",
+    "batch",
+    "fewer-permission-prompts",
+    "doctor",
+    "loop",
+    "schedule",
+    "claude-api",
+    "workflow-authoring",
+    "run",
+    "run-skill-generator",
+    "plugin-authoring",
+    "advisor",
+    "agents",
+    "auto-mode-setup",
+    "autocompact",
+    "clear",
+    "color",
+    "compact",
+    "config",
+    "output-style",
+    "context",
+    "effort",
+    "fast",
+    "focus",
+    "heapdump",
+    "init",
+    "mcp",
+    "import",
+    "model",
+    "__remote-workflow",
+    "workflow-launch-exec",
+    "reload-plugins",
+    "reload-skills",
+    "rename",
+    "ultrareview",
+    "security-review",
+    "usage-credits",
+    "extra-usage",
+    "usage",
+    "insights",
+    "recap",
+    "skill-doctor",
+    "goal",
+    "design-consent",
+    "design-revoke",
+    "list-agents",
+    "team-onboarding"
+   ],
+   "terminal_slash_commands": [
+    "doctor",
+    "color",
+    "focus",
+    "reload-plugins"
+   ],
+   "apiKeySource": "none",
+   "claude_code_version": "2.1.307",
+   "output_style": "default",
+   "agents": [
+    "claude",
+    "Explore",
+    "general-purpose",
+    "Plan",
+    "statusline-setup"
+   ],
+   "skills": [
+    "deep-research",
+    "design",
+    "design-sync",
+    "dataviz",
+    "update-config",
+    "verify",
+    "debug",
+    "code-review",
+    "simplify",
+    "batch",
+    "fewer-permission-prompts",
+    "doctor",
+    "loop",
+    "schedule",
+    "claude-api",
+    "workflow-authoring",
+    "run",
+    "run-skill-generator",
+    "plugin-authoring"
+   ],
+   "plugins": [
+    {
+     "name": "cc-plugin-agents-md",
+     "path": "builtin",
+     "source": "cc-plugin-agents-md@builtin"
+    },
+    {
+     "name": "cc-plugin-telemetry",
+     "path": "builtin",
+     "source": "cc-plugin-telemetry@builtin"
+    },
+    {
+     "name": "cc-plugin-plugin-authoring",
+     "path": "builtin",
+     "source": "cc-plugin-plugin-authoring@builtin"
+    }
+   ],
+   "capabilities": [
+    "interrupt_receipt_v1",
+    "interrupt_cancel_queued_v1",
+    "interrupt_send_now_v1",
+    "interrupt_requeue_taken_v1",
+    "msg_lifecycle_v1",
+    "request_marker_lists_v1",
+    "lifecycle_wakeup_source_v1",
+    "sdk_mcp_tools_list_changed",
+    "sdk_mcp_manifests",
+    "mcp_read_resource_v1",
+    "mcp_tool_ui_meta_v1",
+    "ui_surface_v1",
+    "mcp_call_result_not_for_model_v1"
+   ],
+   "analytics_disabled": false,
+   "product_feedback_disabled": false,
+   "uuid": "f209839f-ab02-4d89-ac69-38e0b18b8c97",
+   "memory_paths": {
+    "auto": "C:\\Users\\sadit\\.claude\\projects\\C--WINDOWS-TEMP-ramanlens-eval-v3-id-dev-haiku-bare-syn-GaSe-01\\memory\\"
+   },
+   "original_cwd": "C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-id-dev-haiku\\bare\\syn-GaSe-01",
+   "additional_directories": [],
+   "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-0d8d34b5aa2b35f9a827a016e7be5c5e",
+   "fast_mode_state": "off",
+   "fast_mode_disabled_reason": "sdk_opt_in_required",
+   "per_turn_effort_active": true,
+   "view_mode": "default",
+   "powershell_path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  },
+  {
+   "type": "rate_limit_event",
+   "rate_limit_info": {
+    "status": "rejected",
+    "resetsAt": 1792632600,
+    "rateLimitType": "five_hour",
+    "overageStatus": "rejected",
+    "overageDisabledReason": "org_level_disabled",
+    "isUsingOverage": false,
+    "unifiedWindows": {
+     "five_hour": {
+      "utilization": 1,
+      "resetsAt": 1792632600
+     },
+     "seven_day": {
+      "utilization": 0.43,
+      "resetsAt": 1792836000
+     }
+    }
+   },
+   "uuid": "4aba2769-2024-48ef-8ed8-5db3959de42c",
+   "session_id": "02215ada-da49-4cbf-8c4f-b8df4493625c"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "diagnostics": null,
+    "id": "a020423b-eac4-4639-a9f5-cbaf5b1d9e6f",
+    "container": null,
+    "model": "<synthetic>",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "stop_sequence",
+    "stop_sequence": "",
+    "type": "message",
+    "usage": {
+     "output_tokens_details": null,
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_creation_input_tokens": 0,
+     "cache_read_input_tokens": 0,
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": null,
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": null,
+     "iterations": null,
+     "speed": null,
+     "fallback_credit": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "You've hit your session limit \u00b7 resets 3:30am (Europe/Berlin)"
+     }
+    ],
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "02215ada-da49-4cbf-8c4f-b8df4493625c",
+   "uuid": "bd2c7e07-4e6b-4d6c-a0c7-dd726851f527",
+   "timestamp": "2026-10-22T01:04:46.169Z",
+   "error": "rate_limit",
+   "request_id": "req_011CgGNorxDvHo984aqpdaRz",
+   "is_api_error_message": true,
+   "api_error_status": 429,
+   "api_error": "usage_limit_reached",
+   "api_error_params": {
+    "rate_limit_info": {
+     "status": "rejected",
+     "resetsAt": 1792632600,
+     "rateLimitType": "five_hour",
+     "overageStatus": "rejected",
+     "overageDisabledReason": "org_level_disabled",
+     "isUsingOverage": false
+    }
+   }
+  },
+  {
+   "duration_api_ms": 0,
+   "stop_reason": "stop_sequence",
+   "session_id": "02215ada-da49-4cbf-8c4f-b8df4493625c",
+   "total_cost_usd": 0,
+   "usage": {
+    "output_tokens_details": {
+     "thinking_tokens": 0
+    },
+    "input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 0,
+    "server_tool_use": {
+     "web_search_requests": 0,
+     "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+     "ephemeral_1h_input_tokens": 0,
+     "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard",
+    "fallback_credit": null
+   },
+   "modelUsage": {},
+   "permission_denials": [],
+   "terminal_reason": "api_error",
+   "fast_mode_state": "off",
+   "fast_mode_disabled_reason": "sdk_opt_in_required",
+   "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+     "background": 0,
+     "foreground": 0,
+     "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+     "parent": 0,
+     "user": 0,
+     "system": 0
+    },
+    "refused": {
+     "depth_limit": 0,
+     "concurrency_limit": 0,
+     "budget": 0
+    },
+    "by_type": {}
+   },
+   "safety_stops": 0,
+   "is_error": true,
+   "num_turns": 1,
+   "subtype": "success",
+   "api_error_status": 429,
+   "api_error": "usage_limit_reached",
+   "result": "You've hit your session limit \u00b7 resets 3:30am (Europe/Berlin)",
+   "type": "result",
+   "duration_ms": 1502,
+   "uuid": "8ce04fad-67d6-4bbe-83d2-b518351de380",
+   "queued_turn_count": 0,
+   "result_index": 0
+  }
+ ]
+}

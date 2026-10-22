@@ -1,0 +1,130 @@
+{
+  "candidates": [
+    {
+      "material": "TiNCl (CRD formula ClNTi, Pmmn, 59)",
+      "confidence": 0.55,
+      "evidence": "match_library (default fit, 2 bands): both measured Ag bands matched within 2.3 and 0.8 cm-1 (frequency scale 1.01), no unmatched measured bands, no strong predicted modes missing in 60-1100 cm-1. Score 0.95. With the weak 271 cm-1 band included the score drops to 0.82 (271 unmatched). Only two bands carry the match, so the confidence is modest."
+    },
+    {
+      "material": "CuPSe3Tl (P2_1/c, 14)",
+      "confidence": 0.12,
+      "evidence": "Matches both bands (score 0.88 default, 0.73 with 271 cm-1 included) but two strong predicted Ag modes at 247 and 444 cm-1 are absent from the spectrum."
+    },
+    {
+      "material": "MgPSe3 (R-3, 148)",
+      "confidence": 0.08,
+      "evidence": "Matches both bands (score 0.80) but a strong Eg mode at 151.5 cm-1 is absent."
+    },
+    {
+      "material": "AgP2ScSe6 (P-31c, 163)",
+      "confidence": 0.06,
+      "evidence": "Matches both bands (score 0.78) but strong Eg modes at 150.9 and 224.9 cm-1 are absent."
+    },
+    {
+      "material": "Al2MgSe4 (R-3m, 166)",
+      "confidence": 0.04,
+      "evidence": "Matches both bands (score 0.61) but three strong predicted modes (87.6, 104.4, 280 cm-1) are absent."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identify task. Candidates come from the Computational Raman Database matcher only. The literature check could not be run: the valency/iopic-bond search returned 'VALENCY_BOND_TOKEN is not set', and the local library has no TiNCl paper.",
+  "peaks": [
+    {
+      "position_cm1": 206.48,
+      "fwhm_cm1": 3.07,
+      "assignment": "Ag mode of TiNCl (CRD DFT entry 204.2 cm-1, frequency scale 1.01)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and width from rl_fit (Lorentzian, position err 0.15 cm-1). Assignment: Computational Raman Database, Bagheri and Komsa 2023, Sci. Data 10, 80, entry crd:1132 (ClNTi, Pmmn 59), matched by rl.py match_library. Inferred from DFT, not confirmed by literature or polarization."
+    },
+    {
+      "position_cm1": 270.8,
+      "fwhm_cm1": 1.38,
+      "assignment": "unassigned, weak and marginal (fit height 2258 +/- 905, about 2.5 sigma); not reported in the default fit",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Found only with rl_fit --min-snr 3. Narrower than the Si line (FWHM 3.5 cm-1) and below the instrument resolution, so the width is unreliable. No predicted ClNTi mode near 271 cm-1 in the matcher output."
+    },
+    {
+      "position_cm1": 471.48,
+      "fwhm_cm1": 5.95,
+      "assignment": "Ag mode of TiNCl (CRD DFT entry 472.3 cm-1, frequency scale 1.01)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and width from rl_fit (position err 0.12 cm-1). Assignment: Computational Raman Database, Bagheri and Komsa 2023, Sci. Data 10, 80, entry crd:1132, matched by rl.py match_library. Inferred from DFT, not confirmed by literature or polarization."
+    },
+    {
+      "position_cm1": 520.55,
+      "fwhm_cm1": 3.56,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "rl_qc Si calibration: 520.55 cm-1, offset -0.15 from the 520.7 cm-1 Si reference used by the tool. rl_fit flags it as the substrate line (SiO2/Si)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "Pmmn (59), layered orthorhombic (CRD space group of the matched entry)",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80, Computational Raman Database entry crd:1132 (ClNTi, mp-27850)"
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No thickness relation applied. Two bands and SNR 17.6 cannot give a layer number; no curated relation exists for TiNCl (lookup_reference_modes returned no table)."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Not determined. No shift measured against a reference, and calibration offset is only -0.15 cm-1 (within fit uncertainty). Not a positive finding."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Not determined. Not a positive finding; no relation applied."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No defect-sensitive band (D or similar) is present; no relation applied."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "no cosmic-ray spikes detected (rl_qc spikes_cm1 empty)",
+      "position_cm1": null
+    },
+    {
+      "type": "low SNR warning: strongest band is 17.6 times noise; weak modes may be missed",
+      "position_cm1": null
+    },
+    {
+      "type": "broad background humps (fit notes: FWHM 607 cm-1 near 213 cm-1, FWHM 184 cm-1 near 334 cm-1); treated as background, not bands",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Bagheri, Komsa, Sci. Data 10, 80 (2023), Computational Raman Database (CC BY 4.0), entries crd:1132 (ClNTi, Pmmn 59), crd:4653, crd:3044, crd:247, crd:3208"
+  ],
+  "limits": [
+    "Identification rests on two bands (206.5 and 471.5 cm-1) against DFT modes. Many layered compounds could match two bands, so TiNCl is the best-supported candidate, not a confirmed identity. Confidence 0.55 reflects that.",
+    "No literature confirmation: the valency search failed (token not set) and the local library has no TiNCl paper. The TiNCl assignment is DFT-based only.",
+    "The weak 270.8 cm-1 feature is marginal (about 2.5 sigma) and narrower than the instrument resolution. It is reported as unassigned and should not be used for identification.",
+    "The SNR is 17.6 for the strongest band, so weak modes could be missed. The absence of the second strong predicted Ag mode in other candidates is also limited by SNR.",
+    "Only the 520.5 cm-1 Si line was detected. The second-order Si features near 950 and 980 cm-1 were not clearly detected in this spectrum.",
+    "No polarization data (single spectrum). Irreps are the CRD labels for the DFT structure in backscattering along the layer normal. Whether the measured layer normal matches the crystal axis used in the CRD calculation is not known.",
+    "Laser (532 nm) and temperature (295 K) effects on relative intensities and resonance were not assessed. CRD frequencies are DFT (0 K); the 1 to 2 percent scale fit is a per-candidate fit, not a calibration.",
+    "Positions are uncorrected. Applying the Si offset of +0.15 cm-1 would move 206.5 to 206.6 and 471.5 to 471.6; this is within the position uncertainties (0.12 to 0.15 cm-1 from the fit, larger after calibration scatter).",
+    "No layer number, strain, doping or defect density is claimed; no relation applies to TiNCl in the available reference set.",
+    "Rejected: CuPSe3Tl, MgPSe3, AgP2ScSe6 and Al2MgSe4 each have strong predicted modes absent from the spectrum. The graphene, MoS2, WS2, MoSe2, WSe2, hBN, black phosphorus and CrSBr notes were not applicable: their characteristic bands (for example E2g, A1g, G, 2D, or 1366 cm-1) are absent."
+  ]
+}

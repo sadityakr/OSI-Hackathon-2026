@@ -1,0 +1,81 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.93,
+      "evidence": "Two Raman peaks at 382.8 (E2g) and 406.2 cm-1 (A1g) with separation 23.4 cm-1. This pair and separation are the MoS2 signature; the Si line is the SiO2/Si substrate at 520.5 cm-1. No WS2-type pair (~350/418 cm-1) or MoSe2-type pair (~243/288 cm-1) is present."
+    },
+    {
+      "material": "WS2 (rejected)",
+      "confidence": 0.02,
+      "evidence": "Would need modes near 350 and 418 cm-1; none observed. The 243 cm-1 candidate fits to zero amplitude in a quadratic-background model and is noise."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "material_hint is null, so there was no stated material to verify. The data themselves identify MoS2 (E2g/A1g pair at 382.8/406.2 cm-1, separation 23.4 cm-1, plus the Si substrate line).",
+  "peaks": [
+    {
+      "position_cm1": 382.84,
+      "fwhm_cm1": 2.37,
+      "assignment": "MoS2 E^1_2g (in-plane)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Assignment: Lee et al., ACS Nano 4, 2695 (2010); Molina-Sanchez & Wirtz, PRB 84, 155413 (2011). Position and FWHM from Lorentzian fit (quadratic background, 340-460 cm-1 window; pseudo-Voigt gives the same centre, 382.84). Raw axis; Si offset not applied."
+    },
+    {
+      "position_cm1": 406.2,
+      "fwhm_cm1": 4.91,
+      "assignment": "MoS2 A1g (out-of-plane)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Assignment: Lee et al., ACS Nano 4, 2695 (2010); Molina-Sanchez & Wirtz, PRB 84, 155413 (2011). Position and FWHM from Lorentzian fit (same window). Raw axis; Si offset not applied."
+    },
+    {
+      "position_cm1": 520.51,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Si first-order optical phonon at Gamma, room-temperature reference ~520.7 cm-1. Measured 520.51 cm-1, implying a -0.19 cm-1 axis offset; applying it gives E2g ~383.0 and A1g ~406.4 cm-1. The A1g-E2g separation is offset-independent (23.4 cm-1)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "4-6 (best estimate ~5)",
+      "provenance": "inferred",
+      "source": "A1g-E2g separation of 23.4 +/- 0.1 cm-1 (measured) compared with the layer-dependent trend in Lee et al., ACS Nano 4, 2695 (2010): ~18.5 cm-1 for a monolayer, increasing with thickness toward ~25 cm-1 for bulk. Uncertainty is about +/-1 layer because the mapping is calibrated for specific lasers and instruments."
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "Peak pair and separation match 2H-MoS2 (E2g + A1g); no 1T' or other-phase modes were observed in this range."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "E2g FWHM of 2.4 cm-1 is narrow for MoS2; no defect-activated modes (for example the disorder-activated LA(M) near 227 cm-1 or 2LA(M) near 450 cm-1) were detected above noise."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee, C. et al., ACS Nano 4, 2695 (2010) - E2g/A1g assignment and layer-dependent A1g-E2g separation",
+    "Molina-Sanchez, A. & Wirtz, L., PRB 84, 155413 (2011) - MoS2 phonon assignment",
+    "Silicon first-order Raman line at ~520.7 cm-1 (room-temperature reference) for axis calibration"
+  ],
+  "limits": [
+    "Layer number rests on the A1g-E2g separation (23.4 cm-1). That mapping is calibrated for specific lasers and instruments, and Delta saturates toward bulk (~25 cm-1), so the estimate is about 4-6 layers, not an exact count.",
+    "The 532 nm laser matches the literature value used, but the reference separations vary by about 1 cm-1 between papers; this changes the layer estimate by about 1 layer.",
+    "Strain, doping and substrate effects can shift the E2g/A1g separation; the SiO2/Si substrate is not modelled. Strain would show as a shared shift of both modes, and the separation here is consistent with unstrained flakes, but this cannot be proven from one spectrum.",
+    "The Si line intensity is not usable as a thickness reference without an unmeasured bare-substrate reference, so intensity ratios were not used.",
+    "The spectrum starts at 150 cm-1. Low-frequency interlayer shear and breathing modes, which give an unambiguous layer count, are outside the measured range.",
+    "No polarization dependence was measured (single spectrum), so no symmetry check of E2g/A1g intensities was possible.",
+    "Positions are raw fit centres. The Si reference gives an axis offset of about -0.19 cm-1; the absolute E2g/A1g positions depend on whether this offset is applied.",
+    "No cosmic-ray spikes were found (largest residuals sit on the MoS2 and Si peaks, several points wide)."
+  ]
+}

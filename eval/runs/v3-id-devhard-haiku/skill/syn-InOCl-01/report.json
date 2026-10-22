@@ -1,0 +1,91 @@
+{
+  "candidates": [
+    {
+      "material": "ClInO (InOCl), Pmmn (59), CRD mp-27702",
+      "confidence": 0.6,
+      "evidence": "match_library score 0.988. All three measured peaks (155.7, 299.5, 354.0 cm-1) match Ag-labelled DFT modes at 155.1, 300.1 and 354.7 cm-1 with one fitted scale factor of 1.023. No strong predicted modes are missing in the 60-1100 cm-1 window. Second-ranked candidate scores 0.74, so the match is specific but rests on only three bands."
+    },
+    {
+      "material": "OPb (PbO litharge), P4/nmm (129), CRD row 427",
+      "confidence": 0.1,
+      "evidence": "Score 0.657. Matches 155.7 (A1g) and 354.0 (B1g) but leaves 299.5 cm-1 unexplained, and the labels are not consistent with a single symmetry assignment across the spectrum."
+    },
+    {
+      "material": "Bi2SeTe2, R-3m (166), CRD row 3466",
+      "confidence": 0.05,
+      "evidence": "Score 0.654. Only 155.7 cm-1 (A1g) matches; 299.5 and 354.0 cm-1 are unmatched."
+    },
+    {
+      "material": "Br7Nb3S, P3m1 (156), CRD row 3211",
+      "confidence": 0.05,
+      "evidence": "Score 0.736 but two strong predicted modes (E at 281.8 cm-1 and A1 at 448.9 cm-1) are absent from the spectrum, so it is disfavoured despite the numeric score."
+    },
+    {
+      "material": "Br3In, C2/m (12), CRD row 667",
+      "confidence": 0.03,
+      "evidence": "Score 0.59. Only 155.7 cm-1 matches; 299.5 and 354.0 cm-1 are unexplained."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null). The identification is made from the spectrum alone against the Computational Raman Database. The top candidate is ClInO, which is the same composition as InOCl, but this was not taken from any file name.",
+  "peaks": [
+    {
+      "position_cm1": 155.7,
+      "fwhm_cm1": 5.04,
+      "assignment": "Ag mode of ClInO (Pmmn), DFT reference 155.1 cm-1 after scale 1.023; strongest band (height about 5900 counts)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (rl_fit.py: position err 0.08, FWHM err 0.25 cm-1). Assignment from rl.py match_library, CRD row 2296 (mp-27702, Pmmn 59), Bagheri and Komsa 2023, Sci. Data 10, 80."
+    },
+    {
+      "position_cm1": 299.5,
+      "fwhm_cm1": 6.66,
+      "assignment": "Ag mode of ClInO (Pmmn), DFT reference 300.1 cm-1",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (position err 0.48, FWHM err 1.61 cm-1). Assignment from rl.py match_library, CRD row 2296, Bagheri and Komsa 2023, Sci. Data 10, 80."
+    },
+    {
+      "position_cm1": 354,
+      "fwhm_cm1": 7.77,
+      "assignment": "Ag mode of ClInO (Pmmn), DFT reference 354.7 cm-1",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (position err 0.25, FWHM err 0.99 cm-1). Assignment from rl.py match_library, CRD row 2296, Bagheri and Komsa 2023, Sci. Data 10, 80."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "Pmmn (orthorhombic, D2h), space group of the best-matching CRD entry",
+      "provenance": "inferred",
+      "source": "CRD row 2296 (mp-27702), Bagheri and Komsa 2023, Sci. Data 10, 80. Not independently confirmed from the spectrum alone."
+    },
+    {
+      "name": "layers",
+      "value": "not determinable from this single spectrum",
+      "provenance": "inferred",
+      "source": "No thickness-dependent relation applied; no layer-number relation for ClInO exists in the skill's reference notes."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike at 897.5 cm-1, removed by rl_qc.py before fitting",
+      "position_cm1": 897.5
+    }
+  ],
+  "citations": [
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, CC BY 4.0), entries row 2296 (ClInO, Pmmn 59, mp-27702), row 427, row 3466, row 3211, row 667 (used for candidate ranking)"
+  ],
+  "limits": [
+    "Identification rests on three bands. With one fitted frequency scale per candidate, three matches can occur by chance, so the ranking is only moderately discriminating. The second candidate's score (0.74) is not negligible in raw score, and it is excluded only by missing strong predicted modes.",
+    "The skill has no curated literature mode table or material note for InOCl/ClInO (lookup_reference_modes returned 'no literature table'). The mode labels Ag come from the DFT entry, not from measured polarization. The skill has no ClInO-specific layer, strain, or doping relations, so none are reported.",
+    "No polarization data was supplied (single spectrum), so the Ag symmetry is not tested. In backscattering along the layer normal, Ag modes are expected in xx/yy geometries, which is consistent with the three bands but does not prove it.",
+    "No Si line is present in the 60-1100 cm-1 window and no substrate was given (fit run with substrate 'none'). The spectrum therefore has no internal calibration check, and absolute positions carry the instrument calibration uncertainty, which is not quantified here.",
+    "The spectrum starts at 60 cm-1, so modes below 60 cm-1 cannot be assessed. Above 400 cm-1 the spectrum shows only a sloping background with no reported bands. A lower-SNR refit (--min-snr 3) finished in the background and returned the same three main bands (155.66, 299.49, 354.12 cm-1; widths slightly larger for 299.5 cm-1), plus two features I do not accept as peaks: 329.9 cm-1 (height error exceeds height, unresolved) and 889.4 cm-1 (about 8 cm-1 from the removed 897.5 cm-1 spike, likely spike residue or noise). Weak structure near 382 cm-1 (SNR about 2) is not significant.",
+    "Resonance and laser-energy effects were not evaluated. The 532 nm laser, 295 K temperature, and unknown substrate and polarization geometry are assumed, not measured."
+  ]
+}

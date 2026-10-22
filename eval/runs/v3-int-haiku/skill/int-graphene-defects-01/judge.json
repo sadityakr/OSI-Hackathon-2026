@@ -1,0 +1,70 @@
+{
+ "key": "cce2522d97f457c4",
+ "score": 0.8333333333333334,
+ "by_kind": {
+  "finding": 0.75,
+  "quantitative": 1.0,
+  "caveat": 1.0,
+  "question": 0.5
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 2,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report says doses 1\u20133 are \"in the low-defect (stage 1) regime\". It gives I_D/I_G rising 0.250 \u2192 0.575 \u2192 1.213, G FWHM of 12\u201313 cm-1 \"against about 14 cm-1 for stage 1\", and a single sharp 2D (FWHM 23.5\u201325.2 cm-1)."
+   },
+   {
+    "id": "n1",
+    "met": 1,
+    "why": "The values are I_D/I_G 0.250 / 0.575 / 1.213 with \"L_D 24.0 -> 15.8 -> 10.9 nm\" from Cancado Eq. 4 at 532 nm using heights, and all three fall inside the rubric ranges."
+   },
+   {
+    "id": "c1",
+    "met": 1,
+    "why": "It applies \"Eq. 4 (1.8+-0.5)e-9 lambda^4 / (I_D/I_G), 532 nm\" with the wavelength explicitly in the formula, and notes the constant was fixed by fits at 514.5, 632.8 and 785 nm. It does not, however, say outright that the same ratio gives a different L_D at another laser line."
+   },
+   {
+    "id": "f2",
+    "met": 0.5,
+    "why": "It correctly finds that dose 4 is \"high, beyond stage 1\", that the relation does not apply and that \"the naive D/G value (0.51) must not be used\", and it notes the broad G and missing 2D. But it calls the spectrum \"inconsistent with the stage-2 trajectory\" and reads it as a-C-like, rather than placing it past the I_D/I_G maximum in stage 2 with L_D below about 3 nm or recognising that G has merged with D'."
+   },
+   {
+    "id": "f3",
+    "met": 1,
+    "why": "It reports \"I_D/I_D' = 2918/357 = 8.2 +- 0.8\" for dose 3 as vacancy-type, quotes Eckmann's values of about 13 for sp3, about 7 for vacancies and about 3.5 for boundaries, and says the relation is \"valid in stage 1\"."
+   },
+   {
+    "id": "c2",
+    "met": 1,
+    "why": "It states \"I_D/I_G uses peak heights, as the relation requires. Areas give different numbers...\""
+   },
+   {
+    "id": "q1",
+    "met": 0.5,
+    "why": "It asks what 'dose' means (\"ion or electron fluence, plasma time, laser energy...\"), but only to get a rate constant, not because the point-defect relation and the D/D' ratio depend on defect type."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "The report rates dose 4 \"high\" defect level and gives no L_D for it."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "It uses the lambda^4 dependence evaluated at 532 nm, not the 514.5 nm calibration."
+   },
+   {
+    "id": "w3",
+    "made": false,
+    "why": "The 2154 cm-1 spike is never mentioned or assigned as a band."
+   }
+  ],
+  "citation_specificity": 2
+ },
+ "judge_model": "claude-opus-5-5"
+}

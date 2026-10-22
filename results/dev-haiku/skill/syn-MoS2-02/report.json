@@ -1,0 +1,92 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2 (few-layer or bulk-like)",
+      "confidence": 0.45,
+      "evidence": "Two strong bands at 391.31 and 415.47 cm-1 (separation 24.2 cm-1), which is close to the E2g/A1g doublet separation of bulk-like 2H-MoS2 (about 383/408 cm-1 in Lee et al., ACS Nano 2010). Both bands sit about 8 cm-1 above those literature values, which the Si calibration (520.51 vs 520.7 cm-1) does not explain. Assignment is tentative."
+    },
+    {
+      "material": "2H-WSe2",
+      "confidence": 0.02,
+      "evidence": "The user's hint. The expected first-order WSe2 bands (E'/E^1_2g and A1g near 250 cm-1, A1' near 260 cm-1 for monolayer, and the B2g-related band near 308 cm-1 in multilayers; Tonndorf et al. 2013, Zhao et al. 2013) are absent. Probing 250, 261 and 308 cm-1 with a fixed-width Gaussian gives at most 673 +/- 264 counts at 250 cm-1 (about 2.5 sigma), and the 391 cm-1 band is 161000 counts, so any WSe2 band would have to be below about 0.5% of the strongest observed band."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "WSe2 has its characteristic first-order Raman bands between about 170 and 310 cm-1 (E'/A1g near 250 cm-1, A1' near 260 cm-1 for the monolayer, with the B2g-related band near 308 cm-1 in multilayers; Tonndorf et al., Opt. Express 21, 4908 (2013); Zhao et al., Nanoscale 2013). The spectrum shows no band in that window above about 2.5 sigma. Its two strong bands are at 391.31 and 415.47 cm-1, about 140 cm-1 above the strongest WSe2 band, and they are not an E'/A1' pair. The 532 nm, 295 K, SiO2/Si conditions do not change this: WSe2 phonons are observed in these conditions in the literature. The spectrum is therefore not consistent with WSe2. Its strongest bands are closer to an MoS2-type E2g/A1g doublet, though shifted about 8 cm-1 up from the literature values.",
+  "peaks": [
+    {
+      "position_cm1": 391.31,
+      "fwhm_cm1": 5.29,
+      "assignment": "2H-MoS2 E^1_2g (tentative; no WSe2 counterpart)",
+      "irrep": "E^1_2g (D6h, bulk 2H)",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (pseudo-Voigt fit, 340-560 cm-1 window, linear baseline). Assignment by matching the E/A doublet separation to bulk-like MoS2: Lee et al., ACS Nano 4, 2695 (2010), doi 10.1021/nn1003937. The offset of about +8 cm-1 from the literature value is not explained."
+    },
+    {
+      "position_cm1": 415.47,
+      "fwhm_cm1": 7.21,
+      "assignment": "2H-MoS2 A1g (tentative; no WSe2 counterpart)",
+      "irrep": "A1g (D6h, bulk 2H)",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (same fit). Assignment from the doublet pattern: Lee et al., ACS Nano 4, 2695 (2010), doi 10.1021/nn1003937. Same unexplained +8 cm-1 offset."
+    },
+    {
+      "position_cm1": 520.51,
+      "fwhm_cm1": 3.48,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Position and FWHM measured. Reference: first-order Si line at about 520.7 cm-1 at room temperature (standard silicon reference; not retrieved from a tool). The measured offset of -0.2 cm-1 is the calibration check."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H-MoS2 (tentative); not WSe2",
+      "provenance": "inferred",
+      "source": "Doublet pattern against Lee et al., ACS Nano 4, 2695 (2010), doi 10.1021/nn1003937. Requires confirmation against an MoS2 reference measured under the same conditions."
+    },
+    {
+      "name": "layers",
+      "value": "few-layer or bulk-like (tentative)",
+      "provenance": "inferred",
+      "source": "Doublet separation 24.2 cm-1, closer to the bulk-like value than the monolayer value (about 19 cm-1), per Lee et al. (2010). Not a relation applied with a validated threshold."
+    },
+    {
+      "name": "calibration",
+      "value": "Si at 520.51 cm-1, -0.2 cm-1 vs 520.7 cm-1",
+      "provenance": "measured",
+      "source": "Pseudo-Voigt fit of the Si line"
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Not determined; the single spectrum gives no basis for doping or strain estimates."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Not determined. A rigid +8 cm-1 shift of both bands is not a clean strain or doping signature from one spectrum."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Tonndorf, P. et al. Photoluminescence emission and Raman response of monolayer MoS2, MoSe2, and WSe2. Opt. Express 21, 4908 (2013). doi 10.1364/OE.21.004908. https://pubmed.ncbi.nlm.nih.gov/23482024/",
+    "Zhao, W. et al. Lattice dynamics in mono- and few-layer sheets of WS2 and WSe2. Nanoscale (2013). doi 10.1039/C3NR03052K. https://arxiv.org/abs/1304.0911",
+    "Lee, C. et al. Anomalous lattice vibrations of single- and few-layer MoS2. ACS Nano 4, 2695 (2010). doi 10.1021/nn1003937. https://arxiv.org/abs/1005.2509"
+  ],
+  "limits": [
+    "The skill's reference notes, the CRD match library and its fit scripts sit outside this folder, and I was asked not to read them. I did not run the library matcher; the analysis used my own baseline, peak and window fits on ./spectrum.csv, so the candidate ranking is not the library's ranking.",
+    "The WSe2 mode frequencies and the MoS2 reference positions quoted here are from memory of the literature, checked only at the level of titles and abstract metadata via Valency. Treat the exact numbers as approximate; the verdict depends on the absence of any band near 250 to 310 cm-1, not on a precise value.",
+    "Single spectrum, no polarization series, no photoluminescence, no second excitation wavelength, so the assignment of 391/415 cm-1 to MoS2 is tentative. Other TMDs and materials were not systematically ranked.",
+    "The +8 cm-1 offset of the two strong bands from MoS2 literature is not explained by calibration (the Si line is at 520.51 cm-1) and I cannot separate strain, doping, sample identity or a different polytype from one spectrum.",
+    "The 250 cm-1 probe gives a weak 2.5 sigma excess (673 +/- 264 counts), not a credible band. The fit uses a fixed 3.5 cm-1 FWHM; a different width could change this, but not the conclusion, since the 391 cm-1 band is about 240 times stronger.",
+    "Baseline is a fitted linear background over 340 to 560 cm-1. The broad background (about 7500 to 10000 counts, falling toward 1100 cm-1) is probably luminescence or substrate and was not modelled; it could shift peak areas but not the peak positions in a meaningful way.",
+    "Laser at 532 nm is about 2.33 eV, off resonance with WSe2 excitons (about 1.65 eV), so resonance does not explain the absence of WSe2 bands. The conditions reported (295 K, SiO2/Si, backscattering) are the standard ones for WSe2 Raman in the literature, so the absence is not explained by the setup."
+  ]
+}

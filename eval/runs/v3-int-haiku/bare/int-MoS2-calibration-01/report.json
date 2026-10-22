@@ -1,0 +1,122 @@
+{
+  "summary": "No change in the MoS2 first-order Raman fingerprint between day 1 and day 2 is detectable once the spectrometer axis is corrected with the substrate Si line. The E2g and A1g positions, their separation, their widths and their intensities relative to Si all agree within fit and baseline-model uncertainty. The two days differ mainly by (i) a rigid wavenumber offset of about +2.5 cm-1 and (ii) an extra, nearly flat background of about +130 counts on day 2. Neither is a sample signal. The colleague's adsorbate doping or strain hypothesis is not supported by these two spectra. Reading \"changed\" as the flake's Raman-observable state (peak positions, separation, widths, relative intensities) is my assumption. The \u0394(A1g\u2212E2g) \u2248 21.5\u201321.6 cm-1 value points to a few-layer flake, with low confidence.",
+  "observations": [
+    {
+      "finding": "The whole day-2 spectrum is rigidly shifted up by ~2.5 cm-1 relative to day 1. This is a spectrometer/calibration offset, not a flake change.",
+      "evidence": "Substrate Si line (fitted Lorentzian + quadratic background, 500\u2013540 cm-1): day 1 519.977 \u00b1 0.015 cm-1, day 2 522.469 \u00b1 0.025 cm-1, shift +2.49 cm-1. MoS2 E2g: 383.326 \u2192 385.833 (+2.51). A1g: 404.901 \u2192 407.343 (+2.44). Sign argument: laser heating would redshift Si and MoS2, while day 2 is blue-shifted for both.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "After Si-referencing (assuming Si at 520.7 cm-1 at 295 K), the MoS2 phonon positions are identical on both days, and the A1g\u2212E2g separation is unchanged within about 0.1 cm-1.",
+      "evidence": "Corrected E2g: day 1 384.05, day 2 384.06 (\u0394 = +0.01). Corrected A1g: day 1 405.63, day 2 405.58 (\u0394 = \u22120.05). Separation \u0394(A1g\u2212E2g): 21.58 (day 1) vs 21.51 (day 2), difference \u22120.07 cm-1. Across window choices (340\u2013440 / 360\u2013430 / 330\u2013460 cm-1) and quadratic/cubic backgrounds, \u0394 varies only 21.50\u201321.59.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Peak widths are unchanged, and the spectrometer resolution is the same on both days.",
+      "evidence": "E2g FWHM 2.08 \u00b1 0.04 (day 1) vs 2.14 \u00b1 0.06 (day 2) cm-1; A1g FWHM 6.37 vs 6.31 cm-1 (\u00b10.2\u20130.3); Si FWHM 3.54 vs 3.52 cm-1. Widths stay within ~3% across fit windows.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Intensities relative to the Si reference agree to a few percent. The A1g is ~3\u20134% weaker on day 2, which is within the uncertainty.",
+      "evidence": "Integrated area E2g/Si: 0.567 (day 1) vs 0.571 (day 2), +0.6%. A1g/Si: 0.592 vs 0.569, \u22123.8%. A1g/E2g area: 1.04 vs 1.00. Peak-height ratios: E2g/Si 0.963 vs 0.942 (\u22122%); A1g/Si 0.328 vs 0.318 (\u22123%). Fit-error on day-2 A1g area is ~7%, so the difference is ~0.5\u03c3.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Day 2 has an additional background of roughly +130 counts (~35% of the day-1 background), nearly flat across the range. It does not scale the MoS2 or Si peaks, so the sample's Raman signal did not change.",
+      "evidence": "Difference (day 2 \u2212 day 1), calibrated grid, peaks excluded: +142 counts at 170 cm-1, +140 at 300, +125 at 450, +97 at 600 cm-1 (mild slope \u2248 \u221211 counts per 100 cm-1). Quiet-region noise: sd 12.8 \u2192 15.6 counts (150\u2013200 cm-1). Peak heights above baseline are unchanged (Si 911 vs 909 counts).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The two spectra were not recorded with identical acquisition settings: the wavenumber step differs (0.53 vs 0.66 cm-1, 949 vs 756 points) over the same 150\u2013649.6 cm-1 window.",
+      "evidence": "np.diff of shift_cm1: day 1 0.52\u20130.53, day 2 0.66\u20130.67 cm-1. Comparisons were made on a common, Si-calibrated grid by linear interpolation.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Weak features (LA(M) ~228, E1 2g ~287, 2LA(M) ~450 cm-1) are not reliably detected in either spectrum, so no conclusion is drawn from them. Nothing in 150\u2013230 cm-1 is distinguishable from noise either, so 1T\u2032 J-modes cannot be assessed.",
+      "evidence": "Lorentzian fits to these windows reach fit-bound centres, amplitudes with no usable stderr, or heights of ~2\u201316 counts against a residual sd of 11\u201316 counts.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The \u0394(A1g\u2212E2g) \u2248 21.5\u201321.6 cm-1 value is consistent with a few-layer flake (roughly 3\u20134 layers by the layer-number trend in Lee et al.). \u0394 is largely insensitive to the day-to-day calibration offset, so it is a more robust thickness indicator than the absolute positions.",
+      "evidence": "\u0394 = 21.58 (day 1), 21.51 (day 2), both after the same fit model. The mapping to layer number is from memory of the Lee et al. (2010) trend (monolayer \u2248 18\u201319, bulk \u2248 25 cm-1) and needs checking against their figure before use.",
+      "provenance": "literature",
+      "source": "Lee, C. et al., ACS Nano 4, 2695 (2010), \u0394 vs layer-number figure (recalled, not verified in this session)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "few-layer, roughly 3\u20134 (low confidence); the \u0394 value alone cannot exclude 2\u20135 L",
+      "provenance": "inferred",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010) trend, recalled; confirm with optical contrast or AFM"
+    },
+    {
+      "name": "phase",
+      "value": "2H (E2g + A1g pair near 384/405 cm-1; no 1T\u2032 signatures resolved)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected (Si-referenced E2g/A1g positions unchanged to \u22720.05 cm-1 between days)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none detected; this Raman measurement has low sensitivity to adsorbate doping in few-layer flakes",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable from these spectra; no defect-activated feature resolved above noise",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "L_D_nm",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Two single spectra with no repeats. Uncertainties come from fit covariance and a 3-model baseline test, which understates run-to-run and spot-to-spot variation. Ratio differences of a few percent are at the noise level.",
+    "The absolute calibration rests on assuming the Si line is at 520.7 cm-1 at 295 K. A 0.3 cm-1 error in that value shifts both MoS2 peaks equally and does not change \u0394 or the day-to-day comparison.",
+    "The Si line comes from the substrate under the flake. Its intensity and position are only a proxy for the flake's own response, because the optical path through SiO2 and the flake (interference, absorption) also affects the Si signal. Intensity normalisation therefore assumes the optical path is unchanged between days.",
+    "Laser power, focus, objective, grating, integration time and accumulations are unknown. A power or focus change can shift MoS2 peaks by heating (downward), but the observed offset is upward for Si too, so calibration is the better explanation. The intensity changes could also come from focus or power changes.",
+    "The day-2 background offset (+~130 counts) could be detector dark level, stray light, or fluorescence from adsorbates or residue on the flake/SiO2. Two spectra cannot distinguish these. The nearly flat shape argues for an instrumental origin rather than a fluorescence hump, but this is not a proof.",
+    "The two acquisitions have different wavenumber steps, so the spectra were not taken with identical settings. This is a pitfall for any pixel-level comparison.",
+    "The literature values for \u0394 versus layer number and for doping/strain sensitivity are recalled from memory and were not checked in this session."
+  ],
+  "citations": [
+    "Lee, C. et al., \"Anomalous Lattice Vibrations of Single- and Few-Layer MoS2\", ACS Nano 4, 2695\u20132700 (2010) \u2014 A1g\u2212E2g separation vs layer number, used for the few-layer estimate (recalled; verify the figure values)",
+    "Chakraborty, B. et al., \"Symmetry-dependent phonon renormalization in monolayer MoS2 transistor\", Phys. Rev. B 85, 161403(R) (2012) \u2014 E2g and A1g respond differently to electron doping (recalled; direction and magnitude not verified)",
+    "Rice, C. et al., \"Raman-scattering measurements and first-principles calculations of strain effects in MoS2\", Phys. Rev. B 87, 081307(R) (2013) \u2014 strain gauge factors for E2g and A1g (recalled; not verified)",
+    "Temple, P.A. & Hathaway, C.E., Phys. Rev. B 7, 3685 (1973) \u2014 temperature dependence of the Si first-order Raman line; the 520.7 cm-1 room-temperature reference is commonly cited from this and related work (recalled; not verified)"
+  ],
+  "limits": [
+    "The data cannot establish layer number, doping or strain on their own; \u0394 is a few-layer indicator only and its mapping is not checked here.",
+    "The data cannot establish whether adsorbates are present, because doping sensitivity of Raman in few-layer MoS2 is weak and no PL, XPS or electrical data were supplied. PL of the A exciton would be the more sensitive probe.",
+    "Absolute strain cannot be quantified without a verified gauge factor and a verified Si reference. The relative agreement to \u22720.05 cm-1 only bounds strain change to the level set by that gauge factor.",
+    "Weak modes (LA(M), E1 2g, 2LA(M)) and defect-activated features are below the detection limit here; defect density and the L_D estimate cannot be given.",
+    "No information on sample history (annealing, bake, contamination or storage) or on the flake's thickness from AFM or optical contrast was supplied."
+  ],
+  "questions_for_user": [
+    "What were the laser power at the sample, objective/NA, grating, integration time and number of accumulations on each day? A power or focus change would change intensity and heating, so it must be known before intensity differences are interpreted.",
+    "Why do the two files have different wavenumber steps (0.53 vs 0.66 cm-1)? A grating, pixel-binning or resampling change would explain it, and it affects how the spectra compare.",
+    "Was a Si or other calibration standard measured on each day? The +2.5 cm-1 offset is what calibration would produce, but I have not seen a reference measurement.",
+    "Was a dark spectrum or a reference spot on bare SiO2/Si taken on each day? That would settle whether the +130-count background is instrumental or sample-related.",
+    "Was the spot marked and revisited on each day, and how repeatable is the position? The E2g/Si intensity ratio matches closely, which suggests the same spot, but I cannot confirm it.",
+    "Is there an independent thickness measurement (AFM or optical contrast) for this flake? It would test the few-layer estimate from \u0394.",
+    "Was the flake annealed, cleaned or otherwise processed between the two days, or was it only stored in air?"
+  ]
+}

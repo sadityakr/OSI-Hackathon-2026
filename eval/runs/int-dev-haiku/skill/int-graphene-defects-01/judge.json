@@ -1,0 +1,70 @@
+{
+ "key": "e60dd28b030922a2",
+ "score": 0.8333333333333334,
+ "by_kind": {
+  "finding": 0.9166666666666666,
+  "quantitative": 1.0,
+  "caveat": 0.5,
+  "question": 0.5
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 2,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report says doses 1\u20133 are \"stage 1 (isolated point defects)\". It gives G FWHM \"14.0, 13.9, 13.9\", sharp monolayer 2D (FWHM 32, I_2D/I_G ~3), and rising D and D' heights (D 702\u21922046\u21922971; D' 119\u2192331\u2192433)."
+   },
+   {
+    "id": "n1",
+    "met": 1,
+    "why": "From peak heights at 532 nm it gets I_D/I_G \"0.250 -> 0.569 -> 1.191\" and L_D \"23.9, 15.5 and 10.3 nm\", all inside the rubric ranges. It used the Lucchese-form C_A=160/E_L^4 model rather than Eq. 4 by name."
+   },
+   {
+    "id": "c1",
+    "met": 0.5,
+    "why": "It applies the wavelength scaling explicitly (\"E_L = 2.331 eV; C_A = 160/E_L^4\"). It never says the same ratio gives a different L_D at another laser line. Its question about whether \"the 514.5 nm dataset ... applies unchanged\" muddles the point."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "For dose 4 it reports \"D/G falling back to 0.58\", G FWHM 45 vs 14, \"2D band lost\", and D' overlapping the G shoulder. It concludes dose 4 is \"past the maximum ... on the high-density branch\" (L_D ~1.2 nm) and that the stage-1 relation cannot be applied."
+   },
+   {
+    "id": "f3",
+    "met": 0.5,
+    "why": "It gives \"I_D/I_D' is about 6-7 across doses 1-3\" as \"closest to the vacancy-like value\" and quotes Eckmann's 13/7/3.5. It does not say the classification holds only in the low-density regime; it calls dose 4 unreliable only because D' is weak."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "It states \"I used peak heights\" and reports the area ratios that differ. It also says \"Whether the source model uses heights or areas was not verified\", so it never ties Cancado's calibration to heights."
+   },
+   {
+    "id": "q1",
+    "met": 0.5,
+    "why": "It asks for the dose \"in physical units (ion fluence, plasma time, or similar)\", but only for cross-calibration. It does not link the treatment type to the point-defect assumption or to the D/D' defect-type dependence."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "It says dose 4 is on the high-density branch and that Eq. 4 is not valid for it (\"no defect density can be given\"), and it gives no L_D above 10 nm."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "It uses E_L = 2.331 eV (532 nm) with E_L^-4 scaling, not the 514.5 nm constants."
+   },
+   {
+    "id": "w3",
+    "made": false,
+    "why": "It calls the spike near 2150 cm^-1 \"a single-point spike ... an artifact\" and does not analyse it."
+   }
+  ],
+  "citation_specificity": 2
+ },
+ "judge_model": "claude-opus-5-5"
+}

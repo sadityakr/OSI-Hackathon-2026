@@ -1,0 +1,114 @@
+{
+  "candidates": [
+    {
+      "material": "\u03b1-In2Se3",
+      "confidence": 0.15,
+      "evidence": "Layered selenide with a strong low-frequency mode near 105 cm-1 and several modes between about 150 and 250 cm-1 with no mode above ~250 cm-1, which is qualitatively like the measured pattern. The 205 and 244 cm-1 assignments are recalled from memory, not checked against a reference spectrum."
+    },
+    {
+      "material": "GeS (Pnma, orthorhombic)",
+      "confidence": 0.12,
+      "evidence": "Layered group-IV monochalcogenide whose Raman modes lie in the 100-260 cm-1 range, consistent with the absence of peaks above ~250 cm-1 here. Recalled literature positions differ from the measured 105/205/244 cm-1 by more than 10 cm-1, so this is a weak match."
+    },
+    {
+      "material": "GeSe (Pnma, orthorhombic)",
+      "confidence": 0.1,
+      "evidence": "Same Pnma layered family as GeS and SnSe, with modes in the 100-250 cm-1 window. No reliable reference positions were available to compare against, so this rests on structural class only."
+    },
+    {
+      "material": "PdSe2",
+      "confidence": 0.08,
+      "evidence": "Layered pentagonal diselenide with several Raman modes between about 130 and 260 cm-1. Recalled positions are approximate and unverified; the pattern here (one weak low-frequency mode and two strong modes near 205 and 244 cm-1) is not confirmed by any reference."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to check the identification against. The spectrum has three material modes at 104.6, 205.4 and 243.9 cm-1 plus the Si substrate line at 520.6 cm-1, and no other significant features from 60 to 1100 cm-1. Those modes fit a layered, low-symmetry chalcogenide-type structure qualitatively, but three modes without polarization data or a reference library do not identify a specific material. The material is not established; the candidates above are weak, recall-based guesses.",
+  "peaks": [
+    {
+      "position_cm1": 104.6,
+      "fwhm_cm1": 8.6,
+      "assignment": "Unassigned material mode (weak, broad, low-frequency)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit over 90-270 cm-1 with polynomial baseline; fit gives 104.62 cm-1, FWHM 8.25 cm-1; full-range fit 104.6 cm-1, FWHM 8.6 cm-1. Mode identity not established."
+    },
+    {
+      "position_cm1": 205.4,
+      "fwhm_cm1": 6.3,
+      "assignment": "Unassigned material mode (strongest material peak)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit: 205.41 cm-1, FWHM 6.32 cm-1 (fit over 90-270 cm-1); full-range fit 205.4 cm-1. Mode identity not established."
+    },
+    {
+      "position_cm1": 243.9,
+      "fwhm_cm1": 5.1,
+      "assignment": "Unassigned material mode",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit: 243.92 cm-1, FWHM 5.15 cm-1 (fit over 90-270 cm-1); full-range fit 243.9 cm-1. Mode identity not established."
+    },
+    {
+      "position_cm1": 520.6,
+      "fwhm_cm1": 3.5,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Lorentzian fit over 505-537 cm-1 gives 520.62 cm-1 (FWHM 3.54 cm-1). Assignment to the first-order Si Raman mode (about 520.7 cm-1 at room temperature, e.g. Parker, Feldman & Ashkin, Phys. Rev. 155, 712 (1967), recalled and not checked here)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Three material modes only; no reference library or polarization data available to assign a crystal phase."
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "Thickness-dependent mode shifts were not measured; no reference frequencies were available to compare against."
+    },
+    {
+      "name": "defect_level",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No defect-activated bands (e.g. D-type) seen in the 60-1100 cm-1 range; low-frequency defect signatures cannot be ruled out with this data alone."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Mode positions could not be compared with unstrained reference values, so no strain can be inferred."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No Raman signature of doping was identified; this is not a measurement of doping."
+    },
+    {
+      "name": "substrate_bands",
+      "value": "Si line only; no SiO2 broad bands (about 440-500 and 800 cm-1) above noise, no significant Si second-order band near 950-1000 cm-1",
+      "provenance": "measured",
+      "source": "Residual scan after four-peak fit: noise SD about 82 counts; the largest residual bumps (555, 563, 715 cm-1) are about 1.3 sigma of the smoothed residual, which is noise."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Parker, J. H., Feldman, D. W., & Ashkin, M. (1967). Raman scattering by silicon and germanium. Phys. Rev. 155, 712 (recalled, not checked against the source in this session)."
+  ],
+  "limits": [
+    "The material is not identified. Three material modes (104.6, 205.4, 243.9 cm-1) without a reference spectrum, polarization series, or thickness information cannot single out a compound; the candidates are low-confidence recall-based guesses, and no literature mode table was consulted in this session.",
+    "The spectrum was measured at 295 K with 532 nm excitation in backscattering. Peak positions are fitted from a 1.1 cm-1 sampled spectrum, so absolute positions carry a calibration uncertainty of order 0.5 cm-1 (the Si line sits at 520.6 versus a 520.7 reference).",
+    "Spectral coverage is 60-1100 cm-1. Modes below 60 cm-1 (e.g. shear or breathing modes) and any modes between 1100 and higher frequencies cannot be seen, so a material with its characteristic modes outside this window would not be identified by this measurement.",
+    "Peak assignments to a specific Raman-active irrep or to a specific mode of any candidate could not be made without polarization data; all material peaks are left unassigned.",
+    "No cosmic-ray spikes were found: the largest single-point excesses coincide with the broad Si and 205/244 cm-1 peak tops, whose neighbours are also elevated, so they are real peak shape, not spikes.",
+    "Among the candidate compounds, the Pnma group (GeS, GeSe) and alpha-In2Se3 are plausible on structural grounds only; this report does not establish any of them."
+  ]
+}

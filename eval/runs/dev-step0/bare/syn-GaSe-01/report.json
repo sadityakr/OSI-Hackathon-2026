@@ -1,0 +1,93 @@
+{
+  "candidates": [
+    {
+      "material": "GaSe (layered post-transition-metal monochalcogenide, \u03b5/\u03b2-type)",
+      "confidence": 0.6,
+      "evidence": "Two strong lines at 127.8 and 306.0 cm-1 match the A1'(1) (~134) and A1'(2) (~307-308) out-of-plane modes of GaSe. The 306 cm-1 line fits very well. The 128 line is about 6 cm-1 below the usual value. The commonly seen E' (~213) and E (~250) modes are not resolved."
+    },
+    {
+      "material": "GaS",
+      "confidence": 0.08,
+      "evidence": "The same family, but its modes are expected near 188, 295 and 360 cm-1, so it does not match."
+    },
+    {
+      "material": "Bi2Te3 / Sb2Te3 / In2Se3 / InSe",
+      "confidence": 0.07,
+      "evidence": "Their strongest modes (Bi2Te3 ~102/134, InSe ~115/178/200/227, In2Se3 ~110/175/205) do not reproduce the 128 + 306 pair."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given in the metadata, so the identification rests on the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 127.85,
+      "fwhm_cm1": 3.6,
+      "assignment": "GaSe A1'(1) (out-of-plane interlayer-like Ga-Ga/Se breathing mode)",
+      "irrep": "A1'",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; assignment from the GaSe Raman literature (A1'(1) ~134 cm-1), Allakhverdiev et al. and Terhell 1983. The ~6 cm-1 offset from the literature value is not explained."
+    },
+    {
+      "position_cm1": 305.95,
+      "fwhm_cm1": 6.7,
+      "assignment": "GaSe A1'(2) (intralayer Ga-Se stretch)",
+      "irrep": "A1'",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; assignment from the GaSe literature (~307-308 cm-1)."
+    },
+    {
+      "position_cm1": 204.2,
+      "fwhm_cm1": null,
+      "assignment": "Not a significant peak: a noise fluctuation (~1.8\u03c3) near the expected GaSe E'(~213) region. The expected E'/E'' (~213) and E (~250) modes are not detected above the noise.",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Noise estimate (std ~110 counts) from the 190-220 cm-1 window."
+    }
+  ],
+  "properties": [
+    {
+      "name": "Excitation / conditions",
+      "value": "532 nm, 295 K, backscattering along the layer normal. Only the A1' modes are strongly seen, as expected for this geometry.",
+      "provenance": "inferred",
+      "source": "Raman selection rules for backscattering from layered GaSe."
+    },
+    {
+      "name": "Background",
+      "value": "The background rises smoothly from ~1100 counts at 60 cm-1 to ~3600 counts at ~900 cm-1. This looks like a photoluminescence or fluorescence tail from 532 nm excitation.",
+      "provenance": "measured",
+      "source": "Median intensity in 60 cm-1 windows."
+    },
+    {
+      "name": "Layer number",
+      "value": "Not determined. The A1' positions and widths cannot reliably separate thin from bulk GaSe here.",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single point, ~10900 counts over a ~2000-count baseline)",
+      "position_cm1": 327.06
+    },
+    {
+      "type": "broad rising photoluminescence/fluorescence background",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Terhell, J.C.J.M., Prog. Cryst. Growth Charact. 7, 55 (1983), GaSe lattice and vibrational properties",
+    "Allakhverdiev et al., Solid State Commun. 149, 2009 (GaSe Raman)",
+    "Irwin, Clayman, Mead, Phys. Rev. B 19, 2099 (1979), GaSe Raman"
+  ],
+  "limits": [
+    "The assignment relies on two peaks. The match is good at 306 cm-1 but the 128 cm-1 line is about 6 cm-1 below the usual GaSe A1'(1) value (~134), which may reflect strain, a different polytype or a calibration offset.",
+    "The E' (~213) and E (~250) modes are not detected, so the polytype (\u03b5, \u03b2, \u03b3) cannot be determined.",
+    "Layer number, strain and doping cannot be determined from this single unpolarized spectrum.",
+    "This is a single spectrum with no angle resolution, so no polarization-pattern classification is possible.",
+    "The 327 cm-1 point is a one-pixel spike and was excluded as a cosmic ray. The 204 cm-1 feature is within the noise.",
+    "The substrate is unspecified, and no Si 520.7 cm-1 line is visible."
+  ]
+}

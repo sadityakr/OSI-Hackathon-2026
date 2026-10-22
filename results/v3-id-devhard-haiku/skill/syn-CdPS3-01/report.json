@@ -1,0 +1,128 @@
+{
+  "candidates": [
+    {
+      "material": "CdPS3",
+      "confidence": 0.3,
+      "evidence": "rl.py match_library (Computational Raman Database, C2/m, fitted scale 1.021) is the top-ranked candidate, score 0.60. It matches 123.7, 240.6, 263.5, 368.7 and 550.7 cm-1 to DFT modes within 0.6 cm-1 and has no missing strong modes. This is a DFT entry for a different metal thiophosphate, so it shows the mode pattern is MPS3-like, not the identity of the cation."
+    },
+    {
+      "material": "FePS3",
+      "confidence": 0.3,
+      "evidence": "The stated material. The qualitative pattern matches the bulk FePS3 room-temperature spectrum in arXiv 1608.04169 Fig. 1b (weak broad low-frequency P1 near 100 cm-1, weak P3 near 230, P4 near 248, P5 near 278, strongest P6 near 380 cm-1), and the MPS3 note says the paramagnetic phase above T_N=118 K has a broad low-frequency band plus four modes in 150 to 400 cm-1. However, the sample's sharp modes sit 7 to 15 cm-1 below those values (P4 240.6 vs about 248, P5 263.5 vs about 278, P6 368.7 vs about 380). The Si line is calibrated to 520.87 (offset +0.17), so calibration does not explain the difference. No FePS3 entry exists in the local DFT or literature tables, so this cannot be confirmed quantitatively."
+    },
+    {
+      "material": "other MPS3-type metal thiophosphate (e.g. MnPS3, NiPS3, CoPS3)",
+      "confidence": 0.1,
+      "evidence": "Not tested: no reference entry for these compounds was retrieved in this session. Kept only to show that the MPS3 family pattern does not by itself identify FePS3. The MPS3 note gives room-temperature family-level statements only."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The spectrum has the qualitative structure expected for an MPS3-type layered thiophosphate in the paramagnetic phase (295 K, above T_N of about 118 K): a broad low-frequency band near 124 cm-1 (FWHM 10.4), three sharp internal modes at 240.6, 263.5 and 368.7 cm-1 with the strongest sample mode at 368.7, and a weaker band at 550.7. That matches the room-temperature bulk FePS3 spectrum in arXiv 1608.04169 Fig. 1b (P1 about 100 broad, P3 about 230, P4 about 248, P5 about 278, P6 about 380; values read from the figure, about \u00b13 cm-1). The verdict is \"inconsistent\" as stated because the sharp modes are 7 to 15 cm-1 lower than the FePS3 reference values with the Si line calibrated (520.87 vs 520.7). The local matcher ranks CdPS3 above any FePS3 entry (which does not exist in the library), so this spectrum is not confirmed as FePS3. The mismatch is not explained by calibration (Si offset +0.17) or by the stated temperature (295 K). Laser heating would soften modes, but a 12 cm-1 softening at 532 nm is implausibly large without evidence. A different composition, strain, or a different polytype would also shift modes, but the data alone cannot separate these.",
+  "peaks": [
+    {
+      "position_cm1": 74.698,
+      "fwhm_cm1": 3.821,
+      "assignment": "unassigned low-frequency feature (near the low-wavenumber edge of the window, 60.5 cm-1)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "rl_fit.py position/FWHM; the MPS3 note's 105 to 121 cm-1 low-frequency features are not at this position, and the Bragg notch filter cutoff (about 5 to 10 cm-1 from the laser) means absence/presence is not diagnostic here (artifacts.md, Low-wavenumber cutoff)."
+    },
+    {
+      "position_cm1": 123.7,
+      "fwhm_cm1": 10.416,
+      "assignment": "P1 (broad paramagnetic low-frequency band; likely the P0/P1 family band)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "arXiv 1608.04169 Fig. 1b (P1 near 100 cm-1 at 300 K, broad; read from figure, about \u00b13 cm-1); MPS3 note (Ghosh 2021 PRB 103, 064431: broad P0 near 105 cm-1 above T_N). Position 123.7 is about 20 cm-1 above the literature value, so the assignment is tentative."
+    },
+    {
+      "position_cm1": 240.628,
+      "fwhm_cm1": 4.625,
+      "assignment": "P4 (internal P2S6 mode, FePS3 family)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "arXiv 1608.04169 Fig. 1b (P4 near 248 cm-1 at 300 K, read from figure); MPS3 note (high-frequency modes above about 200 cm-1 are internal (P2S6)4- vibrations). Measured position is 7 cm-1 below the literature value."
+    },
+    {
+      "position_cm1": 263.456,
+      "fwhm_cm1": 6.186,
+      "assignment": "P5 (internal P2S6 mode, FePS3 family)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "arXiv 1608.04169 Fig. 1b (P5 near 278 cm-1 at 300 K, read from figure); MPS3 note. Measured position is about 15 cm-1 below the literature value; this is the largest mismatch."
+    },
+    {
+      "position_cm1": 368.69,
+      "fwhm_cm1": 8.072,
+      "assignment": "P6 (strongest internal P2S6 mode, FePS3 family)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "arXiv 1608.04169 Fig. 1b (P6 near 380 cm-1 at 300 K, strongest sample mode, read from figure). Measured position is about 11 cm-1 below the literature value; irrep not verified for FePS3 (the matcher label Ag comes from the CdPS3 DFT entry and is not transferred)."
+    },
+    {
+      "position_cm1": 520.868,
+      "fwhm_cm1": 3.506,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "rl_qc.py and rl_fit.py flag it as the first-order Si line; offset +0.17 cm-1 from 520.7 (rl_qc.py), i.e. calibration OK for this line."
+    },
+    {
+      "position_cm1": 550.715,
+      "fwhm_cm1": 6.26,
+      "assignment": "unassigned high-frequency internal mode (P2S6-type, not verified for FePS3)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "MPS3 note: high-frequency modes above about 200 cm-1 are internal (P2S6) vibrations common to the family. The FePS3 literature figure used here stops at 450 cm-1, so no FePS3 value at 550 cm-1 was verified. The CdPS3 DFT match (550.1 cm-1, Ag) is a different compound."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "monoclinic C2/m (MPS3 family, bulk-type, inferred from the matched structures)",
+      "provenance": "inferred",
+      "source": "MPS3 note (bulk C2h, monoclinic); rl.py match_library top entries are C2/m (CRD)."
+    },
+    {
+      "name": "magnetic_state_at_measurement",
+      "value": "paramagnetic (295 K is above T_N of about 118 K)",
+      "provenance": "literature",
+      "source": "MPS3 note (FePS3 T_N about 118 to 120 K); arXiv 1608.04169 Fig. 2b (T_N about 118 K)."
+    },
+    {
+      "name": "layers",
+      "value": "not determined from this spectrum",
+      "provenance": "inferred",
+      "source": "No validated FePS3 layer-number relation was applied; the MPS3 note reports thickness-dependent T_N as disputed."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "none detected (rl_qc.py: no cosmic-ray spikes, no saturation flag)",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "arXiv:1608.04169 (Lee et al. 2016, Nano Lett. 16, 7433), Fig. 1b (300 K bulk FePS3 parallel polarization) and Fig. 2a/2b (temperature series; T_N about 118 K). Positions read from the figure, about \u00b13 cm-1.",
+    "Ghosh et al. 2021, PRB 103, 064431, doi:10.1103/physrevb.103.064431 (via the MPS3 note: above-T_N broad band near 105 cm-1 and four modes 150 to 400 cm-1).",
+    "Kim et al. 2019, Nat. Commun. 10, 345, arXiv 1901.10890 (via the MPS3 note: bulk C2h, high-frequency modes are internal (P2S6)4- vibrations).",
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database; CdPS3 entry mp-5328 used by rl.py match_library)."
+  ],
+  "limits": [
+    "Verdict is 'inconsistent as stated', not rejected. The qualitative mode pattern matches FePS3, but the sharp modes are 7 to 15 cm-1 below the reference values. No FePS3 entry exists in the local CRD or literature tables, so no quantitative FePS3 fit was possible. The matcher's top hit (CdPS3, DFT, score 0.60) is a different compound and shows only that the pattern is MPS3-like.",
+    "Literature positions were read from a figure (arXiv 1608.04169 Fig. 1b, 300 K), with about \u00b13 cm-1 reading error. The 7 to 15 cm-1 offset is larger than that error, but I did not verify the numbers in the text tables. A second FePS3 reference (for example Vaclavkova et al. 2021, arXiv 2108.10945, Fig. 1) was not compared.",
+    "Calibration: one Si line at 520.87 cm-1 (offset +0.17) validates the calibration only near 520 cm-1. Literature reports detector-position-dependent calibration errors that a single Si line cannot exclude (general-measurement.md, Calibration). A nonlinear error of about 10 to 15 cm-1 at 370 cm-1 cannot be excluded from this data alone.",
+    "Alternatives not excluded from this single spectrum: laser heating at 532 nm (softening, expected small without power-series data); strain or a thinner or different flake; a different MPS3 cation (Mn, Ni, Co or Cd-type compounds have similar mode sets and different frequencies). Discriminating tests: a power series at 295 K, a Si-referenced repeat on another flake, and a comparison spectrum of a verified FePS3 flake on the same stack.",
+    "The 550.7 cm-1 band lies outside the range of the FePS3 figure used (50 to 450 cm-1), so its FePS3 assignment is inferred from the MPS3 note only.",
+    "The 74.7 cm-1 peak sits near the low-wavenumber cutoff of the window (60.5 cm-1) and is not assigned; it may be a filter-edge or background artifact, not a phonon.",
+    "Irreps are not assigned: the matcher's Ag/Bg labels belong to the CdPS3 DFT entry, and no polarization series was measured (single spectrum). Layer number and defect level are not determined.",
+    "Laser power, spot size, and resolution are not given in the metadata, so the instrument-limited FWHM cannot be separated from intrinsic linewidth."
+  ]
+}

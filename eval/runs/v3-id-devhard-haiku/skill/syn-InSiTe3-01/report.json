@@ -1,0 +1,116 @@
+{
+  "candidates": [
+    {
+      "material": "InSiTe3",
+      "confidence": 0.4,
+      "evidence": "match_library top score 0.991 (CRD row 4232, P-31m, scale 1.013): measured 108.9/123.2/142.9 cm-1 matched to DFT A1g 108.8, Eg 122.3, A1g 144.0; no strong predicted modes missing in the 60-1100 cm-1 window. Only three peaks and DFT frequencies, no experimental reference table for this compound, so this is a computed-reference match, not a confirmed identification."
+    },
+    {
+      "material": "HgI2",
+      "confidence": 0.15,
+      "evidence": "match_library score 0.889 (CRD row 3971, I4_1/amd, scale 1.042): 108.9 matched A1g, 123.2 matched A1g, 142.9 unmatched."
+    },
+    {
+      "material": "Bi2PbTe4",
+      "confidence": 0.1,
+      "evidence": "match_library score 0.841 (CRD row 579, R-3m): 108.9 Eg and 142.9 A1g matched, 123.2 unmatched."
+    },
+    {
+      "material": "Bi4PbTe7",
+      "confidence": 0.08,
+      "evidence": "match_library score 0.825 (CRD row 1433, P-3m1): 108.9 Eg and 142.9 A1g matched, 123.2 unmatched."
+    },
+    {
+      "material": "CdI2",
+      "confidence": 0.05,
+      "evidence": "match_library score 0.820 (CRD row 41, P3m1): only 108.9 matched (A1); 123.2 and 142.9 unmatched."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was supplied (material_hint null, task identify), so identification rests on the peak positions alone. The working-folder name contains a material string; I did not use it as evidence and the ranking above comes only from the spectrum and the library match.",
+  "peaks": [
+    {
+      "position_cm1": 108.898,
+      "fwhm_cm1": 4.238,
+      "assignment": "A1g (dominant line)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position, FWHM, height from rl_fit (Lorentzian, position err 0.035, FWHM err 0.111, height 11046 +/- 192). Assignment: match_library to Computational Raman Database row 4232 (InSiTe3, P-31m), reference 108.8 cm-1 with scale 1.013; Bagheri and Komsa 2023, Sci. Data 10, 80. Candidate match only, not experimentally verified."
+    },
+    {
+      "position_cm1": 123.196,
+      "fwhm_cm1": 4.105,
+      "assignment": "Eg",
+      "irrep": "Eg",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position, FWHM, height from rl_fit (height 1058 +/- 177; position err 0.35, so weakly constrained). Assignment: CRD row 4232 reference 122.3 cm-1 (Eg), Bagheri and Komsa 2023, Sci. Data 10, 80. Candidate match only. Sits on a shoulder of the 108.9 line and the dip near 116 cm-1 supports it being a separate band."
+    },
+    {
+      "position_cm1": 142.864,
+      "fwhm_cm1": 6.215,
+      "assignment": "A1g (weak)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position, FWHM, height from rl_fit (height 1377 +/- 145; position err 0.33). Assignment: CRD row 4232 reference 144.0 cm-1 (A1g), Bagheri and Komsa 2023, Sci. Data 10, 80. Candidate match only."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "P-31m (candidate only, from DFT match)",
+      "provenance": "inferred",
+      "source": "match_library top candidate, CRD row 4232, Bagheri and Komsa 2023, Sci. Data 10, 80. Not confirmed against any experimental reference table."
+    },
+    {
+      "name": "si_substrate",
+      "value": "not detected",
+      "provenance": "measured",
+      "source": "rl_qc.py si_line = null; no band near 520.7 cm-1 in the 60-1100 cm-1 window."
+    },
+    {
+      "name": "background",
+      "value": "broad, slowly rising background from about 1600 to 2200 counts across 60-1100 cm-1; origin not identified (possibly luminescence or instrumental)",
+      "provenance": "measured",
+      "source": "rl_fit baseline (ALS) and fit.png."
+    },
+    {
+      "name": "layers",
+      "value": "not determinable from one spectrum",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "snr_strongest",
+      "value": "50.3",
+      "provenance": "measured",
+      "source": "rl_qc.py"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single point, removed; not a Raman peak)",
+      "position_cm1": 426.5
+    },
+    {
+      "type": "cosmic-ray spike (single point, removed; not a Raman peak)",
+      "position_cm1": 847.1
+    }
+  ],
+  "citations": [
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, CC BY 4.0): match_library entries crd:4232 (InSiTe3, P-31m), crd:3971 (HgI2), crd:579 (Bi2PbTe4), crd:1433 (Bi4PbTe7), crd:41 (CdI2)."
+  ],
+  "limits": [
+    "Only three Raman features rise above the noise in 60-1100 cm-1: 108.9, 123.2 and 142.9 cm-1. The 108.9 line dominates; the other two are weak. Nothing else is resolved from 150 to 1100 cm-1, and the library match uses only these three positions.",
+    "The identification is a DFT-reference match (Computational Raman Database), not an experimental match. No curated experimental mode table exists for InSiTe3 or any other top candidate here, so the full expected spectrum (including modes outside the window or weak modes) cannot be checked. The top scores (0.99 to 0.82) are close, and three peaks cannot separate the candidates; I cannot exclude materials outside the library.",
+    "The measured window ends at 1099 cm-1 and starts at 60.5 cm-1; modes below 60 cm-1 or above 1100 cm-1 were not measured and cannot be assessed.",
+    "Point spacing is 1.18 cm-1, so the 4 cm-1 FWHM lines are sampled by only about 3 to 4 points. Widths and the 123.2 cm-1 position (error 0.35 cm-1) are less reliable than the 108.9 cm-1 position. No instrument resolution was supplied, so no width is corrected for it.",
+    "The 123.2 cm-1 band is a weak shoulder next to the dominant 108.9 cm-1 line; it is supported by a dip near 116 cm-1 in the raw data and a clean residual, but its position and identity rest on a small intensity.",
+    "Conditions 532 nm, 295 K, backscattering and layer-normal geometry were given, but no substrate was stated and none was detected. Resonance with excitons was not checked against any reference for the candidate, so intensity ratios say nothing about identity here.",
+    "Single spectrum without polarization, so no irrep was checked against a polarization series; the irreps come only from the DFT reference labels.",
+    "Layer number, strain, doping and defect density cannot be derived from this spectrum: no relation applies to the candidate and no reference in the skill covers it.",
+    "The working-folder name contains a material string. I did not use it as evidence; it is not part of the measurement metadata, and the identification rests on the peaks alone."
+  ]
+}

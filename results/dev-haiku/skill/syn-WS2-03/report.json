@@ -1,0 +1,96 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.85,
+      "evidence": "Two strong modes at 359.7 and 426.0 cm-1 with separation 66.3 cm-1; literature for bulk 2H-WS2 at 532 nm is about 356 (E2g) and 420-421 (A1g), a separation near 64-65 cm-1 (Berkdemir et al. 2013, from memory). The 359.7 mode is angle-independent and present in both configurations (E2g-like). The 426 mode is parallel-only (A1g-like). No E1g near 296 cm-1, as expected since E1g is forbidden in c-axis backscattering. Absolute positions are about 4-6 cm-1 above the literature values; no Si reference is present to check calibration."
+    },
+    {
+      "material": "black phosphorus",
+      "confidence": 0.05,
+      "evidence": "Its Ag1 mode (about 362 cm-1) lies near the 359.7 band, but the B2g mode (about 439 cm-1) and Ag2 mode (about 467 cm-1) are expected at comparable strength. Only a band at 426 is seen, and no band is seen at 467. Black phosphorus Ag modes are strongly angle-dependent, while the 359.7 band is flat over 0-170 degrees in both configurations. Rejected."
+    },
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.02,
+      "evidence": "E2g (about 383) and A1g (about 408) would give a separation near 25 cm-1, not the observed 66 cm-1. Rejected."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there was nothing to verify. Identification rests on the two band positions, their separation, and their polarization behaviour. I did not consult the skill's reference library or the Computational Raman Database matcher because they sit outside the working folder, which the task forbids reading. Literature values are from memory and were not checked against the paper.",
+  "peaks": [
+    {
+      "position_cm1": 359.7,
+      "fwhm_cm1": 4.9,
+      "assignment": "E2g (in-plane) of 2H-WS2 (fitted apex is clipped; position and width come from unclipped flanks)",
+      "irrep": "E2g",
+      "pattern": "isotropic_both",
+      "provenance": "measured",
+      "source": "Assignment from Berkdemir et al., Sci. Rep. 3, 1755 (2013), E2g about 356 cm-1 for WS2 at 532 nm (from memory, not verified). Measured position is about 3.7 cm-1 above that value; the offset is not explained by any data here (calibration, strain or heating cannot be separated without a Si reference)."
+    },
+    {
+      "position_cm1": 426,
+      "fwhm_cm1": 4.5,
+      "assignment": "A1g (out-of-plane) of 2H-WS2",
+      "irrep": "A1g",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Assignment from Berkdemir et al., Sci. Rep. 3, 1755 (2013), A1g about 420-421 cm-1 for bulk WS2 (from memory, not verified). Measured position is about 5-6 cm-1 above that value."
+    }
+  ],
+  "properties": [
+    {
+      "name": "material",
+      "value": "WS2 (2H polytype, inferred from E2g/A1g pair and absence of E1g)",
+      "provenance": "inferred",
+      "source": "Mode pattern compared with WS2 literature (Berkdemir et al., Sci. Rep. 3, 1755 (2013), from memory)"
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "Mode pattern (E2g at 359.7, A1g at 426.0, no E1g) compared with 2H-WS2 literature (from memory)"
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "detector saturation on the E2g band (clipped at about 20000 counts, 358-362 cm-1, in all 36 spectra; apex fitted from flanks only)",
+      "position_cm1": 360
+    },
+    {
+      "type": "no single-pixel cosmic-ray spikes found outside the saturated band (narrow-spike test, 0 hits in 36 spectra)",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Berkdemir, A. et al. Identification of individual and few layers of WS2 using Raman spectroscopy. Sci. Rep. 3, 1755 (2013). (Used for E2g about 356 and A1g about 420-421 cm-1 and their separation. Cited from memory; not checked against the paper in this session.)"
+  ],
+  "limits": [
+    "Working scope: the task restricted reading to this folder, so the skill's scripts, reference notes and the Computational Raman Database matcher were not used. All numbers come from direct numpy/scipy/pandas analysis of ./spectrum.csv. The literature values and assignments are from memory and were not checked against the source.",
+    "Saturation: the E2g band clips at about 20000 counts at 359-361 cm-1 in every spectrum. Its position (359.7) and width (4.9) come from the unclipped flanks, with statistical error about 0.1 cm-1 but a larger model-dependent systematic. The amplitude of this band is an extrapolation of the Lorentzian shape and is only approximately known.",
+    "The 2LA(M) shoulder expected near 350-352 cm-1 in WS2 is not resolved. The data near 350 cm-1 are consistent with the Lorentzian wing of the 359.7 band alone, so its presence or absence cannot be claimed.",
+    "Calibration: the spectrum is suspended with no Si line at 520.7 cm-1 (counts flat at about 950-1050 over 500-526 cm-1), so the absolute wavenumber scale cannot be checked. Both peaks sit about 4-6 cm-1 above literature values. The offset could be calibration, strain or doping, and these cannot be separated from this data alone. Laser heating would shift the peaks down, not up, so it does not explain the offset.",
+    "Layer number is not determined. The separation of 66.3 cm-1 is near the bulk value in the literature, but the calibration offset is larger than the spread that would separate the layer regimes, so no thickness is assigned.",
+    "Polarization classes were checked directly from the fits. The 359.7 band is flat in both configurations (parallel about 19,300, crossed about 19,300, within about 2 percent, over 0-170 degrees at 10 degree steps). The 426.0 band is flat in parallel (about 6990 +/- 130) and in crossed is 75 +/- 31 counts, about 1 percent of parallel, consistent with zero. The angle set covers 0-170 degrees, so a twofold or fourfold pattern would have shown up; none is seen.",
+    "Laser at 532 nm lies between the WS2 A and B excitons, so resonance can change relative intensities and activate second-order bands. The absence of a clear 2LA(M) band and the mode intensities here are not interpreted beyond what is stated above.",
+    "Noise: single spectra have sigma about 230 counts per point and averaging over angles reduces this. The weak-band search on configuration-averaged spectra (noise about 55-62 counts) found no band above 4 sigma other than the two reported peaks, so no further bands are reported."
+  ]
+}

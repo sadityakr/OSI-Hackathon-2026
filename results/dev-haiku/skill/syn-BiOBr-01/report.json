@@ -1,0 +1,74 @@
+{
+  "candidates": [
+    {
+      "material": "BiOBr (bismuth oxybromide, matlockite-type; CRD entry 'BiBrO', P4/nmm, mp-23072)",
+      "confidence": 0.75,
+      "evidence": "Matcher score 0.986, the next best 0.82. All three measured bands matched within 1.5 cm-1 after a fitted scale of 1.007: 107.21 (ref 106.7, A1g), 163.10 (ref 164.6, A1g), 390.81 (ref 391.0, B1g). No unmatched measured bands and no missing strong reference modes. Polarization pattern agrees with the assignment: two isotropic_par_only bands and one fourfold band, which is what A1g and B1g of D4h give in backscattering along c. Not verified against experimental BiOBr spectra: the literature search returned no BiOBr polarized-Raman mode table, and the CRD values are DFT."
+    },
+    {
+      "material": "ClHfN (R-3m; CRD crd:3468)",
+      "confidence": 0.08,
+      "evidence": "Matches 107.21 (Eg, ref 107.4) and 163.10 (A1g, ref 158.4, offset 4.7 cm-1). Leaves the 390.81 cm-1 band unmatched, and its mode symmetries do not fit the polarization pattern (no fourfold class possible for R-3m A1g/Eg)."
+    },
+    {
+      "material": "CdI2 (P3m1; CRD crd:236)",
+      "confidence": 0.03,
+      "evidence": "Matches only 107.21 cm-1 (A1); leaves 163.10 and 390.81 unmatched."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "placeholder",
+  "peaks": [
+    {
+      "position_cm1": 107.21,
+      "fwhm_cm1": 7.95,
+      "assignment": "A1g mode of BiOBr (CRD reference 106.7 cm-1, scale 1.007)",
+      "irrep": "A1g",
+      "pattern": "isotropic_par_only",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database), entry crd:2677 (mp-23072, P4/nmm). Position and width measured; pattern measured (parallel flat, crossed near zero, C0/P0 = 0.00)."
+    },
+    {
+      "position_cm1": 163.1,
+      "fwhm_cm1": 3.33,
+      "assignment": "A1g mode of BiOBr (CRD reference 164.6 cm-1, scale 1.007)",
+      "irrep": "A1g",
+      "pattern": "isotropic_par_only",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database), entry crd:2677 (mp-23072, P4/nmm). Position and width measured; pattern measured (parallel flat, crossed near zero, C0/P0 = 0.04)."
+    },
+    {
+      "position_cm1": 390.81,
+      "fwhm_cm1": 5.31,
+      "assignment": "B1g mode of BiOBr (CRD reference 391.0 cm-1, scale 1.007)",
+      "irrep": "B1g",
+      "pattern": "fourfold",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database), entry crd:2677 (mp-23072, P4/nmm). Position and width measured; pattern measured (parallel carries a 4-theta term, A4/P0 = 0.91, with no 2-theta term; crossed is in anti-phase)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "tetragonal matlockite-type, P4/nmm (BiOBr)",
+      "provenance": "inferred",
+      "source": "Computational Raman Database entry crd:2677 (mp-23072), matched to the three measured bands; not confirmed against experimental BiOBr data."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, CC BY 4.0), entry crd:2677, mp-23072, P4/nmm (129)"
+  ],
+  "limits": [
+    "Only three bands are present in 60 to 542 cm-1. The identification rests on three DFT frequencies matched within 1.5 cm-1 plus the polarization pattern. That is suggestive, not conclusive.",
+    "No experimental BiOBr mode table was verified. The literature search returned no direct BiOBr polarized-Raman paper, and the iopic-bond tool was unavailable (VALENCY_BOND_TOKEN not set). The A1g label on the strongest band (107.2 cm-1) and the B1g label on the 390.8 cm-1 band are the matcher's DFT labels, not checked against experiment.",
+    "The window starts at 60 cm-1. Eg modes below 60 cm-1, if present, are outside the measured range and could not be checked. Nothing above 542 cm-1 was measured.",
+    "The residual has a broad trend of about -3000 to +1500 counts over 60 to 200 cm-1 (about 2 percent of the 107 cm-1 peak height). It was not modelled. A weak broad feature there cannot be excluded.",
+    "No Eg-type (isotropic_both) band was found. If the matched structure is right, a missing Eg is either below 60 cm-1 or too weak to fit. Weak bands below the fit threshold are not reported.",
+    "The 390.8 cm-1 fourfold pattern: parallel maxima are near 45 and 135 degrees, and crossed maxima are near 0 and 90 degrees. Read from the classifier table, this is anti-phase between configurations, but offset by 45 degrees from the stated convention. The classification (fourfold) is unaffected, but the reference-angle convention is unknown and I did not verify it.",
+    "The crossed intensities of the two A1g bands are small but not zero at a few angles (up to about 170 counts against about 1200 parallel at 163 cm-1). The classifier's C0/P0 ratios of 0.00 and 0.04 are used. These isolated points are consistent with noise or leakage.",
+    "Laser energy (532 nm) against BiOBr excitonic transitions was not checked, so resonance effects on relative intensities are not excluded.",
+    "Layer number, strain, doping and defect density were not reported. No property relation was applied. The skill's reference notes (relations, materials, measurement questions) are outside the working folder and were not read.",
+    "The fit was done on the summed angle series. Per-angle intensities for classification used fixed positions and widths from that fit."
+  ]
+}

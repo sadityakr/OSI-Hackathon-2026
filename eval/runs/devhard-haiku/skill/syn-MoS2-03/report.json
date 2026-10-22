@@ -1,0 +1,77 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2 (monolayer favoured; bilayer not excluded)",
+      "confidence": 0.9,
+      "evidence": "Two strong bands at 383.81 and 403.29 cm-1 (raw; 383.6 and 403.1 after the Si line calibration offset of +0.2 cm-1) with separation 19.48 cm-1. These are the E'/E2g^1 and A1'/A1g modes of MoS2 (Lee et al. 2010). No other strong band in 150-650 cm-1 fits another TMD: WS2 would show bands near 355 and 420, MoSe2 near 241 and 287. Layer number from the separation alone: 19.5 cm-1 sits at the low end of the monolayer-to-few-layer range, so monolayer is favoured over bilayer. No bulk-like separation (about 25 cm-1 for bulk, as I recall; not verified in this environment)."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so no consistency check against a stated material was made. Identification rests on the peak positions and the E'/A1' separation read against the cited MoS2 layer-dependence literature. I did not run the Computational Raman Database matcher: the skill's scripts and reference notes sit outside the data folder, which I was instructed not to read. The identification therefore relies on my own reasoning and the literature abstracts retrieved, not a ranked database match.",
+  "peaks": [
+    {
+      "position_cm1": 383.81,
+      "fwhm_cm1": 2.05,
+      "assignment": "E' (in-plane E2g^1 in bulk 2H)",
+      "irrep": "E' (D3h monolayer); E2g (D6h bulk)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit over 360-425 cm-1 (+/-0.02 cm-1 stderr; FWHM +/-0.07). Assignment inferred from Lee et al. 2010 (arXiv:1005.2509; doi:10.1021/nn1003937): E' (E^1_2g) softens with increasing thickness. Si-calibrated (offset +0.2 cm-1) value about 383.6 cm-1. No angle series, so no polarization class."
+    },
+    {
+      "position_cm1": 403.29,
+      "fwhm_cm1": 3.79,
+      "assignment": "A1' (A1g out-of-plane)",
+      "irrep": "A1' (D3h monolayer); A1g (D6h bulk)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit over 360-425 cm-1 (+/-0.05 cm-1 stderr; FWHM +/-0.16). Assignment inferred from Lee et al. 2010 (arXiv:1005.2509; doi:10.1021/nn1003937): A1g hardens with increasing thickness. Si-calibrated value about 403.1 cm-1. No angle series, so no polarization class."
+    },
+    {
+      "position_cm1": 520.91,
+      "fwhm_cm1": 3.47,
+      "assignment": "Si substrate",
+      "irrep": "F2g (Si optical phonon at Gamma)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit over 495-545 cm-1 (+/-0.01 cm-1 stderr; FWHM +/-0.05). Standard Si reference 520.7 cm-1 (value given in the task prompt's reference), giving an instrument offset of about +0.2 cm-1. The E'-A1' separation (19.48 cm-1) is independent of this offset."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "Only the E'/A1' doublet is present in 150-650 cm-1; the 1T' modes that would be expected in the 150-340 cm-1 window are absent above noise. Phase call is inferred from this absence, not from a measured 2H-specific band."
+    },
+    {
+      "name": "layers",
+      "value": "1 (monolayer favoured; 2 not excluded; 3 or more unlikely)",
+      "provenance": "inferred",
+      "source": "Measured E'-A1' separation of 19.48 cm-1 (fit), against the Lee et al. 2010 trend (arXiv:1005.2509; doi:10.1021/nn1003937) that the separation increases with layer number. Approximate monolayer and bilayer ranges (about 18.5-20 and 20-21.5 cm-1 at this excitation) are from my recollection of the literature, not checked against a table in this environment, so the layer call is provisional. Low-frequency shear and layer-breathing modes, which give a more decisive layer count, lie below the 150 cm-1 start of this spectrum."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "no cosmic-ray spikes detected (single-point outlier scan over 150-649.5 cm-1; the only large point-to-point jumps are on the flanks of the 384 and 521 cm-1 peaks, which are real bands)",
+      "position_cm1": null
+    },
+    {
+      "type": "single-point bump near 630 cm-1 (about 300 counts above the local level; the level is about 4200 counts and point noise is about 150 counts). Judged noise, not a band, because it is one point wide and does not survive smoothing against the background model.",
+      "position_cm1": 630.5
+    }
+  ],
+  "citations": [
+    "Lee, C. et al., 'Anomalous Lattice Vibrations of Single- and Few-Layer MoS2', ACS Nano (2010), doi:10.1021/nn1003937; arXiv:1005.2509, https://arxiv.org/abs/1005.2509 (used for E' / A1' assignment and the thickness trend)",
+    "Plechinger, G. et al., 'Raman spectroscopy of the interlayer shear mode in few-layer MoS2 flakes', arXiv:1205.1916, https://arxiv.org/abs/1205.1916 (cited under limits only: the shear mode sits outside the measured window)",
+    "Zhang, X. et al., 'Shear and Layer Breathing Modes in Multilayer MoS2', PRB 87, 115413 (2013), doi:10.1103/PhysRevB.87.115413; arXiv:1212.6796, https://arxiv.org/abs/1212.6796 (cited under limits only: low-frequency modes as a layer-number tool)"
+  ],
+  "limits": [
+    "Material: the identity rests on the E'/A1' doublet alone (383.6 and 403.1 cm-1 after calibration). With only two MoS2 bands in the window, the identity is strong but not exhaustive; no second-order or high-frequency band was available to cross-check.",
+    "Layer number: this is the main uncertainty. The E'-A1' separation (19.48 cm-1) favours monolayer over bilayer, but it is a single-number estimate with no independent confirmation. The more decisive observables are the low-frequency shear (about 20-30 cm-1) and layer-breathing modes; both lie below this spectrum's 150 cm-1 start. Substrate-interference intensity (SiO2/Si, 285 nm) was not analysed: the Si line intensity is a fit-dependent quantity and I did not have a calibrated reference for it.",
+    "Calibration and heating: the Si-line offset of +0.2 cm-1 is small. A laser-power-dependent softening of a cm-1 or two is possible but cannot be assessed: no laser power or spot size was given. The separation is less sensitive than the absolute positions to this effect.",
+    "Linewidths: the E' FWHM (2.05 cm-1) is narrower than the Si reference line (3.47 cm-1), which is unusual for a 2D flake. I did not use the widths for the layer call and cannot say whether this reflects instrument resolution, sample quality or fit artefacts.",
+    "Not measured or not checked: no polarization series (so no irreps are confirmed from selection rules); 2LA(M) near 450 cm-1 and E1_2g near 286 cm-1 are at or below the noise level (smoothed residual SNR about 2 or less) and are not reported; the 150-650 cm-1 window does not include the G, 2D or hBN bands. The Computational Raman Database matcher was not run, and the literature numbers quoted for monolayer and bilayer separation are from my recollection, not from the cited papers' tables.",
+    "Rejected: bulk 2H-MoS2 (separation about 25 cm-1, not observed); 1T' MoS2 (expected low-frequency bands absent above noise); WS2, WSe2 and MoSe2 (band positions do not match)."
+  ]
+}

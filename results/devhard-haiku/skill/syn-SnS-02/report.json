@@ -1,0 +1,88 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (Pnma, orthorhombic)",
+      "confidence": 0.8,
+      "evidence": "Four measured bands at 93.8, 161.3, 192.9 and 221.2 cm-1 (FWHM 4.3 to 4.5 cm-1 for the three strong bands). Their spacing matches SnS's known Raman set (about 96, 160, 190 and 218 to 221 cm-1, from memory of SnS tables, not checked against a fetched source). The strongest band at 161 cm-1 also matches the usual SnS A_g mode near 160 cm-1."
+    },
+    {
+      "material": "SnSe (Pnma, orthorhombic)",
+      "confidence": 0.05,
+      "evidence": "The expected SnSe modes are about 109 (B3g), 150 (A_g) and 186 (A_g) cm-1 (from memory, not verified). The data has no strong band at 150 cm-1; the strong band is at 161.3 cm-1, 11 cm-1 above it. The only candidate near 109 cm-1 is weak and unresolved, and the 94 cm-1 band lies 15 cm-1 below it. The offsets point in opposite directions, so a single calibration shift cannot reconcile them."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The stated material is SnSe (Pnma, layered, 532 nm, 295 K). The strongest measured band is at 161.3 cm-1, but SnSe's strongest expected A_g mode is near 150 cm-1, and no band appears there. The 94 cm-1 band is 15 cm-1 from the expected SnSe B3g mode near 109 cm-1, and the expected SnSe A_g near 186 cm-1 is 7 cm-1 away from the observed 193 cm-1 band, in the same direction as the 161 vs 150 offset. The offsets have mixed signs, so a single calibration error cannot account for them. The pattern (about 96, 160, 190 and 220 cm-1) matches SnS better. No Si reference is in the data, so absolute calibration is unchecked, which limits how precisely the offsets can be read.",
+  "peaks": [
+    {
+      "position_cm1": 93.78,
+      "fwhm_cm1": 4.5,
+      "assignment": "SnS B-type mode, approx. 96 cm-1 (irrep not fixed without polarization data)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (lmfit, 60 to 260 cm-1 window, +-0.16 and +-0.48 cm-1). Assignment inferred from comparison with SnS literature values recalled from memory (not checked against a fetched table); not a match to SnSe's 109 cm-1 B3g."
+    },
+    {
+      "position_cm1": 161.27,
+      "fwhm_cm1": 4.32,
+      "assignment": "strongest band; SnS A_g-type, approx. 160 cm-1 (SnSe A_g expected near 150 cm-1)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+-0.06 and +-0.20 cm-1). Assignment from comparison with recalled SnS (about 160 cm-1) and SnSe (about 150 cm-1) literature values; no polarization data, so the irrep is not fixed."
+    },
+    {
+      "position_cm1": 192.86,
+      "fwhm_cm1": 4.18,
+      "assignment": "SnS mode, approx. 190 cm-1 (SnSe A_g expected near 186 cm-1)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+-0.09 and +-0.27 cm-1). Assignment from recalled SnS (about 190 cm-1) and SnSe (about 186 cm-1) literature values."
+    },
+    {
+      "position_cm1": 221.19,
+      "fwhm_cm1": 15.82,
+      "assignment": "SnS higher-frequency A_g-type mode, approx. 218 to 221 cm-1; broad and weaker, so the shape is uncertain",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (+-0.72 and +-2.73 cm-1). Broad fit component, so less reliable than the three sharp bands. Assignment from recalled SnS literature values."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "Pnma orthorhombic (consistent with SnS-type layered IV-VI); SnSe ruled out as the main phase",
+      "provenance": "inferred",
+      "source": "Band pattern compared with recalled SnS and SnSe literature values (see citations)."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "The spectrum has no layer-sensitive feature checked against a reference; the Park et al. 2019 layer-dependent shifts were not used because their numbers could not be read here."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 1082.04
+    }
+  ],
+  "citations": [
+    "[arXiv:2007.09362 / doi:10.1038/s41598-020-68744-2](https://arxiv.org/abs/2007.09362): Sriv et al., 'Optical phonons of SnSe(1-x)Sx layered semiconductor alloys'. The abstract confirms the mode labels (Ag1, Ag2, B3g1, B3g2, Ag3, Ag4) for SnSe and SnS. The numerical positions were not readable, so no values are taken from it.",
+    "[doi:10.1038/s41598-019-55577-x](https://doi.org/10.1038/s41598-019-55577-x): Park et al., 2019, 'Raman Spectra Shift of Few-Layer IV-VI 2D Materials' (Sci. Rep. 9, 19826). The abstract says the first-principles results agree with bulk measurements of SnS and SnSe. Numerical mode values were not readable here."
+  ],
+  "limits": [
+    "The spectrum does not establish SnS unambiguously. The argument rests on the pattern of four band positions compared with recalled literature values. I could not check those values against a fetched table; the iopic-bond full-text tool needs a VALENCY_BOND_TOKEN that is not set.",
+    "There is no Si reference in the window (60 to 1100 cm-1), so the absolute wavenumber calibration is unchecked. The apparent offsets from SnSe (+11 cm-1 and +7 cm-1 at 161 and 193 cm-1, with a -15 cm-1 offset at 94 cm-1) are too large and mixed in sign to be a calibration error, but a few cm-1 of uncertainty remains.",
+    "The 109 cm-1 region has at most a weak, unresolved feature (about 1100 counts above baseline, about 3 sigma, 2 points wide). The fit did not constrain it, so I did not report it as a peak.",
+    "Noise is about 320 to 350 counts (about 14 percent of the background), so bands above 250 cm-1 are not significant. A residual feature at about 247 cm-1 (+1035 counts, about 3 sigma) is unidentified.",
+    "Polarization was not measured, so irreps for the peaks cannot be fixed (A_g vs B_3g and so on). The mode labels above are based on position only.",
+    "The 532 nm laser is near some SnS and SnSe electronic transitions, which can change relative intensities and activate extra bands. I did not check resonance conditions, and this does not change the position comparison.",
+    "Layer number and the sample's thickness cannot be inferred from this single spectrum with the reference values available here.",
+    "The helper files analyze_snse.py, fit_snse.py, baseline.npy and clean_y.npy were written to the working folder. The skill's own scripts and reference notes live outside this folder and were not used, per the folder restriction."
+  ]
+}

@@ -1,56 +1,63 @@
 # RamanLens
 
-An AI agent that reads a Raman spectrum the way an experienced materials researcher does and shows its work. Every claim in its report comes with the measurement it rests on, the physics relation it used, and the paper it came from, with the published reference figure retrieved for comparison.
+A Claude Code skill that reads Raman spectra of 2D and layered materials the way a senior researcher does and shows its work. The researcher usually knows the material; RamanLens interprets what changes across spectra (thickness, crystal quality, defects, strain, doping, temperature, magnetic order), flags artifacts and measurement pitfalls, asks about measurement conditions, and ties every claim to a fitted measurement, a physics relation with its validity range, or a paper with a figure or table locator. Identifying an unknown material is the first step it also handles.
 
-Built for the [4th Open Scientific Intelligence Hackathon](https://llmhackathon.github.io/) (Oct 21 to 22, 2026) by Aditya Kumar (JGU Mainz).
+Built for the [4th Open Scientific Intelligence Hackathon](https://llmhackathon.github.io/) (Oct 21 to 22, 2026) by Aditya Kumar (JGU Mainz). Private working repo shared with collaborators; it will be cleaned before anything is made public.
 
 ## The question we test
 
-Does a frontier model analyse Raman data better with domain tools than with Python alone? `eval/` runs the same model, prompt and sandbox in two arms:
+Does RamanLens beat the existing state of the art, and does it make an LLM a better Raman analyst? Six arms on the same held-out cases:
 
-| Arm | What the agent has |
+| Arm | What it is |
 |---|---|
-| `bare` | a Python sandbox (numpy, scipy, lmfit, pandas, matplotlib) |
-| `tools` | the same, plus RamanLens: peak fitting, spike and baseline handling, a matcher against 5,099 computed Raman spectra, a polarization classifier, verified literature reference tables, cited physics relations, and literature figure retrieval |
+| `libsearch` | classical full-spectrum library search (cosine on preprocessed spectra), the standard non-LLM method |
+| `pipeline` | the RamanLens tools as a fixed recipe, no LLM |
+| `bare` (Haiku 5.5, Sonnet 5.5) | headless Claude Code with Python only |
+| `skill` (Haiku 5.5, Sonnet 5.5) | the same plus the RamanLens skill and literature MCP servers |
 
-Both are scored on held-out cases: synthetic spectra generated from the Computational Raman Database with exact truth, and experimental spectra from open deposits (CrSBr, WS2, MoSe2, WSe2) whose truth is the authors' published interpretation.
+Two kinds of cases: identification (`eval/score.py`: material, irreps, polarization patterns, layer number) and interpretation with the material known (`eval/judge.py`: a blind Opus judge grades each report against a rubric written from the source paper's own conclusions). Held-out cases come from papers never used to build the skill; their rubrics were written by an agent the skill builders never saw.
 
 ## What is in the repo
 
 | Path | Contents |
 |---|---|
-| `src/ramanlens/` | the toolkit: perception, literature tables, relations, agent toolset, LangSmith tracing |
-| `iopic-bond/` | a local MCP server over [Valency Bond](https://docs.valency.io/): finds papers, downloads arXiv PDFs, parses them into a section and figure graph, shows figures to the model |
-| `eval/` | synthetic case generator, two-arm agent runner, report schema, scorer |
-| `tests/` | contract tests every tool must pass, scorer tests, held-out leak guard |
-| `loop/` | headless build loop: one fresh Claude Code session per backlog task |
-| `data/` | test set, provenance, five catalogs of open Raman data, download scripts |
-| `docs/`, `ideas/` | architecture, implementation notes, decision record, research |
+| `skill/ramanlens/` | **the deliverable**: Claude Code plugin with the `raman-analysis` skill (`SKILL.md`, `scripts/` rl_qc, rl_fit, rl_series, rl, `reference/` notes on artifacts, relations, measurement questions and 10 materials with about 100 cited papers) |
+| `src/ramanlens/` | the tested Python package the scripts call: perception (readers, despiking, baseline, fitting, CRD matcher, polarization), literature tables, relations, agent toolset, LangSmith tracing |
+| `iopic-bond/` | local MCP server over [Valency Bond](https://docs.valency.io/): finds papers, downloads arXiv PDFs, parses figures, shows them to the model |
+| `eval/` | runners (`run_claude_code.py` headless Claude Code arms, `run_agent.py` SDK arms, `baselines.py` non-LLM arms), `score.py`, `judge.py`, `make_figure.py`, `export_results.py`, case generators in `synth/` |
+| `eval/runs/` | raw run output including full agent transcripts (large) |
+| `results/` | the results of every run without transcripts: reports, judge grades, scores, cost per case; see `results/README.md` |
+| `data/` | test set (`test_set/`, formats in its README and `INTERPRET.md`), provenance, data catalogs, download scripts, `raw/` downloaded data |
+| `docs/` | architecture, research (`sota-research.md`), verified reference numbers with locators, handovers |
+| `submission/` | one-page write-up, figure, video script |
+| `tests/`, `loop/` | contract and unit tests (84 pass); the headless build loop that wrote `src/` |
 
 ## Quickstart (Windows PowerShell, from the repo root)
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\pip install -e "src[trace,pdf]" -e "iopic-bond[parse]" pytest
-copy .env.example .env          # add ANTHROPIC_API_KEY, VALENCY_BOND_TOKEN, optional LangSmith keys
-powershell -ExecutionPolicy Bypass -File data\get_data.ps1        # CRD, spectra, PDFs (add -All for more)
-.venv\Scripts\python.exe -m pytest tests -q -m "not slow"         # contract tests
+copy .env.example .env                                      # optional keys; Claude Code login is enough for eval
+powershell -ExecutionPolicy Bypass -File data\get_data.ps1  # the four files over 100 MB that git does not hold
+.venv\Scripts\python.exe -m pytest tests -q -m "not slow"
 ```
 
-Run the comparison:
+Use the skill in your own Claude Code session: `claude --plugin-dir skill/ramanlens`, then ask about your spectra.
+
+Run a comparison (uses your Claude Code subscription, about $0.05 to $0.20 per case):
 
 ```powershell
-.venv\Scripts\python.exe eval\run_agent.py --arm bare  --split dev --run-name smoke
-.venv\Scripts\python.exe eval\run_agent.py --arm tools --split dev --run-name smoke
-.venv\Scripts\python.exe eval\score.py eval\runs\smoke
+.venv\Scripts\python.exe eval\run_claude_code.py --arm bare  --split dev_interpret --run-name demo --model claude-haiku-5-5
+.venv\Scripts\python.exe eval\run_claude_code.py --arm skill --split dev_interpret --run-name demo --model claude-haiku-5-5
+.venv\Scripts\python.exe eval\judge.py eval\runs\demo          # interpretation cases
+.venv\Scripts\python.exe eval\baselines.py --arm pipeline --split dev --run-name demo-id
+.venv\Scripts\python.exe eval\score.py eval\runs\demo-id       # identification cases
 ```
-
-Build the tools with the loop: `powershell -ExecutionPolicy Bypass -File loop\run_loop.ps1 -MaxIterations 12`.
 
 ## Data and licences
 
-Code is MIT. The Computational Raman Database (Bagheri and Komsa, Sci. Data 2023) is CC BY 4.0. Experimental spectra keep their original licences, listed per source in `data/README.md` and `data/test_set/README.md`; some catalogued series are CC BY-NC and are not redistributed here. Large raw files are fetched by `data/get_data.ps1` rather than stored in git.
+Code is MIT. The Computational Raman Database (Bagheri and Komsa, Sci. Data 2023) is CC BY 4.0. Experimental spectra keep their original licences, listed in `data/README.md` and `data/test_set/README.md`. `data/raw/` (paper PDFs, downloaded data) and `resources/src/` (private Lit-RAG reference code) are in this private repo for collaborators only and must be removed before any public release.
 
-## Status
+## Status (Oct 22, 13:30 CEST)
 
-Planning, test set, evaluation harness and literature server are in place; the perception and relation tools are being built by the loop. Progress log: `LOG.md`.
+Skill, tools, test set, baselines and evaluation are built; the final held-out run is in progress. Progress log: `LOG.md`; current state and conventions: `CLAUDE.md`.

@@ -1,0 +1,97 @@
+{
+  "candidates": [
+    {
+      "material": "TiOCl",
+      "confidence": 0.1,
+      "evidence": "Layered titanium oxyhalide. Two peaks at 206.5 and 471.4 cm-1 are at least compatible with a layered oxyhalide, but I could not check any TiOCl Raman frequencies here: the abstracts retrieved (cond-mat/0501685, 0710.1230) give no mode positions, and the skill's curated reference database is outside the working folder and was not read."
+    },
+    {
+      "material": "TiNCl",
+      "confidence": 0.08,
+      "evidence": "Layered nitride chloride, the material named in the working folder path. The folder name is not data evidence and no metadata hint was given. No measured TiNCl Raman frequencies were retrieved, so this candidate is unverified."
+    },
+    {
+      "material": "unidentified layered material",
+      "confidence": 0.8,
+      "evidence": "Only two material bands (206.5 and 471.4 cm-1) plus one tentative weak band at 403.7 cm-1 are resolved, all in a noisy spectrum with about 530 counts residual noise per pixel. Neither band can be matched to a specific phase from the data alone, so the identity is open."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so there is nothing to verify. The data show two material bands at 206.5 and 471.4 cm-1 and a weak broad band near 404 cm-1, plus the Si substrate line. Those few bands cannot identify the material on their own, and the curated mode database was not consulted, so no candidate reaches useful confidence.",
+  "peaks": [
+    {
+      "position_cm1": 206.5,
+      "fwhm_cm1": 3.4,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Pseudo-Voigt fit with cubic baseline, fraction 1 (Lorentzian), 1130 points after removing single-pixel outliers. Centre 206.47 cm-1, Monte Carlo sd 0.16 cm-1 (30 noise realisations, fit-scatter only). FWHM Monte Carlo sd 0.6 cm-1. Height about 5000 counts above baseline."
+    },
+    {
+      "position_cm1": 403.7,
+      "fwhm_cm1": 23.8,
+      "assignment": "unassigned, tentative",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Weak broad band from residual of the 3-band fit; adding it lowers chi-square with extra-band F-test F=8.2 (4,1110 dof), p=1.6e-6. Height about 750 counts, about 9 % of the 471.4 band. Its width and height depend on the baseline model, so treat as tentative. No Monte Carlo centre error was computed for this band."
+    },
+    {
+      "position_cm1": 471.4,
+      "fwhm_cm1": 6.8,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Pseudo-Voigt fit, fraction 1 (Lorentzian). Centre 471.41 cm-1, Monte Carlo sd 0.12 cm-1 (fit-scatter only). FWHM Monte Carlo sd 0.4 cm-1. Height about 8200 counts above baseline. The top pixel at 471.7 is about 1300 counts above a smooth profile and was removed as a probable spike; a fit with or without it changes the centre by less than 0.1 cm-1."
+    },
+    {
+      "position_cm1": 520.6,
+      "fwhm_cm1": 3.6,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "First-order Si Raman line at about 520.7 cm-1 for 532 nm excitation at room temperature (standard Si calibration value). Fitted centre 520.57 cm-1, Monte Carlo sd 0.09 cm-1, so the calibration offset is about -0.13 cm-1 (within typical calibration tolerance; not corrected in the peak table). FWHM 3.6 cm-1 is narrow and does not match any broad material band."
+    }
+  ],
+  "properties": [
+    {
+      "name": "si_calibration_offset_cm1",
+      "value": "-0.13",
+      "provenance": "inferred",
+      "source": "Si line fitted at 520.57 +/- 0.09 cm-1 vs the standard 520.7 cm-1 at room temperature; the offset is within typical calibration tolerance and is not corrected in the peak table."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray / single-pixel spike",
+      "position_cm1": 78.7
+    },
+    {
+      "type": "cosmic-ray / single-pixel spike",
+      "position_cm1": 172.3
+    },
+    {
+      "type": "probable spike on broad band (top pixel)",
+      "position_cm1": 471.7
+    }
+  ],
+  "citations": [
+    "arXiv cond-mat/0501685 (Pisani & Valenti, Ab-initio phonon calculations for layered TiOCl) https://arxiv.org/abs/cond-mat/0501685 - checked abstract only, no frequencies used",
+    "arXiv 0710.1230 (Pisani et al., DFT study of electronic and vibrational properties of TiOCl) https://arxiv.org/abs/0710.1230 - checked abstract only, no frequencies used",
+    "Standard Si first-order Raman line near 520.7 cm-1 at room temperature (used for calibration, from general knowledge, no source document retrieved)"
+  ],
+  "limits": [
+    "The material cannot be identified from this spectrum. The only resolved sample bands are 206.5 and 471.4 cm-1 (plus a tentative 404 cm-1 band), which is too few to fix a phase or a layered family.",
+    "The skill's curated mode database (CRD matcher, reference material notes) lives outside the working folder, and the folder restriction was respected, so no database match was run. The candidate ranking above is therefore unsupported by a mode-by-mode comparison.",
+    "No literature Raman frequencies for TiNCl or TiOCl were retrieved. The two TiOCl abstracts only mention Raman-active modes without giving positions. The iopic-bond library search failed (VALENCY_BOND_TOKEN unset).",
+    "Centre and width uncertainties are fit-scatter only (30 Monte Carlo noise realisations of the best-fit model); they exclude baseline-model and calibration systematics. The fraction parameter hit its bound, so the lmfit covariance errors are not usable.",
+    "Baseline dependence: a cubic polynomial baseline was used. The tentative 404 cm-1 band depends on this choice, and its centre was not error-checked.",
+    "Spectrum noise is high (residual about 530 counts per pixel, roughly 6 % of the 471 band amplitude), so weak features below about 300 counts after smoothing cannot be excluded.",
+    "Single spectrum, no polarization data, unknown laser power and sample thickness, so no layer number, strain, doping or defect relation was applied.",
+    "The working folder name contains a material name. It was not used as evidence; the metadata gave no hint and the data do not independently support it.",
+    "The 206.5 band's width (3.4 cm-1) is comparable to the Si line width (3.6 cm-1), so instrumental broadening is possible; this does not by itself show whether it is a true material mode."
+  ]
+}

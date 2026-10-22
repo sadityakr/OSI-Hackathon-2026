@@ -1,0 +1,128 @@
+{
+  "summary": "The WS2 flake is strongly resonant between about 585 and 601 nm (2.06\u20132.12 eV). The A1g band's integrated area is flat at about 0.8\u20130.9\u00d710\u2076 counts across 585\u2013601 nm, drops to about 0.4 at 605 nm and 0.09 at 618 nm, and is about 100\u00d7 weaker at 627 nm and about 700\u00d7 weaker at 638 nm. The off-resonant spectra are close to noise, so the 626.9 and 638.4 nm numbers are effectively upper limits. A broad background rises sharply on the same resonance, and re-plotted on absolute emission energy it converges near 2.00\u20132.02 eV, which points to photoluminescence (PL) from excitons or trions rather than Raman scattering. The E\u2032\u2013A1g separation is 60.75 \u00b1 0.24 cm\u207b\u00b9 (585\u2013611 nm), which is consistent with a monolayer or few-layer flake but does not fix the layer number. No consistent strain or doping signal is resolved in the peak positions. The strongest cautions are: the excitation-dependent intensity mixes the electronic resonance with laser power, optical interference and the PL background, and the low-shift and high-shift ends of the spectra are shaped by filter edges.",
+  "observations": [
+    {
+      "finding": "A1g (~418 cm\u207b\u00b9) is the dominant Raman band and is strongly resonant with the 2.06\u20132.12 eV region. Its integrated area is roughly flat from 585 to 601 nm, then falls steeply.",
+      "evidence": "Lorentzian + quadratic-baseline fits, area (counts\u00b7cm\u207b\u00b9): 579 nm 1.69e5; 585 nm 8.69e5; 591.7 nm 7.85e5; 595.5 nm 8.70e5; 599.1 nm 8.91e5; 601.4 nm 8.41e5; 605.5 nm 4.20e5; 607.9 nm 3.31e5; 611.3 nm 2.60e5; 618.1 nm 9.39e4; 626.9 nm 7.8e3; 638.4 nm 1.2e3 (noise-level). Ratio 601.4/626.9 \u2248 108; 601.4/638.4 \u2248 700.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The E\u2032 (~357 cm\u207b\u00b9) and A1g positions are stable within about \u00b11 cm\u207b\u00b9, and their separation is nearly constant across the sweep.",
+      "evidence": "A1g \u2212 E\u2032 = 60.86, 60.78, 61.06, 60.97, 60.43, 60.58, 60.66, 60.57, 60.95, 61.14, 61.08, 60.41 cm\u207b\u00b9 for 579 to 638 nm; mean over 585\u2013611 nm = 60.75 \u00b1 0.24 cm\u207b\u00b9 (n = 7). A1g FWHM 5.3\u20136.1 cm\u207b\u00b9 (up to 7.1 at 611\u2013618 nm, where signal is weaker).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The A1g mode softens by about 0.5 cm\u207b\u00b9 on resonance. The 599\u2013611 nm average is 418.07 cm\u207b\u00b9, while the 618\u2013638 nm average is 418.59 cm\u207b\u00b9, so the resonant spectra sit about 0.5 cm\u207b\u00b9 lower.",
+      "evidence": "Fitted A1g centres; off-resonant mean 418.59 cm\u207b\u00b9 (618\u2013638 nm), resonant mean 418.07 cm\u207b\u00b9 (599\u2013611 nm). Si 520.7 cm\u207b\u00b9 reference fits to 521.6 \u00b1 0.5 cm\u207b\u00b9, implying an absolute axis offset of about +0.5\u20131 cm\u207b\u00b9. The 0.5 cm\u207b\u00b9 resonant shift is comparable to that offset and to the fit-to-fit scatter, so it is not a significant strain or doping signal on its own.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The broad background is not a fixed Raman shift. When spectra are re-plotted against absolute emission energy (E_L \u2212 \u0127\u03c9), the broad humps from the strongly resonant spectra roughly line up near 2.00\u20132.02 eV, while sharp lines move as expected for Raman scattering. This points to PL from the flake as the origin of the background.",
+      "evidence": "Re-plot over 1.90\u20132.20 eV emission energy, shown in ~/raman_analysis/emission.png. Background median counts: 82,811 at 601.4 nm vs 168 at 638.4 nm (about 500\u00d7). Background values go negative in several spectra (e.g. \u2212117 at 599.1 nm), so the baseline subtraction is imperfect.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "The LA-like line near 175 cm\u207b\u00b9 is weak. Its area is about 6\u201310% of A1g at 595\u2013601 nm and is not resolvable above background at 579, 618\u2013638 nm.",
+      "evidence": "LA position 174.1\u2013176.8 cm\u207b\u00b9 at 591\u2013611 nm (single Lorentzian, linear baseline); LA/A1g area ratio \u2248 0.06 at 595.5 nm, 0.087 at 599.1 nm, 0.10 at 601.4 nm.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Two extra bands appear that are not fitted and not assigned here: a broad feature near 478\u2013484 cm\u207b\u00b9 with height about 0.5\u00d7 A1g at 591\u2013601 nm, and features near 295 and 330\u2013352 cm\u207b\u00b9. The 350 cm\u207b\u00b9 component overlaps E\u2032 and is ambiguous, and its decomposition from E\u2032 is not stable between spectra.",
+      "evidence": "Peak finder heights at 591.66 nm: 484 cm\u207b\u00b9 at 65,040 vs A1g 119,161; at 595.47 nm: 480 cm\u207b\u00b9 at 62,866 vs A1g 142,254. The two-component E\u2032 fit at 585 nm gives a ~350 component comparable to E\u2032 in area, but the split swaps between adjacent spectra.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Layer number: the \u0394(A1g \u2212 E\u2032) \u2248 60.7 cm\u207b\u00b9 value is consistent with a monolayer or few-layer flake. The value is well-known from the WS2 Raman literature, but it cannot identify the thickness alone; it needs an independent thickness measurement.",
+      "evidence": "\u0394 = 60.75 \u00b1 0.24 cm\u207b\u00b9 (585\u2013611 nm). Tentative range from literature (unverified here): monolayer roughly 60\u201362 cm\u207b\u00b9, thicker flakes larger.",
+      "provenance": "literature",
+      "source": "Berkdemir et al., Sci. Rep. 3, 1755 (2013), WS2 layer identification from E\u2032/A1g separation \u2014 quoted from memory; not checked against the paper in this environment"
+    },
+    {
+      "finding": "The resonance window is centred near the 2.06\u20132.10 eV region. The sharp decline above 2.12 eV (579 nm: 1.69e5 vs 585 nm: 8.69e5) may reflect the excitation-power drop of a dye laser near its blue edge as much as a true electronic edge, so it should not be read as an exciton energy without measured power.",
+      "evidence": "Fit areas above; 579 nm point is 5\u00d7 below its 585 nm neighbour over a 0.02 eV step, and 605\u2192611 nm also falls steeply (4.2e5 \u2192 2.6e5) over a similar energy range.",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "monolayer or few-layer (not uniquely determined); consistent with \u0394(A1g\u2212E\u2032) \u2248 60.7 cm\u207b\u00b9",
+      "provenance": "inferred",
+      "source": "Berkdemir et al., Sci. Rep. 3, 1755 (2013), quoted from memory \u2014 verify"
+    },
+    {
+      "name": "phase",
+      "value": "2H (typical for CVD WS2; assumed, not measured here)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable from these spectra; no clear defect-activated D-like band and the LA line is weak",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected: A1g and E\u2032 positions are stable within \u00b11 cm\u207b\u00b9 across the sweep and the separation is constant",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "not determinable from these data",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "resonance_window_eV",
+      "value": "~2.06\u20132.12 eV (plateau); sharp fall toward 2.02 and above 2.12 eV",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "PL_background_peak_eV",
+      "value": "~2.00\u20132.02 eV (broad, from re-plot on emission-energy axis)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Intensities are corrected only for spectrometer efficiency. The 0.7 mW nominal power at the sample is not known to be constant across the dye-laser range. Dye-laser output usually changes strongly across a dye's gain curve, so the 579 nm point and the off-resonant tail may be power-limited.",
+    "Interference from the 290 nm SiO2 layer modulates both excitation and collection of the Raman signal as a function of wavelength. I did not compute this modulation; it could change intensities by tens of percent over 580\u2013640 nm. It is small compared with the ~700\u00d7 resonance enhancement but affects the detail of the off-resonant tail and the shape of the resonance profile.",
+    "The broad continuum is most likely PL, but it could partly be a resonant background from the flake or substrate. The baseline subtraction is imperfect (negative counts appear in several spectra), so A1g areas carry an estimated \u00b110\u201320% systematic error, larger at 599\u2013601 nm where the background is largest.",
+    "The low-shift edge at about 140\u2013150 cm\u207b\u00b9 is step-like and appears in every spectrum at a roughly fixed shift, which suggests a notch or edge filter transmission edge rather than a Raman band. The roll-off at 650\u2013700 cm\u207b\u00b9 coincides with the window edge of the shorter spectra (e.g. 638 nm ends at 673.5 cm\u207b\u00b9). Treat the peaks at 640\u2013720 cm\u207b\u00b9 in my peak list as artifacts unless a filter-free measurement confirms them.",
+    "The 638 nm spectrum contains single-point spikes at about 549 cm\u207b\u00b9 and 521 cm\u207b\u00b9, likely cosmic rays or a laser plasma line, so they should be excluded from any quantitative use.",
+    "Absolute frequencies carry a calibration offset of about +0.5\u20131 cm\u207b\u00b9, judged from the Si 520.7 cm\u207b\u00b9 line. Differences such as the E\u2032\u2013A1g separation are much less affected.",
+    "The 290 nm SiO2 and the flake's resonance both change with excitation wavelength, so intensity ratios between A1g and the Si line are not reliable here: the Si fits are unstable where the PL background is large (595\u2013605 nm).",
+    "The sequential colour ramp used for the stacked plot fails the validator's ordinal \u0394L check, which is designed for discrete ordered marks; the spectra are a continuous variable, so I used the monotone sequential ramp. This is a presentation choice only and does not affect the analysis."
+  ],
+  "questions_for_user": [
+    "Layer number: do you have an AFM height, optical-contrast or PL/reflectance result for this flake? The Raman separation alone (60.7 cm\u207b\u00b9) is consistent with mono- or few-layer but does not settle it.",
+    "Laser power at the sample for each wavelength: was it measured with a power meter at the objective for the dye laser across the sweep? If not, the resonance profile is only trustworthy in relative terms within the 585\u2013611 nm plateau.",
+    "Is there a PL spectrum at 4 K on this spot (e.g. off-resonance excitation at 638 nm, or a broadband lamp)? This would confirm whether the ~2.00\u20132.02 eV background is exciton/trion PL.",
+    "Were the spectra dark-subtracted, and was the background subtracted in any way? Several spectra have negative counts, which suggests an offset or subtraction issue.",
+    "Is the 140\u2013150 cm\u207b\u00b9 step and the 650\u2013700 cm\u207b\u00b9 roll-off the notch or edge filter? A blank-substrate measurement or a filter-free measurement would confirm or rule this out.",
+    "Was the parallel (co-linear) polarization configuration the same for every excitation? Cross-polarized spectra would help assign the 350 cm\u207b\u00b9 and ~480 cm\u207b\u00b9 bands and separate E\u2032 from 2LA(M)-type contributions.",
+    "Is the 2.14 eV (579 nm) drop real, or a power effect? A repeat at 579 nm with the power measured would settle it."
+  ],
+  "citations": [
+    "Berkdemir, A. et al., Sci. Rep. 3, 1755 (2013) \u2014 Raman E\u2032\u2013A1g separation as a layer-number indicator for WS2 (quoted from memory; not checked against the paper here)",
+    "Chernikov, A. et al., PRL 113, 076802 (2014) \u2014 exciton binding energies in monolayer WS2 (quoted from memory; not checked against the paper here)"
+  ],
+  "limits": [
+    "Literature values were not checked against the source papers in this environment; the citations and any numbers attributed to them are from memory and should be verified before use.",
+    "The A1g area and position are robust, but the E\u2032/~350 cm\u207b\u00b9 decomposition is not \u2014 the two-component fit swaps area between them from spectrum to spectrum, so E\u2032 and 2LA-type intensities are not quantified here.",
+    "The PL assignment and the emission-energy values come from a visual re-plot on the absolute energy axis, not from a fitted PL spectrum. The 2.00\u20132.02 eV hump is an estimate.",
+    "With only one flake, one spot and no polarization series, the report cannot separate sample properties (layers, strain, doping, defects) from excitation-dependent instrumental effects (laser power, interference, filter edges).",
+    "No temperature series or power series was supplied, so the 4 K and 0.7 mW conditions cannot be varied against each other; heating effects are estimated from the ~0.5 cm\u207b\u00b9 resonant softening only.",
+    "Figures are in C:\\Users\\sadit\\raman_analysis (stack_raw.png, zoom.png, emission.png, fits2.csv) and were not written into the data folder."
+  ]
+}

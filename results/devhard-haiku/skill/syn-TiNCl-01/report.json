@@ -1,0 +1,58 @@
+{
+  "candidates": [],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to verify. The spectrum has only two sample bands (206.5 and 471.5 cm-1) that I could not match to a known material. The literature searches (local library and Valency semantic search for TiNCl Raman) returned no TiNCl Raman mode table. The closest hits were DFT phonon papers on TiOCl and unrelated materials, which I did not use. I did not run the skill's Computational Raman Database matcher, because its scripts live outside the working folder, which I was asked not to read. No candidate material is supported by the data, so I am not naming one.",
+  "peaks": [
+    {
+      "position_cm1": 520.54,
+      "fwhm_cm1": 3.68,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Si first-order Raman line, about 520.7 cm-1 at room temperature (general reference value, not a retrieved paper). Fitted offset about -0.2 cm-1 is within typical calibration error. Fit: amplitude 6824 +/- 428 counts, FWHM 3.68 +/- 0.33 cm-1."
+    },
+    {
+      "position_cm1": 471.49,
+      "fwhm_cm1": 6.39,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit, +/- 0.12 cm-1 position, +/- 0.35 cm-1 FWHM, height 8626 +/- 325 counts. Too narrow to be the broad amorphous-SiO2 band near 440-490 cm-1 by itself. No material assignment found in the available literature."
+    },
+    {
+      "position_cm1": 206.47,
+      "fwhm_cm1": 3.15,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit, +/- 0.15 cm-1 position, +/- 0.41 cm-1 FWHM, height 5024 +/- 462 counts. Single-band shape across about 5 points, so not a cosmic-ray spike. No material assignment found in the available literature."
+    },
+    {
+      "position_cm1": 403.37,
+      "fwhm_cm1": 30.6,
+      "assignment": "unassigned, tentative weak broad band",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Added fourth Lorentzian lowers chi-square by about 46 (about 4 sigma with white noise). Its width (30.6 +/- 8.8 cm-1) and centre (+/- 2.9 cm-1) are poorly constrained, so it may be background shape. Height 799 +/- 149 counts."
+    }
+  ],
+  "properties": [],
+  "artifacts": [],
+  "citations": [],
+  "limits": [
+    "Material cannot be identified from this spectrum. Only two sharp sample bands (206.5 and 471.5 cm-1) are clearly above noise, and no assignment is supported by a reference I could retrieve.",
+    "Literature: the local library and the Valency semantic search returned no Raman mode table for TiNCl. The TiOCl DFT phonon papers and other hits are not Raman references for this material. Nothing was cited.",
+    "The skill's Computational Raman Database matcher and curated reference tables were not run, because their scripts sit outside the working folder, which I was asked not to read. Candidate ranking is therefore not done.",
+    "No polarization data, no angle series and no second laser line, so symmetry (irrep) assignment is not possible.",
+    "Si line position (520.54 cm-1) and its 520.7 cm-1 reference value come from general knowledge, not a retrieved paper.",
+    "Noise: point-to-point sigma is about 550 counts with lag-1 autocorrelation about 0.24. Fitted widths and positions are for white-noise statistics and may be slightly optimistic. Reduced chi-square of the three-peak fit is about 1.0, so no further sharp peak is detected above noise.",
+    "The 403 cm-1 broad band is tentative. Its width and centre are poorly constrained, and it may be part of the background or substrate contribution.",
+    "No cosmic-ray spikes found: no single-point outliers, and all three sharp bands are multi-point shapes.",
+    "I did not treat the working-folder name as evidence about the material.",
+    "Helper files written in the working folder: _explore.py, _fit.py, _fit2.py, _fit3.py, _c.npy, _res.npy, _res4.npy. These can be deleted."
+  ]
+}

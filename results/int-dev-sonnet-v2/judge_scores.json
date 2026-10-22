@@ -1,0 +1,892 @@
+{
+ "summary": {
+  "bare": {
+   "n": 7,
+   "score": 0.847,
+   "citation_specificity": 1.429,
+   "wrong_claims_made": 2,
+   "kind_caveat": 0.611,
+   "kind_finding": 0.986,
+   "kind_quantitative": 0.883,
+   "kind_question": 1.0
+  },
+  "skill": {
+   "n": 7,
+   "score": 0.883,
+   "citation_specificity": 1.857,
+   "wrong_claims_made": 2,
+   "kind_caveat": 0.875,
+   "kind_finding": 0.943,
+   "kind_quantitative": 1.0,
+   "kind_question": 0.857
+  }
+ },
+ "cases": {
+  "bare": {
+   "int-graphene-defects-01": {
+    "key": "675d9ce9b423fea9",
+    "score": 0.9166666666666666,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 1.0,
+     "caveat": 0.5,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report says D grows about 2.1\u00d7 per step, with \"G ... FWHM 13.8\u201313.9 cm\u207b\u00b9, constant\" and 2D FWHM about 32 cm\u207b\u00b9 with unchanged I2D/IG, and it assigns doses 1\u20133 to stage 1 with rising defect density."
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "The report gives I_D/I_G (height) of 0.25, 0.57 and 1.19, which yield L_D \u2248 24, 16 and 11 nm; all three fall inside the rubric ranges."
+      },
+      {
+       "id": "c1",
+       "met": 0.5,
+       "why": "The report uses the wavelength dependence explicitly (\"1.8e-9\u00b7\u03bb\u2074 ... at 532 nm is L_D\u00b2 \u2248 144 nm\u00b2/(I_D/I_G)\"), but it never says that the same I_D/I_G would mean a different L_D at another laser line."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "The report states \"Dose 4 is not a lower-defect state even though I_D/I_G drops to 0.58\", cites G broadening to about 45 cm\u207b\u00b9, D\u2032 merging into G and 2D collapse, calls it stage 2 with \"L_D is below ~3 nm\", and says the formula does not apply."
+      },
+      {
+       "id": "f3",
+       "met": 1,
+       "why": "The report gives I_D/I_D\u2032 = 6.2\u20136.9 and, citing Eckmann (\u224813 sp3, \u22487 vacancies, \u22483.5 boundaries), assigns the defects as vacancy-like; it calls this \"indicative\" but does not state the low-density validity limit explicitly."
+      },
+      {
+       "id": "c2",
+       "met": 0.5,
+       "why": "The report gives both height ratios (0.25/0.57/1.19) and area ratios (0.27/0.61/1.26) and uses heights for L_D, but it does not say that Can\u00e7ado's relation is calibrated on peak heights."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "The report asks \"What is the treatment (ion species/energy, plasma, e-beam, chemical)...\", noting that the calibration is for Ar\u207a and assumes point-like defects, and that defect chemistry changes I_D/I_D\u2032."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "The report explicitly rejects a low-defect reading of dose 4 and warns that applying Eq. 4 there would give a misleading \u224816 nm."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "The report uses the \u03bb\u2074 dependence evaluated at 532 nm."
+      },
+      {
+       "id": "w3",
+       "made": false,
+       "why": "The report calls the dose-2 spike near 2170 cm\u207b\u00b9 a cosmic-ray event, not a Raman band."
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-graphene-heating-01": {
+    "key": "49bcff73ba484fcc",
+    "score": 0.9,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 0.6666666666666666,
+     "caveat": 1.0,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 1,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report says \"G and 2D red-shift and broaden monotonically with laser power: thermal softening, not sample-intrinsic strain or doping\" and gives the Si line as \"fixed to ~0.05\" (520.86\u2013520.91 cm-1)."
+      },
+      {
+       "id": "n2",
+       "met": 0.5,
+       "why": "It estimates the 0.5\u21925 mW rise as \"-1.77/-0.016 \u2248 110 K from G; -5.13/-0.03 \u2248 150 K from 2D\", which roughly matches the expected ~125 K. It gives no estimate for 2 mW (~50 K)."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It finds a \u0394G:\u03942D ratio of \"1:2.9\", notes \"Heating mimics strain (similar ratio)\" against a strain slope of ~2.2, and warns that the 5 mW 2D \"would look like ~0.2% tensile strain, which would be a false result.\""
+      },
+      {
+       "id": "c1",
+       "met": 1,
+       "why": "It says to \"Trust only the 0.5 mW spectrum for strain/doping\" and that \"The 2 and 5 mW positions must not be used\", and it suggests a low-power series extrapolated to zero."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "It notes that \"Even 0.5 mW may be locally warm\", asks for \"a power series at 0.1, 0.2 and 0.5 mW\", and asks for \"the spot size... to convert power to power density.\""
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "It uses the 0.5 mW spectrum (G 1581.3, 2D 2669.5 cm-1) as the reference and calls it \"roughly unstrained, lightly doped\" graphene \"close to unstrained reference\". It does not discuss the uncertainty from the laser-wavelength correction of 2D."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "It explicitly attributes the shifts to \"laser heating, not strain or doping.\""
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "It recommends the 0.5 mW spectrum and rejects the higher-power spectra."
+      }
+     ],
+     "citation_specificity": 1
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-graphene-substrate-01": {
+    "key": "267061962320aba4",
+    "score": 0.7222222222222222,
+    "by_kind": {
+     "finding": 0.9,
+     "caveat": 0.6666666666666666,
+     "question": 1.0
+    },
+    "wrong_claims_made": [
+     "w1"
+    ],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report states that both spectra show \"G near 1580 cm-1 and a single symmetric 2D band near 2680\u20132695 cm-1\", with fitted values of G = 1580.3/1580.6 and 2D = 2681.0/2695.5, and calls both graphene."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It reports D at 1344.4 (Au) and 1350 (Cu) and \"ID/IG (heights): Au 0.96\u00b10.3 ... Cu 0.6\u00b10.4\", noting that the Cu D band is only about 2\u03c3, so it is poorly constrained."
+      },
+      {
+       "id": "f3",
+       "met": 0.5,
+       "why": "It names \"thermal-mismatch strain on rapid cooling\" as one hedged cause of the differences and links the Au D band to \"small domains from rapid cooling\", but it does not say that strain from rapid solidification is the authors' explanation for the stronger D on Au."
+      },
+      {
+       "id": "c1",
+       "met": 0.5,
+       "why": "It treats the strong D as a sign of \"a defective or small-domain layer\" (edges or grain boundaries), and it tests strain against G and 2D (a \"14 cm-1 2D shift should come with a G shift of about 6 cm-1\"), but it never says that strain alone cannot activate D."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "It asks \"What was the laser wavelength?\" because this is needed for the D/G ratio and the L_D estimate, uses the \u03bb^4 Can\u00e7ado relation, and notes that 2D disperses \"by about 100 cm-1/eV\"."
+      },
+      {
+       "id": "c2",
+       "met": 1,
+       "why": "It says \"Cu S/N is poor (G about 2.5, D below 2\u03c3). The Cu D/G, I2D/IG and G width are not reliable\", gives error bars, and asks for more spectra per sample."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": true,
+       "why": "Although the wavelength is not recorded, the report lists \"L_D_nm: about 10\u201312 nm for Au, assuming 532 nm excitation\" as a property value; the stated assumption makes it a hedge, but it is still a quantitative L_D."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "Strain appears only as one possible cause among several, and the report says \"The data cannot separate these causes\"."
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-hBN-thickness-01": {
+    "key": "115cad95e82e5e08",
+    "score": 0.6428571428571429,
+    "by_kind": {
+     "finding": 1.0,
+     "caveat": 0.5,
+     "question": 1.0
+    },
+    "wrong_claims_made": [
+     "w2"
+    ],
+    "citation_specificity": 1,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report states flake 2 is \"2.8 cm\u207b\u00b9 higher (1369.0 vs 1366.2 cm\u207b\u00b9) and is slightly broader (22 vs 18 cm\u207b\u00b9)\", which \"fits a very thin flake\" and is \"the qualitative trend reported for thinning toward a monolayer\"."
+      },
+      {
+       "id": "c1",
+       "met": 0.5,
+       "why": "The report says the shift is \"not specific to a monolayer\" and that the monolayer is only \"a few cm\u207b\u00b9 higher\", but it never gives the 2\u20134 cm\u207b\u00b9 size or the roughly \u00b12 cm\u207b\u00b9 sample-to-sample variation."
+      },
+      {
+       "id": "c2",
+       "met": 0.5,
+       "why": "The report says the upshift \"can also arise from strain\" and that the shift is \"smaller than the range from strain\", but it never says cleavage strain typically red-shifts the band by 1\u20132 cm\u207b\u00b9 or that this dominates in bilayers."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "The report finds the E2g area \"about 10\u00d7 weaker\" under the same conditions, uses roughly linear scaling with layer number, and says absolute layer number \"needs an intensity calibration (AFM height, or known 1L/2L/3L flakes on the same substrate)\"."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "The report asks for \"AFM, optical contrast calibrated against known layers\" and a bare-Si reference spectrum so intensities can be \"Si-normalised\"."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "The report explicitly says \"Raman alone does not show that flake 2 is a monolayer\"."
+      },
+      {
+       "id": "w2",
+       "made": true,
+       "why": "The report states the \"+2.8 cm\u207b\u00b9 upshift can also arise from ... a different thin-layer count (2\u20135 layers)\" and that \"a thin few-layer flake gives the same signature\", which treats bilayers and few-layer flakes as upshifted like a monolayer."
+      }
+     ],
+     "citation_specificity": 1
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-MoS2-calibration-01": {
+    "key": "01155b7fe3de4d4a",
+    "score": 1.0,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 1.0,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report says \"All three peaks move up by the same ~2.5 cm-1 on day 2\" (E2g \u0394=+2.51, A1g \u0394=+2.46) and gives the spacing as \"21.58 cm-1 on day 1 and 21.53 cm-1 on day 2\", so the separation is unchanged and close to 21.4."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "The report has Si moving \"519.98\u00b10.015 \u2192 522.47\u00b10.03, \u0394=+2.49\" and calls it \"a rigid offset of the wavenumber axis... spectrometer calibration or alignment drift, not adsorbate doping or strain\"; it also notes that Si \"cannot be doped or strained by adsorbates\"."
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "The report says \"Once the Si line is used as an internal reference, the E2g\u2013A1g spacing... agree within fit error\" (E minus Si is -136.65 vs -136.64), and that the ~21.6 cm-1 spacing \"matches roughly bilayer MoS2 and is the same on both days\"."
+      },
+      {
+       "id": "f3",
+       "met": 1,
+       "why": "The report says \"Electron doping softens and broadens A1g much more than E2g\" and \"Strain moves E2g about 2\u20135 times more than A1g\"; it finds neither, and reports widths unchanged (E2g FWHM 2.11 vs 2.12)."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "The report asks \"Was the spectrometer recalibrated, or the grating, slit or spectral range changed, between the two days?\" and \"Was a calibration standard (Si... or a neon lamp) recorded on each day?\""
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "The report rejects strain and doping explicitly: the shift \"does not match the known doping or strain signatures\", and strain_sign is \"none\"."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "The report gives the layer count as ~2 \"on both days\" and finds \"no sign of added disorder, damage\"."
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-MoS2-thickness-01": {
+    "key": "dc0985893b9bf0b0",
+    "score": 0.8,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 0.75,
+     "caveat": 0.5,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 1,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report states \"The E2g1 position hardens (moves to higher wavenumber) and the A1g position softens as the flakes get thinner\", and \u0394 rises from 19.2 to 25.1 with thickness. That is the rubric trend."
+      },
+      {
+       "id": "n1",
+       "met": 0.5,
+       "why": "It assigns \"B \u2248 monolayer (1L, \u0394 = 19.2 cm-1...)\" and \"A \u2248 bilayer (2L, \u0394 = 21.5)\", matching the rubric values. It does not present the 1L-to-2L step as the most robust distinction; it hedges \"possibly 1\u20132L\" and says systematics \"can blur 1L vs 2L\"."
+      },
+      {
+       "id": "n2",
+       "met": 1,
+       "why": "It gives \"D \u2248 few-layer, roughly 4\u20136L (\u0394 = 24.3)\" and \"C = bulk-like (\u0394 = 25.1)\", and says \"\u0394 saturates above about 4 layers... cannot be assigned an exact layer number\"."
+      },
+      {
+       "id": "c1",
+       "met": 0.5,
+       "why": "It says \"Absolute MoS2 intensities are not comparable between flakes: C is bulk but has the weakest MoS2 lines\" and mentions interference on 285 nm SiO2. It does not describe the intensity rising up to about 4 layers and then falling."
+      },
+      {
+       "id": "c2",
+       "met": 0.5,
+       "why": "It says strain and doping shift \u0394, with a systematic uncertainty of \"about \u00b10.5\u20131 cm-1\". But it gives E2g1 at \"about \u22122 cm-1/%\" (rubric: about 4.5) and says doping \"hardens/narrows A1g\", which is the wrong direction."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It reports \"A1g FWHM is 6.6 (A), 5.1 (B), 4.6 (D) and 3.1 (C) cm-1. E2g1 FWHM is 2.0\u20132.2 cm-1 in all four\", so A1g is widest at the bilayer and E2g1 stays about 2 cm-1."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "It explicitly checks calibration against the Si line: \"The Si 520 line was fitted at 520.02\u00b10.02 (A), 520.00\u00b10.02 (B)...\", and states the trust level of the shifts."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "Layer numbers come from \u0394. Si attenuation is used only as supporting evidence, and the report says absolute MoS2 intensities are not comparable."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "It says E2g1 hardens as flakes get thinner, which means it softens with thickness, and \u0394 grows with thickness."
+      },
+      {
+       "id": "w3",
+       "made": false,
+       "why": "It calls the 265.09 cm-1 feature \"a cosmic ray, not a Raman peak\" and removes it."
+      }
+     ],
+     "citation_specificity": 1
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-WS2-resonance-01": {
+    "key": "6d11d800963c3ca1",
+    "score": 0.95,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 1.0,
+     "caveat": 0.5,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 1,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report fits the band with separate components, \"2LA 351.1, E 355.3\" (4-component Lorentzian fit), and notes that \"The 2LA(M) and E' peaks lie about 4 cm-1 apart and overlap strongly.\""
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It reports \"2LA/A1g height about 2.2\" at spot 1 versus \"about 0.46\" at spot 2, and calls the enhancement \"typical of monolayer WS2.\""
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "It gives \"A1g 417.28\" for spot 1 and \"420.08\" for spot 2, and says this means \"spot 1 near the monolayer value and spot 2 bulk-like.\""
+      },
+      {
+       "id": "n2",
+       "met": 1,
+       "why": "\"Delta(A-E) = 62.0 (spot 1) vs 64.7 (spot 2)\" is computed from the E position after it was fitted separately from 2LA(M)."
+      },
+      {
+       "id": "c1",
+       "met": 0.5,
+       "why": "It says the call rests on \"small differences of about 1-2 cm-1\" and that for spot 2 \"the layer count cannot be derived\", but it never states that the steps between 2L, 3L and bulk are each only about 1 cm-1."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "It notes that \"Wavenumber calibration was only checked against Si, which sits at 520.8-520.9 cm-1\" and ties the 2LA(M) enhancement to \"a double-resonance effect near the A exciton at 514.5 nm.\""
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "E is fitted separately at 355.3 cm-1 from 2LA at 351.1 cm-1, and the separation uses the fitted E position, not the band maximum."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "2LA(M) is called a second-order double-resonance mode, and the report says there are \"no direct defect markers.\""
+      }
+     ],
+     "citation_specificity": 1
+    },
+    "judge_model": "claude-opus-5-5"
+   }
+  },
+  "skill": {
+   "int-graphene-defects-01": {
+    "key": "fa4a345561cd14de",
+    "score": 1.0,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 1.0,
+     "caveat": 1.0,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report says \"The D band grows strongly in doses 1\u20133 while G and 2D stay roughly constant. This is the stage-1 signature\". It also notes that D' grows alongside D, with \"FWHM(G) stays 12\u201314 cm-1\" and 2D FWHM at about 23.5\u201325.3, and concludes that defect density rises."
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "It gives height ratios and L_D within the rubric ranges for all three doses: \"dose 1 has I(D)/I(G)=0.25, L_D=24.0\u00b13.3 nm\u2026 Dose 2 has 0.57, L_D=15.9\u00b12.2 nm\u2026 Dose 3 has 1.19, L_D=11.0\u00b11.5 nm\", citing Cancado Eq. 4."
+      },
+      {
+       "id": "c1",
+       "met": 1,
+       "why": "The numbers come from the 532 nm calibration (\"At 532 nm\" plus an energy-form cross-check), and the report states that \"I(D)/I(G) scales as \u03bb^4\". This shows it applied the wavelength dependence rather than 514.5 nm constants."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It says \"I(D)/I(G) is non-monotonic, so dose 4 is not 'less defective' than dose 3\u2026 passed the maximum near L_D \u2248 3 nm\". It cites G merged with D' (FWHM 36\u201346), 2D \"nearly gone\" and \"relation not applicable\"."
+      },
+      {
+       "id": "f3",
+       "met": 1,
+       "why": "It states \"I(D)/I(D') of ~6\u20137 is closest to the ~7 reported for vacancy-type defects. The ~13 value for sp3 defects and ~3.5 for boundaries are both further away. This is only valid in stage 1\", citing Eckmann."
+      },
+      {
+       "id": "c2",
+       "met": 1,
+       "why": "It says \"The ratio is 'height' based, as the relation requires\" and reports the area ratios separately (0.26, 0.60, 1.26), so the difference between heights and areas is shown."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "It asks \"What was the treatment (ion bombardment\u2026, O2/Ar plasma, electron beam, hydrogenation\u2026)? The defect type decides whether the point-defect relation and the I(D)/I(D') discrimination are meaningful\"."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "The report explicitly rejects this: \"dose 4 is not 'less defective' than dose 3\". It also rejects the low-defect-branch value of about 17 nm and gives only L_D \u2272 3 nm."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "The report computes \"At 532 nm\", and its values (24/16/11 nm) match the 532 nm \u03bb^4 form, not the 514.5 nm constants."
+      },
+      {
+       "id": "w3",
+       "made": false,
+       "why": "It identifies the feature as an artifact: \"One cosmic-ray spike at 2154 cm-1 in dose 2 was removed.\""
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-graphene-heating-01": {
+    "key": "cf58a18e9f3ffb5b",
+    "score": 0.95,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 1.0,
+     "caveat": 1.0,
+     "question": 0.5
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report calls the G and 2D softening \"monotonic with laser power and consistent with laser heating\", says both bands broaden (\"G 13.4\u219215.6, 2D 26.2\u219229.9\"), and notes that \"the Si line stays at 520.86\u2013520.91 cm-1\"."
+      },
+      {
+       "id": "n2",
+       "met": 1,
+       "why": "It uses -0.016 and -0.034 cm-1/K to get \"\u0394T of about 116 K (G) and 151 K (2D)\" at 5 mW relative to 0.5 mW, and \"about 25\u201330 K/mW\"; the 5 mW value is close to 125 K, though the roughly 50 K at 2 mW is only implied by the rate, not stated."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It states \"The heating vector (slope 2.8) is close to the strain slope 2.2\", cites the Calizo ratio \"0.034/0.016 = 2.1\", and warns that a naive analysis gives an \"apparent 'tensile strain' of about 0.06\u20130.09 %\" that is \"a thermal artifact\"."
+      },
+      {
+       "id": "c1",
+       "met": 1,
+       "why": "It says to \"Trust the 0.5 mW spectrum, and ideally the zero-power extrapolation\", \"not 2 or 5 mW\", because the higher-power positions are heating artifacts."
+      },
+      {
+       "id": "q1",
+       "met": 0.5,
+       "why": "It asks for \"the spot size... the spot size gives the power density\" and notes that 0.5 mW is \"still heated by about 10\u201315 K\", but it does not recommend measuring at an additional lower power to confirm the heating-free regime; the proposed 0.5 mW repeat is a reversibility check."
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "It takes the 0.5 mW spectrum (G 1581.14, 2D 2669.32) as the reference and finds it \"essentially at the strain-free, undoped origin\", with an uncertainty caveat on the \"estimated 2D dispersion\" correction from 532 to 514 nm."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "The report says the shifts \"come from laser heating, not from strain or doping\" and computes the apparent strain only to label it \"a thermal artifact\"."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "It explicitly recommends \"0.5 mW (or extrapolation to zero power); not 2 or 5 mW\"."
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-graphene-substrate-01": {
+    "key": "8b0c4e8130c43779",
+    "score": 0.6666666666666666,
+    "by_kind": {
+     "finding": 0.8,
+     "caveat": 0.6666666666666666,
+     "question": 1.0
+    },
+    "wrong_claims_made": [
+     "w1"
+    ],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report states \"both spectra show graphene. Each has G at 1580.3 to 1580.4 cm-1 and a single 2D band at 2681 cm-1 (Au) or 2696 cm-1 (Cu).\""
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It reports \"D 1344.4 \u00b1 1.0\" on Au with \"I(D)/I(G) = 0.97 (heights)\", and on Cu \"at best I(D)/I(G) of about 0.6 with a large error\", which matches the rubric's values and caveat."
+      },
+      {
+       "id": "f3",
+       "met": 0,
+       "why": "Strain from rapid cooling comes up only for the 2D shift and in general caveats (\"Rapid cooling (50 K/s) can freeze in wrinkles and thermal strain\"); the report never offers it as the authors' hypothesis for the stronger D on Au, and it favours coupling instead."
+      },
+      {
+       "id": "c1",
+       "met": 0.5,
+       "why": "Both parts appear but are not connected: it says \"The D band is strong, so the layer is defective or polycrystalline\" and \"Strain alone would shift G and 2D together,\" yet it never says strain alone cannot produce a D band or that a strain explanation for D should be checked against the G and 2D positions."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "It asks \"Which laser wavelength was used...\" and explains that \"D and 2D disperse... and I(D)/I(G) scales as lambda^4,\" which is needed for L_D."
+      },
+      {
+       "id": "c2",
+       "met": 1,
+       "why": "It warns that \"Ratios on Cu come from low SNR (strongest band 9 x noise)... carry 25 to 35 % errors and depend on the baseline choice.\""
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": true,
+       "why": "Although the laser is unknown, the report lists a property \"L_D_nm: about 11 to 12 (Au, indicative only)\" based on an assumed 514 to 532 nm laser, so it gives a quantitative L_D despite the hedges."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "The report never says strain causes the D peak on Au; it links D to defects or polycrystallinity, and the only mechanism it favours is coupling, which it calls \"an assumption.\""
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-hBN-thickness-01": {
+    "key": "3896a21ba160f25b",
+    "score": 0.7142857142857143,
+    "by_kind": {
+     "finding": 1.0,
+     "caveat": 0.8333333333333334,
+     "question": 0.5
+    },
+    "wrong_claims_made": [
+     "w2"
+    ],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report states flake 2's E2g line sits \"2.85 \u00b1 0.25 cm-1 higher (1368.8\u20131369.0 cm-1)\" than flake 1 at 1366.0\u20131366.2, \"with a 3\u20134 cm-1 larger FWHM\", and that \"All of that fits a 1L flake\"."
+      },
+      {
+       "id": "c1",
+       "met": 1,
+       "why": "It cites \"1L upshifted 2\u20134 cm-1 (\u00b12)\" from Gorbachev and says the position \"cannot tell 1L from 2L\", so position alone is not conclusive."
+      },
+      {
+       "id": "c2",
+       "met": 0.5,
+       "why": "It says \"strain from the substrate and from transfer dominates it\" and notes 2L is \"usually downshifted 1\u20132 cm-1\", but never ties that red shift to random cleavage strain being strongest in bilayers."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It reports the line is \"about 10x weaker\" under the same laser, power and integration time, which \"points to a thinner flake\"; it cites Gorbachev for \"linearity for the first several layers on a given substrate\" and calls for \"a calibrated intensity ladder measured on the same substrate and spectrometer\"."
+      },
+      {
+       "id": "q1",
+       "met": 0.5,
+       "why": "It clearly suggests AFM (\"Do you have AFM or step-height data\") and mentions optical contrast, but it treats normalising to Si as unreliable rather than proposing calibration against the Si line."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "It explicitly declines: \"I would not call it a monolayer in print on this evidence.\""
+      },
+      {
+       "id": "w2",
+       "made": true,
+       "why": "It says the upshift \"fits a 2L flake on SiO2 equally well\" and that flake 2 \"matches 2L slightly better\" (citing Cai), so it treats a bilayer as upshifted like a monolayer even though it also quotes Gorbachev's 2L downshift."
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-MoS2-calibration-01": {
+    "key": "bc3e5a613f598a19",
+    "score": 1.0,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 1.0,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 1,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report gives \"E2g1 383.33(1) -> 385.83(2), i.e. +2.50; A1g 404.88(7) -> 407.31(10), i.e. +2.43(12)\" and a separation of \"21.56(7) cm-1 (day 1) and 21.47(11) cm-1 (day 2)\", so both modes shift together and the separation is unchanged."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "The report states \"Si line 519.98(2) -> 522.47(3), i.e. +2.49 ... so this is a rigid spectrometer calibration offset, not doping or strain.\""
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "The report states \"Si-corrected ... E2g1 384.05(1) vs 384.07(2) cm-1 ... A1g 405.61(7) vs 405.54(10)\" agree within error, and the separation \"gives about 2L\" (reference 21.4 cm-1)."
+      },
+      {
+       "id": "f3",
+       "met": 1,
+       "why": "The report states \"With no A1g-only shift or broadening (doping) and no E2g1 shift or splitting (strain), there is no sign of adsorbate-induced change\", and it lists FWHMs that are unchanged (E2g1 2.08 vs 2.14, A1g 6.13 vs 6.22)."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "The report asks \"Was the spectrometer recalibrated, the grating or centre wavelength changed, or the laser re-aligned between the two days?\""
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "The report rejects strain and doping: \"not doping or strain\" and \"doping_type: none detected\"."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "The report gives 2L on both days and says linewidths are unchanged with no LA(M) defect band, so it reports no change in layer number or crystal quality."
+      }
+     ],
+     "citation_specificity": 1
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-MoS2-thickness-01": {
+    "key": "483f5afd5d67b50c",
+    "score": 0.95,
+    "by_kind": {
+     "finding": 1.0,
+     "quantitative": 1.0,
+     "caveat": 0.75,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report says \"E2g1 softens and A1g stiffens with N, with Delta of 19.2, 21.4, 24.3 and 25.1 cm-1 for B, A, D and C\", so the separation grows with thickness."
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "It assigns \"B is a monolayer (19.23 cm-1), A is a bilayer (21.43)\" and says these are the stronger calls because the separation is \"only unambiguous up to about 2L to 3L\"."
+      },
+      {
+       "id": "n2",
+       "met": 1,
+       "why": "It gives \"D is about 4L (24.27) and C is bulk-like (25.07)\", with C the thickest, and says the two can only be bounded (\"C being anywhere above about 5L\"); it is somewhat overcautious in not excluding 3L for D."
+      },
+      {
+       "id": "c1",
+       "met": 0.5,
+       "why": "It states \"Absolute intensity is not a thickness measure on 285 nm SiO2/Si, because interference modulates it\", but does not describe intensity rising to about 4L and then falling, or a monolayer being stronger than bulk, and it still uses the Si-normalised intensity as supporting evidence."
+      },
+      {
+       "id": "c2",
+       "met": 1,
+       "why": "It says \"Strain, doping and substrate each shift E2g1 and A1g and so change Delta. A flake with doped or strained A1g could be misassigned by one layer\" and cites doping broadening A1g, though it gives no strain coefficient."
+      },
+      {
+       "id": "f2",
+       "met": 1,
+       "why": "It reports A1g as broadest in the bilayer (\"FWHM 6.16\"), narrow in C (\"2.86 vs 4.5\u20136.2 in the thinner flakes\"), and E2g1 \"constant at 2.04\u20132.12 cm-1\"."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "Its calibration observation measures the Si line at \"520.02, 520.00 and 519.99 cm-1\", derives a rigid offset of about -0.7 cm-1, and notes that it cancels in the separations."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "Layer numbers come from Delta; the Si-normalised intensity is used only as supporting evidence, and absolute intensity is explicitly rejected."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "It correctly states that E2g1 softens and Delta grows with N."
+      },
+      {
+       "id": "w3",
+       "made": false,
+       "why": "It calls the feature at 265.1 cm-1 \"a cosmic-ray spike ... (removed, not a peak)\"."
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   },
+   "int-WS2-resonance-01": {
+    "key": "8a87e8adcaeef639",
+    "score": 0.9,
+    "by_kind": {
+     "finding": 0.8,
+     "quantitative": 1.0,
+     "caveat": 1.0,
+     "question": 1.0
+    },
+    "wrong_claims_made": [],
+    "citation_specificity": 2,
+    "grades": {
+     "items": [
+      {
+       "id": "f1",
+       "met": 1,
+       "why": "The report says the 350 cm\u207b\u00b9 band is a doublet that needs two components (\"A two-component fit is required\") and fits 2LA(M) at 351.10 and E2g\u00b9 at 355.29 cm\u207b\u00b9 for spot 1."
+      },
+      {
+       "id": "f2",
+       "met": 0.5,
+       "why": "Spot 1 matches: 2LA(M) dominates, with an area ratio of about 4.4 and a height ratio of 2.35, and the report names \"ratio of about 2 for 1L at 514 nm\" as the literature flag. Spot 2's ratio is given as about 0.9, not about 0.5, and only described as \"weaker than A1g\"."
+      },
+      {
+       "id": "n1",
+       "met": 1,
+       "why": "\"A1g stiffens by 2.79 cm\u207b\u00b9 (417.29 to 420.08)\", read as 1L at spot 1 and 3L/bulk at spot 2."
+      },
+      {
+       "id": "n2",
+       "met": 1,
+       "why": "The separations are about 62.0 and 64.7 cm\u207b\u00b9 after the doublet fit, and the report notes the single-peak fit inflates them to 65.6/67.0 cm\u207b\u00b9."
+      },
+      {
+       "id": "c1",
+       "met": 1,
+       "why": "The report says the 3L-versus-bulk question \"cannot be settled\" (Berkdemir \u0394: 3L 64.6, bulk 64.8) and gives 2L at 63.4 cm\u207b\u00b9, about 1.4 cm\u207b\u00b9 from 1L, so it shows that positions constrain layer number only weakly beyond 1L."
+      },
+      {
+       "id": "q1",
+       "met": 1,
+       "why": "It checks the Si offsets (+0.21/+0.08 cm\u207b\u00b9), discusses resonance with the A/B excitons, and notes that intensity ratios depend on laser energy, with questions about \"resonance detuning\"."
+      }
+     ],
+     "wrong_claims": [
+      {
+       "id": "w1",
+       "made": false,
+       "why": "The report explicitly rejects the single-peak E2g reading: \"merges 2LA(M) and E2g\u00b9 ... inflates the separation\"."
+      },
+      {
+       "id": "w2",
+       "made": false,
+       "why": "It assigns 2LA(M) as a second-order overtone and says LA(M) \"is not a defect marker here\"."
+      }
+     ],
+     "citation_specificity": 2
+    },
+    "judge_model": "claude-opus-5-5"
+   }
+  }
+ }
+}

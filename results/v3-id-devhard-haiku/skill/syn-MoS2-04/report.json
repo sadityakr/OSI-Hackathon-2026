@@ -1,0 +1,92 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.85,
+      "evidence": "Two sample bands at 382.84 and 406.21 cm-1 (fit errors 0.02 and 0.09 cm-1) match the E2g1/E' and A1g/A1' pair of MoS2. Their separation is 23.38 cm-1, inside the MoS2 layer-dependence range (1L 19.1, bulk 25.2 cm-1; Lee 2010 Fig. 2b). The E2g1 line is narrow (FWHM 2.30 cm-1 vs about 2.1 cm-1 in Lee 2010), consistent with good crystal. No other band lies in the 150 to 650 cm-1 window apart from Si. Other TMD pairs (WS2, MoSe2, WSe2) have different positions and are excluded by them. The matcher's automatic ranking did not place MoS2 first (top hits were unrelated DFT entries), so this ranking rests on the literature comparison, not on the matcher."
+    },
+    {
+      "material": "3R-MoS2",
+      "confidence": 0.1,
+      "evidence": "Same E/A pair and separation as 2H; the spectrum cannot distinguish stacking polytype (MoS2 note: stacking differences appear in low-frequency modes, which are below the 150 cm-1 cutoff here). Kept as the main alternative, with lower prior weight."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so this is an identify task, not a verify task. The two sample bands at 382.8 and 406.2 cm-1 with a 23.4 cm-1 separation match few-layer MoS2 on 285 nm SiO2/Si (Lee et al. 2010, Fig. 2b). The 3L layer count comes from the MoS2 separation relation (moderate confidence). The automatic matcher output was not used for ranking because its top candidates were unrelated computational entries.",
+  "peaks": [
+    {
+      "position_cm1": 382.835,
+      "fwhm_cm1": 2.299,
+      "assignment": "E2g1 (bulk D6h label; E' for an odd-N, D3h few-layer)",
+      "irrep": "E' (E2g1 bulk label)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fitted position 382.835 +/- 0.024 cm-1, FWHM 2.30 +/- 0.08 cm-1 (rl_fit.py). Assignment from literature: Lee et al. 2010, ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509, Fig. 2b (3L E2g1 at 382.8 cm-1). Irrep label for an odd-N few-layer from the parity rule: Zhang X. et al. 2015, Chem. Soc. Rev. 44, 2757, arXiv:1502.00701, p.7."
+    },
+    {
+      "position_cm1": 406.214,
+      "fwhm_cm1": 4.365,
+      "assignment": "A1g (bulk D6h label; A1' for an odd-N, D3h few-layer)",
+      "irrep": "A1' (A1g bulk label)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fitted position 406.214 +/- 0.092 cm-1, FWHM 4.37 +/- 0.30 cm-1 (rl_fit.py). Assignment from literature: Lee et al. 2010, ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509, Fig. 2b (3L A1g at 405.9 cm-1). Irrep label: Zhang X. et al. 2015, arXiv:1502.00701, p.7."
+    },
+    {
+      "position_cm1": 520.505,
+      "fwhm_cm1": 3.44,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Si Raman line at 520.7 cm-1 (reference value); measured offset -0.19 cm-1 (rl_qc.py, rl_fit.py)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "3",
+      "provenance": "inferred",
+      "source": "Separation Delta = omega(A1g) - omega(E2g1) = 23.38 cm-1 via mos2_layer_number_from_separation (apply_relation, delta_err 0.5 cm-1, laser 532 nm within stated validity 488 to 633 nm). Reference table: 2L 21.4, 3L 23.1, 4L 24.3, bulk 25.2 cm-1 (Lee et al. 2010, Fig. 2b, 514.5 nm). Only 3L falls within the uncertainty; 0.28 cm-1 from 3L and 0.92 cm-1 from 4L."
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "The E/A pair matches the 2H reference table (Lee et al. 2010, Fig. 2b). 2H vs 3R is not resolved by these modes (MoS2 note, Ranjuna et al. 2023, Sci. Rep. 13, 16418, doi:10.1038/s41598-023-43756-w, p.2)."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "E2g1 FWHM 2.30 cm-1 is close to the about 2.1 cm-1 of Lee et al. 2010 (p.4) for good crystals; qualitative only. The LA(M) defect band near 227 cm-1 was not detected above the fit residual, and no dedicated weak-band fit was made."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "E2g1 at 382.84 cm-1 matches the 3L reference at 382.8 cm-1 (Lee 2010, Fig. 2b). No measurable shift, so no strain is indicated. Strain and layer number are not fully separable from one spectrum (MoS2 note, Strain and doping)."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "A1g at 406.21 cm-1 is 0.3 cm-1 from the 3L reference (405.9 cm-1, Lee 2010, Fig. 2b), within calibration scatter. No doping shift is resolvable."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee C., Yan H., Brus L. E., Heinz T. F., Hone J., Ryu S. (2010), ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509, Fig. 2b and p.3-4 (layer-dependent E2g1/A1g positions, separation table, linewidths)",
+    "Zhang X. et al. (2015), Chem. Soc. Rev. 44, 2757, arXiv:1502.00701, p.7 (parity-dependent D3h/D3d labels)",
+    "Ranjuna M. K. et al. (2023), Sci. Rep. 13, 16418, doi:10.1038/s41598-023-43756-w, p.2 (2H vs 3R stacking note)"
+  ],
+  "limits": [
+    "Layer number rests on one separation (23.38 cm-1) against a reference table measured at 514.5 nm and 2.7 cm-1 resolution, applied here at 532 nm (inside the relation's stated validity range). The 3L vs 4L margin is only about 0.3 vs 0.9 cm-1. Strain, doping and substrate can shift the separation by a similar amount, so 3L is moderate, not high, confidence. The relation's own confidence is moderate.",
+    "The automatic matcher (rl.py match_library) did not rank MoS2 first: its top hits were unrelated DFT entries (HSi, AsO3Sb, Cu2O4S, and others) with weak matches. I did not use that ranking. The MoS2 identification rests on the literature E/A pair and separation comparison (Lee 2010, Fig. 2b).",
+    "No polarization or angle series was measured, so irrep classes (isotropic, twofold, fourfold) cannot be checked. The E'/A1' labels for an odd-N few-layer come from the parity rule, not from measurement. Bulk D6h labels (E2g1, A1g) are the reference-table labels.",
+    "2H vs 3R stacking cannot be decided from this E/A pair. Low-frequency shear and breathing modes lie below the 150 cm-1 start of the data, so they were not observed.",
+    "No targeted weak-band fit was run. LA(M) near 227 cm-1 and 2LA(M) near 450 cm-1 are not visible in the fit residual, but a dedicated fit could still reveal weak features. Defect and resonance statements are therefore limited. The spectrum is off-resonance (532 nm), so resonant second-order bands are not expected.",
+    "The Si line sits at 520.51 cm-1 (offset -0.19 cm-1). Because the separation is a difference, the common calibration offset cancels. Absolute positions still carry about 0.2 cm-1 uncertainty. The reference table's temperature is not stated; the spectrum was measured at 295 K.",
+    "Only one spectrum and no sample metadata beyond the given conditions were available. Transfer history, strain, and substrate interference effects on the E/A pair could not be checked."
+  ]
+}

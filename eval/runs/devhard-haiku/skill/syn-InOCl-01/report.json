@@ -1,0 +1,90 @@
+{
+  "candidates": [],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so there is nothing to verify. Identification is not established: three measured bands at 155.7, 299.5 and 354.1 cm-1 on a sloping background, with no reference mode set I could confirm as matching. A literature search with a concept query (layered oxyhalide / oxychloride Raman) returned no paper on a material with this band set. The folder name is not measurement metadata and was not used as evidence.",
+  "peaks": [
+    {
+      "position_cm1": 155.68,
+      "fwhm_cm1": 5.62,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Voigt fit, 120-400 cm-1 window, quadratic baseline; centre stderr 0.07 cm-1, amplitude 41442 +/- 1254 counts; single-peak model preferred over two-peak (BIC 372.1 vs 375.7 on 145-170 window)"
+    },
+    {
+      "position_cm1": 299.51,
+      "fwhm_cm1": 7.11,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Voigt fit, 120-400 cm-1 window; centre stderr 0.52 cm-1, amplitude 8402 +/- 1376 counts (weak, about 16 % amplitude uncertainty)"
+    },
+    {
+      "position_cm1": 354.11,
+      "fwhm_cm1": 9.19,
+      "assignment": "unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Voigt fit, 120-400 cm-1 window; centre stderr 0.25 cm-1, amplitude 25644 +/- 1685 counts; single-peak model used, two-peak split on 340-370 window failed to converge"
+    }
+  ],
+  "properties": [
+    {
+      "name": "temperature",
+      "value": "295 K (metadata)",
+      "provenance": "measured",
+      "source": "measurement metadata"
+    },
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "no reference match; see limits"
+    },
+    {
+      "name": "layers",
+      "value": "not determinable from this spectrum",
+      "provenance": "inferred",
+      "source": "no validated layer-number relation applied; no reference modes to compare"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "no D/defect-related band identified; no relation applied"
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "no reference frequencies for the material"
+    },
+    {
+      "name": "doping_type",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "no reference frequencies for the material"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike (single-point, 9238 counts vs about 1500 neighbours, replaced by local median before fitting)",
+      "position_cm1": 897.47
+    }
+  ],
+  "citations": [],
+  "limits": [
+    "The material is not identified. Three measured bands (155.7, 299.5, 354.1 cm-1) are not enough to name a material without a reference set; I did not form a confident hypothesis from them.",
+    "The skill's reference matcher (Computational Raman Database and curated tables) was not run, because its scripts sit outside this folder and I was asked to work only here. Candidate ranking therefore comes from no database check, so the candidate list is empty rather than guessed.",
+    "The literature search returned no paper on a material with this band set; the top hits (bismuth oxychalcogenides, Rh chalcochlorides, InSeI, SnS2, MoTe2) were not used to assign any peak.",
+    "The folder name contains a chemical formula, but it is not measurement metadata. I did not treat it as a hint and did not verify it against Raman data.",
+    "Mode assignments and irreps cannot be given without a reference set for the material. Polarization classification is not possible (single spectrum, no angle series). No layer, strain, doping or defect relation was applied because none can be validated for an unknown material.",
+    "The background is sloping (about 2800 to 1200 counts from 60 to 1100 cm-1), which may be fluorescence and cannot be separated from the bands with a single spectrum. The weak 299.5 cm-1 band has about 16 % amplitude uncertainty and sits close to the noise level.",
+    "Possible weak shoulder near 160 cm-1 on the 155.7 band was tested with a second component and not supported by BIC, so it is treated as noise.",
+    "No Si substrate line near 520.7 cm-1 is present in the 60 to 1100 cm-1 range, and substrate is null in the metadata. No substrate assignment is made.",
+    "To settle the identity, the next step is a reference Raman spectrum (or the skill's matcher) for candidate layered materials measured at 532 nm, then comparison of the three band positions and relative intensities."
+  ]
+}

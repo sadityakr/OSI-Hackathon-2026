@@ -1,0 +1,82 @@
+{
+  "candidates": [
+    {
+      "material": "BiOBr",
+      "confidence": 0.85,
+      "evidence": "Three lines at ~107, ~163 and ~391 cm-1 match tetragonal (P4/nmm) BiOBr: A1g (Bi\u2013Br) ~110, Eg ~160, B1g/Eg (O motion) ~390. The 107 and 163 lines are isotropic and parallel-only. The 391 line is fourfold with the right phase relation."
+    },
+    {
+      "material": "BiOCl",
+      "confidence": 0.07,
+      "evidence": "Same structure type, but the lines would sit near 145 (A1g), 200 (Eg) and 397 cm-1. The strongest line at 107 and the 163 line do not match."
+    },
+    {
+      "material": "BiOI",
+      "confidence": 0.05,
+      "evidence": "Same structure type, but the A1g would sit near 85\u201395 cm-1 and the Eg near 145 cm-1. Poor match for 107/163."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given. This is an identification task.",
+  "peaks": [
+    {
+      "position_cm1": 107.2,
+      "fwhm_cm1": 8,
+      "assignment": "A1g (Bi\u2013Br stretch)",
+      "irrep": "A1g",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Position and polarization measured from the fit. The A1g assignment is by analogy with the literature BiOBr A1g near 110 cm-1 (Raman studies of BiOX, e.g. Zhang et al.). Parallel amplitude is ~7.7\u20138.1k counts at all 18 angles. Crossed is at noise level, ~4% of parallel."
+    },
+    {
+      "position_cm1": 163,
+      "fwhm_cm1": 5,
+      "assignment": "second Bi\u2013Br mode, assigned Eg by literature analogy",
+      "irrep": "Eg",
+      "pattern": "isotropic_par_only",
+      "provenance": "inferred",
+      "source": "Position and polarization measured. Assignment follows the literature BiOBr Eg near 160 cm-1. The parallel intensity (~1.2\u20131.5k counts, scatter consistent with noise) is angle-independent and the crossed signal is at noise level. That behaviour is unexpected for a true Eg in backscattering, so the irrep is tentative."
+    },
+    {
+      "position_cm1": 391,
+      "fwhm_cm1": 5,
+      "assignment": "B1g (O-related mode, often written Eg/B1g)",
+      "irrep": "B1g",
+      "pattern": "fourfold",
+      "provenance": "measured",
+      "source": "Position and polarization measured. Parallel peaks near 50\u00b0 and 140\u00b0 (~2.4k counts) and drops to ~0.3\u20130.5k at 0\u00b0/90\u00b0/180\u00b0. Crossed is the complement, ~2.3k at 0\u00b0/90\u00b0/180\u00b0 and ~0.25k near 50\u00b0/140\u00b0. This is the cos\u00b2(2\u03b8) / sin\u00b2(2\u03b8) fourfold signature of a B1g mode with a ~5\u00b0 axis offset. The literature BiOBr line is near 390 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layer/structure",
+      "value": "Tetragonal matlockite-type (P4/nmm) [Bi2O2]2+ / Br\u2013 layered structure, bulk-like or thin flake. Layer number not determined.",
+      "provenance": "inferred",
+      "source": "Peak positions compared with the BiOBr literature"
+    },
+    {
+      "name": "in-plane crystal axis offset",
+      "value": "~5\u00b0 offset of the B1g fourfold pattern relative to the polarizer zero (parallel maximum near 50\u00b0/140\u00b0)",
+      "provenance": "measured",
+      "source": "Angle series fit of the 391 cm-1 line"
+    },
+    {
+      "name": "substrate",
+      "value": "None (suspended). No Si 520.7 cm-1 line is present.",
+      "provenance": "measured",
+      "source": "spectrum.csv"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Raman studies of BiOX (X = Cl, Br, I) layered oxyhalides: A1g ~110, Eg ~160 and B1g/Eg ~390 cm-1 for BiOBr (e.g. Zhang et al., and Wu et al., recalled from memory, not re-checked)",
+    "Tetragonal P4/nmm Raman selection rules: A1g is parallel-only isotropic. B1g is fourfold, cos\u00b2(2\u03b8) parallel and sin\u00b2(2\u03b8) crossed."
+  ],
+  "limits": [
+    "Very weak features near 207, 261\u2013273, 456 and 485 cm-1 are at or below the noise level, with amplitudes comparable to the scatter. They are not reported as peaks.",
+    "Fitted widths are limited by the 1 cm-1 sampling, so they are approximate.",
+    "The irrep of the 163 cm-1 line is uncertain. A pure Eg would be forbidden or weak in this geometry, yet the line is isotropic and parallel-only. It could be A1g (second A1g) in the synthetic or real data, so the literature irrep is tentative.",
+    "BiOBr is assigned from the line positions and polarization alone, and Cl/I analogues are only disfavoured by position. Layer number, strain and doping cannot be determined from this data.",
+    "No cosmic-ray spikes were identified. The largest intensities are all the 107 cm-1 line at consistent values across angles."
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "summary": "Layer-number estimates from the E2g\u2013A1g separation \u0394 (calibration-independent): flake B \u2248 monolayer (\u0394 = 19.23 \u00b1 0.10 cm\u207b\u00b9); flake A \u2248 bilayer or few-layer, 2\u20133 L (\u0394 = 21.45 \u00b1 0.08 cm\u207b\u00b9); flakes C and D are thick, \u2265 ~5 L or bulk-like, and \u0394 cannot separate those (\u0394 = 25.06 \u00b1 0.07 and 24.26 \u00b1 0.02 cm\u207b\u00b9). The per-layer \u0394 values are recalled from the literature and not checked against the source figure, so the layer counts are estimates, not measurements. The E2g and A1g frequencies move in the same direction as \u0394 across the four flakes (E2g down, A1g up with thickness), which is the thickness pattern rather than a doping or strain pattern. The spectra show no evidence of strong defect activity: the LA(M) (~227 cm\u207b\u00b9) and 2LA(M) (~450 cm\u207b\u00b9) bands are not detected above noise. An unexplained broadening of the A1g in flake A (FWHM 6.6 cm\u207b\u00b9) could be a mixed-thickness spot, but a two-component fit is not preferred. Important: the skill's scripts and reference notes live outside this folder, and I did not read them because the working-folder instruction forbids it. All fits used my own code in ./analysis.",
+  "observations": [
+    {
+      "finding": "Si line at 520.0 cm\u207b\u00b9 in all four spectra, so the instrument has a common offset of about \u22120.7 cm\u207b\u00b9 relative to the 520.7 cm\u207b\u00b9 Si reference (assumed).",
+      "evidence": "Lorentzian Si fits: A 520.02\u00b10.02, B 520.00\u00b10.02, C 520.01\u00b10.31 (weak line, SNR low), D 519.99\u00b10.03 cm\u207b\u00b9. Calibrated (+0.7) E2g/A1g positions give 384.1/405.5 (A), 384.6/403.8 (B), 382.9/408.0 (C), 383.1/407.3 (D) cm\u207b\u00b9. Spectra from ./spectrum_{A..D}.csv, fit by analysis/fit_bands.py.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "E2g (in-plane) position: flake B highest, A next, C and D lowest. Raw fitted positions are A 383.37\u00b10.01, B 383.91\u00b10.03, C 382.24\u00b10.04, D 382.37\u00b10.01 cm\u207b\u00b9 (Lorentzian); pseudo-Voigt agrees within 0.02 cm\u207b\u00b9.",
+      "evidence": "Lorentzian fit over 360\u2013430 cm\u207b\u00b9 with linear background; pseudo-Voigt fit gives A 383.37, B 383.91, C 382.24, D 382.37 cm\u207b\u00b9 (analysis/checks.py). Ordering matches the monolayer\u2192bulk E2g trend of Lee et al. 2010 (E2g frequency decreases with thickness).",
+      "provenance": "measured",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010), https://pubmed.ncbi.nlm.nih.gov/20392077/ (arXiv 1005.2509): E2g\u00b9 frequency decreases with thickness, A1g increases."
+    },
+    {
+      "finding": "A1g position increases in the order B < A < D \u2248 C: 403.13\u00b10.10, 404.82\u00b10.08, 406.64\u00b10.02, 407.31\u00b10.06 cm\u207b\u00b9 (raw). The E2g and A1g shifts run in opposite directions, as in the thickness trend of Lee et al. 2010.",
+      "evidence": "Same fits as above. Opposite-direction shifts of E2g and A1g are the thickness signature stated in Lee et al. 2010 abstract; a doping-only change would move A1g without E2g, and a uniaxial/biaxial strain would move E2g with the same sign as A1g (Raman strain coefficients not verified here).",
+      "provenance": "measured",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010), https://pubmed.ncbi.nlm.nih.gov/20392077/"
+    },
+    {
+      "finding": "\u0394 = A1g \u2212 E2g: A 21.45\u00b10.08, B 19.23\u00b10.10, C 25.06\u00b10.07, D 24.26\u00b10.02 cm\u207b\u00b9. This is the layer-number observable: B ~ monolayer, A ~ 2 L, C and D thick (\u22655 L or bulk-like).",
+      "evidence": "Difference of Lorentzian centers; pseudo-Voigt gives 21.45, 19.23, 25.10, 24.24 cm\u207b\u00b9 (agreement \u22640.04 cm\u207b\u00b9). Layer assignments use the \u0394-vs-N values recalled from the literature (monolayer ~18\u201320, bilayer ~21\u201322, bulk ~25 cm\u207b\u00b9), which I could not confirm against the abstract or figure.",
+      "provenance": "inferred",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010) for the direction of the trend; the per-layer \u0394 values are recalled and need checking against that paper's figure (locator not verified)."
+    },
+    {
+      "finding": "Widths: E2g FWHM is 2.1\u20132.2 cm\u207b\u00b9 in all flakes, below the stated 2.7 cm\u207b\u00b9 resolution. A1g FWHM is broad in A (6.6) and B (5.0), narrower in D (4.6) and C (3.1).",
+      "evidence": "Lorentzian FWHM = 2\u03c3: E2g A 2.13, B 2.06, C 2.15, D 2.11 cm\u207b\u00b9; A1g A 6.55, B 4.88, C 2.91, D 4.58 cm\u207b\u00b9 (Lorentzian); pseudo-Voigt gives the same ordering. Two-component A1g fit for A: BIC 322 vs 316 for single Lorentzian, so no resolved doublet.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Single-channel spike at 265.09 cm\u207b\u00b9 in flake C (3317 counts, baseline ~300), removed by interpolation. Not a Raman band.",
+      "evidence": "Isolated-point detector (analysis/despike2.py); only spike with height > 50% of the local median. Other flagged points (156, 187, 634.6 cm\u207b\u00b9) are at noise level and were left in.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "No LA(M) (~227 cm\u207b\u00b9) or 2LA(M) (~450 cm\u207b\u00b9) band above noise in any flake. Noise per point ~13\u201324 counts, so any band must be < ~50\u201370 counts (~5\u201320 % of the E2g height) to escape detection.",
+      "evidence": "Fits of 215\u2013240 and 438\u2013462 cm\u207b\u00b9 windows give amplitudes with no stable stderr (fit could not constrain them). E2g heights above baseline are roughly A ~1250, B ~650, C ~325, D ~2500 counts (from the plot).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Si/E2g and A1g/E2g height ratios: Si/E2g A 1.04, B 2.48, C 0.23, D 0.37; A1g/E2g A 0.34, B 0.42, C 0.73, D 0.47. Background is ~400 counts in A\u2013C and ~700 in D.",
+      "evidence": "Lorentzian peak heights (amplitude/\u03c0\u03c3) from the fits. Heights depend on focus, coverage and substrate interference at 285 nm SiO2, so these ratios are qualitative.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "B: 1 (monolayer-like); A: 2 (2\u20133, bilayer-like); C: thick, \u22655 or bulk-like; D: thick, \u22655 or bulk-like",
+      "provenance": "inferred",
+      "source": "\u0394 = A1g\u2212E2g from fits (measured); per-layer \u0394 values recalled, not verified against Lee et al. 2010 figure"
+    },
+    {
+      "name": "phase",
+      "value": "2H (E2g ~383 and A1g ~405\u2013408 cm\u207b\u00b9 pair, no extra strong bands)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "low (qualitative): no LA(M)/2LA(M) detected; A1g broad only in A and B",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none established",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none established",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Layer assignments rest on \u0394 with per-layer values I recalled from the literature. Lee et al. 2010 is verified for the direction of the trend, not the numbers.",
+    "Si calibration offset of \u22120.7 cm\u207b\u00b9 assumes the 520.7 cm\u207b\u00b9 reference; if the lab's reference differs, absolute E2g/A1g positions shift but \u0394 does not.",
+    "Laser heating and strain can change individual frequencies; \u0394 is much less sensitive, but not perfectly insensitive, so the monolayer assignment for B could be affected by a large strain or a power-dependent heating effect. No power series was provided.",
+    "Spot averaging: if the 1 \u00b5m spot covers a mixture of thicknesses, the broad A1g in A may be an unresolved mixture; BIC does not favour two components, which is not decisive.",
+    "Interference from 285 nm SiO2 and focus changes make absolute intensities and Si/MoS2 ratios unreliable for layer counting, so intensity-based statements are only qualitative.",
+    "Excitation at 514.5 nm (2.41 eV) is off the A/B excitons (~1.9 eV), so resonance effects that would enhance 2LA(M) are not expected; weak 2LA(M) is consistent with this, not with absent defects.",
+    "Resolution: the nominal 2.7 cm\u207b\u00b9 exceeds the measured E2g FWHM (~2.1 cm\u207b\u00b9), so either the stated resolution is conservative or the fit underestimates widths; width-based defect or strain conclusions are not reliable here.",
+    "Flake C has weak MoS2 and Si signals (E2g ~325 counts), so its spectrum may come from a different focus, a low-coverage spot or a thicker film that attenuates the Si. Its layer count is limited to 'thick' anyway.",
+    "Flake D has a higher background (~700 vs ~400 counts); cause not identified (fluorescence tail, stray light, or a different acquisition setting).",
+    "I did not use the skill's reference notes or scripts, which sit outside the working folder; the material-specific validity ranges and the artifact checks in those notes were therefore not applied."
+  ],
+  "questions_for_user": [
+    "Is each spectrum from one spot, or several spots per flake? Spot-to-spot variation would tell whether flake A's broad A1g is a mixed-thickness spot.",
+    "What laser power and acquisition time were used? A power series would test laser heating, which shifts both E2g and A1g down.",
+    "Was the spectrometer calibrated to a Si reference at 520.7 cm\u207b\u00b9 or with a neon lamp? This sets the absolute offset (about \u22120.7 cm\u207b\u00b9 here).",
+    "Can you add optical contrast (RGB or spectral) or PL for each flake? A monolayer should show strong PL near 1.9 eV; flake B's assignment is the one to confirm.",
+    "Do you have AFM for any flake? It would give a ground truth for \u0394-to-N mapping, which I can only estimate from literature values.",
+    "Why is the Si line so weak in flake C relative to its MoS2 bands? Focus, coverage or thickness would each produce this and need different follow-up.",
+    "What is the origin of flake D's higher background? If it is PL or fluorescence, its tail should be checked against a bare-substrate spectrum."
+  ],
+  "citations": [
+    "Lee, C. et al. Anomalous lattice vibrations of single- and few-layer MoS2. ACS Nano 4, 2695\u20132700 (2010). https://pubmed.ncbi.nlm.nih.gov/20392077/ ; arXiv:1005.2509 https://arxiv.org/abs/1005.2509 (abstract: E2g\u00b9 frequency decreases and A1g increases with thickness; used for the trend direction only)",
+    "Luo, X. et al. Anomalous Frequency Trends in MoS2 Thin Films Attributed to Surface Effects. Phys. Rev. B 88, 075320 (2013). https://arxiv.org/abs/1308.6393 (abstract: E2g\u00b9 blue-shifts and A1g red-shifts with decreasing thickness once surface effects are included; noted as a caveat to the trend, not used for a number)"
+  ],
+  "limits": [
+    "Did not read the skill's reference notes or scripts (outside the working folder, per the operator instruction). Results come from my own fits in ./analysis.",
+    "Per-layer \u0394 values (monolayer ~18\u201320, bilayer ~21\u201322, bulk ~25 cm\u207b\u00b9) are recalled, not verified against the source figure; the layer counts depend on them.",
+    "Could not verify the 514.5 nm excitation wavelength used in Lee et al. 2010.",
+    "Could not find Mignuzzi et al.'s disorder/LA(M) paper in the corpus, so the statement that defect-activated LA(M) would appear with disorder is unsourced and is given only qualitatively.",
+    "The data cannot distinguish 5 L from bulk, or 1 L from a sample with unusual strain or doping, without AFM, PL or a power series.",
+    "No strain or doping coefficients were applied: no relation with a verified source was used, so strain_sign and doping_type are reported as none established."
+  ]
+}

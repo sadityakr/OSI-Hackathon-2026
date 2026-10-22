@@ -1,0 +1,1634 @@
+{
+ "case": {
+  "case_id": "int-hBN-thickness-01",
+  "kind": "interpret",
+  "task": "interpret",
+  "material": "hBN",
+  "spectra": [
+   {
+    "file": "spectrum_flake1.csv",
+    "label": "flake 1",
+    "conditions": {
+     "laser_nm": 514.5,
+     "temperature_K": 295
+    }
+   },
+   {
+    "file": "spectrum_flake2.csv",
+    "label": "flake 2",
+    "conditions": {
+     "laser_nm": 514.5,
+     "temperature_K": 295
+    }
+   }
+  ],
+  "context": "Exfoliated hBN flakes on Si with 290 nm SiO2, 514.5 nm, same integration time and power. Flake 2 is barely visible in the optical microscope.",
+  "question": "Is flake 2 a monolayer? How sure can we be from Raman?"
+ },
+ "arm": "skill",
+ "model": "claude-sonnet-5-5",
+ "effort": "high",
+ "usage": {
+  "input": 152838,
+  "output": 8616,
+  "cost_usd": 0.1831522,
+  "turns": 8,
+  "seconds": 147.8,
+  "tool_calls": 6
+ },
+ "stderr": "",
+ "messages": [
+  {
+   "type": "system",
+   "subtype": "init",
+   "cwd": "C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "tools": [
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "ListMcpResourcesTool",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "ReadMcpResourceDirTool",
+    "ReadMcpResourceTool",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "StructuredOutput",
+    "TaskStop",
+    "ToolSearch",
+    "Workflow",
+    "Write",
+    "mcp__iopic-bond__expand",
+    "mcp__iopic-bond__find_papers",
+    "mcp__iopic-bond__ingest_paper",
+    "mcp__iopic-bond__library_status",
+    "mcp__iopic-bond__list_figures",
+    "mcp__iopic-bond__search_library",
+    "mcp__iopic-bond__view_figure",
+    "mcp__valency__analyze_corpus_metrics",
+    "mcp__valency__batch_author_categories",
+    "mcp__valency__compare_authors",
+    "mcp__valency__count_papers",
+    "mcp__valency__export_from_filter",
+    "mcp__valency__export_papers_bibtex",
+    "mcp__valency__export_papers_csv",
+    "mcp__valency__export_papers_json",
+    "mcp__valency__filter_by_categories",
+    "mcp__valency__filter_by_date_range",
+    "mcp__valency__filter_by_license",
+    "mcp__valency__filter_papers_with_doi",
+    "mcp__valency__find_coauthors",
+    "mcp__valency__find_papers_by_researcher",
+    "mcp__valency__find_similar_papers",
+    "mcp__valency__get_author_identity",
+    "mcp__valency__get_author_profile",
+    "mcp__valency__get_citing_papers",
+    "mcp__valency__get_field_coverage",
+    "mcp__valency__get_keyword_trends",
+    "mcp__valency__get_paper_by_id",
+    "mcp__valency__get_paper_versions",
+    "mcp__valency__get_publication_trends",
+    "mcp__valency__get_publication_trends_batch",
+    "mcp__valency__identify_prolific_authors",
+    "mcp__valency__identify_research_domains",
+    "mcp__valency__list_sources",
+    "mcp__valency__resolve_orcid",
+    "mcp__valency__search_by_abstract",
+    "mcp__valency__search_by_abstract_batch",
+    "mcp__valency__search_by_author",
+    "mcp__valency__search_by_category",
+    "mcp__valency__search_by_comments",
+    "mcp__valency__search_by_title",
+    "mcp__valency__search_by_venue",
+    "mcp__valency__search_cross_category",
+    "mcp__valency__semantic_search_papers",
+    "mcp__valency__submit_feedback"
+   ],
+   "mcp_servers": [
+    {
+     "name": "valency",
+     "status": "connected",
+     "source": "dynamic"
+    },
+    {
+     "name": "iopic-bond",
+     "status": "connected",
+     "source": "dynamic"
+    }
+   ],
+   "model": "claude-sonnet-5-5",
+   "permissionMode": "dontAsk",
+   "slash_commands": [
+    "deep-research",
+    "ramanlens:raman-analysis",
+    "design",
+    "design-sync",
+    "dataviz",
+    "update-config",
+    "verify",
+    "debug",
+    "code-review",
+    "simplify",
+    "batch",
+    "fewer-permission-prompts",
+    "doctor",
+    "loop",
+    "schedule",
+    "claude-api",
+    "workflow-authoring",
+    "run",
+    "run-skill-generator",
+    "plugin-authoring",
+    "advisor",
+    "agents",
+    "auto-mode-setup",
+    "autocompact",
+    "clear",
+    "color",
+    "compact",
+    "config",
+    "output-style",
+    "context",
+    "effort",
+    "fast",
+    "focus",
+    "heapdump",
+    "init",
+    "mcp",
+    "import",
+    "model",
+    "__remote-workflow",
+    "workflow-launch-exec",
+    "reload-plugins",
+    "reload-skills",
+    "rename",
+    "ultrareview",
+    "security-review",
+    "usage-credits",
+    "extra-usage",
+    "usage",
+    "insights",
+    "recap",
+    "skill-doctor",
+    "goal",
+    "design-consent",
+    "design-revoke",
+    "list-agents",
+    "team-onboarding"
+   ],
+   "terminal_slash_commands": [
+    "doctor",
+    "color",
+    "focus",
+    "reload-plugins"
+   ],
+   "apiKeySource": "none",
+   "claude_code_version": "2.1.307",
+   "output_style": "default",
+   "agents": [
+    "claude",
+    "Explore",
+    "general-purpose",
+    "Plan",
+    "statusline-setup"
+   ],
+   "skills": [
+    "deep-research",
+    "ramanlens:raman-analysis",
+    "design",
+    "design-sync",
+    "dataviz",
+    "update-config",
+    "verify",
+    "debug",
+    "code-review",
+    "simplify",
+    "batch",
+    "fewer-permission-prompts",
+    "doctor",
+    "loop",
+    "schedule",
+    "claude-api",
+    "workflow-authoring",
+    "run",
+    "run-skill-generator",
+    "plugin-authoring"
+   ],
+   "plugins": [
+    {
+     "name": "ramanlens",
+     "path": "C:\\Users\\sadit\\Desktop\\P_Projects\\Hackathons\\OSI Hackathon\\skill\\ramanlens",
+     "source": "ramanlens@inline",
+     "version": "0.1.0"
+    },
+    {
+     "name": "cc-plugin-agents-md",
+     "path": "builtin",
+     "source": "cc-plugin-agents-md@builtin"
+    },
+    {
+     "name": "cc-plugin-telemetry",
+     "path": "builtin",
+     "source": "cc-plugin-telemetry@builtin"
+    },
+    {
+     "name": "cc-plugin-plugin-authoring",
+     "path": "builtin",
+     "source": "cc-plugin-plugin-authoring@builtin"
+    }
+   ],
+   "capabilities": [
+    "interrupt_receipt_v1",
+    "interrupt_cancel_queued_v1",
+    "interrupt_send_now_v1",
+    "interrupt_requeue_taken_v1",
+    "msg_lifecycle_v1",
+    "request_marker_lists_v1",
+    "lifecycle_wakeup_source_v1",
+    "sdk_mcp_tools_list_changed",
+    "sdk_mcp_manifests",
+    "mcp_read_resource_v1",
+    "mcp_tool_ui_meta_v1",
+    "ui_surface_v1",
+    "mcp_call_result_not_for_model_v1"
+   ],
+   "analytics_disabled": false,
+   "product_feedback_disabled": false,
+   "uuid": "e46b9170-8d4e-4811-8d81-59f5280e5178",
+   "memory_paths": {
+    "auto": "C:\\Users\\sadit\\.claude\\projects\\C--WINDOWS-TEMP-ramanlens-eval-v3-int-sonnet-skill-int-hBN-thickness-01\\memory\\"
+   },
+   "original_cwd": "C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+   "additional_directories": [],
+   "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-8c284b2f4d5ef466071c0550f4bda80e",
+   "fast_mode_state": "off",
+   "fast_mode_disabled_reason": "sdk_opt_in_required",
+   "per_turn_effort_active": true,
+   "view_mode": "default",
+   "powershell_path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3JtzEijm4E2e2L959B",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01QGCNE9LfyQJvVmjUD2KBvV",
+      "name": "Skill",
+      "input": {
+       "skill": "ramanlens:raman-analysis"
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 7071,
+     "cache_read_input_tokens": 15761,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 7071
+     },
+     "output_tokens": 16,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "656a6ab5-0919-4b91-8f9b-0b9944ad781c",
+   "timestamp": "2026-10-22T09:29:41.227Z",
+   "request_id": "req_011CgH3JtiNM2qbjfNqzYysr",
+   "wire_tool_inputs": {
+    "toolu_01QGCNE9LfyQJvVmjUD2KBvV": {
+     "skill": "ramanlens:raman-analysis"
+    }
+   }
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01QGCNE9LfyQJvVmjUD2KBvV",
+      "content": "Launching skill: ramanlens:raman-analysis"
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "47cffc41-9ec1-4c49-b615-8c3687f53544",
+   "timestamp": "2026-10-22T09:29:41.261Z",
+   "tool_use_result": {
+    "success": true,
+    "commandName": "ramanlens:raman-analysis"
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_01QGCNE9LfyQJvVmjUD2KBvV",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "Base directory for this skill: C:\\Users\\sadit\\Desktop\\P_Projects\\Hackathons\\OSI Hackathon\\skill\\ramanlens\\skills\\raman-analysis\n\n**Required first actions, in this order (do not write your own fitting code before these):**\n1. `python \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl_qc.py\" <each data file>`\n2. One spectrum: `python \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl_fit.py\" <file> --substrate \"<substrate>\"`.\n   Several spectra: `python \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl_series.py\" <files> --labels <labels> --substrate \"<substrate>\" --si-correct`.\n3. Read `C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/reference/materials/<material>.md` for the known or most likely material.\n\n# Raman analysis of 2D and layered materials\n\nYou read the spectrum; the tools measure. Every number you report comes from a tool output (measured), a\nrelation applied inside its validity range (inferred, with the relation's source), or a reference entry\n(literature, with its source and locator). If none applies, say so under limits.\n\n## Start here: run these commands first (from the folder that holds the data)\n\nUse the validated scripts below; do not write your own baseline, peak-finding or fitting code unless a script\nfails or you need a check it does not provide. The scripts and notes are in `C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis`.\n\n```\npython \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl_qc.py\" <file>                  # artifacts, Si calibration, resolution\npython \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl_fit.py\" <file> --substrate \"<substrate>\"   # peaks with errors + fit.png\npython \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl_series.py\" <f1> <f2> ... --labels <l1> <l2> ... --substrate \"<substrate>\" --si-correct   # several spectra\npython \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl.py\" match_library --positions_cm1 <p1> <p2> ... --intensities <h1> <h2> ... --x_range_cm1 <lo> <hi>\npython \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl.py\" lookup_reference_modes --material <name>\npython \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl.py\" classify_polarization --path <angle-series file>\npython \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl.py\" list_relations --material <name>\npython \"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/scripts/rl.py\" apply_relation --name <relation> --inputs '{\"<input>\": <value>}'\n```\nThen read `C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/reference/materials/<material>.md` (when the material is known or once you have a\ncandidate) and `C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/reference/artifacts.md`. Always return ranked candidates for an identify task,\neven when uncertain: put the uncertainty in the confidence values and the limits, never return an empty list.\n\n## What each script does\n\n- `scripts/rl_qc.py <file>`: quality and condition flags (spikes, saturation, background, Si calibration offset,\n  low-wavenumber cutoff, sampling, signal to noise).\n- `scripts/rl_fit.py <file> [--substrate SiO2/Si] [--window LO HI] [--min-snr N]`: fitted peak table with\n  uncertainties, `peaks.json`, and `fit.png` (data, baseline, components, residual). Look at the plot.\n- `scripts/rl_series.py <file1> <file2> ... --labels ... [--substrate SiO2/Si] [--si-correct]`: fits every\n  spectrum the same way, tracks each band across spectra (position, width, relative height, shift vs the first\n  spectrum with error), separations of the two strongest bands, Si offsets, and `series.png`. Use it whenever\n  there is more than one spectrum. Its errors are fit statistics only; add the calibration uncertainty (Si offset\n  scatter, typically a few tenths of a cm-1) before calling a shift significant.\n- `scripts/rl.py <tool> --help`: `fit_peaks`, `match_library`, `classify_polarization`,\n  `lookup_reference_modes`, `list_relations`, `apply_relation`, `load_spectrum`. Outputs carry provenance.\n\n## Workflow\n\n0. **Read the material's literature note first** when the material is known: `C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis/reference/materials/<name>.md`\n   (MoS2, WS2, MoSe2, WSe2, graphene, hBN, black-phosphorus, CrSBr, CrI3-CrBr3, MPS3) plus\n   `reference/materials/general-measurement.md` and, for magnets, `magnetic-raman-general.md`. They hold how the\n   spectrum changes with thickness, strain, doping, defects, temperature, laser and substrate, the quality\n   indicators, the known pitfalls and the questions to ask, each with its source. Interpretation without them is\n   guesswork from memory.\n1. **Conditions first.** Note laser wavelength, temperature, substrate, polarization geometry, resolution. Many\n   conclusions depend on them (`reference/measurement-questions.md`). With a user present, ask for what is missing\n   and say why it matters; otherwise state the assumption under limits.\n2. **Quality check.** `rl_qc.py`. Spikes are artifacts, never peaks (`reference/artifacts.md`).\n3. **Fit.** `rl_fit.py`, then look at `fit.png`. Check weak shoulders and close doublets (2LA(M) next to E2g in\n   WS2); refit a window with `--window` when the residual shows structure. Report fitted positions and widths.\n4. **Identify.** `rl.py match_library --positions_cm1 ... --intensities ... --x_range_cm1 LO HI` ranks\n   candidates from the Computational Raman Database (DFT, frequencies typically 0 to 3 % low, fitted scale per\n   candidate) and curated literature tables. Do not stop at the top score: check that the strong predicted modes\n   are present and the missing ones are explainable (outside the window, selection rules, resonance). The\n   matcher's irreps and space group are the best source for mode labels of uncommon materials. For a stated\n   material (\"verify\"), compare against its reference modes; a wrong hint is common, so say inconsistent when\n   strong modes are missing or extra strong bands are unexplained.\n5. **Assign.** Each sample peak gets a mode label and irrep with its source: `rl.py lookup_reference_modes\n   --material X` for the curated materials (graphene, 2H-MoS2, 2H-WS2, 2H-MoSe2, 2H-WSe2, CrSBr, hBN, black\n   phosphorus), the matcher's CRD entry otherwise. Use the irreps of the structure you identified (bulk D6h\n   labels for bulk 2H crystals, C3v A1/E for 3R, D3h for a monolayer). Assign Si lines as 'Si substrate'.\n6. **Polarization** (angle series only). `rl.py classify_polarization --path <file>` classifies each band\n   (isotropic_par_only, isotropic_both, twofold, fourfold, silent). Report the tool's class; use it to check\n   irreps (A modes isotropic_par_only and E modes isotropic_both in uniaxial crystals; twofold in in-plane\n   anisotropic crystals).\n7. **Properties.** Read `reference/relations.md` and `reference/materials.md`, then `rl.py apply_relation`. Report\n   layer number, strain, doping or defect density only from a relation (with its source and validity) or a\n   stated rule from the notes. Name properties `layers`, `defect_level`, `L_D_nm`, `strain_sign`,\n   `doping_type`, `phase` where they apply.\n8. **Literature** (when the Valency and iopic-bond tools are available). Form the hypothesis first; never search by\n   peak positions. See `reference/literature.md`: find the paper, view its reference spectrum figure, compare.\n9. **Interpret changes** (several spectra, or a known material). Run `rl_series.py`; then for each change ask\n   which mechanisms in the material note produce it (thickness, strain, doping, defects, heating, calibration,\n   resonance) and which observable separates them (e.g. a rigid shift of all lines including Si is calibration;\n   A1g-only shift in MoS2 points to doping, E2g shift with splitting to strain; graphene G broadening separates\n   stage 1 from stage 2 defects). State the most likely reading, the alternatives, and the measurement that would\n   decide between them.\n10. **Report.** Ranked candidates with evidence, peaks with provenance and source, properties with relation and\n   source, artifacts, citations (only sources you used), and limits: what the data cannot tell, rejected\n   hypotheses, relations that did not apply and why.\n\n## Expert habits\n\n- One spectrum rarely fixes layer number alone; name the observable and its threshold.\n- Laser heating, strain and doping shift lines by similar amounts; check calibration before reading 1 to 2 cm-1.\n- Intensity ratios depend on substrate interference and laser energy; absolute intensity is not layer number.\n- Resonant excitation changes relative intensities and activates second-order bands; check the laser against the\n  material's excitons before calling a band unexpected.\n- When something looks odd, say what it looks like and what would distinguish the explanations.\n"
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "a2a3638f-7501-4ed4-87c9-6cebb9efa3eb",
+   "timestamp": "2026-10-22T09:29:41.254Z",
+   "isSynthetic": true
+  },
+  {
+   "type": "rate_limit_event",
+   "rate_limit_info": {
+    "status": "allowed",
+    "resetsAt": 1792663200,
+    "rateLimitType": "five_hour",
+    "overageStatus": "rejected",
+    "overageDisabledReason": "org_level_disabled",
+    "isUsingOverage": false,
+    "unifiedWindows": {
+     "five_hour": {
+      "utilization": 0.04,
+      "resetsAt": 1792663200
+     },
+     "seven_day": {
+      "utilization": 0.44,
+      "resetsAt": 1792836000
+     }
+    }
+   },
+   "uuid": "5f9f4f91-7d65-4ea8-a672-6a5cd29013ad",
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3K5hfMeKQaugBMJCPE",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01W2Pro8o1zKdxFSBVVpQnu4",
+      "name": "Bash",
+      "input": {
+       "command": "S=\"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis\"; python \"$S/scripts/rl_qc.py\" spectrum_flake1.csv; python \"$S/scripts/rl_qc.py\" spectrum_flake2.csv; python \"$S/scripts/rl_series.py\" spectrum_flake1.csv spectrum_flake2.csv --labels flake1 flake2 --substrate \"SiO2/Si\" --si-correct; cat \"$S/reference/materials/hBN.md\""
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 4004,
+     "cache_read_input_tokens": 22832,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 4004
+     },
+     "output_tokens": 16,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "1c0318bd-4b73-4c15-a337-76fdc7f8e520",
+   "timestamp": "2026-10-22T09:29:45.026Z",
+   "request_id": "req_011CgH3K5QYuf9tSQ91LWHEs",
+   "wire_tool_inputs": {
+    "toolu_01W2Pro8o1zKdxFSBVVpQnu4": {
+     "command": "S=\"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis\"; python \"$S/scripts/rl_qc.py\" spectrum_flake1.csv; python \"$S/scripts/rl_qc.py\" spectrum_flake2.csv; python \"$S/scripts/rl_series.py\" spectrum_flake1.csv spectrum_flake2.csv --labels flake1 flake2 --substrate \"SiO2/Si\" --si-correct; cat \"$S/reference/materials/hBN.md\""
+    }
+   }
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "task_id": "bp8kefaeb",
+   "run_id": "0mvjcb0r4-b3c2569e",
+   "tool_use_id": "toolu_01W2Pro8o1zKdxFSBVVpQnu4",
+   "description": "S=\"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis\"; python \"$S/scripts/rl_qc.py\" spectrum_flake1.csv; python \"$S/scripts/rl_qc.py\" spectrum_flake2.csv; python \"$S/scripts/rl_series.py\" spectrum_flake1.csv spectrum_flake2.csv --labels flake1 flake2 --substrate \"SiO2/Si\" --si-correct; cat \"$S/reference/materials/hBN.md\"",
+   "is_backgrounded": false,
+   "task_type": "local_bash",
+   "uuid": "08cb9dd0-3304-4d2e-8465-36862b379e0c",
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03"
+  },
+  {
+   "type": "tool_progress",
+   "tool_use_id": "toolu_01W2Pro8o1zKdxFSBVVpQnu4-heartbeat-0",
+   "tool_name": "Bash",
+   "parent_tool_use_id": "toolu_01W2Pro8o1zKdxFSBVVpQnu4",
+   "elapsed_time_seconds": 30,
+   "heartbeat": true,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "075fab3a-59b9-4a1f-a22d-586d67c399fa"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "task_id": "bp8kefaeb",
+   "run_id": "0mvjcb0r4-b3c2569e",
+   "tool_use_id": "toolu_01W2Pro8o1zKdxFSBVVpQnu4",
+   "status": "completed",
+   "output_file": "",
+   "summary": "S=\"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis\"; python \"$S/scripts/rl_qc.py\" spectrum_flake1.csv; python \"$S/scripts/rl_qc.py\" spectrum_flake2.csv; python \"$S/scripts/rl_series.py\" spectrum_flake1.csv spectrum_flake2.csv --labels flake1 flake2 --substrate \"SiO2/Si\" --si-correct; cat \"$S/reference/materials/hBN.md\"",
+   "uuid": "cd4df3b8-4e4f-4e02-944c-7ea0244ce11b",
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03"
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01W2Pro8o1zKdxFSBVVpQnu4",
+      "type": "tool_result",
+      "content": "{\r\n \"flags\": [\r\n  {\r\n   \"flag\": \"si_substrate_line\",\r\n   \"severity\": \"info\",\r\n   \"detail\": \"Si line at 520.93 cm-1 (offset +0.23 from 520.7). Assign as 'Si substrate'; Si second-order features near 950 and 980 cm-1 (and a computed 2TA band near 300) are also substrate.\"\r\n  },\r\n  {\r\n   \"flag\": \"low_wavenumber_cutoff\",\r\n   \"severity\": \"info\",\r\n   \"detail\": \"data start at 450 cm-1: shear and breathing modes and low-frequency modes are not observable; their absence is not evidence.\"\r\n  }\r\n ],\r\n \"window_cm1\": [\r\n  450.0,\r\n  1649.7\r\n ],\r\n \"point_spacing_cm1\": 0.78,\r\n \"spikes_cm1\": [],\r\n \"si_line\": {\r\n  \"position_cm1\": 520.93,\r\n  \"fwhm_cm1\": 3.34,\r\n  \"position_err_cm1\": 0.064,\r\n  \"offset_from_520.7_cm1\": 0.23\r\n },\r\n \"snr_strongest\": 72.4,\r\n \"angle_series_summed\": false\r\n}\r\n{\r\n \"flags\": [\r\n  {\r\n   \"flag\": \"si_substrate_line\",\r\n   \"severity\": \"info\",\r\n   \"detail\": \"Si line at 520.9 cm-1 (offset +0.20 from 520.7). Assign as 'Si substrate'; Si second-order features near 950 and 980 cm-1 (and a computed 2TA band near 300) are also substrate.\"\r\n  },\r\n  {\r\n   \"flag\": \"low_wavenumber_cutoff\",\r\n   \"severity\": \"info\",\r\n   \"detail\": \"data start at 450 cm-1: shear and breathing modes and low-frequency modes are not observable; their absence is not evidence.\"\r\n  }\r\n ],\r\n \"window_cm1\": [\r\n  450.0,\r\n  1649.7\r\n ],\r\n \"point_spacing_cm1\": 0.75,\r\n \"spikes_cm1\": [],\r\n \"si_line\": {\r\n  \"position_cm1\": 520.9,\r\n  \"fwhm_cm1\": 3.5,\r\n  \"position_err_cm1\": 0.002,\r\n  \"offset_from_520.7_cm1\": 0.2\r\n },\r\n \"snr_strongest\": 907.6,\r\n \"angle_series_summed\": false\r\n}\r\n{\r\n \"bands\": [\r\n  {\r\n   \"band_cm1\": 950.4,\r\n   \"per_spectrum\": [\r\n    {\r\n     \"label\": \"flake1\",\r\n     \"present\": false\r\n    },\r\n    {\r\n     \"label\": \"flake2\",\r\n     \"present\": true,\r\n     \"position_cm1\": 950.38,\r\n     \"position_err_cm1\": 0.406,\r\n     \"fwhm_cm1\": 19.12,\r\n     \"fwhm_err_cm1\": 1.365,\r\n     \"height\": 282.667,\r\n     \"area\": 8487.856,\r\n     \"height_rel_strongest\": 0.989\r\n    }\r\n   ]\r\n  },\r\n  {\r\n   \"band_cm1\": 979.3,\r\n   \"per_spectrum\": [\r\n    {\r\n     \"label\": \"flake1\",\r\n     \"present\": false\r\n    },\r\n    {\r\n     \"label\": \"flake2\",\r\n     \"present\": true,\r\n     \"position_cm1\": 979.28,\r\n     \"position_err_cm1\": 0.376,\r\n     \"fwhm_cm1\": 17.33,\r\n     \"fwhm_err_cm1\": 1.241,\r\n     \"height\": 285.702,\r\n     \"area\": 7775.613,\r\n     \"height_rel_strongest\": 1.0\r\n    }\r\n   ]\r\n  },\r\n  {\r\n   \"band_cm1\": 1367.4,\r\n   \"per_spectrum\": [\r\n    {\r\n     \"label\": \"flake1\",\r\n     \"present\": true,\r\n     \"position_cm1\": 1365.99,\r\n     \"position_err_cm1\": 0.075,\r\n     \"fwhm_cm1\": 15.51,\r\n     \"fwhm_err_cm1\": 0.205,\r\n     \"height\": 3064.053,\r\n     \"area\": 74634.053,\r\n     \"height_rel_strongest\": 1.0\r\n    },\r\n    {\r\n     \"label\": \"flake2\",\r\n     \"present\": true,\r\n     \"position_cm1\": 1368.84,\r\n     \"position_err_cm1\": 0.238,\r\n     \"fwhm_cm1\": 18.77,\r\n     \"fwhm_err_cm1\": 0.82,\r\n     \"height\": 247.968,\r\n     \"area\": 7311.928,\r\n     \"height_rel_strongest\": 0.868,\r\n     \"shift_vs_first_cm1\": 2.85,\r\n     \"shift_err_cm1\": 0.25\r\n    }\r\n   ]\r\n  },\r\n  {\r\n   \"band_cm1\": 1474.4,\r\n   \"per_spectrum\": [\r\n    {\r\n     \"label\": \"flake1\",\r\n     \"present\": false\r\n    },\r\n    {\r\n     \"label\": \"flake2\",\r\n     \"present\": true,\r\n     \"position_cm1\": 1474.36,\r\n     \"position_err_cm1\": 0.822,\r\n     \"fwhm_cm1\": 3.37,\r\n     \"fwhm_err_cm1\": 5.516,\r\n     \"height\": 59.092,\r\n     \"area\": 312.583,\r\n     \"height_rel_strongest\": 0.207\r\n    }\r\n   ]\r\n  }\r\n ],\r\n \"two_strongest_separation\": [\r\n  {\r\n   \"label\": \"flake2\",\r\n   \"low_cm1\": 950.38,\r\n   \"high_cm1\": 979.28,\r\n   \"separation_cm1\": 28.89,\r\n   \"separation_err_cm1\": 0.553\r\n  }\r\n ],\r\n \"si_offset_from_520.7_cm1\": {\r\n  \"flake1\": 0.21,\r\n  \"flake2\": 0.2\r\n },\r\n \"si_corrected\": true,\r\n \"notes\": [],\r\n \"plot\": \"series.png\",\r\n \"method\": \"same pipeline per spectrum (ALS baseline, Lorentzian fits, covariance errors); bands matched within 6.0 cm-1\"\r\n}\r\n# Hexagonal boron nitride (hBN): expert reading notes\n\nNumbers only where read in the cited source (locator in brackets). [consensus] = several groups agree;\n[disputed] = sources disagree. hBN is a wide-gap insulator: no Kohn anomaly, no double resonance, so its\nRaman spectrum is far poorer in information than graphene's; most of what it tells is strain, isotope\ncontent, thickness via intensity, and crystal quality via width.\n\n## Signature\n- One strong high-frequency line, the in-plane E2g (often called \"G band\" by analogy with graphene), at about\n  1366 cm-1 in bulk crystals (Gorbachev et al. 2011, Small 7, 465; arXiv 1008.2868, p.3). Bulk value\n  1366.6 +- 0.2 cm-1 over 6 crystals (Cai et al. 2017, Nanoscale 9, 3059; arXiv 2008.01656, p.7).\n  [consensus]\n- Bulk width: HWHM about 9 cm-1 (Gorbachev 2011, p.4); FWHM about 9 cm-1 for bulk flakes in heterostructures\n  (Purdie et al. 2018, Nat. Commun. 9, 5387; doi 10.1038/s41467-018-07558-3, p.6, via Lit-RAG).\n- Low-frequency interlayer shear E2g near 50 cm-1 in bulk; needs a low-frequency setup (Janzen et al. 2023,\n  arXiv 2306.13358, p.7).\n- Monolayer signal is weak: about 50 times smaller than graphene G under the same conditions (Gorbachev\n  2011, p.3). Long integration and Si second-order background become relevant.\n\n## Thickness and stacking\n- Integrated E2g intensity is proportional to N for the first several layers on a given substrate; once\n  calibrated, this distinguishes 1, 2 and more layers (Gorbachev 2011, p.4, Fig. 4a inset). [consensus]\n- Position as a layer test [disputed]:\n  - Gorbachev 2011 (pp.1, 4, Fig. 4b): 1L upshifted typically 2 to 4 cm-1 (sample dependent, +- 2 cm-1),\n    2L usually downshifted 1 to 2 cm-1; attributed to shorter B-N bond plus random strain.\n  - Cai 2017 (pp.7-8, Fig. 1): substrate-bound 1L 1369.6 +- 0.6, 2L 1369.0 +- 0.5, 3L 1367.5 +- 0.2 cm-1;\n    suspended 1L to 3L 1367.0 to 1367.3 cm-1, close to bulk. DFT finds the intrinsic E2g nearly N-independent.\n    Conclusion: shifts in thin hBN come mainly from substrate strain, not thickness.\n  - Practical reading: a 1 to 4 cm-1 upshift is consistent with 1L but not proof; use intensity steps,\n    optical contrast or AFM.\n- Optical contrast of 1L on SiO2 is small (under 1.5 % white light) and changes sign near 530 nm; about\n  2.5 % per layer on about 80 nm SiO2 (Gorbachev 2011, pp.1-3). Monolayers can look like bilayers without\n  annealing (same, p.3).\n\n## Strain and doping\n- Strain dominates thin-hBN shifts; it may vary within the laser spot as the flake follows substrate\n  roughness, which also broadens the line (Gorbachev 2011, p.4). 1L HWHM 10 to 12 cm-1 vs about 9 bulk.\n- Annealing at 400 C on SiO2/Si increased roughness and upshifted 1L by 3.0 +- 0.7 cm-1 (2L 2.7, 3L 2.2);\n  bulk unchanged (Cai 2017, pp.13-16, Fig. 4). Thermal-expansion mismatch with SiO2 is the proposed cause.\n- Doping: monolayer BN is not subject to surface doping (insulator), so doping is not a usual explanation\n  of shifts (Cai 2017, p.7, citing earlier work).\n\n## Defects and quality\n- Width is the main quality indicator, but isotope disorder sets a floor: natural boron (about 20 % 10B,\n  80 % 11B) gives FWHM about 7.5 to 8 cm-1; monoisotopic crystals about 3 to 4 cm-1 (Janzen 2023, pp.3, 7).\n  A natural-abundance crystal cannot be narrower than this floor regardless of quality. [consensus]\n- Isotope shifts are large: about 1393 cm-1 for h10B14N, 1357 for h11BN, down to about 1335 cm-1 for h11B15N\n  (Janzen 2023, pp.3, 7, Fig. 4b). A line far from 1366 may be isotope engineering, not strain.\n- No defect-activated band analogous to graphene D is established for hBN in the sources read here; I do\n  not have a sourced Raman defect metric beyond width and position. [not verified]\n\n## Temperature and heating\n- E2g softens on heating: a 1L line moved to 1367.7 cm-1 at 75 C and 1366.4 cm-1 at 100 C (Cai 2017, p.7).\n  Heating therefore cannot explain upshifts of thin hBN on SiO2.\n- Example measurement practice: power kept below 300 uW at 0.5 NA to avoid heating (Janzen 2023, p.7).\n  hBN absorbs little visible light, so heating is usually a lesser concern than for graphene. [inference]\n\n## Excitation wavelength\n- hBN E2g does not disperse with laser energy (no double resonance or Kohn anomaly), unlike graphene D\n  (Purdie 2018, p.6). Changing the laser separates an hBN line from a graphene D peak.\n- Wide gap: visible excitation is far from resonance; UV benefits wide-gap layered materials (Ferrari and Basko\n  2013, Nat. Nanotechnol. 8, 235; arXiv 1306.5856, p.12). [qualitative]\n\n## Polarization and substrate\n- In-plane E2g of a hexagonal crystal gives no in-plane angular contrast in parallel or crossed\n  backscattering. [inference from symmetry, not from a source read here]\n- In heterostructures the hBN line is the sum of top and bottom flakes (Purdie 2018, p.6); thickness\n  assignments from intensity need each flake measured separately.\n- hBN encapsulation narrows graphene 2D (16 to 20 vs above 22 cm-1 on SiO2) and the hBN line serves to map\n  encapsulated areas (Neumann et al. 2015, Nat. Commun. 6, 8429; arXiv 1406.7771, p.2, Fig. 1e,h).\n\n## Pitfalls and artifacts\n- hBN E2g at about 1366 cm-1 overlaps graphene D (about 1350 at 514 nm): in encapsulated graphene a peak near\n  1360 is not automatically defects; check with a second laser (Purdie 2018, p.6).\n- Weak 1L signal: confirm the line is above the Si second-order background and noise.\n- Peak position differences of 1 to 3 cm-1 are within strain and calibration scatter; never assign layer\n  number from position alone (Gorbachev 2011; Cai 2017).\n- Width comparisons only between crystals of the same isotope composition.\n\n## What to ask\n- Bulk source (HPHT, flux-grown, CVD), isotope composition; exfoliated, CVD or polymer-transferred.\n- Supported or suspended; annealed or not; substrate and oxide thickness.\n- Laser, power, resolution (hBN widths of 3 to 9 cm-1 are close to many instruments' resolution).\n- Whether low-frequency (shear mode) data exist.\n\n## Reference figures\n- Gorbachev 2011, arXiv 1008.2868, Fig. 4: 1L to 3L spectra, intensity vs N, position vs N with sample scatter.\n- Cai 2017, arXiv 2008.01656, Fig. 1 and Fig. 4: supported vs suspended positions; upshift after annealing.\n- Janzen 2023, arXiv 2306.13358, Fig. 4: E2g position and width for four isotope combinations.\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "cc60ff31-3fbf-4edb-bad2-b4f62ea9cc99",
+   "timestamp": "2026-10-22T09:30:19.640Z",
+   "tool_use_result": {
+    "stdout": "{\r\n \"flags\": [\r\n  {\r\n   \"flag\": \"si_substrate_line\",\r\n   \"severity\": \"info\",\r\n   \"detail\": \"Si line at 520.93 cm-1 (offset +0.23 from 520.7). Assign as 'Si substrate'; Si second-order features near 950 and 980 cm-1 (and a computed 2TA band near 300) are also substrate.\"\r\n  },\r\n  {\r\n   \"flag\": \"low_wavenumber_cutoff\",\r\n   \"severity\": \"info\",\r\n   \"detail\": \"data start at 450 cm-1: shear and breathing modes and low-frequency modes are not observable; their absence is not evidence.\"\r\n  }\r\n ],\r\n \"window_cm1\": [\r\n  450.0,\r\n  1649.7\r\n ],\r\n \"point_spacing_cm1\": 0.78,\r\n \"spikes_cm1\": [],\r\n \"si_line\": {\r\n  \"position_cm1\": 520.93,\r\n  \"fwhm_cm1\": 3.34,\r\n  \"position_err_cm1\": 0.064,\r\n  \"offset_from_520.7_cm1\": 0.23\r\n },\r\n \"snr_strongest\": 72.4,\r\n \"angle_series_summed\": false\r\n}\r\n{\r\n \"flags\": [\r\n  {\r\n   \"flag\": \"si_substrate_line\",\r\n   \"severity\": \"info\",\r\n   \"detail\": \"Si line at 520.9 cm-1 (offset +0.20 from 520.7). Assign as 'Si substrate'; Si second-order features near 950 and 980 cm-1 (and a computed 2TA band near 300) are also substrate.\"\r\n  },\r\n  {\r\n   \"flag\": \"low_wavenumber_cutoff\",\r\n   \"severity\": \"info\",\r\n   \"detail\": \"data start at 450 cm-1: shear and breathing modes and low-frequency modes are not observable; their absence is not evidence.\"\r\n  }\r\n ],\r\n \"window_cm1\": [\r\n  450.0,\r\n  1649.7\r\n ],\r\n \"point_spacing_cm1\": 0.75,\r\n \"spikes_cm1\": [],\r\n \"si_line\": {\r\n  \"position_cm1\": 520.9,\r\n  \"fwhm_cm1\": 3.5,\r\n  \"position_err_cm1\": 0.002,\r\n  \"offset_from_520.7_cm1\": 0.2\r\n },\r\n \"snr_strongest\": 907.6,\r\n \"angle_series_summed\": false\r\n}\r\n{\r\n \"bands\": [\r\n  {\r\n   \"band_cm1\": 950.4,\r\n   \"per_spectrum\": [\r\n    {\r\n     \"label\": \"flake1\",\r\n     \"present\": false\r\n    },\r\n    {\r\n     \"label\": \"flake2\",\r\n     \"present\": true,\r\n     \"position_cm1\": 950.38,\r\n     \"position_err_cm1\": 0.406,\r\n     \"fwhm_cm1\": 19.12,\r\n     \"fwhm_err_cm1\": 1.365,\r\n     \"height\": 282.667,\r\n     \"area\": 8487.856,\r\n     \"height_rel_strongest\": 0.989\r\n    }\r\n   ]\r\n  },\r\n  {\r\n   \"band_cm1\": 979.3,\r\n   \"per_spectrum\": [\r\n    {\r\n     \"label\": \"flake1\",\r\n     \"present\": false\r\n    },\r\n    {\r\n     \"label\": \"flake2\",\r\n     \"present\": true,\r\n     \"position_cm1\": 979.28,\r\n     \"position_err_cm1\": 0.376,\r\n     \"fwhm_cm1\": 17.33,\r\n     \"fwhm_err_cm1\": 1.241,\r\n     \"height\": 285.702,\r\n     \"area\": 7775.613,\r\n     \"height_rel_strongest\": 1.0\r\n    }\r\n   ]\r\n  },\r\n  {\r\n   \"band_cm1\": 1367.4,\r\n   \"per_spectrum\": [\r\n    {\r\n     \"label\": \"flake1\",\r\n     \"present\": true,\r\n     \"position_cm1\": 1365.99,\r\n     \"position_err_cm1\": 0.075,\r\n     \"fwhm_cm1\": 15.51,\r\n     \"fwhm_err_cm1\": 0.205,\r\n     \"height\": 3064.053,\r\n     \"area\": 74634.053,\r\n     \"height_rel_strongest\": 1.0\r\n    },\r\n    {\r\n     \"label\": \"flake2\",\r\n     \"present\": true,\r\n     \"position_cm1\": 1368.84,\r\n     \"position_err_cm1\": 0.238,\r\n     \"fwhm_cm1\": 18.77,\r\n     \"fwhm_err_cm1\": 0.82,\r\n     \"height\": 247.968,\r\n     \"area\": 7311.928,\r\n     \"height_rel_strongest\": 0.868,\r\n     \"shift_vs_first_cm1\": 2.85,\r\n     \"shift_err_cm1\": 0.25\r\n    }\r\n   ]\r\n  },\r\n  {\r\n   \"band_cm1\": 1474.4,\r\n   \"per_spectrum\": [\r\n    {\r\n     \"label\": \"flake1\",\r\n     \"present\": false\r\n    },\r\n    {\r\n     \"label\": \"flake2\",\r\n     \"present\": true,\r\n     \"position_cm1\": 1474.36,\r\n     \"position_err_cm1\": 0.822,\r\n     \"fwhm_cm1\": 3.37,\r\n     \"fwhm_err_cm1\": 5.516,\r\n     \"height\": 59.092,\r\n     \"area\": 312.583,\r\n     \"height_rel_strongest\": 0.207\r\n    }\r\n   ]\r\n  }\r\n ],\r\n \"two_strongest_separation\": [\r\n  {\r\n   \"label\": \"flake2\",\r\n   \"low_cm1\": 950.38,\r\n   \"high_cm1\": 979.28,\r\n   \"separation_cm1\": 28.89,\r\n   \"separation_err_cm1\": 0.553\r\n  }\r\n ],\r\n \"si_offset_from_520.7_cm1\": {\r\n  \"flake1\": 0.21,\r\n  \"flake2\": 0.2\r\n },\r\n \"si_corrected\": true,\r\n \"notes\": [],\r\n \"plot\": \"series.png\",\r\n \"method\": \"same pipeline per spectrum (ALS baseline, Lorentzian fits, covariance errors); bands matched within 6.0 cm-1\"\r\n}\r\n# Hexagonal boron nitride (hBN): expert reading notes\n\nNumbers only where read in the cited source (locator in brackets). [consensus] = several groups agree;\n[disputed] = sources disagree. hBN is a wide-gap insulator: no Kohn anomaly, no double resonance, so its\nRaman spectrum is far poorer in information than graphene's; most of what it tells is strain, isotope\ncontent, thickness via intensity, and crystal quality via width.\n\n## Signature\n- One strong high-frequency line, the in-plane E2g (often called \"G band\" by analogy with graphene), at about\n  1366 cm-1 in bulk crystals (Gorbachev et al. 2011, Small 7, 465; arXiv 1008.2868, p.3). Bulk value\n  1366.6 +- 0.2 cm-1 over 6 crystals (Cai et al. 2017, Nanoscale 9, 3059; arXiv 2008.01656, p.7).\n  [consensus]\n- Bulk width: HWHM about 9 cm-1 (Gorbachev 2011, p.4); FWHM about 9 cm-1 for bulk flakes in heterostructures\n  (Purdie et al. 2018, Nat. Commun. 9, 5387; doi 10.1038/s41467-018-07558-3, p.6, via Lit-RAG).\n- Low-frequency interlayer shear E2g near 50 cm-1 in bulk; needs a low-frequency setup (Janzen et al. 2023,\n  arXiv 2306.13358, p.7).\n- Monolayer signal is weak: about 50 times smaller than graphene G under the same conditions (Gorbachev\n  2011, p.3). Long integration and Si second-order background become relevant.\n\n## Thickness and stacking\n- Integrated E2g intensity is proportional to N for the first several layers on a given substrate; once\n  calibrated, this distinguishes 1, 2 and more layers (Gorbachev 2011, p.4, Fig. 4a inset). [consensus]\n- Position as a layer test [disputed]:\n  - Gorbachev 2011 (pp.1, 4, Fig. 4b): 1L upshifted typically 2 to 4 cm-1 (sample dependent, +- 2 cm-1),\n    2L usually downshifted 1 to 2 cm-1; attributed to shorter B-N bond plus random strain.\n  - Cai 2017 (pp.7-8, Fig. 1): substrate-bound 1L 1369.6 +- 0.6, 2L 1369.0 +- 0.5, 3L 1367.5 +- 0.2 cm-1;\n    suspended 1L to 3L 1367.0 to 1367.3 cm-1, close to bulk. DFT finds the intrinsic E2g nearly N-independent.\n    Conclusion: shifts in thin hBN come mainly from substrate strain, not thickness.\n  - Practical reading: a 1 to 4 cm-1 upshift is consistent with 1L but not proof; use intensity steps,\n    optical contrast or AFM.\n- Optical contrast of 1L on SiO2 is small (under 1.5 % white light) and changes sign near 530 nm; about\n  2.5 % per layer on about 80 nm SiO2 (Gorbachev 2011, pp.1-3). Monolayers can look like bilayers without\n  annealing (same, p.3).\n\n## Strain and doping\n- Strain dominates thin-hBN shifts; it may vary within the laser spot as the flake follows substrate\n  roughness, which also broadens the line (Gorbachev 2011, p.4). 1L HWHM 10 to 12 cm-1 vs about 9 bulk.\n- Annealing at 400 C on SiO2/Si increased roughness and upshifted 1L by 3.0 +- 0.7 cm-1 (2L 2.7, 3L 2.2);\n  bulk unchanged (Cai 2017, pp.13-16, Fig. 4). Thermal-expansion mismatch with SiO2 is the proposed cause.\n- Doping: monolayer BN is not subject to surface doping (insulator), so doping is not a usual explanation\n  of shifts (Cai 2017, p.7, citing earlier work).\n\n## Defects and quality\n- Width is the main quality indicator, but isotope disorder sets a floor: natural boron (about 20 % 10B,\n  80 % 11B) gives FWHM about 7.5 to 8 cm-1; monoisotopic crystals about 3 to 4 cm-1 (Janzen 2023, pp.3, 7).\n  A natural-abundance crystal cannot be narrower than this floor regardless of quality. [consensus]\n- Isotope shifts are large: about 1393 cm-1 for h10B14N, 1357 for h11BN, down to about 1335 cm-1 for h11B15N\n  (Janzen 2023, pp.3, 7, Fig. 4b). A line far from 1366 may be isotope engineering, not strain.\n- No defect-activated band analogous to graphene D is established for hBN in the sources read here; I do\n  not have a sourced Raman defect metric beyond width and position. [not verified]\n\n## Temperature and heating\n- E2g softens on heating: a 1L line moved to 1367.7 cm-1 at 75 C and 1366.4 cm-1 at 100 C (Cai 2017, p.7).\n  Heating therefore cannot explain upshifts of thin hBN on SiO2.\n- Example measurement practice: power kept below 300 uW at 0.5 NA to avoid heating (Janzen 2023, p.7).\n  hBN absorbs little visible light, so heating is usually a lesser concern than for graphene. [inference]\n\n## Excitation wavelength\n- hBN E2g does not disperse with laser energy (no double resonance or Kohn anomaly), unlike graphene D\n  (Purdie 2018, p.6). Changing the laser separates an hBN line from a graphene D peak.\n- Wide gap: visible excitation is far from resonance; UV benefits wide-gap layered materials (Ferrari and Basko\n  2013, Nat. Nanotechnol. 8, 235; arXiv 1306.5856, p.12). [qualitative]\n\n## Polarization and substrate\n- In-plane E2g of a hexagonal crystal gives no in-plane angular contrast in parallel or crossed\n  backscattering. [inference from symmetry, not from a source read here]\n- In heterostructures the hBN line is the sum of top and bottom flakes (Purdie 2018, p.6); thickness\n  assignments from intensity need each flake measured separately.\n- hBN encapsulation narrows graphene 2D (16 to 20 vs above 22 cm-1 on SiO2) and the hBN line serves to map\n  encapsulated areas (Neumann et al. 2015, Nat. Commun. 6, 8429; arXiv 1406.7771, p.2, Fig. 1e,h).\n\n## Pitfalls and artifacts\n- hBN E2g at about 1366 cm-1 overlaps graphene D (about 1350 at 514 nm): in encapsulated graphene a peak near\n  1360 is not automatically defects; check with a second laser (Purdie 2018, p.6).\n- Weak 1L signal: confirm the line is above the Si second-order background and noise.\n- Peak position differences of 1 to 3 cm-1 are within strain and calibration scatter; never assign layer\n  number from position alone (Gorbachev 2011; Cai 2017).\n- Width comparisons only between crystals of the same isotope composition.\n\n## What to ask\n- Bulk source (HPHT, flux-grown, CVD), isotope composition; exfoliated, CVD or polymer-transferred.\n- Supported or suspended; annealed or not; substrate and oxide thickness.\n- Laser, power, resolution (hBN widths of 3 to 9 cm-1 are close to many instruments' resolution).\n- Whether low-frequency (shear mode) data exist.\n\n## Reference figures\n- Gorbachev 2011, arXiv 1008.2868, Fig. 4: 1L to 3L spectra, intensity vs N, position vs N with sample scatter.\n- Cai 2017, arXiv 2008.01656, Fig. 1 and Fig. 4: supported vs suspended positions; upshift after annealing.\n- Janzen 2023, arXiv 2306.13358, Fig. 4: E2g position and width for four isotope combinations.",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_01W2Pro8o1zKdxFSBVVpQnu4",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 50,
+   "estimated_tokens_delta": 50,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "552e8bf4-fb00-40c6-9d62-45bd62403383"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 150,
+   "estimated_tokens_delta": 100,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "03169149-256a-4e23-809e-96b4d76e80e9"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 269,
+   "estimated_tokens_delta": 119,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "a54567e7-637d-47cb-a18c-2316fbf1c2ea"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3MuxrgcNAoYQW3bncd",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSqggKEAgTGAI4AUIIdGhpbmtpbmcSDOmWCCvsUCCu5kUG0RoM3VNaXTCcdlr2Hd82IjBLypCO93XKokw0QKOr0G+vTIWc02DHOj8MRb3IsgzEy7nqHvqrRCLea8J2FkijoMoqxwcc9QnAeU246pUR92s+TCJV7DzLaFMvFDh2tJFiy+PW5V0GMmOzD0rVwG3+BrB9myZ2Bae9Kd9NiHX22JkPZOMcB3O/QqCDvft70B6RDgUPd3lRhoOaD5CeSs+PtTk7u772e2Yv0fFVRcRF0LMi8eQjiF8xc3R+vEqZrS2hGPY66KpaYmo5CJw1LC/pzjpN/PRIIfZON+RP9x8xLOPj7634aWMmF95dybbVTKuOdBEUbwV/+AC/mqQvsJUHBCErZdAfqN/MfCoVWGlLgSGz5CIj9zmhYMWRFoEf1r+9fhQke8yYDHXY+Auu9e9WHpWGpGdX5sfqCwx+a0bYIIHruB75TpRa//RHAvta1ooTOXBunXhi1CXJl4YJrS7/PaI68dCL7ZxIDe35+BK94Mxl5Sxa+fUbniG0bIjS3FmBEJIjSxceZrp+GM8IMMqZTXeLpUoCRFqGvjuV1ibed4ggC2qCLs/E3dBGVuag37/CnRyi77R3QxhDk+JPjTPUEij+vBmtnvo5uaDP94bAlzonyxWcWhvSuopE4TZaMwF8G3oFhVuIN6KvprEghsDr+HR2PvB8fnlVr1LI8xathxjmtGukihI+GHeD5pL8yj+fXYtmgf3iBsc+1sURZv2Oo6LHaR9AXKptx4qd/Ky8BuivgKjL21RRLnivzv7V/blzt1SP34PTO1kF05REMyQTPiWsR75tZbF57SzFD6U3GngrwCSaETCbRuK0lD0W9sR9ey/oALlr5458TopjDnJjsw5Bv9d+05chCJ0RqzKV1K4OhQmR5w1uC2/ibr4/uCYpG0E26oyUNlnqcqfZ4iINNZJhGqq25/6Yr9gOwkP2T0SzUAx80wPhOZcH2Q4lvqpYLPgKYLcwFwPL+xaZxvqpk46+hqbBl5DD5gvLaobqCize86TkcvDUZZMg4jSG8Y2PAI/pfTWdqeLcQpNDi1cSXBsUv9MaLkvDyGF3y5mkoCPVDiueVkZU2XFHEIYUbpqogG1CvagQQkQahCdBfVLt6xBSLJGpq59lPjwuPln3z1r92UF3E2PQ/nbNvNcRwUFCswss781h1KUsYWDeh3GoKtFNhYn8TLN1UeOT7uiclb4hwZV4jluxtnL0/pg8jO5SCqCWmyyHR3c9mpOWa9c+2yXfe5T9djdyQPEveYwKWbnGYB2c+jsrmCtF/vT7z/zi09T/ILWLlpBMSVcb0TfWUhdvaiALxZwkQmyFkcsS4xLrwrDZKort89EsZnjSeS3jlIrRQULI9s8BO6Nzm7Ia0Qyp4ZuFm5hTmoenGAE="
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 5074,
+     "cache_read_input_tokens": 26836,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 5074
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "9579a0a9-c8cd-4e35-9970-a3bc29ea263b",
+   "timestamp": "2026-10-22T09:30:25.210Z",
+   "request_id": "req_011CgH3MuNtPSThS6iyTLZ57",
+   "thinking_duration_ms": 2297,
+   "thinking_display": "updates"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3MuxrgcNAoYQW3bncd",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01Ax7RXRKCcsMec9JHJUs5hx",
+      "name": "Bash",
+      "input": {
+       "command": "S=\"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis\"; python \"$S/scripts/rl_fit.py\" spectrum_flake1.csv --substrate SiO2/Si | head -60; python \"$S/scripts/rl_fit.py\" spectrum_flake2.csv --substrate SiO2/Si | head -80; python \"$S/scripts/rl.py\" list_relations --material hBN"
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 5074,
+     "cache_read_input_tokens": 26836,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 5074
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "fe7e1676-51ce-4ea8-a356-4dc2aa5231b9",
+   "timestamp": "2026-10-22T09:30:26.335Z",
+   "request_id": "req_011CgH3MuNtPSThS6iyTLZ57",
+   "wire_tool_inputs": {
+    "toolu_01Ax7RXRKCcsMec9JHJUs5hx": {
+     "command": "S=\"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis\"; python \"$S/scripts/rl_fit.py\" spectrum_flake1.csv --substrate SiO2/Si | head -60; python \"$S/scripts/rl_fit.py\" spectrum_flake2.csv --substrate SiO2/Si | head -80; python \"$S/scripts/rl.py\" list_relations --material hBN"
+    }
+   }
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3MuxrgcNAoYQW3bncd",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_013gJxCPwD2mjwUbCJbYhb2A",
+      "name": "Bash",
+      "input": {
+       "command": "python -I -c \"\nimport pandas as pd,numpy as np\nfor f in ['spectrum_flake1.csv','spectrum_flake2.csv']:\n    d=pd.read_csv(f);x=d.shift_cm1.values;y=d.intensity.values\n    print(f,len(x),x.min(),x.max())\n    for lo,hi in [(500,540),(900,1020),(1300,1450),(1450,1500),(1550,1650)]:\n        m=(x>lo)&(x<hi);print(lo,hi,'max',y[m].max(),'at',x[m][y[m].argmax()],'min',y[m].min(),'median',np.median(y[m]))\n\""
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 5074,
+     "cache_read_input_tokens": 26836,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 5074
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "b38396fb-d807-48e1-8583-d03afe7ac673",
+   "timestamp": "2026-10-22T09:30:27.933Z",
+   "request_id": "req_011CgH3MuNtPSThS6iyTLZ57",
+   "wire_tool_inputs": {
+    "toolu_013gJxCPwD2mjwUbCJbYhb2A": {
+     "command": "python -I -c \"\nimport pandas as pd,numpy as np\nfor f in ['spectrum_flake1.csv','spectrum_flake2.csv']:\n    d=pd.read_csv(f);x=d.shift_cm1.values;y=d.intensity.values\n    print(f,len(x),x.min(),x.max())\n    for lo,hi in [(500,540),(900,1020),(1300,1450),(1450,1500),(1550,1650)]:\n        m=(x>lo)&(x<hi);print(lo,hi,'max',y[m].max(),'at',x[m][y[m].argmax()],'min',y[m].min(),'median',np.median(y[m]))\n\""
+    }
+   }
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "task_id": "bihvvhcba",
+   "run_id": "0mvjcbvjs-bf856ac5",
+   "tool_use_id": "toolu_01Ax7RXRKCcsMec9JHJUs5hx",
+   "description": "S=\"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis\"; python \"$S/scripts/rl_fit.py\" spectrum_flake1.csv --substrate SiO2/Si | head -60; python \"$S/scripts/rl_fit.py\" spectrum_flake2.csv --substrate SiO2/Si | head -80; python \"$S/scripts/rl.py\" list_relations --material hBN",
+   "is_backgrounded": false,
+   "task_type": "local_bash",
+   "uuid": "db86c2fd-a2af-423d-a084-760a2b971940",
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03"
+  },
+  {
+   "type": "tool_progress",
+   "tool_use_id": "toolu_01Ax7RXRKCcsMec9JHJUs5hx-heartbeat-0",
+   "tool_name": "Bash",
+   "parent_tool_use_id": "toolu_01Ax7RXRKCcsMec9JHJUs5hx",
+   "elapsed_time_seconds": 30,
+   "heartbeat": true,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "18ced4b1-ee32-4139-8105-2776778b5c3b"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "task_id": "bihvvhcba",
+   "run_id": "0mvjcbvjs-bf856ac5",
+   "tool_use_id": "toolu_01Ax7RXRKCcsMec9JHJUs5hx",
+   "status": "completed",
+   "output_file": "",
+   "summary": "S=\"C:/Users/sadit/Desktop/P_Projects/Hackathons/OSI Hackathon/skill/ramanlens/skills/raman-analysis\"; python \"$S/scripts/rl_fit.py\" spectrum_flake1.csv --substrate SiO2/Si | head -60; python \"$S/scripts/rl_fit.py\" spectrum_flake2.csv --substrate SiO2/Si | head -80; python \"$S/scripts/rl.py\" list_relations --material hBN",
+   "uuid": "e64d6866-010c-4d91-90da-477deb142537",
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03"
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01Ax7RXRKCcsMec9JHJUs5hx",
+      "type": "tool_result",
+      "content": "{\r\n \"peaks\": [\r\n  {\r\n   \"position\": 520.912,\r\n   \"fwhm\": 3.416,\r\n   \"height\": 981.365,\r\n   \"area\": 5265.543,\r\n   \"position_err\": 0.062,\r\n   \"fwhm_err\": 0.206,\r\n   \"height_err\": 35.01,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": true\r\n  },\r\n  {\r\n   \"position\": 1366.2,\r\n   \"fwhm\": 15.507,\r\n   \"height\": 3064.053,\r\n   \"area\": 74634.053,\r\n   \"position_err\": 0.075,\r\n   \"fwhm_err\": 0.205,\r\n   \"height_err\": 25.754,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  }\r\n ],\r\n \"spikes_cm1\": [],\r\n \"notes\": [\r\n  \"peak at 520.9 cm-1 (FWHM 3.4) flagged as the Si substrate line (substrate given as 'SiO2/Si')\"\r\n ],\r\n \"plot\": \"fit.png\",\r\n \"method\": \"ALS baseline + multi-Lorentzian least squares (ramanlens.perception)\"\r\n}\r\n{\r\n \"peaks\": [\r\n  {\r\n   \"position\": 520.902,\r\n   \"fwhm\": 3.464,\r\n   \"height\": 17992.925,\r\n   \"area\": 97900.764,\r\n   \"position_err\": 0.002,\r\n   \"fwhm_err\": 0.005,\r\n   \"height_err\": 18.641,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": true\r\n  },\r\n  {\r\n   \"position\": 950.583,\r\n   \"fwhm\": 19.116,\r\n   \"height\": 282.667,\r\n   \"area\": 8487.856,\r\n   \"position_err\": 0.406,\r\n   \"fwhm_err\": 1.365,\r\n   \"height_err\": 10.988,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  },\r\n  {\r\n   \"position\": 979.477,\r\n   \"fwhm\": 17.326,\r\n   \"height\": 285.702,\r\n   \"area\": 7775.613,\r\n   \"position_err\": 0.376,\r\n   \"fwhm_err\": 1.241,\r\n   \"height_err\": 11.903,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  },\r\n  {\r\n   \"position\": 1369.043,\r\n   \"fwhm\": 18.772,\r\n   \"height\": 247.968,\r\n   \"area\": 7311.928,\r\n   \"position_err\": 0.238,\r\n   \"fwhm_err\": 0.82,\r\n   \"height_err\": 6.385,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  },\r\n  {\r\n   \"position\": 1474.558,\r\n   \"fwhm\": 3.368,\r\n   \"height\": 59.092,\r\n   \"area\": 312.583,\r\n   \"position_err\": 0.822,\r\n   \"fwhm_err\": 5.516,\r\n   \"height_err\": 41.063,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  }\r\n ],\r\n \"spikes_cm1\": [],\r\n \"notes\": [\r\n  \"broad background feature(s) not reported as bands: 608 cm-1 (FWHM 429)\",\r\n  \"peak at 520.9 cm-1 (FWHM 3.5) flagged as the Si substrate line (substrate given as 'SiO2/Si')\"\r\n ],\r\n \"plot\": \"fit.png\",\r\n \"method\": \"ALS baseline + multi-Lorentzian least squares (ramanlens.perception)\"\r\n}\r\n{\"relations\": [], \"note\": \"no relation matches the filter\", \"known\": [{\"name\": \"mos2_layer_number_from_separation\", \"material\": \"MoS2\"}, {\"name\": \"ws2_layer_number_from_separation\", \"material\": \"WS2\"}, {\"name\": \"graphene_defect_distance_from_ID_IG\", \"material\": \"graphene\"}, {\"name\": \"graphene_strain_doping_from_G_2D\", \"material\": \"graphene\"}, {\"name\": \"graphene_layers_from_2D_shape\", \"material\": \"graphene\"}, {\"name\": \"crsbr_ag_mode_assignment_with_polarization_axis\", \"material\": \"CrSBr\"}]}\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "21a4b04e-a575-4719-88c5-ab897cdf87bb",
+   "timestamp": "2026-10-22T09:30:57.203Z",
+   "tool_use_result": {
+    "stdout": "{\r\n \"peaks\": [\r\n  {\r\n   \"position\": 520.912,\r\n   \"fwhm\": 3.416,\r\n   \"height\": 981.365,\r\n   \"area\": 5265.543,\r\n   \"position_err\": 0.062,\r\n   \"fwhm_err\": 0.206,\r\n   \"height_err\": 35.01,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": true\r\n  },\r\n  {\r\n   \"position\": 1366.2,\r\n   \"fwhm\": 15.507,\r\n   \"height\": 3064.053,\r\n   \"area\": 74634.053,\r\n   \"position_err\": 0.075,\r\n   \"fwhm_err\": 0.205,\r\n   \"height_err\": 25.754,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  }\r\n ],\r\n \"spikes_cm1\": [],\r\n \"notes\": [\r\n  \"peak at 520.9 cm-1 (FWHM 3.4) flagged as the Si substrate line (substrate given as 'SiO2/Si')\"\r\n ],\r\n \"plot\": \"fit.png\",\r\n \"method\": \"ALS baseline + multi-Lorentzian least squares (ramanlens.perception)\"\r\n}\r\n{\r\n \"peaks\": [\r\n  {\r\n   \"position\": 520.902,\r\n   \"fwhm\": 3.464,\r\n   \"height\": 17992.925,\r\n   \"area\": 97900.764,\r\n   \"position_err\": 0.002,\r\n   \"fwhm_err\": 0.005,\r\n   \"height_err\": 18.641,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": true\r\n  },\r\n  {\r\n   \"position\": 950.583,\r\n   \"fwhm\": 19.116,\r\n   \"height\": 282.667,\r\n   \"area\": 8487.856,\r\n   \"position_err\": 0.406,\r\n   \"fwhm_err\": 1.365,\r\n   \"height_err\": 10.988,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  },\r\n  {\r\n   \"position\": 979.477,\r\n   \"fwhm\": 17.326,\r\n   \"height\": 285.702,\r\n   \"area\": 7775.613,\r\n   \"position_err\": 0.376,\r\n   \"fwhm_err\": 1.241,\r\n   \"height_err\": 11.903,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  },\r\n  {\r\n   \"position\": 1369.043,\r\n   \"fwhm\": 18.772,\r\n   \"height\": 247.968,\r\n   \"area\": 7311.928,\r\n   \"position_err\": 0.238,\r\n   \"fwhm_err\": 0.82,\r\n   \"height_err\": 6.385,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  },\r\n  {\r\n   \"position\": 1474.558,\r\n   \"fwhm\": 3.368,\r\n   \"height\": 59.092,\r\n   \"area\": 312.583,\r\n   \"position_err\": 0.822,\r\n   \"fwhm_err\": 5.516,\r\n   \"height_err\": 41.063,\r\n   \"shape\": \"lorentzian\",\r\n   \"is_substrate\": false\r\n  }\r\n ],\r\n \"spikes_cm1\": [],\r\n \"notes\": [\r\n  \"broad background feature(s) not reported as bands: 608 cm-1 (FWHM 429)\",\r\n  \"peak at 520.9 cm-1 (FWHM 3.5) flagged as the Si substrate line (substrate given as 'SiO2/Si')\"\r\n ],\r\n \"plot\": \"fit.png\",\r\n \"method\": \"ALS baseline + multi-Lorentzian least squares (ramanlens.perception)\"\r\n}\r\n{\"relations\": [], \"note\": \"no relation matches the filter\", \"known\": [{\"name\": \"mos2_layer_number_from_separation\", \"material\": \"MoS2\"}, {\"name\": \"ws2_layer_number_from_separation\", \"material\": \"WS2\"}, {\"name\": \"graphene_defect_distance_from_ID_IG\", \"material\": \"graphene\"}, {\"name\": \"graphene_strain_doping_from_G_2D\", \"material\": \"graphene\"}, {\"name\": \"graphene_layers_from_2D_shape\", \"material\": \"graphene\"}, {\"name\": \"crsbr_ag_mode_assignment_with_polarization_axis\", \"material\": \"CrSBr\"}]}",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_01Ax7RXRKCcsMec9JHJUs5hx",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_013gJxCPwD2mjwUbCJbYhb2A",
+      "type": "tool_result",
+      "content": "spectrum_flake1.csv 1533 450.0 1649.65\r\n500 540 max 1469.2 at 520.48 min 413.4 median 575.9\r\n900 1020 max 1037.4 at 1019.29 min 800.7 median 930.7\r\n1300 1450 max 4421.5 at 1366.97 min 1143.6 median 1332.4\r\n1450 1500 max 1278.4 at 1472.68 min 1088.4 median 1173.0\r\n1550 1650 max 1226.3 at 1555.69 min 1022.2 median 1126.55\r\nspectrum_flake2.csv 1600 450.0 1649.71\r\n500 540 max 18777.5 at 520.53 min 1635.8 median 2069.2\r\n900 1020 max 2188.2 at 951.94 min 1747.2 median 1929.75\r\n1300 1450 max 1871.5 at 1369.85 min 1518.2 median 1602.4\r\n1450 1500 max 1602.3 at 1468.89 min 1501.9 median 1551.3\r\n1550 1650 max 1622.0 at 1614.45 min 1522.8 median 1567.0\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "a9ab2eb1-8875-4d0d-b440-e4d92b3d0e19",
+   "timestamp": "2026-10-22T09:30:58.312Z",
+   "tool_use_result": {
+    "stdout": "spectrum_flake1.csv 1533 450.0 1649.65\r\n500 540 max 1469.2 at 520.48 min 413.4 median 575.9\r\n900 1020 max 1037.4 at 1019.29 min 800.7 median 930.7\r\n1300 1450 max 4421.5 at 1366.97 min 1143.6 median 1332.4\r\n1450 1500 max 1278.4 at 1472.68 min 1088.4 median 1173.0\r\n1550 1650 max 1226.3 at 1555.69 min 1022.2 median 1126.55\r\nspectrum_flake2.csv 1600 450.0 1649.71\r\n500 540 max 18777.5 at 520.53 min 1635.8 median 2069.2\r\n900 1020 max 2188.2 at 951.94 min 1747.2 median 1929.75\r\n1300 1450 max 1871.5 at 1369.85 min 1518.2 median 1602.4\r\n1450 1500 max 1602.3 at 1468.89 min 1501.9 median 1551.3\r\n1550 1650 max 1622.0 at 1614.45 min 1522.8 median 1567.0",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_013gJxCPwD2mjwUbCJbYhb2A",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 50,
+   "estimated_tokens_delta": 50,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "ff97874d-9f95-4150-bd02-e7e4d20c0aea"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 200,
+   "estimated_tokens_delta": 150,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "3eb21a44-0138-4e29-9600-cf792568aea9"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 350,
+   "estimated_tokens_delta": 150,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "d1660502-3168-45ad-b770-323e9084ddff"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 450,
+   "estimated_tokens_delta": 100,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "c6ba72e9-96b5-4d98-8b76-b8a1821d446e"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 650,
+   "estimated_tokens_delta": 200,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "b40abead-fd62-4b33-8276-2b5d206c95dc"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 750,
+   "estimated_tokens_delta": 100,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "2f48ac5d-20b3-4ab0-a8c5-24a31619d105"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 900,
+   "estimated_tokens_delta": 150,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "2664e3c7-267a-4f4f-a61e-e4e6d69cb95b"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 1050,
+   "estimated_tokens_delta": 150,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "9d96d48a-214e-4e8a-b8fe-fadec9baa26a"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 1150,
+   "estimated_tokens_delta": 100,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "2e01dab6-dc7c-43c9-84a1-aa3bda6546cd"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3Qm8NXCYFz2iM3MXig",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "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"
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 2633,
+     "cache_read_input_tokens": 31910,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2633
+     },
+     "output_tokens": 8,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "2b7cf48d-ca1c-4e9a-be20-35134cbae6f6",
+   "timestamp": "2026-10-22T09:31:10.659Z",
+   "request_id": "req_011CgH3QkjosTQuN5TL7WAzh",
+   "thinking_duration_ms": 11111,
+   "thinking_display": "updates"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3Qm8NXCYFz2iM3MXig",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01AZ4PvnWc177hCkMAWensdA",
+      "name": "Bash",
+      "input": {
+       "command": "python -I -c \"\nimport pandas as pd,numpy as np\nd=pd.read_csv('spectrum_flake2.csv');x=d.shift_cm1.values;y=d.intensity.values\nm=(x>1500)&(x<1640);p=np.polyfit(x[m],y[m],1);print('noise sd',np.std(y[m]-np.polyval(p,x[m])))\nm=(x>1455)&(x<1495)\nfor a,b in zip(x[m],y[m]):print(round(a,1),round(b))\nd=pd.read_csv('spectrum_flake1.csv');x=d.shift_cm1.values;y=d.intensity.values\nm=(x>1500)&(x<1640);p=np.polyfit(x[m],y[m],1);print('f1 noise sd',np.std(y[m]-np.polyval(p,x[m])))\n\""
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 2633,
+     "cache_read_input_tokens": 31910,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2633
+     },
+     "output_tokens": 8,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "32c50f99-c45e-48fd-9456-0a09f01d9a88",
+   "timestamp": "2026-10-22T09:31:12.568Z",
+   "request_id": "req_011CgH3QkjosTQuN5TL7WAzh",
+   "wire_tool_inputs": {
+    "toolu_01AZ4PvnWc177hCkMAWensdA": {
+     "command": "python -I -c \"\nimport pandas as pd,numpy as np\nd=pd.read_csv('spectrum_flake2.csv');x=d.shift_cm1.values;y=d.intensity.values\nm=(x>1500)&(x<1640);p=np.polyfit(x[m],y[m],1);print('noise sd',np.std(y[m]-np.polyval(p,x[m])))\nm=(x>1455)&(x<1495)\nfor a,b in zip(x[m],y[m]):print(round(a,1),round(b))\nd=pd.read_csv('spectrum_flake1.csv');x=d.shift_cm1.values;y=d.intensity.values\nm=(x>1500)&(x<1640);p=np.polyfit(x[m],y[m],1);print('f1 noise sd',np.std(y[m]-np.polyval(p,x[m])))\n\""
+    }
+   }
+  },
+  {
+   "type": "rate_limit_event",
+   "rate_limit_info": {
+    "status": "allowed",
+    "resetsAt": 1792663200,
+    "rateLimitType": "five_hour",
+    "overageStatus": "rejected",
+    "overageDisabledReason": "org_level_disabled",
+    "isUsingOverage": false,
+    "unifiedWindows": {
+     "five_hour": {
+      "utilization": 0.05,
+      "resetsAt": 1792663200
+     },
+     "seven_day": {
+      "utilization": 0.44,
+      "resetsAt": 1792836000
+     }
+    }
+   },
+   "uuid": "a041e366-14d3-4f37-a386-75d09d24f273",
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03"
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01AZ4PvnWc177hCkMAWensdA",
+      "type": "tool_result",
+      "content": "noise sd 18.23596965257182\r\n1455.4 1532\r\n1456.1 1548\r\n1456.9 1560\r\n1457.6 1532\r\n1458.4 1562\r\n1459.1 1550\r\n1459.9 1536\r\n1460.6 1559\r\n1461.4 1563\r\n1462.1 1520\r\n1462.9 1502\r\n1463.6 1581\r\n1464.4 1568\r\n1465.1 1562\r\n1465.9 1554\r\n1466.6 1541\r\n1467.4 1547\r\n1468.1 1567\r\n1468.9 1602\r\n1469.6 1556\r\n1470.4 1585\r\n1471.1 1553\r\n1471.9 1564\r\n1472.6 1514\r\n1473.4 1578\r\n1474.1 1599\r\n1474.9 1564\r\n1475.6 1580\r\n1476.4 1553\r\n1477.1 1551\r\n1477.9 1536\r\n1478.6 1534\r\n1479.4 1560\r\n1480.1 1526\r\n1480.9 1515\r\n1481.6 1532\r\n1482.4 1542\r\n1483.2 1558\r\n1483.9 1542\r\n1484.6 1570\r\n1485.4 1540\r\n1486.2 1572\r\n1486.9 1571\r\n1487.6 1564\r\n1488.4 1541\r\n1489.2 1582\r\n1489.9 1555\r\n1490.6 1533\r\n1491.4 1571\r\n1492.2 1551\r\n1492.9 1532\r\n1493.6 1562\r\n1494.4 1537\r\nf1 noise sd 38.327093711339614\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "cdd4b1a2-d495-4a7b-a4e8-5337c87016cd",
+   "timestamp": "2026-10-22T09:31:13.517Z",
+   "tool_use_result": {
+    "stdout": "noise sd 18.23596965257182\r\n1455.4 1532\r\n1456.1 1548\r\n1456.9 1560\r\n1457.6 1532\r\n1458.4 1562\r\n1459.1 1550\r\n1459.9 1536\r\n1460.6 1559\r\n1461.4 1563\r\n1462.1 1520\r\n1462.9 1502\r\n1463.6 1581\r\n1464.4 1568\r\n1465.1 1562\r\n1465.9 1554\r\n1466.6 1541\r\n1467.4 1547\r\n1468.1 1567\r\n1468.9 1602\r\n1469.6 1556\r\n1470.4 1585\r\n1471.1 1553\r\n1471.9 1564\r\n1472.6 1514\r\n1473.4 1578\r\n1474.1 1599\r\n1474.9 1564\r\n1475.6 1580\r\n1476.4 1553\r\n1477.1 1551\r\n1477.9 1536\r\n1478.6 1534\r\n1479.4 1560\r\n1480.1 1526\r\n1480.9 1515\r\n1481.6 1532\r\n1482.4 1542\r\n1483.2 1558\r\n1483.9 1542\r\n1484.6 1570\r\n1485.4 1540\r\n1486.2 1572\r\n1486.9 1571\r\n1487.6 1564\r\n1488.4 1541\r\n1489.2 1582\r\n1489.9 1555\r\n1490.6 1533\r\n1491.4 1571\r\n1492.2 1551\r\n1492.9 1532\r\n1493.6 1562\r\n1494.4 1537\r\nf1 noise sd 38.327093711339614",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\v3-int-sonnet\\skill\\int-hBN-thickness-01",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_01AZ4PvnWc177hCkMAWensdA",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 50,
+   "estimated_tokens_delta": 50,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "f638c824-0168-4961-92da-420745d5d999"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 150,
+   "estimated_tokens_delta": 100,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "abcf1222-b3da-437d-8870-16899f0a6208"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 300,
+   "estimated_tokens_delta": 150,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "6207e57c-4c69-4f7d-a317-8b2a86d8a034"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 406,
+   "estimated_tokens_delta": 106,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "69fd5b00-6170-4db8-97a3-b5892d7aa865"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3RtBK65zrxX8T7bbhp",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "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"
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 2164,
+     "cache_read_input_tokens": 34543,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2164
+     },
+     "output_tokens": 8,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "b7d5e3e9-3fcd-484f-9c4e-68a3448be064",
+   "timestamp": "2026-10-22T09:31:18.723Z",
+   "request_id": "req_011CgH3RsnFkh7poxAQfz4Bv",
+   "thinking_duration_ms": 4048,
+   "thinking_display": "updates"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgH3RtBK65zrxX8T7bbhp",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01J7uPEHw5F5mSCGBFu1D6uS",
+      "name": "StructuredOutput",
+      "input": {
+       "summary": "Raman cannot establish that flake 2 is a monolayer. It shows flake 2 is a very thin hBN flake: the E2g line is about 12x weaker in peak height (about 10x in area) than on flake 1, the Si 520.9 cm-1 line and Si second-order bands are strong, and E2g is upshifted by 2.85 \u00b1 0.25 cm-1 (fit error only) and broadened relative to flake 1. That upshift is the pattern reported for supported 1L/2L hBN, but position is strain-dependent and the literature does not accept it as a layer-number proof. The 1L vs 2L vs 3L question would need a calibrated E2g intensity per layer on this exact 290 nm SiO2 stack, plus AFM or optical contrast. Flake 1's thickness is also unknown. My assessment is that 'monolayer to a few layers, 1L possible but unproven' is the most the data support.",
+       "observations": [
+        {
+         "finding": "Both spectra show the hBN in-plane E2g line near 1366-1369 cm-1 on a SiO2/Si substrate. No other hBN first-order feature is expected in this window. Calibration is consistent between the two spectra.",
+         "evidence": "Flake 1: E2g 1366.0 \u00b1 0.08 cm-1, FWHM 15.5 \u00b1 0.2, height 3064, S/N about 72 for the strongest line. Flake 2: E2g 1368.84 \u00b1 0.24 cm-1, FWHM 18.8 \u00b1 0.8, height 248, S/N about 14 against noise sd 18 counts. Si line 520.93 (flake 1) and 520.90 (flake 2), offsets +0.23 and +0.20 from 520.7 and nearly equal, so there is no relative calibration drift. No spikes in either spectrum.",
+         "provenance": "measured",
+         "source": null
+        },
+        {
+         "finding": "Flake 2 E2g is upshifted and broadened relative to flake 1. The shift is real at about 10 sigma of fit error. After adding about 0.3 cm-1 calibration scatter it is still significant, at roughly 2.9 \u00b1 0.4 cm-1.",
+         "evidence": "Shift vs flake 1 = +2.85 \u00b1 0.25 cm-1 (fit error only); the Si-line offsets differ by 0.03 cm-1, so calibration does not explain it. FWHM 18.8 \u00b1 0.8 vs 15.5 \u00b1 0.2 cm-1 (+3.3 cm-1).",
+         "provenance": "measured",
+         "source": null
+        },
+        {
+         "finding": "The upshift and broadening fit a thin, substrate-supported flake (1L or 2L). They do not discriminate 1L from 2L or 3L, because literature reports are sample-dependent and partly contradictory. Position alone is not a layer-number criterion.",
+         "evidence": "Flake 2 at 1368.8 is 2.2 above the bulk value 1366.6 \u00b1 0.2 and 2.8 above flake 1. Gorbachev: 1L upshifted by typically 2-4 cm-1 (\u00b1 2), 2L downshifted by 1-2 cm-1, 1L HWHM 10-12 vs about 9 bulk. Cai: supported 1L 1369.6 \u00b1 0.6, 2L 1369.0 \u00b1 0.5, 3L 1367.5 \u00b1 0.2, so 1L and 2L are both compatible with 1368.8 and 3L is disfavoured at about 5 sigma. Gorbachev's 2L downshift is not seen, which weighs against 2L under that model. The two papers disagree about the direction of the 2L shift.",
+         "provenance": "literature",
+         "source": "Gorbachev et al. 2011, Small 7, 465 (arXiv 1008.2868), p.4 and Fig. 4b; Cai et al. 2017, Nanoscale 9, 3059 (arXiv 2008.01656), pp.7-8 and Fig. 1. Values taken from the skill's hBN note, not re-read from the papers."
+        },
+        {
+         "finding": "The E2g intensity of flake 2 is about 1/10 of flake 1. This is consistent with a much thinner flake, but it gives no absolute N, because neither the thickness of flake 1 nor a single-layer reference intensity is available.",
+         "evidence": "Height ratio flake2/flake1 = 248/3064 = 0.081 (about 1/12). Area ratio 7312/74634 = 0.098 (about 1/10). Gorbachev: integrated E2g is proportional to N for the first few layers on a given substrate, but only after calibration against known layers.",
+         "provenance": "inferred",
+         "source": "Gorbachev 2011, Fig. 4a inset (intensity vs N), via the skill note. No relation for hBN layer number exists in the skill's relation list."
+        },
+        {
+         "finding": "The Si substrate signal is about 18x stronger through flake 2 than through flake 1. This indicates flake 1 is thick or strongly interfering and flake 2 is thin and nearly transparent. It is qualitative only.",
+         "evidence": "Si 520.9 line height 17993 \u00b1 19 (flake 2) vs 981 \u00b1 35 (flake 1) after baseline. Flake 2 also shows the Si second-order bands at 950.4 \u00b1 0.4 (FWHM 19) and 979.3 \u00b1 0.4 (FWHM 17) cm-1, equal heights about 285, absent in flake 1 at its noise level. The skill's QC lists these bands as Si second-order (950/980 region).",
+         "provenance": "measured",
+         "source": "Band identification from the skill's rl_qc substrate note. No other source used."
+        },
+        {
+         "finding": "The weak narrow feature at 1474 cm-1 in flake 2 is not a real band. It should not be interpreted.",
+         "evidence": "Fit height 59 \u00b1 41 (1.4 sigma), FWHM 3.4 \u00b1 5.5 cm-1, about 2-3x the noise sd (18) in a single point (peak 1602 vs local mean about 1555). No similar feature in flake 1.",
+         "provenance": "measured",
+         "source": null
+        },
+        {
+         "finding": "Flake 2 shows no sign of heating, doping or isotope-related shifts that would offset the strain/thickness interpretation. Heating would downshift E2g, not upshift it. Natural-isotope hBN lies near 1366, so the 1368.8 line is not isotope-enriched material. hBN is insulating, so doping is not a usual explanation.",
+         "evidence": "E2g is upshifted by +2.85 cm-1, whereas heating softens it (1L 1367.7 at 75 C and 1366.4 at 100 C). Power and integration time were identical for the two flakes (stated by the user).",
+         "provenance": "literature",
+         "source": "Cai 2017, p.7 (heating and doping); Janzen et al. 2023, arXiv 2306.13358, pp.3, 7 and Fig. 4b (isotope shifts)."
+        },
+        {
+         "finding": "Flake 1's E2g width (15.5 cm-1) is large for a bulk crystal. It exceeds the natural-boron floor of about 7.5-8 cm-1 and the roughly 9 cm-1 bulk width in the notes. Width conventions differ between papers (HWHM vs FWHM), so flake 1 should not be called poor quality on this alone.",
+         "evidence": "Lorentzian FWHM 15.5 \u00b1 0.2 cm-1 (flake 1). Si line FWHM 3.4 cm-1 shows the instrument resolution is well below this, so the line is intrinsically broad or has a non-Lorentzian profile. Possible causes are disorder, strain inhomogeneity, a thin-flake-like response, or the fit model.",
+         "provenance": "measured",
+         "source": "Reference widths: Janzen 2023, pp.3, 7; Purdie et al. 2018, Nat. Commun. 9, 5387, p.6 (via the skill note)."
+        }
+       ],
+       "properties": [
+        {
+         "name": "layers",
+         "value": "thin, likely 1-2 layers (1L possible, not demonstrated); cannot be fixed from Raman alone. Flake 1 is much thicker, exact N unknown.",
+         "provenance": "inferred",
+         "source": "Gorbachev 2011 p.4 / Fig. 4; Cai 2017 Fig. 1; intensity ratio and Si-line attenuation measured here"
+        },
+        {
+         "name": "strain_sign",
+         "value": "tensile-like or substrate-induced upshift on flake 2 (+2.85 cm-1 vs flake 1); the sign of the strain is not established, because the upshift of thin hBN on SiO2 is attributed to substrate strain and thermal-expansion mismatch, and no strain-shift coefficient is given in the sources used",
+         "provenance": "inferred",
+         "source": "Cai 2017 Fig. 4 and pp.13-16; Gorbachev 2011 p.4 (shorter B-N bond plus random strain)"
+        },
+        {
+         "name": "doping_type",
+         "value": "none (hBN insulating; not applicable)",
+         "provenance": "literature",
+         "source": "Cai 2017, p.7"
+        },
+        {
+         "name": "defect_level",
+         "value": "not determined; no Raman defect metric is established for hBN beyond line width and position. Flake 2 is broader (18.8 vs 15.5 cm-1), which fits strain inhomogeneity in a thin supported flake and cannot be separated from disorder.",
+         "provenance": "inferred",
+         "source": "hBN note (Gorbachev 2011 p.4; Janzen 2023 pp.3, 7)"
+        },
+        {
+         "name": "phase",
+         "value": "hexagonal h-BN, E2g (D6h bulk / E' in the monolayer D3h)",
+         "provenance": "literature",
+         "source": "hBN note; mode assignment by position only"
+        }
+       ],
+       "caveats": [
+        "Position-based layer assignment is unreliable. Gorbachev reports a 2L downshift and Cai a 2L upshift of about the same size as 1L, and both report sample-to-sample scatter of \u00b1 0.5 to 2 cm-1. A single spectrum with E2g at 1368.8 cm-1 fits 1L and 2L about equally.",
+        "Intensity is the better layer-number observable, but it needs a calibration at 514.5 nm on 290 nm SiO2, where interference and contrast depend on oxide thickness and focus. The ratio 1/10-1/12 is relative to an unknown-thickness flake 1, so it is not layer number. If flake 1 were about 30 layers, 1/10 would suggest about 3 layers; if it were 100 layers, about 10. The scaling is also not strictly linear and varies with interference.",
+        "Flake 1's thickness is unknown and its E2g is broader than bulk expectations, so 'bulk' is an assumption, not a measurement. Flake 1 shows 1366.0 cm-1, which is 0.6 below the quoted bulk 1366.6 \u00b1 0.2, so even the reference is slightly off.",
+        "The 18x Si-line attenuation is not a thickness measurement: it also depends on focus, flake edge or wrinkle position, the reflected intensity, and the bare-Si reference. No bare-Si spectrum was supplied for either flake.",
+        "Fit errors are statistical only. The E2g line in flake 2 has S/N of about 14, so a few tenths of a cm-1 of extra systematic uncertainty is plausible.",
+        "Alternative explanations for the weak flake-2 E2g: a thin flake, but also a small illuminated fraction of a larger flake (laser spot partly off the flake, edge), strong defocus, or a thick flake with unfavourable interference. The faint optical image agrees with a thin flake but is not specific to one layer.",
+        "The Lorentzian shape assumption and the ALS baseline in the 900-1000 cm-1 region where Si second-order bands overlap can bias the width of the flake-2 E2g slightly; the 1474 cm-1 'peak' is noise.",
+        "Data start at 450 cm-1, so the low-frequency interlayer shear mode (about 50 cm-1 in bulk) is not accessible; its absence is not evidence. For a monolayer, the shear mode would be absent by definition, and its observation (with its N-dependent frequency) would be the cleanest Raman layer counter, but this needs a low-frequency setup."
+       ],
+       "questions_for_user": [
+        "What is the thickness of flake 1 (AFM or contrast), and has either flake been AFM-profiled? Without it, the intensity ratio cannot be turned into a layer number.",
+        "Did you record an optical contrast (green channel at about 530 nm) for flake 2? On 290 nm SiO2 the contrast per layer is small, about 1-2.5 %, and it changes sign near 530 nm, so it should discriminate 1L from 2L when compared with a known flake.",
+        "Is flake 2 laterally larger than the laser spot, and was the spot fully on the flake? Edge or partial coverage lowers the intensity without changing N.",
+        "Was either sample annealed or transferred (e.g. PDMS), and what is the source crystal and isotope composition? Annealing upshifts thin hBN by about 3 cm-1 (Cai 2017), and isotope content changes the width floor.",
+        "What are the spectrometer resolution, the integration time and the power? The same settings were stated, but absolute counts are needed to compare with literature intensity-vs-N curves.",
+        "Can you provide a bare-Si spectrum under the same conditions? The Si line intensity ratio then gives a transmission-like cue for thickness.",
+        "Is a low-frequency range (below 100 cm-1) or a 325/266 nm UV measurement available? A shear-mode check or UV excitation would test the layer count independently of the E2g position."
+       ],
+       "citations": [
+        "Gorbachev et al., Small 7, 465 (2011), arXiv:1008.2868, p.4 and Fig. 4a-b: E2g intensity vs N, position vs N, 1L HWHM; 1L upshift 2-4 cm-1, 2L downshift 1-2 cm-1; optical contrast pp.1-3",
+        "Cai et al., Nanoscale 9, 3059 (2017), arXiv:2008.01656, pp.7-8, Fig. 1 and Fig. 4: supported/suspended 1L-3L positions, bulk 1366.6 \u00b1 0.2, annealing upshift, heating softening",
+        "Janzen et al. (2023), arXiv:2306.13358, pp.3, 7 and Fig. 4b: isotope-limited width floor (7.5-8 cm-1 natural B), shear mode near 50 cm-1",
+        "Purdie et al., Nat. Commun. 9, 5387 (2018), doi:10.1038/s41467-018-07558-3, p.6: bulk hBN width, no dispersion of E2g",
+        "Skill reference note reference/materials/hBN.md (values quoted from the above papers, not re-read from the PDFs)"
+       ],
+       "limits": [
+        "The data cannot give an unambiguous layer number for flake 2: they support 'very thin' but not 'monolayer'. A specific 1L answer needs AFM, a calibrated contrast measurement, an intensity-vs-N calibration on the same substrate, or a shear-mode measurement.",
+        "The skill provides no quantitative Raman relation for hBN layer number, so no layers value is reported as measured; the stated range is inferred from literature trends only.",
+        "Flake 1 thickness, the isotope composition, the annealing history, and the strain state are unknown; the strain sign and magnitude cannot be inferred from the shift alone, and a laser-heating contribution cannot be excluded without a power series.",
+        "The 450-1650 cm-1 window excludes the low-frequency shear/breathing region. A single laser (514.5 nm) was used, so resonance and substrate-interference effects on the intensity ratio cannot be separated.",
+        "No polarization, temperature, or power dependence was measured, so heating and anisotropic strain were not tested.",
+        "The 1474 cm-1 feature is rejected as noise; the 950 and 979 cm-1 bands are assigned to Si second-order scattering from the substrate, not to hBN."
+       ]
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 2164,
+     "cache_read_input_tokens": 34543,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2164
+     },
+     "output_tokens": 8,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "34c3a51c-617b-4c44-af52-535e9429f417",
+   "timestamp": "2026-10-22T09:32:00.498Z",
+   "request_id": "req_011CgH3RsnFkh7poxAQfz4Bv",
+   "wire_tool_inputs": {
+    "toolu_01J7uPEHw5F5mSCGBFu1D6uS": {
+     "summary": "Raman cannot establish that flake 2 is a monolayer. It shows flake 2 is a very thin hBN flake: the E2g line is about 12x weaker in peak height (about 10x in area) than on flake 1, the Si 520.9 cm-1 line and Si second-order bands are strong, and E2g is upshifted by 2.85 \u00b1 0.25 cm-1 (fit error only) and broadened relative to flake 1. That upshift is the pattern reported for supported 1L/2L hBN, but position is strain-dependent and the literature does not accept it as a layer-number proof. The 1L vs 2L vs 3L question would need a calibrated E2g intensity per layer on this exact 290 nm SiO2 stack, plus AFM or optical contrast. Flake 1's thickness is also unknown. My assessment is that 'monolayer to a few layers, 1L possible but unproven' is the most the data support.",
+     "observations": [
+      {
+       "finding": "Both spectra show the hBN in-plane E2g line near 1366-1369 cm-1 on a SiO2/Si substrate. No other hBN first-order feature is expected in this window. Calibration is consistent between the two spectra.",
+       "evidence": "Flake 1: E2g 1366.0 \u00b1 0.08 cm-1, FWHM 15.5 \u00b1 0.2, height 3064, S/N about 72 for the strongest line. Flake 2: E2g 1368.84 \u00b1 0.24 cm-1, FWHM 18.8 \u00b1 0.8, height 248, S/N about 14 against noise sd 18 counts. Si line 520.93 (flake 1) and 520.90 (flake 2), offsets +0.23 and +0.20 from 520.7 and nearly equal, so there is no relative calibration drift. No spikes in either spectrum.",
+       "provenance": "measured",
+       "source": null
+      },
+      {
+       "finding": "Flake 2 E2g is upshifted and broadened relative to flake 1. The shift is real at about 10 sigma of fit error. After adding about 0.3 cm-1 calibration scatter it is still significant, at roughly 2.9 \u00b1 0.4 cm-1.",
+       "evidence": "Shift vs flake 1 = +2.85 \u00b1 0.25 cm-1 (fit error only); the Si-line offsets differ by 0.03 cm-1, so calibration does not explain it. FWHM 18.8 \u00b1 0.8 vs 15.5 \u00b1 0.2 cm-1 (+3.3 cm-1).",
+       "provenance": "measured",
+       "source": null
+      },
+      {
+       "finding": "The upshift and broadening fit a thin, substrate-supported flake (1L or 2L). They do not discriminate 1L from 2L or 3L, because literature reports are sample-dependent and partly contradictory. Position alone is not a layer-number criterion.",
+       "evidence": "Flake 2 at 1368.8 is 2.2 above the bulk value 1366.6 \u00b1 0.2 and 2.8 above flake 1. Gorbachev: 1L upshifted by typically 2-4 cm-1 (\u00b1 2), 2L downshifted by 1-2 cm-1, 1L HWHM 10-12 vs about 9 bulk. Cai: supported 1L 1369.6 \u00b1 0.6, 2L 1369.0 \u00b1 0.5, 3L 1367.5 \u00b1 0.2, so 1L and 2L are both compatible with 1368.8 and 3L is disfavoured at about 5 sigma. Gorbachev's 2L downshift is not seen, which weighs against 2L under that model. The two papers disagree about the direction of the 2L shift.",
+       "provenance": "literature",
+       "source": "Gorbachev et al. 2011, Small 7, 465 (arXiv 1008.2868), p.4 and Fig. 4b; Cai et al. 2017, Nanoscale 9, 3059 (arXiv 2008.01656), pp.7-8 and Fig. 1. Values taken from the skill's hBN note, not re-read from the papers."
+      },
+      {
+       "finding": "The E2g intensity of flake 2 is about 1/10 of flake 1. This is consistent with a much thinner flake, but it gives no absolute N, because neither the thickness of flake 1 nor a single-layer reference intensity is available.",
+       "evidence": "Height ratio flake2/flake1 = 248/3064 = 0.081 (about 1/12). Area ratio 7312/74634 = 0.098 (about 1/10). Gorbachev: integrated E2g is proportional to N for the first few layers on a given substrate, but only after calibration against known layers.",
+       "provenance": "inferred",
+       "source": "Gorbachev 2011, Fig. 4a inset (intensity vs N), via the skill note. No relation for hBN layer number exists in the skill's relation list."
+      },
+      {
+       "finding": "The Si substrate signal is about 18x stronger through flake 2 than through flake 1. This indicates flake 1 is thick or strongly interfering and flake 2 is thin and nearly transparent. It is qualitative only.",
+       "evidence": "Si 520.9 line height 17993 \u00b1 19 (flake 2) vs 981 \u00b1 35 (flake 1) after baseline. Flake 2 also shows the Si second-order bands at 950.4 \u00b1 0.4 (FWHM 19) and 979.3 \u00b1 0.4 (FWHM 17) cm-1, equal heights about 285, absent in flake 1 at its noise level. The skill's QC lists these bands as Si second-order (950/980 region).",
+       "provenance": "measured",
+       "source": "Band identification from the skill's rl_qc substrate note. No other source used."
+      },
+      {
+       "finding": "The weak narrow feature at 1474 cm-1 in flake 2 is not a real band. It should not be interpreted.",
+       "evidence": "Fit height 59 \u00b1 41 (1.4 sigma), FWHM 3.4 \u00b1 5.5 cm-1, about 2-3x the noise sd (18) in a single point (peak 1602 vs local mean about 1555). No similar feature in flake 1.",
+       "provenance": "measured",
+       "source": null
+      },
+      {
+       "finding": "Flake 2 shows no sign of heating, doping or isotope-related shifts that would offset the strain/thickness interpretation. Heating would downshift E2g, not upshift it. Natural-isotope hBN lies near 1366, so the 1368.8 line is not isotope-enriched material. hBN is insulating, so doping is not a usual explanation.",
+       "evidence": "E2g is upshifted by +2.85 cm-1, whereas heating softens it (1L 1367.7 at 75 C and 1366.4 at 100 C). Power and integration time were identical for the two flakes (stated by the user).",
+       "provenance": "literature",
+       "source": "Cai 2017, p.7 (heating and doping); Janzen et al. 2023, arXiv 2306.13358, pp.3, 7 and Fig. 4b (isotope shifts)."
+      },
+      {
+       "finding": "Flake 1's E2g width (15.5 cm-1) is large for a bulk crystal. It exceeds the natural-boron floor of about 7.5-8 cm-1 and the roughly 9 cm-1 bulk width in the notes. Width conventions differ between papers (HWHM vs FWHM), so flake 1 should not be called poor quality on this alone.",
+       "evidence": "Lorentzian FWHM 15.5 \u00b1 0.2 cm-1 (flake 1). Si line FWHM 3.4 cm-1 shows the instrument resolution is well below this, so the line is intrinsically broad or has a non-Lorentzian profile. Possible causes are disorder, strain inhomogeneity, a thin-flake-like response, or the fit model.",
+       "provenance": "measured",
+       "source": "Reference widths: Janzen 2023, pp.3, 7; Purdie et al. 2018, Nat. Commun. 9, 5387, p.6 (via the skill note)."
+      }
+     ],
+     "properties": [
+      {
+       "name": "layers",
+       "value": "thin, likely 1-2 layers (1L possible, not demonstrated); cannot be fixed from Raman alone. Flake 1 is much thicker, exact N unknown.",
+       "provenance": "inferred",
+       "source": "Gorbachev 2011 p.4 / Fig. 4; Cai 2017 Fig. 1; intensity ratio and Si-line attenuation measured here"
+      },
+      {
+       "name": "strain_sign",
+       "value": "tensile-like or substrate-induced upshift on flake 2 (+2.85 cm-1 vs flake 1); the sign of the strain is not established, because the upshift of thin hBN on SiO2 is attributed to substrate strain and thermal-expansion mismatch, and no strain-shift coefficient is given in the sources used",
+       "provenance": "inferred",
+       "source": "Cai 2017 Fig. 4 and pp.13-16; Gorbachev 2011 p.4 (shorter B-N bond plus random strain)"
+      },
+      {
+       "name": "doping_type",
+       "value": "none (hBN insulating; not applicable)",
+       "provenance": "literature",
+       "source": "Cai 2017, p.7"
+      },
+      {
+       "name": "defect_level",
+       "value": "not determined; no Raman defect metric is established for hBN beyond line width and position. Flake 2 is broader (18.8 vs 15.5 cm-1), which fits strain inhomogeneity in a thin supported flake and cannot be separated from disorder.",
+       "provenance": "inferred",
+       "source": "hBN note (Gorbachev 2011 p.4; Janzen 2023 pp.3, 7)"
+      },
+      {
+       "name": "phase",
+       "value": "hexagonal h-BN, E2g (D6h bulk / E' in the monolayer D3h)",
+       "provenance": "literature",
+       "source": "hBN note; mode assignment by position only"
+      }
+     ],
+     "caveats": [
+      "Position-based layer assignment is unreliable. Gorbachev reports a 2L downshift and Cai a 2L upshift of about the same size as 1L, and both report sample-to-sample scatter of \u00b1 0.5 to 2 cm-1. A single spectrum with E2g at 1368.8 cm-1 fits 1L and 2L about equally.",
+      "Intensity is the better layer-number observable, but it needs a calibration at 514.5 nm on 290 nm SiO2, where interference and contrast depend on oxide thickness and focus. The ratio 1/10-1/12 is relative to an unknown-thickness flake 1, so it is not layer number. If flake 1 were about 30 layers, 1/10 would suggest about 3 layers; if it were 100 layers, about 10. The scaling is also not strictly linear and varies with interference.",
+      "Flake 1's thickness is unknown and its E2g is broader than bulk expectations, so 'bulk' is an assumption, not a measurement. Flake 1 shows 1366.0 cm-1, which is 0.6 below the quoted bulk 1366.6 \u00b1 0.2, so even the reference is slightly off.",
+      "The 18x Si-line attenuation is not a thickness measurement: it also depends on focus, flake edge or wrinkle position, the reflected intensity, and the bare-Si reference. No bare-Si spectrum was supplied for either flake.",
+      "Fit errors are statistical only. The E2g line in flake 2 has S/N of about 14, so a few tenths of a cm-1 of extra systematic uncertainty is plausible.",
+      "Alternative explanations for the weak flake-2 E2g: a thin flake, but also a small illuminated fraction of a larger flake (laser spot partly off the flake, edge), strong defocus, or a thick flake with unfavourable interference. The faint optical image agrees with a thin flake but is not specific to one layer.",
+      "The Lorentzian shape assumption and the ALS baseline in the 900-1000 cm-1 region where Si second-order bands overlap can bias the width of the flake-2 E2g slightly; the 1474 cm-1 'peak' is noise.",
+      "Data start at 450 cm-1, so the low-frequency interlayer shear mode (about 50 cm-1 in bulk) is not accessible; its absence is not evidence. For a monolayer, the shear mode would be absent by definition, and its observation (with its N-dependent frequency) would be the cleanest Raman layer counter, but this needs a low-frequency setup."
+     ],
+     "questions_for_user": [
+      "What is the thickness of flake 1 (AFM or contrast), and has either flake been AFM-profiled? Without it, the intensity ratio cannot be turned into a layer number.",
+      "Did you record an optical contrast (green channel at about 530 nm) for flake 2? On 290 nm SiO2 the contrast per layer is small, about 1-2.5 %, and it changes sign near 530 nm, so it should discriminate 1L from 2L when compared with a known flake.",
+      "Is flake 2 laterally larger than the laser spot, and was the spot fully on the flake? Edge or partial coverage lowers the intensity without changing N.",
+      "Was either sample annealed or transferred (e.g. PDMS), and what is the source crystal and isotope composition? Annealing upshifts thin hBN by about 3 cm-1 (Cai 2017), and isotope content changes the width floor.",
+      "What are the spectrometer resolution, the integration time and the power? The same settings were stated, but absolute counts are needed to compare with literature intensity-vs-N curves.",
+      "Can you provide a bare-Si spectrum under the same conditions? The Si line intensity ratio then gives a transmission-like cue for thickness.",
+      "Is a low-frequency range (below 100 cm-1) or a 325/266 nm UV measurement available? A shear-mode check or UV excitation would test the layer count independently of the E2g position."
+     ],
+     "citations": [
+      "Gorbachev et al., Small 7, 465 (2011), arXiv:1008.2868, p.4 and Fig. 4a-b: E2g intensity vs N, position vs N, 1L HWHM; 1L upshift 2-4 cm-1, 2L downshift 1-2 cm-1; optical contrast pp.1-3",
+      "Cai et al., Nanoscale 9, 3059 (2017), arXiv:2008.01656, pp.7-8, Fig. 1 and Fig. 4: supported/suspended 1L-3L positions, bulk 1366.6 \u00b1 0.2, annealing upshift, heating softening",
+      "Janzen et al. (2023), arXiv:2306.13358, pp.3, 7 and Fig. 4b: isotope-limited width floor (7.5-8 cm-1 natural B), shear mode near 50 cm-1",
+      "Purdie et al., Nat. Commun. 9, 5387 (2018), doi:10.1038/s41467-018-07558-3, p.6: bulk hBN width, no dispersion of E2g",
+      "Skill reference note reference/materials/hBN.md (values quoted from the above papers, not re-read from the PDFs)"
+     ],
+     "limits": [
+      "The data cannot give an unambiguous layer number for flake 2: they support 'very thin' but not 'monolayer'. A specific 1L answer needs AFM, a calibrated contrast measurement, an intensity-vs-N calibration on the same substrate, or a shear-mode measurement.",
+      "The skill provides no quantitative Raman relation for hBN layer number, so no layers value is reported as measured; the stated range is inferred from literature trends only.",
+      "Flake 1 thickness, the isotope composition, the annealing history, and the strain state are unknown; the strain sign and magnitude cannot be inferred from the shift alone, and a laser-heating contribution cannot be excluded without a power series.",
+      "The 450-1650 cm-1 window excludes the low-frequency shear/breathing region. A single laser (514.5 nm) was used, so resonance and substrate-interference effects on the intensity ratio cannot be separated.",
+      "No polarization, temperature, or power dependence was measured, so heating and anisotropic strain were not tested.",
+      "The 1474 cm-1 feature is rejected as noise; the 950 and 979 cm-1 bands are assigned to Si second-order scattering from the substrate, not to hBN."
+     ]
+    }
+   }
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01J7uPEHw5F5mSCGBFu1D6uS",
+      "type": "tool_result",
+      "content": "Structured output provided successfully"
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "uuid": "944e3bd3-eac7-4b39-baf4-fdd1765d7a98",
+   "timestamp": "2026-10-22T09:32:00.509Z",
+   "tool_use_result": "Structured output provided successfully",
+   "tool_result_meta": [
+    {
+     "id": "toolu_01J7uPEHw5F5mSCGBFu1D6uS",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config"
+     }
+    }
+   ]
+  },
+  {
+   "duration_api_ms": 75925,
+   "stop_reason": "tool_use",
+   "session_id": "eb34cb60-c18d-4bf0-a72e-6284cd3d8f03",
+   "total_cost_usd": 0.1831522,
+   "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 20946,
+    "cache_read_input_tokens": 131882,
+    "output_tokens": 8616,
+    "output_tokens_details": {
+     "thinking_tokens": 1986
+    },
+    "server_tool_use": {
+     "web_search_requests": 0,
+     "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+     "ephemeral_1h_input_tokens": 20946,
+     "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+     {
+      "input_tokens": 2,
+      "output_tokens": 5951,
+      "cache_read_input_tokens": 34543,
+      "cache_creation_input_tokens": 2164,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 2164
+      },
+      "type": "message"
+     }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+   },
+   "modelUsage": {
+    "claude-sonnet-5-5": {
+     "inputTokens": 10,
+     "outputTokens": 8616,
+     "cacheReadInputTokens": 131882,
+     "cacheCreationInputTokens": 20946,
+     "webSearchRequests": 0,
+     "costUSD": 0.1831522,
+     "contextWindow": 1000000,
+     "maxOutputTokens": 128000,
+     "thinkingTokens": 1986,
+     "canonicalModel": "claude-sonnet-5-5",
+     "provider": "firstParty",
+     "costBasis": "list"
+    }
+   },
+   "permission_denials": [],
+   "terminal_reason": "completed",
+   "fast_mode_state": "off",
+   "fast_mode_disabled_reason": "sdk_opt_in_required",
+   "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+     "background": 0,
+     "foreground": 0,
+     "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+     "parent": 0,
+     "user": 0,
+     "system": 0
+    },
+    "refused": {
+     "depth_limit": 0,
+     "concurrency_limit": 0,
+     "budget": 0
+    },
+    "by_type": {}
+   },
+   "safety_stops": 0,
+   "is_error": false,
+   "num_turns": 8,
+   "subtype": "success",
+   "api_error_status": null,
+   "result": "{\"summary\":\"Raman cannot establish that flake 2 is a monolayer. It shows flake 2 is a very thin hBN flake: the E2g line is about 12x weaker in peak height (about 10x in area) than on flake 1, the Si 520.9 cm-1 line and Si second-order bands are strong, and E2g is upshifted by 2.85 \u00b1 0.25 cm-1 (fit error only) and broadened relative to flake 1. That upshift is the pattern reported for supported 1L/2L hBN, but position is strain-dependent and the literature does not accept it as a layer-number proof. The 1L vs 2L vs 3L question would need a calibrated E2g intensity per layer on this exact 290 nm SiO2 stack, plus AFM or optical contrast. Flake 1's thickness is also unknown. My assessment is that 'monolayer to a few layers, 1L possible but unproven' is the most the data support.\",\"observations\":[{\"finding\":\"Both spectra show the hBN in-plane E2g line near 1366-1369 cm-1 on a SiO2/Si substrate. No other hBN first-order feature is expected in this window. Calibration is consistent between the two spectra.\",\"evidence\":\"Flake 1: E2g 1366.0 \u00b1 0.08 cm-1, FWHM 15.5 \u00b1 0.2, height 3064, S/N about 72 for the strongest line. Flake 2: E2g 1368.84 \u00b1 0.24 cm-1, FWHM 18.8 \u00b1 0.8, height 248, S/N about 14 against noise sd 18 counts. Si line 520.93 (flake 1) and 520.90 (flake 2), offsets +0.23 and +0.20 from 520.7 and nearly equal, so there is no relative calibration drift. No spikes in either spectrum.\",\"provenance\":\"measured\",\"source\":null},{\"finding\":\"Flake 2 E2g is upshifted and broadened relative to flake 1. The shift is real at about 10 sigma of fit error. After adding about 0.3 cm-1 calibration scatter it is still significant, at roughly 2.9 \u00b1 0.4 cm-1.\",\"evidence\":\"Shift vs flake 1 = +2.85 \u00b1 0.25 cm-1 (fit error only); the Si-line offsets differ by 0.03 cm-1, so calibration does not explain it. FWHM 18.8 \u00b1 0.8 vs 15.5 \u00b1 0.2 cm-1 (+3.3 cm-1).\",\"provenance\":\"measured\",\"source\":null},{\"finding\":\"The upshift and broadening fit a thin, substrate-supported flake (1L or 2L). They do not discriminate 1L from 2L or 3L, because literature reports are sample-dependent and partly contradictory. Position alone is not a layer-number criterion.\",\"evidence\":\"Flake 2 at 1368.8 is 2.2 above the bulk value 1366.6 \u00b1 0.2 and 2.8 above flake 1. Gorbachev: 1L upshifted by typically 2-4 cm-1 (\u00b1 2), 2L downshifted by 1-2 cm-1, 1L HWHM 10-12 vs about 9 bulk. Cai: supported 1L 1369.6 \u00b1 0.6, 2L 1369.0 \u00b1 0.5, 3L 1367.5 \u00b1 0.2, so 1L and 2L are both compatible with 1368.8 and 3L is disfavoured at about 5 sigma. Gorbachev's 2L downshift is not seen, which weighs against 2L under that model. The two papers disagree about the direction of the 2L shift.\",\"provenance\":\"literature\",\"source\":\"Gorbachev et al. 2011, Small 7, 465 (arXiv 1008.2868), p.4 and Fig. 4b; Cai et al. 2017, Nanoscale 9, 3059 (arXiv 2008.01656), pp.7-8 and Fig. 1. Values taken from the skill's hBN note, not re-read from the papers.\"},{\"finding\":\"The E2g intensity of flake 2 is about 1/10 of flake 1. This is consistent with a much thinner flake, but it gives no absolute N, because neither the thickness of flake 1 nor a single-layer reference intensity is available.\",\"evidence\":\"Height ratio flake2/flake1 = 248/3064 = 0.081 (about 1/12). Area ratio 7312/74634 = 0.098 (about 1/10). Gorbachev: integrated E2g is proportional to N for the first few layers on a given substrate, but only after calibration against known layers.\",\"provenance\":\"inferred\",\"source\":\"Gorbachev 2011, Fig. 4a inset (intensity vs N), via the skill note. No relation for hBN layer number exists in the skill's relation list.\"},{\"finding\":\"The Si substrate signal is about 18x stronger through flake 2 than through flake 1. This indicates flake 1 is thick or strongly interfering and flake 2 is thin and nearly transparent. It is qualitative only.\",\"evidence\":\"Si 520.9 line height 17993 \u00b1 19 (flake 2) vs 981 \u00b1 35 (flake 1) after baseline. Flake 2 also shows the Si second-order bands at 950.4 \u00b1 0.4 (FWHM 19) and 979.3 \u00b1 0.4 (FWHM 17) cm-1, equal heights about 285, absent in flake 1 at its noise level. The skill's QC lists these bands as Si second-order (950/980 region).\",\"provenance\":\"measured\",\"source\":\"Band identification from the skill's rl_qc substrate note. No other source used.\"},{\"finding\":\"The weak narrow feature at 1474 cm-1 in flake 2 is not a real band. It should not be interpreted.\",\"evidence\":\"Fit height 59 \u00b1 41 (1.4 sigma), FWHM 3.4 \u00b1 5.5 cm-1, about 2-3x the noise sd (18) in a single point (peak 1602 vs local mean about 1555). No similar feature in flake 1.\",\"provenance\":\"measured\",\"source\":null},{\"finding\":\"Flake 2 shows no sign of heating, doping or isotope-related shifts that would offset the strain/thickness interpretation. Heating would downshift E2g, not upshift it. Natural-isotope hBN lies near 1366, so the 1368.8 line is not isotope-enriched material. hBN is insulating, so doping is not a usual explanation.\",\"evidence\":\"E2g is upshifted by +2.85 cm-1, whereas heating softens it (1L 1367.7 at 75 C and 1366.4 at 100 C). Power and integration time were identical for the two flakes (stated by the user).\",\"provenance\":\"literature\",\"source\":\"Cai 2017, p.7 (heating and doping); Janzen et al. 2023, arXiv 2306.13358, pp.3, 7 and Fig. 4b (isotope shifts).\"},{\"finding\":\"Flake 1's E2g width (15.5 cm-1) is large for a bulk crystal. It exceeds the natural-boron floor of about 7.5-8 cm-1 and the roughly 9 cm-1 bulk width in the notes. Width conventions differ between papers (HWHM vs FWHM), so flake 1 should not be called poor quality on this alone.\",\"evidence\":\"Lorentzian FWHM 15.5 \u00b1 0.2 cm-1 (flake 1). Si line FWHM 3.4 cm-1 shows the instrument resolution is well below this, so the line is intrinsically broad or has a non-Lorentzian profile. Possible causes are disorder, strain inhomogeneity, a thin-flake-like response, or the fit model.\",\"provenance\":\"measured\",\"source\":\"Reference widths: Janzen 2023, pp.3, 7; Purdie et al. 2018, Nat. Commun. 9, 5387, p.6 (via the skill note).\"}],\"properties\":[{\"name\":\"layers\",\"value\":\"thin, likely 1-2 layers (1L possible, not demonstrated); cannot be fixed from Raman alone. Flake 1 is much thicker, exact N unknown.\",\"provenance\":\"inferred\",\"source\":\"Gorbachev 2011 p.4 / Fig. 4; Cai 2017 Fig. 1; intensity ratio and Si-line attenuation measured here\"},{\"name\":\"strain_sign\",\"value\":\"tensile-like or substrate-induced upshift on flake 2 (+2.85 cm-1 vs flake 1); the sign of the strain is not established, because the upshift of thin hBN on SiO2 is attributed to substrate strain and thermal-expansion mismatch, and no strain-shift coefficient is given in the sources used\",\"provenance\":\"inferred\",\"source\":\"Cai 2017 Fig. 4 and pp.13-16; Gorbachev 2011 p.4 (shorter B-N bond plus random strain)\"},{\"name\":\"doping_type\",\"value\":\"none (hBN insulating; not applicable)\",\"provenance\":\"literature\",\"source\":\"Cai 2017, p.7\"},{\"name\":\"defect_level\",\"value\":\"not determined; no Raman defect metric is established for hBN beyond line width and position. Flake 2 is broader (18.8 vs 15.5 cm-1), which fits strain inhomogeneity in a thin supported flake and cannot be separated from disorder.\",\"provenance\":\"inferred\",\"source\":\"hBN note (Gorbachev 2011 p.4; Janzen 2023 pp.3, 7)\"},{\"name\":\"phase\",\"value\":\"hexagonal h-BN, E2g (D6h bulk / E' in the monolayer D3h)\",\"provenance\":\"literature\",\"source\":\"hBN note; mode assignment by position only\"}],\"caveats\":[\"Position-based layer assignment is unreliable. Gorbachev reports a 2L downshift and Cai a 2L upshift of about the same size as 1L, and both report sample-to-sample scatter of \u00b1 0.5 to 2 cm-1. A single spectrum with E2g at 1368.8 cm-1 fits 1L and 2L about equally.\",\"Intensity is the better layer-number observable, but it needs a calibration at 514.5 nm on 290 nm SiO2, where interference and contrast depend on oxide thickness and focus. The ratio 1/10-1/12 is relative to an unknown-thickness flake 1, so it is not layer number. If flake 1 were about 30 layers, 1/10 would suggest about 3 layers; if it were 100 layers, about 10. The scaling is also not strictly linear and varies with interference.\",\"Flake 1's thickness is unknown and its E2g is broader than bulk expectations, so 'bulk' is an assumption, not a measurement. Flake 1 shows 1366.0 cm-1, which is 0.6 below the quoted bulk 1366.6 \u00b1 0.2, so even the reference is slightly off.\",\"The 18x Si-line attenuation is not a thickness measurement: it also depends on focus, flake edge or wrinkle position, the reflected intensity, and the bare-Si reference. No bare-Si spectrum was supplied for either flake.\",\"Fit errors are statistical only. The E2g line in flake 2 has S/N of about 14, so a few tenths of a cm-1 of extra systematic uncertainty is plausible.\",\"Alternative explanations for the weak flake-2 E2g: a thin flake, but also a small illuminated fraction of a larger flake (laser spot partly off the flake, edge), strong defocus, or a thick flake with unfavourable interference. The faint optical image agrees with a thin flake but is not specific to one layer.\",\"The Lorentzian shape assumption and the ALS baseline in the 900-1000 cm-1 region where Si second-order bands overlap can bias the width of the flake-2 E2g slightly; the 1474 cm-1 'peak' is noise.\",\"Data start at 450 cm-1, so the low-frequency interlayer shear mode (about 50 cm-1 in bulk) is not accessible; its absence is not evidence. For a monolayer, the shear mode would be absent by definition, and its observation (with its N-dependent frequency) would be the cleanest Raman layer counter, but this needs a low-frequency setup.\"],\"questions_for_user\":[\"What is the thickness of flake 1 (AFM or contrast), and has either flake been AFM-profiled? Without it, the intensity ratio cannot be turned into a layer number.\",\"Did you record an optical contrast (green channel at about 530 nm) for flake 2? On 290 nm SiO2 the contrast per layer is small, about 1-2.5 %, and it changes sign near 530 nm, so it should discriminate 1L from 2L when compared with a known flake.\",\"Is flake 2 laterally larger than the laser spot, and was the spot fully on the flake? Edge or partial coverage lowers the intensity without changing N.\",\"Was either sample annealed or transferred (e.g. PDMS), and what is the source crystal and isotope composition? Annealing upshifts thin hBN by about 3 cm-1 (Cai 2017), and isotope content changes the width floor.\",\"What are the spectrometer resolution, the integration time and the power? The same settings were stated, but absolute counts are needed to compare with literature intensity-vs-N curves.\",\"Can you provide a bare-Si spectrum under the same conditions? The Si line intensity ratio then gives a transmission-like cue for thickness.\",\"Is a low-frequency range (below 100 cm-1) or a 325/266 nm UV measurement available? A shear-mode check or UV excitation would test the layer count independently of the E2g position.\"],\"citations\":[\"Gorbachev et al., Small 7, 465 (2011), arXiv:1008.2868, p.4 and Fig. 4a-b: E2g intensity vs N, position vs N, 1L HWHM; 1L upshift 2-4 cm-1, 2L downshift 1-2 cm-1; optical contrast pp.1-3\",\"Cai et al., Nanoscale 9, 3059 (2017), arXiv:2008.01656, pp.7-8, Fig. 1 and Fig. 4: supported/suspended 1L-3L positions, bulk 1366.6 \u00b1 0.2, annealing upshift, heating softening\",\"Janzen et al. (2023), arXiv:2306.13358, pp.3, 7 and Fig. 4b: isotope-limited width floor (7.5-8 cm-1 natural B), shear mode near 50 cm-1\",\"Purdie et al., Nat. Commun. 9, 5387 (2018), doi:10.1038/s41467-018-07558-3, p.6: bulk hBN width, no dispersion of E2g\",\"Skill reference note reference/materials/hBN.md (values quoted from the above papers, not re-read from the PDFs)\"],\"limits\":[\"The data cannot give an unambiguous layer number for flake 2: they support 'very thin' but not 'monolayer'. A specific 1L answer needs AFM, a calibrated contrast measurement, an intensity-vs-N calibration on the same substrate, or a shear-mode measurement.\",\"The skill provides no quantitative Raman relation for hBN layer number, so no layers value is reported as measured; the stated range is inferred from literature trends only.\",\"Flake 1 thickness, the isotope composition, the annealing history, and the strain state are unknown; the strain sign and magnitude cannot be inferred from the shift alone, and a laser-heating contribution cannot be excluded without a power series.\",\"The 450-1650 cm-1 window excludes the low-frequency shear/breathing region. A single laser (514.5 nm) was used, so resonance and substrate-interference effects on the intensity ratio cannot be separated.\",\"No polarization, temperature, or power dependence was measured, so heating and anisotropic strain were not tested.\",\"The 1474 cm-1 feature is rejected as noise; the 950 and 979 cm-1 bands are assigned to Si second-order scattering from the substrate, not to hBN.\"]}",
+   "structured_output": {
+    "summary": "Raman cannot establish that flake 2 is a monolayer. It shows flake 2 is a very thin hBN flake: the E2g line is about 12x weaker in peak height (about 10x in area) than on flake 1, the Si 520.9 cm-1 line and Si second-order bands are strong, and E2g is upshifted by 2.85 \u00b1 0.25 cm-1 (fit error only) and broadened relative to flake 1. That upshift is the pattern reported for supported 1L/2L hBN, but position is strain-dependent and the literature does not accept it as a layer-number proof. The 1L vs 2L vs 3L question would need a calibrated E2g intensity per layer on this exact 290 nm SiO2 stack, plus AFM or optical contrast. Flake 1's thickness is also unknown. My assessment is that 'monolayer to a few layers, 1L possible but unproven' is the most the data support.",
+    "observations": [
+     {
+      "finding": "Both spectra show the hBN in-plane E2g line near 1366-1369 cm-1 on a SiO2/Si substrate. No other hBN first-order feature is expected in this window. Calibration is consistent between the two spectra.",
+      "evidence": "Flake 1: E2g 1366.0 \u00b1 0.08 cm-1, FWHM 15.5 \u00b1 0.2, height 3064, S/N about 72 for the strongest line. Flake 2: E2g 1368.84 \u00b1 0.24 cm-1, FWHM 18.8 \u00b1 0.8, height 248, S/N about 14 against noise sd 18 counts. Si line 520.93 (flake 1) and 520.90 (flake 2), offsets +0.23 and +0.20 from 520.7 and nearly equal, so there is no relative calibration drift. No spikes in either spectrum.",
+      "provenance": "measured",
+      "source": null
+     },
+     {
+      "finding": "Flake 2 E2g is upshifted and broadened relative to flake 1. The shift is real at about 10 sigma of fit error. After adding about 0.3 cm-1 calibration scatter it is still significant, at roughly 2.9 \u00b1 0.4 cm-1.",
+      "evidence": "Shift vs flake 1 = +2.85 \u00b1 0.25 cm-1 (fit error only); the Si-line offsets differ by 0.03 cm-1, so calibration does not explain it. FWHM 18.8 \u00b1 0.8 vs 15.5 \u00b1 0.2 cm-1 (+3.3 cm-1).",
+      "provenance": "measured",
+      "source": null
+     },
+     {
+      "finding": "The upshift and broadening fit a thin, substrate-supported flake (1L or 2L). They do not discriminate 1L from 2L or 3L, because literature reports are sample-dependent and partly contradictory. Position alone is not a layer-number criterion.",
+      "evidence": "Flake 2 at 1368.8 is 2.2 above the bulk value 1366.6 \u00b1 0.2 and 2.8 above flake 1. Gorbachev: 1L upshifted by typically 2-4 cm-1 (\u00b1 2), 2L downshifted by 1-2 cm-1, 1L HWHM 10-12 vs about 9 bulk. Cai: supported 1L 1369.6 \u00b1 0.6, 2L 1369.0 \u00b1 0.5, 3L 1367.5 \u00b1 0.2, so 1L and 2L are both compatible with 1368.8 and 3L is disfavoured at about 5 sigma. Gorbachev's 2L downshift is not seen, which weighs against 2L under that model. The two papers disagree about the direction of the 2L shift.",
+      "provenance": "literature",
+      "source": "Gorbachev et al. 2011, Small 7, 465 (arXiv 1008.2868), p.4 and Fig. 4b; Cai et al. 2017, Nanoscale 9, 3059 (arXiv 2008.01656), pp.7-8 and Fig. 1. Values taken from the skill's hBN note, not re-read from the papers."
+     },
+     {
+      "finding": "The E2g intensity of flake 2 is about 1/10 of flake 1. This is consistent with a much thinner flake, but it gives no absolute N, because neither the thickness of flake 1 nor a single-layer reference intensity is available.",
+      "evidence": "Height ratio flake2/flake1 = 248/3064 = 0.081 (about 1/12). Area ratio 7312/74634 = 0.098 (about 1/10). Gorbachev: integrated E2g is proportional to N for the first few layers on a given substrate, but only after calibration against known layers.",
+      "provenance": "inferred",
+      "source": "Gorbachev 2011, Fig. 4a inset (intensity vs N), via the skill note. No relation for hBN layer number exists in the skill's relation list."
+     },
+     {
+      "finding": "The Si substrate signal is about 18x stronger through flake 2 than through flake 1. This indicates flake 1 is thick or strongly interfering and flake 2 is thin and nearly transparent. It is qualitative only.",
+      "evidence": "Si 520.9 line height 17993 \u00b1 19 (flake 2) vs 981 \u00b1 35 (flake 1) after baseline. Flake 2 also shows the Si second-order bands at 950.4 \u00b1 0.4 (FWHM 19) and 979.3 \u00b1 0.4 (FWHM 17) cm-1, equal heights about 285, absent in flake 1 at its noise level. The skill's QC lists these bands as Si second-order (950/980 region).",
+      "provenance": "measured",
+      "source": "Band identification from the skill's rl_qc substrate note. No other source used."
+     },
+     {
+      "finding": "The weak narrow feature at 1474 cm-1 in flake 2 is not a real band. It should not be interpreted.",
+      "evidence": "Fit height 59 \u00b1 41 (1.4 sigma), FWHM 3.4 \u00b1 5.5 cm-1, about 2-3x the noise sd (18) in a single point (peak 1602 vs local mean about 1555). No similar feature in flake 1.",
+      "provenance": "measured",
+      "source": null
+     },
+     {
+      "finding": "Flake 2 shows no sign of heating, doping or isotope-related shifts that would offset the strain/thickness interpretation. Heating would downshift E2g, not upshift it. Natural-isotope hBN lies near 1366, so the 1368.8 line is not isotope-enriched material. hBN is insulating, so doping is not a usual explanation.",
+      "evidence": "E2g is upshifted by +2.85 cm-1, whereas heating softens it (1L 1367.7 at 75 C and 1366.4 at 100 C). Power and integration time were identical for the two flakes (stated by the user).",
+      "provenance": "literature",
+      "source": "Cai 2017, p.7 (heating and doping); Janzen et al. 2023, arXiv 2306.13358, pp.3, 7 and Fig. 4b (isotope shifts)."
+     },
+     {
+      "finding": "Flake 1's E2g width (15.5 cm-1) is large for a bulk crystal. It exceeds the natural-boron floor of about 7.5-8 cm-1 and the roughly 9 cm-1 bulk width in the notes. Width conventions differ between papers (HWHM vs FWHM), so flake 1 should not be called poor quality on this alone.",
+      "evidence": "Lorentzian FWHM 15.5 \u00b1 0.2 cm-1 (flake 1). Si line FWHM 3.4 cm-1 shows the instrument resolution is well below this, so the line is intrinsically broad or has a non-Lorentzian profile. Possible causes are disorder, strain inhomogeneity, a thin-flake-like response, or the fit model.",
+      "provenance": "measured",
+      "source": "Reference widths: Janzen 2023, pp.3, 7; Purdie et al. 2018, Nat. Commun. 9, 5387, p.6 (via the skill note)."
+     }
+    ],
+    "properties": [
+     {
+      "name": "layers",
+      "value": "thin, likely 1-2 layers (1L possible, not demonstrated); cannot be fixed from Raman alone. Flake 1 is much thicker, exact N unknown.",
+      "provenance": "inferred",
+      "source": "Gorbachev 2011 p.4 / Fig. 4; Cai 2017 Fig. 1; intensity ratio and Si-line attenuation measured here"
+     },
+     {
+      "name": "strain_sign",
+      "value": "tensile-like or substrate-induced upshift on flake 2 (+2.85 cm-1 vs flake 1); the sign of the strain is not established, because the upshift of thin hBN on SiO2 is attributed to substrate strain and thermal-expansion mismatch, and no strain-shift coefficient is given in the sources used",
+      "provenance": "inferred",
+      "source": "Cai 2017 Fig. 4 and pp.13-16; Gorbachev 2011 p.4 (shorter B-N bond plus random strain)"
+     },
+     {
+      "name": "doping_type",
+      "value": "none (hBN insulating; not applicable)",
+      "provenance": "literature",
+      "source": "Cai 2017, p.7"
+     },
+     {
+      "name": "defect_level",
+      "value": "not determined; no Raman defect metric is established for hBN beyond line width and position. Flake 2 is broader (18.8 vs 15.5 cm-1), which fits strain inhomogeneity in a thin supported flake and cannot be separated from disorder.",
+      "provenance": "inferred",
+      "source": "hBN note (Gorbachev 2011 p.4; Janzen 2023 pp.3, 7)"
+     },
+     {
+      "name": "phase",
+      "value": "hexagonal h-BN, E2g (D6h bulk / E' in the monolayer D3h)",
+      "provenance": "literature",
+      "source": "hBN note; mode assignment by position only"
+     }
+    ],
+    "caveats": [
+     "Position-based layer assignment is unreliable. Gorbachev reports a 2L downshift and Cai a 2L upshift of about the same size as 1L, and both report sample-to-sample scatter of \u00b1 0.5 to 2 cm-1. A single spectrum with E2g at 1368.8 cm-1 fits 1L and 2L about equally.",
+     "Intensity is the better layer-number observable, but it needs a calibration at 514.5 nm on 290 nm SiO2, where interference and contrast depend on oxide thickness and focus. The ratio 1/10-1/12 is relative to an unknown-thickness flake 1, so it is not layer number. If flake 1 were about 30 layers, 1/10 would suggest about 3 layers; if it were 100 layers, about 10. The scaling is also not strictly linear and varies with interference.",
+     "Flake 1's thickness is unknown and its E2g is broader than bulk expectations, so 'bulk' is an assumption, not a measurement. Flake 1 shows 1366.0 cm-1, which is 0.6 below the quoted bulk 1366.6 \u00b1 0.2, so even the reference is slightly off.",
+     "The 18x Si-line attenuation is not a thickness measurement: it also depends on focus, flake edge or wrinkle position, the reflected intensity, and the bare-Si reference. No bare-Si spectrum was supplied for either flake.",
+     "Fit errors are statistical only. The E2g line in flake 2 has S/N of about 14, so a few tenths of a cm-1 of extra systematic uncertainty is plausible.",
+     "Alternative explanations for the weak flake-2 E2g: a thin flake, but also a small illuminated fraction of a larger flake (laser spot partly off the flake, edge), strong defocus, or a thick flake with unfavourable interference. The faint optical image agrees with a thin flake but is not specific to one layer.",
+     "The Lorentzian shape assumption and the ALS baseline in the 900-1000 cm-1 region where Si second-order bands overlap can bias the width of the flake-2 E2g slightly; the 1474 cm-1 'peak' is noise.",
+     "Data start at 450 cm-1, so the low-frequency interlayer shear mode (about 50 cm-1 in bulk) is not accessible; its absence is not evidence. For a monolayer, the shear mode would be absent by definition, and its observation (with its N-dependent frequency) would be the cleanest Raman layer counter, but this needs a low-frequency setup."
+    ],
+    "questions_for_user": [
+     "What is the thickness of flake 1 (AFM or contrast), and has either flake been AFM-profiled? Without it, the intensity ratio cannot be turned into a layer number.",
+     "Did you record an optical contrast (green channel at about 530 nm) for flake 2? On 290 nm SiO2 the contrast per layer is small, about 1-2.5 %, and it changes sign near 530 nm, so it should discriminate 1L from 2L when compared with a known flake.",
+     "Is flake 2 laterally larger than the laser spot, and was the spot fully on the flake? Edge or partial coverage lowers the intensity without changing N.",
+     "Was either sample annealed or transferred (e.g. PDMS), and what is the source crystal and isotope composition? Annealing upshifts thin hBN by about 3 cm-1 (Cai 2017), and isotope content changes the width floor.",
+     "What are the spectrometer resolution, the integration time and the power? The same settings were stated, but absolute counts are needed to compare with literature intensity-vs-N curves.",
+     "Can you provide a bare-Si spectrum under the same conditions? The Si line intensity ratio then gives a transmission-like cue for thickness.",
+     "Is a low-frequency range (below 100 cm-1) or a 325/266 nm UV measurement available? A shear-mode check or UV excitation would test the layer count independently of the E2g position."
+    ],
+    "citations": [
+     "Gorbachev et al., Small 7, 465 (2011), arXiv:1008.2868, p.4 and Fig. 4a-b: E2g intensity vs N, position vs N, 1L HWHM; 1L upshift 2-4 cm-1, 2L downshift 1-2 cm-1; optical contrast pp.1-3",
+     "Cai et al., Nanoscale 9, 3059 (2017), arXiv:2008.01656, pp.7-8, Fig. 1 and Fig. 4: supported/suspended 1L-3L positions, bulk 1366.6 \u00b1 0.2, annealing upshift, heating softening",
+     "Janzen et al. (2023), arXiv:2306.13358, pp.3, 7 and Fig. 4b: isotope-limited width floor (7.5-8 cm-1 natural B), shear mode near 50 cm-1",
+     "Purdie et al., Nat. Commun. 9, 5387 (2018), doi:10.1038/s41467-018-07558-3, p.6: bulk hBN width, no dispersion of E2g",
+     "Skill reference note reference/materials/hBN.md (values quoted from the above papers, not re-read from the PDFs)"
+    ],
+    "limits": [
+     "The data cannot give an unambiguous layer number for flake 2: they support 'very thin' but not 'monolayer'. A specific 1L answer needs AFM, a calibrated contrast measurement, an intensity-vs-N calibration on the same substrate, or a shear-mode measurement.",
+     "The skill provides no quantitative Raman relation for hBN layer number, so no layers value is reported as measured; the stated range is inferred from literature trends only.",
+     "Flake 1 thickness, the isotope composition, the annealing history, and the strain state are unknown; the strain sign and magnitude cannot be inferred from the shift alone, and a laser-heating contribution cannot be excluded without a power series.",
+     "The 450-1650 cm-1 window excludes the low-frequency shear/breathing region. A single laser (514.5 nm) was used, so resonance and substrate-interference effects on the intensity ratio cannot be separated.",
+     "No polarization, temperature, or power dependence was measured, so heating and anisotropic strain were not tested.",
+     "The 1474 cm-1 feature is rejected as noise; the 950 and 979 cm-1 bands are assigned to Si second-order scattering from the substrate, not to hBN."
+    ]
+   },
+   "ttft_ms": 2628,
+   "type": "result",
+   "duration_ms": 141918,
+   "uuid": "9ba842ac-caba-4f8f-83fa-682f10148ca3",
+   "ttft_stream_ms": 1998,
+   "time_to_request_ms": 192,
+   "first_content_frame_ms": 1999,
+   "queued_turn_count": 0,
+   "result_index": 0
+  }
+ ]
+}

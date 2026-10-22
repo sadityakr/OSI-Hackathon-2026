@@ -1,0 +1,99 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (Pnma, herzenbergite-type, layered orthorhombic)",
+      "confidence": 0.85,
+      "evidence": "Strong lines at ~94, 161, 193 and ~221 cm-1 match the SnS Ag modes reported at ~95, ~160-164, ~189-192 and ~218-220 cm-1. No lines appear below ~90 cm-1 or between 100 and 150 cm-1, where SnSe would show them."
+    },
+    {
+      "material": "SnSe",
+      "confidence": 0.04,
+      "evidence": "The SnSe Pnma Ag modes are at ~70, ~108-110, ~130-133 and ~150-152 cm-1. None of these is seen, and the strongest features here (161 and 193 cm-1) lie above the SnSe phonon range."
+    },
+    {
+      "material": "SnS2",
+      "confidence": 0.05,
+      "evidence": "SnS2 shows a single strong A1g line at ~315 cm-1. Only a weak, marginal feature appears near 296-325 cm-1 in the peak search, so SnS2 is not supported."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The SnSe hint does not fit. Lorentzian fits give strong, sharp lines at 93.8, 161.3 and 192.9 cm-1, plus a broader line near 221 cm-1. This four-line pattern with the top line near 220 cm-1 matches the Ag modes of SnS. Orthorhombic SnSe has its Ag modes at roughly 70, 108, 130 and 150 cm-1, with essentially nothing above ~160 cm-1 apart from weak two-phonon features. The SnSe 70 and 108-130 cm-1 lines are absent: the spectrum starts at 60 cm-1 and has no peak near 70 cm-1 or between 100 and 150 cm-1 (the 116.7 and 131.8 cm-1 hits are noise-level, with prominence below 0.1 of the main peaks). The 161 and 193 cm-1 lines are about 10 and 40 cm-1 above the highest SnSe Ag mode, which is far more than any strain or alloying shift. The pattern is most consistent with SnS. Mixed Sn(S,Se) alloys are not excluded, but they would show shifted, two-mode-like features, which are not seen.",
+  "peaks": [
+    {
+      "position_cm1": 93.8,
+      "fwhm_cm1": 3.9,
+      "assignment": "SnS Ag mode",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of this spectrum. The assignment is based on SnS literature, where this Ag mode lies at ~95 cm-1 (Chandrasekhar, Phys. Rev. B 15, 2127 (1977); Sinsermsuksakul et al. and other SnS Raman reports)."
+    },
+    {
+      "position_cm1": 161.3,
+      "fwhm_cm1": 4.1,
+      "assignment": "SnS Ag mode (strongest line)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. SnS literature gives ~160-164 cm-1 (Chandrasekhar 1977; Raman studies of SnS flakes and films)."
+    },
+    {
+      "position_cm1": 192.9,
+      "fwhm_cm1": 4,
+      "assignment": "SnS Ag mode",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. SnS literature gives ~189-192 cm-1 (Chandrasekhar 1977)."
+    },
+    {
+      "position_cm1": 221,
+      "fwhm_cm1": 13,
+      "assignment": "SnS Ag mode (broad)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit; literature SnS ~218-220 cm-1. The width is poorly constrained because this line is weak and noisy."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "orthorhombic Pnma (SnS-type)",
+      "provenance": "inferred",
+      "source": "Mode positions compared with SnS literature"
+    },
+    {
+      "name": "layers",
+      "value": "bulk or thick flake (not determinable from this spectrum)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "low (sharp lines, ~4 cm-1 FWHM)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single-point)",
+      "position_cm1": 1082
+    }
+  ],
+  "citations": [
+    "Chandrasekhar, H. R., Humphreys, R. G., Zwick, U., Cardona, M., Phys. Rev. B 15, 2177 (1977): infrared and Raman spectra of IV-VI layered compounds GeS, GeSe, SnS, SnSe.",
+    "Raman studies of orthorhombic SnSe: Ag modes at ~70, ~108, ~130 and ~150 cm-1 (e.g. Chandrasekhar 1977; Raman studies of SnSe flakes and crystals).",
+    "Raman studies of SnS flakes and films: Ag modes at ~95, ~163, ~190 and ~220 cm-1."
+  ],
+  "limits": [
+    "The reference positions are quoted from memory of the literature, not looked up during this analysis. Treat the literature values as approximate (\u00b13-5 cm-1).",
+    "No polarization-resolved data are provided, so Ag/Bg symmetry assignments are based on literature and not measured.",
+    "Weak features at ~270 and ~790 cm-1 and many small hits are at noise level. They were not assigned and may be noise.",
+    "The spectrum starts at 60 cm-1, so the SnSe ~70 cm-1 line would sit close to the edge. Its absence rests mainly on the missing 108-150 cm-1 lines and on the strong lines above 160 cm-1.",
+    "The data cannot exclude a small Se-alloyed fraction or a minority SnSe phase below the noise level.",
+    "The single-point line at 1082 cm-1 is treated as a cosmic ray (about 6 times the baseline, one pixel wide), and it matches no SnS or SnSe mode.",
+    "The 221 cm-1 width and amplitude come from a noisy fit."
+  ]
+}

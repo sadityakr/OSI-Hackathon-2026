@@ -1,0 +1,148 @@
+{
+  "candidates": [
+    {
+      "material": "C (monolayer graphene)",
+      "confidence": 0.9,
+      "evidence": "Only the graphene triad is present: D 1350.7, G 1580.7 and a single symmetric 2D at 2698.2 (FWHM 32.0 cm-1, I2D/IG = 3.0 by height). The 2D width and intensity ratio are monolayer-like, and no band in the 1100-3000 window contradicts it."
+    },
+    {
+      "material": "C (bilayer or few-layer graphene)",
+      "confidence": 0.05,
+      "evidence": "2D position (2698) is compatible with bilayer, but bilayer 2D is broader (about 50 cm-1), multi-component and weaker relative to G (I2D/IG about 1). The fitted 2D is a single Lorentzian at noise level with FWHM 32, which argues against it."
+    },
+    {
+      "material": "C (graphite)",
+      "confidence": 0.02,
+      "evidence": "Bulk graphite 2D is broad, asymmetric and weak relative to G. Neither is observed here."
+    },
+    {
+      "material": "B N (hexagonal boron nitride)",
+      "confidence": 0.01,
+      "evidence": "hBN E2g would sit near 1366 cm-1 with no G or 2D band. The observed 1350.7 cm-1 band is 15 cm-1 lower, and the G and 2D bands are absent in hBN, so this is excluded."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "material_hint is null, so there was no stated material to verify. The identification was made blind from the peak set.",
+  "peaks": [
+    {
+      "position_cm1": 1350.7,
+      "fwhm_cm1": 15.1,
+      "assignment": "D band: defect-activated breathing (TO) phonon near K",
+      "irrep": "A1'",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from Lorentzian fit (1250-1750 window, linear background; ALS baseline gives the same result within 0.5%). Assignment: Ferrari & Robertson, PRB 61, 14095 (2000)."
+    },
+    {
+      "position_cm1": 1580.7,
+      "fwhm_cm1": 14.1,
+      "assignment": "G band: in-plane E2g bond-stretching phonon at Gamma",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from fit. Assignment: Ferrari et al., PRL 97, 187401 (2006); Ferrari & Robertson, PRB 61, 14095 (2000)."
+    },
+    {
+      "position_cm1": 1619.6,
+      "fwhm_cm1": 13.2,
+      "assignment": "D' band: defect-activated intravalley (Gamma-point) E2g-derived mode, shoulder on G",
+      "irrep": "E2g (Gamma, defect-activated)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit amplitude 328 counts (about 13 sigma above noise of 25 counts); position error 0.2 cm-1 statistically, but the shoulder is model-dependent. Assignment: Ferrari & Robertson, PRB 61, 14095 (2000); Eckmann et al., Nano Lett. 12, 3925 (2012)."
+    },
+    {
+      "position_cm1": 2698.2,
+      "fwhm_cm1": 32,
+      "assignment": "2D band: second-order overtone of the TO phonon near K (2D of D)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Single Lorentzian fit; residuals are white at 24 counts, matching quiet-region noise. Position is blue-shifted about 10 cm-1 from the usual unstrained monolayer value near 2680-2690 at 514 nm. Assignment: Ferrari et al., PRL 97, 187401 (2006); Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1",
+      "provenance": "inferred",
+      "source": "2D FWHM 32 cm-1 as a single symmetric Lorentzian with I2D/IG about 3.0 (height). Bilayer would show a broader, multi-component 2D with lower I2D/IG. Ferrari et al., PRL 97, 187401 (2006)."
+    },
+    {
+      "name": "defect_level",
+      "value": "medium",
+      "provenance": "inferred",
+      "source": "ID/IG = 0.60 (height), 0.64 (area), i.e. moderate point-defect density. Not in the amorphous regime."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "5.2",
+      "provenance": "inferred",
+      "source": "Canado et al., Nano Lett. 11, 3190 (2011): L_D^2 = 2.4e-10 * lambda^4 / (ID/IG) with lambda = 514.5 nm. Gives 5.3 nm from height ratio and 5.1 nm from area ratio. Relation is valid for L_D above about 2-3 nm, which holds here."
+    },
+    {
+      "name": "defect_type",
+      "value": "vacancy-like (sp2 point defects)",
+      "provenance": "inferred",
+      "source": "ID/ID' = 6.7 (height), 7.6 (area). Eckmann et al., Nano Lett. 12, 3925 (2012) and Lucchese et al., Carbon 48, 1592 (2010) give about 7 for vacancies, about 3.5 for boundaries and about 13 for sp3. Qualitative discrimination only."
+    },
+    {
+      "name": "ID_over_IG",
+      "value": "0.60 (height); 0.64 (area)",
+      "provenance": "measured",
+      "source": "From the fitted D and G bands in the 1250-1750 window."
+    },
+    {
+      "name": "I2D_over_IG",
+      "value": "3.0 (height); 6.8 (area)",
+      "provenance": "measured",
+      "source": "From the fitted 2D and G bands. Height ratio is the usual monolayer indicator."
+    },
+    {
+      "name": "ID_over_ID_prime",
+      "value": "6.7 (height)",
+      "provenance": "measured",
+      "source": "From fitted D and D' heights."
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "G at 1580.7 is close to neutral-graphene values, but the 2D blue-shift is not explained by doping alone. Doping and strain cannot be separated from G and 2D positions in one spectrum. Das et al., Nat. Nanotechnol. 3, 210 (2008) and Lee et al. (2012) discuss the G/2D correlation."
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "Uniaxial tension would downshift both G and 2D and biaxial compression would upshift both with a 2D/G shift ratio near 2.2 (Mohiuddin et al., PRB 79, 205433 (2009)). The observed G shift relative to the reference value is too small to decide."
+    },
+    {
+      "name": "substrate_check",
+      "value": "not verifiable",
+      "provenance": "inferred",
+      "source": "Si substrate line at 520.7 cm-1 lies outside the measured 1100-3000 cm-1 window, so SiO2/Si cannot be confirmed from this spectrum."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari A.C., Robertson J., PRB 61, 14095 (2000) - D, G, D' assignments and defect-activated modes",
+    "Ferrari A.C. et al., PRL 97, 187401 (2006) - graphene layer number from 2D; G/2D assignment",
+    "Ferrari A.C., Basko D.M., Nat. Nanotechnol. 8, 235 (2013) - review of graphene Raman spectroscopy",
+    "Cancado L.G. et al., Nano Lett. 11, 3190 (2011) - L_D from ID/IG at given laser wavelength",
+    "Eckmann A. et al., Nano Lett. 12, 3925 (2012) - ID/ID' classification of defect type",
+    "Lucchese M.M. et al., Carbon 48, 1592 (2010) - ID/ID' values for different defect types",
+    "Das A. et al., Nat. Nanotechnol. 3, 210 (2008) - G and 2D shifts with doping",
+    "Mohiuddin T.M.G. et al., PRB 79, 205433 (2009) - strain shift ratio of 2D to G"
+  ],
+  "limits": [
+    "Single spectrum with no polarization or angle series, so no symmetry-based pattern classification; pattern and irrep fields are null for the 2D band.",
+    "The band positions are taken as reported, with no calibration reference (Si or Ne line) in the window. The 2D position at 2698 is about 10 cm-1 above the usual 514 nm monolayer value (2680-2690). That offset could be calibration, doping, strain or an instrument effect, and this spectrum cannot distinguish them.",
+    "The Si 520.7 cm-1 reference is outside the 1100-3000 cm-1 window, so the SiO2/Si substrate cannot be checked from this data.",
+    "L_D comes from the Canado relation calibrated for defect-dominated graphene with L_D above about 2-3 nm. Uncertainty is roughly 20-30% from baseline and fit choices. ID/IG is in peak-height and peak-area units, which differ by about 7%.",
+    "ID/ID' near 7 points to vacancy-like defects, but the classification is qualitative and does not uniquely identify the defect type.",
+    "Doping and strain cannot be separated from G and 2D positions alone. No doping or strain value is assigned.",
+    "No D+D'' band near 2930-2950 is detected above noise (fit gave no significant peak). A 2D' band near 3240 cm-1 is outside the measured range.",
+    "Residual fluctuations of 2-4 sigma (about 50-100 counts, narrower than Raman bands) remain after subtracting D, G, D' and 2D. They are not reproducible band-like structures and are not assigned. Background of 800-1200 counts is broad and not characterised beyond baseline subtraction.",
+    "No cosmic-ray spikes were found: a second-difference test found no point above 8 sigma."
+  ]
+}

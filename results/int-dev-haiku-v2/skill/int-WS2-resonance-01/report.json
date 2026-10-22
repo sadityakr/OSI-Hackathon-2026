@@ -1,0 +1,133 @@
+{
+  "summary": "Both spots are 2H-WS2 (E-type band near 355 cm-1 and A1 band at 417 to 420 cm-1, with the 2LA(M) overtone near 350 cm-1). Spot 1 is thinner than spot 2: its out-of-plane A1 band is 2.8 cm-1 softer, its A1-E separation is 61.9 vs 64.7 cm-1, and its Si substrate line is about 10x stronger. The data are consistent with a monolayer or few-layer island, but they do not establish a monolayer. The strongest layer-number observables (shear and layer-breathing modes below 50 cm-1) are outside the measured window (starts at 120 cm-1), and no polarization or PL data are available. The skill's helper scripts and reference notes sit outside this folder, so per the folder restriction I did all fits with numpy/scipy here.",
+  "observations": [
+    {
+      "finding": "Spot 1 peak table (global 5-band Lorentzian fit over 140-560 cm-1 with linear baseline; fit errors only): LA(M) 175.95\u00b10.24 cm-1 (FWHM 9.2\u00b10.8, amp 113); 2LA(M) 351.18\u00b10.04 (FWHM 9.15\u00b10.06, amp 1828); E2g/E' 355.34\u00b10.06 (FWHM 3.55\u00b10.28, amp 374); A1g/A1' 417.28\u00b10.02 (FWHM 4.65\u00b10.07, amp 806); Si 520.91\u00b10.01 (FWHM 3.45\u00b10.04, amp 1235).",
+      "evidence": "spectrum_spot1.csv, 698 points, 120.00-599.94 cm-1, step about 0.69 cm-1. Residual rms 13.2 overall (E-region 12.5, A-region 14.2, LA-region 12.9).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Spot 2 peak table (same fit): LA(M) 175.76\u00b10.56 (FWHM 6.8\u00b11.7, amp 45, weak); 2LA(M) 350.08\u00b10.13 (FWHM 9.6\u00b10.3, amp 540); E2g/E' 355.42\u00b10.04 (FWHM 3.93\u00b10.16, amp 640); A1g/A1' 420.08\u00b10.02 (FWHM 4.48\u00b10.05, amp 1134); Si 520.79\u00b10.15 (FWHM 3.1\u00b10.4, amp 114).",
+      "evidence": "spectrum_spot2.csv, 732 points, 120.00-599.56 cm-1. Residual rms 14.5 overall (E-region 14.3, A-region 11.2, LA-region 12.4).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A single Lorentzian in the 330-375 cm-1 window leaves structure that a two-component fit removes: spot 1 window rms 34 (single) vs 12 (two components), spot 2 window rms 56 vs 14. The sharp E' component is at 355.3 (spot 1) and 355.4 cm-1 (spot 2) in the two-component fit; the broad lower component is 2LA(M) at 351.1 and 349.9 cm-1.",
+      "evidence": "Two-Lorentzian fit over 325-385 cm-1 with linear baseline. Spot 1: E' 355.29\u00b10.06 (FWHM 3.95\u00b10.29), 2LA 351.09\u00b10.05 (FWHM 8.94\u00b10.09), 2LA/E' amp ratio about 4.3. Spot 2: E' 355.38\u00b10.04 (FWHM 4.12\u00b10.15), 2LA 349.86\u00b10.12 (FWHM 8.76\u00b10.32), 2LA/E' amp ratio about 0.8.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Delta(A1g-E2g) = 61.94\u00b10.07 cm-1 in spot 1 and 64.66\u00b10.04 cm-1 in spot 2 (difference 2.7 cm-1). The A1 band shifts by +2.80 cm-1 from spot 1 to spot 2, while the E' band shifts by only about +0.07 cm-1 (about 0.08 with the separate fit).",
+      "evidence": "Global fit positions (fit errors only). Si line positions differ by 0.12 cm-1 between spectra, so calibration offset cannot account for a 2.8 cm-1 A1 shift. Zhao et al. (Nanoscale 2013) report a thickness-dependent shift of the characteristic modes of less than 3 cm-1 for mono- to few-layer WS2, which matches the size of this shift.",
+      "provenance": "measured",
+      "source": "[1304.0911](https://arxiv.org/abs/1304.0911)"
+    },
+    {
+      "finding": "Spot 1 is consistent with a thinner flake than spot 2 (monolayer or few-layer), but a monolayer is not established. A thin island would be expected to give the more consistent reading: lower A1 frequency, smaller Delta, and stronger Si.",
+      "evidence": "A1 red-shift of 2.8 cm-1 (about 40 times the fit error and about 10 times the calibration scatter); Delta 61.9 vs 64.7 cm-1, the separation trend reported for WS2 in layer number; Si amplitude ratio about 10.7x (1235 vs 115), consistent with less overlayer absorption for the thinner spot. The Delta-to-layer-number thresholds were not verified from source text (see limits).",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "Strong 2LA(M) in both spots, with a much larger 2LA/E' ratio in spot 1 (about 4.3-4.9) than in spot 2 (about 0.8). Resonant 2LA appears in monolayer WS2 about 4 cm-1 from E' and can bias the layer assignment if it is not fitted out.",
+      "evidence": "Two-Lorentzian and global fits (see rows above). The E'-to-2LA separation is about 4 cm-1 in spot 1 and about 5.5 cm-1 in spot 2. 514.5 nm = 2.41 eV, which the literature places near the WS2 A/B exciton region (Yang et al. 2017 state that the 2LA signal exceeds the main peaks near A or B exciton resonance); the exact exciton energies were not checked against a source.",
+      "provenance": "literature",
+      "source": "Mitioglu et al., PRB 89, 245442 (2014), arXiv [1406.3511](https://arxiv.org/abs/1406.3511); Yang, Lee & Cheong (2017), arXiv [1706.01677](https://arxiv.org/abs/1706.01677)"
+    },
+    {
+      "finding": "Same-material resonance sets the 2LA intensity, and polarization can change it independently of thickness. The 4.9 vs 0.8 ratio difference therefore cannot be read as a thickness indicator without polarization control.",
+      "evidence": "Mitioglu et al. report that 2LA intensity depends strongly on the angle between excitation and detection polarization.",
+      "provenance": "literature",
+      "source": "Mitioglu et al., PRB 89, 245442 (2014), arXiv [1406.3511](https://arxiv.org/abs/1406.3511)"
+    },
+    {
+      "finding": "A1g linewidths are similar (FWHM 4.65 vs 4.48 cm-1), so the A1 band does not broaden between spots. The E' line is also narrow in both (3.6 to 3.9 cm-1), so no clear defect-induced broadening is seen in either spot.",
+      "evidence": "Global fit FWHM values above; fit-error-level differences only.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 175-176 cm-1 band is weak (spot 1 amp 113, spot 2 amp 45 with large uncertainty) and is assigned to LA(M). In spot 1 its amplitude is about 2.5x the E' amplitude; in spot 2 it is about 7%. This band is not a reliable layer or defect indicator from these data.",
+      "evidence": "Global fit LA amplitude and FWHM above; the spot 2 LA position uncertainty is 0.56 cm-1 and its FWHM 6.8\u00b11.7 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The Si line at 520.8-520.9 cm-1 is the substrate first-order line (assigned as 'Si substrate'). Its positions agree within 0.12 cm-1 and fit to a nominal calibration offset of about +0.1 to +0.2 cm-1 relative to the commonly quoted 520.7 cm-1, which is small compared with the A1 shift.",
+      "evidence": "Si positions 520.91\u00b10.01 (spot 1) and 520.79\u00b10.15 (spot 2). The nominal 520.7 cm-1 is the commonly quoted Si value; calibration source not stated in the data.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "Phase: the mode set (E' near 355 cm-1, A1' at 417-420 cm-1, 2LA near 350 cm-1) matches 2H-WS2, consistent with the 2H phase expected for CVD WS2.",
+      "evidence": "Peak positions in the tables above; no 1T or 3R signature is seen in the 120-600 cm-1 window.",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "Spot 1: monolayer or few-layer (N about 1-3 most likely, monolayer not established); Spot 2: thicker than spot 1 (N not determined from these data)",
+      "provenance": "inferred",
+      "source": "A1 shift +2.8 cm-1 and Delta 61.9 vs 64.7 cm-1 (measured); Si amplitude ratio about 10.7x (measured)"
+    },
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "Peak set and positions (E' 355, A1' 417-420, 2LA 350 cm-1); the literature mode assignments were not checked against a source text"
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "E' is unshifted between spots (0.07 cm-1), so no clear strain difference between the two spots; absolute strain needs a reference"
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "An A1-only shift is compatible with doping or thickness; without a bare-flake reference or a PL/shear measurement these cannot be separated"
+    },
+    {
+      "name": "defect_level",
+      "value": "low (weak evidence)",
+      "provenance": "inferred",
+      "source": "No defect-activated band is evident; E' and A1' FWHM are narrow (3.6-4.7 cm-1); the 176 cm-1 band is weak and ambiguous"
+    }
+  ],
+  "questions_for_user": [
+    "Is there a bare SiO2/Si reference spectrum (same settings, same spot size) to calibrate the Si attenuation?",
+    "Can the spectra be re-measured below about 50 cm-1 (shear and layer-breathing modes)? These are the most direct layer-number observables and are missing because the window starts at 120 cm-1.",
+    "What were the laser power, objective, and grating/resolution? Heating shifts E' and A1' together; the A1-only shift argues against a heating-dominated result, but the power is needed to confirm.",
+    "Was polarization controlled? The 2LA/E' ratio depends on polarization, so the spot 1 vs spot 2 ratio cannot be interpreted without it.",
+    "Is there an AFM height or PL map for the island? Monolayer WS2 gives strong direct-exciton PL that thicker flakes do not; this would decide monolayer vs few-layer directly."
+  ],
+  "citations": [
+    "[1304.0911](https://arxiv.org/abs/1304.0911): Zhao et al., Nanoscale 5, 9677 (2013). Mono- to few-layer WS2/WSe2; characteristic modes shift by less than 3 cm-1 with layer number; multiphonon bands enhanced under excitonic resonance.",
+    "[1406.3511](https://arxiv.org/abs/1406.3511): Mitioglu et al., PRB 89, 245442 (2014). Resonant 2LA in single-layer WS2 appears about 4 cm-1 from E^1_2g; can bias layer assignment; 2LA intensity depends on polarization angle.",
+    "[1706.01677](https://arxiv.org/abs/1706.01677): Yang, Lee & Cheong (2017). 2LA signal near E2g is stronger than the main peaks near A or B exciton resonance; shear and layer-breathing modes are useful for layer number.",
+    "[1504.00049](https://arxiv.org/abs/1504.00049): Staiger et al., PRB 91, 195419 (2015). Monolayer A'1 mode near 420 cm-1 splits into N components with increasing layer number near excitonic resonance.",
+    "[1602.05378](https://arxiv.org/abs/1602.05378): Li et al., Nanotechnology 27, 145704 (2016). WS2 layer number from the Si-peak intensity ratio against bare SiO2/Si; requires a bare-substrate reference; excitation energies differ from 2.41 eV."
+  ],
+  "caveats": [
+    "The skill's scripts (rl_qc, rl_fit, rl_series, rl) and the reference notes (reference/materials/WS2.md, artifacts.md, relations.md) are located outside the working folder; per the folder restriction they were not read or run. The fits were done with numpy/scipy in this folder: ALS baseline, prominence-based peak finding, and Lorentzian fits replaced the skill's QC and fit steps.",
+    "The layer-number threshold for Delta(A1g-E2g) in WS2 was not verified from source text. Only abstracts were retrieved (iopic-bond needs a token that is not set, so no figures were parsed). The statement that spot 1 is thinner rests on the direction and size of the shift and separation, not on a verified calibration curve.",
+    "The 2LA/E' ratio is sensitive to the two-component decomposition (E' amplitude 374 in the global fit vs 416 in the local E-window fit; ratio 4.9 vs 4.3). The direction (spot 1 2LA-dominated, spot 2 E'-dominated) is robust; the exact value is not.",
+    "Peak assignments for LA(M), 2LA(M), E'/E^1_2g and A1'/A1g are standard for 2H-WS2 from the literature, but the specific frequencies were not checked against a source table. Irrep labels (E^1_2g, A1g for bulk D6h; E', A1' for monolayer D3h) depend on the layer number, which is not yet established.",
+    "Alternative explanations for the A1-only shift and the Delta change: doping, strain, substrate interference, focus/spot differences, and resonance. Power/heating was not known and could add a common shift. Only one spectrum per spot was measured, so the uncertainties are fit statistics only; spot-to-spot reproducibility was not tested.",
+    "The 2LA and resonance interpretation assumes 514.5 nm (2.41 eV) lies near the WS2 A/B exciton region; the exact exciton energies were not looked up.",
+    "The Si ratio (about 10.7x) was not calibrated against a bare SiO2/Si reference, so it only shows that spot 1 is less attenuated than spot 2, not the layer count."
+  ],
+  "limits": [
+    "The skill's helper scripts and reference notes are outside the working folder and were not used; all fits are numpy/scipy in this folder.",
+    "Delta(A1g-E2g) layer thresholds for WS2 were not verified from source text (abstracts only; no figure parsing).",
+    "The 2LA/E' ratio depends on the decomposition (4.3 to 4.9 in spot 1); the direction is robust, the value is not.",
+    "Irrep labels depend on the layer number, which is not yet established; mode frequencies were not checked against a source table.",
+    "Only one spectrum per spot; uncertainties are fit statistics only. Power, polarization, and calibration source are not stated in the data."
+  ]
+}

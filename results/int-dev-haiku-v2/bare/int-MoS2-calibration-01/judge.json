@@ -1,0 +1,54 @@
+{
+ "key": "fffcfb7f625c4847",
+ "score": 0.8333333333333334,
+ "by_kind": {
+  "finding": 0.9166666666666666,
+  "quantitative": 0.5,
+  "question": 1.0
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 1,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report gives raw shifts of \"E2g ... diff +2.51; A1g ... diff +2.44 cm^-1\" and says the separation \"is unchanged\" (21.58 vs 21.51 cm^-1), which is within range of the rubric's ~21.4 cm^-1."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "The report states \"the Si 520 cm^-1 reference moved by the same amount (+2.49 cm^-1)\", going from 519.977 to 522.469, and attributes it to \"a spectrometer wavenumber calibration difference rather than a sample change.\""
+   },
+   {
+    "id": "n1",
+    "met": 0.5,
+    "why": "After Si referencing the positions \"agree to within 0.05 cm^-1\" within the fit error, but the report reads Delta \u2248 21.5 cm^-1 as \"roughly in the 3-5 layer range\" rather than a bilayer."
+   },
+   {
+    "id": "f3",
+    "met": 0.5,
+    "why": "The report concludes \"Nothing in these spectra supports adsorbate doping or strain\" and says the linewidths are unchanged, but it never gives the diagnostic signatures (electron doping softens and broadens A1g; strain shifts E2g much more than A1g) and only says both modes \"respond to doping and strain.\""
+   },
+   {
+    "id": "q1",
+    "met": 1,
+    "why": "The report asks \"Was the spectrometer recalibrated, or the grating or centre wavelength changed, between the two days? Was a Si reference measured with each spectrum?\""
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "The report rejects strain and doping as explanations (\"strain_sign: none detectable\", \"doping_type: none detectable\") and attributes the shift to calibration."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "The report states the flake \"did not thin, oxidise or change layer count\" and finds no defect features on either day."
+   }
+  ],
+  "citation_specificity": 1
+ },
+ "judge_model": "claude-opus-5-5"
+}

@@ -1,0 +1,73 @@
+{
+  "candidates": [
+    {
+      "material": "ZrTe5",
+      "confidence": 0.2,
+      "evidence": "Only one strong mode (98.6 cm-1, FWHM 7.2) and one weak mode (281.6 cm-1, SNR about 4) are measurable. A strong low-frequency A_g-type mode near 98-100 cm-1 is typical of ZrTe5 in my recollection of the literature, but I could not check a reference spectrum here, and the expected higher-frequency modes are absent or below noise."
+    },
+    {
+      "material": "GaTe",
+      "confidence": 0.15,
+      "evidence": "Layered monoclinic telluride with low-frequency Raman modes. From memory (not verified here), its strongest modes are near 115 and 135-140 cm-1, which are absent in this spectrum, so the match is weak."
+    },
+    {
+      "material": "In2Se3",
+      "confidence": 0.05,
+      "evidence": "Layered selenide with a low-frequency mode near 100-110 cm-1 in my recollection of the literature (unverified). Its higher-frequency modes are not clearly matched by the weak 281.6 cm-1 feature."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "The task is identify and no material hint was given, so there is no stated material to check against. The spectrum (one dominant mode at 98.6 cm-1 plus one weak mode at 281.6 cm-1, nothing else above noise) does not single out a material. The candidate list is low-confidence and based on recalled literature positions that I could not verify in this environment.",
+  "peaks": [
+    {
+      "position_cm1": 98.58,
+      "fwhm_cm1": 7.2,
+      "assignment": "unassigned; dominant low-frequency mode of a layered material",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "position_cm1": 281.6,
+      "fwhm_cm1": 2,
+      "assignment": "unassigned; weak mode (fitted FWHM is at the sampling limit, about 0.96 cm-1 per point, so the width is poorly constrained)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "background",
+      "value": "rising baseline from about 2430 counts at 60 cm-1 to about 3215 counts at 1100 cm-1",
+      "provenance": "inferred",
+      "source": "Visual and polynomial baseline fit; the origin (fluorescence or photoluminescence) is not determined"
+    },
+    {
+      "name": "noise",
+      "value": "about 225-230 counts per point, against a baseline of about 2.5-3.2k counts",
+      "provenance": "measured",
+      "source": "Robust estimate from point-to-point differences and residuals of the fit"
+    },
+    {
+      "name": "substrate lines",
+      "value": "none found; no Si 520.7 cm-1 line",
+      "provenance": "measured",
+      "source": "Peak search over 60-1100 cm-1"
+    }
+  ],
+  "artifacts": [],
+  "citations": [],
+  "limits": [
+    "Only two peaks are above the noise: 98.58 +- 0.10 cm-1 (FWHM 7.2, a very strong feature) and 281.6 +- 0.2 cm-1 (fit amplitude SNR about 4, FWHM unresolved). Two modes are not enough for a confident identification.",
+    "No reference spectra, mode database or literature were available in this environment, so no mode assignment can be checked. The candidate materials and their literature positions are from memory and are unverified.",
+    "The 213.8 cm-1 fit gives SNR about 3, but its raw neighbours scatter by about 300 counts and it is about one sampling step wide, so I did not report it as a peak. Similarly, 176 cm-1 (SNR about 1.8) and 70 cm-1 (SNR about 1.2) are not significant.",
+    "The spectrum starts at 60 cm-1, so modes below 60 cm-1 (for example shear or breathing modes of layered materials) cannot be seen. Several high-frequency modes may also be too weak to detect at this noise level, so their absence does not rule out a material.",
+    "Single unpolarised spectrum, so no polarisation or symmetry (irrep) classification was possible.",
+    "No cosmic-ray spikes were identified. The highest point, 98.61 cm-1 at 8297 counts, lies on a 7-cm-1-wide peak profile, and refitting without it moves the centre by only 0.01 cm-1. It is treated as part of the peak.",
+    "No substrate was specified, and no Si line was found. Other common substrate lines were not searched for specifically.",
+    "I did not use the directory name as evidence for the identification. The answer rests only on the spectrum."
+  ]
+}

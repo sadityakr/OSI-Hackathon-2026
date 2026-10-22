@@ -1,0 +1,102 @@
+{
+  "summary": "Flake 2 is much thinner than flake 1 (E2g area ~10x smaller, same power/time/514.5 nm), and its E2g band is blue-shifted by 2.8 \u00b1 0.3 cm-1 (1368.99 vs 1366.19) and ~20% broader. This is compatible with a monolayer or few-layer hBN, but Raman alone cannot establish it is a monolayer. Flake 1's thickness is unknown, and its width (~16-19 cm-1) is already abnormal for bulk hBN. AFM or the low-frequency shear mode is needed to settle the layer number.",
+  "observations": [
+    {
+      "finding": "Flake 2 gives a much weaker E2g signal than flake 1, so it is much thinner; layer count not determined",
+      "evidence": "E2g area 73,000 (flake 1) vs 7,300 (flake 2) counts*cm-1, ratio ~10; height ~3200 vs ~270-290 counts above baseline; S/N ~80 vs ~14. If flake 1 were N layers, flake 2 would be ~N/10; N unknown.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "E2g of flake 2 is blue-shifted and broader than that of flake 1",
+      "evidence": "Lorentzian fit 1366.19 \u00b1 0.04 vs 1368.99 \u00b1 0.23 cm-1 (centroids 1366.3 vs 1368.7); FWHM 18.0 \u00b1 0.1 vs 21.6 \u00b1 0.8 (Lorentz), 19.2 vs 23.8 (Voigt), 15.7 vs 18.0 direct half-max",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Flake 1 is unexpectedly broad for bulk hBN, so it is a poor bulk reference; part of the flake 2 shift/broadening could be disorder or strain",
+      "evidence": "Flake 1 FWHM ~16-19 cm-1 vs ~8-9 cm-1 recalled for good bulk crystals; Si 520 FWHM 3.75-3.87 cm-1 so instrument resolution is not the cause",
+      "provenance": "inferred",
+      "source": "Nemanich et al., PRB 23, 6348 (1981) for bulk linewidth (from memory)"
+    },
+    {
+      "finding": "Si 520 signal is ~18x stronger on flake 2, consistent with flake 1 perturbing the optical path much more (thicker) than flake 2",
+      "evidence": "Si 520 height ~930 (flake 1) vs ~17,000 (flake 2) counts; Si position 520.92/520.90 cm-1 identical, FWHM 3.75/3.87; Si 2TO near 950 cm-1 visible only on flake 2. hBN is transparent at 514.5 nm so this is interference/scattering/focus, not absorption.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Low optical contrast of flake 2 is expected for monolayer to few-layer hBN on 290 nm SiO2 and does not discriminate layer number",
+      "evidence": "Qualitative: researcher reports flake 2 barely visible; monolayer contrast only a few percent",
+      "provenance": "literature",
+      "source": "Gorbachev et al., Small 7, 465 (2011) (from memory)"
+    },
+    {
+      "finding": "A blue shift of the hBN E2g band toward thin layers has been reported but the magnitude is small and disputed, and comparable to strain/substrate effects",
+      "evidence": "Observed +2.8 \u00b1 0.3 cm-1, similar in size to the reported monolayer-vs-bulk shift of ~+2 cm-1",
+      "provenance": "literature",
+      "source": "Gorbachev et al., Small 7, 465 (2011); Cai et al. on few-layer hBN Raman and phonon dispersion (recalled from memory, figure numbers not verified)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "thinner than flake 1; consistent with 1 layer but not established (1 to a few layers cannot be separated); flake 1 thickness unknown",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined; flake 1 E2g unusually broad (~16-19 cm-1), possibly disorder or turbostratic stacking",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined (blue shift of +2.8 cm-1 could be thinness, compressive strain or doping)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "E2g_position_flake2_cm1",
+      "value": "1368.99 \u00b1 0.23",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "E2g_position_flake1_cm1",
+      "value": "1366.19 \u00b1 0.04",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Intensity ratio of ~10 assumes identical focus, polarisation, objective and substrate; focus alone could change it by a factor of 2 or more, and it gives no layer count without flake 1's thickness.",
+    "Si 520 intensity differs by ~18x between flakes through SiO2 interference and focus; normalising E2g to Si is unreliable.",
+    "Shift and width differences are only a few times the fit uncertainty; the literature layer-dependent shift is small and overlaps with strain, substrate and doping effects.",
+    "Flake 1 is itself broad (low crystal quality or turbostratic), so flake 1 to flake 2 is not a clean bulk to monolayer comparison.",
+    "The measured range (450-1650 cm-1) excludes the ~50 cm-1 low-frequency shear mode, which would show whether flake 2 has more than one layer.",
+    "FWHM depends on line shape and baseline choice; the spread in flake 2 widths (18-24 cm-1) is larger than the quoted fit error.",
+    "Single spot per flake: uniformity, folds and thickness steps are not probed."
+  ],
+  "questions_for_user": [
+    "Can you take AFM of flake 2? A step height of ~0.4-1 nm versus >1 nm is the decisive test for a monolayer.",
+    "Is there a known 1L or 2L flake from the same batch to calibrate intensity and shift?",
+    "Can you measure the low-frequency range (<100 cm-1) for the shear mode? Its absence would favour a monolayer.",
+    "Were focus, polarisation, grating and objective identical for both flakes, and were the E2g peaks unsaturated?",
+    "What is flake 1's thickness (AFM or contrast) and what is the hBN source (HPHT, CVD, commercial)? Its broad line needs explaining.",
+    "Can you map E2g intensity and position across flake 2 to check uniformity?"
+  ],
+  "citations": [
+    "Gorbachev et al., Small 7, 465 (2011), 'Hunting for monolayer boron nitride: optical and Raman signatures' (recalled from memory; figure numbers not checked)",
+    "Nemanich, Solin, Guerard, Phys. Rev. B 23, 6348 (1981), Raman of hexagonal BN (recalled from memory; bulk E2g ~1366 cm-1, linewidth)",
+    "Cai et al., Raman signature and phonon dispersion of few-layer hBN (recalled from memory; figure numbers not checked)"
+  ],
+  "limits": [
+    "The E2g intensity scales with layer number but there is no calibration on these two spectra.",
+    "Raman here gives a thickness ranking, not an absolute layer count.",
+    "Cannot separate strain, doping and disorder contributions to the shift and width.",
+    "Cannot establish stacking order or lateral uniformity from two single-spot spectra.",
+    "Cannot be quantitative about the layer-dependent shift because the literature values are quoted from memory and are disputed."
+  ]
+}

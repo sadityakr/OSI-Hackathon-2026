@@ -1,0 +1,147 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (orthorhombic, Pnma, GeS-type layers)",
+      "confidence": 0.6,
+      "evidence": "Four bands at 92.46, 162.39, 189.42 and 226.51 cm-1 (fit, 532 nm). The 189 cm-1 band matches the Ag mode at 190.7 cm-1 reported for orthorhombic SnS flakes (Xia et al. 2016). Strong in-plane anisotropy of the Raman response is reported for layered SnS (Gong et al. 2023), and the polarization pattern here (one diagonal in-plane tensor plus one off-diagonal) fits D2h symmetry with the layer normal along the beam. Weaknesses: the SnS line list is partly recalled, not fetched, and the 189 cm-1 band is isotropic here while Xia et al. report strong anisotropy for their 190.7 cm-1 Ag mode."
+    },
+    {
+      "material": "SnSe (orthorhombic, Pnma)",
+      "confidence": 0.1,
+      "evidence": "Same space-group family, so polarization pattern is not decisive. Its strongest lines (about 110, 150 and 186 cm-1, recalled from SnSe Raman literature, not fetched here) do not match the 92 and 227 cm-1 bands; no band near 110 or 150 cm-1 is strong here."
+    },
+    {
+      "material": "SnS2 (2H/1T, P-3m1)",
+      "confidence": 0.03,
+      "evidence": "Expected strong A1g near 314 cm-1 (recalled from SnS2 Raman literature, not fetched here) falls inside the measured 60-382 cm-1 window; no band there above noise. Rejected."
+    },
+    {
+      "material": "SnSe2 (P-3m1)",
+      "confidence": 0.02,
+      "evidence": "Expected Eg near 113 cm-1 and A1g near 184 cm-1 (recalled, not fetched). Only a weak bump near 111-114 cm-1 is present, and the strong 92 and 227 cm-1 bands have no SnSe2 counterpart. Rejected as a poor match."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so this is an identification, not a verify task. The top candidate, SnS, is a choice from line positions, symmetry and literature, not a confirmation of a stated material. The data window (60-382 cm-1) excludes the higher-frequency modes that would normally settle the identification.",
+  "peaks": [
+    {
+      "position_cm1": 92.46,
+      "fwhm_cm1": 3.25,
+      "assignment": "Ag (in-plane diagonal tensor, orthorhombic SnS); crossed weak (about 10 percent of parallel), 90-degree-periodic, not a clean pair",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (fit, +-0.03 cm-1 statistical). Irrep from polarization pattern and D2h Raman tensors with layer normal along beam; cf. Gong et al. 2023, doi 10.1039/d2ra06470g (SnS symmetry analysis)."
+    },
+    {
+      "position_cm1": 162.39,
+      "fwhm_cm1": 3.64,
+      "assignment": "B3g-type (off-diagonal in-plane yz tensor), fourfold in both configurations with complementary phase",
+      "irrep": "B3g",
+      "pattern": "fourfold",
+      "provenance": "inferred",
+      "source": "Position and FWHM measured. Irrep inferred from fourfold pattern in parallel and crossed with parallel+crossed constant (off-diagonal tensor), D2h with layer normal along beam; cf. Gong et al. 2023, doi 10.1039/d2ra06470g."
+    },
+    {
+      "position_cm1": 189.42,
+      "fwhm_cm1": 4.04,
+      "assignment": "Ag (in-plane isotropic, yy approximately equal to zz); crossed silent",
+      "irrep": "Ag",
+      "pattern": "isotropic_par_only",
+      "provenance": "inferred",
+      "source": "Position and FWHM measured. Irrep inferred from isotropic parallel and silent crossed. Literature Ag mode at 190.7 cm-1 in SnS flakes (Xia et al. 2016, doi 10.1039/c5nr07675g) is reported as strongly anisotropic, which conflicts with this band; see limits."
+    },
+    {
+      "position_cm1": 226.51,
+      "fwhm_cm1": 8.58,
+      "assignment": "Ag (diagonal in-plane tensor, weak anisotropy); crossed silent",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "inferred",
+      "source": "Position and FWHM measured. Irrep is low confidence: a diagonal in-plane tensor gives Ag in D2h; the alternative B2g/B1g is ruled out only if the crossed silence is real. Cf. Gong et al. 2023, doi 10.1039/d2ra06470g."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "orthorhombic (Pnma, GeS-type layers), consistent with SnS",
+      "provenance": "inferred",
+      "source": "Line set and polarization pattern; see candidates. Not verified against a reference mode table."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike (single pixel, about 300-700 counts above neighbours; parallel 0 deg)",
+      "position_cm1": 109
+    },
+    {
+      "type": "cosmic_ray_spike (single pixel; parallel 0 deg)",
+      "position_cm1": 284
+    },
+    {
+      "type": "cosmic_ray_spike (single pixel; parallel 0 deg)",
+      "position_cm1": 290
+    },
+    {
+      "type": "cosmic_ray_spike (single pixel; parallel 0 deg)",
+      "position_cm1": 345
+    },
+    {
+      "type": "cosmic_ray_spike (single pixel; parallel 30 deg)",
+      "position_cm1": 115
+    },
+    {
+      "type": "cosmic_ray_spike (single pixel; parallel 30 deg)",
+      "position_cm1": 129
+    },
+    {
+      "type": "cosmic_ray_spike (single pixel; parallel 170 deg)",
+      "position_cm1": 200
+    },
+    {
+      "type": "cosmic_ray_spike (single pixel; crossed 150 deg)",
+      "position_cm1": 287
+    }
+  ],
+  "citations": [
+    "Gong X. et al., \"Revealing the anisotropic phonon behaviours of layered SnS by angle/temperature-dependent Raman spectroscopy\", RSC Advances (2023), doi:10.1039/d2ra06470g, [doi:10.1039/d2ra06470g](https://pubmed.ncbi.nlm.nih.gov/36714047/)",
+    "Xia J. et al., \"Physical vapor deposition synthesis of two-dimensional orthorhombic SnS flakes with strong angle/temperature-dependent Raman responses\", Nanoscale (2016), doi:10.1039/c5nr07675g, [doi:10.1039/c5nr07675g](https://pubmed.ncbi.nlm.nih.gov/26698370/)"
+  ],
+  "limits": [
+    "Scope: the data covers 60-382 cm-1 only. Higher-frequency modes (including the SnS2 A1g near 314 cm-1 used to reject SnS2) lie inside this window, but other SnS modes above 382 cm-1 are unmeasured. Identification rests on four bands.",
+    "Skill scripts and reference notes live outside this folder, and the task restricts file access to this folder. The matcher (match_library), the curated reference table and the relation tables were therefore not used. Assignments rely on my recall of SnS, SnSe, SnS2 and SnSe2 Raman literature and on the two abstracts fetched through the Valency search tool. I did not read any mode table or figure, so the literature line positions for SnS are from memory and not verified here.",
+    "iopic-bond (figure reading) failed because no VALENCY_BOND_TOKEN is set, so no reference spectrum was compared.",
+    "Calibration: there is no Si or neon reference line in the window, so absolute positions carry an unknown offset (typically about 1 cm-1 for a benchtop spectrometer). Fitted positions are statistical only (+-0.02 to 0.09 cm-1).",
+    "Polarization: all four bands were fitted with fixed centres and FWHM from the angle-averaged spectra. Free-centre fits were stable at 0, 70 and 110 degrees (within about 0.5 cm-1); fits at 40 and 150 degrees diverged where a band is near zero. Angle convention (zero of the lab frame relative to crystal axes) is unknown, so only the period and phase relative to the data are reported. The 162 cm-1 fourfold classification uses fits with chi2 about 17-18 on 17 degrees of freedom.",
+    "92 cm-1 crossed: weak (window area about 840 counts on average, about 4 sigma), with a 90-degree-periodic modulation. This is not a clean fourfold pair, so it is reported as 'other'. Its pattern is consistent with a single diagonal in-plane tensor with principal axes near 70 and 160 degrees, but the signal is near noise.",
+    "227 cm-1 crossed: silent within noise (window area 126 counts, fit amplitude consistent with zero). A diagonal tensor with small anisotropy would give a crossed amplitude of only a few hundred counts, which could hide below noise, so 'silent' is an observation, not proof of zero Raman tensor component.",
+    "189 cm-1: the Xia et al. (2016) Ag mode at 190.7 cm-1 is reported as strongly anisotropic in parallel. This band is isotropic within about 5 percent, which conflicts with that report. Either this band is a different mode, or the sample orientation, the scattering geometry or the laser differ. The data alone cannot settle it.",
+    "Layer count, strain, doping and defect density cannot be determined from these four low-frequency bands. No relation was applied. Suspended sample thickness and flake orientation were not given.",
+    "Artifacts: 8 single-pixel excursions (about 300-700 counts above neighbours) were identified as cosmic-ray-like spikes and excluded from the fits (replaced by neighbour means). Their identification is based on shape only.",
+    "Resonance: at 532 nm the response of SnS is not checked against its excitonic transitions, so intensity ratios between bands are not interpreted."
+  ]
+}

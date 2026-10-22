@@ -1,0 +1,89 @@
+{
+  "candidates": [
+    {
+      "material": "Bi2Se3",
+      "confidence": 0.55,
+      "evidence": "The only strong line is at 181.4 cm-1 (FWHM about 8 cm-1). A weak, broad feature sits near 140 cm-1. The strong line is the closest match to the A1g(2) mode, and the 140 cm-1 feature is the closest match to Eg(2). Both lie 7-9 cm-1 above the usual positions (about 174 and 131 cm-1), and A1g(1) near 72 cm-1 is not seen. Only the 532 nm laser, a Raman spectrum and a layered-material context support this identification."
+    },
+    {
+      "material": "Bi2Te3",
+      "confidence": 0.05,
+      "evidence": "Its main modes are Eg(2) near 103, A1g(2) near 134 and A1g(1) near 62 cm-1. None of these match a dominant line at 181 cm-1."
+    },
+    {
+      "material": "Sb2Se3",
+      "confidence": 0.05,
+      "evidence": "It has its strongest lines near 190 and 210 cm-1 and a broad band around 150-160 cm-1. The single sharp line at 181 with no companion near 210 does not fit."
+    },
+    {
+      "material": "Sb2Te3",
+      "confidence": 0.03,
+      "evidence": "Its modes are near 69, 112 and 165 cm-1, so the 181 cm-1 line is 16 cm-1 too high."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given in the metadata, so the identification rests on the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 181.4,
+      "fwhm_cm1": 7.8,
+      "assignment": "A1g(2) out-of-plane Bi-Se stretch (blue-shifted vs. the usual ~174 cm-1)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Gaussian fit of the 60-260 cm-1 window gives position 181.40 \u00b1 0.1 and FWHM 7.8 \u00b1 0.3 cm-1. Assignment by comparison with Richter et al., Phys. Status Solidi B 84, 619 (1977), and Zhang et al., Nano Lett. 11, 2407 (2011), where bulk A1g(2) is about 174 cm-1."
+    },
+    {
+      "position_cm1": 140,
+      "fwhm_cm1": 15,
+      "assignment": "Eg(2) in-plane mode (tentative, weak and broad)",
+      "irrep": "Eg",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "The fitted hump is at about 140 \u00b1 1 cm-1, with an amplitude of about 950 counts against noise of about 370. It is only about 2.5 sigma, so its assignment is tentative. Compared with Eg(2) near 131 cm-1 in Richter 1977."
+    },
+    {
+      "position_cm1": 72,
+      "fwhm_cm1": null,
+      "assignment": "A1g(1) expected here but not detected",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Richter et al. 1977 give A1g(1) near 72 cm-1. The measured counts at 60-85 cm-1 average 6095, against 6122 at 90-110 cm-1, so there is no peak."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layered chalcogenide structure",
+      "value": "Consistent with a rhombohedral (D3d^5) Bi2Se3-type quintuple-layer crystal",
+      "provenance": "inferred",
+      "source": "Based on the match to the A1g(2) and Eg(2) positions"
+    },
+    {
+      "name": "blue shift of modes vs. bulk",
+      "value": "About +7 cm-1 on A1g(2). The cause cannot be determined. Possibilities include compressive strain, a different composition or a different crystal phase.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "background",
+      "value": "Sloping, fluorescence-like baseline. The signal-to-noise ratio is low, and the noise is about 370 counts on a baseline of 5000-7000 counts.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Richter, Becker, Renker, Phys. Status Solidi B 84, 619 (1977)",
+    "Zhang et al., Nano Lett. 11, 2407 (2011)"
+  ],
+  "limits": [
+    "The identification rests on one strong line plus one weak, broad feature. It is a best match and not a unique fingerprint.",
+    "The 181 cm-1 line is about 7 cm-1 above the usual Bi2Se3 A1g(2) position. The Eg(2) hump is about 9 cm-1 high. I cannot say whether this comes from strain, a different composition, calibration offset or another material.",
+    "A1g(1) near 72 cm-1 is absent. This could be because the signal-to-noise ratio is low or because of the sample, and I cannot tell which.",
+    "The data are not angle-resolved, so the polarization pattern of each mode is unknown. The irreps are assigned only by position.",
+    "The noise is high, so weak features such as the 140 cm-1 hump and any broad features above 250 cm-1 cannot be assigned. Peaks found in the noise above 250 cm-1 were not treated as real.",
+    "No Si peak at 520.7 cm-1 is detectable. The substrate is not given in the metadata, and it cannot be identified from these data.",
+    "Layer number, doping and strain cannot be quantified from a single unpolarized spectrum."
+  ]
+}

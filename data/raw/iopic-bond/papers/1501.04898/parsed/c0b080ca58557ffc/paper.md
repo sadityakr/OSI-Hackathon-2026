@@ -1,0 +1,182 @@
+---
+title: Raman fingerprint for semi-metal WTe2 evolving from bulk to monolayer
+citable_key: c0b080ca58557ffc
+n_pages: 19
+---
+
+# Raman fingerprint for semi-metal WTe2 evolving from bulk to monolayer
+
+Y. C. Jiang 1 , J. Gao 1, 2 & L. Wang 2, 3
+
+1 Center for Solid State Physics and Materials, School of Mathematics and Physics, Suzhou University of Science and Technology, Suzhou 215011, Jiangsu, China. 2 Department of Physics, The University of Hong Kong, Pokfulam Road, Hong Kong. 3 School of Materials Science and Engineering, Shanghai University, 333 Nanchen Road, Baoshan District, Shanghai 200444, China.
+
+## Abstract
+
+Tungsten ditelluride (WTe2), a layered transition-metal dichalcogenide (TMD), has recently demonstrated an extremely large magnetoresistance effect, which is unique among TMDs. This fascinating feature seems to be correlated with its special electronic structure. Here, we report the observation of 6 Raman peaks corresponding to the , , , , and phonons, from the 33 Raman-active modes predicted for WTe2. This provides direct evidence to distinguish the space group of WTe2 from that of other TMDs. Moreover, the Raman evolution of WTe2 from bulk to monolayer is clearly revealed. It is interesting to find that the mode, centered at ~109.8 cm -1 , is forbidden in a monolayer, which may be attributable to the transition of the point group from C2v (bulk) to C2h (monolayer). Our work characterizes all observed Raman peaks in the bulk and few-layer samples and provides a route to study the physical properties of two-dimensional WTe2
+
+Transition-metal dichalcogenides (TMDs) of the MX2 type, where M refers to Mo and W, and X refers to S, Se and Te, have attracted much attention as graphene-like semiconductors with remarkable electric, spintronic and optical properties. 1-7 The basic structure of bulk MX2 comprises two-dimensional (2D) X-M-X layers stacked through Van der Waals forces. Mono- and few-layer MX2 can be fabricated by the mechanical exfoliation method. 8 The physical properties of MX2 are greatly dependent on the number of layers. 9-11 Weak Van der Waals forces play a very important role in the interlayer bands and atomic vibration. As the thickness decreases, MX2 exhibits a transition from indirect to direct gaps, while the frequency of the Raman peaks shift away from those of the bulk sample. 12, 13
+
+Tungsten ditelluride (WTe2) is a unique TMD as it has the largest interlayer spacing, an orthorhombic lattice structure and a semi-metal electronic structure. 1, 14-16 This material has drawn extensive interest since the recent discovery of an extremely large magnetoresistance (XMR) effect in diamagnetic WTe2 single crystal, which has not been observed in other TMDs. 1 Such a fascinating feature implies potential spintronic applications for mono- and few-layer WTe2. However, to date, no study has examined the physical properties of the 2D WTe2 system. Raman spectroscopy is a powerful tool for investigating the symmetries of 2D semiconductors; it is necessary, therefore, to characterize the Raman fingerprint of WTe2 as it evolves from a 3D to a 2D system.
+
+This article reports the observation of Raman scattering in bulk and few-layer WTe2 samples. Six optical vibrational modes, , , , , and , were observed at room temperature. Density functional perturbation theory (DFPT) was used to calculate phonon branches, simulate Raman spectra and verify their corresponding optical phonons. Group analysis demonstrated that the lattice symmetry differentiated WTe2 from other TMDs. 17, 18 In our experiments, WTe2 flakes, exfoliated from a piece of bulk, showed strong thickness-dependent Raman spectra. As the number of layers increased, the , and modes softened (red-shift) and the and mode stiffened (blue-shift), suggesting that not only the interlayer Van der Waals coupling, but also stacking-induced structural changes or Coulombic interlayer interaction, affected the atomic vibration. It was also interesting to find that the mode was absent in the monolayer. This phenomenon may be attributable to the transition of the point group from C2v to C2h. Our results provide a well-defined and reliable method for determining the number of layers using Raman spectroscopy.
+
+## Results and discussions
+
+Fig. 1a shows the layered crystal structure of WTe2, in which tungsten layers are sandwiched between two neighboring tellurium sheets. The distance (0.703 nm) between two adjacent sandwich layers is the largest of all known TMDs. Most TMDs exhibit a hexagonal structure with the space group D 4 6h. However, naturally formed WTe2 reveals an orthorhombic unit cell with the space group C 7 2v (Pmn21), which may be derived from a distorted hexagonal net. 1, 15 The unit cell contains two tungsten atoms and four tellurium atoms. The two tungsten atoms (distinguished by W1 and W2) are not equivalent to each other and the W-Te bond length ranges from 2.7 to 2.8Å. WTe2 bulk exhibits the Td stacking order, in which the atoms in the upper layer are rotated by 180 degrees with respect to those in the lower layer. 17 The tungsten atoms also shift away from the center of the octahedron formed by the tellurium atoms. Therefore, the vibrational modes of Td-WTe2 are very different from those of 2H-MX2, and the previous calculation of vibrational modes, based on 2H-WTe2, is inapplicable to our experimental Raman results. 19
+
+Due to the C 7 2v symmetry group, the irreducible representations of the optical phonons in the bulk WTe2 at the center of the Brillouin zone (Γ point) are
+
+*(equation — not captured)*
+
+where all of the vibrational modes are Raman active, and the 11A1, 11B1 and 5B2 modes are infrared active. Here, the Raman tensors corresponding to different symmetries can be written as
+
+*(equation — not captured)*
+
+*(equation — not captured)*
+
+Although 33 Raman vibrations are predicted by group theory, only 6 Raman peaks were observed in our experiments. To distinguish these vibrational modes, we use 𝑍𝑚𝑛 (Z = A or B; m = 1 or 2; n = integer) to represent them. The frequency of 𝑍𝑚𝑛 mode is smaller than that of 𝑍𝑚𝑙 mode if n is larger than l. This method allows us to name all appropriate vibrational modes.
+
+DFPT has been put into use to calculate all 33 Raman vibrational modes. Among them, the atomic displacements of the six Raman active modes that could potentially explain our Raman results are shown in Fig. 1b. Compared with the Raman active modes of 2H-MX2, two non-equivalent W atoms (W1 and W2) are key factors to determine the anomalous Raman vibrations of WTe2.
+
+The Raman spectra of WTe2 bulk at room temperature are presented in Fig. 2a. Raman peaks centered at ~109.8 cm -1 , ~130.4 cm -1 ~162.5 cm -1 and 208.4 cm -1 were observed with Laser I applied in the z(xx)𝑧̅ geometry. Another two Raman peaks, centered at ~119.6 cm -1 and ~139.1 cm -1 , were observed with Laser II applied in the y(zz) 𝑦̅ geometry. . Due to the non-polarized Raman measurement, the i e and s e vectors are not along a- or c- axis in the either geometry. Thus, a total of six Raman peaks were identified in our experiments. Due to the non-polarized Raman measurements, the assignment of these Raman peaks could not be performed through symmetry analysis. Instead, we calculated the Raman intensities and spectrum (green curve in Fig. 2a) to verify the phonon modes corresponding to the observed Raman peaks. Only 6 Raman peaks were observed in comparison with 33 Raman modes in theory, which suggests that only those modes with high Raman intensities might appear experimentally. For example, Table 1 shows that for the first Raman peak (centered at ~109.8 cm -1 ), the , 5 and 𝐵 modes were all candidates, with frequencies close to ~110 cm -1 . Only the mode exhibited a sufficiently strong Raman intensity, whereas the intensities of the others were very weak. Therefore, the mode should be assigned to the first peak. Similarly, the (~119.6 cm -1 ), (~130.4 cm -1 ), (~139.1 cm -1 ), (~162.5 cm -1 ) and (~208.4 cm -1 ) modes were assigned frequencies from low to high, which agrees with the results in Ref. 21. It should be noted that although the mode was associated with the peak centered at ~208.4 cm -1 , the 1 mode still exhibited a strong Raman intensity and could not be neglected. It is very possible that the 1 and 1 modes both exist, but the difference between their frequencies is so small that they cannot be distinguished in the Raman spectra.
+
+As shown in Fig. 1b, the first five modes originate from the relative movements of Te atoms, while the A mode is due to the displacement between adjacent W1 and W2 atoms. and are pure longitudinal and transverse optical modes, respectively. For the in-plane configuration [z(xx)𝑧̅ ], the B1 and B2 modes are forbidden due to the forms of their Raman tensors. In the case of the out-of-plane configuration [y(zz) 𝑦̅], the A mode may be forbidden and the A Raman intensity vanishes. Instead, the and modes reveal significant Raman intensities. Here when we state that one mode is "forbidden", it means that a Raman mode is prevented from observing by group theory or unable to exist on account of the DFPT calculation, while "vanish" means a Raman mode is active in theory, but in a certain configuration its intensity is too weak to observe due to the specific parameters in its Raman tensor. To clarify this phenomenon, the relationship between Raman intensity and Raman tensor can be written as 20
+
+*(equation — not captured)*
+
+where es and ei are the scattered light and incident light vectors, respectively. This equation makes it easy to understand the anisotropy of the A mode. The specific values of a, b and c in the Raman tensors of the 1 1 and 1 modes determine the dependence on the laser configuration. In the case of Laser I, the and modes with very small values of a and b vanish, while the 1 mode appears due to its large value of b. There is a similar effect for Laser II: the and modes appear due to their large c values and the 1 mode vanishes due to its very small a and c values. The a, b and c values of the 1 and 1 modes are large enough for them to be observed in both configurations.
+
+Fig. 2b shows the calculated phonon dispersion curve in the Brillouin zone (BZ), and DOS for WTe2 bulk. There are three acoustic (green curves) and thirty-three optical (blue curves) phonon branches. Table 1 shows all of the calculated and experimental vibrational modes. The , , , , and modes are calculated to have strong Raman intensities at frequencies of ~110.0 cm -1 , ~119.4 cm -1 , ~130.0cm -1 , ~142.3 cm -1 , ~168.5 cm -1 , and 222.2 cm -1 , respectively. The good agreement between experimental and theoretical results supports our assignments of the Raman vibrational modes. Moreover, it is necessary to note that all calculations were done at zero temperature, while the Raman spectra were investigated at room temperature. However, the effect of temperature cannot influence the assignment of Raman modes. The frequency displacements between 5 K and 294 K are less than 4 cm -1 for all the observed Raman peaks. 21 Such small displacements would not misguide the association with specific phonon modes. In addition, all Raman peaks shift up in frequency with the temperature decreasing, which may explain why most of the calculated frequencies are higher than those measured in experiments.
+
+WTe2 flakes were fabricated on Si substrate with 300 nm SiO2 layer using the mechanical exfoliation method. As shown in Fig. 3a and b, an ultrathin WTe2 flake were first identified by an optical microscopy, and then imaged by AFM to determine their thickness. Fig. 3c shows that a monolayer WTe2 on SiO2 layer has the height of about 1.1 nm, while the height of monolayer on the WTe2 flake is 0.7~0.9 nm and close to the interlayer spacing (about 0.703 nm) of bulk.
+
+Fig. 4a illustrates Raman spectra of WTe2 evolving from bulk to monolayer. The four Raman active modes can be observed in 2L, 3L, 4L and 5L samples. It is interesting to note that the mode absent in the 1L sample, which may make it convenient to identify the WTe2 monolayer through Raman spectra. The frequency difference between the A modes of the 2L sample and bulk is about 2.7 cm -1 . The A and modes stiffen (blue-shifts) in frequency as the layer number increases, whereas the and modes soften (red-shift). The mode is the most stable and the displacement of its Raman shift, caused by the changing of thickness, is less than 1 cm -1 . In contrast, the mode is found to the most sensitive to the layer number, and shifts up by about 4.8 cm -1 with the layer number decreasing to one.
+
+With WTe2 evolving from bulk to monolayer, its point group changes from C2v to C2h. The irreducible representation of the optical phonons in a WTe2 monolayer at the Brillion zone center (Γ point) is expressed as:
+
+*(equation — not captured)*
+
+where 𝑔 and 𝐵𝑔 are Raman active; 𝑢 and 𝐵𝑢 are infrared active. Only nine Raman-active modes are allowed in the WTe2 monolayer. This implies that some Raman peaks, observed in bulk, may be forbidden in the monolayer. Based on the group analysis, we calculated phonon dispersion curve in BZ, and DOS for WTe2 monolayer as shown in Fig. 4b. There are three acoustic (green curves) and fifteen optical (blue curves) phonon branches.
+
+Vibrational modes of the WTe2 monolayer are exhibited in Table 2. To compare the vibrational modes of bulk with those of monolayer, we use the symmetry symbols of both C2v and C2h groups to name the corresponding modes. The atomic displacements of the Raman active modes were used to build a bridge between Raman modes of monolayer and bulk WTe2 as shown in Fig. 1b. For example, the and 𝐵 modes correspond to the 𝑔 mode in Table 2, which indicates that the 1 and 𝐵1 modes have the same atomic displacement as that of the mode. In the 1 mode, the upper and lower atom layers exhibit the same phase of the atomic oscillations. In the 𝐵1 mode, the upper atom layer has an anti-phase with respect to the lower atom layer. Both of the modes can be distinguished in the multilayer samples (layer number≥2), but turn into the 𝑔 mode in the monolayer.
+
+It is found that the mode is forbidden in the monolayer, which explains the absence of Raman peak. Fig. 4c shows the calculated Raman spectrum of the WTe2 monolayer. Only the 𝐵𝑔 mode is a candidate to correspond to the mode. However, Fig. 1b demonstrates that the atomic displacement of the 𝐵𝑔 mode is different from that of the mode, but the same as that of the 𝐵 mode. Therefore, the 𝐵𝑔 mode corresponds to the 𝐵 mode instead of the mode. On the basis of the theoretical analysis, the transition of point group from C2v (bulk) to C2h (monolayer) may be responsible for the absence of the mode. In addition, the atomic displacement of the mode shows that only the half of tellurium atoms participate in oscillation, while the other half remains still. This phenomenon may be attributed to the interlayer Van der Waals force. With WTe2 bulk evolving into monolayer, all of the tellurium atoms have to participate in oscillation due to lack of the interlayer Van der Waals force.
+
+The frequencies of the four modes as functions of the layer number are shown in Fig. 4d. It is observed that the , and modes soften and the and modes stiffen as WTe2 monolayer evolves into bulk. This implies that not only the interlayer Van der Waals coupling, but also stacking induced structure changes or Coulombic interlayer interaction can impact on the atomic vibration. 22 Our calculated results of the WTe2 monolayer confirmed shift directions of these vibrational modes.
+
+In summary, bulk and few-layer WTe2 have been studied using Raman spectroscopy. The six first-order Raman-active modes were observed at room temperature. DFPT and group theory were used to analyze frequencies of the Raman peaks and their corresponding vibration modes. It was found that the Raman peaks were correlated with the optical phonons of , , , , and . The mode was found to be forbidden in the monolayer due to the transition of point group from C2v (bulk) to C2h (monolayer). With the layer number increasing, the , and modes softened and the and modes stiffened. Our work characterized all Raman peaks observed in bulk and few-layer WTe2 and provided a route to study the physical properties of 2D WTe2.
+
+## Methods
+
+The WTe2 single crystals were prepared using a chemical vapor transport method described by Ref.1. WTe2 flakes were mechanically exfoliated from a piece of bulk single crystal onto Si wafers covered with a 300-nm-thick SiO2 layer. The few-layer samples were first identified by optical microscopy, and then measured by atomic-force microscopy (AFM) to determine the thickness. Micro-Raman spectroscopy was used to analyze the WTe2 under ambient conditions. Non-polarized and off-resonance Raman measurements were performed with a 514.5-nm excitation laser. When the WTe2 flakes were investigated, the power of the excitation laser was reduced to 0.5 mW to obtain reliable Raman spectra against the oxidation. Our calculation and analysis were performed on basis of DFPT and group theory, using the experimental lattice parameters a=3.496Å, b=6.282Åand c=14.07Åand the same wavelength of the incident light as that in experiments. 14 The exchange correlation potential was represented by the local density approximation (LDA). The Brillouin zone integrations were performed with a 16×8×4 Monkhorst-Pack k-point mesh by using a plane-wave energy cutoff of 500 eV. All DFPT calculations model was appropriate for explaining the off-resonance Raman spectrum using the CASTEP code. 23
+
+## Reference
+
+- Ali, M. N. et al. Large, non-saturating magnetoresistance in WTe2. Nature 514, 205-208 (2014).
+- Radisavljevic, B., Radenovic, A., Brivio, J., Giacometti, V. & Kis, A. Single-layer MoS2 transistors. Nat. Nano. 6, 147-150 (2011).
+- Coleman, J. N. et al. Two-dimensional nanosheets produced by liquid exfoliation of layered materials. Science 331, 568-571 (2011).
+- Geim, A. K. & Grigorieva, I. V. Van der Waals heterostructures. Nature 499, 419-425 (2013).
+- Gong, Y. et al. Vertical and in-plane heterostructures from WS2/MoS2 monolayers. Nat. Mater. 13, 1135-1142 (2014).
+- Zeng, H., Dai, J., Yao, W., Xiao, D. & Cui, X. Valley polarization in MoS2 monolayers by optical pumping. Nat. Nano. 7, 490-493 (2012).
+- Zeng, H. et al. Optical signature of symmetry variations and spin-valley coupling in atomically thin tungsten dichalcogenides. Sci. Rep. 3, 1608 (2013).
+- Novoselov, K. S. et al. Two-dimensional atomic crystals. Proc. Natl. Acad. Sci. U.S.A. 102, 10451-10453 (2005).
+- Lee, C., Yan, H., Brus, L. E., Heinz, T. F., Hone, J. & Ryu, S. Anomalous Lattice Vibrations of Single- and Few-Layer MoS2. ACS Nano 4, 2695-2700 (2010).
+- Li, H. et al. From Bulk to Monolayer MoS2: Evolution of Raman Scattering. Adv. Funct. Mater. 22, 1385-1390 (2012).
+- Yamamoto, M. et al. Strong Enhancement of Raman Scattering from a Bulk-Inactive Vibrational Mode in Few-Layer MoTe2. ACS Nano 8, 3895-3903 (2014).
+- Mak, K. F., Lee, C., Hone, J., Shan, J. & Heinz, T. F. Atomically Thin MoS2: A New Direct-Gap Semiconductor. Phys. Rev. Lett. 105, 136805 (2010).
+- Splendiani, A. et al. Emerging Photoluminescence in Monolayer MoS2. Nano Lett. 10, 1271-1275 (2010).
+- Brown, B. The crystal structures of WTe2 and high-temperature MoTe2. Acta
+Crysta. 20, 268-274 (1966).
+
+- Mar, A., Jobic, S. & Ibers, J. A. Metal-metal vs tellurium-tellurium bonding in WTe2 and its ternary variants TaIrTe4 and NbIrTe4. J. Am. Chem. Soc. 114, 8963-8971 (1992).
+- Kabashima, S. Electrical Properties of Tungsten-Ditelluride WTe2. J. Phys. Soc. Jpn. 21, 945-948 (1966).
+- Augustin, J. et al. Electronic band structure of the layered compound Td-WTe2. Phys. Rev. B 62, 10812-10823 (2000).
+- Rousseau, D. L., Bauman, R. P. & Porto, S. P. S. Normal mode determination in crystals. J. Raman Spectrosc. 10, 253-290 (1981).
+- Ataca, C., Şahin, H. & Ciraci, S. Stable, Single-Layer MX2 Transition-Metal Oxides and Dichalcogenides in a Honeycomb-Like Structure. J. Phys. Chem. C 116, 8983-8999 (2012).
+- Bower, D. I. Investigation of Molecular Orientation Distributions by Polarized Raman Scattering and Polarized Fluorescence. J. Polym. Sci.:Polym. Phys. Ed. 10, 2135-2153 (1972)
+- Kong, W.-D. et al. Raman scattering investigation of large positive magnetoresistance material WTe2. Appl. Phy. Lett. 106, 081906 (2015).
+- Wieting, T. J. & Verble, J. L. Interlayer Bonding and the Lattice Vibrations of β-GaSe. Phys. Rev. B 5, 1473-1479 (1972).
+- Clark, S. J. et al. First principles methods using CASTEP. Z. Kristallogr 220, 567 (2005).
+## Acknowledgements
+
+The authors thank Dr. An Zhao, Dr. Bairen Zhu and Dr. Xiangbo Liu for their fruitful discussions, and Miss Manxiu Feng for her technique support. This work has been supported by the National Key Project for Basic Research (No. 2014CB921002), the National Natural Science Foundation of China (Grant No. 11504254, 11374225, 11574227), and the Research Grant Council of Hong Kong (Project code:701813). This work is also supported by the Priority Academic Program Development of Jiangsu Higher Education Institutions and the USTS Cooperative Innovation Center for Functional Oxide Films and Optical Information.
+
+## Author contributions
+
+J.G. proposed and led the project. Y.C.J. designed and did all the experiments. Y.C.J. and L.W. performed the DFPT calculations. Y.C.J. and J.G. wrote the manuscript and prepared all figures together.
+
+## Additional information
+
+Competing financial interests: The authors declare no competing financial interests.
+
+![[figures/fig1.md]]
+
+![[figures/fig2.md]]
+
+zone, and vibrational density of states (DOS) for WTe2 bulk at the equilibrium volume. Blue and green curves are optical and acoustic vibrational branches, respectively.
+
+![[figures/fig3.md]]
+
+![[figures/fig4.md]]
+
+vibrational branches, respectively. (c) Calculated Raman spectrum for the WTe2 monolayer. (d) Frequencies of the , , and modes as functions of the layer number.
+
+| Symmetry | Raman Activity | Infrared Activity | Experimental Frequency (cm -1 ) | Calculated Frequency (cm -1 ) |
+| --- | --- | --- | --- | --- |
+|  | Y | Y |  | 10.9 |
+| 𝐵 | Y | Y |  | 23.9 |
+|  | Y | N |  | 29.7 |
+| 0 | Y | Y |  | 69.3 |
+| 𝐵 0 | Y | Y |  | 84.8 |
+| 𝐵 | Y | Y |  | 99.3 |
+|  | Y | N |  | 103.9 |
+|  | Y | N | 109.8 | 110.0 |
+| 𝐵 | Y | Y |  | 112.5 |
+|  | Y | N |  | 114.0 |
+| 𝐵 | Y | Y |  | 117.4 |
+|  | Y | Y | 119.6 | 119.4 |
+| 𝐵 | Y | Y |  | 122.1 |
+| 𝐵 | Y | Y |  | 127.9 |
+| 𝐵 7 | Y | Y |  | 129.5 |
+|  | Y | Y | 130.4 | 130.0 |
+| 7 | Y | Y |  | 136.0 |
+| 𝐵 | Y | Y |  | 137.3 |
+|  | Y | Y | 139.1 | 142.3 |
+|  | Y | N |  | 160.0 |
+| 𝐵 | Y | Y |  | 160.1 |
+| 𝐵 | Y | Y |  | 163.3 |
+|  | Y | Y | 162.5 | 168.5 |
+|  | Y | N |  | 180.1 |
+| 𝐵 | Y | Y |  | 181.2 |
+| 𝐵 | Y | Y |  | 188.6 |
+|  | Y | Y |  | 189.7 |
+|  | Y | Y |  | 217.3 |
+| 𝐵 | Y | Y |  | 218.1 |
+|  | Y | Y | 208.4 | 222.2 |
+| 𝐵 | Y | Y |  | 223.1 |
+
+**Table 1**
+
+| 𝐵 | Y | Y | 238.1 |
+| --- | --- | --- | --- |
+|  | Y | Y | 241.7 |
+
+**Table 2**
+
+| Symmetry | Symmetry (bulk) | Symmetry (bulk) | Experimental Frequency (cm -1 ) | Calculated Frequency (cm -1 ) |
+| --- | --- | --- | --- | --- |
+| 𝑔 | 0 or | 𝐵 0 |  | 81.4 |
+| 𝐵𝑔 | or | 𝐵 |  | 93.2 |
+| 𝐵𝑔 |  | 𝐵 |  | 108.5 |
+| 𝑢 | or | 𝐵 |  | 114.3 |
+| 𝑔 |  |  |  | 118.5 |
+| 𝐵𝑢 |  | 𝐵 |  | 132.2 |
+| 𝐵𝑢 | 7 | or 𝐵 7 |  | 135.1 |
+| 𝑔 | or | 𝐵 | 132.8 | 137.2 |
+| 𝑢 | 𝐵 | 7 or 𝐵 |  | 156.6 |
+| 𝑔 | or | 𝐵 | 161.9 | 164.5 |
+| 𝐵𝑔 |  | or 𝐵 |  | 185.7 |
+| 𝐵𝑢 |  | or 𝐵 |  | 190.2 |
+| 𝑔 |  |  |  | 220.3 |
+| 𝑔 |  |  | 213.2 | 222.6 |
+| 𝐵𝑢 |  | or 𝐵 |  | 247.2 |

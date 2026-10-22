@@ -1,0 +1,70 @@
+{
+ "key": "2142f838d1391877",
+ "score": 0.9583333333333334,
+ "by_kind": {
+  "finding": 1.0,
+  "quantitative": 1.0,
+  "caveat": 1.0,
+  "question": 0.5
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 1,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report says I_D/I_G rises 0.247\u21920.569\u21921.192 and D' 'appears and grows with dose', while G FWHM stays at 13.56\u201314.15 cm\u207b\u00b9 and 2D at 'FWHM 32.1, 32.1, 31.9 cm\u207b\u00b9'; it treats doses 1\u20133 with the stage-1 relation and concludes the 'only thing changing is disorder'."
+   },
+   {
+    "id": "n1",
+    "met": 1,
+    "why": "Using peak heights it gives 'L_D \u2248 24.2, 15.9, 11.0 nm' for I_D/I_G 0.247, 0.569, 1.192; the prefactor ranges (20.5\u201327.3, 13.5\u201318.0, 9.3\u201312.4 nm) fall within the rubric ranges."
+   },
+   {
+    "id": "c1",
+    "met": 1,
+    "why": "It writes the relation explicitly as 'L_D = sqrt(1.8e-9 \u00b7 \u03bb\u2074 / (I_D/I_G)) with \u03bb = 532 nm (\u03bb\u2074 = 8.0e10 nm\u2074)', so it uses the wavelength dependence rather than 514.5 nm constants; it does not separately say that the same ratio gives a different L_D at another laser line."
+   },
+   {
+    "id": "f2",
+    "met": 1,
+    "why": "It notes that dose 4 has a lower I_D/I_G (0.56\u20130.76), broad G/D (45\u201365 cm\u207b\u00b9) and the '2D band nearly gone', and says 'the apparent drop from dose 3 to dose 4 must not be read as healing' and that the relation is not valid there; it does not give L_D < 3 nm explicitly, and it calls dose 4 amorphisation rather than stage 2."
+   },
+   {
+    "id": "f3",
+    "met": 1,
+    "why": "It reports 'I_D/I_D' = 6.1\u00b12, 6.1\u00b10.6, 6.9\u00b10.3' as 'closer to a vacancy-like' signature, citing Eckmann values '\u224813 sp\u00b3, \u22487 vacancy, \u22483.5 boundary'; it does not state the low-density validity limit."
+   },
+   {
+    "id": "c2",
+    "met": 1,
+    "why": "It clearly says it uses peak heights ('height ratio I_D/I_G') and also reports area ratios (0.243, 0.609, 1.255), though it does not say Can\u00e7ado's relation is calibrated on heights."
+   },
+   {
+    "id": "q1",
+    "met": 0.5,
+    "why": "It asks 'What is dose in physical units (ion species, energy and fluence; laser exposure; electron dose)?', but only to fit a dose law, not because the point-defect relation and the D/D' ratio depend on defect type."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "It explicitly says the dose-4 drop 'must not be read as healing' and gives dose 4 no L_D ('not valid for dose4')."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "It uses \u03bb = 532 nm in the \u03bb\u2074 relation."
+   },
+   {
+    "id": "w3",
+    "made": false,
+    "why": "It treats the 2154.1 cm\u207b\u00b9 feature as 'one cosmic spike removed (dose 2, 2154.1 cm\u207b\u00b9, +7160 counts)'."
+   }
+  ],
+  "citation_specificity": 1
+ },
+ "judge_model": "claude-opus-5-5"
+}

@@ -1,0 +1,117 @@
+{
+  "summary": "Dose 1 to 3 are in the stage-1 (low-defect) regime. The D/G height ratio rises 0.25 \u2192 0.57 \u2192 1.19, which maps to inter-defect distance L_D \u2248 24 \u2192 16 \u2192 11 nm and defect density \u2248 5.5e10 \u2192 1.3e11 \u2192 2.6e11 cm\u207b\u00b2 (about \u00d75, \u00b1~35% from the calibration constant). Dose 4 is past the D/G maximum (stage 2, amorphisation): D/G has fallen to 0.58 while the G band broadened \u00d73.3 and up-shifted by +11 cm\u207b\u00b9, and the 2D band has nearly vanished. The lower D/G at dose 4 means lost sp\u00b2 crystallinity, not fewer defects, so no L_D or defect density can be read from it with the stage-1 relation. Dose 4 is the most damaged spectrum. Absolute defect density per step is therefore only defined for doses 1 to 3.",
+  "observations": [
+    {
+      "finding": "D/G height ratio (Lorentzian fits, 532 nm): dose1 0.250, dose2 0.569, dose3 1.191, dose4 0.584; area ratios 0.26, 0.60, 1.26, 0.76. Dose 1 to 3 are stable to <1% across fit windows (1150-1800 and 1200-1750 cm-1) and baseline order (linear or quadratic); dose 4 spans 0.57-0.63.",
+      "evidence": "Single-spectrum Lorentzian fits of D (1346-1352 cm-1), G (1580-1592 cm-1) and D' (1611-1622 cm-1) on a local polynomial baseline, scipy curve_fit, per-spectrum fit. Despiked one cosmic ray in dose2 at 2154.08 cm-1 (7466 counts vs ~300 neighbours) before fitting; Si line is outside D/G window.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Dose 1 to 3 lie on the stage-1 branch: the D/G ratio increases with dose and G FWHM stays at ~14 cm-1 (13.8-14.0). Using L_D^2 = 1.8e-9 * lambda^4 / (I_D/I_G) with lambda = 532 nm gives L_D = 24.0 nm (20-27), 15.9 nm (13.5-18), 11.0 nm (9.4-12.4). Defect density with n_D = 1e14/(pi L_D^2) gives 5.5e10, 1.3e11, 2.6e11 cm^-2 (ranges 4.3-7.6e10, 9.8e10-1.7e11, 2.1-3.6e11). Using area ratios instead of heights changes L_D by <3%.",
+      "evidence": "lambda^4 = 8.01e10 nm^4, C*lambda^4 = 144.2 nm^2. Range from C = (1.8 +/- 0.5)e-9 nm^2. Dose 3 at L_D \u2248 11 nm sits at the lower edge of the stated validity (L_D >= 10 nm).",
+      "provenance": "inferred",
+      "source": "arXiv:1105.0175 (Cancado et al., Nano Lett. 2011 as I recall it; in the iopic-bond library): Fig. 4 and its text (low-defect regime L_D >= 10 nm; solid curve E_L^4 (I_D/I_G) vs L_D). My reading of the Fig. 4 solid curve is E_L^4 (I_D/I_G) \u2248 4250/L_D^2 eV^4 nm^2, consistent with C \u2248 1.8e-9 nm^2 within the paper's stated \u00b130%. I did not parse the equation text directly."
+    },
+    {
+      "finding": "Dose 4 is past the D/G maximum (stage 2). G FWHM jumps from 13.8-14.0 to 44.7-49.1 cm-1, G moves from 1580.4 to 1591.5 cm-1 (+11), and the 2D/G height ratio falls from ~3.0 to ~0.06.",
+      "evidence": "Dose 1 to 3: 2D height/G height 3.02, 2.98, 2.97; 2D FWHM 31.9-32.1 cm-1. Dose 4: 2D fit runs into its width bound (FWHM 120 cm-1, height 186), so the 2D value is not reliable, though the collapse is large (~50x) and robust. D' is merged into G at dose 4 (fitted I_D'/I_G = 0.05 with \u00b120 cm-1 uncertainty), so the G position is a merged G+D' value.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The G-width behaviour is what separates stage 1 from stage 2 here. Before the D/G maximum G FWHM is constant ~14 cm-1 and the G dispersion is zero; the broadening onset coincides with the D/G maximum.",
+      "evidence": "Dose 1 to 3 at constant G FWHM 13.8-14.0 cm-1; dose 4 at 45-49 cm-1, i.e. \u00d73.3.",
+      "provenance": "literature",
+      "source": "arXiv:1105.0175, Fig. 5(c) caption and text: G FWHM 'remains roughly constant at ~14 cm-1 until the onset of the second stage of amorphization, corresponding to the maximum I_D/I_G'; Fig. 3: I_D/I_G increases as L_D decreases (stage 1), peaks at L_D ~3 nm, falls to zero below 3 nm (stage 2)."
+    },
+    {
+      "finding": "The Si 520.9 cm-1 line is the same in all four spectra (scatter < 0.1 cm-1), so the spectrometer calibration is stable and the G shift at dose 4 is not a calibration artifact. Si intensity varies 4646-6846 counts (\u00b120%) between steps, so focus or alignment changed between acquisitions.",
+      "evidence": "Si fit centres 520.91, 520.90, 520.91, 520.88 cm-1; Si heights 5395, 6846, 4646, 6193 counts.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Dose 1 to 3 look like a monolayer from the 2D band alone: 2D FWHM ~32 cm-1 and 2D/G \u2248 3.0. I did not verify a literature source for these thresholds in this session.",
+      "evidence": "Single-spectrum fits; dose 1 2D FWHM 32.1, dose 2 31.9, dose 3 32.0; 2D/G height 3.0 in each.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "I_D'/I_G rises with the D band in stage 1 (0.04, 0.09, 0.17 for dose 1-3) and drops at dose 4 (0.05, merged with G).",
+      "evidence": "D' heights from the three-Lorentzian fit; the dose 4 D' fit is poorly constrained (FWHM \u00b122 cm-1).",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer, consistent with 2D FWHM ~32 cm-1 and 2D/G \u2248 3.0 at doses 1-3)",
+      "provenance": "inferred",
+      "source": "measured 2D width and 2D/G ratio; monolayer thresholds not verified against a literature source in this session"
+    },
+    {
+      "name": "defect_level",
+      "value": "low (dose 1), low (dose 2), medium (dose 3, L_D \u2248 11 nm at the edge of the stage-1 validity), high (dose 4, stage 2)",
+      "provenance": "inferred",
+      "source": "arXiv:1105.0175 Figs. 3-5 (stage definitions and low-defect regime L_D >= 10 nm)"
+    },
+    {
+      "name": "L_D_nm",
+      "value": "dose 1: 24.0 (20-27); dose 2: 15.9 (13.5-18); dose 3: 11.0 (9.4-12.4); dose 4: not given by the stage-1 relation (stage 2; a rough L_D of order 1-2 nm is only my reading of the dotted curve in Fig. 4)",
+      "provenance": "inferred",
+      "source": "arXiv:1105.0175 Fig. 4 (stage-1 relation L_D^2 = 1.8e-9 lambda^4 / (I_D/I_G), low-defect regime L_D >= 10 nm)"
+    },
+    {
+      "name": "defect_density_cm2",
+      "value": "dose 1: 5.5e10 (4.3-7.6e10); dose 2: 1.3e11 (1.0-1.7e11); dose 3: 2.6e11 (2.1-3.6e11); dose 4: not defined by the stage-1 relation",
+      "provenance": "inferred",
+      "source": "n_D = 1e14/(pi L_D^2) with L_D from arXiv:1105.0175 (area per defect taken as a circle of radius L_D; this convention is mine, not the paper's)"
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Dose 1-3 G and 2D positions are not shifted relative to each other; the G and 2D shifts in dose 4 are dominated by disorder, so no strain conclusion is drawn"
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No reference G/2D position was used for an undoped flake; the dose 4 G up-shift is attributed to disorder, but doping is not excluded"
+    }
+  ],
+  "caveats": [
+    "Stage 1 vs stage 2 for dose 3 rests on G FWHM staying ~14 cm-1 (13.8-13.9 cm-1) and the paper's statement that G broadening starts at the D/G maximum. The I_D/I_G value itself (1.19) cannot tell the two branches apart; I_D/I_G = 1.19 at 532 nm is near the peak region.",
+    "The L_D relation was applied outside its stated low-defect regime for dose 3 (L_D \u2248 11 nm vs the paper's L_D >= 10 nm); the result is only marginally inside the validity range.",
+    "The absolute defect density depends on the constant C = (1.8 \u00b1 0.5)e-9 nm^2 (\u00b128%) and on the convention n_D = 1e14/(pi L_D^2); the second is my convention, not checked against the paper's definition. Only ratios between doses are robust.",
+    "The calibration constant was checked against the paper's Fig. 4 solid curve by reading the plot, not by reading eq. 3 text; the constant could differ by ~20-30%.",
+    "The Lorentzian height ratio and the area ratio differ by 5-25% (dose 3: 1.19 vs 1.26). Literature normally uses one of these; the choice shifts L_D by up to ~5%.",
+    "The ratio depends on the excitation energy through lambda^4 (532 nm used). Dose 1-3 defect densities scale with I_D/I_G and would change by \u00d72.3 to 532 nm if the laser energy were off by ~20%.",
+    "Dose 4 2D fit hits its width bound (FWHM 120 cm-1); the 2D/G value there is unreliable, though the ~50x drop is clear. D' at dose 4 is merged into G, so the G position and width at dose 4 are merged-band values.",
+    "Si line intensity varies \u00b120% between steps (focus or alignment), so absolute intensities across doses are not comparable; only within-spectrum ratios are used.",
+    "The dose 4 G up-shift (+11 cm-1) is attributed to disorder. p-doping can also shift G up, but doping usually narrows G, and G broadens here (14 \u2192 46 cm-1), so doping is not the leading explanation. No 2D-position shift was used to separate the two (2D at dose 4 is unfit).",
+    "Possible alternative for dose 4: contamination, a changed spot, or laser-induced damage that also alters the D/G ratio. The spot identity across steps is not documented."
+  ],
+  "questions_for_user": [
+    "What is the 'dose'? Ar+ or other ion dose (ions/cm\u00b2), electron dose, plasma or laser dose? Converting the defect density into a per-dose efficiency needs the nominal dose in ions/cm\u00b2. The stage-1 relation assumes point-defect (ion-type) disorder; other damage types can behave differently.",
+    "Was the same spot measured at each dose, and was the laser power (nominal 1 mW) verified at each step? The Si intensity changes by \u00b120% between spectra, which suggests focus or alignment drift.",
+    "Is the dose 4 spectrum from the same spot? The loss of 2D and the G broadening are large enough that a contaminated or amorphised area is possible.",
+    "Was the substrate or flake thickness checked at each step (for example by optical contrast)? The monolayer assignment here is inferred from 2D width and 2D/G only.",
+    "Do you have a reference spectrum of pristine graphene on the same substrate and at 532 nm? That gives an undamaged G position and width to test the doping and strain alternatives directly."
+  ],
+  "citations": [
+    "arXiv:1105.0175 (Cancado et al., Nano Letters 2011, as I recall it; the iopic-bond library holds this preprint with five figures) \u2014 Fig. 3 (I_D/I_G vs L_D; stage 1 for L_D > 3 nm, maximum at L_D ~ 3 nm, stage 2 below), Fig. 4 (E_L^4 I_D/I_G vs L_D; low-defect regime L_D >= 10 nm; stage-1 solid curve), Fig. 5(c) (G FWHM ~14 cm-1 constant until the onset of stage 2 at max I_D/I_G)."
+  ],
+  "limits": [
+    "I used only the four CSVs in the working folder. The skill's scripts, reference notes and material literature note live outside that folder; per the instructions I did not read them. All fitting was my own scipy/lmfit code.",
+    "The stage-1 constant (1.8e-9 nm^2) and the stage boundaries are from arXiv:1105.0175 (Fig. 3, 4, 5 as read from the figures and captions); I did not parse eq. 1 or eq. 3 text. Confirm against the published Nano Letters version before quoting numbers.",
+    "The defect-density convention n_D = 1e14/(pi L_D^2) is my own; check it against the paper's definition.",
+    "The monolayer thresholds (2D FWHM ~32 cm-1 and 2D/G \u2248 3) are standard expectations I did not verify against a source here.",
+    "Stage 2 cannot be converted to an L_D or density with the stage-1 relation. The dose 4 L_D of order 1-2 nm is a rough read of the dotted curve in Fig. 4 and is not a fit result.",
+    "The data cannot tell the dose type or the absolute number of defects. Only the ratio of D/G and the relative changes across doses are measured.",
+    "Raman alone cannot separate sp2 vacancy density from amorphous carbon fraction at dose 4; XPS, TEM or a pristine reference would be needed.",
+    "The Si line at 520.9 cm-1 is compared to the nominal 520.7 cm-1 from general knowledge, not from a file in this folder."
+  ]
+}

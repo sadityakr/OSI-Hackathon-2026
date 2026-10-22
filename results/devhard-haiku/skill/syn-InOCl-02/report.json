@@ -1,0 +1,81 @@
+{
+  "candidates": [],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to verify. The material is not identified: the spectrum shows only three bands above noise (155.3, 298.9 and 352.8 cm-1). The bands fit an in-plane anisotropic, low-symmetry layered crystal (one isotropic band at 155 cm-1, two orthogonal anisotropic bands at 299 and 353 cm-1), but no reference in the consulted sources matched this set of positions and polarization pattern. The bundled Computational Raman Database matcher and curated reference tables were not run (outside the working folder), and the two literature concept searches did not return a reference spectrum that matches. The working folder name was not used as evidence.",
+  "peaks": [
+    {
+      "position_cm1": 155.32,
+      "fwhm_cm1": 3.24,
+      "assignment": "unassigned (no reference matched); isotropic in plane, A-like polarization",
+      "irrep": null,
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Lorentzian fit to angle-averaged parallel spectrum (centre 155.32 +- 0.02, HWHM 1.62 +- 0.03); pattern from per-angle linear fits (parallel mean 7.8e3 counts, +-5%; crossed consistent with zero). The A-like label is inferred from the polarization pattern; not verified against a reference."
+    },
+    {
+      "position_cm1": 298.95,
+      "fwhm_cm1": 4.69,
+      "assignment": "unassigned (no reference matched); in-plane anisotropic",
+      "irrep": null,
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Lorentzian fit to angle-averaged parallel spectrum (centre 298.95 +- 0.14, HWHM 2.35 +- 0.26). Parallel intensity fits cos^2(theta - 38 deg) (chi2 89 for 15 dof); crossed is modulated with period 90 deg, best fit sin^2(2(theta - 39 deg)) (chi2 23 for 15 dof). The two configurations do not share one class, so 'other'."
+    },
+    {
+      "position_cm1": 352.79,
+      "fwhm_cm1": 4.48,
+      "assignment": "unassigned (no reference matched); in-plane anisotropic, orthogonal to the 299 cm-1 band",
+      "irrep": null,
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Lorentzian fit to angle-averaged parallel spectrum (centre 352.79 +- 0.06, HWHM 2.24 +- 0.10). Parallel intensity fits a + b cos^2(theta - 127 deg) with chi2 21 for 15 dof (contrast about 15x, maximum near 127 deg, minimum near 37 deg). Crossed is weak (mean 210 +- 45 counts) and does not fit a twofold form (chi2 42 for 15 dof), so the class rests on the parallel data."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "unidentified",
+      "provenance": "measured",
+      "source": "No candidate reached the threshold for an identification; see limits."
+    },
+    {
+      "name": "in_plane_anisotropy",
+      "value": "yes; parallel maxima at ~38 deg (299 cm-1) and ~127 deg (353 cm-1), with crossed zeros at ~39 and ~129 deg",
+      "provenance": "measured",
+      "source": "Per-angle fits of the 299 and 353 cm-1 bands; the two anisotropic axes are orthogonal to each other within the 10 deg angle step."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "Not determinable from this spectrum: no reference band positions were available, so no shift relative to a reference could be measured. Stated as a limit, not a result."
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "No layer-number relation was applied; the thickness of the suspended flake is not given and no reference spectrum was matched."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray (single-pixel spike, 9517 counts vs ~400 background, crossed configuration, 70 deg)",
+      "position_cm1": 382
+    },
+    {
+      "type": "zero-clipped noise (about 12.5 percent of points exactly 0 in both configurations, across the full 60-722 cm-1 range; per-pixel noise sigma about 310 counts). Fits use the full window and do not treat zeros as signal, but the clipping slightly biases per-angle baselines and small crossed amplitudes.",
+      "position_cm1": null
+    }
+  ],
+  "citations": [],
+  "limits": [
+    "Material not identified. The spectrum has only three bands above noise, and the matcher and reference tables that could rank candidates were not run: the skill's bundled scripts and reference files live outside the working folder, and the task restricts reading outside it. Any identification would need a matcher run against the full mode database, or a reference spectrum for a candidate material measured at 532 nm.",
+    "Literature: two concept searches (in-plane anisotropic Raman of layered orthorhombic materials; layered oxyhalide MOX Raman) returned general papers (for example alpha-MoO3 and black phosphorus polarization studies). I did not open those papers or their figures, and no reference spectrum with this three-band pattern came up. Nothing from them is cited for an assignment.",
+    "Symmetry reasoning (not a result of a verified reference): the isotropic 155 cm-1 band (parallel flat, crossed zero) is consistent with a totally symmetric mode whose in-plane components are equal. The 299 and 353 cm-1 bands with orthogonal parallel maxima and a shared crossed-zero axis pair are consistent with a diagonal in-plane Raman tensor of a low-symmetry (orthorhombic-type or lower) crystal. This suggests but does not establish the point group, and it does not exclude trigonal or hexagonal stacking with a stacking-related mode.",
+    "Polarization: the 155 cm-1 band's parallel twofold fit is marginal (delta chi2 about 9 for two parameters, a modulation of about 5 percent), so it is classed isotropic_par_only, but this could be a systematic. The crossed intensities at 299 and 353 cm-1 are weak relative to the 310-count per-pixel noise and were fitted from angle-averaged-width templates, so their angular shape is the least certain part of the classification. The 299 cm-1 band's parallel and crossed patterns have different periods (180 and 90 degrees), so the 'other' class is a summary, not a symmetry label.",
+    "Measurement conditions: 532 nm excitation near possible electronic resonances can change relative intensities and activate second-order bands, so the bands assigned here as fundamental might not all be first-order modes. Temperature is 295 K, no heating correction applied. Suspended geometry gives no substrate lines; none were seen (no Si at 520.7 cm-1).",
+    "Calibration: no reference line (for example Si 520.7 cm-1) is in the spectrum, so absolute positions have an uncertainty set by the spectrometer calibration, which is not given. Quoted uncertainties are fit statistics only.",
+    "Angle sampling: 18 angles at 10 deg steps, 0 to 170 deg; the 180-deg period is assumed for the twofold fits. Per-angle fits (noise about 310 counts per pixel) carry roughly 200 counts of uncertainty per band, so the fitted angle of maximum has uncertainty of several degrees.",
+    "Not verified: the folder path contains a material-like label; it is not measurement evidence and was not used."
+  ]
+}

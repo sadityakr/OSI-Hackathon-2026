@@ -1,0 +1,138 @@
+{
+  "candidates": [
+    {
+      "material": "monolayer graphene (CVD/synthetic-like, on SiO2/Si)",
+      "confidence": 0.9,
+      "evidence": "G at 1581 cm-1 (FWHM ~14), single symmetric Lorentzian 2D at 2699 cm-1 (FWHM ~32), I2D/IG \u2248 2.7\u20133 (peak height); weak D at 1347.8 cm-1."
+    },
+    {
+      "material": "Bilayer graphene",
+      "confidence": 0.05,
+      "evidence": "2D would be broader (~50+ cm-1) and multi-component with I2D/IG \u2272 1; not seen."
+    },
+    {
+      "material": "Turbostratic/decoupled few-layer graphene",
+      "confidence": 0.04,
+      "evidence": "Can give a single Lorentzian 2D, but 2D FWHM ~32 and high I2D/IG favour a monolayer."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given. The task was identification from the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 1347.8,
+      "fwhm_cm1": 14.7,
+      "assignment": "D band (defect-activated breathing mode, near-K TO phonon)",
+      "irrep": "A1' (K-point, defect-activated)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of the spectrum; assignment per Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)"
+    },
+    {
+      "position_cm1": 1581.2,
+      "fwhm_cm1": 14.1,
+      "assignment": "G band (in-plane C\u2013C stretch, zone-centre LO/TO)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of the spectrum; Ferrari et al., PRL 97, 187401 (2006)"
+    },
+    {
+      "position_cm1": 2699,
+      "fwhm_cm1": 31.9,
+      "assignment": "2D band (second-order D, double resonance), single Lorentzian",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of the spectrum; Ferrari et al., PRL 97, 187401 (2006)"
+    },
+    {
+      "position_cm1": 520.7,
+      "fwhm_cm1": null,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Expected Si first-order line. It lies outside the measured window (1100\u20133000 cm-1), so it was not observed."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1",
+      "provenance": "inferred",
+      "source": "Single-Lorentzian 2D with FWHM ~32 cm-1 and I2D/IG \u2248 2.7\u20133 (Ferrari 2006; Ni et al., Nano Lett. 8, 2008)"
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "ID/IG \u2248 0.16 (height ratio) or 0.17 (area ratio), stage-1 regime (Can\u00e7ado et al., Nano Lett. 11, 3190 (2011))"
+    },
+    {
+      "name": "L_D_nm",
+      "value": "~29 (roughly 25\u201335, order-of-magnitude estimate)",
+      "provenance": "inferred",
+      "source": "Can\u00e7ado 2011: L_D\u00b2 = 1.8e-9\u00b7\u03bb\u2074\u00b7(IG/ID) nm\u00b2, with \u03bb = 532 nm and IG/ID \u2248 5.9 (area ratio). This is valid only for point-like defects in the low-defect regime. The equivalent defect density is ~4e10 cm-2."
+    },
+    {
+      "name": "defect_type",
+      "value": "Likely point-like (sp3-type or vacancy-type) defects. Grain or edge boundaries are not favoured but cannot be excluded. D' is not resolved, so ID/ID' is only bounded at \u22735.",
+      "provenance": "inferred",
+      "source": "Eckmann et al., Nano Lett. 12, 3925 (2012): ID/ID' \u2248 13 for sp3, \u2248 7 for vacancies, \u2248 3.5 for boundaries"
+    },
+    {
+      "name": "doping_type",
+      "value": "not determinable; low/moderate doping at most",
+      "provenance": "inferred",
+      "source": "G is not blue-shifted (1581 cm-1), G FWHM is ~14 cm-1, and I2D/IG is high. Das et al., Nat. Nanotechnol. 3, 210 (2008)"
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determinable",
+      "provenance": "inferred",
+      "source": "The 2D position (2699 cm-1) is higher than the usual ~2680 cm-1 for neutral graphene at 532 nm, but G is not up-shifted. Strain and doping cannot be separated without a calibrated reference or a Pos(G)\u2013Pos(2D) vector analysis (Lee et al., Nat. Commun. 3, 1024 (2012))."
+    },
+    {
+      "name": "background",
+      "value": "Broad smooth hump, ~2.2\u20133.3k counts at 1100\u20131700 cm-1 falling to ~1.2\u20131.4k at 2500\u20133000 cm-1",
+      "provenance": "measured",
+      "source": "Median-binned intensity. Likely a luminescence or substrate background."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "Smooth broad luminescence/substrate background hump, subtracted locally in the fits",
+      "position_cm1": null
+    },
+    {
+      "type": "Noise ripples at ~1178 and ~1249 cm-1 (only ~200\u2013300 counts above the local level, comparable to the ~100-count noise). They are not reproducible features and were not assigned.",
+      "position_cm1": 1249
+    },
+    {
+      "type": "Isolated noise point at ~2039 cm-1, not a real peak",
+      "position_cm1": 2039
+    },
+    {
+      "type": "No cosmic-ray spikes were identified among the reported peaks",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Ferrari et al., Phys. Rev. Lett. 97, 187401 (2006)",
+    "Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013)",
+    "Can\u00e7ado et al., Nano Lett. 11, 3190 (2011)",
+    "Eckmann et al., Nano Lett. 12, 3925 (2012)",
+    "Das et al., Nat. Nanotechnol. 3, 210 (2008)",
+    "Lee et al., Nat. Commun. 3, 1024 (2012)"
+  ],
+  "limits": [
+    "L_D is a rough estimate. It assumes point-like defects, a single 532 nm excitation and the Can\u00e7ado calibration, and it ignores the baseline-subtraction uncertainty and any doping dependence of the intensities. Treat it as \u00b1~30%.",
+    "The D' band (~1620 cm-1) is not resolved above the noise (~100 counts), so only ID/ID' \u2273 5 follows. The defect type is therefore a tentative inference. D+D' (~2950 cm-1) is also absent.",
+    "The 2D position (2699 cm-1) is unusually high for neutral graphene at 532 nm. Doping and strain cannot be separated from one spectrum, so I report neither sign.",
+    "Si 520.7 cm-1 and the other Si/SiO2 lines are outside the 1100\u20133000 cm-1 window. The substrate is therefore not confirmed spectroscopically and is taken from the metadata.",
+    "The data say nothing about the stacking order beyond the single-Lorentzian 2D. They also cannot give lateral uniformity, since this is a single spectrum, or the polarization behaviour.",
+    "The broad background was not characterized. Its origin (PL, fluorescence or substrate) is unknown.",
+    "The D intensity could also include a contribution from edges or grain boundaries if the laser spot is near one."
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "candidates": [
+    {
+      "material": "graphene",
+      "confidence": 0.93,
+      "evidence": "Four bands at 1350.7 (D), 1580.7 (G), 1619.6 (D') and 2698.2 cm-1 (2D) with the expected graphene pattern. I2D/IG = 3.0 by height (6.9 by area), 2D is a single Lorentzian with FWHM 32 cm-1 vs G FWHM 14 cm-1, and 2D/G position ratio 1.707. The 2D shape and I2D/IG favour a single layer. D and D' indicate defects. No Si, hBN, or TMD-specific lines are visible in the measured window."
+    },
+    {
+      "material": "bilayer graphene",
+      "confidence": 0.03,
+      "evidence": "Would give a multi-component, broader 2D band (FWHM ~50 cm-1 or more) and I2D/IG typically below 1. The 2D here is a single 32 cm-1 Lorentzian with I2D/IG = 3, so this is disfavoured."
+    },
+    {
+      "material": "hBN (monolayer or few-layer)",
+      "confidence": 0.01,
+      "evidence": "Its single E2g line is near 1366 cm-1. The measured D band is at 1350.66 +- 0.03 cm-1, about 15 cm-1 away, and no 1366 line is present. There is also no G or 2D band at 1580 or 2698 cm-1."
+    },
+    {
+      "material": "reduced graphene oxide",
+      "confidence": 0.02,
+      "evidence": "Typically shows broad D and G bands with I_D/I_G near 1 and a very weak, broad 2D. Here the 2D is strong (I2D/IG = 3) and narrow (32 cm-1), and G is narrow (14 cm-1), which argues against rGO."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is nothing to check against. The identification rests on the spectrum alone: G and 2D positions and widths, the D and D' bands, and the absence of hBN, Si or TMD lines in the 1100-3000 cm-1 window.",
+  "peaks": [
+    {
+      "position_cm1": 1350.66,
+      "fwhm_cm1": 15.04,
+      "assignment": "D band (defect-activated sp2 ring breathing mode)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a Lorentzian fit (+-0.03 and +-0.10 cm-1). Assignment: Ferrari & Robertson, PRB 61, 14095 (2000); Ferrari, PRL 97, 187401 (2006)."
+    },
+    {
+      "position_cm1": 1580.69,
+      "fwhm_cm1": 13.99,
+      "assignment": "G band (in-plane E2g sp2 stretch)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a Lorentzian fit (+-0.02 and +-0.06 cm-1). Assignment: Ferrari, PRL 97, 187401 (2006)."
+    },
+    {
+      "position_cm1": 1619.57,
+      "fwhm_cm1": 12.84,
+      "assignment": "D' band (defect-activated intravalley mode)",
+      "irrep": "A1' (intravalley)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a fit (+-0.21 and +-0.64 cm-1); sits on the G shoulder, so the fit is correlated with G. Assignment: Ferrari & Basko, Nat. Nanotechnol. 8, 235 (2013); Eckmann et al., Nano Lett. 12, 3925 (2012)."
+    },
+    {
+      "position_cm1": 2698.17,
+      "fwhm_cm1": 32.05,
+      "assignment": "2D (G') band, two-phonon overtone of the D mode",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and FWHM from a Lorentzian fit (+-0.01 and +-0.03 cm-1). Assignment: Ferrari, PRL 97, 187401 (2006). Single-Lorentzian shape taken as the monolayer criterion."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1",
+      "provenance": "inferred",
+      "source": "I2D/IG = 3.0 (height), 2D FWHM 32 cm-1 as one Lorentzian, and G FWHM 14 cm-1. Consistent with monolayer; not confirmed by thickness measurement. Layer-number criteria: Ferrari, PRL 97, 187401 (2006)."
+    },
+    {
+      "name": "defect_level",
+      "value": "medium",
+      "provenance": "inferred",
+      "source": "I_D/I_G = 0.60 (height; 0.65 by area), which is well above pristine CVD-level values. Interpretation uses Cancado et al., Nano Lett. 11, 3190 (2011)."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "14 (range about 12-16)",
+      "provenance": "inferred",
+      "source": "Cancado et al., Nano Lett. 11, 3190 (2011): L_D^2 (nm^2) = (1.8 +- 0.5) x 10^-9 lambda^4 (I_D/I_G)^-1, lambda = 514.5 nm, I_D/I_G = 0.60. Range from the coefficient uncertainty. Assumes the defect-induced (stage 1) regime, which holds for L_D above about 3 nm; this sample is well inside it."
+    },
+    {
+      "name": "defect_type",
+      "value": "vacancy-like or mixed (not sp3-dominated)",
+      "provenance": "inferred",
+      "source": "I_D/I_D' = 6.8 (height; 7.9 by area). Eckmann et al., Nano Lett. 12, 3925 (2012) give ~13 for sp3 defects, ~7 for vacancies and ~3.5 for boundaries. Ratio uncertain because the D' peak is weak."
+    },
+    {
+      "name": "doping_type",
+      "value": "none (no strong doping inferred)",
+      "provenance": "inferred",
+      "source": "G at 1580.7 cm-1 is close to the pristine value and G is not upshifted. Lee et al., Nano Lett. 12, 3936 (2012). The 2D position is about 10-18 cm-1 above typical 514 nm values, which could come from doping, compressive strain or dispersion. Two peaks cannot separate these, so this is uncertain."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (not resolvable)",
+      "provenance": "inferred",
+      "source": "Shifts of G and 2D alone cannot separate strain from doping without a reference (Lee et al., Nano Lett. 12, 3936 (2012))."
+    },
+    {
+      "name": "substrate_lines",
+      "value": "none in measured window (Si 520.7 cm-1 lies outside 1100-3000 cm-1)",
+      "provenance": "measured",
+      "source": "Spectrum range is 1100.00-2999.75 cm-1. No substrate line is present in this window."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari, A. C. et al. Raman spectrum of graphene and graphene layers. PRL 97, 187401 (2006).",
+    "Ferrari, A. C. & Robertson, J. Interpretation of Raman spectra of disordered and amorphous carbon. PRB 61, 14095 (2000).",
+    "Cancado, L. G. et al. Quantifying defects in graphene via Raman spectroscopy at different excitation energies. Nano Lett. 11, 3190 (2011).",
+    "Eckmann, A. et al. Probing the nature of defects in graphene by Raman spectroscopy. Nano Lett. 12, 3925 (2012).",
+    "Ferrari, A. C. & Basko, D. M. Raman spectroscopy as a versatile tool for studying the properties of graphene. Nat. Nanotechnol. 8, 235 (2013).",
+    "Lee, J. E. et al. Optical separation of mechanical strain from charge doping in graphene. Nat. Commun. 3, 1024 (2012); Lee, J. et al. Nano Lett. 12, 3936 (2012)."
+  ],
+  "limits": [
+    "Measurement window is 1100-2999.75 cm-1. The RBM and low-frequency modes, the Si 520.7 cm-1 line, the 2D' band (~3240 cm-1) and the D+D' combination region above 3000 cm-1 are not covered. Substrate lines are therefore not testable; none are present in the window.",
+    "A broad fluorescence/SiO2 background was modelled with a 4th-order polynomial. The choice of baseline changes peak heights by a few percent but does not change the positions or the conclusions.",
+    "A weak feature near 1196 cm-1 (D'' or amorphous-carbon band) fits to 31 +- 17 counts, about 1.8 sigma. It is not significant and is not reported as a peak. No significant D+D' or D+G band near 2930-2950 cm-1 (height 0 +- 24).",
+    "Noise is about 25 counts per point. No cosmic-ray spikes were found: the largest local outlier is about 4 sigma and is single-point-noise-like, not a spike.",
+    "Defect distance uses the Cancado 2011 coefficient (1.8 +- 0.5) x 10^-9 with lambda = 514.5 nm. The coefficient uncertainty gives roughly +-15-20% in L_D. The defect type from I_D/I_D' is less certain than L_D because the D' peak is weak (S/N about 20) and the ratio is only a rough guide.",
+    "Layer number is inferred from I2D/IG, the 2D line shape and widths only. No thickness, contrast or flake-edge measurement is available, so monolayer is a best inference, not a confirmed result.",
+    "Strain versus doping cannot be separated from one G and one 2D position without a reference. The 2D position is at the high end of typical 514 nm values, and that could reflect doping, compressive strain or dispersion. Treat the doping and strain fields as unresolved.",
+    "Single spectrum, no polarization dependence, so no angle-resolved classification is given. Temperature 295 K is taken as stated."
+  ]
+}

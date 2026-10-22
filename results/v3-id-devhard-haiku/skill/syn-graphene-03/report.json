@@ -1,0 +1,129 @@
+{
+  "candidates": [
+    {
+      "material": "C (monolayer graphene, defective, stage-1 point defects)",
+      "confidence": 0.9,
+      "evidence": "Four bands fit: D 1350.7, G 1580.6 (FWHM 13.7), D' 1619.8 (weak shoulder), 2D 2698.1 (single component, FWHM 24-32 depending on baseline). Literature graphene entry (Lee et al. 2012, arXiv 1209.0234) gives score 0.77 with G and 2D matched; the only CRD candidates (H4O3Sr, HO2Sc, BaH4O3, H10Na2O5S) score 0.24-0.54 and each leaves G/D or 2D unexplained, so they are rejected."
+    },
+    {
+      "material": "C (turbostratic or few-layer graphite, defective)",
+      "confidence": 0.07,
+      "evidence": "Not excluded on position alone, but a single 2D component with FWHM about 24-32 cm-1 (not about 50 cm-1 for turbostratic) and I(2D)/I(G) about 2.8 argue for a single graphene layer (Ferrari et al. 2006; Ferrari and Basko 2013 p.9 for the turbostratic width check)."
+    },
+    {
+      "material": "H4O3Sr (CRD row 2171, Pmc2_1)",
+      "confidence": 0.01,
+      "evidence": "Matches only 2D (2698.1 vs 2709.7 scaled); leaves D, G and D' unexplained, and the candidate is a non-carbon oxide with no Raman reason to show D or G at these positions. Rejected."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identify task. The four bands match graphene's signature at 514.5 nm: G near 1580 and 2D near 2700 with D near 1350 and D' near 1620. The library ranks graphene first with G and 2D matched; the carbon-free CRD candidates leave main bands unexplained.",
+  "peaks": [
+    {
+      "position_cm1": 1350.7,
+      "fwhm_cm1": 14.9,
+      "assignment": "D band (defect-activated, K-point TO phonon, double resonance)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit by rl_fit.py (position err 0.04, FWHM err 0.17 cm-1). Assignment: Ferrari and Basko 2013, Nat. Nanotechnol. 8, 235 (arXiv 1306.5856); graphene note in reference/materials/graphene.md. D is a point or edge defect band, absent in pristine graphene."
+    },
+    {
+      "position_cm1": 1580.6,
+      "fwhm_cm1": 13.7,
+      "assignment": "G band (E2g, zone centre)",
+      "irrep": "E2g",
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Fit by rl_fit.py (position err 0.03, FWHM err 0.11 cm-1). Assignment and position: Ferrari et al. 2006, PRL 97, 187401 (arXiv cond-mat/0606284, p.2); literature origin 1581.6 cm-1 at 514.5 nm in Lee et al. 2012 (arXiv 1209.0234)."
+    },
+    {
+      "position_cm1": 1619.8,
+      "fwhm_cm1": 9.2,
+      "assignment": "D' band (intravalley double resonance, defect-activated)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Weak shoulder on G; fit position error 0.28 and FWHM error 0.9 cm-1, so the width is poorly constrained (height 278 +/- 17). Assignment: Ferrari and Basko 2013 (arXiv 1306.5856, Fig. 1g; graphene note). Matched in the library to the literature graphene entry (Lee et al. 2012)."
+    },
+    {
+      "position_cm1": 2698.1,
+      "fwhm_cm1": 27.6,
+      "assignment": "2D band (second order of zone-boundary TO phonon, overtone of D, no defect needed)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Fit by rl_fit.py over the full 1100-3000 window (FWHM 23.8 with a 2550-2850 window refit; 32 with a linear-baseline lmfit). Assignment: Ferrari et al. 2006 (arXiv cond-mat/0606284, p.2); Ferrari and Basko 2013 (arXiv 1306.5856). Single component: relation graphene_layers_from_2D_shape gives monolayer, high confidence."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer)",
+      "provenance": "inferred",
+      "source": "graphene_layers_from_2D_shape (Ferrari et al. 2006, PRL 97, 187401; arXiv cond-mat/0606284, p.2): one 2D component, I(2D)/I(G)=2.8 (height), FWHM 24-32 cm-1. Confidence high by the relation, but I(2D)/I(G) is below the textbook 4 and depends on the SiO2 thickness (Yoon et al. 2009, arXiv 0908.4322)."
+    },
+    {
+      "name": "defect_level",
+      "value": "low (stage 1, point defects)",
+      "provenance": "inferred",
+      "source": "I(D)/I(G) = 0.605 (heights), G FWHM 13.7 cm-1 (about 14 in stage 1, Cancado et al. 2011, Nano Lett. 11, 3190, arXiv 1105.0175, p.5, Fig. 5c); Cancado 2011 low-defect branch."
+    },
+    {
+      "name": "L_D_nm",
+      "value": "14.4 +/- 2.0",
+      "provenance": "inferred",
+      "source": "graphene_defect_distance_from_ID_IG (Cancado et al. 2011, Eq. 4, arXiv 1105.0175): L_D^2 = 1.8e-9 * 514.5^4 / (I_D/I_G). Energy form gives 14.5 nm. Valid on the low-defect branch (L_D >= 10 nm). Uses heights, not areas (area ratio 0.66 would give a different value)."
+    },
+    {
+      "name": "n_D_cm2",
+      "value": "1.6e11 cm-2 (point-defect density from Eq. 6)",
+      "provenance": "inferred",
+      "source": "Cancado et al. 2011, Eq. 6 (arXiv 1105.0175), same inputs as L_D."
+    },
+    {
+      "name": "defect_type",
+      "value": "point defects (vacancy- or sp3-like, not decided); edges and boundaries disfavoured",
+      "provenance": "inferred",
+      "source": "I(D)/I(D') = 7.8 by height (vacancy about 7) and 12.5 by area (sp3 about 13); boundaries about 3.5. Eckmann et al. 2012, Nano Lett. 12, 3925 (arXiv 1207.2058, abstract, p.6), valid only in stage 1, which L_D = 14 nm satisfies. The D' value is a weak shoulder, so the ratio carries large uncertainty."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (undetermined)",
+      "provenance": "inferred",
+      "source": "graphene_strain_doping_from_G_2D (Lee et al. 2012, arXiv 1209.0234) not applicable: point lies on the electron-doping side (G-doping part -15.6 cm-1) and the source covers hole doping only. 2D sits +21 cm-1 above the origin with G near it; the rigid calibration offset cannot be checked (no Si line in window)."
+    },
+    {
+      "name": "doping_type",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "Same as strain_sign: the strain/doping relation did not apply. The G-2D vector lies outside its validated hole-doping side. Raman alone cannot assign doping here."
+    },
+    {
+      "name": "phase",
+      "value": "graphene (sp2 carbon)",
+      "provenance": "literature",
+      "source": "Ferrari et al. 2006 (arXiv cond-mat/0606284); graphene reference note reference/materials/graphene.md."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Ferrari AC et al. 2006, Phys. Rev. Lett. 97, 187401, https://arxiv.org/abs/cond-mat/0606284",
+    "Cancado LG et al. 2011, Nano Lett. 11, 3190, doi:10.1021/nl201432g, https://arxiv.org/abs/1105.0175",
+    "Ferrari AC, Basko DM 2013, Nat. Nanotechnol. 8, 235, https://arxiv.org/abs/1306.5856",
+    "Eckmann A et al. 2012, Nano Lett. 12, 3925, https://arxiv.org/abs/1207.2058",
+    "Lee JE et al. 2012, Nat. Commun. 3, 1024, https://arxiv.org/abs/1209.0234",
+    "Yoon D et al. 2009, Phys. Rev. B 80, 125422, https://arxiv.org/abs/0908.4322",
+    "Computational Raman Database: Bagheri and Komsa 2023, Sci. Data 10, 80 (used only to reject the non-carbon candidates)"
+  ],
+  "limits": [
+    "Material: the data are consistent with defective monolayer graphene (G 1580.6, 2D 2698.1 single component, D and D' present). This is not a verify task, so no stated material was tested. The carbon-free CRD candidates were rejected for leaving G, D or 2D unexplained.",
+    "Layer number rests on the 2D line shape only (single component, FWHM 24-32 cm-1 depending on baseline). Intensity ratios depend on the SiO2 thickness (Yoon et al. 2009), so I(2D)/I(G)=2.8 cannot by itself set the layer number. Turbostratic stacking (FWHM about 50 cm-1) is not seen. Twisted bilayer is not excluded by this single spectrum.",
+    "The 2D fit residual (about +/-200 lobes at about 2688 and 2709 cm-1 and about -800 wings) is not removed by a second Lorentzian; the two-component fit collapses to one component (BIC worse), so the residual is from line shape or baseline, not a resolved doublet. The 2D FWHM is therefore 24-32 cm-1 depending on the baseline window; I report the default fit.",
+    "D' is a weak shoulder: height 278 +/- 17, FWHM 9 +/- 1 cm-1, position error 0.3 cm-1. The I(D)/I(D') defect-type call is only indicative (height ratio 7.8 gives vacancy-like, area ratio 12.5 gives sp3-like). Edges and grain boundaries (about 3.5) look unlikely, but the discrimination between point-defect types is not made by this spectrum.",
+    "L_D uses the low-defect branch (L_D >= 10 nm). The FWHM(G) of 13.7 cm-1 (about 14 in stage 1) supports this branch. The D FWHM (14.9 cm-1) is comparable to G, which the relation's caveat flags as a high-defect sign. The high-defect branch needs a broad G, not seen here, so I keep the low branch but say it is not certain. The L_D error (+/-2 nm) is the stated constant uncertainty only; the heights-based ratio is used as the relation requires.",
+    "Not determined: strain and doping. The strain/doping relation did not apply (electron-doping side). The rigid calibration offset cannot be checked because the window starts at 1100 cm-1 and no Si substrate line (520.7 cm-1) is in the data. A rigid shift of both G and 2D would be calibration, not strain or doping.",
+    "Substrate: no Si line in the window, so no Si substrate peak is reported. The broad background features at 1467, 1726, 2317, 2529 and 2981 cm-1 (FWHM 89-662 cm-1) were fit as baseline and are not reported as bands; they are not cosmic-ray spikes (none detected). The low-wavenumber cutoff at 1100 cm-1 excludes shear and breathing modes, so their absence is not evidence.",
+    "Conditions not provided: laser power at the sample, spectral resolution, polarization geometry beyond backscattering, SiO2 thickness, transfer or growth history. These affect intensity ratios and L_D interpretation. No polarization classification (single spectrum). No Valency or iopic-bond literature search was run; literature assignments come from the skill's reference notes and the cited arXiv papers."
+  ]
+}

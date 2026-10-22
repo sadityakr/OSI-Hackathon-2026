@@ -1,0 +1,54 @@
+{
+ "key": "8e285d293a22dfeb",
+ "score": 0.7142857142857143,
+ "by_kind": {
+  "finding": 0.8333333333333334,
+  "caveat": 0.5,
+  "question": 1.0
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 1,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report states flake 2 sits at \"1369.0 \u00b1 0.25 cm\u207b\u00b9, about 2.8 cm\u207b\u00b9 above flake 1 (1366.2 \u2026)\", that \"flake 2 is broader (22 vs 18 cm\u207b\u00b9)\", and that \"Monolayer hBN is consistent with this (E2g upshift and broadening\u2026)\"."
+   },
+   {
+    "id": "c1",
+    "met": 0.5,
+    "why": "It says position alone is not conclusive (\"few-layer flakes give similar signatures\", \"an E2g line alone cannot identify a monolayer\"), but it never gives the small 2\u20134 cm\u207b\u00b9 size of the upshift or the \u00b12 cm\u207b\u00b9 sample-to-sample variation."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "It names strain as a possible cause (\"The +2.8 cm\u207b\u00b9 upshift in flake 2 could come from thickness, strain or interface effects\"), but never mentions cleavage-induced redshifts of 1\u20132 cm\u207b\u00b9 or that they dominate in bilayers."
+   },
+   {
+    "id": "f2",
+    "met": 0.5,
+    "why": "It reports the much weaker signal (\"area ratio 0.105\") and gives linear scaling with layers only as a hypothesis (\"If E2g intensity were linear in layer number, N2 \u2248 0.105 \u00d7 N1\"), but it calls intensity \"not a calibrated thickness scale\" and never says intensity is the more useful measure once calibrated."
+   },
+   {
+    "id": "q1",
+    "met": 1,
+    "why": "It recommends \"AFM step height on flake 2, a same-spot Raman calibration against a flake of known thickness\", and it explicitly checks normalisation against the Si 520 line, concluding that line is unreliable for these two spectra and asking for a same-session calibration."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "The report states \"Raman alone cannot establish that it is a monolayer\" and \"monolayer neither confirmed nor excluded\"."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "The report says nothing about the bilayer shift direction and does not claim bilayers upshift like monolayers."
+   }
+  ],
+  "citation_specificity": 1
+ },
+ "judge_model": "claude-opus-5-5"
+}

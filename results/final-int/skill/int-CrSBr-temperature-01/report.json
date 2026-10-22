@@ -1,0 +1,158 @@
+{
+  "summary": "On cooling from 300 K to 4 K, the two strong Ag-type bands in the 151\u2013401 cm-1 window harden: Ag2 (242.0 cm-1 at 4 K, 237.0 at 300 K) by +5.0 \u00b1 0.3 cm-1 and Ag3 (341.4 cm-1 at 4 K, 338.4 at 300 K) by +3.0 \u00b1 0.2 cm-1 (fit errors only). Ag3 is flat from 4 to 80 K (\u22120.1 \u00b1 0.2 cm-1 between them) and then softens with rising T, the usual anharmonic pattern. Four temperatures cannot show a spin-phonon anomaly at T_N or T_C. Two weaker bands appear only at low T: ~358 cm-1 (4 and 80 K; absent at 150 and 300 K) and ~300 cm-1 (4, 80 and 150 K; absent at 300 K). Neither is assigned. The 358 band is the stronger magnetic candidate, since it switches off between 80 and 150 K, but a D3 defect or a 2-phonon combination (Ag1+Ag2, with Ag1 outside the window) are not excluded. The 300 band matches a B2g mode (301 cm-1) that the literature reports only with a tilted sample. Absolute positions are dominated by calibration: Ag3 sits 5.6\u20136.6 cm-1 below three literature values and there is no Si reference in the window. Intensities cannot be compared across temperatures because the raw levels are not normalised and the 4 K background is about 4\u00d7 higher. The monolayer thickness is not checkable from this window because Ag1 (~114 cm-1) is cut off. The stated CrSBr identity is consistent with the Ag2/Ag3 pair but the library match does not confirm it.",
+  "observations": [
+    {
+      "finding": "QC is clean: no spikes, no saturation, no Si line in the window, and point spacing about 1.31 cm-1 over 151.2\u2013400.8 cm-1. Strongest-band SNR is 34 (4 K), 24 (80 K), 23 (150 K) and 29 (300 K). The low-wavenumber cutoff at 151 cm-1 removes Ag1 (~114 cm-1) and the bulk 57/71 cm-1 modes.",
+      "evidence": "rl_qc.py on all four files: spikes_cm1 empty, si_line null, snr_strongest 33.7/23.9/23.3/29.0, window 151.2\u2013400.8.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Ag2 hardens on cooling: 242.0 \u00b1 0.2 (4 K), 242.2 \u00b1 0.3 (80 K), 240.1 \u00b1 0.3 (150 K), 237.0 \u00b1 0.2 (300 K) cm-1. Shifts relative to 4 K are +0.15 \u00b1 0.38, \u22121.91 \u00b1 0.37 and \u22125.04 \u00b1 0.30 cm-1 for 80, 150 and 300 K.",
+      "evidence": "rl_series.py Lorentzian fits, band 240.3 cm-1 across the four spectra; fit covariance errors only, no calibration term; no Si line so --si-correct did nothing.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Ag3 is flat from 4 to 80 K and then softens: 341.38 \u00b1 0.10 (4 K), 341.26 \u00b1 0.13 (80 K), 340.56 \u00b1 0.11 (150 K), 338.39 \u00b1 0.12 (300 K) cm-1. Shifts are \u22120.12 \u00b1 0.16, \u22120.82 \u00b1 0.15 and \u22122.99 \u00b1 0.16 cm-1.",
+      "evidence": "rl_series.py band 340.4 cm-1. The 4\u201380 K plateau is within 1\u03c3 of zero. Four temperatures cannot resolve the flat-then-jump behaviour that Pawbake 2023 reports near 25 K, or the stall between T_C and T_N.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Absolute positions are offset from published room-temperature values by a near-rigid amount. Ag3 at 300 K is 5.6 cm-1 below Mondal 2025 (344, 4L, 2.33 eV), 5.6 below Klein 2023 (344, 2.33 eV) and 6.6 below Pawbake 2023 (345, bulk, 633 nm). Ag2 is 7.0 below Mondal (244) and 8.5 below Klein (245.5). Because Ag3 is nearly layer-independent, the common offset points to calibration or instrument offset rather than thickness.",
+      "evidence": "Comparison of series 300 K positions (338.39, 236.97) with the literature values in the CrSBr note. Mondal 2025 p.2; Klein 2023 Fig. 3; Pawbake 2023 p.3; Torres 2022 p.3 Fig. 1h.",
+      "provenance": "inferred",
+      "source": "Mondal et al. 2025 npj 2D Mater., arXiv 2410.22164, p.2; Torres et al. 2022, arXiv 2212.01754, p.3 Fig. 1h; Lee et al. 2012 Nat. Commun. 3, 1024, arXiv 1209.0234, Methods p.10"
+    },
+    {
+      "finding": "The Ag3\u2212Ag2 separation (the calibration-insensitive quantity) is 99.4 \u00b1 0.2 (4 K), 99.1 \u00b1 0.3 (80 K), 100.5 \u00b1 0.3 (150 K) and 101.4 \u00b1 0.2 (300 K) cm-1. It is 100 cm-1 in the 4L reference, but the Ag2 position varies by 13 cm-1 between sources (244 in 4L versus 257 in bulk), so the separation cannot give a layer number.",
+      "evidence": "rl_series two_strongest_separation; 4L reference separation 344 \u2212 244 = 100 cm-1 (Mondal 2025); bulk 345 \u2212 257 = 88 cm-1 (Pawbake 2023). The lit.-table note records the 13 cm-1 Ag2 spread.",
+      "provenance": "measured",
+      "source": "Mondal 2025, arXiv 2410.22164, p.2; Pawbake 2023, arXiv 2211.12939, p.3"
+    },
+    {
+      "finding": "Linewidths: Ag3 FWHM is 5.3 \u00b1 0.3, 5.8 \u00b1 0.5, 5.0 \u00b1 0.4 and 6.7 \u00b1 0.4 cm-1 (4, 80, 150, 300 K). The 300 K value is the broadest. Ag2 FWHM is 7.2 \u00b1 0.9, 11.3 \u00b1 1.2, 9.3 \u00b1 1.1 and 8.9 \u00b1 0.7 cm-1. The 80 K Ag2 width is not reliable: a single-Lorentzian refit in a 222\u2013262 cm-1 window gives 12.4 \u00b1 2.1 with a systematic negative residual of 5\u201315 counts against a 31-count peak, and a shoulder near 248 cm-1 is unmodelled.",
+      "evidence": "rl_series FWHM values; rl_fit --window 222 262 on spectrum_80K.csv and fit.png residual.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Raw intensities are not comparable across temperatures. Ag3 height is 231.5 (4 K), 75.6 (80 K), 107.6 (150 K) and 147.6 (300 K) counts. The 4 K trace has a median raw background of 9.3 counts against 1.8\u20132.5 at the other temperatures, and a raw maximum of 207 against 70\u2013137. The Ag3/Ag2 height ratio is 2.97, 2.46, 2.96 and 1.91. The ratio is the only intensity observable that cancels overall throughput, and it is still not non-monotonic-free (80 K is low).",
+      "evidence": "rl_series heights; raw-median check in the Python script (median 9.32, 1.75, 2.28, 2.49 counts).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A ~358 cm-1 band (17 cm-1 blue of Ag3) is present at 4 K (358.27 \u00b1 0.33, height 64.7 = 0.28 of Ag3) and 80 K (357.57 \u00b1 0.58, height 18.6 = 0.25 of Ag3). It is absent at 150 K and 300 K, where a band at the 4 K ratio would be ~30 counts, well above the noise. A static defect (D3) would not normally switch off, which argues against it. The band appears below the bulk T_N (~132\u2013134 K) and is consistent in position with the IR-only magnetic mode near 360 cm-1, but the IR mode is not Raman-verified and the 4 K flank contains two missing points (362 and 370 cm-1).",
+      "evidence": "rl_series band 357.9 cm-1 (present in 4K and 80K only); raw gaps at 361.95 and 369.74 cm-1 in the 4 K trace.",
+      "provenance": "inferred",
+      "source": "Torres et al. 2022, arXiv 2212.01754, p.5 (D3 near 350 cm-1 in 1L after air plus heating; pitfall: do not read D3 as a magnetic mode); Uykur et al. 2024, arXiv 2405.07853, p.3\u20134 (IR mode near 360 cm-1 below T_N; do not assign to Raman without polarization and T data)"
+    },
+    {
+      "finding": "A ~300 cm-1 band is present at 4 K (299.66 \u00b1 0.93, 0.16 of Ag3), 80 K (300.93 \u00b1 0.77, 0.17) and 150 K (300.76 \u00b1 0.63, 0.16), and not detected at 300 K. It sits at the B2g position (301 cm-1), which the reference reports only with a 60-degree tilted sample. Under normal incidence it is allowed only if a longitudinal field component from the NA 0.82 focus (magnitude not quantified in the sources I read) or a magnetic antisymmetric tensor term activates it.",
+      "evidence": "rl_series band 299.7\u2013300.9 cm-1; reference conditional mode list from lookup_reference_modes (B2g 92, 194, 301 cm-1, tilt only).",
+      "provenance": "inferred",
+      "source": "Pawbake et al. 2023, arXiv 2211.12939, p.3 Fig. 1c (B2g only when tilted); Grosche et al. 2020 Opt. Express, doi 10.1364/OE.388943, arXiv 1905.12325 (longitudinal focus fields; magnitude not verified for NA 0.82)"
+    },
+    {
+      "finding": "Gaps in the traces are at fixed positions, not sample features. A 2.6 cm-1 gap at 328.1 cm-1 appears in all four spectra, which points to a detector or export artefact. Trace-specific gaps occur at 167.2 cm-1 (80 K) and at 362.0 and 369.7 cm-1 (4 K). The 300 K trace is complete.",
+      "evidence": "Gap scan on the CSV x-axes: 4 K gaps 328.1, 361.95, 369.74; 80 K gaps 167.17, 328.1 (3.9 cm-1 step); 150 K gap 328.1; 300 K none. Point counts 188, 188, 190, 191.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The library match does not identify the material. The top hits are unrelated compounds (BaF10Te2 at 0.753, BiIO3Te at 0.752) and the CrSBr literature table scores 0.748, a tie. Only two of four measured peaks match any candidate, and the 300 and 358 bands are unmatched by all of them. The CrSBr identity therefore rests on the user's statement plus the Ag2/Ag3 pair, not on the match.",
+      "evidence": "rl.py match_library with positions 242.0, 299.66, 341.38, 358.27 and intensities 77.9, 36.2, 231.5, 64.7 over 151\u2013401 cm-1.",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database); Mondal 2025 literature table, arXiv 2410.22164"
+    },
+    {
+      "finding": "The polarization-axis relation for CrSBr was not applied. It needs a linear analyser angle (max_parallel_angle_deg), and this measurement uses circular polarization, so the a/b axis cannot be read from it. The tool's windows still label 242 cm-1 as Ag2 (236\u2013262) and 341 cm-1 as Ag3 (336\u2013354), while 300 and 358 cm-1 fall in no Ag window.",
+      "evidence": "rl.py list_relations --material CrSBr: crsbr_ag_mode_assignment_with_polarization_axis, required input max_parallel_angle_deg; mode windows Ag1 108\u2013127, Ag2 236\u2013262, Ag3 336\u2013354.",
+      "provenance": "measured",
+      "source": "Mondal et al. 2025, arXiv 2410.22164, pp.2\u20133 (axis switching measured with linear polarization)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer as stated by the user, AFM-confirmed); not verified by this window because Ag1 (~114 cm-1) lies outside it",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "orthorhombic Pmmn (D2h) CrSBr; Ag2 at ~242 and Ag3 at ~341 cm-1 are consistent with the CrSBr Ag family",
+      "provenance": "literature",
+      "source": "Pawbake et al. 2023, arXiv 2211.12939, p.3; Torres et al. 2022, arXiv 2212.01754, p.2"
+    },
+    {
+      "name": "defect_level",
+      "value": "low to undetermined: no D1 or D3 shoulder at the Ag3 level; the 358 cm-1 band (~0.25\u20130.28 of Ag3, 4 and 80 K only) is not assigned",
+      "provenance": "inferred",
+      "source": "Torres et al. 2022, arXiv 2212.01754, pp.4\u20135"
+    },
+    {
+      "name": "strain_sign",
+      "value": "undetermined: the Ag2 and Ag3 shifts are not separated from thermal-mismatch or substrate effects, and no substrate is given",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "not determinable from this window (no relation applied)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "magnetic_order_signature",
+      "value": "candidates only: 358 cm-1 (present at 4 and 80 K, absent at 150 K) and 300 cm-1 (present 4\u2013150 K, absent 300 K). No transition temperature is bracketed beyond 80 K < T_x < 150 K for the 358 band.",
+      "provenance": "inferred",
+      "source": "Pawbake et al. 2023, arXiv 2211.12939, p.4 (bulk T_N and T_C reference); Markina et al. 2026, npj Quantum Mater. 11, 11, doi:10.1038/s41535-026-00850-2"
+    }
+  ],
+  "caveats": [
+    "Calibration: no Si or other internal reference in 151\u2013401 cm-1, so --si-correct did nothing. Fit errors (0.1\u20130.3 cm-1) understate uncertainty; a first-order single-grating calibration can be off by up to ~7 cm-1 across a detector (Lee et al. 2012, Methods p.10). Position comparisons across temperatures are only meaningful if calibration did not drift during the cooldown.",
+    "Laser heating: a flat 4\u201380 K plateau is the signature expected from anharmonicity, but a monolayer on an unknown substrate in a PPMS insert may have a local temperature above the reading at 4 K. Heating and a real low-T plateau look the same at one power. Power series needed (magnetic-raman-general.md: 'power series at the lowest T').",
+    "Circular polarization removes the linear-axis information used by the Mondal 2025 Ag2 switching analysis, so Ag2 cannot be assigned to a or b here. In backscattering, crossed-circular is also the helicity-reversing channel where magnetic antisymmetric-tensor terms and one-magnon selection appear (Cenker et al. 2021, arXiv 2001.07025; magnetic-raman-general.md mechanism 4). A change in that channel is therefore not automatically a phonon change. The helicity convention of the 'crossed' label was not stated and needs confirming.",
+    "Intensity: raw counts differ up to 3\u00d7 between 4 K and 80 K and the 4 K background is ~4\u00d7 higher. This may reflect different power or integration time, focus drift on cooling, or sample position. Absolute intensities should not be read as physics until power, integration time and spot are recorded.",
+    "Monolayer vs bulk: the zone-folded modes that anchor the bulk magnetic story (Z-point B3g at 57 cm-1, Pawbake 2023 p.4\u20135) rely on interlayer c-axis doubling, which a monolayer does not have. Any new monolayer band below the ordering temperature must come from an intralayer mechanism, and the bulk T_N and T_C values are not transferable to a monolayer without a source.",
+    "Reference mismatch: the material notes' room-temperature values are for 4-layer flakes on 85 nm SiO2/Si (Mondal 2025) and bulk crystals (Pawbake 2023), not for a monolayer. Ag2 differs by 13 cm-1 between sources, so Ag2 is not a thickness discriminator.",
+    "Resonance: 532 nm (2.33 eV) is above the bulk/4L excitons at 1.65\u20131.95 eV, and the notes say laser energies of 2.0\u20132.4 eV make relative intensities resonant (rl.py relation caveats, Mondal 2025 p.4). Intensity ratios and the Ag2/Ag3 ratio are therefore resonance-sensitive. Ratios are not comparable with non-resonant references.",
+    "Degradation: 1L CrSBr forms D1 and D3 after air or water exposure, and D3 (~350 cm-1) can exceed Ag3 (Torres 2022, pp.4\u20135). The 358 band is not that strong, but the sample's air history was not stated. Photodamage at the laser is irreversible; repeat spectra should be compared.",
+    "Hysteresis and spot: the cooling order and whether the same spot was kept at each T were not stated. Thermal contraction of the insert can move the focus; the 300 K spectrum was not repeated after cooling."
+  ],
+  "questions_for_user": [
+    "Which substrate is the monolayer on (SiO2/Si, hBN, or other)? If SiO2/Si, can you record 500\u2013560 cm-1 in the same run so the Si line (520.7 cm-1) gives a calibration independent of the 151\u2013401 cm-1 window? Substrate thermal mismatch would also shift the Ag modes on cooling.",
+    "What were the laser power at the sample, spot size, integration time and number of accumulations for each temperature? Were they identical? The 4 K trace has ~3\u00d7 higher peak counts and ~4\u00d7 higher background than 80 K, and I cannot tell whether that is physics or acquisition.",
+    "Which helicity is the 'crossed' channel in your convention (\u03c3+ in, \u03c3\u2212 out, with which analyser setting)? Did you also record co-circular (\u03c3+\u03c3+) or linear spectra? Without them the 358 and 300 bands cannot be separated from magnetic antisymmetric-tensor terms or from high-NA leakage.",
+    "Why does the window start at 151 cm-1? Ag1 (~114 cm-1) is the thickness-sensitive mode and is reported to change intensity across the magnetic transitions in thin flakes (Torres 2022 p.8; Markina 2026). Can the window be extended to about 90 cm-1 in the next run?",
+    "Was there any residual field in the PPMS magnet (zero-field cooling, or a magnet that had been swept)? The field test (linear shift versus field) is the cleanest way to test the 358 and 300 bands for magnon or magnetic origin.",
+    "What is the air exposure history of this flake (time since exfoliation, transfer, any water or heating)? D3 near 350 cm-1 is the known 1L degradation marker, and it is close to the 358 band.",
+    "Was the spot re-located at each temperature, and is cooling-induced focus drift excluded? Was a warm-up return to 300 K measured on the same spot to test hysteresis?",
+    "Are the missing points at 328.1 cm-1 (all four traces) and 362/370 cm-1 (4 K only) from the detector or the export? A fixed pixel gap is an instrument artefact; the 4 K gaps lie on the flank of the 358 band."
+  ],
+  "citations": [
+    "Pawbake et al. 2023, Phys. Rev. B 107, 075421, arXiv 2211.12939, https://arxiv.org/abs/2211.12939 (p.3 Ag positions and B2g tilt; p.4\u20135 zone folding and 57/71 cm-1 modes; p.5 second-order bands)",
+    "Mondal et al. 2025, npj 2D Mater., arXiv 2410.22164, https://arxiv.org/abs/2410.22164 (p.2 4L Ag positions at 2.33 eV; pp.3\u20134 axis switching of Ag2)",
+    "Torres et al. 2022, arXiv 2212.01754, https://arxiv.org/abs/2212.01754 (p.2 Gamma-point irreps; p.3 Fig. 1h layer dependence; pp.4\u20135 D1 and D3 defects; p.8 thin-flake Ag1 intensity)",
+    "Klein et al. 2023, ACS Nano 17, 5316, doi:10.1021/acsnano.2c07316, https://doi.org/10.1021/acsnano.2c07316 (Fig. 3 bulk Ag positions at 2.33 eV)",
+    "Uykur et al. 2024, arXiv 2405.07853, https://arxiv.org/abs/2405.07853 (p.3\u20134 infrared magnetic mode near 360 cm-1; not a Raman assignment)",
+    "Markina et al. 2026, npj Quantum Mater. 11, 11, doi:10.1038/s41535-026-00850-2, https://doi.org/10.1038/s41535-026-00850-2 (p.3 T_C and T_N; p.4\u20136 polarization ratio change near T_N)",
+    "Lee et al. 2012, Nat. Commun. 3, 1024, arXiv 1209.0234, https://arxiv.org/abs/1209.0234 (Methods p.10 calibration error without quadratic term)",
+    "Grosche et al. 2020, Opt. Express, doi:10.1364/OE.388943, arXiv 1905.12325, https://arxiv.org/abs/1905.12325 (longitudinal field components in tight focus)",
+    "Cenker et al. 2021, Nat. Phys. 17, 20, arXiv 2001.07025, https://arxiv.org/abs/2001.07025 (one-magnon helicity selection; cited via magnetic-raman-general.md)",
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database), used only for the library match ranking"
+  ],
+  "limits": [
+    "Material identity: the Ag2/Ag3 pair fits CrSBr, and the user states the material, but the library match cannot confirm it because the top hits are unrelated compounds at the same score.",
+    "Layer number: not verifiable from this window (Ag1 missing). AFM is the only support for the monolayer claim.",
+    "Magnetic order: the data cannot establish any transition temperature. There are four points, one of them (150 K) inside the bulk intermediate-FM window, and no field series, no polarization series and no power series.",
+    "Anharmonic model: I did not fit an anharmonic (three- or four-phonon) decay law to Ag2 and Ag3 because four temperatures are not enough to constrain it, and the coefficients for this material were not in the notes I read.",
+    "Strain and doping: no relation in the CrSBr note applies to a monolayer on an unknown substrate, so strain and doping are not reported from these shifts. Separating them needs the substrate and the Si-referenced calibration.",
+    "The relation for Ag-mode axes needs linear polarization and was not applied. The circular geometry gives no axis information.",
+    "The 300 and 358 cm-1 bands have no assignment in the notes that fits both the temperature behaviour and the normal-incidence selection rules. These are candidates, not identifications. Alternatives include a combination band (Ag1+Ag2 would be ~356\u2013363 cm-1, but Ag1 is not measured, and combination bands are not in the notes), a D3 defect, a magnetic mode, and a leaked B2g mode.",
+    "Quantitative calibration uncertainty is not included in the reported shifts. Including a few tenths of a cm-1 (script guidance) or several cm-1 (Lee 2012 without quadratic calibration) changes the absolute values but not the 4\u2192300 K differences within a single run, if the calibration held."
+  ]
+}

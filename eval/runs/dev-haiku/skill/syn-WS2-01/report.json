@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.75,
+      "evidence": "Two strong bands at 353.0 and 415.3 cm-1 (Lorentzian fits, 5.6 sigma for the 415 band), separation 62.3 cm-1, matching the WS2 E2g/A1g pair (~356/~420 cm-1, separation ~61-65 cm-1, from memory of the WS2 Raman literature). The 353 band is broad (FWHM 8.7 cm-1) and consistent with an unresolved 2LA(M) contribution near 351-352 cm-1 that is resonantly enhanced for WS2 near 532 nm. Calibration: Si at 520.91 cm-1 vs 520.7 reference, so measured lines are ~0.2 cm-1 high; both bands are still ~3-5 cm-1 below reference WS2 values, which is not explained by calibration alone."
+    },
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.05,
+      "evidence": "Requires a pair near 383 and 408 cm-1 (separation ~25). Only a 386 cm-1 term is fitted, with area 894 +/- 550 (about 1.6 sigma, not significant), and there is no band at 408. Separation mismatch of ~37 cm-1 rejects it."
+    },
+    {
+      "material": "black phosphorus",
+      "confidence": 0.03,
+      "evidence": "Expected Ag1 ~362 and B2g ~439 cm-1 (separation ~77). The 353/415 pair does not match this separation, and no significant band is found at ~439 or ~467 cm-1."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so this is an identification task, not a verification.",
+  "peaks": [
+    {
+      "position_cm1": 353,
+      "fwhm_cm1": 8.7,
+      "assignment": "E2g (in-plane E' in monolayer) of 2H-WS2, possibly with 2LA(M) overlapping in the same envelope",
+      "irrep": "E2g (D6h bulk); E' (D3h monolayer)",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Assignment inferred from the WS2 E2g/A1g pair (separation 62.3 cm-1) and the 532 nm excitation. Literature: Yang, Lee & Cheong, arXiv:1706.01677 (excitation-energy dependence of few-layer WS2 Raman; https://arxiv.org/abs/1706.01677); Mitioglu et al., arXiv:1406.3511 (second-order resonant Raman in monolayer WS2; https://arxiv.org/abs/1406.3511). Position and FWHM are measured from the fit; the 2LA(M) overlap is not separable (a doublet fit did not improve the chi2)."
+    },
+    {
+      "position_cm1": 415.3,
+      "fwhm_cm1": 7.9,
+      "assignment": "A1g (out-of-plane) of 2H-WS2, A1' in monolayer",
+      "irrep": "A1g (D6h bulk); A1' (D3h monolayer)",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Assignment inferred from the WS2 pair. Literature: Staiger et al., arXiv:1504.00049 (A1' mode in few-layer WS2; https://arxiv.org/abs/1504.00049). Position, FWHM and area (about 10800 +/- 1900) are measured from the fit (about 5.6 sigma)."
+    },
+    {
+      "position_cm1": 520.9,
+      "fwhm_cm1": 3.7,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Si first-order phonon of the SiO2/Si substrate. Reference value ~520.7 cm-1 at room temperature (from memory, not checked in the corpus). Measured offset about +0.2 cm-1."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "Two-band pattern consistent with 2H-WS2 E2g/A1g pair (see candidates). Bulk-type D6h labels used; monolayer labels would be E'/A1'."
+    },
+    {
+      "name": "layers",
+      "value": "not determined; few-layer or thinner is possible from the pair separation of 62.3 cm-1, but no validated thickness relation was applied",
+      "provenance": "inferred",
+      "source": "Separation-versus-thickness trend for WS2, from memory of the literature; not verified against a specific paper here."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Broad E2g and A1g widths (8.7 and 7.9 cm-1) could come from defects, the 2LA(M) overlap or instrument resolution; the single spectrum cannot separate these."
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Both bands sit 3-5 cm-1 below typical WS2 reference values; this could indicate strain or doping, or a reference-value mismatch. Not decidable from one spectrum."
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No A1g-only shift reference available; no valid relation applied."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Yang, Lee & Cheong, 'Excitation energy dependence of Raman spectra of few-layer WS2', arXiv:1706.01677, https://arxiv.org/abs/1706.01677",
+    "Mitioglu et al., 'Second order resonant Raman scattering in single layer tungsten disulfide (WS2)', Phys. Rev. B 89, 245442 (2014), arXiv:1406.3511, https://arxiv.org/abs/1406.3511",
+    "Staiger et al., 'Splitting of the monolayer out-of-plane A1' Raman mode in few-layer WS2', Phys. Rev. B 91, 195419 (2015), arXiv:1504.00049, https://arxiv.org/abs/1504.00049"
+  ],
+  "limits": [
+    "Scope: I did not read the ramanlens skill's scripts or reference notes, because the task restricts file access to the current folder. Relations and curated mode tables were therefore not applied, and reference positions are from memory. Only the three papers above were located through the literature search (metadata and titles only, contents not read), so the quoted reference values (E2g ~356, A1g ~420, 2LA(M) ~351-352 cm-1, WS2 pair separation ~61-65 cm-1) are unverified.",
+    "Identification rests on the pair separation (62.3 cm-1) and the absence of other pairs. Only three candidates were compared; the rest of the Raman-active TMD and layered-material families were not screened, so 2H-WS2 is the best match among the candidates considered, not a unique identification.",
+    "Strength of the identification: the 353 and 415 cm-1 bands are clearly significant (SNR ~30 and ~5.6 sigma). Remaining residual features at 563 cm-1 (about 5 sigma, boxcar-smoothed) and 614 cm-1 (about 4 sigma) are marginal and not reported; the noise is ~190 counts per point, so these could be noise.",
+    "The 353 cm-1 band may contain 2LA(M) plus E2g. A doublet fit (351 + 356 cm-1) did not improve chi2 and returned a negative area for the 351 component, so the two cannot be separated in this spectrum. Its centre and width are an envelope.",
+    "Both bands are about 3-5 cm-1 below typical WS2 reference values, which exceeds the Si calibration offset (+0.2 cm-1). Strain, doping, a different layer count or a reference mismatch cannot be distinguished from this single spectrum.",
+    "Layer number: Delta(A1g-E2g) = 62.3 cm-1 is consistent with thin WS2, but I did not apply a validated thickness relation, so no layer number is given.",
+    "Polarization: a single spectrum in backscattering along the layer normal, with no analyser or angle series, so no polarization class can be assigned. E2g and A1g are the expected symmetry-allowed modes for this geometry, but this is not checked against data.",
+    "Background: a broad, nearly flat continuum rises from ~1300 counts (60-300 cm-1) to ~2000 counts (above 400 cm-1). Its origin (for example photoluminescence, substrate or instrument background) cannot be determined from the data. The sampled window stops at 1100 cm-1, so a PL band peaking outside it is not excluded.",
+    "Excitation: 532 nm (2.33 eV) is near the WS2 B exciton region from memory, which would enhance 2LA(M) and change relative intensities. Not verified against a source here.",
+    "Resolution: point spacing is 0.94 cm-1, and the widths of 8-9 cm-1 may reflect instrument resolution, defects or the 2LA overlap; the data cannot separate these.",
+    "Temperature (295 K) and SiO2/Si substrate were taken as given; no temperature-dependent or substrate-interference check was made.",
+    "PowerShell use was denied in this session; the analysis was run with Bash and inline Python plus a local fit script in /tmp, not in the working folder."
+  ]
+}

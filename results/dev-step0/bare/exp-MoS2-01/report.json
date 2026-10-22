@@ -1,0 +1,68 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.93,
+      "evidence": "Two peaks at 379.8 and 404.6 cm-1 (E2g1 and A1g), separation 24.7 cm-1, matching multilayer (~4 L to bulk) MoS2; consistent with the stated ALD MoS2 film."
+    },
+    {
+      "material": "2H-MoSe2 / WS2 / other TMDs",
+      "confidence": 0.02,
+      "evidence": "Rejected: MoSe2 A1g is ~240 cm-1 and WS2 modes are ~350/418 cm-1, which do not match these positions."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given. The substrate metadata (ALD-grown MoS2 on black silicon) matches the identification.",
+  "peaks": [
+    {
+      "position_cm1": 379.8,
+      "fwhm_cm1": 6.7,
+      "assignment": "MoS2 E2g1 (in-plane)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of this spectrum; assignment per Lee et al., ACS Nano 4, 2695 (2010)"
+    },
+    {
+      "position_cm1": 404.6,
+      "fwhm_cm1": 7,
+      "assignment": "MoS2 A1g (out-of-plane)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of this spectrum; assignment per Lee et al., ACS Nano 4, 2695 (2010)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "E2g1-A1g separation",
+      "value": "24.7 cm-1",
+      "provenance": "measured",
+      "source": "Lorentzian fit of this spectrum"
+    },
+    {
+      "name": "Layer number",
+      "value": "About 4 layers to few-layer or thin film. A 24.7 cm-1 separation lies between trilayer (~22-23) and bulk (~25), so this is only a rough estimate.",
+      "provenance": "inferred",
+      "source": "Lee et al., ACS Nano 4, 2695 (2010)"
+    },
+    {
+      "name": "Crystallinity",
+      "value": "Both peaks are fairly broad (FWHM ~7 cm-1), which fits a nanocrystalline or polycrystalline ALD film.",
+      "provenance": "inferred",
+      "source": "Peak widths from the fit"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee et al., ACS Nano 4, 2695 (2010): anomalous lattice vibrations of single- and few-layer MoS2",
+    "Li et al., Adv. Funct. Mater. 22, 1385 (2012): MoS2 thickness-dependent Raman modes"
+  ],
+  "limits": [
+    "The spectral window is only 351-451 cm-1. The Si 520.7 cm-1 line, the 2TA/LA(M) region near 450 cm-1 and the Si second-order band are not covered, so substrate lines cannot be reported.",
+    "The laser wavelength is unknown, so resonance effects, the B2g peak and the 2LA(M) intensity cannot be assessed.",
+    "The layer count from the peak separation is ambiguous. Strain, doping and the black-silicon nanostructure can shift the modes, and the polycrystalline ALD film broadens them.",
+    "This is a single unpolarised spectrum, so polarisation classification is not possible.",
+    "No cosmic-ray spikes were seen. The noise is about 0.006 on the normalised scale."
+  ]
+}

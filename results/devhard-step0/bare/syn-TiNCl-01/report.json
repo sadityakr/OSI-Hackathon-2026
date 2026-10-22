@@ -1,0 +1,137 @@
+{
+  "candidates": [
+    {
+      "material": "\u03b2-TiNCl",
+      "confidence": 0.5,
+      "evidence": "Two strong non-substrate modes at about 206 and 472 cm-1 on SiO2/Si, consistent with a layered FeOCl-type (Pmmn) Ti-N/Ti-Cl compound. The assignment rests on rough recollection of the literature, which I could not check. Two peaks alone are not unique."
+    },
+    {
+      "material": "CrOCl or FeOCl-type MOCl",
+      "confidence": 0.15,
+      "evidence": "The same layered structure type gives Raman modes in the 200-500 cm-1 range. The reported lines (about 215, 300, 400 for CrOCl) do not match 206/472 well."
+    },
+    {
+      "material": "1T-TiS2",
+      "confidence": 0.05,
+      "evidence": "Ti-chalcogenide layered compound. Its Eg/A1g modes (about 230/330 cm-1) do not match the observed 206/472 lines."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given in the metadata (material_hint is null), so this is an identification from the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 206.4,
+      "fwhm_cm1": 6.5,
+      "assignment": "Sample mode, low-frequency Ti-Cl related (tentative Ag)",
+      "irrep": "Ag (tentative)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. The mode character is inferred from the TiNCl structure type and is not verified."
+    },
+    {
+      "position_cm1": 471.7,
+      "fwhm_cm1": 14,
+      "assignment": "Sample mode, Ti-N stretch (tentative Ag)",
+      "irrep": "Ag (tentative)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. The Ti-N character is inferred and not verified."
+    },
+    {
+      "position_cm1": 520.5,
+      "fwhm_cm1": 9,
+      "assignment": "Si substrate",
+      "irrep": "T2g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "First-order Si optical phonon, about 520.7 cm-1 at room temperature."
+    },
+    {
+      "position_cm1": 300,
+      "fwhm_cm1": null,
+      "assignment": "Si substrate (2TA second-order)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Second-order Si band at about 300 cm-1. Weak, with SNR of about 3."
+    },
+    {
+      "position_cm1": 955,
+      "fwhm_cm1": null,
+      "assignment": "Si substrate (2TO second-order)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Broad second-order Si band at 940-980 cm-1. Weak, with SNR of about 3."
+    },
+    {
+      "position_cm1": 234,
+      "fwhm_cm1": null,
+      "assignment": "Weak feature, possibly Si second-order or a sample mode (unassigned)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal peak, SNR of about 2-3. Not firmly assigned."
+    },
+    {
+      "position_cm1": 323,
+      "fwhm_cm1": null,
+      "assignment": "Weak feature, unassigned (possible sample mode)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal peak, SNR of about 2-3."
+    },
+    {
+      "position_cm1": 403,
+      "fwhm_cm1": null,
+      "assignment": "Weak broad feature, unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal peak, SNR of about 2-3."
+    },
+    {
+      "position_cm1": 686,
+      "fwhm_cm1": null,
+      "assignment": "Weak broad feature, unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal peak, SNR of about 2-3."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "not determinable (likely thick/bulk-like flake)",
+      "provenance": "inferred",
+      "source": "Single unpolarized spectrum with no layer-sensitive low-frequency or interlayer mode analysis."
+    },
+    {
+      "name": "phase",
+      "value": "orthorhombic FeOCl-type (\u03b2) if TiNCl",
+      "provenance": "inferred",
+      "source": "Structure type of TiNCl. Not determined from the data."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "The noise level and the unassigned weak features prevent a defect estimate."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Si first-order 520.7 cm-1 and second-order bands at about 300 and 950-980 cm-1: standard crystalline Si Raman reference (e.g. Temple & Hathaway, PRB 7, 3685, 1973)",
+    "\u03b2-TiNCl structure type (FeOCl-type, Pmmn): Yamanaka et al. (not checked against the original paper)"
+  ],
+  "limits": [
+    "The data are noisy: baseline about 3400 counts, noise rms about 500. Only the 206 and 472 cm-1 modes and the Si 520.5 cm-1 line are clearly significant. All other weak features have SNR of about 3 or less.",
+    "No cosmic-ray spikes were found in the data (a deviation test on a smoothed trace found none). The weak features at 234, 323, 403 and 686 cm-1 may be noise, Si second-order structure, or genuine weak modes.",
+    "The TiNCl identification rests on two modes and a recalled literature comparison. I could not check reference spectra, and other layered MOCl-type or nitride-halide compounds are not strictly excluded.",
+    "No polarization or angle data were available, so the mode symmetries (Ag, B2g, B3g) are tentative and no polarization pattern is assigned.",
+    "Layer number, strain and doping cannot be inferred from this spectrum.",
+    "The Lorentzian fit parameters of the weak peaks were poorly constrained and some fit widths hit their bounds. FWHM values are rough."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "summary": "Both spectra are 2H-WS2 (E' ~355, A1' ~418-420, LA(M) ~176, 2LA(M) ~350, Si substrate 520.8-520.9). Spot 1 is thin and most consistent with a monolayer. Spot 2 is clearly thicker and multilayer. Raman alone does not prove spot 1 is a monolayer: the A1'-E' separation of 62.0 cm-1 sits at the monolayer end and is close to where a bilayer would fall, so a PL or low-wavenumber measurement is needed to rule out a bilayer.",
+  "observations": [
+    {
+      "finding": "Peak assignments. E' (in-plane E^1_2g, Gamma) at 355.29 (spot 1) and 355.38-355.5 (spot 2). A1' (out-of-plane A1g, Gamma) at 417.29 (spot 1) and 420.08 (spot 2). LA(M) at 176.0 and 175.6. Broad second-order 2LA(M) at 351.09 (spot 1) and 349.9-351.5 (spot 2). Si substrate TO at 520.91 and 520.80. Weak unlabelled features at 133, 304, 480, 594 cm-1 (spot 1) and a cluster around 140-320 and 460-585 cm-1 (spot 2) are at or near the noise floor and are not interpreted.",
+      "evidence": "Lorentzian fits (lmfit) with linear baseline; fit residual RMS 11.5-13.9 counts vs point-to-point noise sigma 12.5-13.5 counts (from 540-580 cm-1). Fit errors on centres are ~0.01-0.3 cm-1. Two-component E-band fit preferred over one component: dBIC = 169 (spot 1) and 158 (spot 2).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A1'-E' separation is 62.0 cm-1 in spot 1 and 64.7 cm-1 in spot 2. This is the main thickness discriminator. Thin WS2 has a smaller separation and thicker WS2 a larger one, so spot 1 is thinner.",
+      "evidence": "417.29 - 355.29 = 62.0 cm-1 (spot 1); 420.08 - 355.38 = 64.7 cm-1 (spot 2). Difference 2.7 cm-1. Fit uncertainty on each centre is ~0.05 cm-1; the separation is independent of the Si-based wavenumber offset because that offset cancels.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The A1' mode is 2.8 cm-1 lower in spot 1 (417.3 vs 420.1), while the E' mode is essentially unchanged (355.3 vs 355.4). The A1' stiffening with layer number in WS2 is the expected thickness trend. The unchanged E' argues against a large strain difference between the two spots.",
+      "evidence": "Delta(A1') = -2.79 cm-1; Delta(E') = -0.09 cm-1. Both fitted at 295 K.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The Si substrate peak is about 10x weaker on spot 2 than on spot 1. The thick WS2 region absorbs much more of the Si signal. A monolayer should attenuate the Si signal only slightly.",
+      "evidence": "Si integrated area 6762 (spot 1) vs 664 (spot 2), ratio 10.2. Si/A1' area ratio 1.19 vs 0.085 (14x). Peak-height and area estimates agree in direction; absolute attenuation depends on focus and is not calibrated here.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 2LA(M) band is very strong relative to A1' in spot 1 and weak in spot 2. This is consistent with resonance enhancement at 514.5 nm (2.41 eV), which lies close to the WS2 B-exciton (~2.4-2.5 eV). The 2LA/A1' ratio is therefore not a clean thickness indicator.",
+      "evidence": "Area ratio 2LA/A1' = 4.4 (spot 1) vs 0.9-1.4 (spot 2). The spot 2 decomposition is unstable across fit starting points (2LA centre 349.9 vs 351.5 cm-1), so the spot 2 ratio is uncertain by roughly +/-30%. The spot 1 decomposition is stable.",
+      "provenance": "inferred",
+      "source": "Berkdemir et al., Sci. Rep. 3, 1755 (2013) for 2LA(M) assignment; Zhao et al., Nanoscale 5, 9677 (2013) for B-exciton energy (recalled, not verified here)."
+    },
+    {
+      "finding": "Crystal quality appears similar in both spots. E' and A1' linewidths barely differ, and there is no sign of a second crystal phase.",
+      "evidence": "FWHM(E') = 3.95 vs 4.12 cm-1; FWHM(A1') = 4.52 vs 4.40 cm-1. The LA(M)/A1' area ratio is higher in spot 1 (0.33 vs 0.12). This LA(M) increase could be resonance or defect activation and is not decisive.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The data do not show a monolayer-specific fingerprint beyond the A1'-E' separation and Si attenuation. A Raman-only assignment of spot 1 as 1L is therefore provisional.",
+      "evidence": "Separation 62.0 cm-1 is at the value often quoted for 1L WS2 (about 61-62 cm-1) and within about 1-2 cm-1 of few-layer values. Spectral resolution here is ~0.7 cm-1 per point, and wavenumber calibration uncertainty is ~0.2 cm-1.",
+      "provenance": "inferred",
+      "source": "Berkdemir et al., Sci. Rep. 3, 1755 (2013), A1'-E' separation vs layer number (recalled from memory; verify the table/figure before quoting numbers)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "E' + A1' pattern with LA(M)/2LA(M) features at 514.5 nm; standard 2H-WS2 Raman signature"
+    },
+    {
+      "name": "layers",
+      "value": "spot 1: 1 most likely (1-2 not excluded); spot 2: multilayer (thick)",
+      "provenance": "inferred",
+      "source": "A1'-E' separation 62.0 vs 64.7 cm-1; Si attenuation 10x; Berkdemir et al. 2013 (recalled)"
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected",
+      "provenance": "inferred",
+      "source": "E' identical in both spots (355.29 vs 355.38 cm-1); no absolute strain reference"
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "E' and A1' linewidths 3.95-4.5 cm-1 in both spots; LA(M) ratio not decisive"
+    },
+    {
+      "name": "doping_type",
+      "value": "none determinable",
+      "provenance": "inferred",
+      "source": "no A1'/E' shift consistent with a doping-specific pattern; not measured"
+    },
+    {
+      "name": "temperature_K",
+      "value": "295",
+      "provenance": "measured",
+      "source": "spectrum metadata"
+    }
+  ],
+  "caveats": [
+    "Wavenumber calibration: the Si reference is at 520.91 (spot 1) and 520.80 (spot 2) vs the standard ~520.7 cm-1, so absolute frequencies may be offset by +0.1-0.2 cm-1. The A1'-E' separation is unaffected.",
+    "Spot size (~1 um) can mix the thin island with neighbouring SiO2 or thicker WS2, especially if spot 1 sits near an island edge. The strong Si signal (Si/A1' = 1.19) suggests substantial bare-substrate contribution, so spot 1 may not be a pure monolayer signal.",
+    "The Si attenuation argument is qualitative. Focus, objective NA and island height all change Si intensity, and no bare-SiO2/Si reference was supplied.",
+    "The 2LA(M) amplitude is resonance-enhanced and depends on exciton energy, which in turn depends on thickness, strain and doping. Attributing the spot 1 vs spot 2 2LA difference to thickness alone is not justified.",
+    "Laser power is unknown. Heating red-shifts A1' and E' and thin flakes on SiO2 heat differently, so part of the A1' shift could be thermal. The unchanged E' argues against a large heating effect but does not exclude it.",
+    "Literature values (A1'-E' separation per layer number, 2LA(M) assignment, B-exciton energy) are recalled from memory without internet access and must be verified against the cited papers before use. The numeric thresholds are the least certain part of this report.",
+    "The E-band decomposition in spot 2 is not robust (2LA centre 349.9-351.5 cm-1 and 2LA/A1' ratio 0.9-1.4 depending on starting values). The spot 1 decomposition is stable."
+  ],
+  "questions_for_user": [
+    "Was a low-wavenumber spectrum taken (below 120 cm-1)? Monolayer WS2 has no interlayer shear or breathing modes, whereas bilayer shows a shear mode at roughly 20-30 cm-1. This would be the most direct test of 1L vs 2L with Raman. The current files start at 120 cm-1.",
+    "Do you have a photoluminescence spectrum for each spot? Monolayer WS2 shows strong direct-gap PL near 2.0 eV (~620 nm). A bilayer shows much weaker PL, and the spot 1 PL intensity relative to spot 2 would be strong evidence for a monolayer.",
+    "What AFM step height did you measure on the island? WS2 is about 0.6-0.7 nm per layer, so a height near 0.7 nm would confirm a monolayer.",
+    "What laser power, objective NA, grating and integration time were used? These determine heating and the reliability of intensity comparisons.",
+    "Where exactly was spot 1 relative to the island edge? Edge or substrate contributions could explain the strong Si signal and the large 2LA band.",
+    "Was a bare-substrate reference spectrum taken on the same day? That would calibrate the Si attenuation and the Si wavenumber offset."
+  ],
+  "citations": [
+    "Berkdemir A. et al., Sci. Rep. 3, 1755 (2013), 'Identification of individual and few layers of WS2 using Raman spectroscopy': E' and A1' assignments, A1'-E' separation vs layer number, and LA(M)/2LA(M) features at 514.5 nm. Recalled from memory; not verified here.",
+    "Zhao W. et al., Nanoscale 5, 9677 (2013), 'Evolution of electronic structure in atomically thin sheets of WS2 and WSe2': A and B exciton energies of WS2 layers, B exciton ~2.4 eV (near the 514.5 nm = 2.41 eV excitation). Recalled from memory; not verified here.",
+    "Temple P.A. & Hathaway C.E., Phys. Rev. B 7, 3685 (1973): Si Gamma-phonon reference near 520.7 cm-1 at room temperature. Recalled from memory; not verified here."
+  ],
+  "limits": [
+    "Two spectra only (one spot each); no repeats, no spatial map, no PL, no AFM, no low-wavenumber data, no polarisation data, no laser power.",
+    "No calibrated thickness-vs-Si-attenuation relation was available, so the absolute layer count for spot 2 is not determined beyond 'multilayer'.",
+    "The A1'-E' separation thresholds for mono- and few-layer WS2 are literature recollections. The data alone cannot put spot 1 unambiguously at 1L rather than 2L.",
+    "No literature was accessed; the cited papers are referenced from memory. Work in the scratch folder was limited to fitting scripts; the data files were not modified."
+  ]
+}

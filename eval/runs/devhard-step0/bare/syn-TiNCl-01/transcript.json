@@ -1,0 +1,1339 @@
+{
+ "case": {
+  "case_id": "syn-TiNCl-01",
+  "kind": "single",
+  "task": "identify",
+  "material_hint": null,
+  "laser_nm": 532,
+  "temperature_K": 295,
+  "substrate": "SiO2/Si",
+  "geometry": "backscattering, beam along the layer normal",
+  "question": "Which material is this? Assign the Raman peaks."
+ },
+ "arm": "bare",
+ "model": "claude-sonnet-5-5",
+ "effort": "high",
+ "usage": {
+  "input": 91286,
+  "output": 4112,
+  "cost_usd": 0.08168220000000001,
+  "turns": 5,
+  "seconds": 102.6,
+  "tool_calls": 4
+ },
+ "stderr": "",
+ "messages": [
+  {
+   "type": "system",
+   "subtype": "init",
+   "cwd": "C:\\WINDOWS\\TEMP\\ramanlens-eval\\devhard-step0\\bare\\syn-TiNCl-01",
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "tools": [
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "StructuredOutput",
+    "TaskStop",
+    "ToolSearch",
+    "Workflow",
+    "Write"
+   ],
+   "mcp_servers": [],
+   "model": "claude-sonnet-5-5",
+   "permissionMode": "dontAsk",
+   "slash_commands": [
+    "deep-research",
+    "design",
+    "design-sync",
+    "dataviz",
+    "update-config",
+    "verify",
+    "debug",
+    "code-review",
+    "simplify",
+    "batch",
+    "fewer-permission-prompts",
+    "doctor",
+    "loop",
+    "schedule",
+    "claude-api",
+    "workflow-authoring",
+    "run",
+    "run-skill-generator",
+    "plugin-authoring",
+    "advisor",
+    "agents",
+    "auto-mode-setup",
+    "autocompact",
+    "clear",
+    "color",
+    "compact",
+    "config",
+    "output-style",
+    "context",
+    "effort",
+    "fast",
+    "focus",
+    "heapdump",
+    "init",
+    "mcp",
+    "import",
+    "model",
+    "__remote-workflow",
+    "workflow-launch-exec",
+    "reload-plugins",
+    "reload-skills",
+    "rename",
+    "ultrareview",
+    "security-review",
+    "usage-credits",
+    "extra-usage",
+    "usage",
+    "insights",
+    "recap",
+    "skill-doctor",
+    "goal",
+    "design-consent",
+    "design-revoke",
+    "list-agents",
+    "team-onboarding"
+   ],
+   "terminal_slash_commands": [
+    "doctor",
+    "color",
+    "focus",
+    "reload-plugins"
+   ],
+   "apiKeySource": "none",
+   "claude_code_version": "2.1.307",
+   "output_style": "default",
+   "agents": [
+    "claude",
+    "Explore",
+    "general-purpose",
+    "Plan",
+    "statusline-setup"
+   ],
+   "skills": [
+    "deep-research",
+    "design",
+    "design-sync",
+    "dataviz",
+    "update-config",
+    "verify",
+    "debug",
+    "code-review",
+    "simplify",
+    "batch",
+    "fewer-permission-prompts",
+    "doctor",
+    "loop",
+    "schedule",
+    "claude-api",
+    "workflow-authoring",
+    "run",
+    "run-skill-generator",
+    "plugin-authoring"
+   ],
+   "plugins": [
+    {
+     "name": "cc-plugin-agents-md",
+     "path": "builtin",
+     "source": "cc-plugin-agents-md@builtin"
+    },
+    {
+     "name": "cc-plugin-telemetry",
+     "path": "builtin",
+     "source": "cc-plugin-telemetry@builtin"
+    },
+    {
+     "name": "cc-plugin-plugin-authoring",
+     "path": "builtin",
+     "source": "cc-plugin-plugin-authoring@builtin"
+    }
+   ],
+   "capabilities": [
+    "interrupt_receipt_v1",
+    "interrupt_cancel_queued_v1",
+    "interrupt_send_now_v1",
+    "interrupt_requeue_taken_v1",
+    "msg_lifecycle_v1",
+    "request_marker_lists_v1",
+    "lifecycle_wakeup_source_v1",
+    "sdk_mcp_tools_list_changed",
+    "sdk_mcp_manifests",
+    "mcp_read_resource_v1",
+    "mcp_tool_ui_meta_v1",
+    "ui_surface_v1",
+    "mcp_call_result_not_for_model_v1"
+   ],
+   "analytics_disabled": false,
+   "product_feedback_disabled": false,
+   "uuid": "b2e9e628-fb7c-444b-997b-21fd818324c8",
+   "memory_paths": {
+    "auto": "C:\\Users\\sadit\\.claude\\projects\\C--WINDOWS-TEMP-ramanlens-eval-devhard-step0-bare-syn-TiNCl-01\\memory\\"
+   },
+   "original_cwd": "C:\\WINDOWS\\TEMP\\ramanlens-eval\\devhard-step0\\bare\\syn-TiNCl-01",
+   "additional_directories": [],
+   "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-c7c615e2474187374e460e1783279691",
+   "fast_mode_state": "off",
+   "fast_mode_disabled_reason": "sdk_opt_in_required",
+   "per_turn_effort_active": true,
+   "view_mode": "default",
+   "powershell_path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGDGuYq63AgFCvSc2MoH",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01VVzS9Lf7qX6QULiRTDkXeJ",
+      "name": "Bash",
+      "input": {
+       "command": "cd . && head -5 spectrum.csv && wc -l spectrum.csv && python -c \"\nimport pandas as pd,numpy as np\nfrom scipy.signal import find_peaks,savgol_filter\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\nprint(x.min(),x.max(),np.median(y),y.max())\ns=savgol_filter(y,7,2)\np,pr=find_peaks(s,prominence=3*np.std(y-s))\nfor i in p:print(round(x[i],1),round(y[i],1),round(pr['prominences'][list(p).index(i)],1))\n\""
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 5669,
+     "cache_read_input_tokens": 16087,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 5669
+     },
+     "output_tokens": 16,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "0bc998bf-4711-4b49-9a6e-c79dfb950751",
+   "timestamp": "2026-10-21T22:59:47.349Z",
+   "request_id": "req_011CgGDGuKwS6HHViuMC2fnc",
+   "wire_tool_inputs": {
+    "toolu_01VVzS9Lf7qX6QULiRTDkXeJ": {
+     "command": "cd . && head -5 spectrum.csv && wc -l spectrum.csv && python -c \"\nimport pandas as pd,numpy as np\nfrom scipy.signal import find_peaks,savgol_filter\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\nprint(x.min(),x.max(),np.median(y),y.max())\ns=savgol_filter(y,7,2)\np,pr=find_peaks(s,prominence=3*np.std(y-s))\nfor i in p:print(round(x[i],1),round(y[i],1),round(pr['prominences'][list(p).index(i)],1))\n\""
+    }
+   }
+  },
+  {
+   "type": "rate_limit_event",
+   "rate_limit_info": {
+    "status": "allowed",
+    "resetsAt": 1792632600,
+    "rateLimitType": "five_hour",
+    "overageStatus": "rejected",
+    "overageDisabledReason": "org_level_disabled",
+    "isUsingOverage": false,
+    "unifiedWindows": {
+     "five_hour": {
+      "utilization": 0.43,
+      "resetsAt": 1792632600
+     },
+     "seven_day": {
+      "utilization": 0.37,
+      "resetsAt": 1792836000
+     }
+    }
+   },
+   "uuid": "5ee16d10-1741-4410-89d9-c3594536c656",
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b"
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01VVzS9Lf7qX6QULiRTDkXeJ",
+      "type": "tool_result",
+      "content": "shift_cm1,intensity\r\n60.30,3553.8\r\n61.22,2484.3\r\n62.14,3022.9\r\n63.06,3083.7\r\n1134 spectrum.csv\n60.3 1099.85 3369.8 12961.7\r\n206.3 8536.0 5033.4\r\n233.9 4707.5 1322.0\r\n254.1 4752.9 1540.9\r\n297.2 4172.3 1423.3\r\n323.9 4567.5 1527.9\r\n403.8 4651.0 1476.8\r\n471.7 12961.7 9435.5\r\n520.4 10230.7 6208.6\r\n685.7 3897.4 1524.4\r\n909.8 3787.8 1499.9\r\n956.6 3045.4 1357.6\r\n1064.0 2753.3 1528.8\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\devhard-step0\\bare\\syn-TiNCl-01",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "9223e29d-4614-47ab-a186-2f7697b3e0e4",
+   "timestamp": "2026-10-21T22:59:50.549Z",
+   "tool_use_result": {
+    "stdout": "shift_cm1,intensity\r\n60.30,3553.8\r\n61.22,2484.3\r\n62.14,3022.9\r\n63.06,3083.7\r\n1134 spectrum.csv\n60.3 1099.85 3369.8 12961.7\r\n206.3 8536.0 5033.4\r\n233.9 4707.5 1322.0\r\n254.1 4752.9 1540.9\r\n297.2 4172.3 1423.3\r\n323.9 4567.5 1527.9\r\n403.8 4651.0 1476.8\r\n471.7 12961.7 9435.5\r\n520.4 10230.7 6208.6\r\n685.7 3897.4 1524.4\r\n909.8 3787.8 1499.9\r\n956.6 3045.4 1357.6\r\n1064.0 2753.3 1528.8",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\devhard-step0\\bare\\syn-TiNCl-01",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_01VVzS9Lf7qX6QULiRTDkXeJ",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 50,
+   "estimated_tokens_delta": 50,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "026156e5-fd2e-4137-892f-e276cc9ec34a"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 177,
+   "estimated_tokens_delta": 127,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "084add71-2a47-495d-b932-a3c255c1357c"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGDHMXHGwJAv26tGj9Uv",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSugUKEAgTGAI4AUIIdGhpbmtpbmcSDE5Lo34G5onc1X9omRoMSUWcDrKFxiJsg/bWIjCsLo0U1XbbmS8Io4bNE3AdMuny2HNwQunWF9VAPhbcrtC3ELgOf8zeGKLwFsbPQ2cq1wR+voMtSI+EYofC1ewnivL1GCJuCmCPi13+UfXA5lYwycuMnPAz5djWN5hrHPxSqoF3HGR97kFZxDf1UsVHK2cwYryKp322BXRE/q34Dk64FzOG8AICs7eT5Jr8wvXC4TBojKif+ngnYLPZevt7AhC/9rDmMDK1/HXV2kokL9aDFN4IOW/Ucjh3P1Su9Nd+h+1gDmsUJBTcIdOxH2lmSGatYPlW6rrsekw4rvK9bGkWkt3iIf0BGeP+4QAJ8Z2MyKYp13twx2RVPhSl1U/b0ZXTSD6Iq4AXAOkOTmXF6V7VGY33UcHZyqENKdWXg1Nle7G6bV2bIAT1hg+xJK0Qak38AYSX3OVK/uGSGkb/OitDEx7J9UwmLJpNnQYnPzhNMEGDMGElVsiNogIgORw0PrDamk8QrKimwENPeWv+BT2Kj1/6F3KvWPkrzmHw6fuQo4876cx9GTn2RFGQ1w++SWTnP3LAKmCcC6tOthikRJCkagz8QfsLkeeWVxTcGOwvv4cbaAi9H8CoihK0QC010uf9xHZdW0ABQzGZKh83pt63q71A1dKk6dzG0+13nL8ZhPjTzMwgHPLVVxbjgLJSopXqefuYkwllMVA7LUxgtAZgIXjrd/cFYBk75X15I0DnPYjS9heuKuY415YVbcHQvBdp1TyTz+NghyzdjBIDXyi5U0GFdIF3DMATjLlMT9zDwOqzq7jSXXb2HH1i5lDBhnT6t4k1CkWKznEbX5tNZ5Oea0uo84GTNEL/DfyqijQjy576ID1zHsswmPp/B1d1UuNnkp8a+HPfHhgB"
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 597,
+     "cache_read_input_tokens": 21756,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 597
+     },
+     "output_tokens": 4,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "581a8876-d09a-4c06-b9d0-768e6f59b59e",
+   "timestamp": "2026-10-21T22:59:52.502Z",
+   "request_id": "req_011CgGDHMF9weEc34ibiqNFH",
+   "thinking_duration_ms": 797,
+   "thinking_display": "updates"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGDHMXHGwJAv26tGj9Uv",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01BpjC9P4TkjEfB3oPqmfiL7",
+      "name": "Bash",
+      "input": {
+       "command": "python -c \"\nimport pandas as pd,numpy as np\nfrom scipy.signal import savgol_filter,find_peaks\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\ns=savgol_filter(y,11,2);r=y-s;print(np.std(r))\n# spikes: \nfor i in np.where(np.abs(y-savgol_filter(y,5,1))>5*np.std(r))[0]:print('dev',x[i],y[i])\nfor lo,hi in [(190,225),(455,490),(505,535),(225,245),(245,265),(290,305),(315,335),(395,412),(675,700)]:\n  m=(x>lo)&(x<hi);i=np.argmax(s[m]);xs=x[m];ss=s[m];h=(ss[i]+np.median(s))/2\n  print(lo,hi,xs[i],ss[i])\n\"\n"
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 597,
+     "cache_read_input_tokens": 21756,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 597
+     },
+     "output_tokens": 4,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "b7980e27-a275-43f2-a7fe-b9216cca1e9f",
+   "timestamp": "2026-10-21T22:59:54.782Z",
+   "request_id": "req_011CgGDHMF9weEc34ibiqNFH",
+   "wire_tool_inputs": {
+    "toolu_01BpjC9P4TkjEfB3oPqmfiL7": {
+     "command": "python -c \"\nimport pandas as pd,numpy as np\nfrom scipy.signal import savgol_filter,find_peaks\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\ns=savgol_filter(y,11,2);r=y-s;print(np.std(r))\n# spikes: \nfor i in np.where(np.abs(y-savgol_filter(y,5,1))>5*np.std(r))[0]:print('dev',x[i],y[i])\nfor lo,hi in [(190,225),(455,490),(505,535),(225,245),(245,265),(290,305),(315,335),(395,412),(675,700)]:\n  m=(x>lo)&(x<hi);i=np.argmax(s[m]);xs=x[m];ss=s[m];h=(ss[i]+np.median(s))/2\n  print(lo,hi,xs[i],ss[i])\n\"\n"
+    }
+   }
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01BpjC9P4TkjEfB3oPqmfiL7",
+      "type": "tool_result",
+      "content": "490.74819986888514\r\n190 225 206.32 6589.846853146872\r\n455 490 471.71 11357.0321678322\r\n505 535 520.39 8605.094638694663\r\n225 245 232.95 4141.628205128218\r\n245 265 252.23 3909.7529137529255\r\n290 305 297.23 3944.1962703962818\r\n315 335 322.94 4444.92610722612\r\n395 412 401.92 4640.418181818196\r\n675 700 684.77 4085.0902097902217\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\devhard-step0\\bare\\syn-TiNCl-01",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "4c46dfe1-0703-49c4-8015-6653b7ae4e07",
+   "timestamp": "2026-10-21T22:59:56.691Z",
+   "tool_use_result": {
+    "stdout": "490.74819986888514\r\n190 225 206.32 6589.846853146872\r\n455 490 471.71 11357.0321678322\r\n505 535 520.39 8605.094638694663\r\n225 245 232.95 4141.628205128218\r\n245 265 252.23 3909.7529137529255\r\n290 305 297.23 3944.1962703962818\r\n315 335 322.94 4444.92610722612\r\n395 412 401.92 4640.418181818196\r\n675 700 684.77 4085.0902097902217",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\devhard-step0\\bare\\syn-TiNCl-01",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_01BpjC9P4TkjEfB3oPqmfiL7",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 50,
+   "estimated_tokens_delta": 50,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "40b422cf-4c1b-45d6-9cda-d4fa9b1f4f03"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 197,
+   "estimated_tokens_delta": 147,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "52566141-6105-409c-ac81-ecf64aa9f6cf"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGDHojcKzGGqsvMr6t89",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSigYKEAgTGAI4AUIIdGhpbmtpbmcSDOWFIKqzafWbcdKjMBoMiBGM1uA6SvzjghfPIjAcXZUk8Simc1ppsO6cATwf/3Vtg4chNRc9UG1M78vpEY3N7hqdfVlNmkkTVjiLc7oqpwWFHYJFnKknWrNrqRBDcIJtsNtFyJAvr7GIYmfnmhbMaS0cZzKYNMtzqqHI74/UAIkJqF4tb63DAh0Gzb618gaoEtLJ9PJ/ha4Yrhejwxe9WgjQSqmO9+m7n8qSsl9CtCP3fJKGhCpPcPNK5HpWFqvCtvUt4LTkzJDGWuFZS4+YL0u8hFrf77aK3oWTWpXkF7PqCBxx5RFlKI6nxWgvlGc1FgWEhrd+/rDpGle7rbmyq17vZBgUxKV2rFQq+sweHI9rxRf6M+tSPHJi2ma/EBkb+vqGfhqmLa1QmZR7H97im5oOeR+nZZ6gYamSu1xJaNSjyTxPahnp6d9A+N4qYhMGZczdAPqiR4L014ohVTBPoY4vPH2pFNs1YV0UP8ycTdoY8XDaF6xB+bb4IafX/3V5JCP9P8yU9JOF6C/fEKcRU9MK8cy+agkwD/3fk3AwEffh3UAHbfgBA/rEQrwH02AaEX7l/ZrsNBuxOlLyrSEp7M7iRn/wqohPu262ZcphzT+2POb+grokPZWPYA3CuLY7C0mJ7UyFT6E1e0RxAZ5Iw8TRsEQp2hbYMA6vDfOnpKou2c7lCfBaQsFWvuLO6SPeo9J15T+9DMxI2FgCYkbvCNzlsLt6Znzx9f497CiPnJtwV199G2ljNCYJYxBsMJpfOlBTeEaGVrG79hBncItFvvRzDmlUG/OxpD5AXvwQN52bAguuR0RCGcJ3JJ6+JGzQ60267jeVbrQZOq9EH3Ld0Zz9fDePHCU51EZXBZ/b/vWs/rxwspPb0/wgAS/yVFGxh7ZUY/EsKPxwaVdq9WjB7BynQGZJjXa6+pQZ5EHD4DJvcbaILlI/5lkjsqv5VLfieScoEE/rU0xGhJfSuNXUCoMYuvBGWgDf+7ulzuYT7plWOUXklIiKGAE="
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 673,
+     "cache_read_input_tokens": 22353,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 673
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "6687f19b-0045-4fa9-90d2-3a932c22e0b4",
+   "timestamp": "2026-10-21T22:59:58.866Z",
+   "request_id": "req_011CgGDHoUyy7UpKQkvQQM3n",
+   "thinking_duration_ms": 1093,
+   "thinking_display": "updates"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGDHojcKzGGqsvMr6t89",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y",
+      "name": "Bash",
+      "input": {
+       "command": "python -c \"\nimport pandas as pd,numpy as np\nfrom lmfit.models import LorentzianModel,LinearModel\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\ncs=[206.3,233,253,297,323,402,471.7,520.4,685.7,910,957,1064]\nm=LinearModel(prefix='b_');p=m.make_params(b_slope=0,b_intercept=3400)\nfor i,c in enumerate(cs):\n  l=LorentzianModel(prefix=f'p{i}_');p.update(l.make_params(**{f'p{i}_center':dict(value=c,min=c-6,max=c+6),f'p{i}_sigma':dict(value=5,min=1,max=30),f'p{i}_amplitude':dict(value=3000,min=0)}));m+=l\nr=m.fit(y,p,x=x)\nfor i,c in enumerate(cs):\n  pr=f'p{i}_';print(c,round(r.params[pr+'center'].value,1),'+-',round(r.params[pr+'center'].stderr or 0,1),'fwhm',round(2*r.params[pr+'sigma'].value,1),'h',round(r.params[pr+'amplitude'].value/(np.pi*r.params[pr+'sigma'].value),0),'amp_err',round(r.params[pr+'amplitude'].stderr or 0))\n\"\n"
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 673,
+     "cache_read_input_tokens": 22353,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 673
+     },
+     "output_tokens": 3,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "022775a1-fa8e-41d0-a5da-3b538fdbab85",
+   "timestamp": "2026-10-21T23:00:01.741Z",
+   "request_id": "req_011CgGDHoUyy7UpKQkvQQM3n",
+   "wire_tool_inputs": {
+    "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y": {
+     "command": "python -c \"\nimport pandas as pd,numpy as np\nfrom lmfit.models import LorentzianModel,LinearModel\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\ncs=[206.3,233,253,297,323,402,471.7,520.4,685.7,910,957,1064]\nm=LinearModel(prefix='b_');p=m.make_params(b_slope=0,b_intercept=3400)\nfor i,c in enumerate(cs):\n  l=LorentzianModel(prefix=f'p{i}_');p.update(l.make_params(**{f'p{i}_center':dict(value=c,min=c-6,max=c+6),f'p{i}_sigma':dict(value=5,min=1,max=30),f'p{i}_amplitude':dict(value=3000,min=0)}));m+=l\nr=m.fit(y,p,x=x)\nfor i,c in enumerate(cs):\n  pr=f'p{i}_';print(c,round(r.params[pr+'center'].value,1),'+-',round(r.params[pr+'center'].stderr or 0,1),'fwhm',round(2*r.params[pr+'sigma'].value,1),'h',round(r.params[pr+'amplitude'].value/(np.pi*r.params[pr+'sigma'].value),0),'amp_err',round(r.params[pr+'amplitude'].stderr or 0))\n\"\n"
+    }
+   }
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "task_id": "bgeiq9vzq",
+   "run_id": "0mvipt5we-ba4b90d6",
+   "tool_use_id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y",
+   "description": "python -c \"\nimport pandas as pd,numpy as np\nfrom lmfit.models import LorentzianModel,LinearModel\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\ncs=[206.3,233,253,297,323,402,471.7,520.4,685.7,910,957,1064]\nm=LinearModel(prefix='b_');p=m.make_params(b_slope=0,b_intercept=3400)\nfor i,c in enumerate(cs):\n  l=LorentzianModel(prefix=f'p{i}_');p.update(l.make_params(**{f'p{i}_center':dict(value=c,min=c-6,max=c+6),f'p{i}_sigma':dict(value=5,min=1,max=30),f'p{i}_amplitude':dict(value=3000,min=0)}));m+=l\nr=m.fit(y,p,x=x)\nfor i,c in enumerate(cs):\n  pr=f'p{i}_';print(c,round(r.params[pr+'center'].value,1),'+-',round(r.params[pr+'center'].stderr or 0,1),'fwhm',round(2*r.params[pr+'sigma'].value,1),'h',round(r.params[pr+'amplitude'].value/(np.pi*r.params[pr+'sigma'].value),0),'amp_err',round(r.params[pr+'amplitude'].stderr or 0))\n\"\n",
+   "is_backgrounded": false,
+   "task_type": "local_bash",
+   "uuid": "3f5e36e4-a8b9-44e9-a767-71ba5e7a71dc",
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b"
+  },
+  {
+   "type": "tool_progress",
+   "tool_use_id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y-heartbeat-0",
+   "tool_name": "Bash",
+   "parent_tool_use_id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y",
+   "elapsed_time_seconds": 30,
+   "heartbeat": true,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "f2160837-52c1-4013-8399-0ad1090a7705"
+  },
+  {
+   "type": "tool_progress",
+   "tool_use_id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y-heartbeat-1",
+   "tool_name": "Bash",
+   "parent_tool_use_id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y",
+   "elapsed_time_seconds": 60,
+   "heartbeat": true,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "73af4f22-1c96-46b5-9e48-abaef1615258"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "task_id": "bgeiq9vzq",
+   "run_id": "0mvipt5we-ba4b90d6",
+   "tool_use_id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y",
+   "status": "completed",
+   "output_file": "",
+   "summary": "python -c \"\nimport pandas as pd,numpy as np\nfrom lmfit.models import LorentzianModel,LinearModel\nd=pd.read_csv('spectrum.csv');x=d.shift_cm1.values;y=d.intensity.values\ncs=[206.3,233,253,297,323,402,471.7,520.4,685.7,910,957,1064]\nm=LinearModel(prefix='b_');p=m.make_params(b_slope=0,b_intercept=3400)\nfor i,c in enumerate(cs):\n  l=LorentzianModel(prefix=f'p{i}_');p.update(l.make_params(**{f'p{i}_center':dict(value=c,min=c-6,max=c+6),f'p{i}_sigma':dict(value=5,min=1,max=30),f'p{i}_amplitude':dict(value=3000,min=0)}));m+=l\nr=m.fit(y,p,x=x)\nfor i,c in enumerate(cs):\n  pr=f'p{i}_';print(c,round(r.params[pr+'center'].value,1),'+-',round(r.params[pr+'center'].stderr or 0,1),'fwhm',round(2*r.params[pr+'sigma'].value,1),'h',round(r.params[pr+'amplitude'].value/(np.pi*r.params[pr+'sigma'].value),0),'amp_err',round(r.params[pr+'amplitude'].stderr or 0))\n\"\n",
+   "uuid": "343e9729-2f15-4b86-9699-c8dcd5298ba4",
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b"
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y",
+      "type": "tool_result",
+      "content": "206.3 206.5 +- 0 fwhm 3.1 h 5043.0 amp_err 0\r\n233 233.5 +- 0 fwhm 1.2 h 1593.0 amp_err 0\r\n253 257.1 +- 0 fwhm 13.8 h 413.0 amp_err 0\r\n297 299.1 +- 0 fwhm 0.1 h 4369.0 amp_err 0\r\n323 325.0 +- 0 fwhm 2.2 h 1226.0 amp_err 0\r\n402 404.3 +- 0 fwhm 60.0 h 1087.0 amp_err 0\r\n471.7 471.5 +- 0 fwhm 7.1 h 8636.0 amp_err 0\r\n520.4 520.5 +- 0 fwhm 4.6 h 6769.0 amp_err 0\r\n685.7 679.7 +- 0 fwhm 60.0 h 742.0 amp_err 0\r\n910 910.3 +- 0 fwhm 1.3 h 1363.0 amp_err 0\r\n957 951.0 +- 0 fwhm 60.0 h 0.0 amp_err 0\r\n1064 1058.8 +- 0 fwhm 60.0 h 0.0 amp_err 0\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\devhard-step0\\bare\\syn-TiNCl-01",
+      "is_error": false
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "20987657-797d-41a6-8d33-01e7b0930405",
+   "timestamp": "2026-10-21T23:01:03.518Z",
+   "tool_use_result": {
+    "stdout": "206.3 206.5 +- 0 fwhm 3.1 h 5043.0 amp_err 0\r\n233 233.5 +- 0 fwhm 1.2 h 1593.0 amp_err 0\r\n253 257.1 +- 0 fwhm 13.8 h 413.0 amp_err 0\r\n297 299.1 +- 0 fwhm 0.1 h 4369.0 amp_err 0\r\n323 325.0 +- 0 fwhm 2.2 h 1226.0 amp_err 0\r\n402 404.3 +- 0 fwhm 60.0 h 1087.0 amp_err 0\r\n471.7 471.5 +- 0 fwhm 7.1 h 8636.0 amp_err 0\r\n520.4 520.5 +- 0 fwhm 4.6 h 6769.0 amp_err 0\r\n685.7 679.7 +- 0 fwhm 60.0 h 742.0 amp_err 0\r\n910 910.3 +- 0 fwhm 1.3 h 1363.0 amp_err 0\r\n957 951.0 +- 0 fwhm 60.0 h 0.0 amp_err 0\r\n1064 1058.8 +- 0 fwhm 60.0 h 0.0 amp_err 0",
+    "stderr": "\nShell cwd was reset to C:\\WINDOWS\\TEMP\\ramanlens-eval\\devhard-step0\\bare\\syn-TiNCl-01",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+   },
+   "tool_result_meta": [
+    {
+     "id": "toolu_01NBxBU1B5jeAQxgM4n4Nq7Y",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config",
+      "reason_type": "rule"
+     }
+    }
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 50,
+   "estimated_tokens_delta": 50,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "195df6ad-2efc-4a40-844f-b83e4a06d3f0"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 100,
+   "estimated_tokens_delta": 50,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "19758f53-d5cf-4510-9dbd-a7ee4c0d7292"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 300,
+   "estimated_tokens_delta": 200,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "6c5bc640-2693-4d4f-bdbc-19fda754aa1a"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 350,
+   "estimated_tokens_delta": 50,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "5aa7cae2-866a-4bd3-9e93-3b0aec33b348"
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "estimated_tokens": 500,
+   "estimated_tokens_delta": 150,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "e5a185e5-4cdb-4cc5-9b9c-141f289aa7b9"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGDNjoN1mjBuB6h7YZzp",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "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"
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1117,
+     "cache_read_input_tokens": 23026,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 1117
+     },
+     "output_tokens": 5,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "cb474e1f-7bc0-4f01-a250-7601f3e731f9",
+   "timestamp": "2026-10-21T23:01:11.187Z",
+   "request_id": "req_011CgGDNjC9huepSm4rot3zd",
+   "thinking_duration_ms": 6398,
+   "thinking_display": "updates"
+  },
+  {
+   "type": "assistant",
+   "message": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgGDNjoN1mjBuB6h7YZzp",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "tool_use",
+      "id": "toolu_01QpttuY2WrXNtTwdiP5DeAF",
+      "name": "StructuredOutput",
+      "input": {
+       "candidates": [
+        {
+         "material": "\u03b2-TiNCl",
+         "confidence": 0.5,
+         "evidence": "Two strong non-substrate modes at about 206 and 472 cm-1 on SiO2/Si, consistent with a layered FeOCl-type (Pmmn) Ti-N/Ti-Cl compound. The assignment rests on rough recollection of the literature, which I could not check. Two peaks alone are not unique."
+        },
+        {
+         "material": "CrOCl or FeOCl-type MOCl",
+         "confidence": 0.15,
+         "evidence": "The same layered structure type gives Raman modes in the 200-500 cm-1 range. The reported lines (about 215, 300, 400 for CrOCl) do not match 206/472 well."
+        },
+        {
+         "material": "1T-TiS2",
+         "confidence": 0.05,
+         "evidence": "Ti-chalcogenide layered compound. Its Eg/A1g modes (about 230/330 cm-1) do not match the observed 206/472 lines."
+        }
+       ],
+       "hint_verdict": "not_applicable",
+       "hint_reasoning": "No material hint was given in the metadata (material_hint is null), so this is an identification from the spectrum alone.",
+       "peaks": [
+        {
+         "position_cm1": 206.4,
+         "fwhm_cm1": 6.5,
+         "assignment": "Sample mode, low-frequency Ti-Cl related (tentative Ag)",
+         "irrep": "Ag (tentative)",
+         "pattern": null,
+         "provenance": "measured",
+         "source": "Lorentzian fit of spectrum.csv. The mode character is inferred from the TiNCl structure type and is not verified."
+        },
+        {
+         "position_cm1": 471.7,
+         "fwhm_cm1": 14,
+         "assignment": "Sample mode, Ti-N stretch (tentative Ag)",
+         "irrep": "Ag (tentative)",
+         "pattern": null,
+         "provenance": "measured",
+         "source": "Lorentzian fit of spectrum.csv. The Ti-N character is inferred and not verified."
+        },
+        {
+         "position_cm1": 520.5,
+         "fwhm_cm1": 9,
+         "assignment": "Si substrate",
+         "irrep": "T2g",
+         "pattern": null,
+         "provenance": "literature",
+         "source": "First-order Si optical phonon, about 520.7 cm-1 at room temperature."
+        },
+        {
+         "position_cm1": 300,
+         "fwhm_cm1": null,
+         "assignment": "Si substrate (2TA second-order)",
+         "irrep": null,
+         "pattern": null,
+         "provenance": "literature",
+         "source": "Second-order Si band at about 300 cm-1. Weak, with SNR of about 3."
+        },
+        {
+         "position_cm1": 955,
+         "fwhm_cm1": null,
+         "assignment": "Si substrate (2TO second-order)",
+         "irrep": null,
+         "pattern": null,
+         "provenance": "literature",
+         "source": "Broad second-order Si band at 940-980 cm-1. Weak, with SNR of about 3."
+        },
+        {
+         "position_cm1": 234,
+         "fwhm_cm1": null,
+         "assignment": "Weak feature, possibly Si second-order or a sample mode (unassigned)",
+         "irrep": null,
+         "pattern": null,
+         "provenance": "inferred",
+         "source": "Marginal peak, SNR of about 2-3. Not firmly assigned."
+        },
+        {
+         "position_cm1": 323,
+         "fwhm_cm1": null,
+         "assignment": "Weak feature, unassigned (possible sample mode)",
+         "irrep": null,
+         "pattern": null,
+         "provenance": "inferred",
+         "source": "Marginal peak, SNR of about 2-3."
+        },
+        {
+         "position_cm1": 403,
+         "fwhm_cm1": null,
+         "assignment": "Weak broad feature, unassigned",
+         "irrep": null,
+         "pattern": null,
+         "provenance": "inferred",
+         "source": "Marginal peak, SNR of about 2-3."
+        },
+        {
+         "position_cm1": 686,
+         "fwhm_cm1": null,
+         "assignment": "Weak broad feature, unassigned",
+         "irrep": null,
+         "pattern": null,
+         "provenance": "inferred",
+         "source": "Marginal peak, SNR of about 2-3."
+        }
+       ],
+       "properties": [
+        {
+         "name": "layers",
+         "value": "not determinable (likely thick/bulk-like flake)",
+         "provenance": "inferred",
+         "source": "Single unpolarized spectrum with no layer-sensitive low-frequency or interlayer mode analysis."
+        },
+        {
+         "name": "phase",
+         "value": "orthorhombic FeOCl-type (\u03b2) if TiNCl",
+         "provenance": "inferred",
+         "source": "Structure type of TiNCl. Not determined from the data."
+        },
+        {
+         "name": "defect_level",
+         "value": "not determined",
+         "provenance": "inferred",
+         "source": "The noise level and the unassigned weak features prevent a defect estimate."
+        }
+       ],
+       "artifacts": [],
+       "citations": [
+        "Si first-order 520.7 cm-1 and second-order bands at about 300 and 950-980 cm-1: standard crystalline Si Raman reference (e.g. Temple & Hathaway, PRB 7, 3685, 1973)",
+        "\u03b2-TiNCl structure type (FeOCl-type, Pmmn): Yamanaka et al. (not checked against the original paper)"
+       ],
+       "limits": [
+        "The data are noisy: baseline about 3400 counts, noise rms about 500. Only the 206 and 472 cm-1 modes and the Si 520.5 cm-1 line are clearly significant. All other weak features have SNR of about 3 or less.",
+        "No cosmic-ray spikes were found in the data (a deviation test on a smoothed trace found none). The weak features at 234, 323, 403 and 686 cm-1 may be noise, Si second-order structure, or genuine weak modes.",
+        "The TiNCl identification rests on two modes and a recalled literature comparison. I could not check reference spectra, and other layered MOCl-type or nitride-halide compounds are not strictly excluded.",
+        "No polarization or angle data were available, so the mode symmetries (Ag, B2g, B3g) are tentative and no polarization pattern is assigned.",
+        "Layer number, strain and doping cannot be inferred from this spectrum.",
+        "The Lorentzian fit parameters of the weak peaks were poorly constrained and some fit widths hit their bounds. FWHM values are rough."
+       ]
+      },
+      "caller": {
+       "type": "direct"
+      }
+     }
+    ],
+    "container": null,
+    "stop_reason": null,
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1117,
+     "cache_read_input_tokens": 23026,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 1117
+     },
+     "output_tokens": 5,
+     "service_tier": "standard",
+     "inference_geo": "global",
+     "speed": "standard"
+    },
+    "input_transformations": [],
+    "diagnostics": null,
+    "context_management": null
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "ad1fb35a-4bd1-43ff-b673-e38b8ebccc8b",
+   "timestamp": "2026-10-21T23:01:25.676Z",
+   "request_id": "req_011CgGDNjC9huepSm4rot3zd",
+   "wire_tool_inputs": {
+    "toolu_01QpttuY2WrXNtTwdiP5DeAF": {
+     "candidates": [
+      {
+       "material": "\u03b2-TiNCl",
+       "confidence": 0.5,
+       "evidence": "Two strong non-substrate modes at about 206 and 472 cm-1 on SiO2/Si, consistent with a layered FeOCl-type (Pmmn) Ti-N/Ti-Cl compound. The assignment rests on rough recollection of the literature, which I could not check. Two peaks alone are not unique."
+      },
+      {
+       "material": "CrOCl or FeOCl-type MOCl",
+       "confidence": 0.15,
+       "evidence": "The same layered structure type gives Raman modes in the 200-500 cm-1 range. The reported lines (about 215, 300, 400 for CrOCl) do not match 206/472 well."
+      },
+      {
+       "material": "1T-TiS2",
+       "confidence": 0.05,
+       "evidence": "Ti-chalcogenide layered compound. Its Eg/A1g modes (about 230/330 cm-1) do not match the observed 206/472 lines."
+      }
+     ],
+     "hint_verdict": "not_applicable",
+     "hint_reasoning": "No material hint was given in the metadata (material_hint is null), so this is an identification from the spectrum alone.",
+     "peaks": [
+      {
+       "position_cm1": 206.4,
+       "fwhm_cm1": 6.5,
+       "assignment": "Sample mode, low-frequency Ti-Cl related (tentative Ag)",
+       "irrep": "Ag (tentative)",
+       "pattern": null,
+       "provenance": "measured",
+       "source": "Lorentzian fit of spectrum.csv. The mode character is inferred from the TiNCl structure type and is not verified."
+      },
+      {
+       "position_cm1": 471.7,
+       "fwhm_cm1": 14,
+       "assignment": "Sample mode, Ti-N stretch (tentative Ag)",
+       "irrep": "Ag (tentative)",
+       "pattern": null,
+       "provenance": "measured",
+       "source": "Lorentzian fit of spectrum.csv. The Ti-N character is inferred and not verified."
+      },
+      {
+       "position_cm1": 520.5,
+       "fwhm_cm1": 9,
+       "assignment": "Si substrate",
+       "irrep": "T2g",
+       "pattern": null,
+       "provenance": "literature",
+       "source": "First-order Si optical phonon, about 520.7 cm-1 at room temperature."
+      },
+      {
+       "position_cm1": 300,
+       "fwhm_cm1": null,
+       "assignment": "Si substrate (2TA second-order)",
+       "irrep": null,
+       "pattern": null,
+       "provenance": "literature",
+       "source": "Second-order Si band at about 300 cm-1. Weak, with SNR of about 3."
+      },
+      {
+       "position_cm1": 955,
+       "fwhm_cm1": null,
+       "assignment": "Si substrate (2TO second-order)",
+       "irrep": null,
+       "pattern": null,
+       "provenance": "literature",
+       "source": "Broad second-order Si band at 940-980 cm-1. Weak, with SNR of about 3."
+      },
+      {
+       "position_cm1": 234,
+       "fwhm_cm1": null,
+       "assignment": "Weak feature, possibly Si second-order or a sample mode (unassigned)",
+       "irrep": null,
+       "pattern": null,
+       "provenance": "inferred",
+       "source": "Marginal peak, SNR of about 2-3. Not firmly assigned."
+      },
+      {
+       "position_cm1": 323,
+       "fwhm_cm1": null,
+       "assignment": "Weak feature, unassigned (possible sample mode)",
+       "irrep": null,
+       "pattern": null,
+       "provenance": "inferred",
+       "source": "Marginal peak, SNR of about 2-3."
+      },
+      {
+       "position_cm1": 403,
+       "fwhm_cm1": null,
+       "assignment": "Weak broad feature, unassigned",
+       "irrep": null,
+       "pattern": null,
+       "provenance": "inferred",
+       "source": "Marginal peak, SNR of about 2-3."
+      },
+      {
+       "position_cm1": 686,
+       "fwhm_cm1": null,
+       "assignment": "Weak broad feature, unassigned",
+       "irrep": null,
+       "pattern": null,
+       "provenance": "inferred",
+       "source": "Marginal peak, SNR of about 2-3."
+      }
+     ],
+     "properties": [
+      {
+       "name": "layers",
+       "value": "not determinable (likely thick/bulk-like flake)",
+       "provenance": "inferred",
+       "source": "Single unpolarized spectrum with no layer-sensitive low-frequency or interlayer mode analysis."
+      },
+      {
+       "name": "phase",
+       "value": "orthorhombic FeOCl-type (\u03b2) if TiNCl",
+       "provenance": "inferred",
+       "source": "Structure type of TiNCl. Not determined from the data."
+      },
+      {
+       "name": "defect_level",
+       "value": "not determined",
+       "provenance": "inferred",
+       "source": "The noise level and the unassigned weak features prevent a defect estimate."
+      }
+     ],
+     "artifacts": [],
+     "citations": [
+      "Si first-order 520.7 cm-1 and second-order bands at about 300 and 950-980 cm-1: standard crystalline Si Raman reference (e.g. Temple & Hathaway, PRB 7, 3685, 1973)",
+      "\u03b2-TiNCl structure type (FeOCl-type, Pmmn): Yamanaka et al. (not checked against the original paper)"
+     ],
+     "limits": [
+      "The data are noisy: baseline about 3400 counts, noise rms about 500. Only the 206 and 472 cm-1 modes and the Si 520.5 cm-1 line are clearly significant. All other weak features have SNR of about 3 or less.",
+      "No cosmic-ray spikes were found in the data (a deviation test on a smoothed trace found none). The weak features at 234, 323, 403 and 686 cm-1 may be noise, Si second-order structure, or genuine weak modes.",
+      "The TiNCl identification rests on two modes and a recalled literature comparison. I could not check reference spectra, and other layered MOCl-type or nitride-halide compounds are not strictly excluded.",
+      "No polarization or angle data were available, so the mode symmetries (Ag, B2g, B3g) are tentative and no polarization pattern is assigned.",
+      "Layer number, strain and doping cannot be inferred from this spectrum.",
+      "The Lorentzian fit parameters of the weak peaks were poorly constrained and some fit widths hit their bounds. FWHM values are rough."
+     ]
+    }
+   }
+  },
+  {
+   "type": "user",
+   "message": {
+    "role": "user",
+    "content": [
+     {
+      "tool_use_id": "toolu_01QpttuY2WrXNtTwdiP5DeAF",
+      "type": "tool_result",
+      "content": "Structured output provided successfully"
+     }
+    ]
+   },
+   "parent_tool_use_id": null,
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "uuid": "7f0fadb8-2430-407d-990e-b32cd25f81e5",
+   "timestamp": "2026-10-21T23:01:25.683Z",
+   "tool_use_result": "Structured output provided successfully",
+   "tool_result_meta": [
+    {
+     "id": "toolu_01QpttuY2WrXNtTwdiP5DeAF",
+     "permission_decision": {
+      "decision": "accept",
+      "source": "config"
+     }
+    }
+   ]
+  },
+  {
+   "type": "rate_limit_event",
+   "rate_limit_info": {
+    "status": "allowed",
+    "resetsAt": 1792632600,
+    "rateLimitType": "five_hour",
+    "overageStatus": "rejected",
+    "overageDisabledReason": "org_level_disabled",
+    "isUsingOverage": false,
+    "unifiedWindows": {
+     "five_hour": {
+      "utilization": 0.43,
+      "resetsAt": 1792632600
+     },
+     "seven_day": {
+      "utilization": 0.38,
+      "resetsAt": 1792836000
+     }
+    }
+   },
+   "uuid": "86d374c4-f389-4d97-8fe2-9bf7fa6f19ec",
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b"
+  },
+  {
+   "duration_api_ms": 34352,
+   "stop_reason": "tool_use",
+   "session_id": "56404341-3de7-440a-841c-7bf8fe2f166b",
+   "total_cost_usd": 0.08168220000000001,
+   "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 8056,
+    "cache_read_input_tokens": 83222,
+    "output_tokens": 4112,
+    "output_tokens_details": {
+     "thinking_tokens": 791
+    },
+    "server_tool_use": {
+     "web_search_requests": 0,
+     "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+     "ephemeral_1h_input_tokens": 8056,
+     "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+     {
+      "input_tokens": 2,
+      "output_tokens": 2789,
+      "cache_read_input_tokens": 23026,
+      "cache_creation_input_tokens": 1117,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 1117
+      },
+      "type": "message"
+     }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+   },
+   "modelUsage": {
+    "claude-sonnet-5-5": {
+     "inputTokens": 8,
+     "outputTokens": 4112,
+     "cacheReadInputTokens": 83222,
+     "cacheCreationInputTokens": 8056,
+     "webSearchRequests": 0,
+     "costUSD": 0.08168220000000001,
+     "contextWindow": 1000000,
+     "maxOutputTokens": 128000,
+     "thinkingTokens": 791,
+     "canonicalModel": "claude-sonnet-5-5",
+     "provider": "firstParty",
+     "costBasis": "list"
+    }
+   },
+   "permission_denials": [],
+   "terminal_reason": "completed",
+   "fast_mode_state": "off",
+   "fast_mode_disabled_reason": "sdk_opt_in_required",
+   "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+     "background": 0,
+     "foreground": 0,
+     "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+     "parent": 0,
+     "user": 0,
+     "system": 0
+    },
+    "refused": {
+     "depth_limit": 0,
+     "concurrency_limit": 0,
+     "budget": 0
+    },
+    "by_type": {}
+   },
+   "safety_stops": 0,
+   "is_error": false,
+   "num_turns": 5,
+   "subtype": "success",
+   "api_error_status": null,
+   "result": "{\"candidates\":[{\"material\":\"\u03b2-TiNCl\",\"confidence\":0.5,\"evidence\":\"Two strong non-substrate modes at about 206 and 472 cm-1 on SiO2/Si, consistent with a layered FeOCl-type (Pmmn) Ti-N/Ti-Cl compound. The assignment rests on rough recollection of the literature, which I could not check. Two peaks alone are not unique.\"},{\"material\":\"CrOCl or FeOCl-type MOCl\",\"confidence\":0.15,\"evidence\":\"The same layered structure type gives Raman modes in the 200-500 cm-1 range. The reported lines (about 215, 300, 400 for CrOCl) do not match 206/472 well.\"},{\"material\":\"1T-TiS2\",\"confidence\":0.05,\"evidence\":\"Ti-chalcogenide layered compound. Its Eg/A1g modes (about 230/330 cm-1) do not match the observed 206/472 lines.\"}],\"hint_verdict\":\"not_applicable\",\"hint_reasoning\":\"No material hint was given in the metadata (material_hint is null), so this is an identification from the spectrum alone.\",\"peaks\":[{\"position_cm1\":206.4,\"fwhm_cm1\":6.5,\"assignment\":\"Sample mode, low-frequency Ti-Cl related (tentative Ag)\",\"irrep\":\"Ag (tentative)\",\"pattern\":null,\"provenance\":\"measured\",\"source\":\"Lorentzian fit of spectrum.csv. The mode character is inferred from the TiNCl structure type and is not verified.\"},{\"position_cm1\":471.7,\"fwhm_cm1\":14,\"assignment\":\"Sample mode, Ti-N stretch (tentative Ag)\",\"irrep\":\"Ag (tentative)\",\"pattern\":null,\"provenance\":\"measured\",\"source\":\"Lorentzian fit of spectrum.csv. The Ti-N character is inferred and not verified.\"},{\"position_cm1\":520.5,\"fwhm_cm1\":9,\"assignment\":\"Si substrate\",\"irrep\":\"T2g\",\"pattern\":null,\"provenance\":\"literature\",\"source\":\"First-order Si optical phonon, about 520.7 cm-1 at room temperature.\"},{\"position_cm1\":300,\"fwhm_cm1\":null,\"assignment\":\"Si substrate (2TA second-order)\",\"irrep\":null,\"pattern\":null,\"provenance\":\"literature\",\"source\":\"Second-order Si band at about 300 cm-1. Weak, with SNR of about 3.\"},{\"position_cm1\":955,\"fwhm_cm1\":null,\"assignment\":\"Si substrate (2TO second-order)\",\"irrep\":null,\"pattern\":null,\"provenance\":\"literature\",\"source\":\"Broad second-order Si band at 940-980 cm-1. Weak, with SNR of about 3.\"},{\"position_cm1\":234,\"fwhm_cm1\":null,\"assignment\":\"Weak feature, possibly Si second-order or a sample mode (unassigned)\",\"irrep\":null,\"pattern\":null,\"provenance\":\"inferred\",\"source\":\"Marginal peak, SNR of about 2-3. Not firmly assigned.\"},{\"position_cm1\":323,\"fwhm_cm1\":null,\"assignment\":\"Weak feature, unassigned (possible sample mode)\",\"irrep\":null,\"pattern\":null,\"provenance\":\"inferred\",\"source\":\"Marginal peak, SNR of about 2-3.\"},{\"position_cm1\":403,\"fwhm_cm1\":null,\"assignment\":\"Weak broad feature, unassigned\",\"irrep\":null,\"pattern\":null,\"provenance\":\"inferred\",\"source\":\"Marginal peak, SNR of about 2-3.\"},{\"position_cm1\":686,\"fwhm_cm1\":null,\"assignment\":\"Weak broad feature, unassigned\",\"irrep\":null,\"pattern\":null,\"provenance\":\"inferred\",\"source\":\"Marginal peak, SNR of about 2-3.\"}],\"properties\":[{\"name\":\"layers\",\"value\":\"not determinable (likely thick/bulk-like flake)\",\"provenance\":\"inferred\",\"source\":\"Single unpolarized spectrum with no layer-sensitive low-frequency or interlayer mode analysis.\"},{\"name\":\"phase\",\"value\":\"orthorhombic FeOCl-type (\u03b2) if TiNCl\",\"provenance\":\"inferred\",\"source\":\"Structure type of TiNCl. Not determined from the data.\"},{\"name\":\"defect_level\",\"value\":\"not determined\",\"provenance\":\"inferred\",\"source\":\"The noise level and the unassigned weak features prevent a defect estimate.\"}],\"artifacts\":[],\"citations\":[\"Si first-order 520.7 cm-1 and second-order bands at about 300 and 950-980 cm-1: standard crystalline Si Raman reference (e.g. Temple & Hathaway, PRB 7, 3685, 1973)\",\"\u03b2-TiNCl structure type (FeOCl-type, Pmmn): Yamanaka et al. (not checked against the original paper)\"],\"limits\":[\"The data are noisy: baseline about 3400 counts, noise rms about 500. Only the 206 and 472 cm-1 modes and the Si 520.5 cm-1 line are clearly significant. All other weak features have SNR of about 3 or less.\",\"No cosmic-ray spikes were found in the data (a deviation test on a smoothed trace found none). The weak features at 234, 323, 403 and 686 cm-1 may be noise, Si second-order structure, or genuine weak modes.\",\"The TiNCl identification rests on two modes and a recalled literature comparison. I could not check reference spectra, and other layered MOCl-type or nitride-halide compounds are not strictly excluded.\",\"No polarization or angle data were available, so the mode symmetries (Ag, B2g, B3g) are tentative and no polarization pattern is assigned.\",\"Layer number, strain and doping cannot be inferred from this spectrum.\",\"The Lorentzian fit parameters of the weak peaks were poorly constrained and some fit widths hit their bounds. FWHM values are rough.\"]}",
+   "structured_output": {
+    "candidates": [
+     {
+      "material": "\u03b2-TiNCl",
+      "confidence": 0.5,
+      "evidence": "Two strong non-substrate modes at about 206 and 472 cm-1 on SiO2/Si, consistent with a layered FeOCl-type (Pmmn) Ti-N/Ti-Cl compound. The assignment rests on rough recollection of the literature, which I could not check. Two peaks alone are not unique."
+     },
+     {
+      "material": "CrOCl or FeOCl-type MOCl",
+      "confidence": 0.15,
+      "evidence": "The same layered structure type gives Raman modes in the 200-500 cm-1 range. The reported lines (about 215, 300, 400 for CrOCl) do not match 206/472 well."
+     },
+     {
+      "material": "1T-TiS2",
+      "confidence": 0.05,
+      "evidence": "Ti-chalcogenide layered compound. Its Eg/A1g modes (about 230/330 cm-1) do not match the observed 206/472 lines."
+     }
+    ],
+    "hint_verdict": "not_applicable",
+    "hint_reasoning": "No material hint was given in the metadata (material_hint is null), so this is an identification from the spectrum alone.",
+    "peaks": [
+     {
+      "position_cm1": 206.4,
+      "fwhm_cm1": 6.5,
+      "assignment": "Sample mode, low-frequency Ti-Cl related (tentative Ag)",
+      "irrep": "Ag (tentative)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. The mode character is inferred from the TiNCl structure type and is not verified."
+     },
+     {
+      "position_cm1": 471.7,
+      "fwhm_cm1": 14,
+      "assignment": "Sample mode, Ti-N stretch (tentative Ag)",
+      "irrep": "Ag (tentative)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. The Ti-N character is inferred and not verified."
+     },
+     {
+      "position_cm1": 520.5,
+      "fwhm_cm1": 9,
+      "assignment": "Si substrate",
+      "irrep": "T2g",
+      "pattern": null,
+      "provenance": "literature",
+      "source": "First-order Si optical phonon, about 520.7 cm-1 at room temperature."
+     },
+     {
+      "position_cm1": 300,
+      "fwhm_cm1": null,
+      "assignment": "Si substrate (2TA second-order)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Second-order Si band at about 300 cm-1. Weak, with SNR of about 3."
+     },
+     {
+      "position_cm1": 955,
+      "fwhm_cm1": null,
+      "assignment": "Si substrate (2TO second-order)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Broad second-order Si band at 940-980 cm-1. Weak, with SNR of about 3."
+     },
+     {
+      "position_cm1": 234,
+      "fwhm_cm1": null,
+      "assignment": "Weak feature, possibly Si second-order or a sample mode (unassigned)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal peak, SNR of about 2-3. Not firmly assigned."
+     },
+     {
+      "position_cm1": 323,
+      "fwhm_cm1": null,
+      "assignment": "Weak feature, unassigned (possible sample mode)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal peak, SNR of about 2-3."
+     },
+     {
+      "position_cm1": 403,
+      "fwhm_cm1": null,
+      "assignment": "Weak broad feature, unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal peak, SNR of about 2-3."
+     },
+     {
+      "position_cm1": 686,
+      "fwhm_cm1": null,
+      "assignment": "Weak broad feature, unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Marginal peak, SNR of about 2-3."
+     }
+    ],
+    "properties": [
+     {
+      "name": "layers",
+      "value": "not determinable (likely thick/bulk-like flake)",
+      "provenance": "inferred",
+      "source": "Single unpolarized spectrum with no layer-sensitive low-frequency or interlayer mode analysis."
+     },
+     {
+      "name": "phase",
+      "value": "orthorhombic FeOCl-type (\u03b2) if TiNCl",
+      "provenance": "inferred",
+      "source": "Structure type of TiNCl. Not determined from the data."
+     },
+     {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "The noise level and the unassigned weak features prevent a defect estimate."
+     }
+    ],
+    "artifacts": [],
+    "citations": [
+     "Si first-order 520.7 cm-1 and second-order bands at about 300 and 950-980 cm-1: standard crystalline Si Raman reference (e.g. Temple & Hathaway, PRB 7, 3685, 1973)",
+     "\u03b2-TiNCl structure type (FeOCl-type, Pmmn): Yamanaka et al. (not checked against the original paper)"
+    ],
+    "limits": [
+     "The data are noisy: baseline about 3400 counts, noise rms about 500. Only the 206 and 472 cm-1 modes and the Si 520.5 cm-1 line are clearly significant. All other weak features have SNR of about 3 or less.",
+     "No cosmic-ray spikes were found in the data (a deviation test on a smoothed trace found none). The weak features at 234, 323, 403 and 686 cm-1 may be noise, Si second-order structure, or genuine weak modes.",
+     "The TiNCl identification rests on two modes and a recalled literature comparison. I could not check reference spectra, and other layered MOCl-type or nitride-halide compounds are not strictly excluded.",
+     "No polarization or angle data were available, so the mode symmetries (Ag, B2g, B3g) are tentative and no polarization pattern is assigned.",
+     "Layer number, strain and doping cannot be inferred from this spectrum.",
+     "The Lorentzian fit parameters of the weak peaks were poorly constrained and some fit widths hit their bounds. FWHM values are rough."
+    ]
+   },
+   "ttft_ms": 2938,
+   "type": "result",
+   "duration_ms": 101282,
+   "uuid": "718d1094-96e8-4913-bf1b-8d352f758440",
+   "ttft_stream_ms": 1267,
+   "time_to_request_ms": 87,
+   "first_content_frame_ms": 1267,
+   "queued_turn_count": 0,
+   "result_index": 0
+  }
+ ]
+}

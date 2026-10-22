@@ -1,0 +1,96 @@
+{
+  "candidates": [
+    {
+      "material": "CrI3",
+      "confidence": 0.3,
+      "evidence": "The only strong band (108.9 cm-1, FWHM 4.3 cm-1, ~11,000 counts above baseline) sits where CrI3 literature places a strong low-frequency A-type mode, and the semantic search returned several CrI3 Raman papers (arXiv:1807.03259, arXiv:1803.10825, arXiv:1910.04542). I did not open those papers, so the mode table is unverified and this rests on recall. Against it: the expected higher-frequency CrI3 modes (about 130 and 165 cm-1 in my recollection) are not clearly present, and the 142.7 cm-1 band is weak."
+    },
+    {
+      "material": "alpha-In2Se3",
+      "confidence": 0.08,
+      "evidence": "Recall-based, unverified: alpha-In2Se3 has a low-frequency mode near 105-110 cm-1, but its strong A1 modes near 175-200 cm-1 are absent here, which argues against it."
+    },
+    {
+      "material": "SnSe",
+      "confidence": 0.05,
+      "evidence": "Recall-based, unverified: an Ag-type mode near 109 cm-1 is reported for SnSe, but its strong ~150 and ~186 cm-1 modes are not seen in this spectrum."
+    },
+    {
+      "material": "Bi2Te3",
+      "confidence": 0.03,
+      "evidence": "Recall-based, unverified: expected modes near 62, 103 and 135 cm-1 do not fit the observed 109 and 143 cm-1 bands (offsets of about 6-8 cm-1); the 62 cm-1 mode lies at the edge of the measured window."
+    },
+    {
+      "material": "Td/1T'-WTe2",
+      "confidence": 0.03,
+      "evidence": "Recall-based, unverified: low-frequency modes near 112-113 cm-1 are reported, but the strong modes near 165 and 213 cm-1 are not seen here, which argues against it."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so there is no stated material to verify. The identification is not determined: the spectrum has one strong band near 109 cm-1 plus a weak band near 143 cm-1, a window of 60-1099 cm-1, and no Si line. CrI3 is the leading hypothesis at low confidence. The reference library and the matching script could not be used, because they are outside the working folder and I was told not to read files there, so candidate ranking is from recall and literature search only.",
+  "peaks": [
+    {
+      "position_cm1": 108.9,
+      "fwhm_cm1": 4.3,
+      "assignment": "Unassigned strong low-frequency band; candidate CrI3 A-type mode (unverified)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and width measured from pseudo-Voigt fit (lmfit, window 90-135 cm-1, center 108.90 +/- 0.05 cm-1, FWHM 4.27 cm-1). Assignment inferred; CrI3 association from recall plus arXiv:1807.03259 surfaced in search, not read."
+    },
+    {
+      "position_cm1": 142.7,
+      "fwhm_cm1": 7.3,
+      "assignment": "Unassigned weak band",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Pseudo-Voigt fit (window 60-220 cm-1, center 142.66 +/- 0.46 cm-1, FWHM 7.35 cm-1, height about 1,300 counts, about 5 sigma on amplitude). No assignment made."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Insufficient modes in the 60-1099 cm-1 window to fix a phase."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No layer-sensitive relation was applied; the single spectrum does not fix thickness."
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No defect-sensitive band identified."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray spike (single point, about 11,000-12,400 counts over a baseline of about 1,700)",
+      "position_cm1": 426.51
+    },
+    {
+      "type": "cosmic-ray spike (single point, about 12,400 counts over a baseline of about 1,700)",
+      "position_cm1": 847.06
+    }
+  ],
+  "citations": [
+    "arXiv:1807.03259 (Djurdji\u0107-Mijin et al., Lattice dynamics and phase transition in CrI3 single crystals), surfaced by semantic search, not read; not used as evidence for any specific mode position",
+    "arXiv:1803.10825 (Larson and Kaxiras, Raman Spectrum of CrI3: an ab-initio study), surfaced by semantic search, not read; not used as evidence for any specific mode position"
+  ],
+  "limits": [
+    "Spectral window is only 60-1099 cm-1. Strong modes above 1100 cm-1 and below 60 cm-1 are not measured, so the identification is limited; this is the main reason the material cannot be fixed.",
+    "No Si substrate line at 520.7 cm-1 is detected (fit amplitude collapses to zero), so no Si calibration was possible and absolute shifts are uncertain by a few tenths of a cm-1 or more.",
+    "No reference-library matching was run. The skill's reference library and matching script are outside the working folder, which I was told not to read. The candidate ranking is from recall and the literature search, not from a computed Raman database, and the confidences are rough.",
+    "Weak structure remains unassigned. After removing the two spikes and a baseline, a smoothed residual shows about 17 maxima at 2.5-5 sigma between 240 and 1040 cm-1 (strongest near 241.7, 388.6, 432.4, 620.8, 761.8, 902.7 cm-1). Noise is about 210 counts per point (about 80 counts after 7-point smoothing). These are not confirmed as modes and are not reported as peaks; a longer acquisition would be needed.",
+    "The 142.7 cm-1 band is weak (about 1,300 counts) with a broad width; its significance rests on one fit and is not verified by a second spectrum.",
+    "Expected CrI3 modes at about 130 and 165 cm-1 (from recall, not verified) are not clearly present, which weakens the CrI3 candidate.",
+    "Rejected: Bi2Te3 (expected 62/103/135 cm-1 pattern does not fit), Td/1T'-WTe2 (expected strong 165 and 213 cm-1 absent), SnSe and alpha-In2Se3 (their strong modes at about 150-200 cm-1 absent). The TMD fingerprint modes near 300-420 cm-1 are not seen as strong bands, which argues against common 2H-TMDs.",
+    "Polarization, temperature dependence, laser power and a second spectrum were not available, so the bands cannot be checked for symmetry, heating or reproducibility. Assignments are not made.",
+    "The working-folder name was not used as evidence for the material identity."
+  ]
+}

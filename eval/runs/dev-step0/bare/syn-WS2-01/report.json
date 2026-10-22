@@ -1,0 +1,104 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2",
+      "confidence": 0.8,
+      "evidence": "Strongest band at about 353 cm-1 (FWHM about 8 cm-1) with shoulders near 346 and 360 cm-1, plus a weaker band at 415.4 cm-1. This matches the WS2 E'(\u0393)/2LA(M) complex and A1' mode at 532 nm. Si substrate line at 520.9 cm-1. No WSe2 (about 250), MoS2 (383/408) or MoSe2 (240) bands."
+    },
+    {
+      "material": "1H-WS2 (monolayer)",
+      "confidence": 0.35,
+      "evidence": "Layer-number variant of the same material. The A1'-E' separation of about 62 cm-1 is compatible with 1-2 layers, but the weak A1' relative to the 353 cm-1 complex is not a clean monolayer signature."
+    },
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.04,
+      "evidence": "Would show E2g/E' near 383 and A1g/A1' near 408 cm-1. Neither is seen."
+    },
+    {
+      "material": "2H-WSe2",
+      "confidence": 0.02,
+      "evidence": "Would show a band near 250 cm-1. The spectrum is flat there."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given, so the material was identified from the spectrum alone.",
+  "peaks": [
+    {
+      "position_cm1": 353,
+      "fwhm_cm1": 8.3,
+      "assignment": "WS2 E'(\u0393) (in-plane, E2g in bulk) overlapped with 2LA(M)",
+      "irrep": "E' (E2g in bulk) / 2LA(M)",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Position and width measured by Lorentzian fit; assignment from Berkdemir et al., Sci. Rep. 3, 1755 (2013) and Zhao et al., Nanoscale 5, 9677 (2013). In WS2 the E' mode (about 356) and 2LA(M) (about 352) overlap at 532 nm and the fit cannot separate them cleanly."
+    },
+    {
+      "position_cm1": 346,
+      "fwhm_cm1": 12,
+      "assignment": "Low-energy shoulder of the 353 band, probably 2LA(M) or other second-order/LA-related scattering (approximate position)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Visible in the raw data as a rising edge from about 341 to 350 cm-1. The fit is unstable, so the position is only approximate. Berkdemir et al. 2013 for the 2LA(M)/LA(M) assignment."
+    },
+    {
+      "position_cm1": 415.4,
+      "fwhm_cm1": 7.7,
+      "assignment": "WS2 A1'(\u0393) (out-of-plane, A1g in bulk)",
+      "irrep": "A1'",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit, height about 900 counts against noise of about 190. Assignment from Berkdemir et al. 2013. No polarization data is available, so the pattern is not classified."
+    },
+    {
+      "position_cm1": 520.9,
+      "fwhm_cm1": 3.6,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "First-order Si optical phonon at 520.7 cm-1, from the SiO2/Si substrate."
+    }
+  ],
+  "properties": [
+    {
+      "name": "A1' - E' separation",
+      "value": "about 62 cm-1 (415.4 - 353.0)",
+      "provenance": "measured",
+      "source": "Fit positions. Literature values for WS2 are about 61-65 cm-1 for 1-2 layers and about 65-68 cm-1 for bulk, so this suggests few-layer or monolayer WS2. The 2LA/E' overlap makes the E' position uncertain by a few cm-1."
+    },
+    {
+      "name": "Layer number",
+      "value": "likely monolayer to few-layer (tentative)",
+      "provenance": "inferred",
+      "source": "Based on the A1'-E' separation, the position of the A1' mode and the strength of the 2LA/E' complex (Berkdemir 2013). The weak A1' relative to the 353 cm-1 complex argues against firm assignment."
+    },
+    {
+      "name": "Polytype",
+      "value": "2H (trigonal prismatic)",
+      "provenance": "inferred",
+      "source": "The standard polytype for WS2. A single spectrum cannot distinguish polytypes."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "Possible weak Si second-order (2TA) feature near 300 cm-1, not reported as a sample peak",
+      "position_cm1": 299
+    }
+  ],
+  "citations": [
+    "Berkdemir et al., Sci. Rep. 3, 1755 (2013): identification of WS2 Raman modes (E', A1', 2LA(M)) vs layer number",
+    "Zhao et al., Nanoscale 5, 9677 (2013): Raman of monolayer and few-layer WS2",
+    "Si first-order optical phonon at about 520.7 cm-1 (standard substrate reference)"
+  ],
+  "limits": [
+    "No cosmic-ray spikes were identified. The only intense features are the 353.6 and 520.9 cm-1 bands.",
+    "The E'(\u0393) and 2LA(M) modes overlap at 532 nm and the fit cannot separate them reliably. The 353 cm-1 position is a combined maximum, and the 346 and 360 cm-1 components are approximate.",
+    "The A1' peak is weak (height about 900 counts against noise of about 190 counts), so its position and width are less certain than those of the 353 cm-1 band.",
+    "Layer number and strain cannot be fixed from one unpolarized spectrum with an overlapped E'/2LA band. Layer number would need photoluminescence or a resonance comparison.",
+    "There is no polarization-resolved data, so no symmetry pattern could be assigned to the peaks.",
+    "The possible 2TA feature near 300 cm-1 is at the noise level. Wide-range noise is about 190 counts, so weak second-order features were not analysed.",
+    "Mo-based and Se-based dichalcogenides are excluded by peak positions, but a W-S alloy or doping cannot be ruled out."
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (Pnma, CRD mp-2231, formula entry 'SSn')",
+      "confidence": 0.8,
+      "evidence": "match_library top candidate, score 0.88, frequency scale 1.02. All four measured peaks matched within 3 cm-1 (93.79 vs Ag 93.1; 161.27 vs B3g 162.6; 192.85 vs Ag 190.5; 221.44 vs Ag 224.8). No strong reference modes missing. Source: Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD row 4496)."
+    },
+    {
+      "material": "BrInSb2Se4 (C2/m, CRD row 4487)",
+      "confidence": 0.1,
+      "evidence": "Second match, score 0.71. Four peaks matched but five strong Ag reference modes (122, 155, 184, 203, 209 cm-1) are missing from the spectrum. Not a plausible identity for a layered chalcogenide, so it is rejected."
+    },
+    {
+      "material": "SnSe (Pnma, the stated material)",
+      "confidence": 0.1,
+      "evidence": "No SnSe-specific score was returned in the top 5 of match_library, and the skill has no SnSe literature table. Literature in this session: Li et al. 2017 (Nanoscale, doi 10.1039/c7nr05047j) reports strong SnSe Ag modes at 130 and 150 cm-1, and Sriv et al. 2020 (Sci. Rep. 10, 11761, doi 10.1038/s41598-020-68744-2) lists Ag1, Ag2, B3g1, B3g2, Ag3, Ag4 for SnSe1-xSx without numbers in the abstract. The measured spectrum has no line near 130 or 150 cm-1. Confidence is low because the SnSe numeric mode table was not retrieved here."
+    }
+  ],
+  "hint_verdict": "inconsistent",
+  "hint_reasoning": "The stated material is SnSe, which is Pnma like SnS. The spectrum has four peaks at 93.8, 161.3, 192.8 and 221.4 cm-1. The top library match is SnS (CRD row 4496), with all four peaks matched at scale 1.02 and no strong missing modes. The literature I could retrieve (Li et al. 2017, doi 10.1039/c7nr05047j) places the strong SnSe Ag modes at 130 and 150 cm-1, and neither has a measured line here. Nearest measured line to the SnSe Ag ~150 is 161.3 cm-1, about 11 cm-1 off. The data therefore do not support SnSe. The most consistent identity is SnS. A SnS-SnSe alloy cannot be excluded from one spectrum, but the Sriv et al. abstract says the low-frequency Ag1 and Ag2 modes of alloys show one-mode behaviour, so an alloy would not explain a 150 to 161 cm-1 shift by itself. The mode-by-mode SnSe numbers were not retrieved from source and should be checked against Sriv et al. 2020 before final sign-off.",
+  "peaks": [
+    {
+      "position_cm1": 93.787,
+      "fwhm_cm1": 4.655,
+      "assignment": "Ag (SnS-type Pnma; CRD match 93.1 cm-1)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (rl_fit, position err 0.16 cm-1). Assignment from match_library, Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD row 4496). Not an SnSe-specific assignment; the SnSe strong Ag near 150 cm-1 is absent."
+    },
+    {
+      "position_cm1": 161.268,
+      "fwhm_cm1": 4.057,
+      "assignment": "B3g (CRD 162.6 cm-1, SnS-type Pnma)",
+      "irrep": "B3g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (position err 0.06 cm-1). Assignment from match_library, Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD row 4496). Strongest peak in the spectrum (height 9418)."
+    },
+    {
+      "position_cm1": 192.846,
+      "fwhm_cm1": 4.42,
+      "assignment": "Ag (CRD 190.5 cm-1, SnS-type Pnma)",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position and FWHM measured (position err 0.10 cm-1). Assignment from match_library, Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD row 4496)."
+    },
+    {
+      "position_cm1": 221.435,
+      "fwhm_cm1": 10.728,
+      "assignment": "Ag (CRD 224.8 cm-1, SnS-type Pnma); broad and poorly constrained",
+      "irrep": "Ag",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position err 0.69 cm-1 and FWHM err 3.3 cm-1 from the fit. The width is about twice the others, so it may be a composite or shoulder. Assignment from match_library, Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD row 4496)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "Pnma (orthorhombic, SnS-type layered) as inferred from the top CRD match; not SnSe-specific",
+      "provenance": "inferred",
+      "source": "Bagheri and Komsa 2023, Sci. Data 10, 80 (CRD row 4496, Pnma (62))"
+    },
+    {
+      "name": "snr_strongest",
+      "value": "25.4",
+      "provenance": "measured",
+      "source": "rl_qc.py"
+    },
+    {
+      "name": "defect_level",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No D or defect-activated bands identified in the 60 to 1100 cm-1 window, and no defect relation was applied. Only a 60-1100 cm-1 window was measured, so high-frequency bands are outside the data."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 1082
+    }
+  ],
+  "citations": [
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, CC BY 4.0), row 4496 (mp-2231, Pnma) and row 4487 (mp-570321, C2/m)",
+    "Li, X.-Z. et al. 2017, Nanoscale, doi 10.1039/c7nr05047j (SnSe nanoplates; Ag modes at 130 and 150 cm-1; pubmed 28932859)",
+    "Sriv, T. et al. 2020, Sci. Rep. 10, 11761, doi 10.1038/s41598-020-68744-2 (arXiv 2007.09362; optical phonons of SnSe(1-x)Sx alloys; abstract gives mode labels Ag1, Ag2, B3g1, B3g2, Ag3, Ag4 but no numeric positions)",
+    "Gong, X. et al. 2023, RSC Adv., doi 10.1039/d2ra06470g (SnS anisotropic Raman; abstract only, no numeric positions retrieved)"
+  ],
+  "limits": [
+    "The data show four peaks between 60 and 1100 cm-1 at 295 K with 532 nm excitation in backscattering. There is no polarization series, no substrate line and no high-frequency data above 1100 cm-1. Irreps and polarization patterns are not measured here, so pattern is null throughout.",
+    "The top library match is SnS, not SnSe. The SnS identification comes from DFT (CRD) frequencies scaled by 1.02, so it is a computed match and not a reference spectrum measured on SnS.",
+    "The SnSe numeric mode table was not retrieved from source. The only numbers used for SnSe come from the Li et al. 2017 abstract (130 and 150 cm-1 Ag modes). The Sriv et al. 2020 abstract names the modes without giving positions. A full SnSe comparison needs the table or figure from Sriv et al. 2020, which I could not read because the iopic-bond tool has no VALENCY_BOND_TOKEN here.",
+    "The SnS and SnSe Raman mode lists were not compared against each other in a same-setup measurement, so the discrimination rests on the 130 and 150 cm-1 SnSe lines and the CRD match alone. Peak-position differences between SnS and SnSe are typically tens of cm-1 for the main modes, but I did not check that here against a source.",
+    "A single spectrum cannot exclude a SnS-SnSe alloy, or a mixed or oxidized sample. The Sriv et al. 2020 abstract reports one-mode behaviour for the low-frequency alloy modes, so an alloy is not an easy fit to a 150 to 161 cm-1 shift alone. Composition would need EDX, XRD or a reference SnSe spectrum taken with the same setup.",
+    "The broad 221 cm-1 peak (FWHM 10.7 cm-1, position error 0.7 cm-1) could contain an unresolved second component. It is not resolved at this SNR, so I did not split it.",
+    "Laser heating at 532 nm can soften and red-shift Raman lines in SnSe (Gong et al. 2021, doi 10.1016/j.saa.2021.120375, reported this for SnSe single crystals). The fitted positions are not corrected for heating, and no laser-power series was taken. The thermal effect is small against the 30 to 60 cm-1 mismatch but is not zero."
+  ]
+}

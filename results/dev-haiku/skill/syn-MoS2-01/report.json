@@ -1,0 +1,79 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.8,
+      "evidence": "Two strong Lorentzian bands at 388.27 and 413.52 cm-1 (FWHM 6.1 and 5.9) with separation 25.25 cm-1. Bulk 2H-MoS2 at 514.5 nm is 382.2 / 407.4 cm-1, separation 25.2 cm-1 (Lee et al. 2010, Fig. 2b). Both lines sit +6.1 cm-1 above that reference, which is most plausibly a calibration offset (no Si line in the spectrum to check). The rl.py matcher lists the 2H-MoS2 literature table as the candidate's reference; the layer relation returns 'bulk' (moderate confidence). WS2 is excluded (its separation is 62 to 65 cm-1)."
+    },
+    {
+      "material": "3R-MoS2",
+      "confidence": 0.15,
+      "evidence": "The matcher's top-scoring entry (CRD crd:98, R3m, score 0.993) matches the same two lines with E and A1 labels. The E/A pair does not distinguish 2H from 3R stacking (Ranjuna et al. 2023, p. 2); the discriminating low-frequency modes lie below the measured range (starts at 60.24 cm-1). Not excluded."
+    },
+    {
+      "material": "BrOPr",
+      "confidence": 0.02,
+      "evidence": "Hypothetical CRD DFT entry (crd:4656) that matches only the two lines by position. It is not a known compound and is rejected on chemistry, not on the spectrum alone."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so no hint-consistency test was applied. The identification rests on the Raman pair itself: two strong bands with a separation of 25.25 cm-1 near 388 and 413 cm-1, matched against bulk 2H-MoS2 at 514.5 nm and the CRD DFT library.",
+  "peaks": [
+    {
+      "position_cm1": 388.27,
+      "fwhm_cm1": 6.06,
+      "assignment": "E2g1 (bulk 2H; E' in monolayer)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b (bulk E2g1 382.2 cm-1 at 514.5 nm); Zhang X. et al. 2015, Chem. Soc. Rev. 44, 2757, arXiv:1502.00701, pp. 3 and 6 (irreps); CRD crd:98 (E at 388.8 cm-1, scaled)"
+    },
+    {
+      "position_cm1": 413.52,
+      "fwhm_cm1": 5.86,
+      "assignment": "A1g (bulk 2H; A1' in monolayer)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b (bulk A1g 407.4 cm-1 at 514.5 nm); Zhang X. et al. 2015, arXiv:1502.00701, pp. 3 and 6 (irreps); CRD crd:98 (A1 at 412.5 cm-1, scaled)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H (bulk-like); 3R not excluded",
+      "provenance": "inferred",
+      "source": "Lee et al. 2010, ACS Nano 4, 2695, arXiv:1005.2509, Fig. 2b (2H bulk reference pair); Ranjuna et al. 2023, Sci. Rep. 13, 16418, doi:10.1038/s41598-023-43756-w, p. 2 (E/A pair does not separate 2H and 3R stacking)"
+    },
+    {
+      "name": "layers",
+      "value": "bulk (layer_number null; separation saturated, so thickness is roughly 5 L or more)",
+      "provenance": "inferred",
+      "source": "rl.py apply_relation mos2_layer_number_from_separation (Lee et al. 2010, Fig. 2b; validity delta 18.1 to 26.2 cm-1, laser 488 to 633 nm, moderate confidence); saturation above about 5 L from Zhang X. et al. 2013, PRB 87, 115413, arXiv:1212.6796 (per reference/materials/MoS2.md)"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike",
+      "position_cm1": 1063.3
+    }
+  ],
+  "citations": [
+    "Lee C. et al. 2010, ACS Nano 4, 2695, doi:10.1021/nn1003937, arXiv:1005.2509 (Fig. 2b; linewidths p. 4)",
+    "Zhang X. et al. 2015, Chem. Soc. Rev. 44, 2757, arXiv:1502.00701 (irreps pp. 3, 6, 7)",
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, entry crd:98 and crd:4656)",
+    "Ranjuna M. K. et al. 2023, Sci. Rep. 13, 16418, doi:10.1038/s41598-023-43756-w (p. 2)",
+    "Zhang X. et al. 2013, PRB 87, 115413, arXiv:1212.6796 (saturation of separation above about 5 L)"
+  ],
+  "limits": [
+    "Calibration: the spectrum has no Si line near 520.7 cm-1 (window 60.24 to 1099 cm-1), so the absolute scale cannot be checked. Both peaks sit about +6.1 cm-1 above the 514.5 nm bulk reference (382.2 / 407.4 cm-1). A common offset is most plausibly calibration. Strain or heating could also shift both modes, but the data cannot separate these. Fit errors are 0.06 and 0.12 cm-1 (statistics only). The separation (25.25 cm-1) is insensitive to a common offset.",
+    "Thickness: the layer relation was tabulated at 514.5 nm on 285 nm SiO2/Si and applied at 532 nm (inside its stated validity). The substrate is not stated, and a substrate or strain change can misassign by one layer. The separation saturates above about 5 L, so 'bulk' means roughly 5 L or more, not an exact number. The relation returned moderate confidence.",
+    "Stacking: 2H versus 3R cannot be decided. The E/A pair does not separate stacking, and the low-frequency shear (E2g2 near 32 cm-1) and layer-breathing modes lie below the measured range (the spectrum starts at 60.24 cm-1). The 3R entry was not excluded.",
+    "Linewidth: FWHM of about 6 cm-1 is broader than the 2.1 cm-1 quoted for E2g1 by Lee et al. (2010) at 2.7 cm-1 resolution. The cause (instrument resolution, disorder, heating, or stacking) cannot be separated from one spectrum. No defect or crystal-quality conclusion is drawn.",
+    "Second-order and defect bands: the LA(M) band near 227 cm-1 and the 2LA(M) band near 450 cm-1 are not detected above noise (per-point noise about 150 to 200 counts). Their absence is consistent with off-resonant 532 nm excitation (A exciton near 1.9 eV), but does not exclude weak defect bands. No defect density is reported.",
+    "Strain and doping: strain_sign and doping_type are not determined. Only one spectrum is available, and A1' shift versus E' shift cannot be checked against the common calibration offset. No relation was applied for either.",
+    "Measurement conditions not given: polarization configuration, laser power at the sample, and spot size. The E' to A1' intensity ratio of about 3.2:1 is not interpreted, because it depends on configuration and laser power. The 295 K temperature was taken as given, with no heating correction.",
+    "Matcher ranking: the top-scoring CRD entry is a 3R polytype of the same material, so the ranking does not decide stacking. The other CRD hits (BrOPr, AsO3Sb, BrOSm, HO2Sc) match only one or two positions and are not known compounds, so they were rejected. WS2 was rejected because its E2g1 to A1g separation is 62 to 65 cm-1.",
+    "Artifact: one cosmic-ray spike at 1063.3 cm-1 was removed. It lies outside the fitted peak window and is not a peak."
+  ]
+}

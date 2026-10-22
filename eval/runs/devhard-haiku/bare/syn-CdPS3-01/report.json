@@ -1,0 +1,128 @@
+{
+  "candidates": [
+    {
+      "material": "FePS3",
+      "confidence": 0.45,
+      "evidence": "Phonon-only spectrum from ~70 to 850 cm-1 with the strongest bands at 263.5 and 368.7 cm-1, plus weaker bands at 124, 240, and 551 cm-1. This matches the general MPS3 (P2S6-type) phonon pattern I recall from the literature, but I could not check exact FePS3 positions against a reference here, and the pattern does not single out Fe."
+    },
+    {
+      "material": "MnPS3 or NiPS3 (other MPX3 thiophosphates)",
+      "confidence": 0.3,
+      "evidence": "Same MPX3 phonon region and similar band pattern, so this cannot be excluded from the positions alone. Discriminating them needs reference spectra or polarization data."
+    },
+    {
+      "material": "Unidentified layered thiophosphate or mixed phase",
+      "confidence": 0.1,
+      "evidence": "No reference data here to exclude other compositions. The data alone give only a weak identification."
+    }
+  ],
+  "hint_verdict": "consistent",
+  "hint_reasoning": "The spectrum is consistent with an MPS3-type phonon spectrum and shows no features that contradict FePS3. The two strongest bands (263.5 and 368.7 cm-1) and the weaker band near 551 cm-1 fall in the region where I recall FePS3/MPS3 P2S6-related modes appearing, and the 295 K measurement is consistent with the paramagnetic phase (T_N is about 118 K for FePS3, from memory), so no magnetic scattering is expected. The 369 cm-1 band is not at the MoS2 E2g/A1g positions (383/408 cm-1), and the Si line at 520.9 cm-1 is the expected substrate feature. However, this is a weak 'consistent', not a confirmation: I had no reference spectrum in the folder, the exact FePS3 band positions and assignments are from memory and unverified, and the band pattern does not uniquely identify Fe over Mn or Ni in the same family. A positive identification needs a reference FePS3 spectrum or a polarization series.",
+  "peaks": [
+    {
+      "position_cm1": 124.3,
+      "fwhm_cm1": 10.1,
+      "assignment": "MPS3-type phonon (candidate FePS3 mode, not uniquely assigned)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position compared to MPS3 phonon region from memory of literature (unverified here)."
+    },
+    {
+      "position_cm1": 240.5,
+      "fwhm_cm1": 9.5,
+      "assignment": "MPS3-type phonon (candidate FePS3 mode, not uniquely assigned)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position compared to MPS3 phonon region from memory of literature (unverified here)."
+    },
+    {
+      "position_cm1": 263.5,
+      "fwhm_cm1": 7.1,
+      "assignment": "MPS3-type phonon, strong band (candidate FePS3 mode, not uniquely assigned)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position compared to MPS3 phonon region from memory of literature (unverified here)."
+    },
+    {
+      "position_cm1": 368.7,
+      "fwhm_cm1": 9.2,
+      "assignment": "MPS3-type phonon, strongest band (candidate FePS3 mode, not uniquely assigned)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position compared to MPS3 phonon region from memory of literature (unverified here). Not MoS2 E2g (about 383) or A1g (about 408)."
+    },
+    {
+      "position_cm1": 520.9,
+      "fwhm_cm1": 3.9,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Standard Si first-order Raman line at about 520.7 cm-1; measured offset of +0.2 cm-1 is within calibration tolerance."
+    },
+    {
+      "position_cm1": 550.7,
+      "fwhm_cm1": 6.8,
+      "assignment": "MPS3-type phonon (weaker band, possibly the ~550-580 cm-1 MPS3 mode; not uniquely assigned)",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Position compared to MPS3 phonon region from memory of literature (unverified here)."
+    },
+    {
+      "position_cm1": 842.4,
+      "fwhm_cm1": 10.7,
+      "assignment": "Tentative: possible SiO2 broad band near 800 cm-1, or unassigned",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Weak feature (height about 580 counts, near the noise of about 560 counts per point); F-test on adding it gives F of about 47, but a baseline artifact is not excluded. SiO2 band near 800 cm-1 from memory of literature."
+    }
+  ],
+  "properties": [
+    {
+      "name": "temperature_regime",
+      "value": "paramagnetic (295 K, above T_N of about 118 K)",
+      "provenance": "literature",
+      "source": "FePS3 Neel temperature about 118 K, from memory (unverified here). Magnetic scattering not expected at 295 K."
+    },
+    {
+      "name": "layers",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No thickness or layer-count information in the data."
+    },
+    {
+      "name": "defect_level",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "Not assessable from this spectrum without a reference."
+    },
+    {
+      "name": "substrate_contribution",
+      "value": "strong Si 520.9 cm-1 line (height about 14600 counts) on a broad background of about 3000 counts",
+      "provenance": "measured",
+      "source": "Fit of the spectrum over 60-1100 cm-1."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Standard Si first-order Raman line near 520.7 cm-1 (general knowledge).",
+    "FePS3 Neel temperature about 118 K (from memory, not verified here).",
+    "MPS3 (MPX3) Raman band pattern with strong P2S6-related modes near 250-290 and 370-385 cm-1 and a weaker mode near 550-580 cm-1 (from memory of the literature; I could not access or verify the specific papers and the positions should be checked against a reference FePS3 spectrum)."
+  ],
+  "limits": [
+    "No reference spectrum was in the folder and I had no way to check the literature here. The FePS3 band positions and assignments are from memory and unverified, so 'consistent' is a weak judgment and not an identification.",
+    "The data cover only about 60-1100 cm-1. The high-frequency region (about 1200-1700 and 2600-2800 cm-1) was not measured, so contamination, carbon bands, or other features there cannot be checked.",
+    "Noise is about 560-600 counts per point against a background of about 3000-3500 counts. The 124, 240, and 551 cm-1 bands are clearly above noise, but the 842 cm-1 band is marginal and could be a baseline artifact.",
+    "The 75 cm-1 feature is unstable across baseline choices (fitted position 71-75 cm-1, width 1-5 cm-1, F of about 4 when added). I did not report it as a peak.",
+    "The data are unpolarized and single-spectrum, so mode symmetries (Ag, Eg, etc.) and the polarization-dependence pattern cannot be determined. The spectrum also cannot distinguish FePS3 from MnPS3 or NiPS3, which have similar phonon regions.",
+    "At 295 K FePS3 is paramagnetic, so two-magnon or spin-phonon features are not expected. Their absence says nothing about identity.",
+    "Layer number, thickness, strain, defect density, and doping cannot be determined from this spectrum.",
+    "The working-folder name contains 'CdPS3'. I did not use it as evidence in this analysis. If the sample label is in doubt, the sample record should be checked against a reference spectrum."
+  ]
+}

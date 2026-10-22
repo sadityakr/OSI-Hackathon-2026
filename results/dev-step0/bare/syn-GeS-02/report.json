@@ -1,0 +1,88 @@
+{
+  "candidates": [
+    {
+      "material": "GeS",
+      "confidence": 0.45,
+      "evidence": "Three sharp lines at 103, 206 and 242 cm-1 with polarization behaviour of an orthorhombic (Pnma-type, D2h) layered monochalcogenide: two Ag-like modes plus one off-diagonal B-type mode. The 242 cm-1 line is near the GeS high-frequency Ag mode (~238-240 cm-1). The 103 cm-1 line is about 8 cm-1 below the GeS Ag mode (~112 cm-1) and the 206 cm-1 line is about 8 cm-1 below the GeS mode at ~214 cm-1. The GeS lines at ~273 and ~296 cm-1 are not seen. The match is moderate, not firm."
+    },
+    {
+      "material": "SnS",
+      "confidence": 0.1,
+      "evidence": "Same orthorhombic Ag/B3g polarization pattern, but its lines (~95, 160, 190, 220 cm-1) do not match 103/206/242 cm-1."
+    },
+    {
+      "material": "GeSe",
+      "confidence": 0.07,
+      "evidence": "Same structure family, but its lines lie below ~190 cm-1, so there is no match for 206 or 242 cm-1."
+    },
+    {
+      "material": "1T'-WTe2 / MoTe2",
+      "confidence": 0.05,
+      "evidence": "Low-frequency lines near 100-210 cm-1 are similar, but there is no matching 242 cm-1 line and the polarization pattern is not a clear match."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so this is an identify task, not a verify task.",
+  "peaks": [
+    {
+      "position_cm1": 102.8,
+      "fwhm_cm1": 5.2,
+      "assignment": "Ag-type mode (low-frequency, in-plane shear/rigid-layer-like)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Lorentzian fits at 18 angles. Parallel amplitude goes from ~0 up to ~8100 counts with a 180 degree period, and is maximal near 55 degrees and ~0 near 140 degrees. Crossed amplitude is ~1.5-2k counts, with maxima ~45 degrees away from the parallel maximum. This matches an Ag tensor with one dominant diagonal element: parallel \u221d cos^4(\u03b8-\u03b80), crossed \u221d sin^2\u00b7cos^2(\u03b8-\u03b80). The irrep label is inferred from this pattern."
+    },
+    {
+      "position_cm1": 205.8,
+      "fwhm_cm1": 8.8,
+      "assignment": "Off-diagonal (B-type) mode of the orthorhombic layer",
+      "irrep": "B (B1g/B2g/B3g, not distinguishable here)",
+      "pattern": "fourfold",
+      "provenance": "measured",
+      "source": "Parallel amplitude varies between ~0 and ~14.4k counts with a 90 degree period (maxima ~5 and ~100 degrees, minima ~55 and ~145 degrees). Crossed amplitude is in antiphase (maxima ~55 and ~145 degrees, up to ~14.5k counts). Parallel plus crossed is roughly constant, as expected for cos^2(2\u03b8) and sin^2(2\u03b8) dependence. The irrep label is inferred; it is not a literature assignment."
+    },
+    {
+      "position_cm1": 241.9,
+      "fwhm_cm1": 3.4,
+      "assignment": "Ag-type mode (high-frequency, intralayer stretch)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Parallel amplitude is modulated between ~6.4k and ~15.7k counts with a 180 degree period and a maximum near 55 degrees. Crossed amplitude is only ~0-500 counts (about 1-3% of parallel), with a weak 90 degree modulation. This fits an Ag tensor with a \u2260 b of the same sign: par = (a cos^2 + b sin^2)^2 with a small crossed term. The irrep label is inferred."
+    }
+  ],
+  "properties": [
+    {
+      "name": "crystal symmetry",
+      "value": "Anisotropic orthorhombic layered crystal. The 103 and 242 cm-1 lines behave as Ag modes and the 206 cm-1 line as a B-type mode. The crystal axes are rotated ~55 degrees from the zero-angle reference: the Ag lines peak at ~55 degrees and the B line has its parallel minimum there.",
+      "provenance": "inferred",
+      "source": "Fits of the polarization dependence of the three lines"
+    },
+    {
+      "name": "linewidths",
+      "value": "FWHM is ~5 cm-1 (103), ~9 cm-1 (206) and ~3.4 cm-1 (242). The 242 cm-1 line is sharp, which suggests good crystallinity.",
+      "provenance": "measured",
+      "source": "Lorentzian fits"
+    },
+    {
+      "name": "baseline",
+      "value": "Flat background of ~800 counts. No substrate lines, as expected for a suspended sample.",
+      "provenance": "measured",
+      "source": "Linear baseline plus Lorentzians"
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "GeS Raman: Tan et al., Phys. Rev. B 93, 2016 (Ag ~112/239/296 cm-1, B3g ~273 cm-1). Cited from memory, not checked against the paper.",
+    "Polarized Raman tensors of Pnma group-IV monochalcogenides (Ag, B1g, B2g, B3g), e.g. SnS and GeSe angle-resolved studies. Cited from memory, not checked."
+  ],
+  "limits": [
+    "The material assignment is tentative. 103/206/242 cm-1 does not match published GeS values closely: the two lower lines are ~8 cm-1 below literature, and I cannot say whether that is strain, a different material or a different fit. I did not confirm the GeS literature values against the papers.",
+    "The measured range is 60-417 cm-1, and the strongest GeS lines expected at ~273 and ~296 cm-1 were not detected. This argues against GeS or means they are weak, and I cannot resolve which.",
+    "The irreps (Ag vs B1g/B2g/B3g) are inferred from the polarization patterns alone. The orientation of the crystal axes relative to the lab frame is not known, so B1g, B2g and B3g cannot be told apart.",
+    "The 242 cm-1 line has a very small crossed signal for a pure Ag mode with the observed parallel contrast, so I classed it as twofold, with the crossed channel near zero.",
+    "The 103 cm-1 line is also close to half the 206 cm-1 position. I did not test an overtone or combination explanation. The two lines have different polarization behaviour (Ag-like vs B-type), so I treated them as separate fundamentals.",
+    "Layer number, strain and doping cannot be determined from these data. I found no cosmic-ray spikes: the only outliers above the local median were on the three peaks. No substrate lines were present."
+  ]
+}

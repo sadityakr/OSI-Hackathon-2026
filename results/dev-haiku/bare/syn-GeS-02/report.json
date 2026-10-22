@@ -1,0 +1,83 @@
+{
+  "candidates": [
+    {
+      "material": "GeS (layered, Pnma-type orthorhombic)",
+      "confidence": 0.45,
+      "evidence": "Three in-plane modes at 102.8, 205.8 and 241.9 cm-1. The angular pattern shows an Ag-type diagonal tensor for the 103 and 242 modes and a B1g-type (xy) off-diagonal tensor for the 205 mode, which fits an orthorhombic layered chalcogenide with the beam along the layer normal. The ~100 and ~240 cm-1 positions are close to GeS literature values as I recall them (not verified in this session); the 205 cm-1 mode does not match a recalled GeS mode clearly."
+    },
+    {
+      "material": "GeSe (Pnma-type layered)",
+      "confidence": 0.15,
+      "evidence": "Same orthorhombic symmetry class allows the same Ag/B1g pattern. Recalled GeSe mode positions were not checked against these three peaks in a verifiable way, so this is a weak alternative."
+    },
+    {
+      "material": "SnS (Pnma-type layered)",
+      "confidence": 0.05,
+      "evidence": "Same orthorhombic symmetry class. Recalled SnS mode positions do not obviously include a ~240 cm-1 Raman line, so this is a low-confidence alternative."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was supplied (material_hint null), so nothing was checked against a stated material. The identification rests only on the three peak positions, their widths and their angular (Raman-tensor) patterns. The directory name was not used as evidence. The assignments to GeS come from recalled literature values, which I could not verify in this session.",
+  "peaks": [
+    {
+      "position_cm1": 102.76,
+      "fwhm_cm1": 5.2,
+      "assignment": "A_g-type in-plane diagonal mode; candidate GeS low-frequency A_g mode (recalled ~96-98 cm-1, not verified)",
+      "irrep": "A_g (inferred)",
+      "pattern": "other",
+      "provenance": "inferred",
+      "source": "Measured position and FWHM from a global Lorentzian fit (shared shape, +/-0.05 cm-1). Angular fit: parallel = k(A+R cos2\u03b8')^2 with A/R~1.1 (180-periodic dominant, 4\u03b8 harmonic ~1/4 of 2\u03b8); crossed = k R^2 sin^2(2\u03b8') (90-periodic, max ~1900, min ~0). Mixed pattern matches no single category. Irrep from symmetry reasoning: diagonal in-plane tensor for backscatter along the layer normal gives A_g."
+    },
+    {
+      "position_cm1": 205.77,
+      "fwhm_cm1": 8.8,
+      "assignment": "B_1g-type in-plane off-diagonal (xy) mode; candidate GeS B-type mode (recalled ~185-215 cm-1, not verified)",
+      "irrep": "B_1g (inferred)",
+      "pattern": "fourfold",
+      "provenance": "inferred",
+      "source": "Measured angular fit: parallel ~ 7290[1+cos(4\u03b8-33 deg)] ~ cos^2(2(\u03b8-8 deg)), crossed ~ 7330[1-cos(4\u03b8-33 deg)] ~ sin^2(2(\u03b8-8 deg)); parallel+crossed constant at ~14,600 counts across all angles. Axes are 45 deg from the A_g axes, so the tensor is off-diagonal, i.e. B_1g (xy) by symmetry reasoning."
+    },
+    {
+      "position_cm1": 241.88,
+      "fwhm_cm1": 3.4,
+      "assignment": "A_g-type in-plane diagonal mode; candidate GeS A_g near 240-245 cm-1 (recalled, not verified)",
+      "irrep": "A_g (inferred)",
+      "pattern": "twofold",
+      "provenance": "inferred",
+      "source": "Measured angular fit: parallel is 180-periodic (2\u03b8 harmonic ~4600 counts, 4\u03b8 ~300 counts; max near 53 deg, min near 143 deg); crossed is weak and nonzero (mean ~230 +/- 50 counts, modulated ~250 counts), so not isotropic_par_only. Same common axis as the 103 cm-1 mode, with A/R~4 (near-isotropic diagonal tensor). Irrep from symmetry reasoning."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "orthorhombic layered (Pnma-type), tentative",
+      "provenance": "inferred",
+      "source": "Symmetry pattern of three modes (two A_g-type diagonal, one B_1g-type off-diagonal). Not unique; the frequencies do not confirm it."
+    },
+    {
+      "name": "layers",
+      "value": "undetermined",
+      "provenance": "inferred",
+      "source": "No interlayer or low-frequency mode was measured: the window starts at 60 cm-1. Bulk vs few-layer cannot be decided from this data."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "No extra peaks above noise in the 62-415 cm-1 scan; narrow peaks (FWHM 3.4-8.8 cm-1)."
+    }
+  ],
+  "artifacts": [],
+  "citations": [],
+  "limits": [
+    "Identification is tentative. Only three peaks are present, no thickness, temperature or reference spectrum is available, and the GeS frequencies are recalled from memory rather than checked against a source (no references were retrieved here). The 205 cm-1 mode is not clearly matched to any recalled GeS line. Confidence for GeS is at most about 0.45.",
+    "Layer number and bulk vs few-layer status cannot be determined from this data.",
+    "Irrep labels (A_g, B_1g) are symmetry inferences. They assume backscatter along a crystal axis (the layer normal), in-plane axes that are crystal axes, and an orthorhombic point group. The sample orientation relative to the lab zero is unknown. The fitted phases (~53 deg for the A_g modes, ~8 deg for the B mode) are reported as measured lab angles and are not matched to crystal axes.",
+    "Classification of 103 cm-1 as 'other' versus 242 cm-1 as 'twofold' depends on category thresholds. Both share the same common axis and A_g-type diagonal character, differing mainly in the ratio of isotropic to anisotropic amplitude (A/R ~1.1 vs ~4).",
+    "The crossed-configuration signal of the 242 cm-1 mode is weak (mean ~230 counts, about 4 sigma; per-point noise ~350 counts) and its modulation is near significance. Its angular pattern is anticorrelated with the 205 cm-1 crossed signal, which argues against a Lorentzian-tail leak from the 205 cm-1 peak, but the crossed 242 cm-1 result remains uncertain.",
+    "Lineshapes were assumed Lorentzian with widths shared across angles. No instrument resolution was given, so the FWHM values are apparent widths. Position uncertainties (+/-0.05 cm-1) are statistical only; wavenumber calibration is not stated.",
+    "Spectral window is 60-417 cm-1. Silicon at 520.7 cm-1 and higher-frequency modes were not in range; the metadata says the sample is suspended, so no substrate line is expected, but this was not checked.",
+    "A scan of additional Lorentzian features (1 cm-1 steps, 62-415 cm-1) found a best candidate at ~261 cm-1 in parallel (|t| ~3.9). Its per-angle amplitudes scatter randomly (-185 to +665 counts, per-angle error ~180) and it is not reproducible, so it is not reported as a peak. With ~350 trial positions this is consistent with noise.",
+    "No cosmic-ray spikes were found: no point deviated by more than 5 sigma from the per-spectrum fit residuals."
+  ]
+}

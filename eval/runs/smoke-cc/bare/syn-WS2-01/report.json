@@ -1,0 +1,98 @@
+{
+  "candidates": [
+    {
+      "material": "2H-WS2 (few-layer to monolayer)",
+      "confidence": 0.85,
+      "evidence": "Strong band at 353.0 cm-1 (E2g/E' with 2LA(M) overlapped, FWHM ~8.5) and weaker A1g/A1' at 415.3 cm-1 (FWHM ~7.4) at 532 nm. These match the WS2 fingerprint. Si at 520.9 cm-1 shows the SiO2/Si substrate."
+    },
+    {
+      "material": "2H-WSe2",
+      "confidence": 0.03,
+      "evidence": "The E2g/A1g pair would sit near 250 cm-1. The data has no band there."
+    },
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.04,
+      "evidence": "The pair would sit at 383/408 cm-1. The observed bands are at 353/415 cm-1, which does not match."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given. This is an identify task.",
+  "peaks": [
+    {
+      "position_cm1": 353,
+      "fwhm_cm1": 8.5,
+      "assignment": "E2g(\u0393) / E'(\u0393) in-plane mode, overlapped with 2LA(M)",
+      "irrep": "E2g (E')",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit of spectrum.csv. Assignment follows Berkdemir et al., Sci. Rep. 3, 1755 (2013), which reports E2g at ~356 and 2LA(M) at ~352 cm-1 for WS2 at 532 nm. The two cannot be separated in this single-polarization spectrum."
+    },
+    {
+      "position_cm1": 415.3,
+      "fwhm_cm1": 7.4,
+      "assignment": "A1g(\u0393) / A1' out-of-plane mode",
+      "irrep": "A1g (A1')",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Lorentzian fit. Assignment follows Berkdemir et al. 2013 and Zhao et al., Nanoscale 5, 9677 (2013), which report A1g at ~418-420 cm-1."
+    },
+    {
+      "position_cm1": 520.9,
+      "fwhm_cm1": 3.6,
+      "assignment": "Si substrate",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "measured",
+      "source": "First-order Si optical phonon, 520.7 cm-1 (literature)."
+    },
+    {
+      "position_cm1": 175,
+      "fwhm_cm1": null,
+      "assignment": "LA(M), expected but not resolved",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "literature",
+      "source": "Berkdemir et al. 2013. A fit in the 150-320 cm-1 region found no significant peak above the noise, so this is not reported as measured."
+    }
+  ],
+  "properties": [
+    {
+      "name": "A1g - E2g separation",
+      "value": "~62.3 cm-1",
+      "provenance": "measured",
+      "source": "415.3 - 353.0 from the fit. Monolayer WS2 is ~61-62 and bulk ~64-65 (Berkdemir 2013), so this value points to thin material (monolayer to few-layer)."
+    },
+    {
+      "name": "A1g/E2g(+2LA) intensity ratio",
+      "value": "~0.16 (peak heights)",
+      "provenance": "measured",
+      "source": "Peak heights from the fit. The low A1g relative intensity and the strong 2LA/E2g band are typical of monolayer or few-layer WS2 at 532 nm. The 2LA(M) overlap inflates the 353 cm-1 band, so the ratio is not clean."
+    },
+    {
+      "name": "Layer number",
+      "value": "Probably mono- to few-layer; not determined uniquely",
+      "provenance": "inferred",
+      "source": "Based on the mode separation and intensity ratio above."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "Si substrate line (520.9 cm-1), not a sample mode",
+      "position_cm1": 520.9
+    }
+  ],
+  "citations": [
+    "Berkdemir et al., Sci. Rep. 3, 1755 (2013): Identification of individual and few layers of WS2 using Raman spectroscopy",
+    "Zhao et al., Nanoscale 5, 9677 (2013): Lattice dynamics and Raman of WS2 layers",
+    "Si first-order phonon at 520.7 cm-1"
+  ],
+  "limits": [
+    "Only one polarization and no angle-resolved data, so the polarization pattern of each mode is not determined.",
+    "E2g and 2LA(M) overlap at ~353 cm-1 and could not be separated. The E2g position is uncertain by a few cm-1.",
+    "Layer number is only constrained. The spectrum cannot tell monolayer from bilayer or trilayer without PL or low-frequency shear/breathing modes. The 60-150 cm-1 region shows no resolved modes.",
+    "The spectrum is noisy (about 10% of the Si peak height), so weak features such as LA(M) and combination bands could not be resolved.",
+    "Strain or doping could shift the peaks by 1-3 cm-1, and the data cannot separate these effects from thickness.",
+    "No cosmic-ray spikes were found. The only outlier points belong to the Si line."
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "candidates": [
+    {
+      "material": "2H-MoS2",
+      "confidence": 0.85,
+      "evidence": "Two modes at 379.9 and 404.6 cm-1 (Gaussian fit, FWHM 8.2 and 8.5 cm-1) with a separation of 24.6 cm-1. This matches the MoS2 in-plane E2g^1 and out-of-plane A1g pair, whose separation is layer-dependent (about 25 cm-1 for bulk, about 19 cm-1 for monolayer). No other common TMD gives this pair near 380/405 cm-1: WS2 has E2g near 355 and A1g near 420, and MoSe2 and WSe2 have much lower A1g. The material hint was null, so this is an identification from the peak pattern alone."
+    },
+    {
+      "material": "poorly crystalline / amorphous MoSx (ALD film)",
+      "confidence": 0.1,
+      "evidence": "Broad, poorly resolved E2g/A1g-like features are typical of disordered or nanocrystalline ALD MoS2, and the broad FWHM here (about 8 cm-1) is consistent with that. The two modes are still well separated and resolved with a clear Gaussian shape, so the crystalline 2H assignment is preferred. Only the 350\u2013451 cm-1 window is available, so the low-frequency modes that would separate these cases are not measured."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "The material hint was null, so there was nothing to check the data against. The task was to identify the material. The data are consistent with the stated material, the substrate and the film description: MoS2 has its E2g^1 and A1g pair near 380 and 405 cm-1 in this window, and the black-silicon substrate has no line in 350\u2013451 cm-1. The spectrum is 350\u2013451 cm-1 only, so the Si line at 520.7 cm-1 and the low-frequency MoS2 modes are not in the data.",
+  "peaks": [
+    {
+      "position_cm1": 379.92,
+      "fwhm_cm1": 8.24,
+      "assignment": "MoS2 E2g^1 (in-plane Mo-S vibration)",
+      "irrep": "E2g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Gaussian fit to the data (fitted centre 379.92 \u00b1 0.12 cm-1, FWHM 8.24 \u00b1 0.30 cm-1). Assignment: Lee et al., ACS Nano 4, 2695 (2010), who give bulk E2g^1 at about 383 cm-1 with 532 nm excitation. The measured position is about 3 cm-1 below that bulk value."
+    },
+    {
+      "position_cm1": 404.55,
+      "fwhm_cm1": 8.46,
+      "assignment": "MoS2 A1g (out-of-plane S vibration)",
+      "irrep": "A1g",
+      "pattern": null,
+      "provenance": "measured",
+      "source": "Gaussian fit to the data (fitted centre 404.55 \u00b1 0.05 cm-1, FWHM 8.46 \u00b1 0.11 cm-1). Assignment: Lee et al., ACS Nano 4, 2695 (2010), who give bulk A1g at about 408 cm-1 with 532 nm excitation. The measured position is about 3.5 cm-1 below that bulk value."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H",
+      "provenance": "inferred",
+      "source": "The E2g/A1g pair at 379.9/404.6 cm-1 with separation 24.6 cm-1 matches 2H-MoS2. The 1T' phase would show extra modes in the 150\u2013330 cm-1 region, which is outside this window."
+    },
+    {
+      "name": "layers",
+      "value": "bulk-like or multilayer (roughly 4 or more layers)",
+      "provenance": "inferred",
+      "source": "The A1g\u2013E2g separation of 24.6 cm-1 is close to the bulk value of about 25 cm-1 and well above the monolayer value of about 19 cm-1 (Lee et al., ACS Nano 4, 2695, 2010). The absolute thickness is not measured, and the laser wavelength and calibration are unknown."
+    },
+    {
+      "name": "defect_level",
+      "value": "medium",
+      "provenance": "inferred",
+      "source": "The peaks are broad (FWHM about 8.2\u20138.5 cm-1, against about 3\u20134 cm-1 for good exfoliated flakes) and the Gaussian shape fits better than Lorentzian (chi-square 0.026 vs 0.078). This points to disorder or small crystallites, which is expected for an ALD film. The data alone cannot quantify it."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "The modes are about 3 cm-1 below bulk, but without a calibrated reference or a laser wavelength this cannot be separated from calibration offset, so no strain sign is assigned."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No A1g/E2g intensity or shift analysis is carried out here, and no doping indicator (such as the 2LA(M) or LA(M) region) is in the measured window."
+    }
+  ],
+  "artifacts": [],
+  "citations": [
+    "Lee, C. et al. 'Anomalous lattice vibrations of single- and few-layer MoS2', ACS Nano 4, 2695 (2010). Source of the E2g^1 (about 383 cm-1) and A1g (about 408 cm-1) bulk positions and the layer dependence of their separation.",
+    "Molina-Sanchez, A. & Wirtz, L. 'Phonons in single-layer and few-layer MoS2 and WS2', PRB 84, 155413 (2011). Source of the mode symmetry assignments."
+  ],
+  "limits": [
+    "The spectrum covers only 350.8\u2013450.9 cm-1. The low-frequency modes (E1g near 287, E2g low-frequency and LA(M) near 227 cm-1), the 2LA(M) region, and the Si substrate line at 520.7 cm-1 are outside the window, so they could not be checked. The identification rests on the two in-window modes and their separation.",
+    "Only two peaks are visible. No Si substrate line is in the window, so the substrate is not reported as a peak.",
+    "The laser wavelength and any wavenumber calibration are not given, so the absolute positions could be offset by a few cm-1. The 3 cm-1 downshift from bulk values could come from calibration, from nanocrystal size or disorder, or from strain, and this cannot be separated with these data.",
+    "The A1g\u2013E2g separation is a layer indicator only when the film is single crystal and strain-free. For ALD polycrystalline films the layer count is not reliably given by \u0394, so 'bulk-like or multilayer' is a rough inference, not a measured thickness.",
+    "Broad E/A-like features are also seen in amorphous or poorly crystalline MoSx, which is why a second candidate is listed. The data do not exclude that. A wider scan (about 150\u2013600 cm-1) would be needed to rule it out.",
+    "No angle-resolved or polarization data were given, so no polarization classification is made. The spectrum is a single backscattering measurement and no cosmic-ray spikes were found, since the peaks are smooth and Gaussian in shape."
+  ]
+}

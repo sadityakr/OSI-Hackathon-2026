@@ -17,12 +17,15 @@ Decision record: `ideas/ranking.md`. Design contract: `docs/architecture.md`. Bu
 - Judging: potential for impact, innovativeness, relevance to physical sciences/math, novelty. Optimize for these, not polish.
 - Organizer mindset: speed over polish, learning over perfection. Scope ambitiously.
 
-## Status (updated Oct 22, 02:40 CEST)
+## Status (updated Oct 22, 13:30 CEST)
 
-Current state (supersedes the older paragraphs below where they conflict):
+Current state (supersedes the older paragraphs below where they conflict). Results of every run and which runs count: `results/README.md`.
 
-- **Backend built by the loop** (T1 to T10, commits `1a14d3c` to `9731c11`, 84 fast tests green): readers, despiking, ALS baseline, Lorentzian fitting, pipeline with Si flag, CRD and literature-table matcher, polarization classifier, reference tables for 8 materials, relation registry (6 relations), agent toolset (7 tools), literature figure tools. T11 hardening was running at 02:40.
-- **Skill** `skill/ramanlens/` (Claude Code plugin, load with `--plugin-dir skill/ramanlens`): `SKILL.md` workflow; scripts `rl_qc.py` (quality flags), `rl_fit.py` (fit plus plot), `rl.py` (CLI over the toolset); notes in `reference/` (artifacts, measurement questions, relations, literature, `materials.md`, and per-material literature notes in `reference/materials/` being written by agents at 02:40). Numbers come from `docs/verified-reference-numbers.md` (each read from its paper with a locator).
+- **Final held-out run in progress** (started 12:50, resumes after interruptions): `final-int`, `final-int-sonnet` (interpretation, 7 cases), `final-id`, `final-id-sonnet` (identification, 37 cases); arms libsearch, pipeline (no LLM), Haiku 5.5 and Sonnet 5.5 bare vs skill. Then `eval/make_figure.py` fills `submission/figure.png` and the [TBD] numbers in `submission/writeup.md`. Memory: run the skill arm with `--parallel 1` (each skill case starts an iopic-bond server that loads PyTorch); a run at higher parallelism was killed for low memory. Claude usage limits: the runner stops on HTTP 429 and resumes completed cases on rerun.
+- **Non-LLM state of the art** (`eval/baselines.py`): `libsearch` (full-spectrum cosine library search over 385 CRD layered crystals plus literature tables, the classical method) and `pipeline` (RamanLens tools as a fixed recipe). No public deep model covers 2D materials (`docs/sota-research.md`).
+- **Dev results, skill v3, Haiku**: identification top-1 0.46 to 1.00, irreps 0.47 to 0.84; interpretation rubric 0.74 to 0.79, caveats 0.61 to 0.88, citation specificity 1.00 to 1.86. Sonnet interpretation 0.88 to 0.89 (near ceiling on dev).
+- **Backend built by the loop** (T1 to T10, 84 fast tests green): readers, despiking, ALS baseline, Lorentzian fitting, pipeline with Si flag, CRD and literature-table matcher, polarization classifier, reference tables for 8 materials, relation registry (6 relations), agent toolset (7 tools), literature figure tools. T11 hardening was not finished: its uncommitted `src/ramanlens/perception/fit.py` changes were committed as is on Oct 22 (tests green).
+- **Skill** `skill/ramanlens/` (Claude Code plugin, load with `--plugin-dir skill/ramanlens`): `SKILL.md` with required first commands (paths through `${CLAUDE_SKILL_DIR}`); scripts `rl_qc.py` (quality flags), `rl_fit.py` (fit plus plot), `rl_series.py` (band tracking across spectra with Si calibration), `rl.py` (CLI over the toolset); notes in `reference/`: artifacts, measurement questions, relations, literature, and `materials/` (MoS2, WS2, MoSe2, WSe2, graphene, hBN, black phosphorus, CrSBr, CrI3-CrBr3, MPS3, general measurement, magnetic Raman; about 100 cited papers, held-out papers excluded). Numbers come from `docs/verified-reference-numbers.md` or the cited paper with a locator.
 - **Evaluation on Claude Code, no API key needed**: `eval/run_claude_code.py --arm bare|skill --split dev|dev_hard|dev_interpret|heldout --model ...` runs headless `claude -p` per case, isolated from user settings (`--setting-sources project`, `--strict-mcp-config`); the skill arm adds the plugin plus Valency and iopic-Bond MCP. About $0.05 to $0.20 per case. Identification cases are scored by `eval/score.py` (now also `property_acc`); interpretation cases by the blind rubric judge `eval/judge.py` (Opus). Case format for interpretation: `data/test_set/INTERPRET.md`.
 - **Test set now**: `dev/` 13, `dev_hard/` 15 (uncommon CRD materials plus synthetic property cases, outside the loop's contract tests), `heldout/` 37 identification cases (5 new blind property cases, CrSBr layers and WS2 monolayer), interpretation cases being built (dev in `dev_interpret/`, held out `heldout/int-*`, written by a blind sub-agent so the tool builders never see the rubrics).
 - **Baselines (bare arm)**: Sonnet 5.5 is at ceiling on synthetic identification (dev_hard id 1.0, property 1.0, irrep 0.69); Haiku 5.5 is not (id 0.62, hint 0.50, irrep 0.47, pattern 0.71, property 0.60). Decision: develop against Haiku; final held-out run on Haiku and Sonnet (Opus if credits), each bare vs skill.
@@ -43,7 +46,7 @@ Same model, prompt and Python sandbox; one arm gets only Python (`bare`), the ot
 
 Since Oct 22 the headline has two parts: identification (`eval/score.py`) and interpretation with the material known (`eval/judge.py`, rubric score, citation specificity, wrong claims), each bare vs skill on two models.
 
-Git: local `master` and GitHub `main` share one history since the merge `902177d` (Oct 22). Push with `git push origin master:main` after `git pull --rebase origin main`; stage files by name, never `git add -A`.
+Git: local `master` and GitHub `main` share one history since the merge `902177d` (Oct 22). Push with `git push origin master:main` after `git pull --rebase origin main`. The GitHub repo is **private, shared with collaborators** (Aditya, Oct 22): everything is tracked, including `data/raw/`, `eval/runs/`, `loop/logs/`, `scratch/`, `tmp/` and `resources/src/`; `.gitignore` excludes only `.env`, the machine-specific `.venv/` and caches, and four single files over GitHub's 100 MB limit (fetched by `data/get_data.ps1`). Clean up raw data, private Lit-RAG code and transcripts before anything is made public.
 
 ## Five-stage plan with stop points
 
@@ -67,14 +70,16 @@ Cut lines in order: T10 figure tools, T11 hardening, extra reference tables, the
 - `src/ramanlens/` the package: `tracing.py` (done), `perception/`, `relations/`, `literature/` (Raman-specific steps only: panel selection, digitizer), `agent/`. Python 3.11+, `pip install -e src[trace]`. `src/README.md` has the quickstart.
 - `iopic-bond/` separate MIT package and local MCP server: Bond search, arXiv fetch, PDF parse into a graph (`pdf/`, ported from Lit-RAG), figure tools, SQLite-indexed library. RamanLens imports it; it never imports RamanLens. `iopic-bond/README.md` has install and client config.
 - `data/` `README.md` (provenance of everything), data catalogs, `raw/` downloads (`crd/`, `spectra/<material>/`, `iopic-bond/` the paper library), `test_set/` evaluation cases (`dev/`, `heldout/`, `rejected/`; schema, sources and excluded papers in its README), `build_set/` papers used to generate relations (never overlaps the test set).
-- `eval/` comparison harness: `run_claude_code.py` (headless Claude Code arms bare/skill, the current runner), `run_agent.py` (Anthropic SDK arms, needs `ANTHROPIC_API_KEY`), `score.py` (identification), `judge.py` (blind rubric judge for interpretation), `report_schema.py`, `synth/` (deterministic generators: `make_synthetic.py`, `make_hard_dev.py`, `make_property_dev.py`, `make_interpret_dev.py`). Run output in `eval/runs/` (never commit). Commands in `eval/README.md`.
+- `eval/` comparison harness: `run_claude_code.py` (headless Claude Code arms bare/skill, the current runner), `run_agent.py` (Anthropic SDK arms, needs `ANTHROPIC_API_KEY`), `score.py` (identification), `judge.py` (blind rubric judge for interpretation), `report_schema.py`, `synth/` (deterministic generators: `make_synthetic.py`, `make_hard_dev.py`, `make_property_dev.py`, `make_interpret_dev.py`, `build_int_heldout.py`), `baselines.py` (non-LLM arms), `make_figure.py` (write-up figure and table), `export_results.py` (copies results without transcripts to `results/`). Run output with full transcripts in `eval/runs/`. Commands in `eval/README.md` and `README.md`.
+- `results/` results of every run (reports, judge grades, scores, cost per case); `results/README.md` says which runs count.
+- `submission/` write-up draft `writeup.md`, `video-script.md`, figure.
 - `skill/ramanlens/` the deliverable: Claude Code plugin with the `raman-analysis` skill (SKILL.md, `scripts/`, `reference/`). Scripts import `ramanlens`, so install `src/` first.
 - `tests/` `contract/` (tool API spec, read-only for the loop), `eval/` (scorer self-tests), `unit/` (the loop's own tests). `pytest.ini` at the root; fast run: `.venv\Scripts\python.exe -m pytest tests -q -m "not slow"`.
 - `loop/` build loop: `PROMPT.md` (per-iteration instructions), `TASKS.md` (backlog), `settings.json` (allow and deny rules), `run_loop.ps1` (runner), `logs/` (never commit). Create `loop/STOP` to end a run.
 - `notebooks/` Marimo preferred (sponsor track).
 - `submission/` one-pager, figure, video script, links.
 - `scratch/` throwaway experiments (tracked on GitHub). Anything worth keeping is moved into `src/`, `iopic-bond/` or `docs/` deliberately.
-- The repo has no `.gitignore` (Aditya's decision). Never `git add -A` or `git add .`: stage files by name, and never commit `.env`, `.venv/` or `data/raw/` (secrets, and paper PDFs and figure crops that may not be redistributed).
+- `.gitignore` (tracked) excludes only `.env`, `.venv/`, caches and four files over 100 MB; see Git above. Never commit `.env`.
 
 ## Data: what we have and what we do not
 
@@ -99,7 +104,7 @@ Cut lines in order: T10 figure tools, T11 hardening, extra reference tables, the
 - Compute and model access: Claude Max subscription API credits; RTX 3060 with 12 GB VRAM on the PC.
 - The agent under test runs on the PC; the cloud session is used for planning, docs, and code that does not need arXiv, Zenodo or Materials Cloud access (all three are blocked from the sandbox).
 - Project path on the PC: `C:\Users\sadit\Desktop\P_Projects\Hackathons\OSI Hackathon`. Secrets go in `.env` (template `.env.example`), never in the repo.
-- Public repo: https://github.com/sadityakr/osi-hackathon-2026 (MIT). Raw data (`data/raw/`, including the CRD zip and 2.4 GB of graphene data) stays out of git and is fetched by `data/get_data.ps1`. Sync plan for the diverged histories: see Status.
+- Repo: https://github.com/sadityakr/osi-hackathon-2026 (MIT, currently private and shared with collaborators). Raw data under 100 MB per file is tracked; the four larger files (CRD zip, `crd.json`, two graphene zips) are fetched by `data/get_data.ps1`.
 
 ## Working conventions
 

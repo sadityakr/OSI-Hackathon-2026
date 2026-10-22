@@ -1,0 +1,112 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (orthorhombic, Pnma)",
+      "confidence": 0.5,
+      "evidence": "Four robust bands at 92.5, 162.4, 189.4 and 226.5 cm-1 (fit errors <0.2 cm-1). These sit close to the bulk SnS modes I recall (~96, ~160, ~190, ~220-224 cm-1). The 189 band is strongest and isotropic_par_only, as expected for an A_g mode. The 162 band is fourfold and anti-phased between configurations, consistent with an off-diagonal (B-type) tensor. No SnSe-type band at ~109/130/150 cm-1 is present. The literature positions were recalled, not checked against a retrieved source, and the offsets are 1-4 cm-1 with no Si calibration, so this is a hypothesis to verify."
+    },
+    {
+      "material": "GeS (orthorhombic, Pnma analogue)",
+      "confidence": 0.1,
+      "evidence": "Same Pnma structure family, so a similar low-frequency mode pattern is plausible. I did not check GeS mode positions against any reference, so this candidate can be neither confirmed nor excluded from these data."
+    },
+    {
+      "material": "SnSe (orthorhombic, Pnma)",
+      "confidence": 0.08,
+      "evidence": "Same structure family. Recalled SnSe bands near 109, 130, 150 and 186 cm-1 are not matched: 92.5, 162.4 and 226.5 cm-1 are off by 12-40 cm-1, and only 189 cm-1 agrees. Weakly disfavoured, based on recalled values only."
+    },
+    {
+      "material": "MoS2 (2H)",
+      "confidence": 0.02,
+      "evidence": "Its strong first-order modes (E1_2g ~287, E2g ~383, A1g ~408 cm-1) are either absent or at the window edge. The strong 92.5, 162.4 and 189.4 cm-1 bands have no counterpart in MoS2. Inconsistent with these data."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint is null), so this is an identify task with no stated material to verify. The folder name contains 'SnS', but I did not use it as evidence: the identification rests only on the measured bands. The skill's reference library and matcher live outside this folder and I was instructed not to read files outside it, so I could not run match_library or lookup_reference_modes. The SnS mode values are recalled from memory and must be verified.",
+  "peaks": [
+    {
+      "position_cm1": 92.5,
+      "fwhm_cm1": 3.2,
+      "assignment": "A_g-type mode (tentative), SnS-like ~96 cm-1 band",
+      "irrep": "A_g (tentative)",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Fit of summed spectra (HWHM 1.62 cm-1). Parallel height varies from ~430 to ~3260 counts with a 180-degree period (twofold fit chi2 64 vs const 2210, 15 dof). Crossed is weak (~200 counts) and its modulation is not reliable. Assignment is recalled SnS Pnma literature (~96 cm-1), not verified this session."
+    },
+    {
+      "position_cm1": 162.4,
+      "fwhm_cm1": 3.6,
+      "assignment": "B-type mode (B2g/B3g, tentative), SnS-like ~160 cm-1 band",
+      "irrep": "B2g or B3g (tentative)",
+      "pattern": "fourfold",
+      "provenance": "measured",
+      "source": "Parallel maxima near 20 and 110 degrees, minima near 60 and 150; crossed anti-phased (fourfold fit chi2 16 vs const 4327). Assignment is recalled SnS Pnma literature (~160 cm-1 B-type), not verified this session."
+    },
+    {
+      "position_cm1": 189.4,
+      "fwhm_cm1": 4,
+      "assignment": "A_g-type mode (tentative), SnS-like ~190 cm-1 band; strongest band",
+      "irrep": "A_g (tentative)",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Parallel height ~2870 counts, flat across all 18 angles (const chi2 35, 17 dof). Crossed is 29 +- 20 counts, consistent with zero. Assignment is recalled SnS Pnma literature (~190 cm-1 A_g), not verified this session."
+    },
+    {
+      "position_cm1": 226.5,
+      "fwhm_cm1": 8.6,
+      "assignment": "A_g or B2g (undetermined), SnS-like ~220-224 cm-1 band; may be a doublet",
+      "irrep": null,
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Parallel height ~650-1210 counts, a 180-degree modulation of about 25 percent (twofold chi2 21.5 vs const 159). Crossed zero (13 +- 15 counts). Broad FWHM (8.6 cm-1) may hide two components. Assignment is recalled SnS literature, not verified this session."
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "orthorhombic Pnma (candidate SnS)",
+      "provenance": "inferred",
+      "source": "Band positions and polarization pattern compared against recalled bulk SnS Raman assignments; not verified against a retrieved reference this session."
+    },
+    {
+      "name": "polarization_anisotropy",
+      "value": "in-plane anisotropic: twofold bands at 92.5 and 226.5 cm-1, fourfold band at 162.4 cm-1, isotropic_par_only band at 189.4 cm-1",
+      "provenance": "measured",
+      "source": "Per-angle least-squares heights, 18 angles at 10-degree steps in both configurations."
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "Only 60-382 cm-1 measured, no thickness reference, and no layer-number relation applied; cannot be determined from this spectrum."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic ray spikes",
+      "position_cm1": null
+    },
+    {
+      "type": "zero-clipped noise points (about 8 percent of points, 901 total; noise ~180 counts per point, baseline ~200-265 counts)",
+      "position_cm1": null
+    },
+    {
+      "type": "spectral window edges (first channel 60 cm-1 and last channel 382 cm-1, 0 counts at some angles)",
+      "position_cm1": 60
+    }
+  ],
+  "citations": [],
+  "limits": [
+    "Cosmic rays: none found. The criterion was a single-channel excursion more than 1000 counts above both neighbours, and none exceeded it. The strong bands are about 4 channels wide and are real peaks, not spikes.",
+    "Zeros: about 8 percent of points are exactly 0, consistent with noise clipped at zero in low-signal regions. They are artifacts, not peaks, and slightly bias the low-count baseline.",
+    "Window: the data cover only 60-382 cm-1. Higher-frequency modes of candidate materials are not measured, so the material identity rests on the low-frequency bands alone.",
+    "No Si reference (suspended sample), so the absolute calibration is unknown. Positions are fit-only; calibration uncertainty is likely several tenths to ~1 cm-1 at best, and recalled literature offsets are 1-4 cm-1.",
+    "Weak features at 124, 276, 295, 326 and 358 cm-1 (summed-spectrum prominence 40-60 counts, close to the noise level) are not confirmed and are not reported as peaks.",
+    "The skill's reference library and matcher are outside this folder, which the task forbids reading. No library match, relation or literature retrieval was done, and the SnS band values are recalled from memory and need verification.",
+    "Irreps are tentative: the crystal-axis orientation relative to the angle origin is unknown, so the tensor mapping (A_g vs B-type) cannot be fixed from the angle series alone. The polarization classes do not depend on the angle origin.",
+    "The 226.5 cm-1 band is broad (FWHM 8.6 cm-1) and its twofold modulation is about 25 percent. It may be a doublet, so its classification is weaker than the others.",
+    "The 92.5 cm-1 crossed component is weak and its modulation is not clearly determined, so its classification rests on the parallel data.",
+    "532 nm (2.33 eV) is probably above the band gap of SnS. Resonance could change relative intensities and activate overtones; this was not assessed.",
+    "Layer number, strain and doping are not determined: no relation was applied and no thickness reference is available."
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "summary": "Raman alone cannot confirm that flake 2 is a monolayer, but the data are consistent with a monolayer or very thin flake. The main evidence is the hBN E2g position: flake 2 sits at 1368.97 \u00b1 0.24 cm-1, 2.8 cm-1 above flake 1 (1366.19 \u00b1 0.04 cm-1), which is in the range Gorbachev et al. (2011) report for monolayer BN and above their bilayer values. Intensity cannot give a layer number here: the Si reference differs between the two spectra by about 19\u00d7, flake 2's Si line is probably clipped, and flake 1's thickness is unknown. I did not run the skill's scripts or read its reference notes because they sit outside this folder, so every number below is from my own numpy/scipy fits on the two CSVs in this folder.",
+  "observations": [
+    {
+      "finding": "Both spectra contain the hBN E2g band near 1367 cm-1. Flake 1 is strong, flake 2 is weak but clearly above noise.",
+      "evidence": "Lorentzian + linear baseline, window 1300-1440 cm-1. Flake 1: x0 = 1366.19 \u00b1 0.04 cm-1, FWHM 17.94 \u00b1 0.13 cm-1, amplitude 3230, area 91011, residual SD 40.5 (SNR \u2248 80). Flake 2: x0 = 1368.97 \u00b1 0.24 cm-1, FWHM 22.47 \u00b1 0.89 cm-1, amplitude 271, area 9551, residual SD 19.3 (SNR \u2248 14). Robust to window (1320-1420, 1340-1400) and to quadratic baseline: flake 1 stays 1366.19-1366.20; flake 2 spans 1368.97-1369.16 cm-1 (FWHM 20.7-22.5).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The flake 2 E2g band is 2.8 \u00b1 0.2 cm-1 higher than flake 1. The Si calibration is identical in both spectra, so this offset does not come from calibration.",
+      "evidence": "Si 520 cm-1 line fitted at 520.90 \u00b1 0.06 cm-1 (flake 1) and 520.90 \u00b1 0.001 cm-1 (flake 2), i.e. the same offset relative to the usual 520.7 cm-1 Si value (the 520.7 reference is from general knowledge, not checked against a source). Difference in hBN position = 2.78 cm-1, with fit error about 0.24 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 1369 cm-1 position is in the monolayer range of Gorbachev et al. Fig. 4b, not the bulk or bilayer range. Monolayer points cluster near 1368.5-1369.7 cm-1 with the predicted monolayer value at 1370 cm-1; bilayer points lie at about 1363.5-1366.9 cm-1; bulk is about 1366 cm-1. Gorbachev state the monolayer and bilayer positions vary by up to \u00b12 cm-1 from sample to sample.",
+      "evidence": "Read off the plot of Fig. 4b (approximate values) and its caption. Cross-check: flake 2 at 1369.0 is 2.8 cm-1 above bulk-like flake 1 and inside the monolayer cluster.",
+      "provenance": "literature",
+      "source": "Gorbachev et al., Small 7, 465 (2011), doi:10.1002/smll.201001628, arXiv:1008.2868, Fig. 4b (cite as Fig 4 of arXiv:1008.2868)"
+    },
+    {
+      "finding": "The integrated E2g intensity from flake 2 is about 10% of flake 1 without normalization, and about 0.5% after normalization to the Si line. Neither gives a reliable layer count here.",
+      "evidence": "Raw area ratio flake2/flake1 = 9551/91011 = 0.105 (about 9.5\u00d7 weaker). Si-normalized: hBN/Si area ratio = 17.9 (flake 1) and 0.097 (flake 2), i.e. a factor of about 185. Si line areas are 5093 (flake 1) and 98965 (flake 2), a factor of about 19 that is not explained by hBN absorption at 514.5 nm.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The flake 2 Si top is flat, which points to detector clipping. Its Si amplitude is therefore a lower bound, and the Si-normalized ratio is biased.",
+      "evidence": "Two adjacent points at the top, 18777.5 and 18764.8 counts (521.28 cm-1 and 520.53 cm-1), with the next points at 14316 and 14267 counts. Flake 1 maximum is 4421 counts, not clipped. Detector saturation level is unknown.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Gorbachev et al. report that integrated E2g intensity scales linearly with layer number for N = 1 to 6 on SiO2/Si. This makes intensity useful in principle, but only with identical optics and a reference of known thickness.",
+      "evidence": "Inset of Fig. 4a (I_T vs N, linear fit over N = 1-6). Read from the inset, not from tabulated values.",
+      "provenance": "literature",
+      "source": "Gorbachev et al., Small 7, 465 (2011), doi:10.1002/smll.201001628, arXiv:1008.2868, Fig. 4a inset"
+    },
+    {
+      "finding": "Some features in the spectra are not hBN and are not interpreted as peaks: a broad 952 cm-1 band (FWHM 47 cm-1), a 981 cm-1 band, a 607 cm-1 band, and weak bands at 892, 1098 and 1407 cm-1 in flake 2. Flake 1 has candidate bands at 466 and 1197 cm-1 that are at noise level.",
+      "evidence": "Flake 2 scan: 952 (height 236, FWHM 47), 981 (235, FWHM 11), 607 (38, FWHM 9), 892 (46), 1098 (41), 1407 (50). Flake 1 candidates at 466.4 (height 142, peak point 594 among neighbours 405-533) and 1197.0 (height 124, FWHM 3.4) sit within the point-to-point noise (SD \u2248 40 counts). Assignments of 952/981/607 to Si second-order and SiO2 bands are from general knowledge, not checked against a source.",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "monolayer-consistent, most likely 1 layer; not confirmed by Raman alone. Layer count of flake 1 unknown.",
+      "provenance": "inferred",
+      "source": "Gorbachev et al., Small 7, 465 (2011), Fig. 4b (position), arXiv:1008.2868"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined; the 2.8 cm-1 shift could be partly strain, doping or laser heating, and these cannot be separated from one spectrum each",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none claimed",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "not assessed beyond hBN identification by the E2g band",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "The hBN identification rests on one band at about 1367-1369 cm-1 with a broad width (18-22 cm-1). Its origin as hBN is consistent with the literature but not confirmed by a second hBN band.",
+    "Gorbachev's monolayer position varies by \u00b12 cm-1 between samples, which is about the same size as the flake 2 shift. The position alone does not separate monolayer from few-layer, and it rests on one paper's dataset.",
+    "Intensity normalization is unreliable here. The Si line differs by about 19\u00d7 between the two spectra, which hBN absorption at 514.5 nm cannot explain, so focus, spot position or collection must differ. Flake 2's Si line is probably clipped. The 185\u00d7 Si-normalized ratio should not be quoted as a thickness factor.",
+    "No reference flake of known thickness, no AFM height and no repeated measurements are included in the folder. Without them the monolayer claim cannot be checked against an absolute scale.",
+    "514.5 nm lies far below hBN's ~6 eV gap, so the E2g signal from a monolayer is weak and the bands here are not resonance-enhanced. I did not verify the laser-wavelength dependence from the literature.",
+    "Flake 1 Si intensity is about 19\u00d7 below flake 2's and its hBN peak is ~10\u00d7 stronger. The strong flake 1 hBN signal may also come from a thicker stack or from a different focus, so the flake 1 thickness is unknown.",
+    "The fitted hBN FWHM of 18-22 cm-1 is broad compared with what is usually reported for good bulk hBN (not verified here). Broadening could come from defects, a non-uniform stack, or a poorly constrained baseline."
+  ],
+  "questions_for_user": [
+    "What is flake 2's thickness by AFM (monolayer hBN is about 0.3-0.4 nm)? This is the decisive check; Raman here supports 'thin, probably monolayer' but cannot prove it.",
+    "Is there a reference flake of known thickness on the same substrate and under the same conditions? With one, the E2g intensity could be calibrated against the layer-number scaling in Gorbachev Fig. 4a.",
+    "Why is the Si line about 19\u00d7 weaker in flake 1 than in flake 2 if the power, integration time and grating were the same? Focus, spot position or the collection path may differ, and that breaks the intensity comparison.",
+    "What is the detector saturation level? Flake 2's Si line top looks flat at about 18.8k counts.",
+    "What are the objective NA, spot size, laser power at the sample and spectrometer grating? These set the focus and resolution and determine whether the 18-22 cm-1 FWHM is instrumental (the Si FWHM is 3.3-3.5 cm-1 here).",
+    "Can the 1369 cm-1 position be reproduced at several points on flake 2, and is flake 2 also measured on bare SiO2/Si nearby? Repeats would show the sample-to-sample scatter that Gorbachev report (\u00b12 cm-1)."
+  ],
+  "citations": [
+    "Gorbachev, R. V. et al. 'Hunting for Monolayer Boron Nitride: Optical and Raman Signatures', Small 7, 465 (2011), doi:10.1002/smll.201001628, arXiv:1008.2868 (https://arxiv.org/abs/1008.2868), Fig. 4a (spectra and inset of I_T vs N) and Fig. 4b (peak position vs N). Figure read via the parsed PDF, not the published journal version.",
+    "Cai, Q. et al., 'Raman signature and phonon dispersion of atomically thin boron nitride', Nanoscale (2017), doi:10.1039/c6nr09312d, arXiv:2008.01656 (https://arxiv.org/abs/2008.01656). Found in the search but not read; no numbers from this paper are used here. Worth checking for monolayer E2g position and width at other excitation wavelengths."
+  ],
+  "limits": [
+    "Only the two CSV spectra in this folder were analysed, each measured once. No replicate scans, no reference spectra, no AFM. Position and width statements are fit statistics with their own errors; calibration (Si at 520.90 cm-1 in both, nominal 520.7) cancels in the flake-to-flake shift.",
+    "Not done: the skill's scripts (rl_qc, rl_fit, rl_series, match_library) and its reference notes for hBN were not used, because they are stored outside this working folder. The identification uses general hBN knowledge plus Gorbachev Fig. 4, and was not run through the skill's matcher.",
+    "Relations not applied: I did not apply a quantitative thickness-intensity relation, because the required reference, optical constants and calibration are not in the folder. The intensity ratio is reported only as a measured quantity.",
+    "Literature checked: Gorbachev et al. Fig. 4a/4b (viewed); Cai et al. 2017 (search hit only). Other numbers in this report (520.7 cm-1 Si reference, SiO2 and Si second-order band assignments, bulk hBN E2g linewidths) are from general knowledge and not verified against a source.",
+    "Rejected hypotheses: flake 2 as bilayer or thicker is disfavoured by the 1369 cm-1 position (Gorbachev bilayer points at about 1363.5-1366.9 cm-1). Flake 2 as bulk-like is disfavoured by its 9.5\u00d7 weaker E2g and 2.8 cm-1 upshift. Both rest on position data that vary by \u00b12 cm-1 in the literature."
+  ]
+}

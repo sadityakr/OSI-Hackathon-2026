@@ -1,0 +1,137 @@
+{
+  "candidates": [
+    {
+      "material": "SnS (Pnma, orthorhombic, layered)",
+      "confidence": 0.8,
+      "evidence": "Peaks at 92.5, 162.4, 189.4 and ~227 cm-1 match the known SnS Raman lines: ~95 (Ag), ~163 (B3g), ~190 (Ag), ~218-220 (Ag). Nothing appears above ~230 cm-1 and there is no SnS2 A1g at 314 cm-1."
+    },
+    {
+      "material": "SnSe",
+      "confidence": 0.07,
+      "evidence": "The same Pnma family, but its lines sit at lower shift (~70, 130, 150 cm-1). Does not fit the 162/189 lines."
+    },
+    {
+      "material": "SnS2",
+      "confidence": 0.04,
+      "evidence": "Its A1g at 314 cm-1 is absent."
+    },
+    {
+      "material": "Sn2S3",
+      "confidence": 0.03,
+      "evidence": "Mixed-valence tin sulfide. Has lines in the same region, but there is no specific match."
+    },
+    {
+      "material": "GeS",
+      "confidence": 0.03,
+      "evidence": "Same structure type, but its lines are at higher shift (~110, 238, 273 cm-1)."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given, so this is an identification task.",
+  "peaks": [
+    {
+      "position_cm1": 92.5,
+      "fwhm_cm1": 3.3,
+      "assignment": "SnS Ag mode (low-frequency)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Position and FWHM from per-angle Lorentzian fits. Pattern from a harmonic decomposition: parallel 2\u03b8 amplitude ~1430 vs mean ~1660, 4\u03b8 ~260, maximum near 65-80\u00b0. Crossed is weak and noisy. Assignment follows Chandrasekhar & Zwick 1977 and later SnS Raman studies (~95 cm-1)."
+    },
+    {
+      "position_cm1": 162.4,
+      "fwhm_cm1": 3.6,
+      "assignment": "SnS B3g-type mode",
+      "irrep": "B3g",
+      "pattern": "fourfold",
+      "provenance": "measured",
+      "source": "Parallel peaks near 20\u00b0/110\u00b0 and crossed peaks near 65\u00b0/155\u00b0, with a 90\u00b0 period. The 4\u03b8 amplitude (~1850 parallel, ~2000 crossed) is about equal to the mean, with negligible 2\u03b8. This is cos\u00b22\u03b8 in parallel and sin\u00b22\u03b8 in crossed. Assigned by position, literature ~163 cm-1."
+    },
+    {
+      "position_cm1": 189.4,
+      "fwhm_cm1": 4.1,
+      "assignment": "SnS Ag mode",
+      "irrep": "Ag",
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Parallel amplitude constant within ~\u00b13% (2580-3070) across angles. Crossed is ~0 (mean ~120, scatter consistent with noise). Position matches literature ~190 cm-1."
+    },
+    {
+      "position_cm1": 227,
+      "fwhm_cm1": 8.2,
+      "assignment": "SnS Ag mode (high-frequency, literature ~218-220; observed shifted and broad)",
+      "irrep": "Ag",
+      "pattern": "isotropic_par_only",
+      "provenance": "inferred",
+      "source": "Parallel amplitude is roughly constant with scatter (700-1320), and crossed is consistent with 0. The peak is broad and weak, so the fit is less certain. The ~7 cm-1 offset from literature is also unexplained."
+    },
+    {
+      "position_cm1": 304,
+      "fwhm_cm1": null,
+      "assignment": "Noise feature, not a real peak",
+      "irrep": null,
+      "pattern": null,
+      "provenance": "inferred",
+      "source": "Weak, angle-independent bumps in the 300-330 cm-1 region, with no consistent peak in either configuration. Not reported as a mode."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "bulk / many-layer (not determinable)",
+      "provenance": "inferred",
+      "source": "Sharp lines and the SnS bulk-like spectrum. Layer number cannot be extracted from these lines."
+    },
+    {
+      "name": "phase",
+      "value": "Pnma (orthorhombic, GeS-type)",
+      "provenance": "inferred",
+      "source": "Match to the SnS Ag/B3g line set."
+    },
+    {
+      "name": "defect_level",
+      "value": "low",
+      "provenance": "inferred",
+      "source": "Narrow lines (FWHM 3-4 cm-1) with no defect-induced bands. This is a coarse judgement."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none (not determinable)",
+      "provenance": "inferred",
+      "source": "No reference peak positions are available at the measurement conditions. Line positions are within a few cm-1 of literature, except the 227 line."
+    },
+    {
+      "name": "in-plane crystal axis offset",
+      "value": "~20\u00b0 from the laboratory polarization zero",
+      "provenance": "measured",
+      "source": "Phase of the 4\u03b8 pattern of the 162 cm-1 mode."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic-ray / spike check: no sharp single-point spikes were identified as sample peaks. Spectra were averaged by config and shift, and the peaks reported are reproducible across angles",
+      "position_cm1": null
+    },
+    {
+      "type": "no substrate line (suspended sample, no Si at 520 cm-1 within the 60-382 cm-1 window)",
+      "position_cm1": null
+    },
+    {
+      "type": "first channel at 60 cm-1 has intensity 0 (edge or filter artefact)",
+      "position_cm1": 60
+    }
+  ],
+  "citations": [
+    "Chandrasekhar & Zwick, Solid State Commun. 24, 347 (1977): Raman scattering of SnS",
+    "Raman studies of SnS (Ag ~95, 190, 218; B3g ~163 cm-1), e.g. Nikolic et al., J. Phys. C 10, 1977",
+    "Raman tensor selection rules for D2h (Pnma) in backscattering: Ag has diagonal tensor elements, B3g has off-diagonal elements"
+  ],
+  "limits": [
+    "The assignment to SnS rests on four line positions plus symmetry behaviour. I did not compare against a reference spectrum, so this is a probable identification and not a confirmed one.",
+    "A fourfold pattern for a B3g-like mode is the textbook off-diagonal-tensor result for a mode whose axes are rotated ~20\u00b0 from the polarizer. The twofold pattern of the 92.5 mode and the near-isotropic pattern of the 189 mode are less obvious for orthorhombic SnS, so the symmetry labels are empirical classifications and not independent confirmation of the irreps.",
+    "The 227 cm-1 line is ~7 cm-1 above the usual 218-220 cm-1 SnS line and is broad. Its isotropic_par_only label is tentative.",
+    "The 92.5 cm-1 twofold label: the crossed signal is weak and noisy, so it is only weakly constrained.",
+    "Layer number, doping and strain cannot be extracted without reference peak positions or a layer-dependent mode. The spectrum range is limited to 60-382 cm-1.",
+    "Polarization patterns were obtained at 10\u00b0 steps, which is adequate for 2\u03b8 and 4\u03b8 components but not for higher harmonics."
+  ]
+}

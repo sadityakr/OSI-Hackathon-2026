@@ -1,0 +1,87 @@
+{
+  "candidates": [
+    {
+      "material": "GeS (orthorhombic, Pnma, black-phosphorus-like)",
+      "confidence": 0.6,
+      "evidence": "Three strong lines at ~103, 206 and 242 cm-1 with nothing else above 5\u03c3 up to 417 cm-1. They lie in the GeS Ag manifold, which is reported at roughly 110, 215 and 238 cm-1 (Pnma Ag modes). The mode pattern matches a Pnma group-IV monochalcogenide. The lines sit 5\u201310 cm-1 below the reported GeS values, so this is a loose match. 242 is higher than the reported 238 and 103 and 206 are lower."
+    },
+    {
+      "material": "SnS (Pnma)",
+      "confidence": 0.15,
+      "evidence": "Same structure type, with Ag lines near 95, 190 and 220. The measured lines are too high for SnS, but it cannot be fully excluded without reference spectra."
+    },
+    {
+      "material": "GeSe (Pnma)",
+      "confidence": 0.1,
+      "evidence": "Ag lines near 80, 150 and 188 cm-1. This does not match the strong 206 and 242 lines."
+    },
+    {
+      "material": "SnSe (Pnma)",
+      "confidence": 0.03,
+      "evidence": "Its modes lie below ~160 cm-1, so it does not match."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given.",
+  "peaks": [
+    {
+      "position_cm1": 102.8,
+      "fwhm_cm1": 5.2,
+      "assignment": "Ag-type mode, low-frequency GeS Ag mode (shear/rigid-layer-like)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Lorentzian fit per angle. The parallel intensity has a 180\u00b0 period (maximum near 55\u00b0, near zero around 120\u2013160\u00b0 and 0\u00b0). The crossed intensity is weak and anti-phased (minimum near 50\u201360\u00b0 and 140\u2013150\u00b0). The Ag assignment is by analogy with the Pnma Ag modes of GeS (literature values ~110 cm-1) and is inferred."
+    },
+    {
+      "position_cm1": 205.8,
+      "fwhm_cm1": 8.7,
+      "assignment": "Ag-type mode, GeS Ag mode (literature ~215 cm-1)",
+      "irrep": "Ag",
+      "pattern": "fourfold",
+      "provenance": "measured",
+      "source": "Parallel intensity follows cos\u00b2(2(\u03b8\u2212\u03b80)) with a 90\u00b0 period (maxima near 5\u00b0 and 95\u00b0, minima near 50\u00b0 and 140\u00b0). Crossed intensity follows sin\u00b2(2(\u03b8\u2212\u03b80)) (maxima near 50\u00b0 and 140\u00b0). The sum of parallel and crossed is roughly constant at ~14500, and the offset \u03b80 is about 5\u00b0. Mode assignment is by analogy with literature GeS Ag modes and is inferred."
+    },
+    {
+      "position_cm1": 241.9,
+      "fwhm_cm1": 3.3,
+      "assignment": "Ag-type mode, GeS Ag mode (literature ~238 cm-1)",
+      "irrep": "Ag",
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Parallel intensity is strong and varies by a factor of ~2.5 with a 180\u00b0 period (maximum near 50\u201360\u00b0, minimum near 140\u00b0). Crossed intensity is weak (~500\u2013600 counts) and roughly angle-independent within the noise. The twofold label is for the parallel modulation. The weak crossed signal could also be leakage, in which case isotropic_par_only would be an alternative reading. Mode assignment is by analogy with literature and is inferred."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layer number / thickness",
+      "value": "Not determined; the sample is suspended, and no layer-number-sensitive reference is available.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "in-plane anisotropy",
+      "value": "Strong. The 103 and 242 cm-1 lines show twofold behaviour and the 206 cm-1 line shows a fourfold pattern, with a crystal-axis offset of about 5\u201355\u00b0. This is consistent with a low-symmetry in-plane orthorhombic structure.",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "possible cosmic-ray or noise spikes in single-angle spectra (isolated single-point outliers)",
+      "position_cm1": null
+    }
+  ],
+  "citations": [
+    "Pnma GeS Raman Ag modes at ~110, ~215 and ~238 cm-1, from memory of the GeS Raman literature (e.g. Tan et al., Appl. Phys. Lett. 2012 on GeS Raman; Lin et al. on GeS). Not checked against the papers here, so quote the values loosely.",
+    "Pnma monochalcogenide Raman tensor symmetry (Ag, B1g, B2g, B3g), from memory."
+  ],
+  "limits": [
+    "The assignment to GeS rests on the 3-line pattern and approximate agreement with literature values. The lines are 5\u201310 cm-1 off the reported GeS positions, and I did not have reference spectra. SnS and other Pnma monochalcogenides cannot be fully excluded.",
+    "No substrate lines appear (suspended sample), and no peaks were found above 5\u03c3 other than the three reported. Weaker GeS modes (for example near 150, 275 or 290 cm-1) are not resolved; any such weak features are at or below the noise.",
+    "The 242 cm-1 polarization class is ambiguous (twofold parallel modulation with a weak, flat crossed signal). The 103 cm-1 crossed channel is noisy and partly suppressed near its minima, so some single-angle fits failed there.",
+    "Fits to peaks at their minima (near-zero intensity) are unreliable; the polarization pattern was judged from the full angular trend, not from those points.",
+    "Cosmic-ray spikes were suppressed by using the median over angles for peak finding. Individual spikes were not catalogued, so the artifact entry is generic and its position is not known.",
+    "Layer number, strain and doping cannot be extracted from this single-wavelength data."
+  ]
+}

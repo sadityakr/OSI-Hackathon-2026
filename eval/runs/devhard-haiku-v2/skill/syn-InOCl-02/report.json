@@ -1,0 +1,122 @@
+{
+  "candidates": [
+    {
+      "material": "CrSBr (class-level only)",
+      "confidence": 0.05,
+      "evidence": "Layered, orthorhombic, in-plane anisotropic; the measured twofold modes at 299 and 353 cm-1 are compatible with the class. Not checked against CrSBr reference peak positions (reference library lies outside the working folder). Weak evidence."
+    },
+    {
+      "material": "GeS (class-level only)",
+      "confidence": 0.05,
+      "evidence": "Layered, orthorhombic (Pnma), in-plane anisotropic low-symmetry chalcogenide. Same class-level argument; no reference peak list checked."
+    },
+    {
+      "material": "ZrS3 (class-level only)",
+      "confidence": 0.04,
+      "evidence": "Layered, monoclinic, strongly quasi-1D in-plane anisotropy. Consistent with the twofold angular patterns; no reference peak list checked."
+    },
+    {
+      "material": "TiS3 (class-level only)",
+      "confidence": 0.04,
+      "evidence": "Layered, monoclinic, in-plane anisotropic trichalcogenide. Same class-level argument; no reference peak list checked."
+    },
+    {
+      "material": "SnSe (class-level only)",
+      "confidence": 0.03,
+      "evidence": "Layered, orthorhombic (Pnma), in-plane anisotropic. Same class-level argument; no reference peak list checked."
+    }
+  ],
+  "hint_verdict": "not_applicable",
+  "hint_reasoning": "No material hint was given (material_hint null), so verify mode does not apply. The spectrum shows one strong totally symmetric-like mode at 155.3 cm-1 (flat in parallel, zero in crossed) and two in-plane anisotropic modes (299.0 and 352.8 cm-1, parallel twofold). This points to a low-symmetry, in-plane anisotropic layered material. I could not match it to a specific material: the skill's reference library, matcher and curated mode tables are outside the working folder, which I was told not to read. Candidates are class-level only and carry low confidence.",
+  "peaks": [
+    {
+      "position_cm1": 155.3,
+      "fwhm_cm1": 3.2,
+      "assignment": "unassigned; strongest band, isotropic in parallel",
+      "irrep": null,
+      "pattern": "isotropic_par_only",
+      "provenance": "measured",
+      "source": "Lorentzian fit of angle-averaged spectrum (analysis/fit_avg.py); per-angle fits (analysis/angle_fit.py). Parallel amplitude 39,300 +- 1,000 at all 18 angles, constant to about 2.5 %; crossed 26 +- 240 (zero)."
+    },
+    {
+      "position_cm1": 299,
+      "fwhm_cm1": 4.3,
+      "assignment": "unassigned; in-plane anisotropic mode",
+      "irrep": null,
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Fit of angle-averaged spectrum (fwhm 4.3 +- 0.4). Parallel amplitude varies with 180-degree period (maximum near 38 deg, minimum near 128 deg, modulation about 145 %, F-test vs constant p ~ 2e-8). Crossed amplitude is nonzero (mean 3,600 +- 330) and varies from about 0 to 9,000 with no clean twofold or fourfold form; crossed scatter (about 2,500) exceeds empty-region control scatter (about 1,400), so the variation is real."
+    },
+    {
+      "position_cm1": 352.8,
+      "fwhm_cm1": 4.6,
+      "assignment": "unassigned; in-plane anisotropic mode",
+      "irrep": null,
+      "pattern": "twofold",
+      "provenance": "measured",
+      "source": "Fit of angle-averaged spectrum (fwhm 4.6 +- 0.1). Parallel amplitude follows 180-degree period (maximum near 127 deg, minimum near 37 deg; chi2 of twofold fit 26 for 15 dof; F vs constant p ~ 1e-15). Crossed amplitude 346 +- 330, consistent with zero (silent)."
+    },
+    {
+      "position_cm1": 354.8,
+      "fwhm_cm1": 6.4,
+      "assignment": "unassigned; weak crossed-only component (tentative)",
+      "irrep": null,
+      "pattern": "other",
+      "provenance": "measured",
+      "source": "Averaged crossed fit centre 354.8 (fwhm 6.4, amplitude 2,070 +- 520, about 4 sigma). Crossed amplitude constant over angle within noise (F-test p = 0.4). Not resolved from the strong 352.8 parallel band, so the parallel contribution cannot be excluded."
+    }
+  ],
+  "properties": [
+    {
+      "name": "in_plane_anisotropy",
+      "value": "yes",
+      "provenance": "inferred",
+      "source": "The 299.0 and 352.8 cm-1 parallel amplitudes vary with 180-degree period (twofold fits), with opposite phase. Measured angular pattern; interpretation from this analysis."
+    },
+    {
+      "name": "layers",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "No layer-number relation applied; no reference or relation was accessible, and suspended-sample thickness cannot be inferred from band intensities alone."
+    },
+    {
+      "name": "phase",
+      "value": "unknown",
+      "provenance": "inferred",
+      "source": "No reference matched. Candidate structures listed under candidates are class-level only."
+    },
+    {
+      "name": "strain_sign",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No Si or reference lines available to check calibration, and no relation applied, so strain cannot be determined. 'none' here means not determinable, not measured absent."
+    },
+    {
+      "name": "doping_type",
+      "value": "none",
+      "provenance": "inferred",
+      "source": "No relation applied and no reference mode positions available; doping cannot be determined."
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "cosmic_ray_spike (crossed, 70 deg, single point 9517 counts, neighbours 0/306/1395)",
+      "position_cm1": 382
+    }
+  ],
+  "citations": [],
+  "limits": [
+    "Identification is not established. No reference-spectrum match was possible: the skill's reference library, matcher and curated mode tables sit outside the working folder, which I was told not to read. The candidate list is class-level and low-confidence.",
+    "Rejected by absence (from memory, not checked against a reference): graphene, MoS2/WS2/MoSe2/WSe2 (no bands in the 380-420 cm-1 range, z < 1 in weak-candidate tests), hBN (no 1366 cm-1 band; window ends at 722), black phosphorus (no bands near 440-470 cm-1, z < 1.6).",
+    "Spectral window is 60-722 cm-1. Bands outside it (below 60 or above 722 cm-1) cannot be checked, and many diagnostic modes for layered materials lie there.",
+    "No Si or other calibration line is present (suspended sample, no substrate). Absolute positions are uncalibrated; assume a systematic offset of a few tenths of a cm-1 before comparing with literature.",
+    "Noise is high: per-point scatter is about 1,200 counts (parallel) and 1,400 (crossed), and about 12-13 % of points in each configuration are exactly zero, i.e. clipped. Clipping biases weak crossed amplitudes upward; treat crossed features near the noise with caution.",
+    "Crossed 299 cm-1 has real angular variation but no clean twofold or fourfold form, so its class is 'other'. Parallel 155 cm-1 is constant to about 2.5 %, so 'isotropic_par_only' is a classification, not a precise statement of zero modulation.",
+    "The 354.8 cm-1 crossed-only component is about 4 sigma on the averaged spectrum and sits in the wing of the strong 352.8 cm-1 parallel band. Treat it as tentative.",
+    "Not reported as peaks: crossed 239 cm-1 (averaged fit 587 +- 293, about 2 sigma); parallel 102, 259, 532, 594, 632 cm-1 and crossed 161, 222, 384, 426, 639 cm-1 (all below about 3 sigma after angle averaging; multiple-testing not corrected).",
+    "Single-point outliers at noise level (parallel 311 cm-1 at 100 deg, parallel 587 cm-1 at 110 deg, crossed 102 cm-1 at 60 deg, crossed 360 cm-1 at 80 deg) have no neighbour excess and are not reported as cosmic rays. The 382 cm-1 spike is far (about 29 cm-1) from any band, so its effect on the fitted band amplitudes is negligible, but it was not masked.",
+    "Layer number, strain, doping and defect density cannot be determined: no relation was applied, no reference data was accessible, and no thickness or calibration check is possible on this spectrum.",
+    "The working-folder name was not used as evidence for the material.",
+    "Citations: none. No literature source was consulted, so no reference is cited."
+  ]
+}
