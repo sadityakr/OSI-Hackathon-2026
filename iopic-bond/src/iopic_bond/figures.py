@@ -20,6 +20,7 @@ from typing import Optional
 
 from .tracing import traced
 from .pdf import BlockNode, parse_pdf
+from .pdf.docling_adapter import caption_label
 
 
 @dataclass
@@ -59,11 +60,13 @@ def figures_from_tree(root: BlockNode, doc_dir: Path) -> list[Figure]:
         rel = n.attrs.get("image_path")
         img = (doc_dir / rel) if rel and (doc_dir / rel).exists() else None
         page = n.attrs.get("caption_page") or (n.prov[0].page_no if n.prov else None)
+        caption = (n.attrs.get("caption") or "").strip()
         out.append(Figure(
             paper_id=root.id,
             node_id=n.id,
-            label=n.attrs.get("label"),
-            caption=(n.attrs.get("caption") or "").strip(),
+            # re-derived from the caption for papers parsed before the label pattern accepted "FIG.| 1."
+            label=n.attrs.get("label") or caption_label(caption),
+            caption=caption,
             page=page,
             image_path=img,
             mentions=mentions.get(n.id, []),
