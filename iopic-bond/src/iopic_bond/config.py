@@ -9,6 +9,8 @@ Output: plain functions read by the store, the Bond client and the CLI.
     VALENCY_BOND_TOKEN   Valency Direct API token from https://app.valency.io/settings
     VALENCY_BOND_URL     Bond endpoint (default https://mcp.valency.io/)
     IOPIC_BOND_DEVICE    Docling device, "cpu" or "cuda" (default cpu)
+    IOPIC_BOND_EXCLUDE   withheld papers: arXiv ids, DOIs or title fragments (see exclude.py)
+    IOPIC_BOND_EXCLUDE_FILE  the same, one entry per line in a file
 """
 from __future__ import annotations
 
