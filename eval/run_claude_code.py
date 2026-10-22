@@ -114,7 +114,14 @@ def child_env(arm):
     return env
 
 
+LIMIT_HIT = []  # filled when the Claude usage limit (HTTP 429) is reached; remaining cases are then skipped
+
+
 def run_case(case_dir, out_dir, arm, model, effort, timeout_min, run_name):
+    if LIMIT_HIT:
+        return case_dir.name, False, {"skipped": "usage limit reached earlier in this batch"}
+    if (out_dir / "report.json").exists():
+        return case_dir.name, True, {"resumed": "report already present"}
     inp = json.loads((case_dir / "input.json").read_text())
     work = WORK_ROOT / run_name / arm / case_dir.name
     for d in (out_dir, work):
@@ -159,6 +166,11 @@ def run_case(case_dir, out_dir, arm, model, effort, timeout_min, run_name):
         except json.JSONDecodeError:
             pass
     result = next((e for e in reversed(events) if e.get("type") == "result"), {})
+    if result.get("is_error") and result.get("api_error_status") == 429:
+        # Usage limit: leave no partial files so a resumed run retries this case.
+        shutil.rmtree(out_dir, ignore_errors=True)
+        LIMIT_HIT.append(f"{case_dir.name}: {result.get('result')}")
+        return case_dir.name, False, {"rate_limited": str(result.get("result"))}
     report = result.get("structured_output")
     u = result.get("usage", {})
     usage = {"input": u.get("input_tokens", 0) + u.get("cache_read_input_tokens", 0)
@@ -213,6 +225,9 @@ def main():
     with ThreadPoolExecutor(max_workers=args.parallel) as pool:
         for name, ok, usage in pool.map(one, cases):
             print(f"{args.arm} {name}: {'ok' if ok else 'NO REPORT'} {usage}", flush=True)
+    if LIMIT_HIT:
+        print(f"USAGE LIMIT reached ({LIMIT_HIT[0]}); rerun the same command after the reset to resume.")
+        sys.exit(2)
 
 
 if __name__ == "__main__":
