@@ -1,0 +1,136 @@
+{
+  "summary": "Between 4 and 300 K the two strongest Raman modes of the monolayer (~242 and ~341 cm-1) behave like ordinary anharmonic phonons. Their positions follow a Balkanski law with C \u2248 2.0 cm-1 and no extra shift that would point to spin-phonon coupling. Their widths stay flat up to 150 K and broaden at 300 K. The clearest change is a ~358 cm-1 shoulder, whose intensity relative to the 341 cm-1 peak falls from ~0.28 at 4\u201380 K to 0.067 at 150 K and 0.02 at 300 K. That drop sits between 80 and 150 K, close to the bulk CrSBr magnetic transitions I recall from literature, so it is worth following up. Absolute intensities are not usable for trends in this set because they are not monotonic in T, which points to normalisation drift. The data do not show a thickness, defect, strain or doping signature, and the 150\u2013400 cm-1 window cannot confirm monolayer thickness by itself.",
+  "observations": [
+    {
+      "finding": "The strongest mode (~341 cm-1) softens monotonically with T and its width is flat up to 150 K, then broadens at 300 K.",
+      "evidence": "Lorentzian fits, free position and width: 341.41\u00b10.08 (4 K), 341.32\u00b10.11 (80 K), 340.59\u00b10.09 (150 K), 338.40\u00b10.11 (300 K) cm-1. FWHM 4.95\u00b10.23, 5.14\u00b10.33, 5.07\u00b10.26, 6.89\u00b10.33 cm-1. Shift vs 4 K: \u22120.09, \u22120.82, \u22123.01 cm-1. Peak sits on a ~5 cm-1 linewidth at 4 K, so resolution of the instrument (not given) may limit it.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Both strong modes follow a single anharmonic (Balkanski-type) temperature law, with the same coefficient C \u2248 2.0 cm-1. That argues against a large extra magnetic or strain contribution to their positions between 4 and 300 K.",
+      "evidence": "w(T) = w0 \u2212 C(1+2n(T)) fitted to four temperatures. 341 mode: w0 = 343.42\u00b10.14, C = 1.95\u00b10.09 cm-1, residuals \u22640.06 cm-1. 242 mode: w0 = 244.19\u00b10.33, C = 2.07\u00b10.14 cm-1, residuals \u22120.10, +0.43, \u22120.29, +0.03 cm-1. Only two parameters on four points; agreement is consistent, not proof.",
+      "provenance": "inferred",
+      "source": "Balkanski, Wallis & Haro, Phys. Rev. B 28, 1928 (1983) for the anharmonic form (cited from memory, not checked in this session)"
+    },
+    {
+      "finding": "The ~242 cm-1 mode is flat between 4 and 80 K, then softens by 2.05 cm-1 at 150 K and 5.08 cm-1 at 300 K.",
+      "evidence": "Positions 242.02\u00b10.28 (4 K), 242.03\u00b10.38 (80 K), 239.97\u00b10.36 (150 K), 236.94\u00b10.25 (300 K) cm-1. The 80 K point is the one that deviates from the Balkanski fit (+0.43 cm-1). That is compatible with a small local heating offset at the lowest T, but could also be a fit artefact.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The ~358 cm-1 shoulder loses most of its intensity relative to the 341 cm-1 peak between 80 and 150 K. This is the clearest temperature-driven change in the set.",
+      "evidence": "Amplitude ratio A358/A341 with 358 cm-1 position pinned (FWHM 5.5): 0.290 (4 K), 0.273 (80 K), 0.067 (150 K), 0.022 (300 K); absolute amplitudes 65.8\u00b14.8, 19.7\u00b12.1, 7.2\u00b12.5, 3.3\u00b13.8 counts. With position free, the 150 K component drifts to 360.6 cm-1 and is only 2.2\u03c3, so the pinned value is the more reliable one. The 300 K value is within ~1\u03c3 of zero.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Absolute peak intensities are not monotonic in T, so they cannot be used as a trend. The non-monotonic ratios point to normalisation drift (focus, power, alignment or polarisation purity) between cooldowns.",
+      "evidence": "341 cm-1 amplitude 227.2, 72.3, 107.4, 148.5 counts (4, 80, 150, 300 K). Area ratio A341/A242 = 1.65, 1.03, 1.56, 1.24. Ratio A242/A341 = 0.355, 0.431, 0.341, 0.544. Noise levels also differ strongly between traces (robust point-to-point \u03c3 at 380\u2013400 cm-1: 6.1, 1.6, 4.1, 9.7 counts for 4, 80, 150, 300 K).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The broad feature near 300 cm-1 is weak and poorly constrained, so no temperature conclusion can be drawn from it.",
+      "evidence": "Amplitude 38.6 (FWHM 20.4, 4 K), 14.0 (13.3, 80 K), 17.6 (16.4, 150 K). At 300 K the fit is unstable (292\u00b18 cm-1, FWHM 39\u00b124). Its position is stable at ~299\u2013302 cm-1 where it can be fitted.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 4 K residual shows structure larger than the noise on the strong 341 cm-1 peak, which indicates a non-Lorentzian line shape. A weak candidate near 281\u2013289 cm-1 is not secure.",
+      "evidence": "4 K residual rms 8.1 counts over 225\u2013380 cm-1, against a 160\u2013225 cm-1 noise of ~3.8 counts. Residual is \u00b1~25 counts around 330\u2013343 cm-1. Adding a ~289 cm-1 Lorentzian lowers chi2 by ~420 (~6 in units of residual variance) with amplitude 16\u00b17 counts, which is not strong enough to claim a mode.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A weak shoulder near 332\u2013334 cm-1 on the low-energy side of the 341 cm-1 peak is visible at 300 K.",
+      "evidence": "Residuals of the 300 K 3-peak fit are positive at ~330\u2013334 cm-1, with data points near 45 and 30 counts. The 4 K gap at 328.1\u2013330.7 cm-1 hides the same region.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Four spectra share the same window and grid start/end. Missing points are isolated dropouts, not re-gridded data.",
+      "evidence": "All files start at 151.157 and end at 400.82 cm-1. Gaps: 4 K at 328.1\u2013330.7, 362.0\u2013364.6 and 369.7\u2013372.3; 80 K at 167.2\u2013169.8 and 328.1\u2013332.0; 150 K at 328.1\u2013330.7; 300 K none. 4 K gap at 328\u2013331 lies on the low-energy flank of the 341 cm-1 peak.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Spectral changes are consistent with a single crossed-circular channel selecting one symmetry component of the Raman tensor. Whether that channel is the trace (totally symmetric, A-type) depends on whether 'sigma+ in / sigma- out' is defined in photon helicity or in the lab frame.",
+      "evidence": "Projecting e+ onto lab e+ gives the trace (R_xx+R_yy) + i(R_xy\u2212R_yx); projecting onto lab e- gives (R_xx\u2212R_yy) + i(R_xy+R_yx). Backscattering reverses the lab handedness, so the photon-helicity crossed channel corresponds to the lab e+ projection, which is the trace. This is my own algebra; the circular intensities are also independent of the flake's in-plane rotation.",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (monolayer, as stated by the user from AFM); the 151\u2013401 cm-1 window does not confirm layer number on its own",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "phase",
+      "value": "orthorhombic CrSBr (Pmcn) as expected for the bulk CVT crystal; the monolayer structure is not verified by this data",
+      "provenance": "literature",
+      "source": "Bulk CrSBr crystal structure, recalled from general knowledge (not checked in this session)"
+    },
+    {
+      "name": "magnetic_transition_window",
+      "value": "possible change in the 80\u2013150 K range (358 cm-1 shoulder disappears); not confirmed as magnetic",
+      "provenance": "inferred",
+      "source": "G\u00f6ser et al., J. Magn. Magn. Mater. (1990): bulk CrSBr T_N \u2248 132 K and intralayer ferromagnetic T_C \u2248 146 K (cited from memory, not checked in this session)"
+    },
+    {
+      "name": "defect_level",
+      "value": "cannot be assessed from these data (FWHM 4.95 cm-1 at 4 K, instrument resolution not given)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none detected (no shift beyond the anharmonic fit)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none detected (no phonon/Fano/intensity signature analysed)",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Absolute intensities are not comparable across temperatures. Focus or power drift, polarisation purity and cryostat window effects can each change the amplitude by factors of 2\u20133, which is what the non-monotonic 341 cm-1 amplitude (227 \u2192 72 \u2192 107 \u2192 149) suggests. Only intensity ratios within a single spectrum are used here.",
+    "The 341/358 amplitude ratio is also sensitive to polarisation purity. A degraded crossed-circular extinction at low T (quarter-wave plate offset, strain-induced window birefringence) would leak the strong trace-type 341 mode into the channel and lower the ratio, mimicking the observed 358 disappearance. This needs a control before it is read as magnetic.",
+    "Laser heating is a real concern. A 532 nm, 100x (NA 0.82) spot on a monolayer in vacuum with unknown power can raise the local temperature by tens of K at 4 K. The flat 4 \u2192 80 K region could therefore be a heating floor, and the nominal temperatures would be too low. Laser power is not given.",
+    "Wavenumber calibration is not documented. No Si 520.7 cm-1 or Ne reference is in the window, and spectrometer or grating drift at each cooldown is possible. The 341 cm-1 shift of 3 cm-1 across 300 K is larger than typical drift, but this has to be checked.",
+    "The Balkanski agreement rests on two free parameters and four temperatures. It is a consistency check, not evidence against spin-phonon coupling. Magnon-phonon effects would show as deviations near the magnetic transition, and 150 K is right at the edge.",
+    "Only one crossed-circular channel is available, so the symmetry of the 242, 300, 341 and 358 cm-1 modes cannot be assigned from these data. The 358 cm-1 mode may be a different symmetry, and its loss may partly be a selection-rule effect.",
+    "The line shape is not perfectly Lorentzian. The 4 K residual on the 341 cm-1 peak is \u00b1~25 counts, so amplitudes and widths carry ~10% model error. Positions are more robust.",
+    "Noise differs by a factor of ~3\u20136 between traces (point-to-point \u03c3 at 380\u2013400 cm-1: 6.1 at 4 K, 1.6 at 80 K, 9.7 at 300 K). Acquisition settings may differ, which weakens any comparison of weak features.",
+    "Resonance effects are untested. 532 nm (2.33 eV) is well above the lowest CrSBr excitons (recalled, ~1.3\u20131.5 eV, not verified). Higher-lying transitions near 2.3\u20132.5 eV could still shift with T and change intensities, and this is not excluded.",
+    "The 150\u2013401 cm-1 window excludes the low-frequency modes and the ~150 cm-1 Rayleigh edge region, so it cannot test layer-number-dependent low-frequency modes."
+  ],
+  "questions_for_user": [
+    "What laser power at the sample, spot size, integration time and accumulations were used for each trace? Was the power the same for all four temperatures? If not, a power series at 4 K is needed to extrapolate to zero power, because local heating could make the 4 K point effectively warmer than 4 K.",
+    "How was the wavenumber axis calibrated for each cooldown (Si 520.7 cm-1, Ne lamp, or none)? A 0.3\u20130.5 cm-1 drift would be enough to change the Balkanski fit conclusions.",
+    "Is 'sigma+ in / sigma- out' defined in photon helicity or in the lab frame? My projection suggests the photon-helicity crossed channel is the trace (totally symmetric) component, but the convention has to be confirmed before assigning symmetry.",
+    "Was the crossed-circular extinction checked at low T in this PPMS insert (window birefringence, quarter-wave plate offset)? A leakage check would separate a real loss of the ~358 cm-1 mode from a polarisation artefact.",
+    "Can the 80\u2013150 K range be sampled more densely (for example 100, 120, 135, 145, 160 K) and measured on warming as well as cooling? This would locate the 358 cm-1 disappearance temperature and show whether it is reversible, which bears on whether it is magnetic or a sample or laser change.",
+    "Is there a bulk CrSBr flake (or thicker region) from the same CVT crystal measured in the same setup? That would give a monolayer-versus-bulk reference for mode positions and the 358 cm-1 feature, and would support the monolayer assignment that AFM alone does not fully establish.",
+    "What is the substrate and is the flake encapsulated? Air exposure or repeated laser exposure could change the spectrum, and a 300 K re-measurement at the end would show reversibility.",
+    "Is the spectrometer resolution known (grating, slit, pixel dispersion)? A ~5 cm-1 FWHM at 4 K could be partly instrumental."
+  ],
+  "citations": [
+    "Balkanski, M., Wallis, R. F. & Haro, E., Phys. Rev. B 28, 1928 (1983) \u2014 anharmonic phonon temperature dependence used for the Balkanski fit; cited from memory, not checked in this session",
+    "G\u00f6ser, O. et al., J. Magn. Magn. Mater. (1990) \u2014 bulk CrSBr T_N \u2248 132 K and intralayer ferromagnetic T_C \u2248 146 K; cited from memory, not checked in this session"
+  ],
+  "limits": [
+    "No internet or literature access in this session; literature numbers and citations are recalled and must be checked before use.",
+    "No reference spectra were available (bulk CrSBr, co-circular or linear channel, Si standard), so mode assignments and monolayer-versus-bulk differences are not established.",
+    "Only four temperatures were measured, on cooling only, with no repeats. The T-dependence cannot be pinned down finely, and reversibility is untested.",
+    "Laser power, integration time, spot size and spectrometer resolution were not provided, so local heating, absolute intensities and linewidths cannot be quantified.",
+    "The 4 K trace has unexplained residual structure near 340 cm-1 and a weak, unconfirmed candidate near 285 cm-1."
+  ]
+}

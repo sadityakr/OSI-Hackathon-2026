@@ -1,0 +1,173 @@
+{
+  "summary": "Across the nine excitations (1.8432 to 1.9564 eV, 103 to 216 meV above the stated A1s at 1.740 eV) the spectrum has two bands groups with different resonance profiles. (1) The 248-250 cm-1 A1'/E' pair, with the 259/262 cm-1 multiphonon pair, is strongest at 1.8703 eV (about 130 meV above A1s) and falls by more than 30x by 1.94 eV. (2) A group at 492.7 to 496.3 cm-1 is present in 8 of 9 spectra and gains intensity relative to group (1) by roughly two orders of magnitude between 1.87-1.90 eV and 1.93-1.94 eV. It survives at 1.9564 eV where group (1) has gone. The apparent 480-510 cm-1 \"position shifts\" of 1-3 cm-1 are mostly a fit-window effect: a 440-530 cm-1 refit resolves a doublet at about 492.7 and 495.9 cm-1 (spacing 3.2 to 3.6 cm-1) whose weights change with excitation. The 495 group has no assignment in the notes I read. The data are consistent with WSe2 but do not identify the excitonic states. Three things need checking before any excitonic assignment: a 307-322 cm-1 cluster that appears only at 1.9115 eV (the notes say 307 cm-1 is absent in monolayers), a Si calibration offset that differs by about 0.8 cm-1 in the 1.9325 eV spectrum, and the fact that the library matcher does not rank WSe2 at all.",
+  "observations": [
+    {
+      "finding": "The 248-250 cm-1 A1'/E' pair has its resonance maximum at 1.8703 eV, where it is one sharp line at 250.33 cm-1 (FWHM 1.77 cm-1, height 89.0, area 247.6). Its area falls to 14.9 at 1.8432 eV, 30.0 at 1.8847 eV, 244 at 1.8999 eV, 62 at 1.9115 eV, 18.8 at 1.9258 eV, 13.3 at 1.9325 eV, 4.9 at 1.9409 eV, and it is absent at 1.9564 eV.",
+      "evidence": "rl_series.py output (ALS baseline, Lorentzian fits, covariance errors) over the nine spectra; area is the fitted-component area, with the two-component 248/250 fits summed where both were present (1.8432, 1.8847, 1.8999).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 480-510 cm-1 group is present in 8 of 9 spectra and absent at 1.8432 eV (strongest-band SNR 48.3, so a weak band may be below threshold there). Its area relative to the 248-250 family is about 0.36 (1.8703 eV), 0.28 (1.8847 eV), 0.11 (1.8999 eV), 0.96 (1.9115 eV), 13 (1.9258 eV), 109 (1.9325 eV), 18 (1.9409 eV). At 1.9564 eV it has area 53.5 with no 248-250 band fitted. The ratio spans about three orders of magnitude, so fit-model choices do not change the conclusion.",
+      "evidence": "Areas from rl_series.py; 480-510 group area 87.9 (1.8703), 8.4 (1.8847), 26.2 (1.8999), 59.3 (1.9115), 248.3 (1.9258), 1449 (1.9325), 87.1 (1.9409), 53.5 (1.9564).",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A 440-530 cm-1 window refit resolves two components in the 480-510 group at 1.9258 and 1.9325 eV: 492.73 cm-1 (FWHM 3.12, height 32.1) and 495.92 cm-1 (FWHM 4.75, height 8.4) at 1.9258 eV; 492.69 cm-1 (FWHM 2.88, height 106) and 496.28 cm-1 (FWHM 4.07, height 62) at 1.9325 eV. The spacing is 3.2 and 3.6 cm-1. At 1.9115 eV and 1.8999 eV only one component fits (494.57 cm-1 FWHM 3.75; 496.07 cm-1 FWHM 3.86).",
+      "evidence": "rl_fit.py --window 440 530 on each spectrum; fit errors 0.03 to 0.31 cm-1 on positions, 0.1 to 0.8 on FWHM.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Positions of the same band depend on the fit window by 1 to 3 cm-1. The full-range fit gives 493.65 (1.9258 eV) and 495.26 (1.9115 eV), a 1.6 cm-1 change between neighbouring excitations, which the window refit does not reproduce. Read the 480-510 group as an unresolved doublet with changing weights, not as a dispersive or strain-like shift.",
+      "evidence": "Full-range rl_series positions versus the 440-530 rl_fit positions for the same spectra.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The broad 468 cm-1 component at 1.9325 eV (FWHM 40.3, area 11486, position error 6.1 cm-1) disappears in the 440-530 cm-1 refit. It is a baseline or broad-background fit component, not a Raman band, and should be excluded.",
+      "evidence": "rl_fit.py full-range fit versus window fit for 1.9325 eV.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 259 and 262 cm-1 multiphonon components peak together at 1.8703 eV (259.0 cm-1 height 16.5; 262.6 cm-1 height 12.9), and 259.4 (1.8999 eV, height 7.0) and 262.2 (1.9115 eV, height 4.0) follow. They sit at the same energy as the 248-250 family, so they share its resonance. The 261 cm-1 band is the 2LA-type band of resonant monolayer WSe2 in Table III of Zhang 2015 (arXiv:1502.00701).",
+      "evidence": "rl_series.py band table; literature position from the WSe2 note.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A band at 398 to 399 cm-1 appears at 1.8432 eV (399.02, height 0.39), 1.8703 eV (397.78, height 1.69) and 1.9258 eV (399.06, height 1.09). It matches the resonant 398 cm-1 band in the monolayer resonance list of Zhang 2015.",
+      "evidence": "rl_series.py band table.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "A 307-322 cm-1 cluster is present only at 1.9115 eV: 307.35 (height 0.80), 310.39 (height 1.67), 313.09 (height 0.95), 322.05 (height 0.56, broad). The notes say the 307-308 cm-1 band is absent in monolayers and present in multilayers (Zhao 2013, Fig. 6b). This conflicts with the monolayer claim unless the cluster is an artefact or the 1.9115 eV spot is multilayer.",
+      "evidence": "rl_series.py band table; absent from the other eight spectra.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The Si line in eight spectra sits at 519.88 to 520.00 cm-1 (offset -0.7 cm-1 from 520.7). In 1.9325 eV it sits at 520.76 cm-1 (refit 520.84), about 0.8 cm-1 higher. rl_series reports an offset of -0.02 for that spectrum, which does not match the QC value. The 1.9325 eV absolute positions are the least reliable; relative spacings within one spectrum are not affected by a rigid shift.",
+      "evidence": "rl_qc.py Si line fits; rl_series.py si_offset_from_520.7 table.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 248-250 pair splitting measured in the spectra with two components is 2.18 cm-1 (1.8432 eV), 1.95 cm-1 (1.8847 eV) and 1.28 cm-1 (1.8999 eV); at 1.8703 eV it is one line. These values are near instrument resolution (FWHM 1.8 to 2.4 cm-1 for the narrow lines) and cannot be read as an A1'/E' splitting.",
+      "evidence": "rl_series.py two-component fits.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The rl_series 'two strongest bands' separations (for example 246.6 cm-1 at 1.9115 eV) pair the 248-250 family with the 480-510 group and are meaningless here. Do not use them.",
+      "evidence": "rl_series.py two_strongest_separation output.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "match_library returns unrelated materials as top candidates (FO3PSn score 0.81, HfS3 score 0.72, labels Ag for 248.6 and 493.7 cm-1). WSe2 does not appear in the top results. The library cannot identify this material, and its mode labels should not be used for the 495 band.",
+      "evidence": "rl.py match_library with 248.6, 262.2, 310.4, 398.6, 493.7 cm-1, range 100-600 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Excitation detuning from the stated A1s at 1.740 eV: 1.8432 eV is +103 meV, 1.8703 is +130, 1.8847 is +145, 1.8999 is +160, 1.9115 is +172, 1.9258 is +186, 1.9325 is +193, 1.9409 is +201, 1.9564 is +216 meV. The 248-250 family peaks at +130 meV and the 480-510 group is strongest at +186 to +201 meV or above. The two channels therefore differ in resonance energy by roughly 50 to 70 meV.",
+      "evidence": "Arithmetic from the stated laser energies and A1s.",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "finding": "The 248-250 pair and the 259/262 pair are the features the WSe2 note associates with monolayer WSe2 (A1g+E2g1 near 250 cm-1; 2LA near 261 cm-1). The 398 cm-1 band is the resonant monolayer band in Zhang 2015 Table III. The phase is consistent with 2H-WSe2, but the identity rests on these recognised features and the user's statement, not on the library ranking.",
+      "evidence": "Band positions above compared with the WSe2 note.",
+      "provenance": "inferred",
+      "source": "Sahin H. et al. 2013, arXiv:1303.5861, p.3; Zhang X. et al. 2015, Chem. Soc. Rev. 44, 2757, arXiv:1502.00701, p.13 Table III; De Luca M. et al. 2020, 2D Mater., doi:10.1088/2053-1583/ab5dec, p.4 (bulk D6h irreps and A1g/E2g1 near 252 and 248 cm-1)."
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "1 (user-stated; not independently confirmed by this spectrum set, and the 307-322 cm-1 cluster at 1.9115 eV conflicts with monolayer if it is real)",
+      "provenance": "inferred",
+      "source": "User statement; Zhao W. et al. 2013, Nanoscale 5, 9677, arXiv:1304.0911, p.10 Fig. 6b (307-308 cm-1 band absent in 1L)"
+    },
+    {
+      "name": "phase",
+      "value": "2H (consistent with 2H-WSe2)",
+      "provenance": "inferred",
+      "source": "Sahin H. et al. 2013, arXiv:1303.5861, p.3; Zhang X. et al. 2015, arXiv:1502.00701, Table III"
+    },
+    {
+      "name": "A1s_exciton",
+      "value": "1.740 eV (user-stated); excitation detuning +103 to +216 meV across the series",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "resonance_maximum_248_250_family",
+      "value": "1.8703 eV (+130 meV above A1s)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "resonance_onset_480_510_group",
+      "value": "rises above 1.90 eV; relative area 13 at 1.9258 eV and 109 at 1.9325 eV versus 0.1 to 1 at 1.87 to 1.91 eV",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "none determined",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined; the 248-250 line is narrow (FWHM 1.8 cm-1) at 1.8703 eV, but no WSe2 defect calibration is verified in the notes",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Polarization: the spectra are parallel minus crossed. This subtraction removes most of the E' intensity and keeps A1'. The surviving 248-250 line is probably A1', and the 248 component may be E' with partial cancellation. Whether the pair is A1'/E' cannot be decided from this set alone. The 480-510 group survives the subtraction, so it is not dominated by E-type scattering, but an A1-type overtone or combination is not verified.",
+    "Interference: the 290 nm SiO2 interference was corrected, but residual interference and substrate enhancement change with excitation energy. Part of the ratio trend near 1.93 eV could be a residual correction effect. Check against a reference or a second correction.",
+    "Heating: 4 K and below 100 uW make large heating unlikely, but absorption rises near resonance. A power-dependence check at 1.8703 and 1.9258 eV would rule it out.",
+    "Intensity calibration: the user states an absolute x1e8 calibration. Whether the per-excitation laser power was normalised in that calibration is not stated, and that changes the excitation profile directly.",
+    "Note inconsistency: the WSe2 note says 633 nm (1.958 eV) is resonant with the B exciton (Zhao 2013, pp.9-10). The note gives no B-exciton energy, so I could not check that statement against the stated A1s at 1.740 eV. Treat it as unverified for this sample.",
+    "Fit dependence: the 480-510 positions depend on window and baseline choice (1 to 3 cm-1). Only the within-spectrum doublet spacing (3.2-3.6 cm-1) and the relative areas are robust. The Si offset in 1.9325 eV (about 0.8 cm-1) means its absolute positions are least reliable.",
+    "The 1.8432 eV spectrum lacks the 480-510 group at SNR 48. The group may be present below threshold there, so its onset is not sharply defined.",
+    "The 307-322 cm-1 cluster at 1.9115 eV could be a real multilayer signal from that spot, a plasma or filter line, or a fit artefact. The data cannot distinguish these."
+  ],
+  "questions_for_user": [
+    "Are all nine spectra from the same spot, grating and day? The 1.9325 eV spectrum's Si line is about 0.8 cm-1 off the others, which suggests a calibration change.",
+    "Was the per-excitation laser power measured and normalised in the x1e8 calibration? This changes the resonance profile directly.",
+    "Do you have crossed-only (XY) or circularly resolved spectra for the 248-250 pair and the 480-510 group? Those would separate A1' from E' and test whether the 495 group is an A1 overtone or combination.",
+    "Does the 307-322 cm-1 cluster reproduce at 1.9115 eV on a second spot? If it is real, the monolayer claim needs revisiting.",
+    "PLE or reflectance on the same spot would give the 2s and B exciton energies, which would turn the 1.870 eV and above-1.93 eV resonances into exciton assignments.",
+    "Power-dependence at 1.8703 eV and 1.9258 eV would rule out laser heating at resonance."
+  ],
+  "citations": [
+    "Sahin H. et al. 2013, arXiv:1303.5861, p.3 (A1g+E2g1 at 252.2 cm-1 on 90 nm SiO2/Si; read via the WSe2 materials note)",
+    "Zhao W. et al. 2013, Nanoscale 5, 9677, arXiv:1304.0911, pp.8-10, Fig. 3a and Fig. 6b (degeneracy in 1L, crossed-polarization behaviour, 307-308 cm-1 band; the 633 nm B-exciton statement is as quoted in the WSe2 note, not checked in the paper)",
+    "Zhang X. et al. 2015, Chem. Soc. Rev. 44, 2757, arXiv:1502.00701, p.13 Table III (resonant monolayer bands 116, 136, 261, 374, 398 cm-1; read via the WSe2 note)",
+    "De Luca M. et al. 2020, 2D Mater., doi:10.1088/2053-1583/ab5dec, p.4 and p.7 (bulk irreps and A1g/E2g1 misassignment; degeneracy criterion unreliable; read via the WSe2 note)",
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database, source of matcher candidates; candidates not used for identification)"
+  ],
+  "limits": [
+    "I read the WSe2 materials note, not the primary papers, and did not use the Valency or iopic-bond literature tools. Literature claims come from the note and are labelled as such.",
+    "I did not open fit.png or series.png visually; all numbers come from the script outputs.",
+    "The 480-510 cm-1 group has no assignment in the notes I read. The overtone (2 x 248 = 496) and combination ideas are arithmetic hypotheses, not verified.",
+    "Exciton energies other than the stated A1s (2s, B, trion) are not in the material notes, so the resonance identities above are not assigned.",
+    "The library matcher gave no usable identification for WSe2.",
+    "The data cannot decide the layer number beyond the user's statement, and cannot give strain, doping or defect density from this set (no verified relation applies).",
+    "Position errors are fit statistics only. Calibration uncertainty (Si offset scatter, a few tenths of a cm-1 or more) must be added before any shift is called significant."
+  ]
+}

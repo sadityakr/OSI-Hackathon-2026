@@ -1,0 +1,64 @@
+{
+ "key": "ba9b3fd60881dd3b",
+ "score": 0.6,
+ "by_kind": {
+  "finding": 0.5,
+  "quantitative": 1.0,
+  "caveat": 0.5
+ },
+ "wrong_claims_made": [],
+ "citation_specificity": 1,
+ "grades": {
+  "items": [
+   {
+    "id": "f1",
+    "met": 1,
+    "why": "The report says the 249 cm-1 mode \"peaks at 1.8703 eV (height ~80) and again at 1.8999 eV (~53)\" and calls these \"an incoming and an outgoing resonance with the same state\", which it identifies as A2s."
+   },
+   {
+    "id": "n1",
+    "met": 1,
+    "why": "The report states \"A2s \u2248 1.870 eV ... minus A1s = 1.740 eV gives \u2248130 meV\", which matches the rubric."
+   },
+   {
+    "id": "f2",
+    "met": 0.5,
+    "why": "The listed heights (9.9 at 1.8703 eV, 0.9 at 1.8847 eV, then rising again) show the incoming peak, the dip and the return, but the report never describes the feature as appearing only near A2s, vanishing and reappearing ~26 meV higher, and it treats the band as present off-resonance too (\"~7 cm-1 off-resonance profile\")."
+   },
+   {
+    "id": "f3",
+    "met": 0.5,
+    "why": "The report notes that the peak \"shifts down by ~2 cm-1\" and grows ~10\u201320\u00d7 at 1.9325 eV with a second component at ~496.3 cm-1, but it resolves only two components rather than three and does not frame the shift as systematic dispersion."
+   },
+   {
+    "id": "f4",
+    "met": 0,
+    "why": "The report never says a dispersive peak rules out a simple zone-centre phonon or points to dark excitonic states; it reads the band as a second-order overtone or combination resonating through A2s."
+   },
+   {
+    "id": "c1",
+    "met": 0.5,
+    "why": "The report says the subtraction \"produces dispersive or negative artifacts near strong peaks\" and lists several negative minima, but it does not say that depolarized signal and luminescence are removed."
+   },
+   {
+    "id": "c2",
+    "met": 0.5,
+    "why": "The report admits \"the mode assignment is not proven by these data\" and that the data \"cannot tell the phonon assignment (overtone versus combination)\", but it still commits to a second-order assignment and does not say the assignment is open in the literature."
+   }
+  ],
+  "wrong_claims": [
+   {
+    "id": "w1",
+    "made": false,
+    "why": "The report does call the band second-order, possibly 2\u00d7249 cm-1, but it explicitly notes its position change (\"shifts down by ~2 cm-1\", \"line shape and position change with excitation\"), so it does not treat the frequency as fixed."
+   },
+   {
+    "id": "w2",
+    "made": false,
+    "why": "The report raises hBN or substrate as an \"alternative\" only to argue against it (\"The strong, narrow and resonant behavior argues against this\"), and it attributes only the 520 cm-1 peak to Si."
+   }
+  ],
+  "citation_specificity": 1
+ },
+ "judge_model": "claude-opus-5-5"
+}

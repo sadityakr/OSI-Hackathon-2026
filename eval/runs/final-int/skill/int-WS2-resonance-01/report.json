@@ -1,0 +1,69 @@
+{
+  "summary": "Status unchanged since the last report. Completed: QC on all 12 WS2 spectra; single-spectrum fits at 578.95 nm and 638.38 nm. Pending: the 12-spectrum series fit, relaunched as background task b1tgx57b9 with a 2-hour limit; no output yet. Stopped: the earlier series run bn3z3cra8, killed at its 10-minute limit with no output. Key results: 2LA(M) at 352.7 and E2g1 at 358.5 cm-1 are resolved at 578.95 nm and absent at 638.38 nm; Si-corrected A1g is about 417.9 to 418.0 cm-1 in both spectra; the Si line drifts by about 1.1 cm-1 across the series, which is a calibration signature.",
+  "observations": [
+    {
+      "finding": "2LA(M) and E2g1 are resolved at 578.95 nm and absent at 638.38 nm.",
+      "evidence": "rl_fit.py 578.95 nm: 352.73 \u00b1 0.32 (FWHM 10.17) and 358.46 \u00b1 0.05 (FWHM 3.96). 638.38 nm: no peak in 340 to 370 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Si-corrected A1g is about 417.9 to 418.0 cm-1 in both spectra; the raw difference is calibration.",
+      "evidence": "Raw A1g 419.28 \u00b1 0.04 (578.95 nm) and 418.29 \u00b1 0.28 (638.38 nm); Si offsets +1.355 and +0.298 cm-1.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The Si line drifts monotonically with excitation wavelength, indicating a calibration change.",
+      "evidence": "rl_qc.py offsets +1.39, +1.24, +0.93, +0.30 cm-1 at 578.95, 618.10, 626.90, 638.38 nm.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "material",
+      "value": "2H-WS2 (user-stated; matcher not run)",
+      "provenance": "inferred",
+      "source": "user statement"
+    },
+    {
+      "name": "substrate",
+      "value": "SiO2/Si, 290 nm (user-stated)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "temperature",
+      "value": "4 K (user-stated)",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "name": "layers",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "The 12-spectrum series (b1tgx57b9) has not reported; no series trend is given.",
+    "The 578.95 nm fit includes unconstrained broad components (532, 566 cm-1) that are likely background, so the 2LA/E2g1 positions may shift with a different background model.",
+    "Resonance interpretation rests on two spectra; the exciton energy is unknown.",
+    "Si drift is a calibration signature, not sample physics."
+  ],
+  "questions_for_user": [
+    "Can you provide the flake's exciton energy at 4 K (PL or reflectance)? It decides whether 638 nm is below the A exciton.",
+    "Was the spectrometer recalibrated between wavelengths? The Si drift is about 1.1 cm-1."
+  ],
+  "citations": [
+    "reference/materials/WS2.md, 'Excitation wavelength and resonance' (Yang et al. 2017, arXiv:1706.01677, p.5)",
+    "reference/materials/WS2.md, 'Excitation wavelength and resonance' (Mitioglu et al. 2014, arXiv:1406.3511, abstract)",
+    "reference/materials/WS2.md, 'Excitation wavelength and resonance' (Zhao et al. 2013, arXiv:1304.0911, p.9)"
+  ],
+  "limits": [
+    "Series-wide trends across 12 spectra are not reported; the series fit is pending.",
+    "No matcher run, no polarization classification, no layer, strain, doping or defect relation applied.",
+    "Literature statements come from the skill's WS2 note and were not re-read from the original papers."
+  ]
+}

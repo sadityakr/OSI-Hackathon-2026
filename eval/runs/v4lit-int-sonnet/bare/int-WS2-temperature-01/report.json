@@ -1,0 +1,133 @@
+{
+  "summary": "The phonon positions and widths change only a little with temperature. What changes strongly is the intensity, the PL background and the resonance condition, and these are the main trap when comparing temperatures. The A1g (~418 cm-1) and E2g/2LA (~356/351 cm-1) peaks are about 100-300x stronger at 4 K than at 295 K for the same nominal laser line (587 nm). The excitation wavelength that gives the strongest A1g moves to longer wavelength as T rises: \u2264587.7 nm at 4 K, ~599-611 nm at 150 K, ~610-624 nm at 295 K. That is what you would expect if the A exciton red-shifts on warming, so the same laser wavelength sits at a different detuning from the exciton at each T. Raw peak positions scatter by ~2 cm-1 (the Si line wanders between 517.9 and 522.7 cm-1) and the calibration varies from spectrum to spectrum. This scatter is as large as the expected temperature shift, so I can only say the A1g stiffens by roughly +1 \u00b1 1 cm-1 on cooling. I cannot resolve a temperature-dependent linewidth, and I cannot determine layer number, doping or strain from this set.",
+  "observations": [
+    {
+      "finding": "Mode inventory: the A1g(\u0393) near 418 cm-1, a narrow E2g(\u0393) at ~356 cm-1 with a broader 2LA(M) shoulder at ~351 cm-1, the Si substrate line at ~520 cm-1, and a broad band near 480 cm-1. The 480 cm-1 band is strong at 4 K / 587.7 nm and weak or absent at 295 K.",
+      "evidence": "A1g fitted (Lorentzian + linear baseline) 416.0-419.8 cm-1, FWHM 4.6-5.9 cm-1 in all 12 spectra. The 356 cm-1 peak fits to FWHM 3.4-3.8 cm-1 (4 K, 587.7 and 599.1 nm) and 3.0 cm-1 (150 K, 599.3 nm), with the 2LA shoulder at 349-352 cm-1 (FWHM ~8 cm-1). The 480 cm-1 band peaks at 480.0-480.7 cm-1 at 4 K and 150 K for 587-611 nm excitation, and at 478.9-480.0 cm-1 at 295 K for 598.8-624 nm. At 4 K / 587.7 nm its height above baseline is ~0.30 of the A1g height; it falls to \u22640.1 at 295 K.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The 480 cm-1 band keeps the same Raman shift (480.0-480.7 cm-1 at 4 K and 150 K, 478.9-480.0 cm-1 at 295 K) while the laser changes by ~35 nm. It is therefore a scattering feature that follows the laser, not PL at a fixed wavelength. I cannot assign it with confidence; a second-order or combination band is the likely class. It is strongly enhanced at low T near 2.11 eV excitation.",
+      "evidence": "Equivalent PL wavelength of the 480 cm-1 band at 4 K: 604.7 nm for the 587.7 nm laser versus 616.8 nm for the 599.1 nm laser, but a constant shift of 480.4-480.5 cm-1 in both.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Absolute intensities are not comparable between temperatures or laser lines. At 587 nm the A1g height is 1.27e5 counts at 4 K, 1.2e4 at 150 K and 4.4e2 at 295 K (a factor of ~290 between 4 K and 295 K). The PL background at the A1g position shows the same pattern: 2.6e4 at 4 K, 3.9e3 at 150 K, 3.8e2 at 295 K. Within one temperature the A1g height also varies by 50x across the four lasers (4 K: 1.27e5, 9.1e4, 2.2e4, 2.4e3).",
+      "evidence": "Fitted A1g heights (counts) in the order 587 / 599 / 611 / 623 nm: 4 K 127247 / 91484 / 21722 / 2377; 150 K 12337 / 35236 / 28760 / 3503; 295 K 439 / 2463 / 8985 / 7774. Integration time, power at the sample, focus and cryostat window transmission are not given, and only the spectrometer efficiency was corrected.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The excitation wavelength that gives the strongest A1g, normalised to Si, red-shifts with increasing T. The A1g/Si height ratio is 48, 16, 5.0 and 0.6 at 4 K (587.7 to 622.7 nm), so it is still rising toward the shortest wavelength. At 150 K it is 4.3, 15, 7.5 and 1.3, so it peaks at ~599 nm. At 295 K it is 0.27, 1.6, 5.2 and 4.5, so it peaks at ~610-624 nm. This is consistent with resonance of the incoming or outgoing photon with the A exciton, which red-shifts roughly 0.05-0.08 eV from 4 K to 295 K.",
+      "evidence": "A1g_h / Si_h from the table of local Lorentzian fits. Laser energies: 4 K 2.110, 2.070, 2.028, 1.991 eV; 150 K 2.112, 2.069, 2.028, 1.989 eV; 295 K 2.112, 2.071, 2.032, 1.987 eV. A1g phonon energy is 0.0518 eV, so outgoing resonance with an exciton at ~2.06-2.08 eV needs a laser at ~2.11-2.13 eV. The A-exciton energies assumed here (~2.08 eV at 4 K, ~2.0 eV at 295 K) are literature values for monolayer WS2, not measured here.",
+      "provenance": "inferred",
+      "source": "Exciton shift with T: Plechinger et al., Phys. Status Solidi RRL 9, 457 (2015), T-dependent PL figure; Guti\u00e9rrez et al., Nano Lett. 13, 3447 (2013). Resonance profiles of WS2 modes vs excitation: Molas et al., Sci. Rep. 7, 5036 (2017); Corro et al., Nano Lett. 16, 2363 (2016). Quoted from memory, figure numbers not verified."
+    },
+    {
+      "finding": "Strong PL background at low T. At 4 K and 150 K a broad PL/hot-luminescence continuum (10^4-10^5 counts) sits under the Raman lines and dominates the spectra (for example at 4 K / 611.3 nm the background at ~250 cm-1 is ~9e4 counts and the A1g has only ~2e4 counts above it). At 295 K the PL is ~10-100x weaker in absolute counts. At 4 K / 587.7 nm the PL onset is near 330-350 cm-1 below the laser, i.e. ~2.07 eV, consistent with the A exciton. The background rises or falls with Raman shift in a laser-dependent way because it is a fixed-energy emission plotted on a Raman-shift axis.",
+      "evidence": "A1g peak height over local linear background: 4.99 (4 K, 587.7), 1.38 (4 K, 599.1), 0.55 (4 K, 611.3), 3.08 (4 K, 622.7); 295 K values 1.1-1.8. The 622.7 nm 4 K spectrum has the lowest background (~800 counts) because the laser is below the exciton.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "Phonon frequency shifts are at the limit of what the calibration allows. Raw A1g positions: 4 K 417.4-418.9, 150 K 417.0-419.8, 295 K 416.0-417.9 cm-1. The Si line scatters equally (4 K 520.5-522.3 cm-1; 150 K 519.7-522.7; 295 K 517.9-519.9, against an expected ~522.5 at 4 K and ~520.5 at 295 K). The scatter follows the laser/grating setting (the 587-599 nm spectra read ~1.5-2 cm-1 low), not temperature. Referencing the A1g to the Si line in each spectrum, the A1g is ~419.3-419.7 at 4 K and ~418.4-418.9 at 295 K, i.e. a stiffening of about +1 \u00b1 1 cm-1 on cooling. This is lower than the roughly 2-3 cm-1 expected from a linear coefficient of order -0.01 cm-1/K.",
+      "evidence": "Table fits. Fit position errors are only 0.04-0.12 cm-1, so the scatter is systematic (calibration), not statistical. The Si fits in some spectra are poor (Si FWHM 1.7-17.9 cm-1), so the Si referencing carries \u22650.5 cm-1 of uncertainty.",
+      "provenance": "inferred",
+      "source": "Si temperature dependence: Balkanski, Wallis and Haro, Phys. Rev. B 28, 1928 (1983). WS2 mode T-coefficients: Thripuranthaka et al., Appl. Phys. Lett. 104, 081911 (2014). Both from memory; figure numbers not verified."
+    },
+    {
+      "finding": "Linewidths do not show clear thermal broadening. The A1g FWHM is 4.6-5.9 (4 K), 4.7-5.8 (150 K) and 5.3-5.8 cm-1 (295 K), and it varies more with laser line than with T (4 K: 4.6 at 587.7 nm to 5.9 at 611.3 nm), which points to instrument-limited widths (spectral step is 0.52-0.60 cm-1). The 356 cm-1 E2g peak is narrower (3.0-3.8 cm-1) at 4-150 K in the cleanest spectra, while at 295 K the E2g/2LA complex is broader and less cleanly resolved, but those fits are unreliable because of the PL slope and E2g/2LA blending.",
+      "evidence": "Fit FWHMs from the table; the E2g fits at 611-624 nm give 12-16 cm-1 because the fit absorbs the 2LA shoulder.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The spectra carry several artefacts. (a) Every spectrum has hard edges: the low-shift cutoff (edge filter) is at ~132-155 cm-1 for most spectra but ~241 cm-1 for 4 K / 587.7 nm and ~185 cm-1 for 150 K / 587.2 nm, and the high-shift cutoff varies with laser line. The apparent ~147 and ~176 cm-1 'peaks' lie right at or near the filter edge and I do not trust them as LA(M)/phonon features without a check. (b) Narrow lines (FWHM \u22722 cm-1) appear in single spectra: at 4 K / 622.7 nm at 583.1, 587.6 and 606.0 cm-1 (three narrow lines, all near 646-647 nm in absolute wavelength), and at the extreme high-shift end of the 150 K and 295 K 587.2 nm spectra (786 and 758 cm-1, both on the last data points). These are not repeatable WS2 modes: cosmic rays, laser plasma lines or narrow defect/localised-exciton PL (4 K, ~1.92 eV) are all possible, and I cannot tell which from one spectrum per setting.",
+      "evidence": "4 K 622.7 nm: 583.1 cm-1 line (peak 4175 vs ~600 background, ~2 points wide); 587.1-588.1 cm-1 (2.4-2.6e3 over 3 points); 606.0 cm-1 (2846). Edge positions from where counts drop below 30% of the median.",
+      "provenance": "measured",
+      "source": null
+    },
+    {
+      "finding": "The Si line at ~520 cm-1 has comparable absolute counts in all spectra (1.5-6e3 in the fits) and its ratio to the WS2 modes changes by a factor of ~100 (Si/A1g 0.02 at 4 K / 587.7 nm, 3.65 at 295 K / 587.2 nm). The Si line is non-resonant, so it varies mainly through absorption in the flake, SiO2 interference (290 nm oxide, strongly wavelength dependent over 587-624 nm), and collection geometry. It is a useful internal frequency reference but only a rough intensity normaliser.",
+      "evidence": "Si_h and Si/A1g from the fit table.",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "properties": [
+    {
+      "name": "layers",
+      "value": "not determinable from these spectra; the A1g-E2g separation is ~61-63 cm-1 (418-356), compatible with monolayer/few-layer but not diagnostic here; the PL onset near 2.07 eV at 4 K is consistent with monolayer A exciton",
+      "provenance": "inferred",
+      "source": "Berkdemir et al., Sci. Rep. 3, 1755 (2013), layer dependence of WS2 modes (from memory, figure not verified)"
+    },
+    {
+      "name": "defect_level",
+      "value": "not assessable; no clear defect-activated band is isolated, and the broad PL background and any narrow 4 K lines at ~646 nm are ambiguous (localised/defect emission vs artefact)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "strain_sign",
+      "value": "none established (frequency scatter of ~2 cm-1 is calibration-limited)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "doping_type",
+      "value": "not determinable (no resolved E2g/A1g trend beyond the calibration scatter; A1g linewidths 4.6-5.9 cm-1 are instrument-limited)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "A1g_shift_4K_minus_295K_cm-1",
+      "value": "about +1 \u00b1 1 after Si referencing (raw ~+1 to +2)",
+      "provenance": "inferred",
+      "source": null
+    },
+    {
+      "name": "resonance_maximum_vs_T",
+      "value": "A1g/Si maximum at \u2264587.7 nm (4 K), ~599 nm (150 K), ~610-624 nm (295 K)",
+      "provenance": "measured",
+      "source": null
+    }
+  ],
+  "caveats": [
+    "Because only four laser lines were used per temperature, the resonance maximum is not bracketed at 4 K (the A1g/Si ratio is still rising at the shortest wavelength, 587.7 nm). The statement that the resonance red-shifts with T rests on the position of the maximum at 150 K and 295 K and the monotonic trend at 4 K.",
+    "The temperature dependence of intensity is entangled with changes in PL quantum yield, exciton linewidth (much narrower at 4 K, so sharper resonance), thermal contraction and defocus of the cryostat, and laser-power or alignment differences for each dye wavelength. 0.7 mW is the nominal power; sample-plane power at each wavelength and the integration time were not given.",
+    "Local laser heating is a possible bias: 0.7 mW on a CVD flake on SiO2/Si at 4 K may heat the spot well above the nominal temperature, so the nominal 4 K, 150 K and 295 K could be compressed. The Si line cannot reliably act as a thermometer here because of the calibration scatter.",
+    "Calibration drift of 1.5-2 cm-1 between spectra (seen in the Si line) means peak positions from different laser lines must not be compared without referencing to Si or a neon/lamp line recorded at each grating position.",
+    "The 356 cm-1 feature is a blend of E2g(\u0393) and 2LA(M); its apparent position, width and E2g/A1g ratio depend on the baseline and the number of components fitted. The A1g/E2g ratio was not used as evidence for that reason.",
+    "The 480 cm-1 band is not assigned. Literature assignments of WS2 second-order bands (Berkdemir 2013; Molas 2017; Corro 2016) were quoted from memory and need checking against the original tables before they are used for assignment.",
+    "Literature numbers (exciton energies vs T, T-coefficients of the phonons, Si line vs T) are approximate and from memory; the figure or table references given are not verified.",
+    "Exciton energies for the specific flake were not measured; a thick or multilayer flake would have a lower A-exciton energy than assumed here and shift the resonance picture.",
+    "Polarization was parallel linear throughout, so no symmetry information on E2g vs A1g from cross-polarisation is available; the A1g/E2g intensity ratio is not a clean test of mode symmetry."
+  ],
+  "questions_for_user": [
+    "What were the integration time, accumulations and sample-plane power at each laser line and temperature? Without them absolute intensities cannot be compared, and I assumed they differed.",
+    "How many layers is the flake (AFM, optical contrast, or the PL at 295 K)? The exciton energy and the 2LA/E2g/A1g pattern depend on it, and it sets the resonance condition.",
+    "Was a calibration lamp (Ne/Ar) recorded at each grating position and temperature? The ~2 cm-1 scatter in the Si line suggests calibration differs between settings, and this limits any phonon-frequency analysis.",
+    "Is the 4 K sample in vacuum or exchange gas, and was the spot re-focused at each temperature? This bears on heating and on focus-driven intensity changes.",
+    "Were the narrow lines at 583, 587.6 and 606 cm-1 in the 4 K / 622.7 nm spectrum reproducible on a second acquisition? If they are repeatable they are probably PL lines (about 646-647 nm), not Raman modes; if not, they are cosmic rays.",
+    "Can you provide PL spectra at each T (with the laser energy below the exciton) so that the exciton energy at 4 K, 150 K and 295 K is measured rather than assumed from the literature?"
+  ],
+  "citations": [
+    "Berkdemir et al., Sci. Rep. 3, 1755 (2013), 'Identification of individual and few layers of WS2 using Raman spectroscopy' (assignments of 2LA(M), E2g, A1g and second-order modes; layer dependence).",
+    "Molas et al., Sci. Rep. 7, 5036 (2017), 'Raman scattering excitation spectroscopy of monolayer WS2' (resonance profiles with a tunable laser).",
+    "Corro et al., Nano Lett. 16, 2363 (2016), 'Atypical exciton-phonon interactions in WS2 and WSe2 monolayers revealed by resonance Raman spectroscopy'.",
+    "Plechinger et al., Phys. Status Solidi RRL 9, 457 (2015), 'Identification of excitons, trions and biexcitons in single-layer WS2' (temperature-dependent PL).",
+    "Guti\u00e9rrez et al., Nano Lett. 13, 3447 (2013), 'Extraordinary room-temperature photoluminescence in triangular WS2 monolayers'.",
+    "Thripuranthaka et al., Appl. Phys. Lett. 104, 081911 (2014), 'Temperature-dependent Raman spectroscopy of chemically derived few layer MoS2 and WS2 nanosheets'.",
+    "Balkanski, Wallis and Haro, Phys. Rev. B 28, 1928 (1983), 'Anharmonic effects in light scattering due to optical phonons in silicon'."
+  ],
+  "limits": [
+    "I cannot determine thickness, strain, doping or defect density from this data set; the shifts and widths that would indicate them are smaller than the calibration scatter and the instrument resolution.",
+    "A temperature coefficient of the phonon frequencies cannot be extracted: there is no per-spectrum wavelength calibration, and the Si-referenced shift of about +1 \u00b1 1 cm-1 (4 K minus 295 K) is consistent both with the expected ~2-3 cm-1 and with zero.",
+    "The position of the resonance maximum at 4 K is not bracketed (it lies at or below 587.7 nm); only four lines per temperature and no exciton energies measured on this flake.",
+    "The 480 cm-1 band and the narrow lines at 583, 587.6 and 606 cm-1 (4 K, 622.7 nm) cannot be assigned with confidence from one spectrum per setting.",
+    "Absolute-intensity ratios between temperatures cannot be interpreted as changes in Raman cross-section without integration time, sample-plane power and a repeat measurement.",
+    "No information on magnetic order, since WS2 is non-magnetic and the data show no feature that would indicate it."
+  ]
+}
