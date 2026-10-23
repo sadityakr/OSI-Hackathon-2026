@@ -1,0 +1,157 @@
+{
+  "summary": "Across 1.648 to 2.124 eV the peak positions barely move, but the intensities reorganise strongly. After a rigid Si calibration correction (-0.70 cm-1), the out-of-plane A1' sits at 241.0 to 242.0 cm-1 and the in-plane E' at 290.0 to 291.5 cm-1. A1' dominates at 1.648 and 1.679 eV, where its raw intensity relative to the Si line is about 22 to 27 times larger than anywhere else. E' is strongest at 1.975 to 2.06 eV (E'/A1' raw-maximum ratio 1.0 to 2.1) and fades by about 2.1 eV, where it is no longer resolved. That pattern is the signature of resonances: an A1'-favouring resonance at the low-energy end (consistent with the A-exciton behaviour in the MoSe2 note) and an E'-favouring resonance near 2.00 to 2.05 eV that I cannot assign from these data alone, because this flake's exciton energies were not given. The A1' and E' positions are reliable; the broad features at 280 to 320 and 430 to 600 cm-1 are fit-dependent and partly background or substrate. The E' sits about 2 to 3.5 cm-1 above the 288 cm-1 reference value, which is not explained by calibration. The biggest caveats are a roughly five-fold mismatch in Si intensity between the 1.648/1.679 eV group and the rest, a strong background at 1.648 eV, and the absence of any validated MoSe2 relation for layer number, strain or doping.",
+  "observations": [
+    {
+      "finding": "Si calibration is rigid across the series: the Si line sits at 520.0 to 520.05 cm-1 raw in every spectrum, with an offset of -0.66 to -0.74 cm-1 (mean -0.70, scatter 0.03) that does not trend with laser energy. Corrected by +0.70 cm-1 (rl_series --si-correct) before any shift is read.",
+      "evidence": "rl_qc Si lines: 520.04 (1.6791), 520.00 (1.9746), 520.02 (2.0000), 520.02 (2.0196), 520.03 (2.0415), 520.02 (2.0539), 520.04 (2.0685), 520.05 (2.0808), 520.01 (2.0957), 520.01 (2.1236). rl_series si_offset_from_520.7: -0.71, -0.71, -0.72, -0.74, -0.69, -0.67, -0.66, -0.72, -0.73 for 1.9746 to 2.1236 eV. Si fit FWHM 2.8 to 3.6 cm-1.",
+      "provenance": "measured",
+      "source": "rl_qc.py and rl_series.py output; artifacts.md Silicon substrate section (flag offsets above about 1 cm-1)"
+    },
+    {
+      "finding": "A1' (out-of-plane A1g/A1') is the dominant first-order line across the whole series and sits at 241 to 242 cm-1 after calibration, matching the monolayer A1' near 242 cm-1 in the MoSe2 note.",
+      "evidence": "Si-corrected fitted positions (rl_series): 241.30 (1.9746), 240.84 (2.000), 241.20 (2.0196), 241.59 (2.0415), 241.56 (2.0539), 241.56 (2.0685), 241.65 (2.0808), 241.87 (2.0957), 242.03 (2.1236) eV, each with fit error 0.03 to 0.06 cm-1. FWHM 1.99 to 2.93 cm-1. Refit at 1.6479 and 1.6791 eV: 240.11 and 240.20 raw, about 240.9 corrected.",
+      "provenance": "measured",
+      "source": "MoSe2 note, Soubelet et al. 2016 PRB 93 155407 (arXiv:1603.05172) Fig. 1a p.2: 1L A1' at 242 cm-1 at 465 nm; Nam et al. 2015 Sci. Rep. (arXiv:1511.01225) pp.4-5: bulk A1g 242 cm-1"
+    },
+    {
+      "finding": "The in-plane E' mode is at 290.0 to 291.5 cm-1 after calibration, which is 2 to 3.5 cm-1 above the 288 cm-1 monolayer value at 465 nm. It is strongest at 1.975 to 2.06 eV and cannot be fitted reliably above 2.096 eV.",
+      "evidence": "Corrected E' positions: 290.00 (1.9746), 290.39 (2.000), 290.43 (2.0196), 290.34 (2.0415), 290.42 (2.0539), 290.62 (2.0685), 290.84 (2.0808), 291.49 (2.0957, height 0.16). At 2.1236 eV the fit gives height 0.04 with position error 1.55 cm-1, i.e. not detected. Raw E'/A1' maximum ratios: 1.94, 2.08, 1.17, 1.15, 1.58, 1.47, 1.03, 0.42, 0.20 for 1.975 to 2.124 eV. Fitted E' FWHM 2.7 to 4.4 cm-1, about 1 cm-1 wider than A1'.",
+      "provenance": "measured",
+      "source": "rl_series band table; MoSe2 note: 1L E' at 288 cm-1 at 465 nm (Soubelet 2016 Fig. 1a p.2); E' LO/TO splitting of about 4 cm-1 predicted by ab initio theory (Soubelet 2016 p.1, single source)"
+    },
+    {
+      "finding": "The A1'-to-E' separation is about 49 cm-1 and is insensitive to calibration: 48.7 to 49.6 cm-1 across the series, rising slightly with laser energy. The separation is about 3 cm-1 larger than the 288-minus-242 reference difference, but the reference was taken at different conditions and is not a validated MoSe2 layer or strain relation.",
+      "evidence": "E' minus A1' (Si-corrected): 48.70 (1.9746), 48.86 (2.0539), 48.75 (2.0415), 49.06 (2.0685), 49.19 (2.0808), 49.22 (2.0196), 49.62 (2.0957) cm-1; 49.55 at 2.000 eV. Reference difference 288 minus 242 = 46 cm-1 (computed from the note's values).",
+      "provenance": "inferred",
+      "source": "MoSe2 note (Soubelet 2016 Fig. 1a; Nam 2015 pp.4-5); list_relations returns no MoSe2 relation, and the note says not to reuse the MoS2 separation rule (MoSe2 note, Thickness section)"
+    },
+    {
+      "finding": "Resonance pattern. A1' is strongly enhanced at the low-energy end, with raw A1'/Si maxima of 26.8 (1.648 eV) and 22.0 (1.679 eV). Across 1.975 to 2.124 eV the same ratio is 0.20, 0.45, 0.80, 1.24, 0.85, 0.35, 0.24, 0.27, 0.35, with a maximum near 2.04 eV. A1' at 2.124 eV (0.35) sits above 2.081 and 2.096 eV (0.24, 0.27), which may be noise or a second weak resonance.",
+      "evidence": "Raw maxima in 238-244 cm-1 divided by raw maxima in 515-525 cm-1 (Si). Fitted A1' heights (Si-corrected series): 0.42 (1.9746), 0.93 (2.000), 1.90 (2.0196), 2.79 (2.0415), 2.00 (2.0539), 0.76 (2.0685), 0.47 (2.0808), 0.55 (2.0957), 0.64 (2.1236) eV. The fitted height ratio to Si is not in absolute units, so use the ratios only.",
+      "provenance": "measured",
+      "source": "Raw CSV maxima computed in the session; MoSe2 note: A1g is selectively enhanced at the A exciton (Kim et al. 2016 ACS Nano, doi:10.1021/acsnano.6b04471, arXiv:1608.03944, abstract); the note also says A, B and C excitons sit near 1.54, 1.74 and 2.61 eV at room temperature (Soubelet 2016 abstract, p.2)"
+    },
+    {
+      "finding": "Low-energy spectra (1.6479 and 1.6791 eV) carry a large broad background. The raw median at 400 to 420 cm-1 is 4.7 at 1.6479 eV and 0.69 at 1.6791 eV, against 0.05 to 0.3 at 1.975 to 2.124 eV. The likely source is residual luminescence near the A exciton, which parallel-minus-crossed subtraction does not fully remove. Broad features such as the 300 cm-1 hump at 1.679 eV (FWHM about 40 cm-1) look like the broad second-order bands that the MoSe2 note reports as enhanced near 1.58 eV.",
+      "evidence": "Raw median 400-420 cm-1: 4.685 (1.6479), 0.687 (1.6791), 0.05 to 0.31 for the rest. The 1.6791 refit has a broad component at 301.2 cm-1 (FWHM 40.8, height 69.6) and A1' at 240.2 (height 260). The 1.6479 refit has broad components of FWHM 40 to 340 cm-1 and heights above 4000, which are not physical peaks.",
+      "provenance": "inferred",
+      "source": "MoSe2 note: broad second-order peaks such as E2g1+LA(M) and E1g+LA are strongly enhanced at 1.58 eV (Kim 2016 p.7); artifacts.md Background section (use a local baseline for broad bands)"
+    },
+    {
+      "finding": "Broad structure at 430 to 600 cm-1 is present in the 2.0 to 2.1 eV spectra at 432 to 434, 455 to 460, 480 to 503 and 582 to 586 cm-1, with FWHM 5 to 16 cm-1. These positions are close to the amorphous-SiO2 D1 and D2 bands, which I recall from general Raman knowledge but which are not in the skill notes, so this is unsourced. Treat the substrate attribution as a hypothesis.",
+      "evidence": "Band table (Si-corrected): 433.4 (1.9746, FWHM 7.1), 456.8 (1.9746, FWHM 14.6), 456.5 (2.000, FWHM 15.6), 457.2 (2.0196, FWHM 10.5), 580 to 586 cm-1 (FWHM 5 to 12 across 1.975 to 2.096 eV). Fit residual at 2.000 eV shows a -1.0 dip near 490 to 530 cm-1, so these components are poorly constrained.",
+      "provenance": "inferred",
+      "source": "Not in the skill's reference notes; general Raman knowledge of amorphous SiO2 bands (no citation supplied). Test with a bare SiO2/Si spectrum under the same conditions."
+    },
+    {
+      "finding": "A narrow-ish band near 531 cm-1 (height 0.5 to 1.3, FWHM 2.4 to 3.2 cm-1) sits 11 cm-1 above the Si line and stays fixed in Raman shift across the laser series. Plasma lines would move by about 100 cm-1 between 2.0685 and 2.0808 eV (laser wavelengths 599.39 and 595.84 nm), so it is not a plasma line. Its origin is unassigned: it could be a Si-line satellite or a substrate or sample feature.",
+      "evidence": "Si-corrected 531.14 (2.000), 531.44 (2.0196), 531.62 (2.0415), 531.70 (2.0539), 531.70 (2.0685), 531.62 (2.0808), 531.58 (2.0957) cm-1. Shift between 599.39 and 595.84 nm, 1/595.84 minus 1/599.39 = 1.015e-5 nm-1, i.e. about 101 cm-1.",
+      "provenance": "measured",
+      "source": "rl_series band table; artifacts.md Plasma lines section (plasma lines move with laser wavelength)"
+    },
+    {
+      "finding": "Weak candidate bands are not reliable. A near-354 cm-1 line (the multilayer A-type mode in the note) appears at 2.0196, 2.0957 and 2.1236 eV with FWHM 0.7 to 1.0 cm-1, narrower than the 2.8 to 3.6 cm-1 Si line and so below instrument resolution, which means it is probably noise. A 166 to 175 cm-1 group has inconsistent positions (166.8 to 175.3 cm-1, heights 0.03 to 0.05) and cannot be read as the 170 cm-1 multilayer E mode. A weak band near 262 cm-1 (heights 0.09 to 0.16 at 1.975 to 2.07 eV) is unassigned.",
+      "evidence": "354.87 (2.1236, FWHM 0.70, height 0.074); 356.45 (2.0957, FWHM 0.97); 351.30 (2.0196, FWHM 0.86); 261.5 to 262.1 cm-1 at 1.975 to 2.07 eV, heights 0.09 to 0.16 (fit errors 0.14 to 0.37). A1' height is 0.4 to 2.8 for comparison.",
+      "provenance": "measured",
+      "source": "MoSe2 note: 170 and 354 cm-1 lines appear only in multilayers (Soubelet 2016 p.3, Fig. 3a,b); CVD Se-vacancy mode near 250 cm-1 (Zhao S. et al. 2019, arXiv:1904.09789, single source) and the WSe2 2LA(M) near 261 (Zhang X. 2015 Chem. Soc. Rev., arXiv:1502.00701 p.13)"
+    },
+    {
+      "finding": "Linewidths cannot be read as sample quality. A1' FWHM is 2.0 to 2.9 cm-1 and the instrument (Si line) is 2.8 to 3.6 cm-1, so intrinsic width is not resolved. E' is about 1 cm-1 wider than A1' at 2.0 to 2.08 eV, consistent with an unresolved LO/TO doublet (4 cm-1 predicted) or a second-order background, but a single-Lorentzian fit cannot separate these.",
+      "evidence": "A1' FWHM by energy: 2.50, 2.67, 2.93, 2.37, 2.34, 2.50, 2.58, 2.29, 1.99. E' FWHM: 3.75, 3.32, 4.36, 2.81, 3.61, 3.30, 3.63, 2.71. Si FWHM: 3.3, 3.13, 2.91, 3.03 to 3.13, 2.86, 2.76, 2.84, 2.84, 3.21, 3.62 (fit values).",
+      "provenance": "measured",
+      "source": "rl_fit / rl_series outputs; Soubelet 2016 p.1 (LO/TO splitting of E', theory)"
+    },
+    {
+      "finding": "Spike artefacts sit close to the diagnostic bands. The 1.6479 eV file has 101 spikes between 30 and 350 cm-1, a dense cluster that does not look like sparse cosmic rays and may reflect a detector or processing fault. The 1.6791 eV file has 10 spikes at 230 to 307 cm-1, next to A1'. Both removals could distort the A1' region.",
+      "evidence": "rl_qc spike lists: 101 spikes at 30.3 to 347.2 cm-1 (1.6479 eV); 10 spikes at 230.3, 231.3, 235.1, 244.7, 246.1, 277.1, 283.6, 296.1, 298.5, 307.6 cm-1 (1.6791 eV).",
+      "provenance": "measured",
+      "source": "rl_qc.py output; artifacts.md Cosmic-ray spikes section"
+    },
+    {
+      "finding": "A two-peak library match does not identify the material. Using 241.3 and 290.4 cm-1 alone, the top CRD match is AlCl3 (score 0.99) and the 2H-MoSe2 literature table ranks third (0.82). Identity therefore rests on the user's material statement plus the A1' and E' positions matching 2H-MoSe2 (A1g 242 and E2g1 285 for bulk; A1' 242 and E' 288 for monolayer).",
+      "evidence": "rl.py match_library --positions_cm1 241.3 290.4 --intensities 1 0.6 --x_range_cm1 150 620: AlCl3 0.9887 (CRD row 1165), LiO2Sb 0.9643, MoSe2 R3m 0.8162 (literature table 2H-MoSe2), I7Nb3Te 0.6298, Cl2Mg 0.625.",
+      "provenance": "inferred",
+      "source": "Computational Raman Database (Bagheri and Komsa 2023, Sci. Data 10, 80) via rl.py; Nam et al. 2015 pp.4-5 (arXiv:1511.01225); Soubelet 2016 Fig. 1a"
+    }
+  ],
+  "properties": [
+    {
+      "name": "phase",
+      "value": "2H (MoSe2), D3h monolayer",
+      "provenance": "inferred",
+      "source": "A1' at 241 to 242 cm-1 and E' at 290 to 291.5 cm-1 after calibration match 2H-MoSe2 references: bulk A1g 242, E2g1 285 (Nam et al. 2015, arXiv:1511.01225 pp.4-5); monolayer A1' 242, E' 288 (Soubelet et al. 2016, arXiv:1603.05172 Fig. 1a)"
+    },
+    {
+      "name": "layers",
+      "value": "monolayer, as stated by the user; not independently verified here",
+      "provenance": "inferred",
+      "source": "No validated MoSe2 layer relation exists (list_relations). Absence of stable 170 and 354 cm-1 multilayer lines is consistent with a monolayer but not proof (Soubelet 2016 p.3, Fig. 3a,b)"
+    },
+    {
+      "name": "strain_sign",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "E'-A1' separation of 48.7 to 49.6 cm-1 is larger than the 46 cm-1 reference difference, but no MoSe2 strain relation exists. Any sign would be an analogy from MoS2, WS2 and WSe2, which the MoSe2 note says not to reuse as a measurement."
+    },
+    {
+      "name": "doping_type",
+      "value": "not determined",
+      "provenance": "inferred",
+      "source": "No MoSe2 doping relation in the skill; the A1' position of 241.0 to 242.0 cm-1 is near the reference value, so no doping shift is claimed"
+    },
+    {
+      "name": "defect_level",
+      "value": "not determined (no defect-activated band identified)",
+      "provenance": "inferred",
+      "source": "Candidate weak band near 262 cm-1 is unassigned; the Se-vacancy mode near 250 cm-1 is CVD-specific (Zhao S. et al. 2019, arXiv:1904.09789, single source) and this sample is exfoliated"
+    },
+    {
+      "name": "resonance_window",
+      "value": "A1'-favouring region at 1.648 to 1.679 eV (raw A1'/Si about 22 to 27); E'-favouring maximum at 2.00 to 2.05 eV (E'/A1' raw ratio about 1.0 to 2.1); E' gone by about 2.1 eV",
+      "provenance": "measured",
+      "source": "Raw spectra in this folder; interpretation via MoSe2 note (Kim 2016 abstract; Soubelet 2016 p.2)"
+    }
+  ],
+  "caveats": [
+    "Si normalisation is inconsistent. The Si line is 11.4 and 11.1 in the 1.6479 and 1.6791 eV spectra, against 1.9 to 2.3 in all the others, about a factor of five. The spectra were said to be absolute-calibrated, yet the Si peak should not change this much. The Si cross-section changes by only about 2 times over this energy range, so the 22 to 27 ratio at the low-energy end may be inflated or deflated by an unknown factor. Possible causes are a different grating or detector setting (the two low-energy files also span 13 to 800 cm-1 instead of 150 to 620), or a Si reference measured in a different polarisation geometry than parallel minus crossed.",
+    "The 1.6479 and 1.6791 eV fits are not reliable. Greedy multi-Lorentzian fits gave broad components with FWHM 40 to 340 cm-1 and heights above 4000, which are not physical bands. Only raw maxima and the A1' and E' positions are quoted for these two spectra.",
+    "The 2.000 eV fit has a poor residual (about -1.0 dip at 490 to 530 cm-1), so A1' and E' heights there carry systematic error, and the apparent non-monotonic A1' position (241.3 at 1.975 eV, 240.8 at 2.000 eV) may be fit-driven rather than physical.",
+    "The E'/A1' ratio from fitted heights is sensitive to the broad background and to overlapping components near 280 to 300 cm-1. The raw-maximum ratios are the more robust numbers, and both are quoted.",
+    "The resonance assignment depends on exciton energies for this sample, which were not provided. The note's A, B and C values (1.54, 1.74, 2.61 eV) are room-temperature numbers from another sample, and the 4 K hBN-encapsulated values will differ. I assumed the A exciton (and trion) is near 1.64 to 1.68 eV, which is consistent with the A1' maximum there, but this is an assumption.",
+    "Thin-film interference on 290 nm SiO2 was corrected by the pipeline. Any residual error in that correction would reshape the resonance profile across 1.97 to 2.12 eV, and the 0.03 to 0.05 eV steps are too coarse to resolve a narrow resonance.",
+    "Parallel minus crossed subtraction does not remove all luminescence or depolarised substrate light. The broad features at 430 to 600 cm-1 and the 1.6479 eV continuum may partly be of that origin.",
+    "The E' 2 to 3.5 cm-1 offset from the 288 cm-1 reference could be a low-temperature effect (4 K against room temperature in the reference), a strain or doping effect, or an unresolved LO/TO doublet. The data cannot decide between these.",
+    "Temperature and heating: the note gives an A1g temperature coefficient of 0.009 to 0.020 cm-1/K (Zhang X. 2015, arXiv:1509.07100 p.7, Table 1). A 1 cm-1 shift would then need about 50 to 110 K of heating, which seems large for under 100 microwatts at 4 K, so heating is unlikely to be the main cause of the 1 cm-1 scatter. Laser power and spot size were not supplied, so this is not measured.",
+    "The 2.0 eV spectra show an A1' trend of about +1.2 cm-1 from 2.000 to 2.124 eV, and E' moves +1.5 cm-1 over a similar range. The two move together, which points to a common cause, but the trend is not monotonic at the low-energy end."
+  ],
+  "questions_for_user": [
+    "Do you have PL or reflectance on this same flake at 4 K? The A exciton, trion and B exciton energies would let me assign the two resonances (A1'-favouring near 1.65 eV, E'-favouring near 2.0 to 2.05 eV) directly rather than by assumption.",
+    "Why is the Si line about five times stronger in the 1.6479 and 1.6791 eV spectra (11 against about 2) and why do those two files span 13 to 800 cm-1 instead of 150 to 620? Was the Si reference used for absolute calibration measured in the same parallel-minus-crossed geometry, with the same grating and detector settings?",
+    "What is the spectrometer resolution (measured with a Ne lamp or the Si width)? The Si FWHM varies from 2.8 to 3.6 cm-1 between spectra, and I need the instrument response to say whether any linewidth is real.",
+    "What were the laser power at the sample and the spot size? Without them, heating cannot be bounded, and the shift trend across the series cannot be separated from heating.",
+    "Can you measure a bare SiO2/Si spectrum (off-flake or on a substrate region) under the same conditions? That would test whether the broad bands at 430 to 600 cm-1 and the 531 cm-1 feature come from the substrate.",
+    "Are the 101 spikes between 30 and 350 cm-1 in the 1.6479 eV file real? That cluster is far denser than sparse cosmic rays and may indicate a detector fault. If so, the spectrum may need re-acquiring before its A1' region is trusted.",
+    "Which polarisation directions define parallel and crossed relative to the flake edges, and is the sample exfoliated from bulk or grown? These matter for whether the 354 and 170 cm-1 multilayer lines should appear, and for the defect interpretation (the note's 250 cm-1 defect mode is CVD-specific)."
+  ],
+  "citations": [
+    "Soubelet P. et al. 2016, Phys. Rev. B 93, 155407, arXiv:1603.05172, Fig. 1a (p.2): 1L A1' at 242 cm-1 and E' at 288 cm-1 at 465 nm (via skill MoSe2 note, not re-checked against the PDF)",
+    "Soubelet P. et al. 2016, arXiv:1603.05172, p.1: E' LO/TO splitting of about 4 cm-1 (ab initio theory, single source)",
+    "Soubelet P. et al. 2016, arXiv:1603.05172, p.2: A, B and C exciton resonances near 1.54, 1.74 and 2.61 eV (room temperature)",
+    "Soubelet P. et al. 2016, arXiv:1603.05172, p.3, Fig. 3a,b: 170 and 354 cm-1 lines in multilayers only",
+    "Kim K. et al. 2016, ACS Nano, doi:10.1021/acsnano.6b04471, arXiv:1608.03944, abstract and p.7: A1g selectively enhanced at the A exciton; broad second-order bands enhanced at 1.58 eV",
+    "Nam D. et al. 2015, Sci. Rep., doi:10.1038/srep17113, arXiv:1511.01225, pp.4-5: bulk A1g 242 and E2g1 285 cm-1",
+    "Zhang X. et al. 2015, arXiv:1509.07100, p.7 and Table 1: first-order temperature coefficients of about 0.009 to 0.020 cm-1/K for MoS2 and MoSe2 (column mapping ambiguous in the note)",
+    "Zhao S. et al. 2019, arXiv:1904.09789, abstract: Se-vacancy-induced mode near 250 cm-1 in CVD MoSe2 (single source)",
+    "Zhang X. et al. 2015, Chem. Soc. Rev., arXiv:1502.00701, p.13: WSe2 2LA(M) near 261 cm-1 (cited in the note)",
+    "Bagheri and Komsa 2023, Sci. Data 10, 80 (Computational Raman Database), via rl.py match_library",
+    "artifacts.md (skill reference): spike removal (Whitaker and Hayes 2018), Si calibration tolerance about 1 cm-1 (Lee et al. 2010; Castellanos-Gomez et al. 2014), plasma-line behaviour"
+  ],
+  "limits": [
+    "No MoSe2 relation for layer number, strain, doping or defect density exists in the skill (list_relations returns none for MoSe2; the MoS2 separation rule must not be reused). None of these properties is reported as measured.",
+    "No PL, reflectance or polarisation-resolved data were supplied, so exciton energies, the crystal orientation dependence and the LO/TO splitting cannot be checked here.",
+    "Literature used is limited to the skill's reference notes and was not re-verified against the original papers. I did not run the Valency or iopic-bond literature search.",
+    "Only 11 excitation energies, with coarse steps (about 0.02 eV near 2.0 to 2.1 eV and about 0.03 eV at 1.65 to 1.68 eV), so the resonance profile is sampled at only a few points.",
+    "The amorphous-SiO2 attribution of the 430 to 600 cm-1 broad bands is from general knowledge and is not sourced in the skill; it is a hypothesis to test with a bare substrate spectrum.",
+    "Absolute intensities could not be trusted across the 1.65 eV group and the rest until the Si normalisation mismatch is explained, so only ratios within a group are compared."
+  ]
+}

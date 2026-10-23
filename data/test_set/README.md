@@ -7,7 +7,7 @@ Ground-truth Raman cases used for two things: the contract tests that the build 
 | Folder | Purpose | Builder loop may read `truth.json`? |
 |---|---|---|
 | `dev/` | develop and debug tools; scored inside the loop | yes |
-| `heldout/` | final comparison only; scored by a person running `eval/` | **no** (permission deny rule in `loop/settings.json`, plus `tests/contract/test_no_heldout_leak.py`) |
+| `heldout/` | final comparison only; scored by a person running `eval/` | **no** (a permission deny rule in the build loop's settings, plus `tests/contract/test_no_heldout_leak.py`) |
 
 Everything is in git so collaborators can inspect it. The protection is against the builder agent tuning its tools to the answers, not against people.
 

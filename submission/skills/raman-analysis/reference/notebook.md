@@ -12,7 +12,7 @@ citation. Start from the template; do not write the notebook from scratch.
       `BANDS` (search windows for the bands to track, from the material note), `MIN_SNR`.
    2. **Literature for this system**: `LIT_VALUES` (each reported number you compare with: quantity, band, value,
       uncertainty, source, figure or table locator, reference number) and `FIGURES` (the `image_path` from
-      lit-pic `view_figure`, caption, reference number).
+      litpick `view_figure`, caption, reference number).
    3. **Method notes**: each analysis choice that came from a paper, with its reference number.
    4. **Interpretation**: five to ten bullets, most likely reading first, then alternatives and the measurement
       that would decide. Each bullet is one claim, tagged `[measured]`, `[inferred]`, `[literature]` or `[learned]`

@@ -1,6 +1,6 @@
 # Results of every evaluation run
 
-Exported from `eval/runs/` by `eval/export_results.py` (full agent transcripts stay in `eval/runs/`, also tracked).
+Exported from `eval/runs/` by `eval/export_results.py`. Full agent transcripts are not published.
 Layout: `<run>/<arm>/<case>/report.json` (what the arm answered), `judge.json` (rubric grades, interpretation cases),
 `usage.json` (model, tokens, cost in USD as reported by Claude Code, turns, seconds); `<run>/scores.json`
 (identification, `eval/score.py`) and `<run>/judge_scores.json` (interpretation, `eval/judge.py`, Opus judge).
@@ -13,18 +13,16 @@ Arms: `bare` = Claude Code with Python only; `skill` = plus the RamanLens skill 
 `<run>/COMPARISON_bare_vs_skill.md` puts both arms' reports for every case side by side with the automatic grades
 (interpretation: judge score, per-item grades, summary, observations, caveats, questions, citations; identification:
 candidates, peaks with irreps and patterns, properties). Start with `v3-int-sonnet` and `v3-int-haiku` (dev
-interpretation) and `v3-id-devhard-haiku` (dev identification); the `final-*` comparisons are added when the
-held-out run finishes. Regenerate with `python eval/compare_arms.py <run>`. Case inputs and answer keys:
+interpretation) and `v3-id-devhard-haiku` (dev identification). Regenerate with `python eval/compare_arms.py <run>`. Case inputs and answer keys:
 `data/test_set/<split>/<case>/` (`truth.json` or `rubric.json`).
 
 ## Which runs count
 
 | Run | Split | Arms | Model | Status |
 |---|---|---|---|---|
-| `final-id` | heldout, identification (37) | libsearch, pipeline, bare, skill | Haiku 5.5 | **headline** (in progress Oct 22 afternoon) |
-| `final-id-sonnet` | heldout, identification | bare, skill | Sonnet 5.5 | **headline** (in progress) |
-| `final-int` | heldout, interpretation (7) | pipeline, bare, skill | Haiku 5.5 | **headline** (in progress) |
-| `final-int-sonnet` | heldout, interpretation | bare, skill | Sonnet 5.5 | **headline** (in progress) |
+| `final-id` | heldout, identification (37) | libsearch, pipeline | none | **headline**: top-1 0.52 (libsearch) vs 0.58 (pipeline), polarization pattern 0.00 vs 0.89. The LLM arms did not finish before the deadline |
+| `final-int` | heldout, interpretation (7) | pipeline, bare, skill | Haiku 5.5 | **headline**: rubric 0.50 (bare) vs 0.41 (skill), citation specificity 1.00 vs 1.57 |
+| `final-id-sonnet`, `final-int-sonnet` | heldout | bare, skill | Sonnet 5.5 | not finished before the deadline; not reported |
 | `v3-int-haiku`, `v3-int-sonnet` | dev_interpret (7) | bare, skill | Haiku, Sonnet | valid dev result, skill v3 |
 | `v3-id-devhard-haiku` | dev_hard (15) | bare, skill | Haiku | valid dev result, skill v3 |
 | `base-dev`, `base-dev_hard` | dev, dev_hard | libsearch, pipeline | none | valid non-LLM baselines |

@@ -61,7 +61,7 @@ def _():
         {"quantity": "band 1 position, condition", "band": "band 1", "reported_cm1": 0.0, "uncertainty_cm1": 1.0,
          "source": "Author et al. YEAR", "locator": "Fig. N", "ref": 1},
     ]
-    # Published figures you opened with lit-pic view_figure (use its image_path).
+    # Published figures you opened with litpick view_figure (use its image_path).
     FIGURES = [
         # {"image_path": "C:/.../fig_1.png", "caption": "Author YEAR, Fig. N: what it shows", "ref": 1},
     ]

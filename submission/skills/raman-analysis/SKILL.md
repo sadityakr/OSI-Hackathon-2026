@@ -16,7 +16,7 @@ from `resources/`. The `rl*.py` scripts find it on their own; the notebook needs
    Several spectra: `python "${CLAUDE_SKILL_DIR}/scripts/rl_series.py" <files> --labels <labels> --substrate "<substrate>" --si-correct`.
 3. Read `${CLAUDE_SKILL_DIR}/reference/materials/<material>.md` for the known or most likely material.
 4. Ground on the literature for this system (step 8): open at least one published figure that shows the same
-   variable as the user's data, when the lit-pic tools are present (finding the paper: notes first, then the
+   variable as the user's data, when the litpick tools are present (finding the paper: notes first, then the
    Valency Bond MCP, then web search; `reference/literature.md`).
 
 **Finish the whole workflow in one turn.** Running the scripts, opening a published figure and writing the notebook
@@ -43,7 +43,7 @@ relation applied inside its validity range (inferred, with the relation's source
   that makes the choice.
 - **System: what has been reported for this material.** Mode positions, how they move with thickness,
   temperature, field, strain or doping, known anomalies and disagreements. Lives in
-  `reference/materials/<name>.md` and, at run time, in the published figures you open with lit-pic. Every
+  `reference/materials/<name>.md` and, at run time, in the published figures you open with litpick. Every
   interpretation is a comparison of the measured values with these reports; say where the data agree, where they
   differ, and what the difference could mean.
 
@@ -113,15 +113,15 @@ even when uncertain: put the uncertainty in the confidence values and the limits
    layer number, strain, doping or defect density only from a relation (with its source and validity) or a
    stated rule from the notes. Name properties `layers`, `defect_level`, `L_D_nm`, `strain_sign`,
    `doping_type`, `phase` where they apply.
-8. **Ground on the system literature** (required when the lit-pic tools are available). Form the hypothesis
+8. **Ground on the system literature** (required when the litpick tools are available). Form the hypothesis
    first; never search by peak positions. Name the variable the user's data spans (thickness, temperature,
    field, strain, laser energy) and pick the paper whose figure shows that variable for this material, following
    `reference/literature.md`. Finding the paper: the figure list at the end of the material note and
-   `reference/literature.md` first; then lit-pic `search_library` (papers already parsed); then the Valency Bond
-   MCP; if Valency is not connected, web search. Reading it: lit-pic `ingest_paper`, `list_figures`,
+   `reference/literature.md` first; then litpick `search_library` (papers already parsed); then the Valency Bond
+   MCP; if Valency is not connected, web search. Reading it: litpick `ingest_paper`, `list_figures`,
    `view_figure`. Read the values off the figure (about +-1 cm-1) and put them in a table next to your fitted
    values. Keep the figure's `image_path` for the notebook. If the figure contradicts your first reading, the
-   figure wins until you can explain why not. Without lit-pic you cannot open figures: use the notes and say so
+   figure wins until you can explain why not. Without litpick you cannot open figures: use the notes and say so
    under limits.
 9. **Interpret changes** (several spectra, or a known material). Run `rl_series.py`; then for each change ask
    which mechanisms in the material note produce it (thickness, strain, doping, defects, heating, calibration,

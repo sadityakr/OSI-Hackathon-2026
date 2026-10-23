@@ -1,61 +1,50 @@
-# RamanLens: a Raman analysis skill that reads spectra like a senior 2D-materials researcher
+# Literature-in-the-Loop: Scientific Analysis Grounded in Published Research
 
-Aditya Kumar (JGU Mainz), 4th Open Scientific Intelligence Hackathon, Oct 2026. Code and data:
-https://github.com/sadityakr/osi-hackathon-2026 (MIT)
+**Analysis Paralysis** — Aditya Kumar, Pratyush Kumar Das, Sourish Dey
 
-## The problem: Raman of 2D materials needs expertise that no tool packages
+*Final write-up as submitted to the 4th Open Scientific Intelligence Hackathon (October 2026).*
 
-Raman spectroscopy is the everyday characterization tool for graphene, transition-metal dichalcogenides and 2D
-magnets. A researcher usually knows the material; what they need is interpretation: how many layers, how defective,
-strained or doped, whether the magnetic order shows, and whether a shift is physics or a calibration error. That
-knowledge lives in hundreds of papers and in the habits of experienced spectroscopists. Existing tools do not
-package it: classical library search names a material and stops, and no public machine-learning model covers 2D
-materials (we found none with weights; RamanBench, Koddenbrock et al. 2026, arXiv 2605.02003, reports that no
-method generalizes across data sets).
+Scientific measurements rarely have a single interpretation. A Raman peak can shift because of thickness, strain, defects, doping, or temperature, and identifying the material is only the beginning. We built Literature-in-the-Loop, a framework that connects experimental measurements with published scientific evidence, performs reproducible analysis, and records how conclusions are reached. Starting with Raman spectroscopy of 2D materials, we also explored its applicability across five additional areas of the physical sciences and mathematics.
 
-## What we built: tools that measure, notes that know the literature, an agent that reasons
+## Approach
 
-RamanLens is a Claude Code skill (`skill/ramanlens/`) on a tested Python package (`src/ramanlens/`, 84 tests):
-- **Measurement tools**: cosmic-ray removal (Whitaker and Hayes 2018), asymmetric least squares baseline, multi-
-  Lorentzian fits with uncertainties, Si-line calibration check, band tracking across a series of spectra,
-  polarization classification, and a peak matcher over 385 layered crystals of the Computational Raman Database
-  (Bagheri and Komsa 2023) plus curated literature tables.
-- **Physics relations** that refuse to extrapolate: MoS2 and WS2 layer number (Lee et al. 2010; Berkdemir et al.
-  2013), graphene defect distance (Cancado et al. 2011), strain and doping (Lee et al. 2012), and more.
-- **Literature notes** for 10 materials, distilled from about 100 papers through Valency Bond and full-text reading:
-  how spectra change with thickness, defects, strain, temperature, laser and substrate, the known pitfalls, and the
-  questions an expert asks. Every number carries a paper and figure or table locator.
-- **Literature figures at run time**: the agent finds the paper (Valency Bond), parses the arXiv PDF and looks at
-  the published reference spectrum (iopic-Bond, our MCP server).
+Literature-in-the-Loop is a meta-skill for Claude Code that converts published scientific knowledge into reusable analysis workflows.
 
-## How we measured it: six arms, blind held-out cases, a blind judge
+- **Literature discovery:** The Valency Bond MCP searches the scientific citation graph, while our litpick MCP retrieves papers, extracts figures, and connects them to measurements with traceable citations.
+- **Scientific analysis:** Our Raman skill includes data-quality checks, silicon calibration, peak fitting, uncertainty estimation, symmetry assignments, and physical interpretation. It covers 10 materials, approximately 100 papers, and a matcher built from 385 layered crystals.
+- **Explainability:** Each analysis is recorded in an interactive Marimo notebook, exposing the measurements, assumptions, intermediate calculations, literature figures, and conclusions.
+- **Continuous learning:** New techniques and instrument-specific artifacts are logged and reviewed before being incorporated into the skill, with changes tracked through Git.
 
-Same cases for every arm: classical **library search** (cosine similarity on preprocessed spectra, the standard
-non-LLM method; Li et al. 2022, Analyst), the **RamanLens pipeline** without an LLM, and **Claude Haiku 5.5 and
-Sonnet 5.5**, each **bare** (Python only) and **with the skill**. Held-out cases come from papers excluded from
-building the skill: [TBD n] identification cases (synthetic from the CRD, plus experimental CrSBr and WS2 data)
-and 7 interpretation cases from published experimental data (CrSBr thickness and magnetic order, Wdowik et al.
-2025; resonant WS2, MoSe2, WSe2, McDonnell et al. 2018, 2020). Interpretation rubrics were written from each
-paper's own conclusions by an agent the skill builders never saw, and graded by a blind Claude Opus judge.
+To test broader applicability, we developed five additional scientific demonstrations:
 
-![Held-out results](figure.png)
+| Field | Scientific application |
+|---|---|
+| Materials science | X-ray diffraction and lattice-parameter recovery |
+| Chemistry | NMR signal analysis |
+| Physics | Photoluminescence and band-gap estimation |
+| Astronomy | Galaxy emission-line fitting and diagnostics |
+| Mathematics | Self-avoiding walks and growth-constant estimation |
+
+For these demonstrations, we compared simple baseline approaches against methods incorporating domain-specific physical constraints, using paired synthetic measurements and consistent error-analysis visualisations.
 
 ## Results
 
-[TBD from submission/figure.md]
-- Identification: library search [x], pipeline [x], Haiku bare [x] vs with skill [x].
-- Interpretation rubric score: Haiku [x] to [x], Sonnet [x] to [x]; caveats and citation specificity [x].
-- Development finding: a frontier model alone already names common 2D materials and applies textbook relations; the
-  skill's value lies in symmetry labels, polarization, artifacts and caveats, and claims a reader can trace to a
-  figure in a paper.
+**Raman spectroscopy:** On held-out identification cases, our non-LLM measurement pipeline improved top-1 material identification from 0.52 to 0.58 relative to classical library search. Polarization-pattern accuracy improved from 0.00 to 0.89. On seven held-out interpretation cases, literature citation specificity improved from 1.00 to 1.57 on a 0–2 scale, although interpretation rubric performance declined from 0.50 to 0.41. This highlights the distinction between better evidence retrieval and better scientific reasoning.
 
-## Limits we state
+In a real-data demonstration involving six CrSBr flakes, the system retrieved a published reference figure, reproduced the relative thickness ordering of four flakes, and appropriately declined to classify two samples outside the reference's supported range.
 
-Synthetic cases come from the same database the matcher uses and flatter it; experimental cases are few. The judge
-is an LLM, mitigated by paper-derived rubrics and blinding. Interpretation truth is each paper's own reading.
+**Cross-domain demonstrations:** We tested five additional applications using 100 paired synthetic realisations per field, comparing simple baseline estimators with methods incorporating established physical constraints. The mean parameter-error reductions were 99.4% for XRD, 98.8% for NMR, 84.7% for photoluminescence, 42.0% for astronomy emission-line fitting, and 99.5% for self-avoiding walks. These results demonstrate the potential of domain-specific modelling, but are deliberately simplified, matched-model comparisons rather than independent validation of the complete AI agent. Full error distributions, bootstrap confidence intervals, and reproducible code are included in our supplementary report.
 
-## Impact
+These cross-domain tests are preliminary demonstrations rather than independent validation of the complete literature-enabled agent. The Raman evaluation provides the more direct held-out evidence, while also identifying areas requiring improvement.
 
-A researcher gets an analysis they can audit: every number traced to a fit, a relation with its validity range, or
-a published figure. The same recipe (validated tools, literature notes with locators, blind rubric evaluation)
-transfers to XRD, PL and transport measurements.
+## Next steps
+
+We aim to expand the framework into a reusable scientific knowledge system connecting measurements, instruments, papers, figures, physical relations, and analysis histories. Priorities include improving held-out scientific interpretation, evaluating the full agent on independent experimental datasets, and developing dedicated skills for other measurement techniques.
+
+Our broader goal is to make scientific AI not only capable of analysing data, but also transparent about how it reaches conclusions, what evidence supports them, and when the available measurements are insufficient.
+
+## Links
+
+- Code and reproducibility: this repository
+- Supplementary results: [cross-domain benchmark report (PDF)](supplementary/OSI_Supplement.pdf) | [comparison figure](supplementary/summary.png) | [benchmark data and reproducible code](supplementary/)
+- Video demonstration: Literature-in-the-Loop project walkthrough (Google Drive, linked from the submission post)

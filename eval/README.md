@@ -1,5 +1,10 @@
 # Evaluation: bare agent vs agent with RamanLens tools
 
+The results in the write-up come from `run_claude_code.py` (headless Claude Code, arms `bare` and `skill`, no API
+key needed), `baselines.py` (non-LLM arms `libsearch` and `pipeline`), `score.py` (identification) and `judge.py`
+(blind rubric judge for interpretation). Commands are in the repository README. The section below describes the
+first runner, `run_agent.py`, which drives the same comparison through the Anthropic SDK.
+
 Same model (`claude-opus-5-5`, adaptive thinking, same effort), same system prompt, same Python sandbox. The only
 difference between the arms is the tool list:
 

@@ -1,10 +1,7 @@
-# The repo is private and shared with collaborators: everything is tracked except secrets and what cannot be pushed.
-# Clean up (raw data, private Lit-RAG code, transcripts) before making anything public.
-
 # secrets
 .env
 
-# machine-specific environment and generated caches (rebuild with pip install -e src[trace] and iopic-bond[parse])
+# machine-specific environment and generated caches
 .venv/
 __pycache__/
 *.egg-info/
@@ -13,11 +10,12 @@ __pycache__/
 __marimo__/
 skill/dist/
 
-# single files over GitHub's 100 MB limit; data/get_data.ps1 downloads them
-data/raw/crd/Computational_Raman_Database_v1.0.1.zip
-data/raw/crd/crd.json
-data/raw/spectra/graphene/005_Data.zip
-data/raw/spectra/graphene/zenodo14883846/005_Data.zip
+# downloaded data (data/get_data.ps1; sources and licences in data/README.md). Only the CRD cache of layered
+# crystals, data/raw/crd/crd_2d.pkl (CC BY 4.0), is tracked so the matcher works without the 454 MB download.
+data/raw/*
+!data/raw/crd/
+data/raw/crd/*
+!data/raw/crd/crd_2d.pkl
 
-# loop control file
-loop/STOP
+# evaluation run output with full agent transcripts (results without transcripts are in results/)
+eval/runs/
