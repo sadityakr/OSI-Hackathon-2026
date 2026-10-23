@@ -1,0 +1,34 @@
+[project]
+name = "litpick"
+version = "2.0.0"
+description = "Open arXiv papers or local PDFs, cut out their figures with captions, and keep them in a searchable local library."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "pymupdf>=1.24.10",
+    "mcp>=1.2",
+    "platformdirs>=4.0",
+]
+
+[project.scripts]
+litpick = "litpick.cli:main"
+litpick-serve = "litpick.server:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "matplotlib>=3.8"]
+
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/litpick"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/litpick", "README.md", "pyproject.toml"]
+
+[tool.uv]
+# uvx caches the environment it builds from this folder. Rebuild it when any source file changes,
+# not only pyproject.toml, so an updated plugin never runs stale code.
+cache-keys = [{ file = "pyproject.toml" }, { file = "src/**/*.py" }]

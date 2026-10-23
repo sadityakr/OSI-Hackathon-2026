@@ -1,0 +1,53 @@
+name: litpick
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays: one real arXiv download
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.10", "3.13"]
+        mcp: ["mcp<2", "mcp>=2"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Unit, parser and MCP server tests
+        run: uv run --python ${{ matrix.python }} --with "${{ matrix.mcp }}" pytest -q
+      - name: Start the server exactly as plugin.json does
+        shell: bash
+        run: |
+          uv run --python ${{ matrix.python }} python - <<'EOF'
+          import json, os, anyio
+          from mcp import ClientSession, StdioServerParameters
+          from mcp.client.stdio import stdio_client
+          root = os.getcwd()
+          cfg = json.load(open(".claude-plugin/plugin.json"))["mcpServers"]["litpick"]
+          args = [a.replace("${CLAUDE_PLUGIN_ROOT}", root) for a in cfg["args"]]
+          async def main():
+              p = StdioServerParameters(command=cfg["command"], args=args, env=dict(os.environ))
+              async with stdio_client(p) as (r, w), ClientSession(r, w) as s:
+                  await s.initialize()
+                  names = {t.name for t in (await s.list_tools()).tools}
+                  assert "view_figure" in names, names
+                  print("server answered with", sorted(names))
+          anyio.run(main)
+          EOF
+
+  live-arxiv:
+    # one real download a week, so a change on arXiv's side shows up before users hit it
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv run pytest -q -k live_arxiv
+        env:
+          LITPICK_NETWORK: "1"
