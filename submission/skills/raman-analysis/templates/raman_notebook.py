@@ -2,8 +2,9 @@
 
 Built by the literature-in-the-loop meta skill for the raman-analysis skill. The analysing agent copies this file
 next to the data as raman_analysis.py and edits ONLY the cells marked FILL. Every other cell computes from the
-data, so every number in the interpretation can be traced to a cell. Run check:
-    marimo export html raman_analysis.py -o raman_analysis.html
+data, so every number in the interpretation can be traced to a cell. Every cell is hide_code=True, so the
+notebook opens as a report; the code stays one click away in `marimo edit`. Run check:
+    marimo export html raman_analysis.py -o raman_analysis.html --no-include-code
 """
 
 import marimo
@@ -12,7 +13,7 @@ __generated_with = "0.25.2"
 app = marimo.App(width="medium", app_title="Raman analysis")
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _():
     import marimo as mo
     import numpy as np
@@ -24,9 +25,9 @@ def _():
     return SI_REFERENCE_CM1, Spectrum, analyze_spectrum, mo, np, plt, read_spectrum
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _():
-    # FILL 1/6: sample, conditions and data. Values the user did not give go into "assumed".
+    # FILL 1/8: sample, conditions and data. Values the user did not give go into "assumed".
     SAMPLE = {
         "material": "MATERIAL",
         "substrate": "SiO2/Si",
@@ -34,6 +35,9 @@ def _():
         "temperature_K": 295,
         "question": "What the user asked, in one sentence.",
         "assumed": ["Conditions you assumed because they were missing, and why they matter."],
+        # Folder name under the skill's setups/, or "unknown"; and the caveats from its setup.md that apply here.
+        "setup": "unknown",
+        "setup_caveats": [],
     }
     # (label, file relative to this notebook, value of the series variable or None when unknown)
     SPECTRA = [
@@ -48,25 +52,26 @@ def _():
     return BANDS, MIN_SNR, SAMPLE, SERIES, SPECTRA
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _():
-    # FILL 2/6: what the literature reports for this system. One row per reported number you will compare with.
+    # FILL 2/8: what the literature reports for this system. One row per reported number you will compare with.
     # band: a key of BANDS or None; reported_cm1: the value; locator: figure or table, "read from Fig. N" when
     # read off a plot (about +-1 cm-1); ref: number in the reference list.
     LIT_VALUES = [
         {"quantity": "band 1 position, condition", "band": "band 1", "reported_cm1": 0.0, "uncertainty_cm1": 1.0,
          "source": "Author et al. YEAR", "locator": "Fig. N", "ref": 1},
     ]
-    # Published figures you opened with iopic-bond view_figure (use its image_path).
+    # Published figures you opened with lit-pic view_figure (use its image_path).
     FIGURES = [
         # {"image_path": "C:/.../fig_1.png", "caption": "Author YEAR, Fig. N: what it shows", "ref": 1},
     ]
     return FIGURES, LIT_VALUES
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(SAMPLE, SERIES, SPECTRA, mo):
     _assumed = "\n".join(f"- {a}" for a in SAMPLE["assumed"]) or "- none"
+    _caveats = "\n".join(f"- {c}" for c in SAMPLE.get("setup_caveats", [])) or "- none recorded"
     mo.md(f"""
     # Raman analysis: {SAMPLE['material']}
 
@@ -77,11 +82,29 @@ def _(SAMPLE, SERIES, SPECTRA, mo):
 
     **Assumed.**
     {_assumed}
+
+    **Setup.** {SAMPLE.get('setup', 'unknown')}; caveats that apply:
+    {_caveats}
     """)
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
+def _(mo, pos):
+    # FILL 8/8, written LAST (after the interpretation) but shown here: the TL;DR for a human or agent who reads
+    # nothing else. Three to five bullets: the answer to the question, the key numbers through pos(label, band),
+    # the confidence and what it rests on, the main caveat, the next measurement. Same tags as the interpretation;
+    # nothing here that is not in sections 4 to 8.
+    mo.callout(mo.md(f"""
+    **TL;DR**
+
+    - [measured] ANSWER to the question, with band 1 in sample 1 at {pos("sample 1", "band 1")}.
+    - Confidence: high / moderate / low, because REASON. Main caveat: CAVEAT. Next measurement: MEASUREMENT.
+    """), kind="info")
+    return
+
+
+@app.cell(hide_code=True)
 def _(SPECTRA, mo, np, plt, read_spectrum):
     spectra = {}
     for _label, _file, _v in SPECTRA:
@@ -102,7 +125,7 @@ def _(SPECTRA, mo, np, plt, read_spectrum):
     return (spectra,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(SAMPLE, SI_REFERENCE_CM1, Spectrum, analyze_spectrum, mo, np, spectra):
     # 2. Quality: spikes and Si calibration offset per spectrum (offset = fitted Si line - 520.7 cm-1).
     full = {}
@@ -132,7 +155,7 @@ def _(SAMPLE, SI_REFERENCE_CM1, Spectrum, analyze_spectrum, mo, np, spectra):
     return full, si_offset
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(BANDS, MIN_SNR, SERIES, SPECTRA, Spectrum, analyze_spectrum, mo, si_offset, spectra):
     # 3. Band tracking: each band is refitted in its own window (resolves weak or broad bands that a
     # full-spectrum fit merges), and corrected by the Si offset when one was measured.
@@ -169,7 +192,7 @@ def _(BANDS, MIN_SNR, SERIES, SPECTRA, Spectrum, analyze_spectrum, mo, si_offset
     return pos, track
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(BANDS, SERIES, mo, plt, track):
     _fig, _axes = plt.subplots(1, len(BANDS), figsize=(3.2 * len(BANDS), 3.2), squeeze=False)
     for _ax, _band in zip(_axes[0], BANDS):
@@ -188,7 +211,7 @@ def _(BANDS, SERIES, mo, plt, track):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(FIGURES, LIT_VALUES, mo, track):
     # 5. What the literature reports for this system, next to the measured values.
     _rows = []
@@ -210,9 +233,9 @@ def _(FIGURES, LIT_VALUES, mo, track):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    # FILL 3/6: method notes. Each analysis choice that came from the literature, with its reference number.
+    # FILL 3/8: method notes. Each analysis choice that came from the literature, with its reference number.
     mo.md("""
     ## 6. Method notes
     - Lorentzian line shapes on an asymmetric least squares baseline (Eilers and Boelens 2005).
@@ -221,10 +244,10 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo, pos):
-    # FILL 4/6: interpretation. Five to ten bullets, most likely reading first. Each bullet: one claim, its tag
-    # [measured] / [inferred] / [literature], the number it rests on (use pos(label, band) so the number comes
+    # FILL 4/8: interpretation. Five to ten bullets, most likely reading first. Each bullet: one claim, its tag
+    # [measured] / [inferred] / [literature] / [learned] (a promoted run observation, with its CHANGELOG date), the number it rests on (use pos(label, band) so the number comes
     # from the fit), and the reference number. Then alternatives and the measurement that would decide.
     mo.md(f"""
     ## 7. Interpretation
@@ -233,9 +256,9 @@ def _(mo, pos):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    # FILL 5/6: limits and questions for the user.
+    # FILL 5/8: limits and questions for the user.
     mo.md("""
     ## 8. Limits and questions
     - What the data cannot tell, and the measurement that would.
@@ -243,12 +266,24 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    # FILL 6/6: references. Only papers opened this session or cited with a locator in the skill's notes.
+    # FILL 6/8: references. Only papers opened this session or cited with a locator in the skill's notes.
     mo.md("""
     ## References
     1. Authors, YEAR, Title, Journal or arXiv. [link](https://arxiv.org/abs/ID)
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    # FILL 7/8: skill updates from this run (learned/README.md in the skill). Each item: where it went
+    # (setups/<id>/setup.md, learned/inbox.md, or a promoted note) and one line on what. "none" when the run
+    # added nothing or SKILL_LEARNING=off.
+    mo.md("""
+    ## Skill updates from this run
+    - none
     """)
     return
 

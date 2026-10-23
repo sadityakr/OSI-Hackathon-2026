@@ -117,7 +117,7 @@ Rejected: `rejected/exp-graphene-02` (D, G, 2D barely above background; truth po
 
 **Precision on experimental cases.** Truth lists only peaks the paper assigns. Real but unassigned peaks (CrSBr 1L near 302 cm-1, MoSe2 resonance features at 280 to 320 cm-1) count against `peak_precision`, so report precision for synthetic cases only.
 
-**Build-set papers that block future held-out cases.** The skill's literature notes (`skill/ramanlens/skills/raman-analysis/reference/materials/`) cite Markina et al. 2026 (npj Quantum Materials, CrSBr temperature and polarization). Its data (TUdatalib 4928/4929) must therefore never become a held-out case; dev only.
+**Build-set papers that block future held-out cases.** The skill's literature notes (`submission/skills/raman-analysis/reference/materials/`) cite Markina et al. 2026 (npj Quantum Materials, CrSBr temperature and polarization). Its data (TUdatalib 4928/4929) must therefore never become a held-out case; dev only.
 
 ## Interpretation cases (added 2026-10-22)
 

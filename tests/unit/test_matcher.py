@@ -61,9 +61,9 @@ def test_empty_input():
 def test_crd_ws2_backscattering_visibility():
     """2H-WS2 (CRD row 90): E2g and A1g visible along c, E1g (xz, yz components only) invisible."""
     try:
-        rows = lib.load_crd_rows()
+        entries = lib.crd_library()
     except FileNotFoundError:
-        pytest.skip("CRD not downloaded")
-    e = lib.crd_entry("90", rows["90"])
+        pytest.skip("CRD not available")
+    e = next(x for x in entries if x.entry_id == "crd:90")
     irreps = {m.irrep for m in e.modes if m.position_cm1 > 100}
     assert irreps == {"E2g", "A1g"}, [(m.position_cm1, m.irrep, m.rel_intensity) for m in e.modes]

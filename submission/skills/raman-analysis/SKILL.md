@@ -3,13 +3,21 @@ name: raman-analysis
 description: Analyse a Raman spectrum (single spectrum or polarization angle series) of a 2D or layered material like an experienced researcher - artifact and calibration checks, peak fitting with uncertainties, material identification against computed and literature references, mode and irrep assignment, polarization classification, and cited relations for layer number, strain, doping and defect density, grounded in what the literature reports for the material and delivered as a Marimo notebook with a concise cited interpretation. Provides validated analysis scripts and literature notes per material; invoke it BEFORE writing any analysis code and use its scripts instead of your own. Use whenever a task involves Raman data, peak assignment, comparing spectra, or "what material is this / is this really X".
 ---
 
+**Setup, once per Python environment:** the processing package `ramanlens` ships in `scripts/` and reads its data
+from `resources/`. The `rl*.py` scripts find it on their own; the notebook needs it installed, so if
+`import ramanlens` fails, run `pip install -e "${CLAUDE_SKILL_DIR}/scripts"`.
+
 **Required first actions, in this order (do not write your own fitting code before these):**
+0. Find the setup: match the data files against the fingerprints in `${CLAUDE_SKILL_DIR}/setups/*/setup.md` and
+   read the matching `setup.md` and `calibration.json` (rules in `setups/README.md`). No match or several: ask
+   the user which instrument was used, or state the assumption and continue.
 1. `python "${CLAUDE_SKILL_DIR}/scripts/rl_qc.py" <each data file>`
 2. One spectrum: `python "${CLAUDE_SKILL_DIR}/scripts/rl_fit.py" <file> --substrate "<substrate>"`.
    Several spectra: `python "${CLAUDE_SKILL_DIR}/scripts/rl_series.py" <files> --labels <labels> --substrate "<substrate>" --si-correct`.
 3. Read `${CLAUDE_SKILL_DIR}/reference/materials/<material>.md` for the known or most likely material.
 4. Ground on the literature for this system (step 8): open at least one published figure that shows the same
-   variable as the user's data, when the Valency and iopic-bond tools are present.
+   variable as the user's data, when the lit-pic tools are present (finding the paper: notes first, then the
+   Valency Bond MCP, then web search; `reference/literature.md`).
 
 **Finish the whole workflow in one turn.** Running the scripts, opening a published figure and writing the notebook
 are the analysis the user asked for, not optional extras: do not stop after the first fits to offer them. Missing
@@ -18,7 +26,7 @@ continue, and put the questions at the end of the answer.
 
 **Deliverable:** a Marimo notebook `raman_analysis.py` next to the data that reproduces the analysis and ends with
 a concise interpretation in which every claim is tagged and cited. Copy
-`${CLAUDE_SKILL_DIR}/templates/raman_notebook.py`, fill its six `FILL` cells following
+`${CLAUDE_SKILL_DIR}/templates/raman_notebook.py`, fill its eight `FILL` cells following
 `${CLAUDE_SKILL_DIR}/reference/notebook.md`, then run it to prove it executes.
 
 # Raman analysis of 2D and layered materials
@@ -35,7 +43,7 @@ relation applied inside its validity range (inferred, with the relation's source
   that makes the choice.
 - **System: what has been reported for this material.** Mode positions, how they move with thickness,
   temperature, field, strain or doping, known anomalies and disagreements. Lives in
-  `reference/materials/<name>.md` and, at run time, in the published figures you open with iopic-bond. Every
+  `reference/materials/<name>.md` and, at run time, in the published figures you open with lit-pic. Every
   interpretation is a comparison of the measured values with these reports; say where the data agree, where they
   differ, and what the difference could mean.
 
@@ -105,14 +113,16 @@ even when uncertain: put the uncertainty in the confidence values and the limits
    layer number, strain, doping or defect density only from a relation (with its source and validity) or a
    stated rule from the notes. Name properties `layers`, `defect_level`, `L_D_nm`, `strain_sign`,
    `doping_type`, `phase` where they apply.
-8. **Ground on the system literature** (required when the Valency and iopic-bond tools are available). Form the
-   hypothesis first; never search by peak positions. Name the variable the user's data spans (thickness,
-   temperature, field, strain, laser energy) and pick the paper whose figure shows that variable for this
-   material: start from the figure list at the end of the material note and `reference/literature.md`, use
-   Valency only when the notes have none. `ingest_paper`, `list_figures`, `view_figure`; read the values off the
-   figure (about +-1 cm-1) and put them in a table next to your fitted values. Keep the figure's `image_path` for
-   the notebook. If the figure contradicts your first reading, the figure wins until you can explain why not.
-   If the tools are absent, use the notes and say so under limits.
+8. **Ground on the system literature** (required when the lit-pic tools are available). Form the hypothesis
+   first; never search by peak positions. Name the variable the user's data spans (thickness, temperature,
+   field, strain, laser energy) and pick the paper whose figure shows that variable for this material, following
+   `reference/literature.md`. Finding the paper: the figure list at the end of the material note and
+   `reference/literature.md` first; then lit-pic `search_library` (papers already parsed); then the Valency Bond
+   MCP; if Valency is not connected, web search. Reading it: lit-pic `ingest_paper`, `list_figures`,
+   `view_figure`. Read the values off the figure (about +-1 cm-1) and put them in a table next to your fitted
+   values. Keep the figure's `image_path` for the notebook. If the figure contradicts your first reading, the
+   figure wins until you can explain why not. Without lit-pic you cannot open figures: use the notes and say so
+   under limits.
 9. **Interpret changes** (several spectra, or a known material). Run `rl_series.py`; then for each change ask
    which mechanisms in the material note produce it (thickness, strain, doping, defects, heating, calibration,
    resonance) and which observable separates them (e.g. a rigid shift of all lines including Si is calibration;
@@ -123,11 +133,28 @@ even when uncertain: put the uncertainty in the confidence values and the limits
    source, artifacts, citations (only sources you used), and limits: what the data cannot tell, rejected
    hypotheses, relations that did not apply and why.
 11. **Notebook.** Copy `templates/raman_notebook.py` next to the data as `raman_analysis.py` and fill its `FILL`
-   cells as described in `reference/notebook.md`. Its computed cells refit every tracked band in its own window,
+   cells as described in `reference/notebook.md`; write the TL;DR cell last, from the finished interpretation.
+   Its computed cells refit every tracked band in its own window,
    which resolves weak or broad bands (thin flakes) that the full-spectrum fit merges; prefer its band table over
-   step 3 numbers when they differ. Run `marimo export html raman_analysis.py -o raman_analysis.html`; fix and
-   rerun until it exits cleanly. The HTML export keeps the code cells, so it is the shareable report that shows
-   both the results and how they were obtained. Tell the user the file paths.
+   step 3 numbers when they differ. Run
+   `marimo export html raman_analysis.py -o raman_analysis.html --no-include-code`; fix and rerun until it exits
+   cleanly. Code is hidden by default: the HTML is the shareable report (TL;DR first, then results), and every
+   template cell is `hide_code=True` so `marimo edit` also opens as a report with the code one click away; keep
+   that decorator on any cell you add. Tell the user the file paths.
+12. **Learn from this run** (skip entirely when `SKILL_LEARNING=off` is set in the environment). Read
+   `${CLAUDE_SKILL_DIR}/learned/README.md` once, then:
+   - **Setup items** (a spurious line of this instrument, a filter cutoff, a Si offset, a fit window that works
+     here): write them to `setups/<setup-id>/setup.md` now, with dataset and date; add each Si calibration
+     measurement to `calibration.json`. For a new instrument copy `setups/_template/` first.
+   - **Technique and material items** (a caveat the notes lack, a technique that resolved an ambiguous band, a
+     paper that explained an anomaly, a disagreement with a note): append one entry each to `learned/inbox.md` in
+     its entry format. If the same observation is already there from an independent dataset, add this run as a
+     further occurrence instead of a new entry.
+   - **Promote** an inbox item into `reference/` or `resources/` only when a paper confirms it (with locator) or it
+     has recurred on two independent datasets; append, never rewrite a cited statement, and log it in
+     `learned/CHANGELOG.md`.
+   - List the items in the notebook's last FILL cell and end the answer with a short "Skill updates" list with
+     file paths. Capture only what a future run would act on; restating the notes is not learning.
 
 ## Expert habits
 
@@ -137,3 +164,13 @@ even when uncertain: put the uncertainty in the confidence values and the limits
 - Resonant excitation changes relative intensities and activates second-order bands; check the laser against the
   material's excitons before calling a band unexpected.
 - When something looks odd, say what it looks like and what would distinguish the explanations.
+- Check the setup note before calling a weak band new: instruments add their own lines (filter ghosts, plasma
+  lines, cryostat windows).
+
+## How this skill improves
+
+`learned/` holds what earlier runs taught the skill: `inbox.md` (captured, untrusted), `CHANGELOG.md` (what was
+promoted into `reference/` or `resources/` and on what evidence). `setups/` holds one folder per instrument with
+its artifacts, defaults and calibration history; those caveats apply only to data from that instrument. Notes
+promoted from runs without a paper are labelled `observed in N runs`; treat them as `[learned]`, weaker than a
+cited `[literature]` entry.

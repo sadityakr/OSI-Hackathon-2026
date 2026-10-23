@@ -2,7 +2,7 @@
 
 This is the skill counterpart of eval/run_agent.py. The deliverable is a Claude Code skill, so the comparison runs
 the real `claude -p` agent: same model, effort, system prompt, tools (Bash, Read, Write, Edit, Glob, Grep) and
-Python environment in both arms. The `skill` arm also loads the RamanLens plugin (skill/ramanlens) and the
+Python environment in both arms. The `skill` arm also loads the Raman skill plugin (submission/demo/plugin-v4) and the
 literature MCP servers; the `bare` arm cannot import ramanlens. It needs no API key: it uses the Claude Code login.
 
 Input:
@@ -35,7 +35,7 @@ sys.path.insert(0, str(ROOT / "eval"))
 from report_schema import INTERPRET_SCHEMA, REPORT_SCHEMA  # noqa: E402
 from run_agent import SYSTEM, case_prompt  # noqa: E402
 
-PLUGIN_DIR = ROOT / "skill" / "ramanlens"
+PLUGIN_DIR = ROOT / "submission" / "demo" / "plugin-v4"
 WORK_ROOT = Path(tempfile.gettempdir()) / "ramanlens-eval"
 
 # The SDK runner ends with a submit_report tool; here the report is Claude Code's structured output instead.
@@ -107,6 +107,8 @@ def child_env(arm):
     env = dict(os.environ)
     env["PATH"] = str(ROOT / ".venv" / "Scripts") + os.pathsep + env.get("PATH", "")
     env["PYTHONIOENCODING"] = "utf-8"
+    # The skill writes what it learns into its own folder; evaluation cases must not change the skill under test.
+    env["SKILL_LEARNING"] = "off"
     if arm == "bare":
         env["PYTHONPATH"] = str(blocker_dir())
     else:

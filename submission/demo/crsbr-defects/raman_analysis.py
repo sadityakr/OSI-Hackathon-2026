@@ -25,6 +25,24 @@ def _():
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""
+    ## TL;DR
+
+    **Question:** what changed in a 4-layer CrSBr flake over three processing steps, and is it still good for a device?
+
+    - **Verdict:** not device-ready.
+    - **Signal loss:** the CrSBr signal falls at every step. After step 2 it is down 6 to 7 times, and the modes are about twice as broad (3.7 to 6.6 to 8.0 cm⁻¹).
+    - **Step 3:** no CrSBr modes are detected along either axis.
+    - **Step 0:** confirmed as CrSBr. Ag1, Ag2 and Ag3 sit at 113.8, 246.0 and 344.6 cm⁻¹, against 114, 244 and 344 cm⁻¹ for 4L in Mondal et al. 2025 (arXiv:2410.22164).
+    - **Defect modes:** red-side shoulders after steps 1 and 2 resemble the defect modes in Torres et al. 2022 (arXiv:2212.01754, Figs. 2 and 3). They are too weak to fit, so this is low confidence.
+    - **Most likely reading:** the crystal is progressively damaged, ending amorphised or removed under the spot. A missed spot at step 3 is not ruled out.
+    - **Check added after the run** (the agent never saw it): the steps were He⁺ irradiation at 3.9e13, 2.4e14 and 1.2e15 cm⁻².
+    """)
+    return
+
+
+@app.cell
 def _():
     # FILL 1/6: sample, conditions and data. Values the user did not give go into "assumed".
     SAMPLE = {

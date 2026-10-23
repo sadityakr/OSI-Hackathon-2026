@@ -8,7 +8,7 @@ Two recorded demos of the Raman skill (v4) on held-out or new data, with the dry
 | `crsbr-thickness/` | notebook and HTML from dry run 4 (prompt below), plus a copy with code hidden |
 | `crsbr-defects/data/` | one 4L CrSBr flake, untreated and after three He+ doses, laser along a and b (Figure 2a/2b of Czech repository DOI 10.48700/72gk1-7mb53, Sahu et al. 2026, CC BY 4.0); each spectrum normalised to its maximum because the deposited E along a sheet carries the figure's display factors |
 | `crsbr-defects/` | notebook and HTML from dry run 3, plus a copy with code hidden |
-| `plugin-v4/` | the exact skill v4 plugin the dry runs loaded (SKILL.md and notebook.md also staged in `../skill-v4/`) |
+| `plugin-v4/` | the exact skill v4 plugin the dry runs loaded (the same skill is packaged in `../skills/raman-analysis/`) |
 | `config/` | MCP config (iopic-bond with the withheld-paper filter, no direct Valency), read-deny settings, run scripts, and `make_defect_demo.py` (exports the defect spectra; the step to dose mapping is in `data/raw/spectra/CrSBr/czech_c819g/demo_crsbr-defects_provenance.json`) |
 | `dryruns/` | stream-json transcripts and final answers of every dry run |
 

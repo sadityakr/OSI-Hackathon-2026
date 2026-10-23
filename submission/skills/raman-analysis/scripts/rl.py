@@ -23,7 +23,7 @@ from pathlib import Path
 
 from ramanlens.agent import toolset
 
-SKIP = {"find_papers", "view_figure"}  # literature figures come from the iopic-bond MCP server in Claude Code
+SKIP = {"find_papers", "view_figure"}  # literature figures come from the lit-pic MCP server in Claude Code
 PY_TYPES = {"number": float, "integer": int, "string": str, "boolean": lambda s: s.lower() in ("1", "true", "yes")}
 
 

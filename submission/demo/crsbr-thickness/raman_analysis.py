@@ -24,6 +24,22 @@ def _():
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""
+    ## TL;DR
+
+    **Question:** how thick is each of six CrSBr flakes from the same crystal (532 nm, room temperature)?
+
+    - **Signal used:** the Ag1 mode position, which stiffens with layer number (Torres et al. 2022, arXiv:2212.01754, Fig. 1h).
+    - **Ag1 per flake:** C 103.1, E 103.3, A 108.6, F 111.9, D 113.3, B 114.0 cm⁻¹.
+    - **Ranking, thinnest to thickest:** A < F < D < B, with B bulk-like.
+    - **Not determinable:** C and E. Their Ag1 lies below the published monolayer value, so the agent did not assign a layer number.
+    - **Check added after the run** (the agent never saw it): the AFM order is C 1L < E 2L < A 3L < F 5L < D 6L < B bulk, so the ranking of A, F, D and B is correct.
+    """)
+    return
+
+
+@app.cell
 def _():
     # FILL 1/6: sample, conditions and data. Values the user did not give go into "assumed".
     SAMPLE = {

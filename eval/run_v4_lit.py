@@ -32,7 +32,7 @@ rc.SKILL_TOOLS = ["Skill", "mcp__iopic-bond__*"]
 # Paths an agent could use to find answers or earlier answers to the same cases.
 DENY = [f"Read(/{(ROOT / p).as_posix()})" for p in (
     "data/test_set/**", "eval/**", "results/**", "docs/**", "data/raw/spectra/**", "submission/*.md",
-    "submission/results.html", "submission/skill-v4/**", "submission/demo/crsbr-thickness/**",
+    "submission/results.html", "submission/skills/**", "submission/demo/crsbr-thickness/**",
     "submission/demo/crsbr-defects/**", "submission/demo/dryruns/**", "submission/demo/config/**")]
 
 
