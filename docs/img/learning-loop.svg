@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" role="img" aria-labelledby="title desc">
+  <title id="title">How a skill is built and how it keeps learning</title>
+  <desc id="desc">The literature-in-the-loop meta skill writes an analysis skill from published papers. Each analysis run captures new items to an inbox; items are promoted into the reference notes only when a paper confirms them or they recur on two independent datasets. Instrument-specific caveats go to a per-setup folder. Evaluation runs never learn.</desc>
+  <style>
+    .bg{fill:#ffffff}
+    .box{fill:#f6f8fa;stroke:#d0d7de;stroke-width:1.2}
+    .hi{fill:#eefbf1;stroke:#1a7f37;stroke-width:1.5}
+    .lit{fill:#ddf4ff;stroke:#0969da;stroke-width:1.2}
+    .warn{fill:#fff8c5;stroke:#9a6700;stroke-width:1.2}
+    .t{fill:#1f2328;font:600 14px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .m{fill:#59636e;font:12px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .c{fill:#1f2328;font:12px ui-monospace,SFMono-Regular,Consolas,monospace}
+    .lab{fill:#59636e;font:italic 11.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .ar{stroke:#59636e;stroke-width:1.6;fill:none}
+    .ah{fill:#59636e}
+    @media (prefers-color-scheme: dark){
+      .bg{fill:#0d1117}
+      .box{fill:#161b22;stroke:#3d444d}
+      .hi{fill:#0f2a18;stroke:#3fb950}
+      .lit{fill:#0c2d4a;stroke:#4493f8}
+      .warn{fill:#2e2507;stroke:#d29922}
+      .t,.c{fill:#e6edf3}
+      .m,.lab{fill:#9198a1}
+      .ar{stroke:#9198a1}
+      .ah{fill:#9198a1}
+    }
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%" rx="12"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path class="ah" d="M0,0 L10,5 L0,10 z"/>
+    </marker>
+  </defs>
+
+  <!-- build: literature -> meta skill -> analysis skill -->
+  <rect class="lit" x="20" y="20" width="250" height="90" rx="8"/>
+  <text class="t" x="36" y="48">Published literature</text>
+  <text class="m" x="36" y="70">papers found with Valency Bond</text>
+  <text class="m" x="36" y="88">figures read with litpick</text>
+  <path class="ar" d="M270 65 H296" marker-end="url(#arr)"/>
+
+  <rect class="hi" x="300" y="20" width="270" height="90" rx="8"/>
+  <text class="t" x="316" y="48">literature-in-the-loop</text>
+  <text class="m" x="316" y="70">meta skill: writes a cited analysis</text>
+  <text class="m" x="316" y="88">skill for one measurement technique</text>
+  <path class="ar" d="M570 65 H596" marker-end="url(#arr)"/>
+
+  <rect class="box" x="600" y="20" width="340" height="90" rx="8"/>
+  <text class="t" x="616" y="48">Analysis skill (e.g. raman-analysis)</text>
+  <text class="c" x="616" y="72">SKILL.md  scripts/  reference/</text>
+  <text class="c" x="616" y="92">resources/  templates/  learned/  setups/</text>
+
+  <!-- skill is used by every run; promoted items flow back into it -->
+  <path class="ar" d="M640 110 V150 H120 V196" marker-end="url(#arr)"/>
+  <text class="lab" x="300" y="144">loaded by every analysis run</text>
+  <path class="ar" d="M840 200 V114" marker-end="url(#arr)"/>
+  <text class="lab" x="848" y="164">the next run</text>
+  <text class="lab" x="848" y="180">knows more</text>
+
+  <!-- the loop -->
+  <rect class="box" x="20" y="200" width="200" height="100" rx="8"/>
+  <text class="t" x="36" y="228">Analysis run</text>
+  <text class="m" x="36" y="250">on the user's data; ends</text>
+  <text class="m" x="36" y="268">with a "Skill updates" list</text>
+  <text class="m" x="36" y="286">the user can veto</text>
+  <path class="ar" d="M220 250 H246" marker-end="url(#arr)"/>
+
+  <rect class="box" x="250" y="200" width="200" height="100" rx="8"/>
+  <text class="t" x="266" y="228">learned/inbox.md</text>
+  <text class="m" x="266" y="250">new caveat, technique,</text>
+  <text class="m" x="266" y="268">paper or correction</text>
+  <text class="m" x="266" y="286">captured, still untrusted</text>
+  <path class="ar" d="M450 250 H476" marker-end="url(#arr)"/>
+
+  <rect class="warn" x="480" y="200" width="230" height="100" rx="8"/>
+  <text class="t" x="496" y="228">Promote only with evidence</text>
+  <text class="m" x="496" y="250">a paper confirms it, with a</text>
+  <text class="m" x="496" y="268">figure or table locator, or it recurs</text>
+  <text class="m" x="496" y="286">on two independent datasets</text>
+  <path class="ar" d="M710 250 H736" marker-end="url(#arr)"/>
+
+  <rect class="hi" x="740" y="200" width="200" height="100" rx="8"/>
+  <text class="t" x="756" y="228">reference/, resources/</text>
+  <text class="m" x="756" y="250">append only, logged in</text>
+  <text class="m" x="756" y="268">learned/CHANGELOG.md;</text>
+  <text class="m" x="756" y="286">no paper yet: tagged [learned]</text>
+
+  <!-- setups and evaluation -->
+  <path class="ar" d="M120 300 V336" marker-end="url(#arr)"/>
+  <rect class="box" x="20" y="340" width="430" height="80" rx="8"/>
+  <text class="t" x="36" y="366">setups/&lt;instrument&gt;/</text>
+  <text class="m" x="36" y="388">fingerprint, known artifacts, calibration history; applied</text>
+  <text class="m" x="36" y="406">only to data from that instrument, never to the physics notes</text>
+
+  <rect class="box" x="480" y="340" width="460" height="80" rx="8"/>
+  <text class="t" x="496" y="366">Evaluation never learns</text>
+  <text class="m" x="496" y="388">evaluation runs set SKILL_LEARNING=off, so held-out cases</text>
+  <text class="m" x="496" y="406">cannot leak into the skill under test</text>
+</svg>

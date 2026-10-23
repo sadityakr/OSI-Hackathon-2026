@@ -2,8 +2,8 @@
 
 This is the skill counterpart of eval/run_agent.py. The deliverable is a Claude Code skill, so the comparison runs
 the real `claude -p` agent: same model, effort, system prompt, tools (Bash, Read, Write, Edit, Glob, Grep) and
-Python environment in both arms. The `skill` arm also loads the Raman skill plugin (submission/demo/plugin-v4) and the
-literature MCP servers; the `bare` arm cannot import ramanlens. It needs no API key: it uses the Claude Code login.
+Python environment in both arms. The `skill` arm also loads the skill plugin (submission/) and the literature MCP
+servers (Valency Bond for finding papers, litpick for reading their figures); the `bare` arm cannot import ramanlens. It needs no API key: it uses the Claude Code login.
 
 Input:
     data/test_set/<split>/<case_id>/{input.json, spectrum.csv}. truth.json is never read or copied.
@@ -35,7 +35,8 @@ sys.path.insert(0, str(ROOT / "eval"))
 from report_schema import INTERPRET_SCHEMA, REPORT_SCHEMA  # noqa: E402
 from run_agent import SYSTEM, case_prompt  # noqa: E402
 
-PLUGIN_DIR = ROOT / "submission" / "demo" / "plugin-v4"
+PLUGIN_DIR = ROOT / "submission"
+LITPICK_DIR = ROOT / "skill" / "litpick"
 WORK_ROOT = Path(tempfile.gettempdir()) / "ramanlens-eval"
 
 # The SDK runner ends with a submit_report tool; here the report is Claude Code's structured output instead.
@@ -73,7 +74,7 @@ def interpret_prompt(inp):
 
 
 BASE_TOOLS = ["Bash", "Read", "Write", "Edit", "Glob", "Grep"]
-SKILL_TOOLS = ["Skill", "mcp__valency__*", "mcp__iopic-bond__*"]
+SKILL_TOOLS = ["Skill", "mcp__valency__*", "mcp__litpick__*"]
 NEVER_TOOLS = ["WebSearch", "WebFetch", "Agent", "Task"]
 
 
@@ -82,10 +83,8 @@ def mcp_config(arm, work):
     servers = {}
     if arm == "skill":
         servers["valency"] = {"type": "http", "url": "https://mcp.valency.io/"}
-        exe = ROOT / ".venv" / "Scripts" / "iopic-bond.exe"
-        if exe.exists():
-            servers["iopic-bond"] = {"command": str(exe), "args": ["serve"],
-                                     "env": {"IOPIC_BOND_HOME": str(ROOT / "data" / "raw" / "iopic-bond")}}
+        # uvx provisions litpick's own environment from its pyproject on first use
+        servers["litpick"] = {"command": "uvx", "args": ["--quiet", "--from", str(LITPICK_DIR), "litpick-serve"]}
     path = work.parent / f"_mcp_{work.name}.json"
     path.write_text(json.dumps({"mcpServers": servers}))
     return path
@@ -97,7 +96,7 @@ def blocker_dir():
     PYTHONPATH entries are searched before site-packages, so the stub shadows the editable install of ramanlens.
     """
     d = WORK_ROOT / "_blocked"
-    for pkg in ("ramanlens", "iopic_bond"):
+    for pkg in ("ramanlens", "litpick"):
         (d / pkg).mkdir(parents=True, exist_ok=True)
         (d / pkg / "__init__.py").write_text(f"raise ImportError('{pkg} is not available in this arm')\n")
     return d

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" role="img" aria-labelledby="title desc">
+  <title id="title">How a Raman analysis runs</title>
+  <desc id="desc">The researcher's spectra go into the raman-analysis skill running in Claude Code, which checks quality, fits, identifies, interprets and compares with a published figure found through Valency Bond and opened with litpick. The result is a Marimo notebook with tagged, cited claims.</desc>
+  <style>
+    .bg{fill:#ffffff}
+    .box{fill:#f6f8fa;stroke:#d0d7de;stroke-width:1.2}
+    .hi{fill:#eefbf1;stroke:#1a7f37;stroke-width:1.5}
+    .lit{fill:#ddf4ff;stroke:#0969da;stroke-width:1.2}
+    .step{fill:#ffffff;stroke:#d0d7de;stroke-width:1}
+    .num{fill:#1a7f37}
+    .numt{fill:#ffffff;font:700 12px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .t{fill:#1f2328;font:600 14px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .b{fill:#1f2328;font:600 12.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .s{fill:#1f2328;font:12.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .m{fill:#59636e;font:11.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .ar{stroke:#59636e;stroke-width:1.6;fill:none}
+    .ah{fill:#59636e}
+    @media (prefers-color-scheme: dark){
+      .bg{fill:#0d1117}
+      .box{fill:#161b22;stroke:#3d444d}
+      .hi{fill:#0f2a18;stroke:#3fb950}
+      .lit{fill:#0c2d4a;stroke:#4493f8}
+      .step{fill:#0d1117;stroke:#3d444d}
+      .num{fill:#2ea043}
+      .t,.b,.s{fill:#e6edf3}
+      .m{fill:#9198a1}
+      .ar{stroke:#9198a1}
+      .ah{fill:#9198a1}
+    }
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%" rx="12"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path class="ah" d="M0,0 L10,5 L0,10 z"/>
+    </marker>
+  </defs>
+
+  <!-- literature servers -->
+  <rect class="lit" x="250" y="20" width="200" height="72" rx="8"/>
+  <text class="t" x="266" y="46">Valency Bond MCP</text>
+  <text class="m" x="266" y="66">finds papers by concept</text>
+  <text class="m" x="266" y="82">through the citation graph</text>
+  <rect class="lit" x="470" y="20" width="200" height="72" rx="8"/>
+  <text class="t" x="486" y="46">litpick MCP</text>
+  <text class="m" x="486" y="66">opens the arXiv PDF, parses it once,</text>
+  <text class="m" x="486" y="82">serves each figure with its citation</text>
+  <path class="ar" d="M452 56 H466" marker-end="url(#arr)"/>
+  <path class="ar" d="M570 92 V118" marker-end="url(#arr)"/>
+  <text class="m" x="580" y="110">published figure + locator</text>
+
+  <!-- input -->
+  <rect class="box" x="20" y="200" width="190" height="110" rx="8"/>
+  <text class="t" x="36" y="228">Your measurement</text>
+  <text class="s" x="36" y="252">Raman spectra, one or many</text>
+  <text class="s" x="36" y="272">a material you already know</text>
+  <text class="s" x="36" y="292">a question in plain words</text>
+  <path class="ar" d="M210 255 H246" marker-end="url(#arr)"/>
+
+  <!-- the skill -->
+  <rect class="hi" x="250" y="120" width="420" height="330" rx="10"/>
+  <text class="t" x="268" y="148">raman-analysis skill in Claude Code</text>
+
+  <rect class="step" x="266" y="162" width="388" height="48" rx="6"/>
+  <circle class="num" cx="288" cy="186" r="11"/><text class="numt" x="284" y="190">1</text>
+  <text class="b" x="308" y="182">Check conditions and quality</text>
+  <text class="m" x="308" y="200">rl_qc.py: spikes, saturation, Si calibration offset</text>
+
+  <rect class="step" x="266" y="218" width="388" height="48" rx="6"/>
+  <circle class="num" cx="288" cy="242" r="11"/><text class="numt" x="284" y="246">2</text>
+  <text class="b" x="308" y="238">Fit with uncertainties</text>
+  <text class="m" x="308" y="256">rl_fit.py, rl_series.py: fits and band tracking</text>
+
+  <rect class="step" x="266" y="274" width="388" height="48" rx="6"/>
+  <circle class="num" cx="288" cy="298" r="11"/><text class="numt" x="284" y="302">3</text>
+  <text class="b" x="308" y="294">Identify and assign modes</text>
+  <text class="m" x="308" y="312">CRD matcher (385 layered crystals) + literature tables</text>
+
+  <rect class="step" x="266" y="330" width="388" height="48" rx="6"/>
+  <circle class="num" cx="288" cy="354" r="11"/><text class="numt" x="284" y="358">4</text>
+  <text class="b" x="308" y="350">Interpret what changed</text>
+  <text class="m" x="308" y="368">relations with validity ranges; 10 material notes</text>
+
+  <rect class="step" x="266" y="386" width="388" height="48" rx="6"/>
+  <circle class="num" cx="288" cy="410" r="11"/><text class="numt" x="284" y="414">5</text>
+  <text class="b" x="308" y="406">Compare with the published figure</text>
+  <text class="m" x="308" y="424">opened via litpick, read off next to the fitted values</text>
+
+  <!-- output -->
+  <path class="ar" d="M670 285 H706" marker-end="url(#arr)"/>
+  <rect class="box" x="710" y="160" width="230" height="250" rx="8"/>
+  <text class="t" x="726" y="188">Marimo notebook</text>
+  <text class="s" x="726" y="214">TL;DR first, then the record</text>
+  <text class="s" x="726" y="246">every number is computed</text>
+  <text class="s" x="726" y="264">from the raw data</text>
+  <text class="s" x="726" y="296">claims tagged measured,</text>
+  <text class="s" x="726" y="314">inferred, literature, learned</text>
+  <text class="s" x="726" y="346">published figure shown</text>
+  <text class="s" x="726" y="364">beside your data</text>
+  <text class="s" x="726" y="396">HTML export to share</text>
+</svg>

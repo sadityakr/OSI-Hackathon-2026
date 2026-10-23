@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" role="img" aria-labelledby="title desc">
+  <title id="title">Evaluation design and results</title>
+  <desc id="desc">Four arms on the same cases: libsearch and pipeline without an LLM, bare Claude Code and Claude Code with the skill. Held-out identification: top-1 0.52 for library search and 0.58 for the pipeline, polarization pattern 0.00 and 0.89. Held-out interpretation with Haiku 5.5: rubric 0.50 bare and 0.41 with the skill, citation specificity 1.00 and 1.57. Development cases with Haiku 5.5: top-1 0.46 to 1.00, irrep accuracy 0.47 to 0.84, caveats 0.61 to 0.88.</desc>
+  <style>
+    .bg{fill:#ffffff}
+    .box{fill:#f6f8fa;stroke:#d0d7de;stroke-width:1.2}
+    .hi{fill:#eefbf1;stroke:#1a7f37;stroke-width:1.5}
+    .t{fill:#1f2328;font:600 14px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .g{fill:#1f2328;font:600 13px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .b{fill:#1f2328;font:600 12.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .s{fill:#1f2328;font:12.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .m{fill:#59636e;font:12px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .v{fill:#1f2328;font:600 12px ui-monospace,SFMono-Regular,Consolas,monospace}
+    .base{fill:#8c959f}
+    .ours{fill:#1a7f37}
+    .rule{stroke:#d0d7de;stroke-width:1}
+    @media (prefers-color-scheme: dark){
+      .bg{fill:#0d1117}
+      .box{fill:#161b22;stroke:#3d444d}
+      .hi{fill:#0f2a18;stroke:#3fb950}
+      .t,.g,.b,.s,.v{fill:#e6edf3}
+      .m{fill:#9198a1}
+      .base{fill:#656c76}
+      .ours{fill:#3fb950}
+      .rule{stroke:#3d444d}
+    }
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%" rx="12"/>
+
+  <!-- left: design -->
+  <text class="t" x="20" y="36">Four arms, same cases</text>
+  <rect class="box" x="20" y="52" width="380" height="50" rx="6"/>
+  <text class="b" x="34" y="73">libsearch</text>
+  <text class="m" x="34" y="91">classical full-spectrum library search, no LLM</text>
+  <rect class="hi" x="20" y="110" width="380" height="50" rx="6"/>
+  <text class="b" x="34" y="131">pipeline</text>
+  <text class="m" x="34" y="149">the RamanLens tools as a fixed recipe, no LLM</text>
+  <rect class="box" x="20" y="168" width="380" height="50" rx="6"/>
+  <text class="b" x="34" y="189">bare</text>
+  <text class="m" x="34" y="207">Claude Code with Python only</text>
+  <rect class="hi" x="20" y="226" width="380" height="50" rx="6"/>
+  <text class="b" x="34" y="247">skill</text>
+  <text class="m" x="34" y="265">Claude Code + the skill + literature MCP servers</text>
+
+  <text class="t" x="20" y="312">How answers are scored</text>
+  <rect class="box" x="20" y="324" width="380" height="66" rx="6"/>
+  <text class="b" x="34" y="345">Identification (eval/score.py)</text>
+  <text class="m" x="34" y="363">material top-1, irreps, polarization pattern,</text>
+  <text class="m" x="34" y="379">layer number, against each case's truth.json</text>
+  <rect class="box" x="20" y="398" width="380" height="84" rx="6"/>
+  <text class="b" x="34" y="419">Interpretation (eval/judge.py)</text>
+  <text class="m" x="34" y="437">a blind Opus judge grades each report against a</text>
+  <text class="m" x="34" y="453">rubric written from the source paper's conclusions</text>
+  <text class="m" x="34" y="469">by an agent the skill builders never saw</text>
+  <text class="m" x="20" y="508">Papers behind held-out cases were excluded</text>
+  <text class="m" x="20" y="524">when the skill was built.</text>
+
+  <!-- right: results -->
+  <rect class="base" x="440" y="26" width="12" height="12" rx="2"/>
+  <text class="m" x="458" y="36">baseline arm</text>
+  <rect class="ours" x="560" y="26" width="12" height="12" rx="2"/>
+  <text class="m" x="578" y="36">our arm</text>
+  <line class="rule" x1="440" y1="50" x2="940" y2="50"/>
+
+  <text class="g" x="440" y="72">Held-out identification · 37 cases · non-LLM arms</text>
+  <text class="s" x="440" y="96">material top-1</text>
+  <text class="m" x="440" y="114">libsearch</text><rect class="base" x="520" y="103" width="156" height="14" rx="2"/><text class="v" x="682" y="114">0.52</text>
+  <text class="m" x="440" y="132">pipeline</text><rect class="ours" x="520" y="121" width="174" height="14" rx="2"/><text class="v" x="700" y="132">0.58</text>
+  <text class="s" x="440" y="156">polarization pattern</text>
+  <text class="m" x="440" y="174">libsearch</text><rect class="base" x="520" y="163" width="2" height="14"/><text class="v" x="528" y="174">0.00</text>
+  <text class="m" x="440" y="192">pipeline</text><rect class="ours" x="520" y="181" width="267" height="14" rx="2"/><text class="v" x="793" y="192">0.89</text>
+
+  <line class="rule" x1="440" y1="208" x2="940" y2="208"/>
+  <text class="g" x="440" y="230">Held-out interpretation · 7 cases · Haiku 5.5</text>
+  <text class="s" x="440" y="254">rubric score</text>
+  <text class="m" x="440" y="272">bare</text><rect class="base" x="520" y="261" width="150" height="14" rx="2"/><text class="v" x="676" y="272">0.50</text>
+  <text class="m" x="440" y="290">skill</text><rect class="ours" x="520" y="279" width="123" height="14" rx="2"/><text class="v" x="649" y="290">0.41</text>
+  <text class="s" x="440" y="314">citation specificity (scale 0 to 2)</text>
+  <text class="m" x="440" y="332">bare</text><rect class="base" x="520" y="321" width="150" height="14" rx="2"/><text class="v" x="676" y="332">1.00</text>
+  <text class="m" x="440" y="350">skill</text><rect class="ours" x="520" y="339" width="236" height="14" rx="2"/><text class="v" x="762" y="350">1.57</text>
+
+  <line class="rule" x1="440" y1="366" x2="940" y2="366"/>
+  <text class="g" x="440" y="388">Development cases · Haiku 5.5</text>
+  <text class="s" x="440" y="412">material top-1</text>
+  <text class="m" x="440" y="430">bare</text><rect class="base" x="520" y="419" width="138" height="14" rx="2"/><text class="v" x="664" y="430">0.46</text>
+  <text class="m" x="440" y="448">skill</text><rect class="ours" x="520" y="437" width="300" height="14" rx="2"/><text class="v" x="826" y="448">1.00</text>
+  <text class="s" x="440" y="472">irrep accuracy</text>
+  <text class="m" x="440" y="490">bare</text><rect class="base" x="520" y="479" width="141" height="14" rx="2"/><text class="v" x="667" y="490">0.47</text>
+  <text class="m" x="440" y="508">skill</text><rect class="ours" x="520" y="497" width="252" height="14" rx="2"/><text class="v" x="778" y="508">0.84</text>
+  <text class="s" x="440" y="532">caveats found</text>
+  <text class="m" x="440" y="550">bare</text><rect class="base" x="520" y="539" width="183" height="14" rx="2"/><text class="v" x="709" y="550">0.61</text>
+  <text class="m" x="440" y="568">skill</text><rect class="ours" x="520" y="557" width="264" height="14" rx="2"/><text class="v" x="790" y="568">0.88</text>
+  <text class="m" x="440" y="592">Bar length is relative to each metric's maximum.</text>
+</svg>
