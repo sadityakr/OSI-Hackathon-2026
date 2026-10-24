@@ -92,6 +92,13 @@ not only its text. Comparing a measurement with the literature usually means com
 position against thickness, a spectrum at a given temperature. litpick lets the agent open that plot itself and
 cite it exactly.
 
+![litpick parses a PDF once with PyMuPDF, from the page layout and without machine learning, into a graph of the paper, its figures (caption, page, region) and the paragraphs that cite each figure. A query is ranked against captions, titles and citing paragraphs with SQLite full-text search (BM25), and the top figure is cropped and returned with a citation. No language model runs inside litpick.](docs/img/litpick.svg)
+
+In Claude Code, asked for the bias-voltage dependence of tunnelling magnetoresistance in CrSBr, the agent finds
+a paper with Valency Bond, opens it with litpick and is shown the matching figure:
+
+![A Claude Code session: the /litpick command asks for a bias voltage dependence of TMR from an arXiv paper on CrSBr. The agent searches the litpick library, runs a Valency semantic search, ingests the paper and views the figure; the cropped multi-panel figure of magnetoresistance against bias voltage appears in the conversation.](docs/img/litpick-demo.png)
+
 - **Open a paper** (`ingest_paper`): downloads an arXiv paper, or reads a local PDF, and parses it once into a
   library on your own disk. Parsing uses PyMuPDF on the PDF's own layout, with no machine-learning model: each
   caption is matched to the graphics above it, and every paragraph that cites the figure ("Fig. 3(b)") is kept

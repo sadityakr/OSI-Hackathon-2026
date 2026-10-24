@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" role="img" aria-labelledby="title desc">
+  <title id="title">How litpick finds the right figure</title>
+  <desc id="desc">litpick parses a PDF once with PyMuPDF, using the page layout and no machine learning, into a small graph: the paper, its figures with caption and page region, and the body paragraphs that cite each figure. A query is ranked against captions, titles and citing paragraphs with a full-text index (SQLite FTS5, BM25), and the best figure is cropped from its stored region and returned with a citation. No language model is used inside litpick.</desc>
+  <style>
+    .bg{fill:#ffffff}
+    .box{fill:#f6f8fa;stroke:#d0d7de;stroke-width:1.2}
+    .hi{fill:#eefbf1;stroke:#1a7f37;stroke-width:1.5}
+    .lit{fill:#ddf4ff;stroke:#0969da;stroke-width:1.2}
+    .t{fill:#1f2328;font:600 14px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .b{fill:#1f2328;font:600 12.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .s{fill:#1f2328;font:12.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .m{fill:#59636e;font:11.5px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .c{fill:#1f2328;font:11.5px ui-monospace,SFMono-Regular,Consolas,monospace}
+    .ar{stroke:#59636e;stroke-width:1.6;fill:none}
+    .ah{fill:#59636e}
+    .edge{stroke:#8c959f;stroke-width:1.2;fill:none}
+    .ment{stroke:#bf8700;stroke-width:1.2;fill:none;stroke-dasharray:4 3}
+    .np{fill:#1a7f37}
+    .nf{fill:#0969da}
+    .nm{fill:#bf8700}
+    .nt{fill:#ffffff;font:600 11px -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .win{fill:#eefbf1;stroke:#1a7f37;stroke-width:2}
+    @media (prefers-color-scheme: dark){
+      .bg{fill:#0d1117}
+      .box{fill:#161b22;stroke:#3d444d}
+      .hi{fill:#0f2a18;stroke:#3fb950}
+      .lit{fill:#0c2d4a;stroke:#4493f8}
+      .t,.b,.s,.c{fill:#e6edf3}
+      .m{fill:#9198a1}
+      .ar{stroke:#9198a1}
+      .ah{fill:#9198a1}
+      .edge{stroke:#656c76}
+      .ment{stroke:#d29922}
+      .np{fill:#2ea043}
+      .nf{fill:#4493f8}
+      .nm{fill:#d29922}
+      .nt{fill:#0d1117}
+      .win{fill:#0f2a18;stroke:#3fb950}
+    }
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%" rx="12"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path class="ah" d="M0,0 L10,5 L0,10 z"/>
+    </marker>
+  </defs>
+
+  <!-- 1. parse -->
+  <text class="t" x="20" y="34">1. Parse once, from the layout</text>
+  <rect class="lit" x="20" y="48" width="270" height="44" rx="6"/>
+  <text class="b" x="34" y="68">PDF</text>
+  <text class="m" x="34" y="84">an arXiv id or a local file</text>
+  <path class="ar" d="M155 92 V112" marker-end="url(#arr)"/>
+  <rect class="box" x="20" y="116" width="270" height="250" rx="6"/>
+  <text class="b" x="34" y="138">PyMuPDF, no machine learning</text>
+  <text class="s" x="34" y="164">Captions</text>
+  <text class="m" x="34" y="180">text blocks that start "Fig. 3", "FIG. 3.",</text>
+  <text class="m" x="34" y="195">"Figure S2:", "Extended Data Fig. 1"</text>
+  <text class="s" x="34" y="221">Graphics</text>
+  <text class="m" x="34" y="237">images and vector drawings, clustered so</text>
+  <text class="m" x="34" y="252">a multi-panel figure is one group</text>
+  <text class="s" x="34" y="278">Matching</text>
+  <text class="m" x="34" y="294">each group goes to the nearest caption</text>
+  <text class="m" x="34" y="309">below it in the same column</text>
+  <text class="s" x="34" y="335">Mentions</text>
+  <text class="m" x="34" y="351">paragraphs citing "Figs. 2-4", "Fig. 3(b)"</text>
+  <path class="ar" d="M290 240 H318" marker-end="url(#arr)"/>
+
+  <!-- 2. graph -->
+  <text class="t" x="330" y="34">2. The paper as a graph</text>
+  <rect class="box" x="322" y="48" width="300" height="318" rx="6"/>
+  <path class="edge" d="M472 96 L388 176 M472 96 L472 176 M472 96 L556 176"/>
+  <path class="ment" d="M372 292 L384 194 M430 292 L392 194 M430 292 L468 194 M512 292 L476 194 M570 292 L554 194"/>
+  <circle class="np" cx="472" cy="86" r="16"/><text class="nt" x="463" y="90">PDF</text>
+  <text class="m" x="494" y="82">paper: title, authors,</text>
+  <text class="m" x="494" y="96">arXiv version</text>
+  <circle class="nf" cx="388" cy="186" r="14"/><text class="nt" x="380" y="190">F1</text>
+  <circle class="nf" cx="472" cy="186" r="14"/><text class="nt" x="464" y="190">F2</text>
+  <circle class="nf" cx="556" cy="186" r="14"/><text class="nt" x="548" y="190">F3</text>
+  <rect class="nm" x="364" y="292" width="16" height="16" rx="3"/>
+  <rect class="nm" x="422" y="292" width="16" height="16" rx="3"/>
+  <rect class="nm" x="504" y="292" width="16" height="16" rx="3"/>
+  <rect class="nm" x="562" y="292" width="16" height="16" rx="3"/>
+  <circle class="nf" cx="342" cy="327" r="6"/>
+  <text class="m" x="354" y="331">figure: caption, page, region, how it was found</text>
+  <rect class="nm" x="336" y="340" width="12" height="12" rx="2"/>
+  <text class="m" x="354" y="350">paragraph that cites it (can cite several)</text>
+  <text class="m" x="336" y="62">stored on disk in SQLite; parsed once</text>
+  <path class="ar" d="M622 240 H650" marker-end="url(#arr)"/>
+
+  <!-- 3. find -->
+  <text class="t" x="662" y="34">3. Find the figure by its words</text>
+  <rect class="lit" x="654" y="48" width="286" height="58" rx="6"/>
+  <text class="m" x="668" y="68">the agent asks, e.g.</text>
+  <text class="c" x="668" y="88">"TMR bias voltage CrSBr"</text>
+  <path class="ar" d="M797 106 V124" marker-end="url(#arr)"/>
+  <rect class="box" x="654" y="128" width="286" height="96" rx="6"/>
+  <text class="b" x="668" y="150">Full-text ranking (SQLite FTS5, BM25)</text>
+  <text class="m" x="668" y="170">caption weighted 5, title 2, citing</text>
+  <text class="m" x="668" y="185">paragraphs 1; word stemming, so</text>
+  <text class="m" x="668" y="200">"voltages" matches "voltage"</text>
+  <text class="m" x="668" y="215">or by printed number: "Fig. 2", "S1"</text>
+  <path class="ar" d="M797 224 V242" marker-end="url(#arr)"/>
+  <rect class="win" x="654" y="246" width="286" height="120" rx="6"/>
+  <text class="b" x="668" y="268">Top-ranked figure, cropped</text>
+  <text class="m" x="668" y="288">cut from its stored page region and</text>
+  <text class="m" x="668" y="303">returned as a PNG the model can see,</text>
+  <text class="m" x="668" y="318">with its caption and a citation</text>
+  <text class="m" x="668" y="333">string (cite_as)</text>
+  <text class="m" x="668" y="355">rendered once, then reused</text>
+
+  <!-- footer -->
+  <rect class="hi" x="20" y="390" width="920" height="60" rx="8"/>
+  <text class="b" x="36" y="414">No language model inside litpick.</text>
+  <text class="m" x="36" y="434">The agent decides what to look for; litpick finds, ranks and crops with deterministic rules, so the same query on the same</text>
+  <text class="m" x="36" y="448">paper always ranks the figures the same way, offline, with no model calls.</text>
+</svg>
