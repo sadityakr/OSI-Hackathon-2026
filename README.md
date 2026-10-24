@@ -5,8 +5,12 @@ measurement technique into an analysis skill that checks the data like a senior 
 published figures, cites every claim, records the whole analysis in a reproducible notebook, and keeps learning
 from the analyses it runs. The worked example is Raman spectroscopy of 2D and layered materials.
 
-Team **Analysis Paralysis**: Aditya Kumar, Pratyush Kumar Das, Sourish Dey. Built for the 4th Open Scientific
-Intelligence Hackathon, October 21 to 22, 2026.
+Team **Analysis Paralysis**: Aditya Kumar<sup>1</sup>, Sourish Dey<sup>2</sup>, Pratyush Kumar Das<sup>3</sup>.
+Built for the 4th Open Scientific Intelligence Hackathon, October 21 to 22, 2026.
+
+<sup>1</sup> Institute of Physics, Johannes Gutenberg University Mainz, Germany<br>
+<sup>2</sup> SumUp, Berlin, Germany<br>
+<sup>3</sup> School of Mathematics and Physics, University of Queensland, Australia
 
 **Read first:** the [video walkthrough](https://drive.google.com/file/d/1FBxnqSUh3ZgINgrnLJExAGhMsGK1QE8B/view?usp=drive_link)
 (Google Drive), the [one-page write-up](submission/writeup.md) as submitted, the
