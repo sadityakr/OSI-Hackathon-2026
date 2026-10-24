@@ -47,4 +47,4 @@ Our broader goal is to make scientific AI not only capable of analysing data, bu
 
 - Code and reproducibility: this repository
 - Supplementary results: [cross-domain benchmark report (PDF)](supplementary/OSI_Supplement.pdf) | [comparison figure](supplementary/summary.png) | [benchmark data and reproducible code](supplementary/)
-- Video demonstration: Literature-in-the-Loop project walkthrough (Google Drive, linked from the submission post)
+- Video demonstration: [Literature-in-the-Loop project walkthrough](https://drive.google.com/file/d/1FBxnqSUh3ZgINgrnLJExAGhMsGK1QE8B/view?usp=drive_link) (Google Drive)

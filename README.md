@@ -8,7 +8,8 @@ from the analyses it runs. The worked example is Raman spectroscopy of 2D and la
 Team **Analysis Paralysis**: Aditya Kumar, Pratyush Kumar Das, Sourish Dey. Built for the 4th Open Scientific
 Intelligence Hackathon, October 21 to 22, 2026.
 
-**Read first:** the [one-page write-up](submission/writeup.md) as submitted, the
+**Read first:** the [video walkthrough](https://drive.google.com/file/d/1FBxnqSUh3ZgINgrnLJExAGhMsGK1QE8B/view?usp=drive_link)
+(Google Drive), the [one-page write-up](submission/writeup.md) as submitted, the
 [write-up figure](submission/figure_raman_skill.png), and the
 [cross-domain supplement](submission/supplementary/OSI_Supplement.pdf).
 
