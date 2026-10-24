@@ -87,17 +87,17 @@ an LLM. Every run, every report and every grade is in [results/](results/README.
 
 ## litpick: published figures, with citations, on demand
 
-[litpick](skill/litpick/) is a Claude Code plugin and MCP server that gives an agent the figures of a paper,
+[litpick](skill/litpick/) is a Claude plugin and MCP server (Claude Desktop or Claude Code) that gives an agent the figures of a paper,
 not only its text. Comparing a measurement with the literature usually means comparing with a plot: a peak
 position against thickness, a spectrum at a given temperature. litpick lets the agent open that plot itself and
 cite it exactly.
 
 ![litpick parses a PDF once with PyMuPDF, from the page layout and without machine learning, into a graph of the paper, its figures (caption, page, region) and the paragraphs that cite each figure. A query is ranked against captions, titles and citing paragraphs with SQLite full-text search (BM25), and the top figure is cropped and returned with a citation. No language model runs inside litpick.](docs/img/litpick.svg)
 
-In Claude Code, asked for the bias-voltage dependence of tunnelling magnetoresistance in CrSBr, the agent finds
+In Claude Desktop, asked for the bias-voltage dependence of tunnelling magnetoresistance in CrSBr, the agent finds
 a paper with Valency Bond, opens it with litpick and is shown the matching figure:
 
-![A Claude Code session: the /litpick command asks for a bias voltage dependence of TMR from an arXiv paper on CrSBr. The agent searches the litpick library, runs a Valency semantic search, ingests the paper and views the figure; the cropped multi-panel figure of magnetoresistance against bias voltage appears in the conversation.](docs/img/litpick-demo.png)
+![A Claude Desktop session: the /litpick command asks for a bias voltage dependence of TMR from an arXiv paper on CrSBr. The agent searches the litpick library, runs a Valency semantic search, ingests the paper and views the figure; the cropped multi-panel figure of magnetoresistance against bias voltage appears in the conversation.](docs/img/litpick-demo.png)
 
 - **Open a paper** (`ingest_paper`): downloads an arXiv paper, or reads a local PDF, and parses it once into a
   library on your own disk. Parsing uses PyMuPDF on the PDF's own layout, with no machine-learning model: each
@@ -130,7 +130,7 @@ report with error distributions and bootstrap confidence intervals: [submission/
 |---|---|
 | [`submission/skills/raman-analysis/`](submission/skills/raman-analysis/) | **the Raman skill**: `SKILL.md`, `scripts/` (QC, fit, series, CLI, and the bundled `ramanlens` package), `reference/` (artifacts, relations, measurement questions, 10 material notes), `resources/` (reference tables, CRD library), `templates/` (notebook), `learned/`, `setups/` |
 | [`submission/skills/literature-in-the-loop/`](submission/skills/literature-in-the-loop/) | **the meta skill** that builds such a skill for another technique, with `templates/` for the learning loop |
-| [`skill/litpick/`](skill/litpick/) | **litpick**, the MCP server and Claude Code plugin that opens arXiv papers and serves their figures with citations |
+| [`skill/litpick/`](skill/litpick/) | **litpick**, the MCP server and Claude plugin (Desktop or Code) that opens arXiv papers and serves their figures with citations |
 | [`submission/demo/`](submission/demo/) | two recorded CrSBr demos: data, notebook, HTML report |
 | [`submission/supplementary/`](submission/supplementary/) | cross-domain benchmarks (XRD, NMR, PL, astronomy, self-avoiding walks) |
 | [`submission/writeup.md`](submission/writeup.md) | the submitted one-page write-up, with [figure](submission/figure_raman_skill.png) |
