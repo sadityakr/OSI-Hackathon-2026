@@ -85,6 +85,29 @@ and promotion yet, and the evaluation below used a skill version without it.
 Limits: few cases; the synthetic identification cases come from the same database the matcher uses; the judge is
 an LLM. Every run, every report and every grade is in [results/](results/README.md).
 
+## litpick: published figures, with citations, on demand
+
+[litpick](skill/litpick/) is a Claude Code plugin and MCP server that gives an agent the figures of a paper,
+not only its text. Comparing a measurement with the literature usually means comparing with a plot: a peak
+position against thickness, a spectrum at a given temperature. litpick lets the agent open that plot itself and
+cite it exactly.
+
+- **Open a paper** (`ingest_paper`): downloads an arXiv paper, or reads a local PDF, and parses it once into a
+  library on your own disk. Parsing uses PyMuPDF on the PDF's own layout, with no machine-learning model: each
+  caption is matched to the graphics above it, and every paragraph that cites the figure ("Fig. 3(b)") is kept
+  with it.
+- **List figures** (`list_figures`): every caption in the paper, with the paragraphs that discuss each figure.
+- **View a figure** (`view_figure`): returns the cropped figure as an image the model can look at, plus a
+  ready-made citation string (paper and figure number).
+- **Search the library** (`search_library`): searches captions and discussing paragraphs of papers already
+  opened, offline.
+
+litpick does not search for papers: the agent finds them by concept with Valency Bond and passes the arXiv id.
+It is useful anywhere a claim should rest on a specific published figure: checking your data against a
+reference plot, reading values off a figure, or verifying that a cited figure says what the text claims. It
+runs on macOS, Windows and Linux through uv, and can be used on its own (`claude --plugin-dir skill\litpick`) or
+from the command line ([skill/litpick/README.md](skill/litpick/README.md)).
+
 ## Beyond Raman: five cross-domain demonstrations
 
 ![Mean absolute-error reduction of physics-constrained estimators over simple baselines, 100 paired synthetic realisations per field: XRD 99.4 percent, NMR 98.8 percent, photoluminescence 84.7 percent, astronomy 42.0 percent, self-avoiding walks 99.5 percent.](docs/img/cross-domain.svg)
